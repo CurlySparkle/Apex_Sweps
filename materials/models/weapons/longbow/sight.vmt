@@ -1,0 +1,11 @@
+"VertexlitGeneric"
+{
+"$basetexture" "models\weapons\longbow\longbow_sight_d"
+"$color2"	"[1 0 0]"
+"$nocull" "1"
+"$additive" "1"
+
+"$selfillum"             "1"
+"$selfillumtint"         "1 1 1"
+"$selfillummask"  	  "models\weapons\longbow\longbow_sight_d"
+}

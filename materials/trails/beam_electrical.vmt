@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "particle/beam_electrical"
+	
+	"$additive" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+}

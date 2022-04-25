@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\r99\r97_smg_sight_d"
+"$additive" "1"
+"$color2"	"[1 0 0]"
+
+"$selfillum"             "1"
+"$selfillumtint"         "0.15 0.15 0.15"
+"$selfillummask"  	  "models\weapons\r99\r97_smg_sight_d"
+}

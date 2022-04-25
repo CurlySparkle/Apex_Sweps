@@ -1,0 +1,11 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\p2020\p2020_reticle_front"
+"$additive" "1"
+"$translucent" "1"
+"$color2"	"[1 1 1]"
+
+"$selfillum"             "1"
+"$selfillumtint"         "0.15 0.15 0.15"
+"$selfillummask"  	  "models\weapons\p2020\p2020_reticle_front"
+}

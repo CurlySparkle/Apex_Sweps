@@ -1,0 +1,39 @@
+unlitgeneric
+{
+$basetexture "trails/nano1"
+$additive 1
+$basetexturetransform	"center 0 0 scale 1  1  rotate 0 translate 0 10"
+"$angle" 0.0
+"$scale"	"[1 0.05]"
+"$translate" "[0.0 50.0]"
+"$center" "[-0.5 -0.5]"
+$HDRCOLORSCALE 5
+//$BRIGHTNESSBIASFACTOR 3
+$DEPTHBLEND 1
+$DEPTHBLENDSCALE 0.5
+
+	"Proxies"
+	{
+	"TextureScroll"
+	{
+			"texturescrollvar" "$translate"
+			"texturescrollrate" 15
+			"texturescrollangle" -90
+	}
+	"TextureTransform"
+	{
+	"translateVar" "$translate"
+                "rotateVar" "$angle"
+	"scaleVar"  "$scale"
+                "centerVar" "$center"
+                "resultVar" "$basetexturetransform"
+	}
+	 "AnimatedTexture"
+      {
+         "animatedtexturevar" "$basetexture"
+         "animatedtextureframenumvar" "$frame"
+         "animatedtextureframerate" "30"
+      }
+	}
+	
+}

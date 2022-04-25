@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture"		"vgui/apex_p2020"
+	"$vertexcolor" 		1
+	"$vertexalpha" 		1
+	"$nolod" 			1
+}

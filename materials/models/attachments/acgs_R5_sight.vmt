@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\attachments\acgs_R5_sight"
+"$additive" "1"
+"$color2"	"[1 0 0]"
+
+"$selfillum"             "1"
+"$selfillumtint"         "0.15 0.15 0.15"
+"$selfillummask"  	  "models\attachments\acgs_R5_sight"
+}

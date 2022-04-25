@@ -1,0 +1,13 @@
+att.PrintName = "Extended Mag - Level 1"
+att.Icon = Material("entities/attach_icons/apex_ext_light_1.png", "mips smooth")
+att.Description = "Small capacity increase."
+att.Desc_Pros = {
+}
+att.Desc_Cons = {
+}
+att.AutoStats = true
+att.Slot = {"apex_light_mags"}
+
+att.SortOrder = 1
+
+att.Add_ClipSize = 2

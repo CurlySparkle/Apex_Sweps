@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\wingman\wingman_sight_d"
+"$additive" "1"
+"$color2"	"[1 1 1]"
+
+"$selfillum"             "1"
+"$selfillumtint"         "0.15 0.15 0.15"
+"$selfillummask"  	  "models\weapons\wingman\wingman_sight_d"
+}
