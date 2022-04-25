@@ -83,6 +83,7 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = { "weapons/longbow/wpn_dmr_fire_1.wav", "weapons/longbow/wpn_dmr_fire_2.wav", "weapons/longbow/wpn_dmr_fire_3.wav" }
+SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 

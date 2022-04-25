@@ -20,10 +20,15 @@ SWEP.Slot = 2
 
 SWEP.CrouchPos = Vector(-4.5, 0, 1.5)
 SWEP.CrouchAng = Angle(0, 0, -53)
+
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
+
 SWEP.ActivePos = Vector(0, 0, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
+SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
 SWEP.NPCWeaponType = "weapon_smg1"
 SWEP.NPCWeight = 250
@@ -48,10 +53,10 @@ SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.Tracer = "arccw_tracer" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(255, 85, 25)
-SWEP.TracerWidth = 15
+SWEP.TracerWidth = 5
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 20 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.425
@@ -82,6 +87,7 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound
 
 SWEP.ShootSound = { "weapons/r99/fire_1.wav", "weapons/r99/fire_2.wav", "weapons/r99/fire_3.wav", "weapons/r99/fire_4.wav" }
+SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
@@ -89,7 +95,7 @@ SWEP.MuzzleEffect = "muzzleflash_1"
 SWEP.MuzzleFlashColor = Color(244, 209, 66)
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
-SWEP.ShellScale = 1
+SWEP.ShellScale = 1.55
 SWEP.ShellTime = 1
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on

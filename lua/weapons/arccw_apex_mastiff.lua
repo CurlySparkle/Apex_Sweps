@@ -102,7 +102,7 @@ SWEP.ShootPitch = 100 -- pitch of shoot sound
 SWEP.ShootSound = { "weapons/mastiff/fire_1.wav", "weapons/mastiff/fire_2.wav", "weapons/mastiff/fire_3.wav" }
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
-SWEP.ShootDrySound = "weapons/wpn_lowammo_shotgun1.wav"
+SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
 
 SWEP.MuzzleEffect = "muzzleflash_shotgun"
 SWEP.ShellModel = "models/shells/shelleject_shotshell.mdl"
@@ -155,6 +155,9 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
+SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
+SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
+SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 SWEP.MeleeDamage = 90
 SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB

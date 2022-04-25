@@ -27,8 +27,8 @@ SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
 SWEP.WorldModel = "models/weapons/w_357.mdl"
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 55
-SWEP.DamageMin = 35 -- damage done at maximum range
+SWEP.Damage = 45
+SWEP.DamageMin = 25 -- damage done at maximum range
 SWEP.Range = 85 -- in METRES
 SWEP.Penetration = 25
 SWEP.DamageType = DMG_BULLET
@@ -69,6 +69,7 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = { "weapons/wingman/fire_1.wav", "weapons/wingman/fire_2.wav", "weapons/wingman/fire_3.wav" }
+SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
@@ -78,7 +79,7 @@ SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 
 SWEP.MeleeDamage = 90
-SWEP.MeleeRange = 25
+SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
 SWEP.MeleeTime = 0.5
 SWEP.MeleeGesture = nil
@@ -205,14 +206,12 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = {"fire", "fire2"},
-        ShellEjectAt = 0,
     },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
         Source = "iron_fire",
-        ShellEjectAt = 0,
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -247,17 +246,17 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40			
+		MinProgress = 60/40	
     },
-    ["reload_empty"] = {
-        Source = "reload_empty",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_REVOLVER,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKOut = 0.5,
-        LHIKEaseOut = 0.2,
-		MinProgress = 97/40			
-    },	
+    -- ["reload_empty"] = {
+        -- Source = "reload_empty",
+        -- TPAnim = ACT_HL2MP_GESTURE_RELOAD_REVOLVER,
+        -- LHIK = true,
+        -- LHIKIn = 0.2,
+        -- LHIKOut = 0.5,
+        -- LHIKEaseOut = 0.2,
+		-- MinProgress = 97/40			
+    -- },	
 }
 
 sound.Add({

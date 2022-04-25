@@ -91,9 +91,9 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot soun
 
 SWEP.ShootSound = { "weapons/car/fire_1.wav", "weapons/car/fire_2.wav", "weapons/car/fire_3.wav" }
+SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_B"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
-SWEP.ShootDrySound = "weapons/wpn_lowammo_smg1.wav"
 
 SWEP.MuzzleEffect = "muzzleflash_6"
 SWEP.MuzzleFlashColor = Color(244, 209, 66)
