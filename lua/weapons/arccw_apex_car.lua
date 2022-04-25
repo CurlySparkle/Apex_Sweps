@@ -89,7 +89,6 @@ SWEP.Primary.Ammo = "ar2"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot soun
--- SWEP.ShootPitchVariation = 0.1
 
 SWEP.ShootSound = { "weapons/car/fire_1.wav", "weapons/car/fire_2.wav", "weapons/car/fire_3.wav" }
 SWEP.ShootSoundSilenced = ""
@@ -102,7 +101,6 @@ SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 95
 SWEP.ShellScale = 1
 SWEP.ShellTime = 1
--- SWEP.ShellRotateAngle = Angle(0, 0, 90)
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
