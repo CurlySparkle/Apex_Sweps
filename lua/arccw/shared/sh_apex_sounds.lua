@@ -1,4 +1,193 @@
 sound.Add( {
+    name = "ArcCW_APEX.Alternator.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/fire_1.wav",
+		"^weapons/alternator/fire_2.wav",
+		"^weapons/alternator/fire_3.wav",
+		"^weapons/alternator/fire_4.wav",
+		"^weapons/alternator/fire_5.wav",
+		"^weapons/alternator/fire_6.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Ads",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_01.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_02.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_03.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_04.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_05.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_06.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_07.wav",
+		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_08.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.first_pullout.CLOTH_f00",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_1.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_2.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.first_pullout.FOLEY_f00",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_1.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_2.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.first_pullout.FOLEY_f26",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_1.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_2.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.first_pullout.MECH_f08",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_1.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_2.wav",
+		"^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_0",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_45",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.Foley_28",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.Foley_77",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.ClipOut",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.ClipIn",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Alternator.Empty_Reload.PullBolt",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_1.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_2.wav",
+		"^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_3.wav",
+    }
+} )
+
+
+-- sound.Add( {
+    -- name = "Apex_Melee_Swing",
+    -- channel = CHAN_ITEM + 6,
+    -- volume = 1.0,
+    -- level = 100,
+    -- pitch = {90, 110},
+    -- sound = {
+        -- "^weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav",
+    -- }
+-- } )
+
+sound.Add( {
     name = "ArcCW_APEX.Mastiff_Shell",
     channel = CHAN_ITEM + 6,
     volume = 1.0,

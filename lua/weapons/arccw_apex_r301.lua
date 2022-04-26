@@ -42,11 +42,10 @@ SWEP.Range = 85 -- in METRES
 SWEP.Penetration = 25
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 950 -- projectile or phys bullet muzzle velocity
+SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity
 -- IN M/S
-
+SWEP.Tracer = "hl2mmod_generic_tracer"
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.TracerCol = Color(255, 25, 25)
 SWEP.TracerWidth = 3
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
@@ -90,7 +89,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzleflash_pistol"
+SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
 SWEP.MuzzleFlashColor = Color(255, 209, 66)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95

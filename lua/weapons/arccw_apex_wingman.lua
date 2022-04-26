@@ -25,7 +25,7 @@ SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
 SWEP.WorldModel = "models/weapons/w_357.mdl"
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 45
 SWEP.DamageMin = 25 -- damage done at maximum range
@@ -44,7 +44,7 @@ SWEP.RecoilSide = 1.75
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 
-SWEP.Delay = 60 / 300 -- 60 / RPM.
+SWEP.Delay = 60 / 156 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {

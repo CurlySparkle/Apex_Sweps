@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models/weapons/alternator/alternator_sight"
+"$additive" "1"
+"$color2"	"[1 1 1]"
+
+"$selfillum"             "1"
+"$selfillumtint"         "0.15 0.15 0.15"
+"$selfillummask"  	  "models/weapons/alternator/alternator_sight"
+}

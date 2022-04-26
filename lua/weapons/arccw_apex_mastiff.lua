@@ -43,7 +43,7 @@ SWEP.RangeMin = 35
 SWEP.HullSize = 2
 SWEP.BodyDamageMults = {[HITGROUP_HEAD] = 1,}
 
-SWEP.Penetration = 1
+SWEP.Penetration = 5
 SWEP.DamageType = DMG_BUCKSHOT
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 700 -- projectile or phys bullet muzzle velocity
@@ -58,9 +58,9 @@ SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
     return data
 end
 
-SWEP.TracerNum = 1 -- tracer every X
-SWEP.TracerCol = Color(255, 175, 25)
-SWEP.TracerWidth = 3
+SWEP.Tracer = "hl2mmod_generic_tracer"
+SWEP.TracerNum = 8 -- tracer every X
+SWEP.TracerWidth = 2
 
 SWEP.ChamberSize = 0 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 6 -- DefaultClip is automatically set.

@@ -1,0 +1,9 @@
+SpriteCard
+{
+$basetexture "effects/HL2MMod/HL2MMod_WaterSplash_2"
+$additive 1
+$blendframes 1
+$maxsize .85
+$startfadesize .675
+$endfadesize .75
+}

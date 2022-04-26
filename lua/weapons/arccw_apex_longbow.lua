@@ -46,7 +46,7 @@ SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 950 -- projectile or phys bullet muzzle velocity
 -- IN M/S
-
+SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 10
@@ -77,7 +77,7 @@ SWEP.AccuracyMOA = 2 -- accuracy in Minutes of Angle. There are 60 MOA in a degr
 SWEP.HipDispersion = 725 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 175
 
-SWEP.Primary.Ammo = "smg1" 
+SWEP.Primary.Ammo = "XBowBolt" 
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -87,7 +87,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzleflash_3"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_sniper"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 85
 SWEP.ShellScale = 1
