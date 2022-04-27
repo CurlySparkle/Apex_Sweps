@@ -9,12 +9,9 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Mastiff Shotgun"
-SWEP.Trivia_Class = "semi-automatic shotgun"
-SWEP.Trivia_Desc = "The Mastiff Shotgun, also called Mastiff, is a semi-automatic shotgun that utilizes Shotgun Shells. It fires 8 pellets in the shape of a horizontal line, which decreases in width while aiming down the sights, reducing the spread and thus increasing accuracy. "
+SWEP.Trivia_Class = "Shotgun"
+SWEP.Trivia_Desc = "Semi-automatic shotgun from the Frontier War, designed for use in low-gravity situations. Notorious among the IMC for its devestating rate of fire.\n\nFires 8 pellets in a horizontal line, narrowed when aiming down sights."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
-SWEP.Trivia_Country = "Unknown"
-SWEP.Trivia_Calibre = "Shotgun Shells"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 3
 
@@ -34,29 +31,48 @@ SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"
 
-SWEP.Damage = 16
-SWEP.DamageMin = 11 -- damage done at maximum range
-SWEP.RangeMin = 30
-SWEP.Range = 95 -- in METRES
-SWEP.RangeMin = 35
+SWEP.Damage = 11
+SWEP.DamageMin = 11
+SWEP.RangeMin = 0
+SWEP.Range = 50
 
-SWEP.HullSize = 2
-SWEP.BodyDamageMults = {[HITGROUP_HEAD] = 1,}
+SWEP.HullSize = 0
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.25,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
 
-SWEP.Penetration = 5
+SWEP.Penetration = 2
 SWEP.DamageType = DMG_BUCKSHOT
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 700 -- projectile or phys bullet muzzle velocity
--- IN M/S
+SWEP.PhysBulletMuzzleVelocity = 16000 * ArcCW.HUToM
+
 
 SWEP.Num = 8
-SWEP.ShotgunSpreadPattern = true
+SWEP.ShotgunSpreadPattern = {
+    [1] = Angle(0, 2, 0),
+    [2] = Angle(0, -2, 0),
+    [3] = Angle(0, 0.3, 0),
+    [4] = Angle(0, -0.3, 0),
+    [5] = Angle(0, 0.5, 0),
+    [6] = Angle(0, -0.5, 0),
+    [7] = Angle(0, 1, 0),
+    [8] = Angle(0, -1, 0),
+}
+
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
-    data.ang = Angle(0, math.Rand(-3, 3), 0)
-   -- if self:GetState() == ArcCW.STATE_SIGHTS then
-   -- data.ang = Angle(0, math.Rand(1, 1), 1)
+    local d = Lerp(wep:GetSightDelta(), 0.75, 1) * math.Rand(0.9, 1.1)
+    data.ang = Angle(0, wep.ShotgunSpreadPattern[data.num].y * d, 0)
+
     return data
 end
+SWEP.NoRandSpread = true
 
 SWEP.Tracer = "hl2mmod_generic_tracer"
 SWEP.TracerNum = 8 -- tracer every X
@@ -90,9 +106,9 @@ SWEP.Firemodes = {
 SWEP.NPCWeaponType = "weapon_shotgun"
 SWEP.NPCWeight = 100
 
-SWEP.AccuracyMOA = 30 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 150
+SWEP.AccuracyMOA = 40 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 50
 
 SWEP.Primary.Ammo = "buckshot" -- what ammo type the gun uses
 
@@ -103,6 +119,19 @@ SWEP.ShootSound = { "weapons/mastiff/fire_1.wav", "weapons/mastiff/fire_2.wav", 
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
+
+local s = "weapons/wpn_lowammo_shotgun1.wav"
+local p = {
+    [2] = 80,
+    [1] = 90,
+    [0] = 100,
+}
+SWEP.Hook_AddShootSound = function(wep, data)
+    local pitch = p[wep:Clip1()]
+    if pitch then
+        wep:MyEmitSound(s, 70, pitch, 0.5, CHAN_AUTO)
+    end
+end
 
 SWEP.MuzzleEffect = "muzzleflash_shotgun"
 SWEP.ShellModel = "models/shells/shelleject_shotshell.mdl"
@@ -126,7 +155,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -162,7 +191,7 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.AttachmentElements = {
-	["sight"] = {
+    ["sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
@@ -182,23 +211,23 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 90),
             wang = Angle(90, 0, -90),
-        },			
+        },
         InstalledEles = {"sight"},
-		 CorrectivePos = Vector(1.81,0,-0.7),
+         CorrectivePos = Vector(1.81,0,-0.7),
          CorrectiveAng = Angle(0, 0, 3.494)
     },
-	{
+    {
         PrintName = "Shotgun Bolt",
         Slot = {"apex_shotgun_bolt"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -218,27 +247,27 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 0.9,
+        Mult = 0.9,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 0.9,
+        Mult = 0.9,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
         Source = {"fire", "fire"},
         ShellEjectAt = 0.1,
         SoundTable = {
-			{s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
+            {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
         },
     },
-	["fire_empty"] = {
+    ["fire_empty"] = {
         Source = {"fire_dry"},
         ShellEjectAt = 0.1,
         SoundTable = {
-			{s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
+            {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
         },
     },
     ["enter_sight"] = {
@@ -248,20 +277,20 @@ SWEP.Animations = {
         Source = "iron_fire",
         ShellEjectAt = 0.1,
         SoundTable = {
-			{s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
+            {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
         },
     },
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect",
     },
     ["exit_inspect"] = {
@@ -269,11 +298,11 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_Mid_V1_2ch_01.wav", t = 96 / 30},
-			{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_Mid_V1_2ch_02.wav", t = 240 / 30},
-			{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_End_V1_2ch_01.wav", t = 316 / 30}
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_End_V1_2ch_01.wav", t = 316 / 30}
     },
     },
     ["reload"] = {
@@ -306,10 +335,10 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0.5,
         LHIKOut = 0,
-		Time = 15 / 30,
+        Time = 15 / 30,
         SoundTable = {
             {s = "weapons/mastiff/wpn_mastiff_reload_start_fr6_2ch_v2_01.wav", t = 6 / 30},
-			{s = "ArcCW_APEX.Mastiff_Shell", t = 23 / 30},
+            {s = "ArcCW_APEX.Mastiff_Shell", t = 23 / 30},
         },
     },
     ["sgreload_start_empty"] = {
@@ -330,7 +359,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0,
-		Time = 15 / 30,
+        Time = 15 / 30,
         SoundTable = {
             {s = "ArcCW_APEX.Mastiff_Shell", t = 7 / 30},
         },
@@ -358,7 +387,7 @@ SWEP.Animations = {
     },
     ["idle_sprint"] = {
         Source = "sprint",
-		mult = 0.8,
+        mult = 0.8,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
