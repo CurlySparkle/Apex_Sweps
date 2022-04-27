@@ -24,7 +24,7 @@ SWEP.CrouchAng = Angle(0, 0, -53)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, 0, 1)
+SWEP.ActivePos = Vector(0, -1, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -97,11 +97,6 @@ SWEP.ShellTime = 1
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
-SWEP.SightTime = 0.225
-
-SWEP.SpeedMult = 0.95
-SWEP.SightedSpeedMult = 0.55
-
 SWEP.BarrelLength = 15
 
 SWEP.ProceduralRegularFire = false
@@ -166,7 +161,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic Type", -- print name
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "apex_scope_snipers"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights", "apex_scope_snipers", "apex_optic"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone

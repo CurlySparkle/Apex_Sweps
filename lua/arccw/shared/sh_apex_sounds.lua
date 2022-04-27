@@ -15,6 +15,63 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.R301.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/r301/rifle_fire_1.wav",
+		"^weapons/r301/rifle_fire_2.wav",
+		"^weapons/r301/rifle_fire_3.wav",
+		"^weapons/r301/rifle_fire_6.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.CAR.Fire.First",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/CAR/fire_1.wav",
+		"^weapons/CAR/fire_2.wav",
+		"^weapons/CAR/fire_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.CAR.Fire.Loop",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/CAR/fire_4.wav",
+		"^weapons/CAR/fire_5.wav",
+		"^weapons/CAR/fire_6.wav",
+    }
+} )
+
+
+sound.Add( {
+    name = "ArcCW_APEX.Flatline.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/Flatline/fire_1.wav",
+		"^weapons/Flatline/fire_2.wav",
+		"^weapons/Flatline/fire_3.wav",
+		"^weapons/Flatline/fire_4.wav",
+		"^weapons/Flatline/fire_5.wav",
+		"^weapons/Flatline/fire_6.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Alternator.Ads",
     channel = CHAN_ITEM + 6,
     volume = 1.0,

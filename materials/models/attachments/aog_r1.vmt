@@ -1,0 +1,28 @@
+"VertexlitGeneric"
+{
+	"$basetexture"				"models\attachments\aog_r1_d"
+	"$bumpmap"					"models\attachments\aog_r1_n"
+	"$phongexponenttexture"		"models\attachments\aog_r1_e"
+	"$color2"					"[0.8 0.8 0.8]"
+	"$blendTintByBaseAlpha"		"1"
+
+	"$selfillum"             "1"
+	"$selfillummask"  	  "models\attachments\aog_r1_s"
+
+//	"$emissiveBlendEnabled"     "1"	
+//   "$emissiveBlendTexture"     "models\attachments\aog_r1_s"
+
+	"$envmap"					"env_cubemap"
+	"$envmaptint"				"[ .13 .13 .13 ]"
+
+	"$phong"					"1"
+	"$phongboost"				"5"
+	"$phongfresnelranges"		"[0.25 0.5 1]"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"80"	
+	"$rimlightboost"			".2"
+	"$rimmask"					"1"
+	"$nocull"					"1"
+}
+

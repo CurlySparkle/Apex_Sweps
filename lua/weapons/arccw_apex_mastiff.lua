@@ -30,11 +30,11 @@ SWEP.WorldModelOffset = {
 }
 
 SWEP.WorldModel = "models/weapons/c_apex_mastiff.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"
 
-SWEP.Damage = 14
+SWEP.Damage = 16
 SWEP.DamageMin = 11 -- damage done at maximum range
 SWEP.RangeMin = 30
 SWEP.Range = 95 -- in METRES
@@ -115,10 +115,6 @@ SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 -- SWEP.ProceduralViewBobAttachment = 1
 SWEP.CamAttachment = 3
 
-SWEP.SpeedMult = 0.95
-SWEP.SightedSpeedMult = 0.75
-SWEP.SightTime = 0.27
-
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [0] = "bulletchamber",
     -- [1] = "bullet1"
@@ -149,7 +145,7 @@ SWEP.CrouchAng = Angle(-0.606, 0, -8.576)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, 0, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)

@@ -24,7 +24,7 @@ SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_p2020.mdl"
 SWEP.WorldModel = "models/weapons/w_pistol.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 27
 SWEP.DamageMin = 18 -- damage done at maximum range
@@ -92,10 +92,6 @@ SWEP.ShellScale = 1.55
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
-SWEP.SpeedMult = 0.9
-SWEP.SightedSpeedMult = 0.75
-SWEP.SightTime = 0.3
-
 SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
@@ -119,7 +115,7 @@ SWEP.CrouchAng = Angle(1.569, 0.88, -50.458)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, 0, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)

@@ -17,11 +17,11 @@ att.Model = "models/weapons/attachments/scope_1.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0.02, 8, -0.53),
+        Pos = Vector(0.02, 6.5, -0.53),
         Ang = Angle(0, 0, 0),
         Magnification = 1.25,
 		ScrollFunc = ArcCW.SCROLL_ZOOM,
-        IgnoreExtra = true,
+        IgnoreExtra = false,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
     },
@@ -30,12 +30,12 @@ att.AdditionalSights = {
 att.Holosight = true
 att.HolosightReticle = Material("sights/scope3.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 19
+att.HolosightSize = 23
 att.HolosightBone = "holosight"
 att.HolosightPiece = "models/weapons/attachments/scope_1_hsp.mdl"
 att.Colorable = false
 
-att.HolosightBlackbox = true
+att.HolosightBlackbox = false
 
 att.HolosightMagnification = 4
 att.HolosightMagnificationMin = 4

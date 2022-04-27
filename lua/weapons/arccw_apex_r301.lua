@@ -20,10 +20,16 @@ SWEP.Slot = 2
 
 SWEP.CrouchPos = Vector(-4.324, 0, 1.5)
 SWEP.CrouchAng = Angle(1.037, 0.623, -53.174)
+
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
-SWEP.ActivePos = Vector(0, 0, 1)
+
+SWEP.ActivePos = Vector(0, -1, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
+SWEP.BarrelOffsetHip = Vector(2, 0, -1)
+SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
 
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 250
@@ -58,8 +64,6 @@ SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1
 
-SWEP.Sway = 0
-
 SWEP.Delay = 60 / 810 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 
@@ -73,18 +77,16 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 15 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
+SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 SWEP.SightsDispersion = 0 -- dispersion that remains even in sights
 SWEP.JumpDispersion = 300 -- dispersion penalty when in the air
 
 SWEP.Primary.Ammo = "smg1" 
 
-SWEP.ShootVol = 85 -- volume of shoot sound
-SWEP.ShootPitch = 95 -- pitch of shoot soun
--- SWEP.ShootPitchVariation = 0.1
+SWEP.ShootVol = 120 -- volume of shoot sound
 
-SWEP.ShootSound = { "weapons/r301/rifle_fire_1.wav", "weapons/r301/rifle_fire_2.wav", "weapons/r301/rifle_fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.R301.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -100,14 +102,10 @@ SWEP.ShellTime = 1
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
-SWEP.SpeedMult = 0.9
-SWEP.SightedSpeedMult = 0.55
-
 SWEP.BarrelLength = 12
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
-SWEP.SprintTime = 0
 
 SWEP.CaseBones = {}
 
@@ -117,14 +115,14 @@ SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 
 SWEP.MeleeDamage = 90
-SWEP.MeleeRange = 25
+SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
 SWEP.MeleeTime = 0.5
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, -3, 0),
     Ang = Angle(0, 0, 0),
 	    Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
@@ -137,9 +135,6 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
-
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.AttachmentElements = {		
     ["r301_sight"] = {
@@ -165,7 +160,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic Type", -- print name
         DefaultAttName = "Iron Sights",
-        Slot = "r301", -- what kind of attachments can fit here, can be string or table
+        Slot = {"r301"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
@@ -181,10 +176,10 @@ SWEP.Attachments = {
         PrintName = "Muzzle Type",
         DefaultAttName = "Barrel Stabilizer",
         Slot = "apex_muzzle",
-        Bone = "muzzle_flash",
+        Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
-            vang = Angle(0, 0, -90),
+            vang = Angle(90, 0, -90)
         },
     },
 	{

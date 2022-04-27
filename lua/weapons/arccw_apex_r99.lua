@@ -24,7 +24,7 @@ SWEP.CrouchAng = Angle(0, 0, -53)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, 0, 1)
+SWEP.ActivePos = Vector(0, -1.5, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
@@ -100,11 +100,6 @@ SWEP.ShellTime = 1
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
-
-SWEP.SightTime = 0.225
-
-SWEP.SpeedMult = 0.9
-SWEP.SightedSpeedMult = 0.55
 
 SWEP.BarrelLength = 12
 

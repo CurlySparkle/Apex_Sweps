@@ -20,10 +20,17 @@ SWEP.Slot = 2
 
 SWEP.CrouchPos = Vector(-6, 0, 2)
 SWEP.CrouchAng = Angle(1.037, 0.623, -53.174)
+
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
-SWEP.ActivePos = Vector(0, 0, 1)
+
+SWEP.ActivePos = Vector(0, -1, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
+SWEP.ViewModelFOV = 65
+
+SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
+SWEP.BarrelOffsetHip = Vector(2, 0, -1)
+SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
 
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 250
@@ -41,7 +48,6 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.ViewModelFOV = 60
 
 SWEP.Damage = 20
 SWEP.DamageMin = 13 -- damage done at maximum range
@@ -80,8 +86,8 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 1.25 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
+SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 250
 SWEP.JumpDispersion = 300 -- dispersion penalty when in the air
 
@@ -90,7 +96,8 @@ SWEP.Primary.Ammo = "ar2"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot soun
 
-SWEP.ShootSound = { "weapons/car/fire_1.wav", "weapons/car/fire_2.wav", "weapons/car/fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.CAR.Fire.First"
+SWEP.ShootSoundLooping = "ArcCW_APEX.CAR.Fire.Loop"
 SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_B"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -104,9 +111,6 @@ SWEP.ShellTime = 1
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
-
-SWEP.SpeedMult = 0.9
-SWEP.SightedSpeedMult = 0.55
 
 SWEP.BarrelLength = 8
 
@@ -146,9 +150,6 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
-
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.AttachmentElements = {		
 	["sight"] = {

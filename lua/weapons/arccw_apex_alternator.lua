@@ -24,7 +24,7 @@ SWEP.CrouchAng = Angle(1.589, 0.793, -50.437)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, 0, 1)
+SWEP.ActivePos = Vector(0, -1.5, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
@@ -38,7 +38,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_alternator.mdl"
 SWEP.WorldModel = "models/weapons/w_smg1.mdl"
-SWEP.ViewModelFOV = 60
+SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 22
 SWEP.DamageMin = 16 -- damage done at maximum range
@@ -89,7 +89,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
+SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.2
@@ -98,11 +98,6 @@ SWEP.ShellTime = 1
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 SWEP.CamAttachment = 3
-
-SWEP.SightTime = 0.225
-
-SWEP.SpeedMult = 0.9
-SWEP.SightedSpeedMult = 0.55
 
 SWEP.BarrelLength = 12
 
@@ -137,9 +132,6 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
-
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.ExtraSightDist = 2.5
 

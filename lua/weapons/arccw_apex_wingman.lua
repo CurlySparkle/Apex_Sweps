@@ -25,7 +25,7 @@ SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
 SWEP.WorldModel = "models/weapons/w_357.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 45
 SWEP.DamageMin = 25 -- damage done at maximum range
@@ -85,20 +85,17 @@ SWEP.MeleeTime = 0.5
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
-SWEP.MuzzleEffect = "muzzleflash_pistol_deagle"
-SWEP.ShellModel = "models/shells/dummy.mdl"
-SWEP.ShellTime = 0
-SWEP.ShellPitch = 0
+SWEP.MuzzleEffect = "hl2mmod_muzzleflash_357"
+
+SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.TracerNum = 1 -- tracer every X
+SWEP.TracerWidth = 2
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = nil -- which attachment to put the case effect on
 
-SWEP.SpeedMult = 0.96
-SWEP.SightedSpeedMult = 0.75
-SWEP.SightTime = 0.350
-
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, -1, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1,
 	    Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -119,15 +116,12 @@ SWEP.CrouchAng = Angle(1.569, 0.88, -50.458)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(-0.2, -0.5, 1.3)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
-
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.BarrelLength = 5
 
@@ -135,7 +129,7 @@ SWEP.BulletBones = false
 
 SWEP.RevolverReload = true
 
-SWEP.ExtraSightDist = 10
+SWEP.ExtraSightDist = 15
 SWEP.GuaranteeLaser = true
 
 SWEP.WorldModelOffset = {

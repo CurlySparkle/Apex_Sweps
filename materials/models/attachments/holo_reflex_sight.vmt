@@ -7,8 +7,11 @@
 	"$blendTintByBaseAlpha"		"1"
 
 	"$selfillum"             "1"
-     "$selfillumtint"         "1 1 1"
+     "$selfillummaskscale" "2"
 	"$selfillummask"  	  "models\attachments\holo_reflex_sight_s"
+
+	"$emissiveBlendEnabled"     "1"	
+     "$emissiveBlendTexture"     "models\attachments\holo_reflex_sight_s"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"
