@@ -79,7 +79,7 @@ SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a d
 SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 
-SWEP.Primary.Ammo = "smg1" 
+SWEP.Primary.Ammo = "smg1"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -121,7 +121,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, -3, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.2,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -135,7 +135,7 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
 SWEP.ExtraSightDist = 2.5
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["weapon_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
@@ -161,9 +161,9 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
-        },			
+        },
         InstalledEles = {"weapon_sights"},
-		 CorrectivePos = Vector(1.665,0,-0.77),
+         CorrectivePos = Vector(1.665,0,-0.77),
          CorrectiveAng = Angle(0.045, -0.683, 3.746)
     },
     {
@@ -176,22 +176,22 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
     },
-	{
+    {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_light_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -200,25 +200,25 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "ArcCW_APEX.Alternator.first_pullout.CLOTH_f00.", t = 0 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.first_pullout.FOLEY_f00", t = 0 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.first_pullout.FOLEY_f26", t = 26 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.first_pullout.MECH_f08", t = 8 / 30}
-    },		
+            {p = 100, s = "ArcCW_APEX.Alternator.first_pullout.FOLEY_f00", t = 0 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.first_pullout.FOLEY_f26", t = 26 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.first_pullout.MECH_f08", t = 8 / 30}
+    },
     },
     ["draw"] = {
         Source = "draw",
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -235,14 +235,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect",
     },
     ["exit_inspect"] = {
@@ -258,14 +258,14 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40,
-		SoundTable = {
+        MinProgress = 60 / 40,
+        SoundTable = {
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_0", t = 0 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_28", t = 32 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_77", t = 64 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipIn", t = 49 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipOut", t = 12 / 30}
-    },	
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_28", t = 32 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_77", t = 64 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipIn", t = 49 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipOut", t = 12 / 30}
+    },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -274,15 +274,15 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-		MinProgress = 97/40,
-		SoundTable = {
+        MinProgress = 97 / 40,
+        SoundTable = {
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_0", t = 0 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_45", t = 45 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_28", t = 28 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_77", t = 77 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipOut", t = 12 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipIn", t = 49 / 30},
-			{p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.PullBolt", t = 70 / 30}
-    },	
-    },	
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_45", t = 45 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_28", t = 28 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_77", t = 77 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipOut", t = 12 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipIn", t = 49 / 30},
+            {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.PullBolt", t = 70 / 30}
+    },
+    },
 }
