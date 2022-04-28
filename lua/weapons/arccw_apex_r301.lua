@@ -9,12 +9,9 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "R-301 Carbine"
-SWEP.Trivia_Class = "Assault rifle"
-SWEP.Trivia_Desc = "The R-301 Carbine, also called R-301, is an assault rifle that utilizes Light Rounds.."
+SWEP.Trivia_Class = "Assault Rifle"
+SWEP.Trivia_Desc = "The current generation of a line of rifles widely used in the Frontier War. Highly accurate with decent stopping power."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "5.8x42mm"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 2
 
@@ -42,24 +39,32 @@ SWEP.ViewModel = "models/weapons/c_apex_r301.mdl"
 SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 25
-SWEP.DamageMin = 14 -- damage done at maximum range
-SWEP.Range = 85 -- in METRES
-SWEP.Penetration = 25
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity
--- IN M/S
+SWEP.Damage = 14
+SWEP.DamageMin = 14
+SWEP.Range = 10
+SWEP.Penetration = 10
+SWEP.PhysBulletMuzzleVelocity = 29000 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.75,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.75,
+    [HITGROUP_RIGHTLEG] = 0.75,
+}
+
 SWEP.Tracer = "hl2mmod_generic_tracer"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 18
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.3
+SWEP.RecoilSide = 0.1
 SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1
@@ -76,13 +81,12 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 15 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 150
-SWEP.SightsDispersion = 0 -- dispersion that remains even in sights
-SWEP.JumpDispersion = 300 -- dispersion penalty when in the air
+SWEP.AccuracyMOA = 1
+SWEP.HipDispersion = 400
+SWEP.MoveDispersion = 100
+SWEP.JumpDispersion = 300
 
-SWEP.Primary.Ammo = "smg1" 
+SWEP.Primary.Ammo = "smg1"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 
@@ -125,7 +129,7 @@ SWEP.MeleeAttackTime = 0.2
 SWEP.IronSightStruct = {
     Pos = Vector(0, -3, 0),
     Ang = Angle(0, 0, 0),
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -137,17 +141,17 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["r301_sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["r301_sight2"] = {
+    ["r301_sight2"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.WorldModelOffset = {
@@ -168,9 +172,9 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
-        },			
+        },
         InstalledEles = {"r301_sight", "r301_sight2"},
-		 CorrectivePos = Vector(1.57,0,-0.5),
+         CorrectivePos = Vector(1.57,0,-0.5),
          CorrectiveAng = Angle(-0.846, 0, 5.955)
     },
     {
@@ -183,22 +187,22 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90)
         },
     },
-	{
+    {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_light_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -207,19 +211,19 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},
-	["ready"] = {Source = "draw_first", Mult = 0.8},
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
+    ["ready"] = {Source = "draw_first", Mult = 0.8},
     ["draw"] = {
         Source = "draw",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -236,14 +240,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect_in",
     },
     ["exit_inspect"] = {
@@ -255,24 +259,24 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {p = 150, s = "weapons/r301/wpn_r101_reload_magpull_fr0_2ch_v1_02.wav", t = 0 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_reload_maggrab_fr18_2ch_v1_02.wav", t = 18 / 30},
-			{p = 100, s = "weapons/r301/wpn_r101_reload_maginsert_fr35_2ch_v1_02.wav", t = 31 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_reload_maginsert_fr35_2ch_v1_02.wav", t = 31 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_reload_handrest_fr44_2ch_v1_02.wav", t = 44 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_magpull_fr9_2ch_v1_02.wav", t = 9 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maggrab_fr21_2ch_v1_02.wav", t = 21 / 30},
-			{p = 100, s = "weapons/r301/wpn_r101_emptyreload_maginsert_fr38_2ch_v1_02.wav", t = 38 / 30},
-			{p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltback_fr51_2ch_v1_02.wav", t = 51 / 30},
-			{p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltforward_fr55_2ch_v1_02.wav", t = 55 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maginsert_fr38_2ch_v1_02.wav", t = 38 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltback_fr51_2ch_v1_02.wav", t = 51 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltforward_fr55_2ch_v1_02.wav", t = 55 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_handrest_fr64_2ch_v1_02.wav", t = 64 / 30}
-    },	
+    },
 },
 }
 

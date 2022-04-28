@@ -9,12 +9,9 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "P2020"
-SWEP.Trivia_Class = "semi-automatic pistol"
-SWEP.Trivia_Desc = "The Hammond P2020, is a semi-automatic single-action small caliber pistol manufactured by Lastimosa Armory. This handgun features an integrated standoff device and a fully milled slide. It also has a fully integrated Taclight and LAM."
+SWEP.Trivia_Class = "Pistol"
+SWEP.Trivia_Desc = "A small calibre pistol known for its reliability."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "Light Rounds"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 1
 
@@ -26,15 +23,25 @@ SWEP.ViewModel = "models/weapons/c_apex_p2020.mdl"
 SWEP.WorldModel = "models/weapons/w_pistol.mdl"
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 27
-SWEP.DamageMin = 18 -- damage done at maximum range
-SWEP.Range = 80 -- in METRES
-SWEP.Penetration = 30
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
--- IN M/S
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 13 -- DefaultClip is automatically set.
+
+SWEP.Damage = 18
+SWEP.DamageMin = 18
+SWEP.Range = 10
+SWEP.Penetration = 10
+SWEP.PhysBulletMuzzleVelocity = 18500 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 2,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.75,
+    [HITGROUP_RIGHTLEG] = 0.75,
+}
+
+SWEP.ChamberSize = 1
+SWEP.Primary.ClipSize = 14
 
 SWEP.PhysBulletMuzzleVelocity = 500
 
@@ -96,7 +103,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -127,13 +134,13 @@ SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.BarrelLength = 24
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["sight_mounth"] = {
+    ["sight_mounth"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
@@ -161,23 +168,23 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
-        },			
+        },
         InstalledEles = {"sight", "sight_mounth"},
-		CorrectivePos = Vector(1.22,0,-0.8),
+        CorrectivePos = Vector(1.22,0,-0.8),
         CorrectiveAng = Angle(-1.045, -0.682, 1.999)
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_light_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -194,42 +201,42 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_empty"] = {
+    ["idle_empty"] = {
         Source = "idle_empty"
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/p2020/smartpistol_reload_slideback_st_01.wav", t = 15 / 30},
             {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 22 / 30}
-    },	
+    },
     },
     ["draw"] = {
         Source = "draw",
     },
-	["draw_empty"] = {
+    ["draw_empty"] = {
         Source = "draw_empty",
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
     },
-	["holster_empty"] = {
+    ["holster_empty"] = {
         Source = "holster_empty",
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
-	["idle_iron_empty"] = {
+    ["idle_iron_empty"] = {
         Source = "iron_idle_empty",
     },
     ["fire"] = {
         Source = {"fire", "fire2"},
         ShellEjectAt = 0,
     },
-	["fire_empty"] = {
+    ["fire_empty"] = {
         Source = "fire_empty",
         ShellEjectAt = 0,
     },
@@ -253,14 +260,14 @@ SWEP.Animations = {
     ["exit_sight_empty"] = {
         Source = "iron_out_empty",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect_in",
     },
     ["exit_inspect"] = {
@@ -268,28 +275,28 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_01.wav", t = 96 / 30},
-			{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_02.wav", t = 240 / 30},
-			{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 316 / 30}
-    },	
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 316 / 30}
+    },
     },
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_01.wav", t = 9 / 30},
             {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_01.wav", t = 24 / 30}
-    },	
+    },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,		
-		SoundTable = {
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        SoundTable = {
             {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_02.wav", t = 9 / 30},
             {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_02.wav", t = 24 / 30},
-			{p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 36 / 30}
-    },	
-    },	
+            {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 36 / 30}
+    },
+    },
 }

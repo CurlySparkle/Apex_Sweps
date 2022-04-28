@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Longbow DMR"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "A veritably powerful sniper rifle with the ability to perform follow up shots relatively quickly."
+SWEP.Trivia_Desc = "A veritably powerful sniper rifle with the ability to perform follow up shots relatively quickly. Its design is based off the R-201 Carbine, modified with a higher power caliber, sniper stock and longer barrel."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 3
@@ -78,9 +78,10 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 2 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 725 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 175
+SWEP.AccuracyMOA = 0.2
+SWEP.HipDispersion = 700
+SWEP.MoveDispersion = 100
+SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "SniperPenetratedRound"
 
