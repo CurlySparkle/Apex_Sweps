@@ -162,8 +162,8 @@ SWEP.HoldtypeSights = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
-SWEP.CrouchPos = Vector(-2.5, 0, 0.5)
-SWEP.CrouchAng = Angle(-0.606, 0, -8.576)
+SWEP.CrouchPos = Vector(-6, 0, 1)
+SWEP.CrouchAng = Angle(1.923, -1.375, -45.334)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -291,7 +291,9 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.4,
         SoundTable = {
-            {s = "weapons/eva/Wpn_Shotgun_Reload_InsertDrum_2ch_v2_01A.wav", t = 12 / 30},
+            {s = "weapons/eva/Wpn_Shotgun_Reload_PullDrum_2ch_v2_01A.wav", t = 8 / 30},
+            {s = "weapons/eva/Wpn_Shotgun_Reload_PullDrum_2ch_v2_01B.wav", t = 12 / 30},
+            {s = "weapons/eva/Wpn_Shotgun_Reload_InsertDrum_2ch_v2_01A.wav", t = 55 / 30},
             {s = "weapons/eva/Wpn_Shotgun_Reload_InsertDrum_2ch_v2_01B.wav", t = 60 / 30},
         },
     },
@@ -303,7 +305,9 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.4,
         SoundTable = {
-            {s = "weapons/eva/Wpn_Shotgun_Reload_InsertDrum_2ch_v2_01A.wav", t = 12 / 30},
+            {s = "weapons/eva/Wpn_Shotgun_Reload_PullDrum_2ch_v2_01A.wav", t = 8 / 30},
+            {s = "weapons/eva/Wpn_Shotgun_Reload_PullDrum_2ch_v2_01B.wav", t = 12 / 30},
+            {s = "weapons/eva/Wpn_Shotgun_Reload_InsertDrum_2ch_v2_01A.wav", t = 55 / 30},
             {s = "weapons/eva/Wpn_Shotgun_Reload_InsertDrum_2ch_v2_01B.wav", t = 60 / 30},
             {s = "weapons/eva/wpn_shotgun_reload_pumpin_2ch_v1_01.wav", t = 80 / 30},
             {s = "weapons/eva/wpn_shotgun_reload_pumpout_2ch_v1_01.wav", t = 90 / 30},
