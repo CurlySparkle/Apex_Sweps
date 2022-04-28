@@ -1,6 +1,6 @@
 att.PrintName = "4x-10x Digital Sniper Threat"
 att.Icon = Material("entities/attach_icons/apex_4-10x_dig.png", "mips smooth")
-att.Description = "Scope for extremely large range (Can also spot enemies)"
+att.Description = "Variable zoom long range scope with thermal highlighting."
 
 att.SortOrder = 2.5
 
@@ -17,13 +17,16 @@ att.Model = "models/weapons/attachments/scope_3.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0.02, 10, -0.53),
+        Pos = Vector(0.02, 7, -0.53),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.25,
-		ScrollFunc = ArcCW.SCROLL_ZOOM,
+        Magnification = 1.5,
+        ScrollFunc = ArcCW.SCROLL_ZOOM,
         IgnoreExtra = true,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
+        Thermal = true,
+        ThermalHighlightColor = Color(255, 50, 50),
+        ThermalFullColor = true,
     },
 }
 

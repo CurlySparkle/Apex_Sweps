@@ -1,6 +1,6 @@
 att.PrintName = "6x Sniper Scope"
 att.Icon = Material("entities/attach_icons/apex_6x.png", "mips smooth")
-att.Description = "Scope for medium-large range areas (Only compatible with snipers)"
+att.Description = "Fixed magnification long range scope."
 
 att.SortOrder = 2.5
 
@@ -17,29 +17,23 @@ att.Model = "models/weapons/attachments/scope_1.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0.02, 6.5, -0.53),
+        Pos = Vector(0.02, 6, -0.53),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.25,
-		ScrollFunc = ArcCW.SCROLL_ZOOM,
-        IgnoreExtra = false,
-        ZoomLevels = 1,
-        ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
+        Magnification = 1.5,
     },
 }
 
 att.Holosight = true
 att.HolosightReticle = Material("sights/scope3.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 23
+att.HolosightSize = 16
 att.HolosightBone = "holosight"
 att.HolosightPiece = "models/weapons/attachments/scope_1_hsp.mdl"
 att.Colorable = false
 
-att.HolosightBlackbox = false
+att.HolosightBlackbox = true
 
-att.HolosightMagnification = 4
-att.HolosightMagnificationMin = 4
-att.HolosightMagnificationMax = 6
+att.HolosightMagnification = 6
 
 att.Mult_SightTime = 1.1
 att.Mult_SpeedMult = 0.9
