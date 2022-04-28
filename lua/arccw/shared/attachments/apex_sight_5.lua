@@ -19,9 +19,6 @@ att.AdditionalSights = {
         Pos = Vector(0, 7, -0.1),
         Ang = Angle(0, 0, 0),
         Magnification = 3,
-        ScrollFunc = ArcCW.SCROLL_NONE,
-		Thermal = true,
-        ThermalHighlightColor = Color(255, 255, 0),		
     }
 }
 

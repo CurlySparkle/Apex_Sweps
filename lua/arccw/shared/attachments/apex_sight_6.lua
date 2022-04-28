@@ -6,7 +6,7 @@ att.SortOrder = 0.75
 
 att.Desc_Pros = {
     "autostat.holosight",
-	"autostat.zoom",
+    "autostat.zoom",
 }
 att.Desc_Cons = {
 }
@@ -20,8 +20,8 @@ att.AdditionalSights = {
         Pos = Vector(0, 8, -0.4),
         Ang = Angle(0, 0, 0),
         Magnification = 3,
-		ScrollFunc = ArcCW.SCROLL_ZOOM,
-		IgnoreExtra = false,
+        ScrollFunc = ArcCW.SCROLL_ZOOM,
+        IgnoreExtra = false,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
     }
