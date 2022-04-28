@@ -6,11 +6,11 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/fire_1.wav",
-		"^weapons/alternator/fire_2.wav",
-		"^weapons/alternator/fire_3.wav",
-		"^weapons/alternator/fire_4.wav",
-		"^weapons/alternator/fire_5.wav",
-		"^weapons/alternator/fire_6.wav",
+        "^weapons/alternator/fire_2.wav",
+        "^weapons/alternator/fire_3.wav",
+        "^weapons/alternator/fire_4.wav",
+        "^weapons/alternator/fire_5.wav",
+        "^weapons/alternator/fire_6.wav",
     }
 } )
 
@@ -22,9 +22,9 @@ sound.Add( {
     pitch = {95, 110},
     sound = {
         "^weapons/r301/rifle_fire_1.wav",
-		"^weapons/r301/rifle_fire_2.wav",
-		"^weapons/r301/rifle_fire_3.wav",
-		"^weapons/r301/rifle_fire_6.wav",
+        "^weapons/r301/rifle_fire_2.wav",
+        "^weapons/r301/rifle_fire_3.wav",
+        "^weapons/r301/rifle_fire_6.wav",
     }
 } )
 
@@ -36,8 +36,8 @@ sound.Add( {
     pitch = {95, 110},
     sound = {
         "^weapons/CAR/fire_1.wav",
-		"^weapons/CAR/fire_2.wav",
-		"^weapons/CAR/fire_3.wav",
+        "^weapons/CAR/fire_2.wav",
+        "^weapons/CAR/fire_3.wav",
     }
 } )
 
@@ -49,8 +49,8 @@ sound.Add( {
     pitch = {95, 110},
     sound = {
         "^weapons/CAR/fire_4.wav",
-		"^weapons/CAR/fire_5.wav",
-		"^weapons/CAR/fire_6.wav",
+        "^weapons/CAR/fire_5.wav",
+        "^weapons/CAR/fire_6.wav",
     }
 } )
 
@@ -63,11 +63,11 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/Flatline/fire_1.wav",
-		"^weapons/Flatline/fire_2.wav",
-		"^weapons/Flatline/fire_3.wav",
-		"^weapons/Flatline/fire_4.wav",
-		"^weapons/Flatline/fire_5.wav",
-		"^weapons/Flatline/fire_6.wav",
+        "^weapons/Flatline/fire_2.wav",
+        "^weapons/Flatline/fire_3.wav",
+        "^weapons/Flatline/fire_4.wav",
+        "^weapons/Flatline/fire_5.wav",
+        "^weapons/Flatline/fire_6.wav",
     }
 } )
 
@@ -79,13 +79,13 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_01.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_02.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_03.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_04.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_05.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_06.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_07.wav",
-		"^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_08.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_02.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_03.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_04.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_05.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_06.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_07.wav",
+        "^weapons/alternator/Mech_Alternator_ADS_In_v1_2ch_08.wav",
     }
 } )
 
@@ -97,8 +97,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_1.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_2.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_3.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_2.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_3.wav",
     }
 } )
 
@@ -110,8 +110,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_1.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_2.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_3.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_2.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f00_3.wav",
     }
 } )
 
@@ -123,8 +123,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_1.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_2.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_3.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_2.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_FOLEY_f26_3.wav",
     }
 } )
 
@@ -136,8 +136,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_1.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_2.wav",
-		"^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_3.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_2.wav",
+        "^weapons/alternator/wep_alternator_first_pullout_MECH_f08_PullBolt_3.wav",
     }
 } )
 
@@ -149,8 +149,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f00_3.wav",
     }
 } )
 
@@ -162,8 +162,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_CLOTH_f45_3.wav",
     }
 } )
 
@@ -175,8 +175,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f28_3.wav",
     }
 } )
 
@@ -188,8 +188,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_FOLEY_f77_3.wav",
     }
 } )
 
@@ -201,8 +201,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f12_ClipOut_3.wav",
     }
 } )
 
@@ -214,8 +214,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f49_ClipIn_3.wav",
     }
 } )
 
@@ -227,8 +227,8 @@ sound.Add( {
 --    pitch = {90, 110},
     sound = {
         "^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_1.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_2.wav",
-		"^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_3.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_2.wav",
+        "^weapons/alternator/wep_alternator_empty_reload_MECH_f70_PullBolt_3.wav",
     }
 } )
 
@@ -257,8 +257,8 @@ sound.Add( {
         "^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_04.wav",
         "^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_05.wav",
         "^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_06.wav",
-		"^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_07.wav",
-		"^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_08.wav",
+        "^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_07.wav",
+        "^weapons/mastiff/wpn_mastiff_reload_loadshell_fr9_2ch_v3_08.wav",
     }
 } )
 
@@ -369,8 +369,8 @@ sound.Add( {
     sound = {
         "^weapons/fx/wpn_lowammo_rifle4_triggera_2ch_v1_01.wav",
         "^weapons/fx/wpn_lowammo_rifle4_triggera_2ch_v1_02.wav",
-		"^weapons/fx/wpn_lowammo_rifle4_triggera_2ch_v1_03.wav",
-		"^weapons/fx/wpn_lowammo_rifle4_triggera_2ch_v1_04.wav",
+        "^weapons/fx/wpn_lowammo_rifle4_triggera_2ch_v1_03.wav",
+        "^weapons/fx/wpn_lowammo_rifle4_triggera_2ch_v1_04.wav",
     }
 } )
 
@@ -383,7 +383,7 @@ sound.Add( {
     sound = {
         "^weapons/fx/wpn_lowammo_rifle5_triggera_2ch_v1_01.wav",
         "^weapons/fx/wpn_lowammo_rifle5_triggera_2ch_v1_02.wav",
-		"^weapons/fx/wpn_lowammo_rifle5_triggera_2ch_v1_03.wav",
+        "^weapons/fx/wpn_lowammo_rifle5_triggera_2ch_v1_03.wav",
     }
 } )
 
@@ -408,8 +408,8 @@ sound.Add( {
     sound = {
         "^weapons/fx/wpn_lowammo_rifle6_triggerb_2ch_v1_01.wav",
         "^weapons/fx/wpn_lowammo_rifle6_triggerb_2ch_v1_02.wav",
-		"^weapons/fx/wpn_lowammo_rifle6_triggerb_2ch_v1_03.wav",
-		"^weapons/fx/wpn_lowammo_rifle6_triggerb_2ch_v1_04.wav",
+        "^weapons/fx/wpn_lowammo_rifle6_triggerb_2ch_v1_03.wav",
+        "^weapons/fx/wpn_lowammo_rifle6_triggerb_2ch_v1_04.wav",
     }
 } )
 
@@ -422,12 +422,12 @@ sound.Add( {
     sound = {
         "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_01.wav",
         "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_02.wav",
-		"^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_03.wav",
-		"^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_04.wav",
-		"^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_05.wav",
-		"^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_06.wav",
-		"^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_07.wav",
-		"^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_08.wav",
+        "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_03.wav",
+        "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_04.wav",
+        "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_05.wav",
+        "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_06.wav",
+        "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_07.wav",
+        "^weapons/fx/wpn_lowammo_shotgun1_triggerc_2ch_v1_08.wav",
     }
 } )
 
@@ -440,7 +440,7 @@ sound.Add( {
     sound = {
         "^weapons/fx/wpn_lowammo_smg4_triggerb_2ch_v1_01.wav",
         "^weapons/fx/wpn_lowammo_smg4_triggerb_2ch_v1_02.wav",
-		"^weapons/fx/wpn_lowammo_smg4_triggerb_2ch_v1_03.wav",
+        "^weapons/fx/wpn_lowammo_smg4_triggerb_2ch_v1_03.wav",
     }
 } )
 
@@ -453,8 +453,8 @@ sound.Add( {
     sound = {
         "^weapons/fx/wpn_lowammo_smg5_triggerc_2ch_v1_01.wav",
         "^weapons/fx/wpn_lowammo_smg5_triggerc_2ch_v1_02.wav",
-		"^weapons/fx/wpn_lowammo_smg5_triggerc_2ch_v1_03.wav",
-		"^weapons/fx/wpn_lowammo_smg5_triggerc_2ch_v1_04.wav",
+        "^weapons/fx/wpn_lowammo_smg5_triggerc_2ch_v1_03.wav",
+        "^weapons/fx/wpn_lowammo_smg5_triggerc_2ch_v1_04.wav",
     }
 } )
 

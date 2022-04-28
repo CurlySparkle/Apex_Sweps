@@ -108,7 +108,7 @@ SWEP.Primary.Ammo = "buckshot" -- what ammo type the gun uses
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "weapons/eva/fire_1.wav", "weapons/eva/fire_2.wav", "weapons/eva/fire_3.wav" }
+SWEP.ShootSound = { "^weapons/eva/fire_1.wav", "^weapons/eva/fire_2.wav", "^weapons/eva/fire_3.wav" }
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
