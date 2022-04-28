@@ -10,11 +10,8 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "VK-47 Flatline"
 SWEP.Trivia_Class = "Assault rifle"
-SWEP.Trivia_Desc = "The VK-47 Flatline, also called Flatline, is an assault rifle that utilizes Heavy Rounds. "
+SWEP.Trivia_Desc = "Automatic rifle that packs a punch."
 SWEP.Trivia_Manufacturer = "Wonyeon"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "Heavy Rounds"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 3
 
@@ -36,26 +33,34 @@ SWEP.ViewModel = "models/weapons/c_apex_flatline.mdl"
 SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 32
-SWEP.DamageMin = 18 -- damage done at maximum range
-SWEP.Range = 170 -- in METRES
-SWEP.Penetration = 35
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity
--- IN M/S
+SWEP.Damage = 18
+SWEP.DamageMin = 18
+SWEP.Range = 10
+SWEP.Penetration = 10
+SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.75,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.75,
+    [HITGROUP_RIGHTLEG] = 0.75,
+}
+
 SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 21 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 20
 SWEP.MaxRecoilBlowback = 1
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.45
+SWEP.RecoilSide = 0.25
 SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1
@@ -112,10 +117,10 @@ SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
 SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 
-SWEP.MeleeDamage = 90
+SWEP.MeleeDamage = 50
 SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 0.5
+SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
@@ -123,7 +128,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -140,7 +145,7 @@ SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.ExtraSightDist = 2.5
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["weapon_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
@@ -167,9 +172,9 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-		InstalledEles = {"weapon_sights"},
-		CorrectivePos = Vector(1.72,0,-0.35),
-        CorrectiveAng = Angle(-1.967, 0.033, 3.6)
+        InstalledEles = {"weapon_sights"},
+        CorrectivePos = Vector(1.72, -1.2, -0.35),
+        CorrectiveAng = Angle(0, 0, 3.9)
     },
     {
         PrintName = "Muzzle Type",
@@ -181,22 +186,22 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
     },
-	{
+    {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_heavy_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -205,7 +210,7 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
     ["enter_sprint"] = {
         Source = "sprint_in",
     },
@@ -214,19 +219,19 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/flatline/wpn_vinson_first_pullout_fr08_2ch_v1_01.wav", t = 8 / 35}
         },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 1,
+        Mult = 1,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 1,
+        Mult = 1,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -243,14 +248,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect_in",
     },
     ["exit_inspect"] = {
@@ -262,7 +267,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.wav", t = 11 / 30},
             {p = 100, s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.wav", t = 43 / 30}
         },
@@ -270,10 +275,10 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.wav", t = 11 / 30},
             {s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.wav", t = 43 / 30},
-			{s = "weapons/flatline/wpn_vinson_reload_empty_charge_fr60_2ch_v1_01.wav", t = 60 / 30}
+            {s = "weapons/flatline/wpn_vinson_reload_empty_charge_fr60_2ch_v1_01.wav", t = 60 / 30}
     },
 },
 }
