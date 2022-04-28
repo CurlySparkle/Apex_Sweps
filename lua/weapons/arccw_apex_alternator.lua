@@ -57,11 +57,11 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.Tracer = "arccw_tracer" -- override tracer (hitscan) effect
 SWEP.TracerWidth = 5
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
+SWEP.ChamberSize = 1
+SWEP.Primary.ClipSize = 18
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.425
+SWEP.Recoil = 0.35
 SWEP.RecoilSide = 0.15
 SWEP.RecoilRise = 0.15
 SWEP.RecoilPunch = 2.5
@@ -115,10 +115,10 @@ SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 
-SWEP.MeleeDamage = 90
+SWEP.MeleeDamage = 50
 SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 0.5
+SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 

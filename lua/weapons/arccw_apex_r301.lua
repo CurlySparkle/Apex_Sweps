@@ -115,10 +115,10 @@ SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
 SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 
-SWEP.MeleeDamage = 90
+SWEP.MeleeDamage = 50
 SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 0.5
+SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 

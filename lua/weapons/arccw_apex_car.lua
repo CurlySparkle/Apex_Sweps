@@ -68,11 +68,11 @@ SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 15
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 18 -- DefaultClip is automatically set.
-SWEP.ExtendedClipSize = 28
+SWEP.Primary.ClipSize = 20
+SWEP.ExtendedClipSize = 30
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.65
+SWEP.Recoil = 0.4
 SWEP.RecoilSide = 0.25
 SWEP.RecoilRise = 0.8
 SWEP.VisualRecoilMult = 0.65
@@ -134,9 +134,10 @@ SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.LungeLength = 64 -- Maximum distance for lunging
 
 SWEP.MeleeDamage = 90
+SWEP.MeleeDamage = 50
 SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 0.5
+SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
