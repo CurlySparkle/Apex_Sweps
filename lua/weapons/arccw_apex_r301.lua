@@ -86,6 +86,7 @@ SWEP.Primary.Ammo = "smg1"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 
+SWEP.FirstShootSound = "ArcCW_APEX.R301.Fire_Start"
 SWEP.ShootSound = "ArcCW_APEX.R301.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""

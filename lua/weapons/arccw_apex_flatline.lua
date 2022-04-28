@@ -49,7 +49,7 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 21 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
@@ -84,6 +84,7 @@ SWEP.Primary.Ammo = "ar2"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
+SWEP.FirstShootSound = "ArcCW_APEX.Flatline.Fire_Start"
 SWEP.ShootSound = "ArcCW_APEX.Flatline.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
@@ -92,7 +93,7 @@ SWEP.DistantShootSound = ""
 SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellScale = 1
-SWEP.ShellTime = 1
+SWEP.ShellTime = 0.5
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on

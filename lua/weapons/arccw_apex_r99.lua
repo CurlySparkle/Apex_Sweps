@@ -48,12 +48,6 @@ SWEP.Penetration = 25
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
--- IN M/S
-
-SWEP.TracerNum = 1 -- tracer every X
-SWEP.Tracer = "arccw_tracer" -- override tracer (hitscan) effect
-SWEP.TracerCol = Color(255, 85, 25)
-SWEP.TracerWidth = 5
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
@@ -86,12 +80,19 @@ SWEP.Primary.Ammo = "smg1"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound
 
-SWEP.ShootSound = { "weapons/r99/fire_1.wav", "weapons/r99/fire_2.wav", "weapons/r99/fire_3.wav", "weapons/r99/fire_4.wav" }
+
+SWEP.FirstShootSound = "ArcCW_APEX.R99.Fire_Start"
+SWEP.ShootSound = "ArcCW_APEX.R99.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzleflash_1"
+SWEP.TracerNum = 1 -- tracer every X
+SWEP.Tracer = "hl2mmod_generic_tracer" -- override tracer (hitscan) effect
+SWEP.TracerCol = Color(255, 85, 25)
+SWEP.TracerWidth = 2
+
+SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
 SWEP.MuzzleFlashColor = Color(244, 209, 66)
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
@@ -216,6 +217,11 @@ SWEP.Animations = {
 	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
     ["ready"] = {
         Source = "draw_first",
+		SoundTable = {
+            {p = 100, s = "weapons/r99/slideforward_1.wav", t = 13 / 30},
+            {p = 100, s = "weapons/r99/slideback_1.wav", t = 17 / 30},
+			{p = 100, s = "weapons/r99/handgrab_1.wav", t = 19 / 30}
+        },	
     },
     ["draw"] = {
         Source = "draw",
@@ -265,7 +271,12 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40			
+		MinProgress = 60/40,
+		SoundTable = {
+            {p = 100, s = "weapons/r99/clip_out_1.wav", t = 7 / 30},
+            {p = 100, s = "weapons/r99/clip_in_1.wav", t = 49 / 30},
+			{p = 100, s = "weapons/r99/handgrab_1.wav", t = 58 / 30}
+        },		
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -274,41 +285,13 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-		MinProgress = 97/40			
+		MinProgress = 97/40,
+		SoundTable = {
+            {p = 100, s = "weapons/r99/clip_out_1.wav", t = 7 / 30},
+            {p = 100, s = "weapons/r99/clip_in_1.wav", t = 49 / 30},
+			{p = 100, s = "weapons/r99/slideforward_1.wav", t = 67 / 30},
+			{p = 100, s = "weapons/r99/slideback_1.wav", t = 69 / 30},
+			{p = 100, s = "weapons/r99/handgrab_1.wav", t = 74 / 30},
+        },	
     },	
 }
-
-sound.Add({
-    name = "r99.Clipout",
-    channel = 32,
-    volume = 1.0,
-    sound = "weapons/r99/clip_out_1.wav"
-})
-
-sound.Add({
-    name = "r99.Clipin",
-    channel = 32,
-    volume = 1.0,
-    sound = "weapons/r99/clip_in_1.wav"
-})
-
-sound.Add({
-    name = "r99.HandGrab",
-    channel = 32,
-    volume = 1.0,
-    sound = "weapons/r99/handgrab_1.wav"
-})
-
-sound.Add({
-    name = "R99.Slideforward",
-    channel = 32,
-    volume = 1.0,
-    sound = "weapons/r99/slideforward_1.wav"
-})
-
-sound.Add({
-    name = "R99.Slideback",
-    channel = 32,
-    volume = 1.0,
-    sound = "weapons/r99/slideback_1.wav"
-})
