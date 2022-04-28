@@ -1,4 +1,72 @@
 sound.Add( {
+    name = "ArcCW_APEX.Devotion.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+		"^weapons/Devotion/fire_1.wav",
+		"^weapons/Devotion/fire_2.wav",
+		"^weapons/Devotion/fire_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Devotion.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+		"^weapons/Devotion/fire_loop_1.wav",
+		"^weapons/Devotion/fire_loop_2.wav",
+		"^weapons/Devotion/fire_loop_3.wav",
+		"^weapons/Devotion/fire_loop_4.wav",
+		"^weapons/Devotion/fire_loop_5.wav",
+		"^weapons/Devotion/fire_loop_6.wav",
+		"^weapons/Devotion/fire_loop_7.wav",
+		"^weapons/Devotion/fire_loop_8.wav",
+		"^weapons/Devotion/fire_loop_9.wav",
+		"^weapons/Devotion/fire_loop_10.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Devotion.WindUp",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+		"^weapons/Devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_01.wav",
+		"^weapons/Devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_02.wav",
+		"^weapons/Devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Devotion.TurboWindUp",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+		"^weapons/Devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Devotion.WindDown",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+		"^weapons/Devotion/Wpn_Devotion_1P_FullAuto_WindDown_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.CAR.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -187,9 +255,16 @@ sound.Add( {
     level = 100,
     pitch = {95, 105},
     sound = {
-		"^weapons/Flatline/fire_4.wav",
-		"^weapons/Flatline/fire_5.wav",
-		"^weapons/Flatline/fire_6.wav",
+		"^weapons/Flatline/fire_loop_1.wav",
+		"^weapons/Flatline/fire_loop_2.wav",
+		"^weapons/Flatline/fire_loop_3.wav",
+		"^weapons/Flatline/fire_loop_4.wav",
+		"^weapons/Flatline/fire_loop_5.wav",
+		"^weapons/Flatline/fire_loop_6.wav",
+		"^weapons/Flatline/fire_loop_7.wav",
+		"^weapons/Flatline/fire_loop_8.wav",
+		"^weapons/Flatline/fire_loop_9.wav",
+		"^weapons/Flatline/fire_loop_10.wav",
     }
 } )
 
