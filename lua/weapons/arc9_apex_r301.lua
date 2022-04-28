@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.Base = "arc9_base"
 
 SWEP.Spawnable = true
-SWEP.Category = "ARC-9 - Apex Legends"
+SWEP.Category = "ARC-9 - Apex Legends (Not working)"
 
 SWEP.PrintName = "R-301 Carbine"
 SWEP.Class = "Assault rifle"

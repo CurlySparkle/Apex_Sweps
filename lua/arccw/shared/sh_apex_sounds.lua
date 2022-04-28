@@ -24,6 +24,8 @@ sound.Add( {
 		"^weapons/car/fire_loop_4.wav",
 		"^weapons/car/fire_loop_5.wav",
 		"^weapons/car/fire_loop_6.wav",
+		"^weapons/car/fire_loop_7.wav",
+		"^weapons/car/fire_loop_8.wav",
     }
 } )
 
