@@ -163,8 +163,8 @@ SWEP.HoldtypeSights = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
-SWEP.CrouchPos = Vector(-6, 0, 1)
-SWEP.CrouchAng = Angle(1.923, -1.375, -45.334)
+SWEP.CrouchPos = Vector(-3, -4, 0)
+SWEP.CrouchAng = Angle(1.081, -0.071, -21.688)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -201,13 +201,13 @@ SWEP.Attachments = {
         PrintName = "Optic Type", -- print name
         DefaultAttName = "Iron Sights",
         Slot = "apex_sights", -- what kind of attachments can fit here, can be string or table
-        Bone = "def_c_base", -- relevant bone any attachments will be mostly referring to
+        Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
-            vpos = Vector(0, -4.5, 4), -- offset that the attachment will be relative to the bone
+            vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"sight"},
-        CorrectivePos = Vector(1.19, 0, -0.65),
+        CorrectivePos = Vector(1.19, 0, -0.7),
         CorrectiveAng = Angle(-0.75, -0.44, 3.7),
         ExtraSightDist = 0,
     },
@@ -235,6 +235,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
+            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_FirstDraw_2ch_V1_01.wav", t = 1 / 30},
         },
     },
     ["draw"] = {
@@ -250,14 +251,12 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = {"fire", "fire2"},
-        ShellEjectAt = 0,
     },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
         Source = {"iron_fire", "iron_fire2"},
-        ShellEjectAt = 0,
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -292,7 +291,18 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.4,
         SoundTable = {
-        },
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr00_2ch_v1_01.wav", t = 1 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr22_2ch_v1_01.wav", t = 22 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr35_2ch_v1_01.wav", t = 35 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr57_2ch_v1_01.wav", t = 57 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr13_2ch_v1_01.wav", t = 13 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr30_2ch_v1_01.wav", t = 30 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr50_2ch_v1_01.wav", t = 30 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr00_2ch_v1_01.wav", t = 0 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr22_2ch_v1_01.wav", t = 22 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr44_2ch_v1_01.wav", t = 44 / 30},
+			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr59_2ch_v1_01.wav", t = 59 / 30}
+	         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -302,6 +312,10 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.4,
         SoundTable = {
+			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part01_2ch_V1_01.wav", t = 1 / 30},
+			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part02_2ch_V1_01.wav", t = 22 / 30},
+			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part03_2ch_V2_01.wav", t = 44 / 30},
+			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part04_2ch_V1_01.wav", t = 65 / 30}
         },
     },
     ["enter_sprint"] = {

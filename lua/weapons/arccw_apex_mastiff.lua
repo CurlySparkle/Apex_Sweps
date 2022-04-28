@@ -197,6 +197,11 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["weapon_dot"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 1},
+        },
+    },
 }
 
 SWEP.ExtraSightDist = 5
@@ -213,7 +218,7 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 90),
             wang = Angle(90, 0, -90),
         },
-        InstalledEles = {"sight"},
+        InstalledEles = {"sight","weapon_dot"},
          CorrectivePos = Vector(1.81,0,-0.7),
          CorrectiveAng = Angle(0, 0, 3.494)
     },

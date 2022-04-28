@@ -63,9 +63,9 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.Tracer = "arccw_tracer" -- override tracer (hitscan) effect
+SWEP.Tracer = "hl2mmod_generic_tracer" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(255, 85, 25)
-SWEP.TracerWidth = 15
+SWEP.TracerWidth = 2
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 20
@@ -102,11 +102,11 @@ SWEP.ShootPitch = 100 -- pitch of shoot soun
 
 SWEP.FirstShootSound = "ArcCW_APEX.CAR.Fire_Start"
 SWEP.ShootSound = "ArcCW_APEX.CAR.Fire"
-SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_B"
+SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzleflash_6"
+SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
 SWEP.MuzzleFlashColor = Color(244, 209, 66)
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 95

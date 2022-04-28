@@ -145,7 +145,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 SWEP.CaseBones = {}
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, 2, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons

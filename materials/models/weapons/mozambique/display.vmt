@@ -2,14 +2,14 @@
 {
 	"$basetexture" "ammocounter/display"
 	"$texture2" "ammocounter/display_digital"
-	"$color2" "[1.3 1.7 2.2]"
+	"$color2" "[1 1 1]"
 	//"$nocull" "1"
 	"Proxies"
 	{
 		"TextureScroll"
 		{
 			"texturescrollvar" "$texture2transform"
-			"texturescrollrate" -0.40
+			"texturescrollrate" -0.10
 			"texturescrollangle" 0
 		}
 	}
