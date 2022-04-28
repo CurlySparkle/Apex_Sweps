@@ -19,8 +19,7 @@ att.AdditionalSights = {
         Pos = Vector(0, 8, -1.65),
         Ang = Angle(0, 0, 0),
         Magnification = 1,
-		ScrollFunc = ArcCW.SCROLL_NONE,
-        IgnoreExtra = false,
+        ScrollFunc = ArcCW.SCROLL_NONE,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
     }

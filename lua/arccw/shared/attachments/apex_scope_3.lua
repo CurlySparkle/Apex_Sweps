@@ -17,11 +17,10 @@ att.Model = "models/weapons/attachments/scope_3.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0.02, 7, -0.53),
+        Pos = Vector(0.02, 10, -0.53),
         Ang = Angle(0, 0, 0),
         Magnification = 1.5,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        IgnoreExtra = true,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
         Thermal = true,

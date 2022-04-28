@@ -9,12 +9,9 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Longbow DMR"
-SWEP.Trivia_Class = "Semi-auto sniper rifle"
-SWEP.Trivia_Desc = "The D-101 Longbow DMR (Designated Marksman Rifle) is a semi-automatic sniper rifle made by Lastimosa Armory. Models from the Frontier War were variants of the then-current R-201 Assault Rifle, the model used in the Apex Games then would most likely be a variant of the R-201's successor, the R-301 Carbine. "
+SWEP.Trivia_Class = "Sniper Rifle"
+SWEP.Trivia_Desc = "A veritably powerful sniper rifle with the ability to perform follow up shots relatively quickly."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "5.8x42mm"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 3
 
@@ -38,27 +35,35 @@ SWEP.ViewModel = "models/weapons/c_apex_longbow.mdl"
 SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 65
-SWEP.DamageMin = 45 -- damage done at maximum range
-SWEP.Range = 150 -- in METRES
-SWEP.Penetration = 35
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 950 -- projectile or phys bullet muzzle velocity
--- IN M/S
+SWEP.Damage = 55
+SWEP.DamageMin = 55
+SWEP.Range = 10
+SWEP.Penetration = 10
+SWEP.PhysBulletMuzzleVelocity = 30500 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 2.15,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.8,
+    [HITGROUP_RIGHTLEG] = 0.8,
+}
+
 SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 10
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 5 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 6
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 1.670
-SWEP.RecoilSide = 0.345
+SWEP.Recoil = 1.5
+SWEP.RecoilSide = 0.5
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 
@@ -66,7 +71,7 @@ SWEP.Delay = 60 / 78 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
-        Mode = 2,
+        Mode = 1,
     },
     {
         Mode = 0
@@ -77,7 +82,7 @@ SWEP.AccuracyMOA = 2 -- accuracy in Minutes of Angle. There are 60 MOA in a degr
 SWEP.HipDispersion = 725 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 175
 
-SWEP.Primary.Ammo = "XBowBolt" 
+SWEP.Primary.Ammo = "SniperPenetratedRound"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -119,8 +124,8 @@ SWEP.MeleeAttackTime = 0.2
 SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
-    Magnification = 1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+    Magnification = 1.25,
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -135,19 +140,19 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
 
-SWEP.ExtraSightDist = 2.5
+SWEP.ExtraSightDist = 16
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["longbow_sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["weapon_sights"] = {
+    ["weapon_sights"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.WorldModelOffset = {
@@ -169,8 +174,8 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-		InstalledEles = {"longbow_sight","weapon_sights"},
-		CorrectivePos = Vector(2.025,0,-0.5),
+        InstalledEles = {"longbow_sight","weapon_sights"},
+        CorrectivePos = Vector(2.025,0,-0.5),
         CorrectiveAng = Angle(-1.967, 0.033, 3.6)
     },
     {
@@ -183,22 +188,22 @@ SWEP.Attachments = {
             vang = Angle(0, 0, -90),
         },
     },
-	{
+    {
         PrintName = "Stock Type",
         Slot = {"apex_sniper_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_sniper_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -207,7 +212,7 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
     ["enter_sprint"] = {
         Source = "sprint_in",
     },
@@ -216,20 +221,20 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.wav", t = 17 / 35},
             {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.wav", t = 22 / 35}
         },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 1,
+        Mult = 1,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 1,
+        Mult = 1,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -246,14 +251,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect_in",
     },
     ["exit_inspect"] = {
@@ -265,21 +270,21 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_magpull_fr8_2ch_v1_01.wav", t = 8 / 30},
             {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_maggrab_fr14_2ch_v1_02.wav", t = 14 / 30},
-			{p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.wav", t = 39 / 30}
+            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.wav", t = 39 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {s = "weapons/longbow/wpn_dmr_emptyreload_magpull_fr8_2ch_v1_01.wav", t = 8 / 30},
             {s = "weapons/longbow/wpn_dmr_emptyreload_maggrab_fr14_2ch_v1_02.wav", t = 14 / 30},
-			{s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.wav", t = 39 / 30},
-			{s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.wav", t = 73 / 30},
-			{s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.wav", t = 80 / 30}
+            {s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.wav", t = 39 / 30},
+            {s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.wav", t = 73 / 30},
+            {s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.wav", t = 80 / 30}
     },
 },
 }

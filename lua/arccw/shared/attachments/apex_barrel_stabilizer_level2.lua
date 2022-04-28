@@ -1,6 +1,6 @@
 att.PrintName = "Barrel Stabilizer - Level 2"
 att.Icon = Material("entities/attach_icons/apex_barrel_2.png", "mips smooth", Color(168, 168, 168, 255))
-att.Description = "Combat suppressor issues for rifles - Level 2"
+att.Description = "A standard muzzle attachment that reduces weapon recoil."
 
 att.SortOrder = 1
 

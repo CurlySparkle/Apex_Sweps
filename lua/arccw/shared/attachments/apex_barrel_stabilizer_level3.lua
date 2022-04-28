@@ -1,6 +1,6 @@
 att.PrintName = "Barrel Stabilizer - Level 3"
 att.Icon = Material("entities/attach_icons/apex_barrel_3.png", "noclamp smooth")
-att.Description = "Combat suppressor issues for rifles - Level 3"
+att.Description = "A large muzzle attachment that reduces weapon recoil."
 
 att.SortOrder = 1
 
