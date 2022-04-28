@@ -1,6 +1,6 @@
 att.PrintName = "1x HCOG (Classic)"
 att.Icon = Material("entities/attach_icons/apex_1x_hcog.png", "mips smooth")
-att.Description = "reflex sight which offers clarity."
+att.Description = "Close range holographic optic."
 
 att.SortOrder = 1
 

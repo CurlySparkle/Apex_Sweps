@@ -1,6 +1,6 @@
 att.PrintName = "2x-4x Variable AOG"
 att.Icon = Material("entities/attach_icons/apex_2-4x.png", "mips smooth")
-att.Description = "Mid-range AOG."
+att.Description = "Adjustable mid-range optic."
 
 att.SortOrder = 0.75
 
@@ -19,7 +19,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 8, -0.4),
         Ang = Angle(0, 0, 0),
-        Magnification = 3,
+        Magnification = 1.5,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",

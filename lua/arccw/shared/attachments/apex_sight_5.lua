@@ -1,6 +1,6 @@
 att.PrintName = "3x HCOG (Ranger)"
 att.Icon = Material("entities/attach_icons/apex_3x.png", "mips smooth")
-att.Description = "holographic sight."
+att.Description = "Mid-range holographic optic."
 
 att.SortOrder = 0.75
 

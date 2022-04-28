@@ -1,6 +1,6 @@
 att.PrintName = "1x Holo"
 att.Icon = Material("entities/attach_icons/apex_1x_holo.png", "mips smooth")
-att.Description = "Big reflex sight offers clarity."
+att.Description = "Small holographic optic."
 
 att.SortOrder = 1
 
