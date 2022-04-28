@@ -93,7 +93,7 @@ SWEP.Firemodes = {
 SWEP.AccuracyMOA = 4
 SWEP.HipDispersion = 200 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 100
-SWEP.JumpDispersion = 300 -- dispersion penalty when in the air
+SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "ar2"
 
@@ -155,12 +155,12 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.WorldModelOffset = {
@@ -261,10 +261,10 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
     ["enter_inspect"] = {
         Source = "inspect_in",
@@ -318,6 +318,6 @@ SWEP.Animations = {
             {s = "weapons/car/Wpn_Car_Reload_BoltBack_New_v1_01.wav", t = 53 / 30},
             {s = "weapons/car/Wpn_Car_Reload_BoltFwd_New_v1_01.wav", t = 61 / 30},
             {s = "weapons/car/wpn_car_emptyreload_handrest_fr61_2ch_v1_01.wav", t = 61 / 30}
-    },	
-},
+        },
+    },
 }

@@ -10,11 +10,8 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Alternator SMG"
 SWEP.Trivia_Class = "Submachine Gun"
-SWEP.Trivia_Desc = "The Alternator SMG, also called Alternator, is a sub machine gun that utilizes Light Rounds. As the name implies, it fires through two alternating barrels."
+SWEP.Trivia_Desc = "A high-damage submachine gun that fires from its two alternating barrels."
 SWEP.Trivia_Manufacturer = "Burrell Defense"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "Light Rounds"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 2
 
@@ -40,14 +37,21 @@ SWEP.ViewModel = "models/weapons/c_apex_alternator.mdl"
 SWEP.WorldModel = "models/weapons/w_smg1.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 22
-SWEP.DamageMin = 16 -- damage done at maximum range
-SWEP.Range = 85 -- in METRES
-SWEP.Penetration = 25
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 650 -- projectile or phys bullet muzzle velocity
--- IN M/S
+SWEP.Damage = 16
+SWEP.DamageMin = 16
+SWEP.Range = 10
+SWEP.Penetration = 4
+SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.5,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.8,
+    [HITGROUP_RIGHTLEG] = 0.8,
+}
 
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.Tracer = "arccw_tracer" -- override tracer (hitscan) effect
@@ -58,7 +62,7 @@ SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.315
+SWEP.RecoilSide = 0.15
 SWEP.RecoilRise = 0.15
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.2
@@ -75,9 +79,10 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.AccuracyMOA = 6 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 150
+SWEP.MoveDispersion = 125
+SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "smg1"
 
@@ -222,14 +227,22 @@ SWEP.Animations = {
         Source = "iron_idle",
     },
     ["fire"] = {
-        Source = {"fire", "fire2"},
+        Source = "fire",
+        ShellEjectAt = 0,
+    },
+    ["fire2"] = {
+        Source = "fire2",
         ShellEjectAt = 0,
     },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
-        Source = {"iron_fire", "iron_fire2"},
+        Source = "iron_fire",
+        ShellEjectAt = 0,
+    },
+    ["fire_sight2"] = {
+        Source = "iron_fire2",
         ShellEjectAt = 0,
     },
     ["exit_sight"] = {
@@ -283,6 +296,15 @@ SWEP.Animations = {
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipOut", t = 12 / 30},
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.ClipIn", t = 49 / 30},
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.PullBolt", t = 70 / 30}
-    },
+        },
     },
 }
+
+-- Alternate between the left/right fire animation
+SWEP.Hook_SelectFireAnimation = function(wep, data)
+    if wep:GetNthShot() % 2 == 0 then
+        return wep:GetNWState() == ArcCW.STATE_SIGHTS and "fire_sight2" or "fire2"
+    else
+        return wep:GetNWState() == ArcCW.STATE_SIGHTS and "fire_sight" or "fire"
+    end
+end
