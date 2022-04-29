@@ -9,7 +9,7 @@
 		"TextureScroll"
 		{
 			"texturescrollvar" "$texture2transform"
-			"texturescrollrate" -0.40
+			"texturescrollrate" -0.10
 			"texturescrollangle" 0
 		}
 	}

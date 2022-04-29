@@ -1,0 +1,21 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\peacekeeper\peacekeeper_d"
+"$bumpmap" "models\weapons\peacekeeper\peacekeeper_n"
+"$PhongExponentTexture" "models\weapons\peacekeeper\peacekeeper_e"
+"$color2"	"[0.8 0.8 0.8]"
+"$blendTintByBaseAlpha"	"1"
+
+"$detail"			"models\weapons\peacekeeper\peacekeeper_si2"
+"$detailscale"                    "1"
+"$detailblendfactor" 		"1"
+"$detailblendmode"			"5"
+
+"$envmap"	"env_cubemap"
+"$envmaptint"	"[ .13 .13 .13 ]"
+
+"$phong"	"1"
+"$phongexponent"	"30"
+"$phongboost"	"5"
+"$phongfresnelranges"	"[0.25 0.5 1]"
+}

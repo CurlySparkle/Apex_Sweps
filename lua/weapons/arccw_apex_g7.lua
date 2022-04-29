@@ -175,7 +175,7 @@ SWEP.Attachments = {
         InstalledEles = {"weapon_sights"},
         CorrectivePos = Vector(1.98, 0, -0.75),
         CorrectiveAng = Angle(0, 0, 3.6),
-        ExtraSightDist = 4
+        ExtraSightDist = -1.5
     },
     {
         PrintName = "Muzzle Type",

@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "M600 Spitfire"
-SWEP.Trivia_Class = "Light machine gun"
-SWEP.Trivia_Desc = "The Volt SMG, is an sub machine gun that utilizes Heavy Rounds for its energy makeshift bullets."
+SWEP.Trivia_Class = "Light Machine Gun"
+SWEP.Trivia_Desc = "The M600 Spitfire Mk3 is a light machine gun manufactured by Siwhan Industries. Descended from the Frontier War-era Mk1 and Mk2."
 SWEP.Trivia_Manufacturer = "Siwhan Industries"
 SWEP.Trivia_Country = "Unkown"
 SWEP.Trivia_Calibre = "Heavy Rounds"
@@ -52,7 +52,7 @@ SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 48 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 34 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "ar2"
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
@@ -190,7 +190,7 @@ SWEP.Attachments = {
     },
 	{
         PrintName = "Mag Type",
-        Slot = {"apex_energy_mags"}
+        Slot = {"apex_heavy_mags"}
     },
 	{
         PrintName = "Extras",

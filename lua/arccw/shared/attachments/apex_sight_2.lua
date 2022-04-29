@@ -16,7 +16,7 @@ att.Model = "models/weapons/attachments/sight_4.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 8, -0.65),
+        Pos = Vector(0, 8, -0.6),
         Ang = Angle(0, 0, 0),
         Magnification = 2,
         ScrollFunc = ArcCW.SCROLL_NONE,
@@ -26,7 +26,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo4.png", "mips smooth")
+att.HolosightReticle = Material("sights/holo7.png", "mips smooth")
 att.HolosightNoFlare = true
 att.HolosightSize = 3
 att.HolosightBone = "holosight"
