@@ -141,8 +141,6 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
 
-SWEP.ExtraSightDist = 16
-
 SWEP.AttachmentElements = {
     ["longbow_sight"] = {
         VMBodygroups = {

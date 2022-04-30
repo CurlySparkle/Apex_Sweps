@@ -47,6 +47,29 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 1,
 }
 
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 6,
+        DamageMin = 6,
+		Penetration = 5,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 12,
+        DamageMin = 12,
+		Penetration = 15,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
+
+
 SWEP.Penetration = 2
 SWEP.DamageType = DMG_BUCKSHOT
 SWEP.ShootEntity = nil -- entity to fire, if any
@@ -200,9 +223,9 @@ SWEP.Attachments = {
         PrintName = "Optic Type", -- print name
         DefaultAttName = "Iron Sights",
         Slot = "apex_sights", -- what kind of attachments can fit here, can be string or table
-        Bone = "def_c_base", -- relevant bone any attachments will be mostly referring to
+        Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
-            vpos = Vector(0, -5, 6), -- offset that the attachment will be relative to the bone
+            vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"sight"},

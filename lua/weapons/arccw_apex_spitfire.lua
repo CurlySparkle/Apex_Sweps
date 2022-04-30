@@ -24,7 +24,7 @@ SWEP.CrouchAng = Angle(0.837, 0, -56.513)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1.5, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CustomizePos = Vector(0, 0, 0)
@@ -41,15 +41,37 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_spitfire.mdl"
 SWEP.WorldModel = "models/weapons/w_irifle.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 33
+SWEP.Damage = 19
 SWEP.DamageMin = 19 -- damage done at maximum range
 SWEP.Range = 170 -- in METRES
 SWEP.Penetration = 40
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
+
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 19,
+        DamageMin = 19,
+		Penetration = 15,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 33,
+        DamageMin = 19,
+		Penetration = 25,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 34 -- DefaultClip is automatically set.
@@ -93,7 +115,7 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
 SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
-SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
+SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1
 SWEP.ShellTime = 1
 

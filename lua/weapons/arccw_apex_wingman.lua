@@ -30,10 +30,10 @@ SWEP.ViewModelFOV = 70
 SWEP.Damage = 45
 SWEP.DamageMin = 25 -- damage done at maximum range
 SWEP.Range = 85 -- in METRES
-SWEP.Penetration = 25
+SWEP.Penetration = 15
 SWEP.DamageType = DMG_BULLET
+
 SWEP.ShootEntity = nil -- entity to fire, if any
--- IN M/S
 SWEP.ChamberSize = 0 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 6 -- DefaultClip is automatically set.
 

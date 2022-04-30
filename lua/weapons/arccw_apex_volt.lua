@@ -43,19 +43,40 @@ SWEP.ViewModel = "models/weapons/c_apex_volt.mdl"
 SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 26
-SWEP.DamageMin = 18 -- damage done at maximum range
+SWEP.Damage = 17
+SWEP.DamageMin = 17 -- damage done at maximum range
 SWEP.Range = 170 -- in METRES
-SWEP.Penetration = 35
+SWEP.Penetration = 10
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
+SWEP.PhysBulletMuzzleVelocity = 23500 * ArcCW.HUToM
+
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 17,
+        DamageMin = 17,
+		Penetration = 10,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 26,
+        DamageMin = 18,
+		Penetration = 30,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "ar2"
-
--- SWEP.PhysBulletMuzzleVelocity = 500
 
 SWEP.Recoil = 0.425
 SWEP.RecoilSide = 0.215

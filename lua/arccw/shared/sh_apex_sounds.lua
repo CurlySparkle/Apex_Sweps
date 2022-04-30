@@ -1,4 +1,35 @@
 sound.Add( {
+    name = "ArcCW_APEX.RE45.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/re45/fire_1.wav",
+        "^weapons/re45/fire_2.wav",
+        "^weapons/re45/fire_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.RE45.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/re45/fire_loop_1.wav",
+		"^weapons/re45/fire_loop_2.wav",
+		"^weapons/re45/fire_loop_3.wav",
+		"^weapons/re45/fire_loop_4.wav",
+		"^weapons/re45/fire_loop_5.wav",
+		"^weapons/re45/fire_loop_6.wav",
+		"^weapons/re45/fire_loop_7.wav",
+		"^weapons/re45/fire_loop_8.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

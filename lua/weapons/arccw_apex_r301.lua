@@ -36,7 +36,16 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_r301.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_r301.mdl"
+
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-5, 3.5, -5),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 14
@@ -54,6 +63,26 @@ SWEP.BodyDamageMults = {
     [HITGROUP_LEFTLEG] = 0.75,
     [HITGROUP_RIGHTLEG] = 0.75,
 }
+
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 14,
+        DamageMin = 14,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 22,
+        DamageMin = 19,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
 
 SWEP.Tracer = "hl2mmod_generic_tracer"
 SWEP.TracerNum = 1 -- tracer every X
@@ -114,7 +143,7 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = 100 -- Whether to allow the bash/melee to lunge a short distance
+SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
 SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
@@ -154,12 +183,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = true
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
@@ -171,7 +194,7 @@ SWEP.Attachments = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wang = Angle(90, 0, -90),
         },
         InstalledEles = {"r301_sight", "r301_sight2"},
          CorrectivePos = Vector(1.57,0,-0.5),
@@ -184,7 +207,9 @@ SWEP.Attachments = {
         Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
-            vang = Angle(90, 0, -90)
+            vang = Angle(90, 0, -90),
+            wpos = Vector(0, 0, 0),
+            wang = Angle(90, 0, -90)
         },
     },
     {

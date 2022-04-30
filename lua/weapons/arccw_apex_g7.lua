@@ -39,6 +39,28 @@ SWEP.Range = 10
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 30000 * ArcCW.HUToM
 
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 36,
+        DamageMin = 36,
+		Penetration = 10,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 42,
+        DamageMin = 36,
+		Penetration = 25,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
+
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2,
     [HITGROUP_CHEST] = 1,

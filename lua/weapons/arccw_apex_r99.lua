@@ -41,13 +41,28 @@ SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModel = "models/weapons/w_smg1.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 18
+SWEP.Damage = 17
 SWEP.DamageMin = 11 -- damage done at maximum range
 SWEP.Range = 85 -- in METRES
 SWEP.Penetration = 25
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
+
+local balance = {
+    [0] = {
+        -- Apex Settings
+        Damage = 17,
+        DamageMin = 11,
+		Penetration = 15,
+    },
+    [1] = {
+        -- Arccw Settings
+        Damage = 19,
+        DamageMin = 17,
+		Penetration = 25,
+    },
+}
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.

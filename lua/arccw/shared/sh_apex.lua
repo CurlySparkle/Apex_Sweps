@@ -1,0 +1,1 @@
+CreateConVar("arccw_apex_bal", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Tweaks the balancing for the Apex Legends Weapons. See the options page under Options > ArcCW > Apex Settings for more information.", 0, 2)

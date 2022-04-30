@@ -36,6 +36,28 @@ SWEP.DamageMin = 11
 SWEP.RangeMin = 0
 SWEP.Range = 50
 
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 11,
+        DamageMin = 11,
+		Penetration = 2,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 14,
+        DamageMin = 14,
+		Penetration = 10,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
+
 SWEP.HullSize = 0
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 1.25,

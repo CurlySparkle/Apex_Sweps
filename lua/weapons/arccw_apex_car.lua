@@ -52,6 +52,28 @@ SWEP.Range = 10
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 18500 * ArcCW.HUToM
 
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 13,
+        DamageMin = 13,
+		Penetration = 10,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 18,
+        DamageMin = 18,
+		Penetration = 25,
+    }
+}
+
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
+
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 1.5,
     [HITGROUP_CHEST] = 1,
@@ -125,7 +147,6 @@ SWEP.SprintTime = 0
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = 100 -- Whether to allow the bash/melee to lunge a short distance
 SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
 SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
 SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
@@ -133,7 +154,6 @@ SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
 SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.LungeLength = 64 -- Maximum distance for lunging
 
-SWEP.MeleeDamage = 90
 SWEP.MeleeDamage = 50
 SWEP.MeleeRange = 60
 SWEP.MeleeDamageType = DMG_CLUB
