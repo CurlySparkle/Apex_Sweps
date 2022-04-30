@@ -10,11 +10,8 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "M600 Spitfire"
 SWEP.Trivia_Class = "Light Machine Gun"
-SWEP.Trivia_Desc = "The M600 Spitfire Mk3 is a light machine gun manufactured by Siwhan Industries. Descended from the Frontier War-era Mk1 and Mk2."
+SWEP.Trivia_Desc = "A light machine gun with a generous capacity and controllable rate of fire."
 SWEP.Trivia_Manufacturer = "Siwhan Industries"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "Heavy Rounds"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 3
 
@@ -44,25 +41,33 @@ SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 19
-SWEP.DamageMin = 19 -- damage done at maximum range
-SWEP.Range = 170 -- in METRES
-SWEP.Penetration = 40
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
+SWEP.DamageMin = 19
+SWEP.Range = 15
+SWEP.Penetration = 12
+SWEP.PhysBulletMuzzleVelocity = 27500 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.75,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.85,
+    [HITGROUP_RIGHTLEG] = 0.85,
+}
 
 local balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 19,
         DamageMin = 19,
-		Penetration = 15,
+        Penetration = 15,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 33,
         DamageMin = 19,
-		Penetration = 25,
+        Penetration = 25,
     }
 }
 
@@ -74,13 +79,13 @@ function SWEP:ArcCW_Apex_Setup()
 end
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 34 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 35
 SWEP.Primary.Ammo = "ar2"
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.35
+SWEP.RecoilSide = 0.125
 SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1
@@ -102,8 +107,8 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 225 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 255
+SWEP.HipDispersion = 400 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 150
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -150,7 +155,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -164,7 +169,7 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
 SWEP.ExtraSightDist = 2.5
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["weapon_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
@@ -191,10 +196,10 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-		InstalledEles = {"weapon_sights"},
-		CorrectivePos = Vector(1.84,0,-0.45),
+        InstalledEles = {"weapon_sights"},
+        CorrectivePos = Vector(1.84,0,-0.45),
         CorrectiveAng = Angle(0, 0, 2.593),
-		ExtraSightDist = -3
+        ExtraSightDist = -3
     },
     {
         PrintName = "Muzzle Type",
@@ -206,22 +211,22 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
     },
-	{
+    {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_heavy_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -230,7 +235,7 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
     ["enter_sprint"] = {
         Source = "sprint_in",
     },
@@ -239,19 +244,19 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/spitfire/wpn_lmg_firstdraw_2ch_v1_01.wav", t = 1 / 35}
         },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 1,
+        Mult = 1,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 1,
+        Mult = 1,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -268,14 +273,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect_in",
     },
     ["exit_inspect"] = {
@@ -287,25 +292,25 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/spitfire/wpn_lmg_reload_drumremove_fr5_2ch_v1_01.wav", t = 5 / 30},
             {p = 100, s = "weapons/spitfire/wpn_lmg_reload_drumgrab_fr30_2ch_v1_02.wav", t = 30 / 30},
-			{p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.wav", t = 48 / 30},
-			{p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.wav", t = 60 / 30},
-			{p = 100, s = "weapons/spitfire/wpn_lmg_reload_handrest_fr76_2ch_v1_02.wav", t = 75 / 30}
+            {p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.wav", t = 48 / 30},
+            {p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.wav", t = 60 / 30},
+            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_handrest_fr76_2ch_v1_02.wav", t = 75 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
+        SoundTable = {
             {s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumremove_fr0_2ch_v1_01.wav", t = 5 / 30},
-			{s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumgrab_fr22_2ch_v1_02.wav", t = 30 / 30},
-			{s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.wav", t = 48 / 30},
-			{s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.wav", t = 60 / 30},
-			{s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltBack_fr85_2ch_v2_01.wav", t = 77 / 30},
-			{s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltFront_fr94_2ch_v2_01.wav", t = 84 / 30},
-			{s = "weapons/spitfire/Wpn_LMG_EmptyReload_handrest_fr102_2ch_v1_02.wav", t = 91 / 30}
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumgrab_fr22_2ch_v1_02.wav", t = 30 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.wav", t = 48 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.wav", t = 60 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltBack_fr85_2ch_v2_01.wav", t = 77 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltFront_fr94_2ch_v2_01.wav", t = 84 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_handrest_fr102_2ch_v1_02.wav", t = 91 / 30}
     },
 },
 }

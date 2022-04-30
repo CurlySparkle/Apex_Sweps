@@ -10,11 +10,9 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "R-99"
 SWEP.Trivia_Class = "Submachine Gun"
-SWEP.Trivia_Desc = "The R-99 SMG, also called R-99, is a sub machine gun that utilizes Light Rounds."
+SWEP.Trivia_Desc = "High fire rate weapon designed for orbital boarding."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
-SWEP.Trivia_Country = "Unkown"
 SWEP.Trivia_Calibre = "5.8x42mm"
-SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 2
 
@@ -41,34 +39,27 @@ SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModel = "models/weapons/w_smg1.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 17
-SWEP.DamageMin = 11 -- damage done at maximum range
-SWEP.Range = 85 -- in METRES
-SWEP.Penetration = 25
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
+SWEP.Damage = 11
+SWEP.DamageMin = 11
+SWEP.Range = 10
+SWEP.Penetration = 4
+SWEP.PhysBulletMuzzleVelocity = 21000 * ArcCW.HUToM
 
-local balance = {
-    [0] = {
-        -- Apex Settings
-        Damage = 17,
-        DamageMin = 11,
-		Penetration = 15,
-    },
-    [1] = {
-        -- Arccw Settings
-        Damage = 19,
-        DamageMin = 17,
-		Penetration = 25,
-    },
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.5,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.8,
+    [HITGROUP_RIGHTLEG] = 0.8,
 }
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.425
+SWEP.Recoil = 0.625
 SWEP.RecoilSide = 0.215
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
@@ -86,11 +77,11 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 150
+SWEP.AccuracyMOA = 6
+SWEP.HipDispersion = 200
+SWEP.MoveDispersion = 100
 
-SWEP.Primary.Ammo = "smg1" 
+SWEP.Primary.Ammo = "smg1"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound
@@ -140,7 +131,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.2,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -157,17 +148,17 @@ SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.ExtraSightDist = 2.5
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["ref_dot"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["ref_sights"] = {
+    ["ref_sights"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.WorldModelOffset = {
@@ -188,9 +179,9 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
-        },			
+        },
         InstalledEles = {"ref_dot", "ref_sights"},
-		 CorrectivePos = Vector(1.5,0,-0.8),
+         CorrectivePos = Vector(1.5,0,-0.8),
          CorrectiveAng = Angle(0, 0, 3.494)
     },
     {
@@ -203,22 +194,22 @@ SWEP.Attachments = {
             vang = Angle(0, 0, -90),
         },
     },
-	{
+    {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_light_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -227,26 +218,26 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/r99/slideforward_1.wav", t = 13 / 30},
             {p = 100, s = "weapons/r99/slideback_1.wav", t = 17 / 30},
-			{p = 100, s = "weapons/r99/handgrab_1.wav", t = 19 / 30}
-        },	
+            {p = 100, s = "weapons/r99/handgrab_1.wav", t = 19 / 30}
+        },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -263,14 +254,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect",
     },
     ["exit_inspect"] = {
@@ -286,12 +277,12 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40,
-		SoundTable = {
+        MinProgress = 60 / 40,
+        SoundTable = {
             {p = 100, s = "weapons/r99/clip_out_1.wav", t = 7 / 30},
             {p = 100, s = "weapons/r99/clip_in_1.wav", t = 49 / 30},
-			{p = 100, s = "weapons/r99/handgrab_1.wav", t = 58 / 30}
-        },		
+            {p = 100, s = "weapons/r99/handgrab_1.wav", t = 58 / 30}
+        },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -300,13 +291,13 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-		MinProgress = 97/40,
-		SoundTable = {
+        MinProgress = 97 / 40,
+        SoundTable = {
             {p = 100, s = "weapons/r99/clip_out_1.wav", t = 7 / 30},
             {p = 100, s = "weapons/r99/clip_in_1.wav", t = 49 / 30},
-			{p = 100, s = "weapons/r99/slideforward_1.wav", t = 67 / 30},
-			{p = 100, s = "weapons/r99/slideback_1.wav", t = 69 / 30},
-			{p = 100, s = "weapons/r99/handgrab_1.wav", t = 74 / 30},
-        },	
-    },	
+            {p = 100, s = "weapons/r99/slideforward_1.wav", t = 67 / 30},
+            {p = 100, s = "weapons/r99/slideback_1.wav", t = 69 / 30},
+            {p = 100, s = "weapons/r99/handgrab_1.wav", t = 74 / 30},
+        },
+    },
 }

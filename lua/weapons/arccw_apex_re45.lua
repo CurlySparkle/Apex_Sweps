@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "RE-45 Auto"
-SWEP.Trivia_Class = "Auto Pistol"
-SWEP.Trivia_Desc = "The RE-45 Auto, also called RE-45, is a sub machine gun pistol type that utilizes Light Rounds."
+SWEP.Trivia_Class = "Pistol"
+SWEP.Trivia_Desc = "Full-auto pistol."
 SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 1
@@ -45,24 +45,34 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 18
+SWEP.Damage = 12
 SWEP.DamageMin = 12
 SWEP.Range = 15
-SWEP.Penetration = 15
+SWEP.Penetration = 5
 SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.5,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.9,
+    [HITGROUP_RIGHTLEG] = 0.9,
+}
 
 local balance = {
     [0] = {
         -- Apex Legends Settings
-        Damage = 18,
+        Damage = 12,
         DamageMin = 12,
-		Penetration = 15,
+        Penetration = 5,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 21,
         DamageMin = 21,
-		Penetration = 20,
+        Penetration = 20,
     }
 }
 
@@ -73,16 +83,6 @@ function SWEP:ArcCW_Apex_Setup()
     end
 end
 
-SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.5,
-    [HITGROUP_CHEST] = 1,
-    [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 1,
-    [HITGROUP_RIGHTARM] = 1,
-    [HITGROUP_LEFTLEG] = 0.75,
-    [HITGROUP_RIGHTLEG] = 0.75,
-}
-
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
@@ -92,7 +92,7 @@ SWEP.Primary.ClipSize = 16 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.RecoilSide = 0.5
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.1
@@ -110,10 +110,10 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 150
+SWEP.HipDispersion = 120 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 100
 
-SWEP.Primary.Ammo = "pistol" 
+SWEP.Primary.Ammo = "pistol"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound
@@ -163,7 +163,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -180,17 +180,17 @@ SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.ExtraSightDist = 2.5
 
-SWEP.AttachmentElements = {		
-	["ref_sights"] = {
+SWEP.AttachmentElements = {
+    ["ref_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["weapon_dot"] = {
+    ["weapon_dot"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -205,9 +205,9 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-        },			
+        },
         InstalledEles = {"ref_sights", "weapon_dot"},
-		 CorrectivePos = Vector(1.33,0,-0.55),
+         CorrectivePos = Vector(1.33,0,-0.55),
          CorrectiveAng = Angle(1.045, -0.682, 1.999)
     },
     {
@@ -218,22 +218,22 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
-			wpos = Vector(0, 0, 0),
+            wpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
         },
     },
-	{
+    {
         PrintName = "Mag Type",
         Slot = {"apex_light_mags"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -242,25 +242,25 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/p2020/smartpistol_reload_slideback_st_01.wav", t = 15 / 30},
             {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 22 / 30}
-        },	
+        },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -277,29 +277,29 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect",
-	    LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,	
+        LHIKEaseOut = 0.4,
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
     },
     ["idle_inspect"] = {
         Source = "inspect",
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,	
+        LHIKEaseOut = 0.4,
     },
     ["reload"] = {
         Source = "reload",
@@ -308,13 +308,13 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40,
-		SoundTable = {
+        MinProgress = 60/40,
+        SoundTable = {
             {p = 100, s = "weapons/re45/wpn_re45_reload_magpull_fr4_2ch_v1_01.wav", t = 4 / 30},
-			{p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagInsert_fr28_2ch_v2_01.wav", t = 28 / 30},
-			{p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.wav", t = 37 / 30},
-			{p = 100, s = "weapons/re45/wpn_re45_reload_handrest_fr40_2ch_v1_01.wav", t = 40 / 30}
-        },		
+            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagInsert_fr28_2ch_v2_01.wav", t = 28 / 30},
+            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.wav", t = 37 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_reload_handrest_fr40_2ch_v1_01.wav", t = 40 / 30}
+        },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -323,14 +323,14 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-		MinProgress = 97/40,
-		SoundTable = {
+        MinProgress = 97/40,
+        SoundTable = {
             {p = 100, s = "weapons/re45/wpn_re45_emptyreload_magpull_fr4_2ch_v1_01.wav", t = 4 / 30},
-			{p = 100, s = "weapons/re45/Wpn_RE45_EmptyReload_MagInsert_fr27_2ch_v2_01.wav", t = 27 / 30},
-			{p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.wav", t = 37 / 30},
-			{p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 47 / 30},
-			{p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltfront_fr50_2ch_v1_02.wav", t = 50 / 30},
-			{p = 100, s = "weapons/re45/wpn_re45_emptyreload_handrest_fr55_2ch_v1_01.wav", t = 55 / 30}
-        },	
-    },	
+            {p = 100, s = "weapons/re45/Wpn_RE45_EmptyReload_MagInsert_fr27_2ch_v2_01.wav", t = 27 / 30},
+            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.wav", t = 37 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 47 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltfront_fr50_2ch_v1_02.wav", t = 50 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_handrest_fr55_2ch_v1_01.wav", t = 55 / 30}
+        },
+    },
 }

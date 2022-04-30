@@ -41,13 +41,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 11,
         DamageMin = 11,
-		Penetration = 2,
+        Penetration = 2,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 14,
         DamageMin = 14,
-		Penetration = 10,
+        Penetration = 10,
     }
 }
 
