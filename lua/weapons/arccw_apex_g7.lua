@@ -60,6 +60,12 @@ function SWEP:ArcCW_Apex_Setup()
         self[i] = v
     end
 end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    self:ArcCW_Apex_Setup()
+end
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2,
@@ -164,8 +170,6 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
-
-SWEP.ExtraSightDist = 4
 
 SWEP.AttachmentElements = {
     ["weapon_sights"] = {

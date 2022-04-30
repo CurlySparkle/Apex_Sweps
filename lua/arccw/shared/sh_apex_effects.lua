@@ -1,6 +1,7 @@
 game.AddParticles( "particles/apex_fx.pcf" )
 game.AddParticles( "particles/mmod_muzzleflashes.pcf" )
 game.AddParticles( "particles/mmod_tracers.pcf" )
+game.AddParticles( "particles/mmod_explosions.pcf" )
 
 PrecacheParticleSystem("hl2mmod_generic_tracer")
 PrecacheParticleSystem("hl2mmod_tracer_ar2")

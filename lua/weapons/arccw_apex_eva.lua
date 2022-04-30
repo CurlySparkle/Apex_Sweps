@@ -68,7 +68,12 @@ function SWEP:ArcCW_Apex_Setup()
         self[i] = v
     end
 end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
 
+    self:ArcCW_Apex_Setup()
+end
 
 SWEP.Penetration = 2
 SWEP.DamageType = DMG_BUCKSHOT
@@ -215,8 +220,6 @@ SWEP.AttachmentElements = {
         },
     },
 }
-
-SWEP.ExtraSightDist = 5
 
 SWEP.Attachments = {
     {

@@ -128,8 +128,6 @@ SWEP.BarrelLength = 5
 SWEP.BulletBones = false
 
 SWEP.RevolverReload = true
-
-SWEP.ExtraSightDist = 15
 SWEP.GuaranteeLaser = true
 
 SWEP.WorldModelOffset = {

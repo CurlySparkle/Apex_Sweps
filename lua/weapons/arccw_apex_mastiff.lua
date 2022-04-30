@@ -57,6 +57,12 @@ function SWEP:ArcCW_Apex_Setup()
         self[i] = v
     end
 end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    self:ArcCW_Apex_Setup()
+end
 
 SWEP.HullSize = 0
 SWEP.BodyDamageMults = {
@@ -225,8 +231,6 @@ SWEP.AttachmentElements = {
         },
     },
 }
-
-SWEP.ExtraSightDist = 5
 
 SWEP.Attachments = {
     {
