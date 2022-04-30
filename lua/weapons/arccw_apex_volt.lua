@@ -16,15 +16,15 @@ SWEP.Trivia_Country = "Unkown"
 SWEP.Trivia_Calibre = "Heavy Rounds"
 SWEP.Trivia_Year = "2734"
 
-SWEP.Slot = 3
+SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-6, 0, 1)
+SWEP.CrouchPos = Vector(-6, -1.5, 1)
 SWEP.CrouchAng = Angle(0.837, 0, -56.513)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1.5, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CustomizePos = Vector(0, 0, 0)
@@ -40,8 +40,16 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_volt.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.WorldModel = "models/weapons/c_apex_volt.mdl"
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-7, 4, -4.7),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 17
 SWEP.DamageMin = 17 -- damage done at maximum range
@@ -61,7 +69,7 @@ local balance = {
     },
     [1] = {
         -- Arcwc Settings
-        Damage = 26,
+        Damage = 24,
         DamageMin = 18,
 		Penetration = 30,
     }
@@ -72,6 +80,12 @@ function SWEP:ArcCW_Apex_Setup()
     for i, v in pairs(balance[val]) do
         self[i] = v
     end
+end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    self:ArcCW_Apex_Setup()
 end
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
@@ -114,12 +128,13 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
 SWEP.Tracer = "tfa_apex_energy_tracer_rifle" -- override tracer (hitscan) effect
-SWEP.TracerCol = Color(55, 255, 55)
+SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
+SWEP.PhysTracerProfile = 6
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_medium"
-SWEP.MuzzleFlashColor = Color(55, 255, 55)
+SWEP.MuzzleFlashColor = Color(25, 125, 255)
 
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1.2
@@ -164,8 +179,6 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
-SWEP.ExtraSightDist = 2.5
-
 SWEP.AttachmentElements = {		
     ["weapon_sights"] = {
         VMBodygroups = {
@@ -179,12 +192,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = false
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {

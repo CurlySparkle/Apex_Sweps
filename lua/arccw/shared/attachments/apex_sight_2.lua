@@ -1,6 +1,6 @@
 att.PrintName = "1x-2x Variable Holo"
 att.Icon = Material("entities/attach_icons/apex_1-2x.png", "mips smooth")
-att.Description = "Small adjustable holographic optic."
+att.Description = "Big reflex sight offers clarity."
 
 att.SortOrder = 1
 
@@ -26,13 +26,13 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo7.png", "mips smooth")
+att.HolosightReticle = Material("sights/holo7.png", "mips sharp")
 att.HolosightNoFlare = true
 att.HolosightSize = 3
 att.HolosightBone = "holosight"
 att.HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl"
 att.Colorable = false
-att.HolosightColor = Color(255, 0, 0)
+-- att.HolosightColor = Color(255, 0, 0)
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)

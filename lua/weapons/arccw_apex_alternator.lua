@@ -15,7 +15,7 @@ SWEP.Trivia_Manufacturer = "Burrell Defense"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-4.5, 0, 1)
+SWEP.CrouchPos = Vector(-4.5, -1.5, 1)
 SWEP.CrouchAng = Angle(1.589, 0.793, -50.437)
 
 SWEP.SprintPos = Vector(0, 0, 0)
@@ -64,7 +64,12 @@ function SWEP:ArcCW_Apex_Setup()
         self[i] = v
     end
 end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
 
+    self:ArcCW_Apex_Setup()
+end
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 1.5,
@@ -160,8 +165,6 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
-
-SWEP.ExtraSightDist = 2.5
 
 SWEP.AttachmentElements = {
     ["weapon_sights"] = {

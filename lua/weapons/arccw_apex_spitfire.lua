@@ -18,7 +18,7 @@ SWEP.Trivia_Year = "2734"
 
 SWEP.Slot = 3
 
-SWEP.CrouchPos = Vector(-6, 0, 1)
+SWEP.CrouchPos = Vector(-6, -1.5, 1)
 SWEP.CrouchAng = Angle(0.837, 0, -56.513)
 
 SWEP.SprintPos = Vector(0, 0, 0)
@@ -40,7 +40,15 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_spitfire.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_spitfire.mdl"
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-6, 4, -6.5),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 19
@@ -50,6 +58,7 @@ SWEP.Penetration = 40
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
+SWEP.PhysBulletMuzzleVelocity = 27500 * ArcCW.HUToM
 
 local balance = {
     [0] = {
@@ -72,12 +81,16 @@ function SWEP:ArcCW_Apex_Setup()
         self[i] = v
     end
 end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    self:ArcCW_Apex_Setup()
+end
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 34 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "ar2"
-
--- SWEP.PhysBulletMuzzleVelocity = 500
 
 SWEP.Recoil = 0.425
 SWEP.RecoilSide = 0.215
@@ -162,22 +175,19 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
-SWEP.ExtraSightDist = 2.5
-
 SWEP.AttachmentElements = {		
     ["weapon_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
+    ["weapon_dot"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 1},
+        },
+    },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = false
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
@@ -191,7 +201,7 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-		InstalledEles = {"weapon_sights"},
+		InstalledEles = {"weapon_sights", "weapon_dot"},
 		CorrectivePos = Vector(1.84,0,-0.45),
         CorrectiveAng = Angle(0, 0, 2.593),
 		ExtraSightDist = -3

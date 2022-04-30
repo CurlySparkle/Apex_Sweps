@@ -51,6 +51,12 @@ function SWEP:ArcCW_Apex_Setup()
         self[i] = v
     end
 end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    self:ArcCW_Apex_Setup()
+end
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2,
@@ -168,8 +174,6 @@ SWEP.AttachmentElements = {
         },
     },
 }
-
-SWEP.ExtraSightDist = 10
 SWEP.GuaranteeLaser = true
 
 SWEP.WorldModelOffset = {

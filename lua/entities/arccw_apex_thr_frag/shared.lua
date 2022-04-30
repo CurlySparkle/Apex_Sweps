@@ -1,6 +1,6 @@
 ENT.Type = "anim"
 ENT.Base = "base_entity"
-ENT.PrintName = "Frag Grenade"
+ENT.PrintName = "Fragnade"
 ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
@@ -24,7 +24,7 @@ function ENT:Initialize()
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
             phys:Wake()
-            phys:SetBuoyancyRatio(0)
+            phys:SetBuoyancyRatio(1)
         end
 
         self.SpawnTime = CurTime()
@@ -33,7 +33,7 @@ function ENT:Initialize()
             self:Detonate()
         end
 
-        timer.Simple(0, function()
+        timer.Simple(0.1, function()
             if !IsValid(self) then return end
             self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
         end)
@@ -43,9 +43,9 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.Speed > 75 then
-            self:EmitSound(Sound("physics/metal/metal_grenade_impact_hard" .. math.random(1,3) .. ".wav"))
+            self:EmitSound(Sound("weapons/grenades/wpn_fraggrenade_1p_hardsurface_bounce_01_lr_v" .. math.random(1,2) .. ".wav"))
         elseif data.Speed > 25 then
-            self:EmitSound(Sound("physics/metal/metal_grenade_impact_soft" .. math.random(1,3) .. ".wav"))
+            self:EmitSound(Sound("weapons/grenades/Phys_Imp_FragGrenade_Concrete_1ch_v1_0" .. math.random(1,6) .. ".wav"))
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then
@@ -71,7 +71,8 @@ function ENT:Detonate()
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
             util.Effect("Explosion", effectdata)
-            self:EmitSound("weapons/grenades/explode_1.wav", 125, 100, 1, CHAN_AUTO)
+			util.Effect("hl2mmod_explosion_grenade", effectdata)
+            self:EmitSound("weapons/grenades/explode" .. math.random(1,3) .. ".wav", 120, 100, 1, CHAN_AUTO)
         end
 
         local attacker = self

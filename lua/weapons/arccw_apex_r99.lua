@@ -63,6 +63,19 @@ local balance = {
 		Penetration = 25,
     },
 }
+function SWEP:ArcCW_Apex_Setup()
+    local val = GetConVar("arccw_apex_bal"):GetInt()
+    for i, v in pairs(balance[val]) do
+        self[i] = v
+    end
+end
+DEFINE_BASECLASS("arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    self:ArcCW_Apex_Setup()
+end
+
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
@@ -154,8 +167,6 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
-
-SWEP.ExtraSightDist = 2.5
 
 SWEP.AttachmentElements = {		
     ["ref_dot"] = {
