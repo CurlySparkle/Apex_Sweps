@@ -1,0 +1,16 @@
+"VertexlitGeneric"
+{
+"$basetexture"				"models\weapons\kraber\kraber_sr_d"
+"$bumpmap"					"models\weapons\kraber\kraber_sr_n"
+"$phongexponenttexture"		"models\weapons\kraber\kraber_sr_e"
+"$color2"	"[0.8 0.8 0.8]"
+"$blendTintByBaseAlpha"	"1"
+
+"$envmap"	"env_cubemap"
+"$envmaptint"	"[ .13 .13 .13 ]"
+
+"$phong"	"1"
+"$phongexponent"	"30"
+"$phongboost"	"5"
+"$phongfresnelranges"	"[0.25 0.5 1]"
+}

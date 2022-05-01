@@ -1,4 +1,32 @@
 sound.Add( {
+    name = "ArcCW_APEX.Prowler.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/prowler/fire_1.wav",
+        "^weapons/prowler/fire_2.wav",
+        "^weapons/prowler/fire_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Prowler.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/prowler/fire_loop_1.wav",
+		"^weapons/prowler/fire_loop_2.wav",
+		"^weapons/prowler/fire_loop_3.wav",
+		"^weapons/prowler/fire_loop_4.wav",
+		"^weapons/prowler/fire_loop_5.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.RE45.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

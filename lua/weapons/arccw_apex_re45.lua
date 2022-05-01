@@ -15,7 +15,7 @@ SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 1
 
-SWEP.CrouchPos = Vector(-4.5, 0, 1.5)
+SWEP.CrouchPos = Vector(-4.5, -1.5, 1.5)
 SWEP.CrouchAng = Angle(1.569, 0.88, -50.458)
 
 SWEP.SprintPos = Vector(0, 0, 0)
@@ -27,7 +27,7 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
-SWEP.NPCWeaponType = "weapon_smg1"
+SWEP.NPCWeaponType = "weapon_pistol"
 SWEP.NPCWeight = 250
 
 SWEP.UseHands = true

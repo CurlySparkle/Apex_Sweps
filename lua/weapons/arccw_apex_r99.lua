@@ -16,13 +16,13 @@ SWEP.Trivia_Calibre = "5.8x42mm"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-4.5, 0, 1.5)
+SWEP.CrouchPos = Vector(-4.5, -2, 1.5)
 SWEP.CrouchAng = Angle(0, 0, -53)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1.5, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
@@ -37,7 +37,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModel = "models/weapons/w_smg1.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 11
 SWEP.DamageMin = 11
@@ -54,6 +54,22 @@ SWEP.BodyDamageMults = {
     [HITGROUP_LEFTLEG] = 0.8,
     [HITGROUP_RIGHTLEG] = 0.8,
 }
+
+local balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 11,
+        DamageMin = 11,
+		Penetration = 4,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 17,
+        DamageMin = 14,
+		Penetration = 10,
+    }
+}
+	
 function SWEP:ArcCW_Apex_Setup()
     local val = GetConVar("arccw_apex_bal"):GetInt()
     for i, v in pairs(balance[val]) do
