@@ -9,7 +9,7 @@ att.Desc_Pros = {
 att.AutoStats = true
 att.Slot = {"apex_muzzle"}
 
-att.Model = "models/weapons/attachments/barrel_6.mdl"
+att.Model = "models/weapons/attachments/barrel_4.mdl"
 
 att.Silencer = false
 att.Override_MuzzleEffect = "muzzleflash_suppressed"

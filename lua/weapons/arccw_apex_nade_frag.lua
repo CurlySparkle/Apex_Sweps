@@ -89,6 +89,7 @@ SWEP.MeleeAttackTime = 0.2
 
 SWEP.SprintTime = 0
 
+-- This lets the weapon have the rest of the missing sequences that are currently missing on the grenade base altrough with a few minor issues
 DEFINE_BASECLASS("arccw_base")
 function SWEP:Initialize()
     BaseClass.Initialize(self)
@@ -97,7 +98,7 @@ end
 SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
-    Magnification = 1,
+    Magnification = 0,
         Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -151,6 +152,13 @@ SWEP.Animations = {
 			{s = "weapons/grenades/wpn_fraggrenade_1p_pinpull_2ch_v2_01.wav", t = 2 / 30}
         },
     },
+    -- ["fire"] = {
+        -- Source = "pullpin",
+        -- SoundTable = {
+            -- {s = "weapons/grenades/wpn_fraggrenade_1p_prep_01.wav", t = 0 / 30},
+			-- {s = "weapons/grenades/wpn_fraggrenade_1p_pinpull_2ch_v2_01.wav", t = 2 / 30}
+        -- },
+    -- },
     ["throw"] = {
         Source = {"toss_overhead"},
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,

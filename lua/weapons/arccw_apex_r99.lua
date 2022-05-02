@@ -36,7 +36,14 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
-SWEP.WorldModel = "models/weapons/w_smg1.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_r99.mdl"
+SWEP.WorldModelOffset = {
+    pos = Vector(-5, 5, -5.5),
+    ang = Angle(-10, 0, 180-5)
+}
+
+SWEP.MirrorVMWM = true
+
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 11
@@ -188,12 +195,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = true
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {

@@ -1,4 +1,28 @@
 sound.Add( {
+    name = "ArcCW_APEX.Hemlok.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/hemlok/fire_6.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Hemlok.Fire_Start")
+
+sound.Add( {
+    name = "ArcCW_APEX.Hemlok.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/hemlok/fire_6.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Hemlok.Fire")
+
+sound.Add( {
     name = "ArcCW_APEX.Prowler.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -10,6 +34,7 @@ sound.Add( {
         "^weapons/prowler/fire_3.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.Prowler.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Prowler.Fire",
@@ -25,6 +50,7 @@ sound.Add( {
 		"^weapons/prowler/fire_loop_5.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.Prowler.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.RE45.Fire_Start",
@@ -38,6 +64,7 @@ sound.Add( {
         "^weapons/re45/fire_3.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.RE45.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.RE45.Fire",
@@ -56,6 +83,7 @@ sound.Add( {
 		"^weapons/re45/fire_loop_8.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.RE45.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",
@@ -137,6 +165,7 @@ sound.Add( {
         "^weapons/car/fire_3.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.CAR.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.CAR.Fire",
@@ -155,6 +184,7 @@ sound.Add( {
         "^weapons/car/fire_loop_8.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.CAR.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Spitfire.Fire_Start",
@@ -195,6 +225,7 @@ sound.Add( {
         "^weapons/volt/fire_1.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.Volt.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Volt.Fire",
@@ -211,6 +242,7 @@ sound.Add( {
         "^weapons/volt/fire_loop_6.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.Volt.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Alternator.Fire",
@@ -240,6 +272,7 @@ sound.Add( {
         "^weapons/r301/rifle_fire_3.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.R301.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.R301.Fire",
@@ -258,6 +291,7 @@ sound.Add( {
         "^weapons/r301/fire_loop_8.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.R301.Fire")
 
 -- R99
 sound.Add( {
@@ -272,6 +306,7 @@ sound.Add( {
         "^weapons/r99/fire_3.wav",
     }
 } )
+util.PrecacheSound("ArcCW_APEX.R99.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.R99.Fire",
@@ -292,7 +327,7 @@ sound.Add( {
         "^weapons/r99/fire_loop_10.wav",
     }
 } )
-
+util.PrecacheSound("ArcCW_APEX.R99.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Flatline.Fire_Start",

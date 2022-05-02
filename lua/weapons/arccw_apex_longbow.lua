@@ -15,13 +15,13 @@ SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 3
 
-SWEP.CrouchPos = Vector(-6, 0, 1)
+SWEP.CrouchPos = Vector(-6.5, -2, 2)
 SWEP.CrouchAng = Angle(0, 0, -53)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -32,7 +32,16 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_longbow.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_longbow.mdl"
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-6, 4.3, -4.5),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
+
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 55
@@ -96,7 +105,7 @@ SWEP.DistantShootSound = ""
 SWEP.MuzzleEffect = "tfa_apex_muzzle_sniper"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 85
-SWEP.ShellScale = 1
+SWEP.ShellScale = 1.55
 SWEP.ShellTime = 1
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 
@@ -154,12 +163,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = false
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {

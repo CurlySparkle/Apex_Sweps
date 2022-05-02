@@ -18,12 +18,13 @@ PrecacheParticleSystem("tfa_apex_muzzle_smg")
 PrecacheParticleSystem("tfa_apex_muzzle_sniper")
 PrecacheParticleSystem("tfa_apex_tracer_anvil")
 
+PrecacheParticleSystem("tfa_apex_energy_tracer_smg") 
 PrecacheParticleSystem("tfa_apex_energy_muzzle_big") 
 PrecacheParticleSystem("tfa_apex_energy_muzzle_medium")
 PrecacheParticleSystem("tfa_apex_energy_muzzle_shotgun")
+PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
 
 PrecacheParticleSystem("tfa_apex_energy_tracer_rifle")
-PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
 PrecacheParticleSystem("tfa_apex_tracer_hmg")
 PrecacheParticleSystem("tfa_apex_tracer_pistol")
 

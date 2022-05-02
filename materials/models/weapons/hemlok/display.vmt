@@ -1,0 +1,16 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "ammocounter/display"
+	"$texture2" "ammocounter/display_digital"
+	"$color2" "[0.6 1 2]"
+	//"$nocull" "1"
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" -0.10
+			"texturescrollangle" 0
+		}
+	}
+}

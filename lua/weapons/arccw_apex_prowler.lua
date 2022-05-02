@@ -15,7 +15,7 @@ SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-6, -4, 1.5)
+SWEP.CrouchPos = Vector(-6.5, -2.5, 1.5)
 SWEP.CrouchAng = Angle(1.037, 0.623, -50.921)
 
 SWEP.SprintPos = Vector(0, 0, 0)
@@ -214,7 +214,7 @@ SWEP.Attachments = {
             wang = Angle(90, 0, -90),
         },			
         InstalledEles = {"ref_sights", "weapon_dot"},
-		ExtraSightDist = 1,
+		ExtraSightDist = 3.5,
 		 CorrectivePos = Vector(2.17, 0, 0),
          CorrectiveAng = Angle(-1.131, 1.373, 7.821)
     },

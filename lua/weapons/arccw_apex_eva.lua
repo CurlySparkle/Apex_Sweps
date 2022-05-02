@@ -190,7 +190,7 @@ SWEP.HoldtypeSights = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
-SWEP.CrouchPos = Vector(-6, 0, 1)
+SWEP.CrouchPos = Vector(-6, -1, 1)
 SWEP.CrouchAng = Angle(1.923, -1.375, -45.334)
 
 SWEP.SprintPos = Vector(0, 0, 0)

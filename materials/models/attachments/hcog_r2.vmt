@@ -6,9 +6,10 @@
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 
-	"$selfillum"             "1"
-     "$selfillumtint"         "1 1 1"
-	"$selfillummask"  	  "models\attachments\hcog_r2_s"
+	"$detail"			"models\attachments\hcog_r2_s"
+	"$detailscale"                    "1"
+	"$detailblendfactor" 		"1"
+	"$detailblendmode"			"5"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"
