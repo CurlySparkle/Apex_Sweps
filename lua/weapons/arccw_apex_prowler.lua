@@ -37,7 +37,7 @@ SWEP.WorldModel = "models/weapons/c_apex_prowler.mdl"
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-10.8, 4, -2.7),
+    pos        =    Vector(-9, 4.5, -4),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -109,6 +109,7 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = -5,
+		RunawayBurst = true,
     },
     {
         Mode = 1,
@@ -178,11 +179,11 @@ SWEP.IronSightStruct = {
     },
 }
 
-SWEP.HoldtypeHolstered = "normal"
-SWEP.HoldtypeActive = "pistol"
-SWEP.HoldtypeSights = "revolver"
+SWEP.HoldtypeHolstered = "passive"
+SWEP.HoldtypeActive = "rpg"
+SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
@@ -263,7 +264,9 @@ SWEP.Animations = {
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_ArmUp_1frames_1a.wav", t = 1 / 30},
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_BoltPull_8frames_1.wav", t = 8 / 30},
 			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_GrabSettle_24frames_1.wav", t = 24 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_ArmSettle_28frames_1b.wav", t = 28 / 30}
+			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_ArmSettle_28frames_1b.wav", t = 28 / 30},
+			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_pull_68frames_1.wav", t = 8 / 30},
+			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_release_76frames_1.wav", t = 16 / 30}
         },	
     },
     ["draw"] = {
@@ -317,7 +320,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG,
         LHIK = true,
         LHIKIn = 0.2,
         LHIKOut = 0.4,
@@ -339,7 +342,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG,
         LHIK = true,
         LHIKIn = 0.2,
         LHIKOut = 0.5,
