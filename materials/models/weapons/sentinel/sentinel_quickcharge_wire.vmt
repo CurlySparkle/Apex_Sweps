@@ -1,0 +1,23 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\sentinel\sentinel_quickcharge_wire_d"
+"$bumpmap" "models\weapons\sentinel\sentinel_quickcharge_wire_n"
+"$PhongExponentTexture" "models\weapons\sentinel\sentinel_quickcharge_wire_e"
+"$color2"	"[0.8 0.8 0.8]"
+"$blendTintByBaseAlpha"	"1"
+"$basemapalphaphongmask" "1"
+
+"$envmap"	"env_cubemap"
+"$envmaptint"	"[ .08 .08 .08 ]"
+"$envmapfresnel" "1"
+"$envmapFresnelMinMaxExp" "[10 40 .4]"
+
+"$phong"	"1"
+"$phongexponent"	"30"
+"$phongboost"	"5"
+"$phongfresnelranges"	"[0.25 0.5 1]"
+//"$phongfresnelranges" "[.1 .4 2]"
+
+}
+//Material setup by ShadowRUN 幸運な.
+//You are NOT allowed to edit/modify/redistribute these materials without my explicit permission.

@@ -116,8 +116,8 @@ SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
 SWEP.BarrelLength = 24
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
+SWEP.ProceduralRegularFire = true
+SWEP.ProceduralIronFire = true
 
 SWEP.CaseBones = {}
 
@@ -238,7 +238,7 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-		Time = 32 / 32,
+        Time = 1,
     },
     ["cycle"] = {
         Source = "rechamber",
@@ -252,7 +252,7 @@ SWEP.Animations = {
     },
     ["fire_sight"] = {
         Source = "iron_fire",
-		Time = 32 / 32,
+        Time = 1,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
