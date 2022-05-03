@@ -66,7 +66,7 @@ SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 10
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 6
+SWEP.Primary.ClipSize = 5
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.PhysBulletMuzzleVelocity = 500
@@ -209,6 +209,23 @@ SWEP.Attachments = {
         Slot = {"apex_extras2"}
     },
 }
+
+SWEP.Hook_GetCapacity = function(wep, cap)
+    local mag7 = wep.Attachments[4].Installed == "apex_mag_sniper_level4"
+    local mag6 = wep.Attachments[4].Installed == "apex_mag_sniper_level3"
+	local mag5 = wep.Attachments[4].Installed == "apex_mag_sniper_level2"
+	local mag4 = wep.Attachments[4].Installed == "apex_mag_sniper_level1"
+	
+    if mag7 and mag6 then
+        return 12
+    end
+    if mag5 then
+        return 10
+    end
+    if mag4 then
+        return 8
+    end
+end
 
 SWEP.Animations = {
     ["idle"] = {

@@ -251,6 +251,23 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.Hook_GetCapacity = function(wep, cap)
+    local mag7 = wep.Attachments[4].Installed == "apex_mag_heavy_level4"
+    local mag6 = wep.Attachments[4].Installed == "apex_mag_heavy_level3"
+	local mag5 = wep.Attachments[4].Installed == "apex_mag_heavy_level2"
+	local mag4 = wep.Attachments[4].Installed == "apex_mag_heavy_level1"
+	
+    if mag7 then
+        return 35
+    end
+    if mag6 then
+        return 30
+    end
+    if mag5 and mag4 then
+        return 25
+    end
+end
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",

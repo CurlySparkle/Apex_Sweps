@@ -204,6 +204,23 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.Hook_GetCapacity = function(wep, cap)
+    local mag7 = wep.Attachments[3].Installed == "apex_mag_sniper_level4"
+    local mag6 = wep.Attachments[3].Installed == "apex_mag_sniper_level3"
+	local mag5 = wep.Attachments[3].Installed == "apex_mag_sniper_level2"
+	local mag4 = wep.Attachments[3].Installed == "apex_mag_sniper_level1"
+	
+    if mag7 then
+        return 7
+    end
+    if mag6 then
+        return 6
+    end
+    if mag4 and mag5 then
+        return 5
+    end
+end
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -240,12 +257,13 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-		Time = 32 / 32,
+        Time = 9 / 10,
     },
     ["cycle"] = {
         Source = "rechamber",
         ShellEjectAt = 0.3,
 		Time = 63/40,
+		MinProgress = 22 / 35,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_01.wav", t = 5 / 40},
         },
@@ -255,12 +273,13 @@ SWEP.Animations = {
     },
     ["fire_sight"] = {
         Source = "iron_fire",
-		Time = 32 / 32,
+        Time = 9 / 10,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
         ShellEjectAt = 0.3,
 		Time = 63/40,
+		MinProgress = 22 / 35,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_02.wav", t = 5 / 40},
         },
