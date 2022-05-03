@@ -68,12 +68,14 @@ SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 4
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.PhysBulletMuzzleVelocity = 500
+SWEP.PhysBulletMuzzleVelocity = 750
 
-SWEP.Recoil = 1.5
-SWEP.RecoilSide = 0.5
+SWEP.Recoil = 3.300
+SWEP.RecoilSide = 0.550
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
+SWEP.RecoilVMShake = 1
+SWEP.VisualRecoilMult = 0.2
 
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true -- do not cycle on last shot
@@ -116,8 +118,8 @@ SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
 SWEP.BarrelLength = 24
 
-SWEP.ProceduralRegularFire = true
-SWEP.ProceduralIronFire = true
+SWEP.ProceduralRegularFire = false
+SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
@@ -134,7 +136,7 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -4, 0),
+    Pos = Vector(0, -3, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.25,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -238,11 +240,12 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-        Time = 1,
+		Time = 32 / 32,
     },
     ["cycle"] = {
         Source = "rechamber",
         ShellEjectAt = 0.3,
+		Time = 63/40,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_01.wav", t = 5 / 40},
         },
@@ -252,11 +255,12 @@ SWEP.Animations = {
     },
     ["fire_sight"] = {
         Source = "iron_fire",
-        Time = 1,
+		Time = 32 / 32,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
         ShellEjectAt = 0.3,
+		Time = 63/40,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_02.wav", t = 5 / 40},
         },

@@ -291,6 +291,12 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
+    ["1_to_2"] = {
+        Source = "firemode_switch1",
+    },
+    ["2_to_1"] = {
+        Source = "firemode_switch2",
+    },
 	["bash"] = {
         Source = {"melee"},
         LHIK = true,		
