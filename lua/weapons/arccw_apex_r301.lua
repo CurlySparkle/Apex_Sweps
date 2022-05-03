@@ -37,7 +37,6 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_r301.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_r301.mdl"
-
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-5, 3.5, -5),
@@ -286,6 +285,12 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_Start_V2_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_Mid_V2_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_Mid_V2_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_End_V2_2ch_01.wav", t = 316 / 30}
+    },
     },
     ["reload"] = {
         Source = "reload",

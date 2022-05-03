@@ -310,6 +310,12 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,	
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Start_V1_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 316 / 30}
+    },
     },
     ["exit_inspect"] = {
         Source = "inspect_out",

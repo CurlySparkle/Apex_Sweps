@@ -15,13 +15,13 @@ SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 3
 
-SWEP.CrouchPos = Vector(-6, 0, 1)
+SWEP.CrouchPos = Vector(-6, -2, 1)
 SWEP.CrouchAng = Angle(0, 0, -53)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1.5, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -30,8 +30,17 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_g7.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.WorldModel = "models/weapons/w_apex_g7.mdl"
+SWEP.MirrorVMWM = true
+SWEP.MirrorWorldModel = "models/weapons/w_apex_g7.mdl"
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-4, 4.5, -5),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 36
 SWEP.DamageMin = 36
@@ -101,7 +110,8 @@ SWEP.Firemodes = {
         Mode = 1,
     },
     {
-        Mode = -1,
+        Mode = -3,
+		RunawayBurst = true,
     },
     {
         Mode = 0
@@ -112,7 +122,7 @@ SWEP.AccuracyMOA = 0.5
 SWEP.HipDispersion = 400 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 75
 
-SWEP.Primary.Ammo = "smg1"
+SWEP.Primary.Ammo = "ar2"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -124,8 +134,8 @@ SWEP.DistantShootSound = ""
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_sniper"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
-SWEP.ShellPitch = 85
-SWEP.ShellScale = 1.1
+SWEP.ShellPitch = 65
+SWEP.ShellScale = 1.55
 SWEP.ShellTime = 1
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 
@@ -166,7 +176,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
@@ -179,12 +189,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = false
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
@@ -263,14 +267,14 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = {"fire", "fire2"},
-        ShellEjectAt = 0,
+        ShellEjectAt = 0.1,
     },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
         Source = {"iron_fire", "iron_fire2"},
-        ShellEjectAt = 0,
+        ShellEjectAt = 0.1,
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -290,6 +294,12 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Start_V1_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 316 / 30}
+    },
     },
     ["reload"] = {
         Source = "reload",

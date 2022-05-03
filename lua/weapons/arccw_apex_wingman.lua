@@ -24,7 +24,15 @@ SWEP.AutoReload = false
 SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
-SWEP.WorldModel = "models/weapons/w_357.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_wingman.mdl"
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-10.5, 3.5, -2.5),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 45
@@ -129,13 +137,6 @@ SWEP.BulletBones = false
 
 SWEP.RevolverReload = true
 SWEP.GuaranteeLaser = true
-
-SWEP.WorldModelOffset = {
-    pos = Vector(-12.5, 5, -3),
-    ang = Angle(-10, 0, 180)
-}
-
-SWEP.MirrorVMWM = true
 
 SWEP.AttachmentElements = {		
     ["wingman_sight"] = {
