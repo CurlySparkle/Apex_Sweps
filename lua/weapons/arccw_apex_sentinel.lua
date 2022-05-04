@@ -103,7 +103,7 @@ SWEP.ShootVol = 140 -- volume of shoot sound
 
 SWEP.ShootSound = { "weapons/sentinel/fire_1.wav", "weapons/sentinel/fire_2.wav", "weapons/sentinel/fire_3.wav" }
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_4"
-SWEP.ShootSoundSilenced = ""
+SWEP.ShootSoundSilenced = { "weapons/sentinel/fire_charged_1.wav", "weapons/sentinel/fire_charged_2.wav", "weapons/sentinel/fire_charged_3.wav" }
 SWEP.DistantShootSound = ""
 
 SWEP.MuzzleEffect = "muzzleflash_m82"
@@ -193,6 +193,10 @@ SWEP.Attachments = {
         Slot = {"apex_sniper_mags"}
     },
     {
+        PrintName = "Specials",
+        Slot = {"apex_specials"}
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
@@ -228,9 +232,11 @@ SWEP.Animations = {
     ["idle_sprint"] = {Source = "sprint", Mult = 0.8},
     ["enter_sprint"] = {
         Source = "sprint_in",
+		MinProgress = 0.1,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
+		MinProgress = 0.1,
     },
     ["ready"] = {
         Source = "draw_first",
@@ -257,35 +263,39 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-        Time = 9 / 10,
+        -- Time = 9 / 10,
+		MinProgress = 0.4,
     },
     ["cycle"] = {
         Source = "rechamber",
         ShellEjectAt = 0.3,
 		Time = 63/40,
-		MinProgress = 22 / 35,
+		MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_01.wav", t = 5 / 40},
         },
     },
     ["enter_sight"] = {
         Source = "iron_in",
+		MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
-        Time = 9 / 10,
+        -- Time = 9 / 10,
+		MinProgress = 0.4,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
         ShellEjectAt = 0.3,
 		Time = 63/40,
-		MinProgress = 22 / 35,
+		MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_02.wav", t = 5 / 40},
         },
     },
     ["exit_sight"] = {
         Source = "iron_out",
+		MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},

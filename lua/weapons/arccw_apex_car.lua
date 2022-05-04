@@ -15,15 +15,15 @@ SWEP.Trivia_Manufacturer = "Siwhan Industries"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-6, 0, 2)
+SWEP.CrouchPos = Vector(-6, -2, 2)
 SWEP.CrouchAng = Angle(1.037, 0.623, -53.174)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -1)
@@ -235,6 +235,17 @@ SWEP.Attachments = {
         Slot = {"apex_light_mags"}
     },
     {
+        PrintName = "Hold Style",
+        Slot = {"car_special"},
+        Bone = "def_c_base",
+        Offset = {
+            vpos = Vector(3.3, -6.5, -8),
+            vang = Angle(90, 0, -90),
+            wpos = Vector(0, 0, 0),
+            wang = Angle(0, 0, 0),
+        },
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
@@ -251,10 +262,12 @@ SWEP.Animations = {
         Source = "idle",
     },
     ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
-    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1, MinProgress = 0.1,},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1, MinProgress = 0.1,},
     ["ready"] = {
         Source = "draw_first",
+		LHIK = true,
+		LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/wpn_car_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 8 / 30},
             {s = "weapons/car/wpn_car_emptyreload_boltfront_fr56_2ch_v1_01.wav", t = 14 / 30}
@@ -278,6 +291,7 @@ SWEP.Animations = {
     },
     ["enter_sight"] = {
         Source = "iron_in",
+		MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
@@ -285,6 +299,7 @@ SWEP.Animations = {
     },
     ["exit_sight"] = {
         Source = "iron_out",
+		MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},
@@ -300,6 +315,7 @@ SWEP.Animations = {
     ["exit_inspect"] = {
         Source = "inspect_out",
         LHIK = true,
+		LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/Wpn_Car_Inspect_Settle_fr471_v1_01.wav", t = 0 / 30}
         },
@@ -328,6 +344,8 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+		LHIK = true,
+		LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/wpn_car_reload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
             {s = "weapons/car/Wpn_Car_Reload_MagEject_New_v1_01.wav", t = 23 / 30},
@@ -338,6 +356,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+		LHIK = true,
         SoundTable = {
             {s = "weapons/car/wpn_car_emptyreload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
             {s = "weapons/car/Wpn_Car_Reload_MagEject_New_v1_02.wav", t = 17 / 30},
