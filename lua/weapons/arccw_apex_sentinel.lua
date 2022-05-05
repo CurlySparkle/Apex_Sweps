@@ -13,7 +13,7 @@ SWEP.Trivia_Class = "Sniper Rifle"
 SWEP.Trivia_Desc = "A veritably powerful sniper rifle with the ability to charge a more powerful shot with the use of a shield battery."
 SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
-SWEP.Slot = 3
+SWEP.Slot = 4
 
 SWEP.CrouchPos = Vector(-8, -2, 1.5)
 SWEP.CrouchAng = Angle(0, 0, -53)
@@ -93,7 +93,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 0.2
-SWEP.HipDispersion = 700
+SWEP.HipDispersion = 500
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 300
 
@@ -135,6 +135,7 @@ SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
+SWEP.SightedSpeedMult = 0.2
 SWEP.IronSightStruct = {
     Pos = Vector(0, -3, 0),
     Ang = Angle(0, 0, 0),
@@ -333,6 +334,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+		ShellEjectAt = 0.2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BoltBack_2ch_v2_01.wav", t = 5 / 30},

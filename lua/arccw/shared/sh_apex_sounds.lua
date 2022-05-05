@@ -1,4 +1,18 @@
 sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/peacekeeper/fire_1.wav",
+		"^weapons/peacekeeper/fire_2.wav",
+		"^weapons/peacekeeper/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Hemlok.Fire_Start")
+
+sound.Add( {
     name = "ArcCW_APEX.Hemlok.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

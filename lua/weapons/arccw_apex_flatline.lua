@@ -13,7 +13,7 @@ SWEP.Trivia_Class = "Assault rifle"
 SWEP.Trivia_Desc = "Automatic rifle that packs a punch."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
-SWEP.Slot = 3
+SWEP.Slot = 2
 
 SWEP.CrouchPos = Vector(-6, 0, 1)
 SWEP.CrouchAng = Angle(0.837, 0, -56.513)
