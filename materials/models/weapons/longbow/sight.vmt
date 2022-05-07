@@ -1,11 +1,22 @@
-"VertexlitGeneric"
+"UnlitGeneric"
 {
-"$basetexture" "models\weapons\longbow\longbow_sight_d"
-"$color2"	"[1 0 0]"
-"$nocull" "1"
-"$additive" "1"
+	"$basetexture"	"models/weapons/longbow/longbow_sight_d"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "2"
+	"$detailframe"	"0"
+	"$translucent" 	"1"
+	"$model"		"1"
+	"$additive"	"1"
 
-"$selfillum"             "1"
-"$selfillumtint"         "1 1 1"
-"$selfillummask"  	  "models\weapons\longbow\longbow_sight_d"
+	$color2 "[1 0.1 0]"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
 }

@@ -90,7 +90,7 @@ SWEP.MeleeAttackTime = 0.2
 SWEP.SprintTime = 0
 
 -- This lets the weapon have the rest of the missing sequences that are currently missing on the grenade base altrough with a few minor issues
-DEFINE_BASECLASS("arccw_base")
+DEFINE_BASECLASS("arccw_base", "arccw_base_nade")
 function SWEP:Initialize()
     BaseClass.Initialize(self)
 end

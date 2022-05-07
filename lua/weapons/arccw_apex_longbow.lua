@@ -75,6 +75,9 @@ SWEP.Recoil = 1.5
 SWEP.RecoilSide = 0.5
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
+SWEP.RecoilVMShake = 1
+SWEP.VisualRecoilMult = 1
+SWEP.RecoilPunchBackMaxSights = 1
 
 SWEP.Delay = 60 / 78 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
@@ -88,17 +91,17 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 0.2
-SWEP.HipDispersion = 700
+SWEP.HipDispersion = 500
 SWEP.MoveDispersion = 100
-SWEP.JumpDispersion = 300
+SWEP.JumpDispersion = 100
 
 SWEP.Primary.Ammo = "SniperPenetratedRound"
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 160 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "weapons/longbow/wpn_dmr_fire_1.wav", "weapons/longbow/wpn_dmr_fire_2.wav", "weapons/longbow/wpn_dmr_fire_3.wav" }
-SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
+SWEP.ShootSound = "ArcCW_APEX.Longbow.Fire"
+SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
@@ -132,7 +135,7 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, -1, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.25,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -263,6 +266,7 @@ SWEP.Animations = {
     },
     ["enter_sight"] = {
         Source = "iron_in",
+		MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
@@ -270,6 +274,7 @@ SWEP.Animations = {
     },
     ["exit_sight"] = {
         Source = "iron_out",
+		MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},
@@ -283,6 +288,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 0 / 30}
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
@@ -297,9 +305,10 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_magpull_fr8_2ch_v1_01.wav", t = 8 / 30},
-            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_maggrab_fr14_2ch_v1_02.wav", t = 14 / 30},
-            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.wav", t = 39 / 30}
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_magpull_fr14_2ch_v1_01.wav", t = 14 / 30},
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_maggrab_fr26_2ch_v1_01.wav", t = 26 / 30},
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_maginsert_fr40_2ch_v1_01.wav", t = 40 / 30},
+			{p = 100, s = "weapons/longbow/wpn_dmr_reload_handrest_fr53_2ch_v1_01.wav", t = 53 / 30}
         },
     },
     ["reload_empty"] = {

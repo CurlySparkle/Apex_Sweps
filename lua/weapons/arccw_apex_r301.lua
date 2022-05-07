@@ -226,6 +226,17 @@ SWEP.Attachments = {
         Slot = {"apex_light_mags"}
     },
     {
+        PrintName = "Foregrip Type",
+        Slot = {"apex_fg"},
+        Bone = "def_c_base",
+        Offset = {
+            vpos = Vector(0, -1.75, 16.7),
+            vang = Angle(90, 0, -90),
+            wpos = Vector(0, 0, 0),
+            wang = Angle(0, 0, 0),
+        },
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
@@ -244,7 +255,11 @@ SWEP.Animations = {
     ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
     ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
     ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
-    ["ready"] = {Source = "draw_first", Mult = 0.8},
+    ["ready"] = {
+        Source = "draw_first",
+		LHIK = true,
+		LHIKOut = 0.6,
+    },
     ["draw"] = {
         Source = "draw",
         Mult = 0.8,
@@ -279,12 +294,17 @@ SWEP.Animations = {
     },
     ["enter_inspect"] = {
         Source = "inspect_in",
+		LHIK = true,
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+		LHIK = true,
+		LHIKOut = 0.6,
     },
     ["idle_inspect"] = {
         Source = "inspect",
+		LHIK = true,
+        LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_Start_V2_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_Mid_V2_2ch_01.wav", t = 96 / 30},
@@ -295,6 +315,8 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+		LHIK = true,
+		LHIKOut = 0.9,
         SoundTable = {
             {p = 150, s = "weapons/r301/wpn_r101_reload_magpull_fr0_2ch_v1_02.wav", t = 0 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_reload_maggrab_fr18_2ch_v1_02.wav", t = 18 / 30},
@@ -305,6 +327,8 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+		LHIK = true,
+		LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_magpull_fr9_2ch_v1_02.wav", t = 9 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maggrab_fr21_2ch_v1_02.wav", t = 21 / 30},

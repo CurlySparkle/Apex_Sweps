@@ -3,6 +3,8 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_p2020")
 end
 
+SWEP.ProneMod_DisableTransitions = true
+
 SWEP.Base = "arccw_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
@@ -21,6 +23,14 @@ SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_p2020.mdl"
 SWEP.WorldModel = "models/weapons/w_pistol.mdl"
+SWEP.WorldModelOffset = {
+    pos = Vector(-10.5, 3.5, -2.2),
+    ang = Angle(-10, 0, 180),
+    scale   =   1,
+}
+
+SWEP.MirrorVMWM = true
+
 SWEP.ViewModelFOV = 70
 
 
@@ -69,7 +79,7 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.ChamberSize = 1
-SWEP.Primary.ClipSize = 14
+SWEP.Primary.ClipSize = 13
 
 SWEP.PhysBulletMuzzleVelocity = 500
 
@@ -98,10 +108,10 @@ SWEP.MoveDispersion = 75
 
 SWEP.Primary.Ammo = "pistol" -- what ammo type the gun uses
 
-SWEP.ShootVol = 110 -- volume of shoot sound
+SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "weapons/p2020/fire_1.wav", "weapons/p2020/fire_2.wav", "weapons/p2020/fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.P2020.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_F"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -160,7 +170,7 @@ SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0, 0, 0)
 
-SWEP.BarrelLength = 24
+SWEP.BarrelLength = 8
 
 SWEP.AttachmentElements = {
     ["sight"] = {
@@ -175,13 +185,6 @@ SWEP.AttachmentElements = {
     },
 }
 SWEP.GuaranteeLaser = true
-
-SWEP.WorldModelOffset = {
-    pos = Vector(-12.5, 4, -2.5),
-    ang = Angle(-10, 0, 180)
-}
-
-SWEP.MirrorVMWM = true
 
 SWEP.Attachments = {
     {
@@ -214,6 +217,23 @@ SWEP.Attachments = {
         Slot = {"apex_extras2"}
     },
 }
+
+SWEP.Hook_GetCapacity = function(wep, cap)
+    local mag4 = wep.Attachments[2].Installed == "apex_mag_light_level4"
+    local mag3 = wep.Attachments[2].Installed == "apex_mag_light_level3"
+	local mag2 = wep.Attachments[2].Installed == "apex_mag_light_level2"
+	local mag1 = wep.Attachments[2].Installed == "apex_mag_light_level1"
+	
+    if mag4 and mag3 then
+        return 20
+    end
+    if mag2 then
+        return 17
+    end
+    if mag1 then
+        return 15
+    end
+end
 
 function SWEP:Hook_TranslateAnimation(anim)
     if anim == "fire_iron" then

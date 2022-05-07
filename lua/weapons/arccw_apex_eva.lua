@@ -133,10 +133,10 @@ SWEP.MoveDispersion = 100
 
 SWEP.Primary.Ammo = "buckshot" -- what ammo type the gun uses
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 180 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "^weapons/eva/fire_1.wav", "^weapons/eva/fire_2.wav", "^weapons/eva/fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.Eva.Fire"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
@@ -300,6 +300,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_End_V1_2ch_01.wav", t = 0 / 30},
+        },
     },
     ["idle_inspect"] = {
         Source = "inspect",

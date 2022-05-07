@@ -1,4 +1,88 @@
 sound.Add( {
+    name = "ArcCW_APEX.Eva.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/eva/fire_1.wav",
+		"^weapons/eva/fire_2.wav",
+		"^weapons/eva/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Eva.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Wingman.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/wingman/fire_1.wav",
+		"^weapons/wingman/fire_2.wav",
+		"^weapons/wingman/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Wingman.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Mastiff.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/mastiff/fire_1.wav",
+		"^weapons/mastiff/fire_2.wav",
+		"^weapons/mastiff/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Mastiff.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.P2020.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/p2020/fire_1.wav",
+		"^weapons/p2020/fire_2.wav",
+		"^weapons/p2020/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.P2020.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.G7.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/G7/fire_1.wav",
+		"^weapons/G7/fire_2.wav",
+		"^weapons/G7/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.G7.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Longbow.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/Longbow/fire_1.wav",
+		"^weapons/Longbow/fire_2.wav",
+		"^weapons/Longbow/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
+
+sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -10,7 +94,7 @@ sound.Add( {
 		"^weapons/peacekeeper/fire_3.wav",
     }
 } )
-util.PrecacheSound("ArcCW_APEX.Hemlok.Fire_Start")
+util.PrecacheSound("ArcCW_APEX.Peacekeeper.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Hemlok.Fire_Start",

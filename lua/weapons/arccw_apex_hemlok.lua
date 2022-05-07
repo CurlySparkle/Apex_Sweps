@@ -314,6 +314,12 @@ SWEP.Animations = {
     ["2_to_1"] = {
         Source = "firemode_switch2",
     },
+    ["1_to_2_sight"] = {
+        Source = "ads_firemode_switch",
+    },
+    ["2_to_1_sight"] = {
+        Source = "ads_firemode_switch",
+    },
 	["bash"] = {
         Source = {"melee"},
         LHIK = true,		

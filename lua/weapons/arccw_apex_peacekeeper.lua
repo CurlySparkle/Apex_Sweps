@@ -15,6 +15,10 @@ SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 3
 
+SWEP.Sway = 0.25
+
+SWEP.ViewModelFOV = 70
+
 SWEP.CrouchPos = Vector(-4, -2, -0)
 SWEP.CrouchAng = Angle(0.863, 1.062, -21.854)
 
@@ -32,7 +36,7 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_peacekeeper.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_peacekeeper.mdl"
+SWEP.WorldModel = "models/weapons/w_shotgun.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6.5, 5.5, -1.5),
@@ -40,9 +44,6 @@ SWEP.WorldModelOffset = {
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
 }
-
-
-SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 9
 SWEP.DamageMin = 9
@@ -150,7 +151,7 @@ SWEP.SightsDispersion = 0
 
 SWEP.Primary.Ammo = "buckshot"
 
-SWEP.ShootVol = 150 -- volume of shoot sound
+SWEP.ShootVol = 160 -- volume of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.Peacekeeper.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
@@ -318,8 +319,8 @@ SWEP.Animations = {
         Source = "iron_rechamber",
 		MinProgress = 0.875,
         SoundTable = {
-            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_02.wav", t = 7 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_02.wav", t = 16 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_02.wav", t = 3 / 30},
+			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_02.wav", t = 15 / 30},
         },
     },
     ["exit_sight"] = {
@@ -338,6 +339,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_End_V1_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",

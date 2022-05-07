@@ -127,7 +127,7 @@ SWEP.Primary.Ammo = "ar2"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "weapons/g7/fire_1.wav", "weapons/g7/fire_2.wav", "weapons/g7/fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.G7.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -226,6 +226,17 @@ SWEP.Attachments = {
         Slot = {"apex_sniper_mags"}
     },
     {
+        PrintName = "Hold Style",
+        Slot = {"g7_special"},
+        Bone = "def_c_base",
+        Offset = {
+            vpos = Vector(3.5, -5.5, -7),
+            vang = Angle(90, 0, -90),
+            wpos = Vector(0, 0, 0),
+            wang = Angle(0, 0, 0),
+        },
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
@@ -250,6 +261,9 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
+		LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_charge_fr49_2ch_v1_01.wav", t = 7 / 35}
         },
@@ -291,9 +305,15 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+		LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.9,
     },
     ["idle_inspect"] = {
         Source = "inspect",
+		LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_01.wav", t = 96 / 30},
@@ -304,6 +324,9 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+		LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_grabmag_fr0_2ch_v1_01.wav", t = 8 / 30},
             {p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_ejectmag_fr18_2ch_v1_01.wav", t = 14 / 30},
@@ -313,6 +336,9 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/g7/wpn_g2a4_reload_empty_grabmag_fr0_2ch_v1_01.wav", t = 0 / 30},
             {s = "weapons/g7/wpn_g2a4_reload_empty_ejectmag_fr18_2ch_v1_01.wav", t = 18 / 30},

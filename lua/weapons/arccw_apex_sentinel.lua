@@ -15,6 +15,8 @@ SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 4
 
+SWEP.Sway = 0.1
+
 SWEP.CrouchPos = Vector(-8, -2, 1.5)
 SWEP.CrouchAng = Angle(0, 0, -53)
 
@@ -99,7 +101,7 @@ SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "XBowBolt"
 
-SWEP.ShootVol = 140 -- volume of shoot sound
+SWEP.ShootVol = 180 -- volume of shoot sound
 
 SWEP.ShootSound = { "weapons/sentinel/fire_1.wav", "weapons/sentinel/fire_2.wav", "weapons/sentinel/fire_3.wav" }
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_4"

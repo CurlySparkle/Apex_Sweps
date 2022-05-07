@@ -140,10 +140,10 @@ SWEP.MoveDispersion = 50
 
 SWEP.Primary.Ammo = "buckshot" -- what ammo type the gun uses
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 160 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "weapons/mastiff/fire_1.wav", "weapons/mastiff/fire_2.wav", "weapons/mastiff/fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.Mastiff.Fire"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
@@ -196,7 +196,7 @@ SWEP.HoldtypeSights = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
-SWEP.CrouchPos = Vector(-2.5, 0, 0.5)
+SWEP.CrouchPos = Vector(-2.5, -2, 0.5)
 SWEP.CrouchAng = Angle(-0.606, 0, -8.576)
 
 SWEP.SprintPos = Vector(0, 0, 0)

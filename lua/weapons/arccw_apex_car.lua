@@ -273,14 +273,11 @@ SWEP.Animations = {
             {s = "weapons/car/wpn_car_emptyreload_boltfront_fr56_2ch_v1_01.wav", t = 14 / 30}
         },
     },
-
     ["draw"] = {
         Source = "draw",
-        Mult = 0.8,
     },
     ["holster"] = {
         Source = "holster",
-        Mult = 0.8,
     },
     ["idle_iron"] = {
         Source = "iron_idle",
