@@ -3,7 +3,7 @@
 	"$basetexture" "ammocounter/plate_peace/numbers_plate2"
 	"$additive" "1"
 	"$decal" "1"
-	"$color2" "[0.3 0.8 1]"
+	"$color2" "[0.7 0.7 0.7]"
 	Proxies // proxies are listed inside this block
 	{
 		ArcCW_AMMO

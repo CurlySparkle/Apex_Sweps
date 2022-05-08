@@ -125,7 +125,7 @@ SWEP.MoveDispersion = 150
 
 SWEP.Primary.Ammo = "ar2" 
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 160 -- volume of shoot sound
 -- SWEP.ShootPitch = 101 -- pitch of shoot sound
 
 
