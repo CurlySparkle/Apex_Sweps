@@ -124,28 +124,6 @@ SWEP.Firemodes = {
     }
 }
 
--- This is a perfectly divided star shape. It looks neat but is NOT AUTHENTIC.
---[[]
-SWEP.ShotgunSpreadPattern = {
-    [1] = Angle(1, 0, 0),
-    [2] = Angle(2, 0, 0),
-
-    [3] = Angle(0.309, 0.951, 0), -- cos(72), sin(72)
-    [4] = Angle(0.618, 1.902, 0), -- cos(72) * 2, sin(72) * 2
-
-    [5] = Angle(-0.809, 0.588, 0), -- cos(144), sin(144)
-    [6] = Angle(-1.618, 1.176, 0), -- cos(144) * 2, sin(144) * 2
-
-    [7] = Angle(-0.809, -0.588, 0), -- cos(216), sin(216)
-    [8] = Angle(-1.618, -1.176, 0), -- cos(216) * 2, sin(216) * 2
-
-    [9] = Angle(0.309, -0.951, 0), -- cos(288), sin(288)
-    [10] = Angle(0.618, -1.902, 0), -- cos(288) * 2, sin(288) * 2
-
-    [11] = Angle(0, 0, 0),
-}
-]]
-
 SWEP.ShotgunSpreadPattern = {
     [1] = Angle(1, 0, 0),
     [2] = Angle(2, 0, 0),
@@ -290,6 +268,8 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.Hook_Think = ArcCW.ADSReload
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -341,12 +321,12 @@ SWEP.Animations = {
         MinProgress = 0.1,
     },
     ["fire_sight"] = {
-        Source = "iron_fire",
+        Source = "fire",
         -- Time = 9 / 10,
         MinProgress = 0.4,
     },
     ["cycle_sight"] = {
-        Source = "iron_rechamber",
+        Source = "rechamber",
         MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_02.wav", t = 3 / 30},

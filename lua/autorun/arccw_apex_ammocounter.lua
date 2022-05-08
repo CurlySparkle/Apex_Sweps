@@ -44,8 +44,6 @@ if CLIENT then
                         end
 
                         texture = self.Prefix .. BarCount
-                        
-                        print(texture)
                     end
                 end
 
