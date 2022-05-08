@@ -33,6 +33,11 @@ SWEP.Firemodes = {
     },
 }
 
+DEFINE_BASECLASS("arccw_base_nade", "arccw_base")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+end
+
 SWEP.FuseTime = 3.5
 SWEP.Primary.Ammo = "grenade"
 

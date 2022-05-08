@@ -38,12 +38,20 @@ if CLIENT then
                     local OurWeapon = LocalPlayer():GetActiveWeapon()
                     if OurWeapon.ArcCW then
                         local BarCount = tostring(OurWeapon:Clip1())
-
-                        if OurWeapon:Clip1() > 21 then
-                            BarCount = 21
+                        local suffix = "blah"
+                        
+                        if OurWeapon:GetMaxClip1() == 15 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
+                            suffix = "_lvl1"
+                        elseif OurWeapon:GetMaxClip1() == 17 then
+                            suffix = "_lvl2"
+                        elseif OurWeapon:GetMaxClip1() == 20 then
+                            suffix = "_lvl3"
+                        else
+                            suffix = "_lvl0"
                         end
 
-                        texture = self.Prefix .. BarCount
+                        texture = self.Prefix .. BarCount .. suffix
+
                     end
                 end
 
