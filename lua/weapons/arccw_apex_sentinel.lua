@@ -193,7 +193,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_sniper_mags"}
+        Slot = {"apex_mag_sniper1"}
     },
     {
         PrintName = "Specials",
@@ -211,23 +211,6 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.Hook_GetCapacity = function(wep, cap)
-    local mag7 = wep.Attachments[3].Installed == "apex_mag_sniper_level4"
-    local mag6 = wep.Attachments[3].Installed == "apex_mag_sniper_level3"
-	local mag5 = wep.Attachments[3].Installed == "apex_mag_sniper_level2"
-	local mag4 = wep.Attachments[3].Installed == "apex_mag_sniper_level1"
-	
-    if mag7 then
-        return 7
-    end
-    if mag6 then
-        return 6
-    end
-    if mag4 and mag5 then
-        return 5
-    end
-end
-
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -235,11 +218,11 @@ SWEP.Animations = {
     ["idle_sprint"] = {Source = "sprint", Mult = 0.8},
     ["enter_sprint"] = {
         Source = "sprint_in",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["ready"] = {
         Source = "draw_first",
@@ -267,38 +250,38 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "fire",
         -- Time = 9 / 10,
-		MinProgress = 0.4,
+        MinProgress = 0.4,
     },
     ["cycle"] = {
         Source = "rechamber",
         ShellEjectAt = 0.3,
-		Time = 63/40,
-		MinProgress = 0.875,
+        Time = 63 / 40,
+        MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_01.wav", t = 5 / 40},
         },
     },
     ["enter_sight"] = {
         Source = "iron_in",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
         -- Time = 9 / 10,
-		MinProgress = 0.4,
+        MinProgress = 0.4,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
         ShellEjectAt = 0.3,
-		Time = 63/40,
-		MinProgress = 0.875,
+        Time = 63 / 40,
+        MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_02.wav", t = 5 / 40},
         },
     },
     ["exit_sight"] = {
         Source = "iron_out",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},
@@ -329,24 +312,24 @@ SWEP.Animations = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunUp_Fr022_2ch_v1_01.wav", t = 8 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagOut_Fr041_2ch_v1_01.wav", t = 25 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagGrab_Fr061_2ch_v1_01.wav", t = 46 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.wav", t = 67 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 69 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 89 / 30}
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.wav", t = 67 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 69 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 89 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-		ShellEjectAt = 0.2,
+        ShellEjectAt = 0.2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BoltBack_2ch_v2_01.wav", t = 5 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunUp_Fr022_2ch_v1_01.wav", t = 22 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagOut_Fr041_2ch_v1_01.wav", t = 38 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagGrab_Fr061_2ch_v1_01.wav", t = 61 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.wav", t = 67 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 86 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 100 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_ReChamber_Fr109_2ch_v2_01.wav", t = 109 / 30}
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.wav", t = 67 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 86 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 100 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_ReChamber_Fr109_2ch_v2_01.wav", t = 109 / 30}
     },
 },
 }

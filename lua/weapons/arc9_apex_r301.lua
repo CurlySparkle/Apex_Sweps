@@ -253,10 +253,10 @@ SWEP.Animations = {
     },
 	["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
 	["enter_inspect"] = {
         Source = "inspect_in",
@@ -287,7 +287,7 @@ SWEP.Animations = {
 			{p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltback_fr51_2ch_v1_02.wav", t = 51 / 30},
 			{p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltforward_fr55_2ch_v1_02.wav", t = 55 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_handrest_fr64_2ch_v1_02.wav", t = 64 / 30}
-    },	
+    },
 },
 }
 
@@ -300,7 +300,7 @@ sound.Add({
 
 -------------------------- ATTACHMENTS
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["r301_sight"] = {
         Bodygroups = {
             {1, 1}
@@ -310,7 +310,7 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {2, 1}
         },
-    },	
+    },
 }
 
 
@@ -324,7 +324,7 @@ end
         -- Category = "r301", -- what kind of attachments can fit here, can be string or table
         -- Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         -- Pos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
-        -- Ang = Angle(90, 0, -90),		
+        -- Ang = Angle(90, 0, -90),
         -- InstalledElements = {"r301_sight", "r301_sight2"},
 		-- CorrectivePos = Vector(1.57,0,-0.5),
         -- CorrectiveAng = Angle(-0.846, 0, 5.955)
@@ -343,7 +343,7 @@ end
     -- },
 	-- {
         -- PrintName = "Mag Type",
-        -- Category = {"apex_light_mags"}
+        -- Category = {"apex_mag_light"}
     -- },
 	-- {
         -- PrintName = "Extras",

@@ -180,7 +180,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"longbow_sight","weapon_sights"},
-		ExtraSightDist = 1,
+        ExtraSightDist = 1,
         CorrectivePos = Vector(2.025,0,-0.5),
         CorrectiveAng = Angle(-1.967, 0.033, 3.6)
     },
@@ -200,7 +200,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_sniper_mags"}
+        Slot = {"apex_mag_sniper1"}
     },
     {
         PrintName = "Extras",
@@ -213,23 +213,6 @@ SWEP.Attachments = {
         Slot = {"apex_extras2"}
     },
 }
-
-SWEP.Hook_GetCapacity = function(wep, cap)
-    local mag7 = wep.Attachments[4].Installed == "apex_mag_sniper_level4"
-    local mag6 = wep.Attachments[4].Installed == "apex_mag_sniper_level3"
-	local mag5 = wep.Attachments[4].Installed == "apex_mag_sniper_level2"
-	local mag4 = wep.Attachments[4].Installed == "apex_mag_sniper_level1"
-	
-    if mag7 and mag6 then
-        return 12
-    end
-    if mag5 then
-        return 10
-    end
-    if mag4 then
-        return 8
-    end
-end
 
 SWEP.Animations = {
     ["idle"] = {
@@ -266,7 +249,7 @@ SWEP.Animations = {
     },
     ["enter_sight"] = {
         Source = "iron_in",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
@@ -274,7 +257,7 @@ SWEP.Animations = {
     },
     ["exit_sight"] = {
         Source = "iron_out",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},
@@ -308,7 +291,7 @@ SWEP.Animations = {
             {p = 100, s = "weapons/longbow/wpn_dmr_reload_magpull_fr14_2ch_v1_01.wav", t = 14 / 30},
             {p = 100, s = "weapons/longbow/wpn_dmr_reload_maggrab_fr26_2ch_v1_01.wav", t = 26 / 30},
             {p = 100, s = "weapons/longbow/wpn_dmr_reload_maginsert_fr40_2ch_v1_01.wav", t = 40 / 30},
-			{p = 100, s = "weapons/longbow/wpn_dmr_reload_handrest_fr53_2ch_v1_01.wav", t = 53 / 30}
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_handrest_fr53_2ch_v1_01.wav", t = 53 / 30}
         },
     },
     ["reload_empty"] = {

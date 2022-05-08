@@ -45,13 +45,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 18,
         DamageMin = 18,
-		Penetration = 10,
+        Penetration = 10,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 21,
         DamageMin = 21,
-		Penetration = 20,
+        Penetration = 20,
     }
 }
 
@@ -204,7 +204,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_light_mags"}
+        Slot = {"apex_mag_light1"}
     },
     {
         PrintName = "Extras",
@@ -217,23 +217,6 @@ SWEP.Attachments = {
         Slot = {"apex_extras2"}
     },
 }
-
-SWEP.Hook_GetCapacity = function(wep, cap)
-    local mag4 = wep.Attachments[2].Installed == "apex_mag_light_level4"
-    local mag3 = wep.Attachments[2].Installed == "apex_mag_light_level3"
-	local mag2 = wep.Attachments[2].Installed == "apex_mag_light_level2"
-	local mag1 = wep.Attachments[2].Installed == "apex_mag_light_level1"
-	
-    if mag4 and mag3 then
-        return 20
-    end
-    if mag2 then
-        return 17
-    end
-    if mag1 then
-        return 15
-    end
-end
 
 function SWEP:Hook_TranslateAnimation(anim)
     if anim == "fire_iron" then

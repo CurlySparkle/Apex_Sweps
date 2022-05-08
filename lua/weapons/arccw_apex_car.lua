@@ -57,13 +57,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 13,
         DamageMin = 13,
-		Penetration = 10,
+        Penetration = 10,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 18,
         DamageMin = 18,
-		Penetration = 25,
+        Penetration = 25,
     }
 }
 
@@ -232,7 +232,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_light_mags"}
+        Slot = {"apex_mag_light1"}
     },
     {
         PrintName = "Hold Style",
@@ -266,8 +266,8 @@ SWEP.Animations = {
     ["exit_sprint"] = {Source = "sprint_out", Mult = 1, MinProgress = 0.1,},
     ["ready"] = {
         Source = "draw_first",
-		LHIK = true,
-		LHIKOut = 0.6,
+        LHIK = true,
+        LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/wpn_car_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 8 / 30},
             {s = "weapons/car/wpn_car_emptyreload_boltfront_fr56_2ch_v1_01.wav", t = 14 / 30}
@@ -288,7 +288,7 @@ SWEP.Animations = {
     },
     ["enter_sight"] = {
         Source = "iron_in",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
@@ -296,7 +296,7 @@ SWEP.Animations = {
     },
     ["exit_sight"] = {
         Source = "iron_out",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},
@@ -312,7 +312,7 @@ SWEP.Animations = {
     ["exit_inspect"] = {
         Source = "inspect_out",
         LHIK = true,
-		LHIKOut = 0.6,
+        LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/Wpn_Car_Inspect_Settle_fr471_v1_01.wav", t = 0 / 30}
         },
@@ -341,8 +341,8 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		LHIK = true,
-		LHIKOut = 0.6,
+        LHIK = true,
+        LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/wpn_car_reload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
             {s = "weapons/car/Wpn_Car_Reload_MagEject_New_v1_01.wav", t = 23 / 30},
@@ -353,7 +353,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		LHIK = true,
+        LHIK = true,
         SoundTable = {
             {s = "weapons/car/wpn_car_emptyreload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
             {s = "weapons/car/Wpn_Car_Reload_MagEject_New_v1_02.wav", t = 17 / 30},

@@ -53,13 +53,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 36,
         DamageMin = 36,
-		Penetration = 10,
+        Penetration = 10,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 42,
         DamageMin = 36,
-		Penetration = 25,
+        Penetration = 25,
     }
 }
 
@@ -111,7 +111,7 @@ SWEP.Firemodes = {
     },
     {
         Mode = -3,
-		RunawayBurst = true,
+        RunawayBurst = true,
     },
     {
         Mode = 0
@@ -261,7 +261,7 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
-		LHIK = true,
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
@@ -305,13 +305,13 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
-		LHIK = true,
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.9,
     },
     ["idle_inspect"] = {
         Source = "inspect",
-		LHIK = true,
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
@@ -324,7 +324,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		LHIK = true,
+        LHIK = true,
         LHIKIn = 0.3,
         LHIKOut = 0.6,
         SoundTable = {

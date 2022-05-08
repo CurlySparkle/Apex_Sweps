@@ -56,13 +56,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 20,
         DamageMin = 20,
-		Penetration = 15,
+        Penetration = 15,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 23,
         DamageMin = 18,
-		Penetration = 20,
+        Penetration = 20,
     }
 }
 
@@ -109,7 +109,7 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = -3,
-		RunawayBurst = true,
+        RunawayBurst = true,
     },
     {
         Mode = 1,
@@ -123,7 +123,7 @@ SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a d
 SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 
-SWEP.Primary.Ammo = "ar2" 
+SWEP.Primary.Ammo = "ar2"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 -- SWEP.ShootPitch = 101 -- pitch of shoot sound
@@ -173,7 +173,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, -2, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -188,17 +188,17 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
 
-SWEP.AttachmentElements = {		
-	["ref_sights"] = {
+SWEP.AttachmentElements = {
+    ["ref_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["weapon_dot"] = {
+    ["weapon_dot"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -213,10 +213,10 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(90, 0, -90),
-        },			
+        },
         InstalledEles = {"ref_sights", "weapon_dot"},
-		ExtraSightDist = -3,
-		 CorrectivePos = Vector(1.89, 0, -0.4),
+        ExtraSightDist = -3,
+         CorrectivePos = Vector(1.89, 0, -0.4),
          CorrectiveAng = Angle(-1.19, 0.066, 3.362)
     },
     {
@@ -227,7 +227,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
-			wpos = Vector(0, 0, 0),
+            wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, -90),
         },
     },
@@ -235,63 +235,46 @@ SWEP.Attachments = {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
-        Slot = {"apex_heavy_mags"}
+        Slot = {"apex_mag_heavy4"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
-
-SWEP.Hook_GetCapacity = function(wep, cap)
-    local mag7 = wep.Attachments[4].Installed == "apex_mag_heavy_level4"
-    local mag6 = wep.Attachments[4].Installed == "apex_mag_heavy_level3"
-	local mag5 = wep.Attachments[4].Installed == "apex_mag_heavy_level2"
-	local mag4 = wep.Attachments[4].Installed == "apex_mag_heavy_level1"
-	
-    if mag7 then
-        return 30
-    end
-    if mag6 then
-        return 27
-    end
-    if mag5 and mag4 then
-        return 24
-    end
-end
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.wav", t = 15 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.wav", t = 25 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.wav", t = 28 / 30}
-        },	
+        SoundTable = {
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.wav", t = 15 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.wav", t = 25 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.wav", t = 28 / 30}
+        },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -320,19 +303,19 @@ SWEP.Animations = {
     ["2_to_1_sight"] = {
         Source = "ads_firemode_switch",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect",
-	    LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,	
+        LHIKEaseOut = 0.4,
         SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_01.wav", t = 96 / 30},
@@ -345,10 +328,10 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,	
+        LHIKEaseOut = 0.4,
     },
     ["reload"] = {
         Source = "reload",
@@ -357,14 +340,14 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40,
-		SoundTable = {
+        MinProgress = 60 / 40,
+        SoundTable = {
             {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_movearm_fr0_2ch_v1_01.wav", t = 0 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_removemag_fr15_2ch_v1_01.wav", t = 15 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_insertmag_fr36_2ch_v1_01.wav", t = 36 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_popmag_fr50_2ch_v1_01.wav", t = 50 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_handgrab_fr57_2ch_v1_01.wav", t = 57 / 30}
-        },		
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_removemag_fr15_2ch_v1_01.wav", t = 15 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_insertmag_fr36_2ch_v1_01.wav", t = 36 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_popmag_fr50_2ch_v1_01.wav", t = 50 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_handgrab_fr57_2ch_v1_01.wav", t = 57 / 30}
+        },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -373,14 +356,14 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-		MinProgress = 97/40,
-		SoundTable = {
+        MinProgress = 97 / 40,
+        SoundTable = {
             {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_removemag_fr10_2ch_v1_01.wav", t = 10 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_insertmag_fr39_2ch_v1_01.wav", t = 39 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_popmag_fr54_2ch_v1_01.wav", t = 54 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.wav", t = 68 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.wav", t = 76 / 30},
-			{p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.wav", t = 85 / 30}
-        },	
-    },	
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_insertmag_fr39_2ch_v1_01.wav", t = 39 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_popmag_fr54_2ch_v1_01.wav", t = 54 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.wav", t = 68 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.wav", t = 76 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.wav", t = 85 / 30}
+        },
+    },
 }

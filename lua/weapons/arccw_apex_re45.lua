@@ -208,7 +208,7 @@ SWEP.Attachments = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
-            vang = Angle(90, 0, -90),
+            wang = Angle(90, 0, -90),
         },
         InstalledEles = {"ref_sights", "weapon_dot"},
          CorrectivePos = Vector(1.33,0,-0.55),
@@ -223,12 +223,12 @@ SWEP.Attachments = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
             wpos = Vector(0, 0, 0),
-            vang = Angle(0, 0, -90),
+            wang = Angle(0, 0, -90),
         },
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_light_mags"}
+        Slot = {"apex_mag_light2"}
     },
     {
         PrintName = "Extras",
@@ -312,7 +312,7 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-        MinProgress = 60/40,
+        MinProgress = 60 / 40,
         SoundTable = {
             {p = 100, s = "weapons/re45/wpn_re45_reload_magpull_fr4_2ch_v1_01.wav", t = 4 / 30},
             {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagInsert_fr28_2ch_v2_01.wav", t = 28 / 30},

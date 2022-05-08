@@ -223,7 +223,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_light_mags"}
+        Slot = {"apex_mag_light1"}
     },
     {
         PrintName = "Foregrip Type",
@@ -257,8 +257,8 @@ SWEP.Animations = {
     ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		LHIK = true,
-		LHIKOut = 0.6,
+        LHIK = true,
+        LHIKOut = 0.6,
     },
     ["draw"] = {
         Source = "draw",
@@ -294,16 +294,16 @@ SWEP.Animations = {
     },
     ["enter_inspect"] = {
         Source = "inspect_in",
-		LHIK = true,
+        LHIK = true,
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
-		LHIK = true,
-		LHIKOut = 0.6,
+        LHIK = true,
+        LHIKOut = 0.6,
     },
     ["idle_inspect"] = {
         Source = "inspect",
-		LHIK = true,
+        LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_Start_V2_2ch_01.wav", t = 1 / 30},
@@ -315,8 +315,8 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		LHIK = true,
-		LHIKOut = 0.9,
+        LHIK = true,
+        LHIKOut = 0.9,
         SoundTable = {
             {p = 150, s = "weapons/r301/wpn_r101_reload_magpull_fr0_2ch_v1_02.wav", t = 0 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_reload_maggrab_fr18_2ch_v1_02.wav", t = 18 / 30},
@@ -327,8 +327,8 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		LHIK = true,
-		LHIKOut = 0.6,
+        LHIK = true,
+        LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_magpull_fr9_2ch_v1_02.wav", t = 9 / 30},
             {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maggrab_fr21_2ch_v1_02.wav", t = 21 / 30},

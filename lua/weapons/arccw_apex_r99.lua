@@ -228,7 +228,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_light_mags"}
+        Slot = {"apex_mag_light1"}
     },
     {
         PrintName = "Extras",

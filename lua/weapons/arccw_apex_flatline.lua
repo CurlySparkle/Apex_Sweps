@@ -44,13 +44,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 18,
         DamageMin = 18,
-		Penetration = 10,
+        Penetration = 10,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 21,
         DamageMin = 21,
-		Penetration = 20,
+        Penetration = 20,
     }
 }
 
@@ -220,7 +220,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_heavy_mags"}
+        Slot = {"apex_mag_heavy3"}
     },
     {
         PrintName = "Extras",
@@ -233,23 +233,6 @@ SWEP.Attachments = {
         Slot = {"apex_extras2"}
     },
 }
-
-SWEP.Hook_GetCapacity = function(wep, cap)
-    local mag7 = wep.Attachments[4].Installed == "apex_mag_heavy_level4"
-    local mag6 = wep.Attachments[4].Installed == "apex_mag_heavy_level3"
-	local mag5 = wep.Attachments[4].Installed == "apex_mag_heavy_level2"
-	local mag4 = wep.Attachments[4].Installed == "apex_mag_heavy_level1"
-	
-    if mag7 then
-        return 30
-    end
-    if mag6 then
-        return 28
-    end
-    if mag5 and mag4 then
-        return 25
-    end
-end
 
 SWEP.Animations = {
     ["idle"] = {

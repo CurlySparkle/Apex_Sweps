@@ -106,7 +106,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -138,7 +138,7 @@ SWEP.BulletBones = false
 SWEP.RevolverReload = true
 SWEP.GuaranteeLaser = true
 
-SWEP.AttachmentElements = {		
+SWEP.AttachmentElements = {
     ["wingman_sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
@@ -156,24 +156,24 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
-        },			
+        },
         InstalledEles = {"wingman_sight"},
-		CorrectivePos = Vector(1.25,0,-0.78),
+        CorrectivePos = Vector(1.25,0,-0.78),
         CorrectiveAng = Angle(-1.296, 0, 2.681)
     },
-	{
+    {
         PrintName = "Mag Type",
-		DefaultAttName = "Extended Heavy Mag",
-        Slot = {"apex_heavy_wingman_mags"}
+        DefaultAttName = "Extended Heavy Mag",
+        Slot = {"apex_mag_heavy1"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
@@ -182,19 +182,19 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
     },
     ["draw"] = {
         Source = "draw",
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -209,14 +209,14 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect_in",
     },
     ["exit_inspect"] = {
@@ -224,13 +224,13 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part1_Fr01_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part2_Fr27_V1_2ch_01.wav", t = 27 / 30},
-			{p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part3_Fr79_V1_2ch_01.wav", t = 79 / 30},
-			{p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part4_Fr132_V1_2ch_01.wav", t = 132 / 30},
-			{p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.wav", t = 160 / 30}
-    },	
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part3_Fr79_V1_2ch_01.wav", t = 79 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part4_Fr132_V1_2ch_01.wav", t = 132 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.wav", t = 160 / 30}
+    },
     },
     ["reload"] = {
         Source = "reload",
@@ -239,7 +239,7 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40	
+        MinProgress = 60 / 40
     },
     -- ["reload_empty"] = {
         -- Source = "reload_empty",
@@ -248,8 +248,8 @@ SWEP.Animations = {
         -- LHIKIn = 0.2,
         -- LHIKOut = 0.5,
         -- LHIKEaseOut = 0.2,
-		-- MinProgress = 97/40			
-    -- },	
+        -- MinProgress = 97/40
+    -- },
 }
 
 sound.Add({

@@ -56,13 +56,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 14,
         DamageMin = 14,
-		Penetration = 15,
+        Penetration = 15,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 21,
         DamageMin = 18,
-		Penetration = 20,
+        Penetration = 20,
     }
 }
 
@@ -109,7 +109,7 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = -5,
-		RunawayBurst = true,
+        RunawayBurst = true,
     },
     {
         Mode = 1,
@@ -123,7 +123,7 @@ SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a d
 SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 
-SWEP.Primary.Ammo = "ar2" 
+SWEP.Primary.Ammo = "ar2"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 -- SWEP.ShootPitch = 101 -- pitch of shoot sound
@@ -173,7 +173,7 @@ SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
-	    Midpoint = { -- Where the gun should be at the middle of it's irons
+        Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -188,17 +188,17 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
 
-SWEP.AttachmentElements = {		
-	["ref_sights"] = {
+SWEP.AttachmentElements = {
+    ["ref_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-	["weapon_dot"] = {
+    ["weapon_dot"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
         },
-    },	
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -213,10 +213,10 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
             wpos = Vector(0, 0, 0),
             wang = Angle(90, 0, -90),
-        },			
+        },
         InstalledEles = {"ref_sights", "weapon_dot"},
-		ExtraSightDist = 3.5,
-		 CorrectivePos = Vector(2.17, 0, 0),
+        ExtraSightDist = 3.5,
+         CorrectivePos = Vector(2.17, 0, 0),
          CorrectiveAng = Angle(-1.131, 1.373, 7.821)
     },
     {
@@ -227,7 +227,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
-			wpos = Vector(0, 0, 0),
+            wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, -90),
         },
     },
@@ -235,66 +235,49 @@ SWEP.Attachments = {
         PrintName = "Stock Type",
         Slot = {"apex_standard_stock"}
     },
-	{
+    {
         PrintName = "Mag Type",
-        Slot = {"apex_heavy_mags"}
+        Slot = {"apex_mag_heavy5"}
     },
-	{
+    {
         PrintName = "Extras",
-		Installed = "apex_hitsound_headshot",
+        Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
     },
-	{
+    {
         PrintName = "Extras 2",
-		Installed = "apex_hitsound",
+        Installed = "apex_hitsound",
         Slot = {"apex_extras2"}
     },
 }
-
-SWEP.Hook_GetCapacity = function(wep, cap)
-    local mag7 = wep.Attachments[4].Installed == "apex_mag_heavy_level4"
-    local mag6 = wep.Attachments[4].Installed == "apex_mag_heavy_level3"
-	local mag5 = wep.Attachments[4].Installed == "apex_mag_heavy_level2"
-	local mag4 = wep.Attachments[4].Installed == "apex_mag_heavy_level1"
-	
-    if mag7 then
-        return 35
-    end
-    if mag6 then
-        return 30
-    end
-    if mag5 and mag4 then
-        return 25
-    end
-end
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-	["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-	["enter_sprint"] = {Source = "sprint_in", Mult = 1},        
-	["exit_sprint"] = {Source = "sprint_out", Mult = 1},	
+    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
+    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		SoundTable = {
+        SoundTable = {
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_ArmUp_1frames_1a.wav", t = 1 / 30},
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_BoltPull_8frames_1.wav", t = 8 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_GrabSettle_24frames_1.wav", t = 24 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_ArmSettle_28frames_1b.wav", t = 28 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_pull_68frames_1.wav", t = 8 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_release_76frames_1.wav", t = 16 / 30}
-        },	
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_GrabSettle_24frames_1.wav", t = 24 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_pullout_reload_empty_foley_ArmSettle_28frames_1b.wav", t = 28 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_pull_68frames_1.wav", t = 8 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_release_76frames_1.wav", t = 16 / 30}
+        },
     },
     ["draw"] = {
         Source = "draw",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["holster"] = {
+    ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
+        Mult = 0.8,
     },
-	["idle_iron"] = {
+    ["idle_iron"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
@@ -311,26 +294,26 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-	["bash"] = {
+    ["bash"] = {
         Source = {"melee"},
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,			
+        LHIKEaseOut = 0.4,
     },
-	["enter_inspect"] = {
+    ["enter_inspect"] = {
         Source = "inspect",
-	    LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
-        LHIKEaseOut = 0.4,	
+        LHIKEaseOut = 0.4,
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
     },
     ["idle_inspect"] = {
         Source = "inspect",
-        LHIK = true,		
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
@@ -348,20 +331,20 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-		MinProgress = 60/40,
-		SoundTable = {
+        MinProgress = 60 / 40,
+        SoundTable = {
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmToMag_2frames_1.wav", t = 2 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmMagSweet_3frames_1.wav", t = 3 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmMagToss_14frames_1.wav", t = 14 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmMagOut_30frames_1.wav", t = 30 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_MagOut_32frames_1.wav", t = 32 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmGrabWeap_58frames_1.wav", t = 58 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmWeapSettle_57frames_1.wav", t = 57 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmMagSweet_3frames_1.wav", t = 3 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmMagToss_14frames_1.wav", t = 14 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmMagOut_30frames_1.wav", t = 30 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_MagOut_32frames_1.wav", t = 32 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmGrabWeap_58frames_1.wav", t = 58 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_foley_ArmWeapSettle_57frames_1.wav", t = 57 / 30},
 
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_reload_MagOut_16frames_1.wav", t = 16 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_reload_MagIn_43frames_1.wav", t = 43 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_reload_grab_66frames_1.wav", t = 66 / 30}
-        },		
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_reload_MagIn_43frames_1.wav", t = 43 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_reload_grab_66frames_1.wav", t = 66 / 30}
+        },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -370,27 +353,27 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-		MinProgress = 97/40,
-		SoundTable = {
+        MinProgress = 97 / 40,
+        SoundTable = {
             {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmBoltPull_63frames_1.wav", t = 63 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmMagGrab_2frames_1.wav", t = 2 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmMagOutToss_5frames_1.wav", t = 5 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmMagUp_31frames_1.wav", t = 31 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmSettle_74frames_1.wav", t = 74 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ClothSettle_79frames_1.wav", t = 79 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_MagOut_33frames_1.wav", t = 33 / 30},
-			
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_1frames_WeapMvmnt_1.wav", t = 1 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_12frames_bolt_pull_1a.wav", t = 12 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_22frames_bolt_release_1a.wav", t = 22 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_32frames_handgrab_1a.wav", t = 32 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_pull_68frames_1.wav", t = 68 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_release_76frames_1.wav", t = 76 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_grab_85frames_2.wav", t = 85 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_GunMvmnt_1frames_1a.wav", t = 1 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_GunMvmnt_53frames_1b.wav", t = 53 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_MagIn_45frames_1a.wav", t = 45 / 30},
-			{p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_MagOut_13frames_1.wav", t = 13 / 30}
-        },	
-    },	
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmMagGrab_2frames_1.wav", t = 2 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmMagOutToss_5frames_1.wav", t = 5 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmMagUp_31frames_1.wav", t = 31 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ArmSettle_74frames_1.wav", t = 74 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_ClothSettle_79frames_1.wav", t = 79 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_empty_foley_MagOut_33frames_1.wav", t = 33 / 30},
+
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_1frames_WeapMvmnt_1.wav", t = 1 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_12frames_bolt_pull_1a.wav", t = 12 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_22frames_bolt_release_1a.wav", t = 22 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_32frames_handgrab_1a.wav", t = 32 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_pull_68frames_1.wav", t = 68 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_bolt_release_76frames_1.wav", t = 76 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_grab_85frames_2.wav", t = 85 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_GunMvmnt_1frames_1a.wav", t = 1 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_GunMvmnt_53frames_1b.wav", t = 53 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_MagIn_45frames_1a.wav", t = 45 / 30},
+            {p = 100, s = "weapons/prowler/Wpn_ProwlerPDW_1p_reload_mech_empty_MagOut_13frames_1.wav", t = 13 / 30}
+        },
+    },
 }
