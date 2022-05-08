@@ -67,16 +67,16 @@ local balance = {
         -- Apex Legends Settings
         Damage = 11,
         DamageMin = 11,
-		Penetration = 4,
+        Penetration = 4,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 17,
         DamageMin = 14,
-		Penetration = 10,
+        Penetration = 10,
     }
 }
-	
+
 function SWEP:ArcCW_Apex_Setup()
     local val = GetConVar("arccw_apex_bal"):GetInt()
     for i, v in pairs(balance[val]) do

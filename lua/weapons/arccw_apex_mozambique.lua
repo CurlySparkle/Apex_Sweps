@@ -41,13 +41,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 15,
         DamageMin = 15,
-		Penetration = 2,
+        Penetration = 2,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 17,
         DamageMin = 17,
-		Penetration = 10,
+        Penetration = 10,
     }
 }
 
@@ -317,18 +317,18 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.4,
         SoundTable = {
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr00_2ch_v1_01.wav", t = 1 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr22_2ch_v1_01.wav", t = 22 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr35_2ch_v1_01.wav", t = 35 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr57_2ch_v1_01.wav", t = 57 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr13_2ch_v1_01.wav", t = 13 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr30_2ch_v1_01.wav", t = 30 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr50_2ch_v1_01.wav", t = 30 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr00_2ch_v1_01.wav", t = 0 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr22_2ch_v1_01.wav", t = 22 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr44_2ch_v1_01.wav", t = 44 / 30},
-			{v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr59_2ch_v1_01.wav", t = 59 / 30}
-	         },
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr00_2ch_v1_01.wav", t = 1 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr22_2ch_v1_01.wav", t = 22 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr35_2ch_v1_01.wav", t = 35 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr57_2ch_v1_01.wav", t = 57 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr13_2ch_v1_01.wav", t = 13 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr30_2ch_v1_01.wav", t = 30 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr50_2ch_v1_01.wav", t = 30 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr00_2ch_v1_01.wav", t = 0 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr22_2ch_v1_01.wav", t = 22 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr44_2ch_v1_01.wav", t = 44 / 30},
+            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr59_2ch_v1_01.wav", t = 59 / 30}
+             },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -338,10 +338,10 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.4,
         SoundTable = {
-			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part01_2ch_V1_01.wav", t = 1 / 30},
-			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part02_2ch_V1_01.wav", t = 22 / 30},
-			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part03_2ch_V2_01.wav", t = 44 / 30},
-			{p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part04_2ch_V1_01.wav", t = 65 / 30}
+            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part01_2ch_V1_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part02_2ch_V1_01.wav", t = 22 / 30},
+            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part03_2ch_V2_01.wav", t = 44 / 30},
+            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part04_2ch_V1_01.wav", t = 65 / 30}
         },
     },
     ["enter_sprint"] = {

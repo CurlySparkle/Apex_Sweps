@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Peacekeeper"
-SWEP.Trivia_Class = "Lever-action shotgun"
-SWEP.Trivia_Desc = "The Peacekeeper is a lever-action shotgun that utilizes Shotgun Shells. It fires 11 pellets in the shape of a star, with one pellet in the middle and two on each outer line of the star shape. "
+SWEP.Trivia_Class = "Shotgun"
+SWEP.Trivia_Desc = "Lever action shotgun that uses a battery pack instead of ballistic munitions.\n\nFires 11 pellets in a star pattern, tightened when aiming."
 SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 3
@@ -59,8 +59,8 @@ SWEP.BodyDamageMults = {
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
     [HITGROUP_RIGHTARM] = 1,
-    [HITGROUP_LEFTLEG] = 1,
-    [HITGROUP_RIGHTLEG] = 1,
+    [HITGROUP_LEFTLEG] = 0.8,
+    [HITGROUP_RIGHTLEG] = 0.8,
 }
 
 local balance = {
@@ -68,13 +68,13 @@ local balance = {
         -- Apex Legends Settings
         Damage = 9,
         DamageMin = 9,
-		Penetration = 5,
+        Penetration = 5,
     },
     [1] = {
         -- Arcwc Settings
         Damage = 13,
         DamageMin = 11,
-		Penetration = 15,
+        Penetration = 15,
     }
 }
 
@@ -92,7 +92,7 @@ function SWEP:Initialize()
 end
 
 SWEP.Tracer = "tfa_apex_energy_tracer_rifle" -- override tracer (hitscan) effect
-SWEP.TracerNum = 11 -- tracer every X
+SWEP.TracerNum = 1
 SWEP.TracerWidth = 1
 SWEP.PhysTracerProfile = 6
 
@@ -102,7 +102,7 @@ SWEP.MaxRecoilBlowback = 1.5
 
 SWEP.PhysBulletMuzzleVelocity = 550
 
-SWEP.Recoil = 3.300
+SWEP.Recoil = 2.5
 SWEP.RecoilSide = 0.550
 SWEP.RecoilRise = 0.2
 SWEP.RecoilPunch = 3
@@ -117,26 +117,55 @@ SWEP.Num = 11 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Level Action"
+        PrintName = "fcg.lever"
     },
     {
         Mode = 0
     }
 }
 
+-- This is a perfectly divided star shape. It looks neat but is NOT AUTHENTIC.
+--[[]
 SWEP.ShotgunSpreadPattern = {
-    [1] = Angle(0, 0, 0),
-    [2] = Angle(0, 1, 0),
-    [3] = Angle(0, -1, 0),
-    [4] = Angle(2.1, 0, 0),
-    [5] = Angle(-2.1, 0, 0),
-    [6] = Angle(1.4, 1.2, 0),
-    [7] = Angle(-1.4, 1.2, 0),
-    [8] = Angle(1.4, -1.2, 0),
-    [9] = Angle(-1.4, -1.2, 0),
+    [1] = Angle(1, 0, 0),
+    [2] = Angle(2, 0, 0),
+
+    [3] = Angle(0.309, 0.951, 0), -- cos(72), sin(72)
+    [4] = Angle(0.618, 1.902, 0), -- cos(72) * 2, sin(72) * 2
+
+    [5] = Angle(-0.809, 0.588, 0), -- cos(144), sin(144)
+    [6] = Angle(-1.618, 1.176, 0), -- cos(144) * 2, sin(144) * 2
+
+    [7] = Angle(-0.809, -0.588, 0), -- cos(216), sin(216)
+    [8] = Angle(-1.618, -1.176, 0), -- cos(216) * 2, sin(216) * 2
+
+    [9] = Angle(0.309, -0.951, 0), -- cos(288), sin(288)
+    [10] = Angle(0.618, -1.902, 0), -- cos(288) * 2, sin(288) * 2
+
+    [11] = Angle(0, 0, 0),
+}
+]]
+
+SWEP.ShotgunSpreadPattern = {
+    [1] = Angle(1, 0, 0),
+    [2] = Angle(2, 0, 0),
+
+    [3] = Angle(0.5, 0.866, 0), -- cos(60), sin(60)
+    [4] = Angle(1, 1.732, 0),
+
+    [5] = Angle(0.5, -0.866, 0), -- cos(300), sin(300)
+    [6] = Angle(1, -1.732, 0),
+
+    [7] = Angle(-0.766, 0.643, 0), -- cos(140), sin(140)
+    [8] = Angle(-1.532, 1.287, 0),
+
+    [9] = Angle(-0.766, -0.643, 0), -- cos(220), sin(220)
+    [10] = Angle(-1.532, -1.287, 0),
+
+    [11] = Angle(0, 0, 0),
 }
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
-    local d = Lerp(wep:GetSightDelta(), 0.75, 1)
+    local d = Lerp(wep:GetSightDelta(), 0.8, 1) * -0.85
     local p = wep.ShotgunSpreadPattern[data.num]
     data.ang = Angle(p.p * d, p.y * d, 0)
 
@@ -144,8 +173,8 @@ SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
 end
 SWEP.NoRandSpread = true
 
-SWEP.AccuracyMOA = 50 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 300 -- inaccuracy added by hip firing.
+SWEP.AccuracyMOA = 40 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 100
 SWEP.SightsDispersion = 0
 
@@ -268,18 +297,18 @@ SWEP.Animations = {
     ["idle_sprint"] = {Source = "sprint", Mult = 0.8},
     ["enter_sprint"] = {
         Source = "sprint_in",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Pickup_Rare_2ch_v1_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.wav", t = 7 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
         },
     },
     ["draw"] = {
@@ -296,36 +325,36 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "fire",
         -- Time = 9 / 10,
-		MinProgress = 0.4,
+        MinProgress = 0.4,
     },
     ["cycle"] = {
         Source = "rechamber",
-		MinProgress = 0.875,
+        MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.wav", t = 7 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
         },
     },
     ["enter_sight"] = {
         Source = "iron_in",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["fire_sight"] = {
         Source = "iron_fire",
         -- Time = 9 / 10,
-		MinProgress = 0.4,
+        MinProgress = 0.4,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
-		MinProgress = 0.875,
+        MinProgress = 0.875,
         SoundTable = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_02.wav", t = 3 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_02.wav", t = 15 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_02.wav", t = 15 / 30},
         },
     },
     ["exit_sight"] = {
         Source = "iron_out",
-		MinProgress = 0.1,
+        MinProgress = 0.1,
     },
     ["bash"] = {
         Source = {"melee"},
@@ -357,10 +386,10 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt1_2ch_v1.wav", t = 5 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
         },
     },
     ["reload_empty"] = {
@@ -368,11 +397,11 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt1_2ch_v1.wav", t = 5 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
     },
 },
 }
