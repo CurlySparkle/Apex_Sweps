@@ -4,3 +4,4 @@ L["apex.mag.1"] = "A magazine attachment that increases weapon capacity by a lit
 L["apex.mag.2"] = "A magazine attachment that increases weapon capacity."
 L["apex.mag.3"] = "A magazine attachment that increases weapon capacity by a lot."
 L["apex.mag.4"] = "An advanced magazine attachment that increases weapon capacity by a lot.\nCan automatically reload the weapon while holstered."
+L["apex.autoreload"] = "Automatic reload after holstering for 5 seconds"

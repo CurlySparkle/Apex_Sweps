@@ -35,10 +35,25 @@ local mag_types = {
     },
 }
 
+local function autoreload(wep)
+    local t = "apex_autoreload_" .. wep:EntIndex()
+    if timer.Exists(t) then timer.Remove(t) end
+
+    timer.Create(t, 5, 1, function()
+        if IsValid(wep) and (!IsValid(wep:GetOwner()) or wep:GetOwner():GetActiveWeapon() != wep) then
+            wep:RestoreAmmo()
+        end
+    end)
+end
+local function autoreload2(wep)
+    local t = "apex_autoreload_" .. wep:EntIndex()
+    if timer.Exists(t) then timer.Remove(t) end
+end
+
 for k, v in pairs(mag_types) do
     for j = 1, #v[2] do
         for i = 1, 4 do
-            if not v[2][j][i] then continue end
+            if !v[2][j][i] then continue end
             local att = {}
             local l =  " - Level " .. i
             att.PrintName = v[1] .. l
@@ -56,6 +71,12 @@ for k, v in pairs(mag_types) do
 
             if j > 1 then
                 att.InvAtt = "apex_mag_" .. k .. "1_" .. i
+            end
+
+            if i == 4 then
+                att.Hook_OnHolsterEnd = autoreload
+                att.Hook_OnDeploy = autoreload2
+                att.Desc_Pros = {"apex.autoreload"}
             end
 
             ArcCW.LoadAttachmentType(att, "apex_mag_" .. k .. j .. "_" .. i)
