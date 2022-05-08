@@ -83,6 +83,37 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
 
 sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.CloudyTail",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {95, 105},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_01.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_02.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_03.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Peacekeeper.CloudyTail")
+
+sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.Powerchord",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {95, 105},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_01.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_02.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_03.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_04.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_05.wav",
+		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_06.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Peacekeeper.Powerchord")
+
+sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -122,7 +153,7 @@ util.PrecacheSound("ArcCW_APEX.Hemlok.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Prowler.Fire_Start",
-    channel = CHAN_WEAPON + 6,
+    channel = CHAN_WEAPON,
     volume = 1.0,
     level = 100,
     pitch = {95, 105},
@@ -136,7 +167,7 @@ util.PrecacheSound("ArcCW_APEX.Prowler.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Prowler.Fire",
-    channel = CHAN_WEAPON + 6,
+    channel = CHAN_WEAPON,
     volume = 1.0,
     level = 100,
     pitch = {95, 105},

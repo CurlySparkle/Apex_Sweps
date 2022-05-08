@@ -161,7 +161,7 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -3, 0),
+    Pos = Vector(0, -2, 0),
     Ang = Angle(0, 0, 0),
         Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),

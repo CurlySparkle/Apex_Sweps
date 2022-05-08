@@ -157,7 +157,7 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 SWEP.CrouchPos = Vector(-4.5, -3, 1.5)
 SWEP.CrouchAng = Angle(1.569, 0.88, -50.458)
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, -2, 1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.ActivePos = Vector(0, -2, 1)
@@ -167,7 +167,7 @@ SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
 
-SWEP.CustomizePos = Vector(0, 0, 0)
+SWEP.CustomizePos = Vector(0, -2, 1)
 SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.BarrelLength = 8
@@ -301,6 +301,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
