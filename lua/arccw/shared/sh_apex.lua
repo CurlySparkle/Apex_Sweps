@@ -21,10 +21,6 @@ else
     })
     ]]
 
-    local offset = {
-        arccw_apex_sentinel = -24,
-        arccw_apex_longbow = -16,
-    }
 
     net.Receive("arccw_apex_autoreload", function()
         local wep = net.ReadEntity()
@@ -39,7 +35,7 @@ else
 
         Apex_AutoReloadPanel.Gun = vgui.Create("DImage", Apex_AutoReloadPanel)
         Apex_AutoReloadPanel.Gun:SetSize(killicon.GetSize(wep:GetClass()))
-        Apex_AutoReloadPanel.Gun:SetPos(256 - Apex_AutoReloadPanel.Gun:GetWide() * 0.5 + (offset[wep:GetClass()] or 0), (64 - Apex_AutoReloadPanel.Gun:GetTall()) * 0.5)
+        Apex_AutoReloadPanel.Gun:SetPos(256 - 24 - Apex_AutoReloadPanel.Gun:GetWide() * 0.5, (64 - Apex_AutoReloadPanel.Gun:GetTall()) * 0.5)
         Apex_AutoReloadPanel.Gun:SetMaterial("VGUI/" .. string.Replace(wep:GetClass(), "arccw_apex_", "apex_killicon_"))
 
         --[[]
