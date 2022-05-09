@@ -1,6 +1,6 @@
 att.PrintName = "Sniper Stock - Level 1"
 att.Icon = Material("entities/attach_icons/apex_stock_sniper_1.png", "mips smooth")
-att.Description = "Light Sniper stock"
+att.Description = "A weapon stock that improves handling by a little."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -19,3 +19,8 @@ att.Mult_SightedSpeedMult = 0.9
 att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_1.wav"
 att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_1.wav"
 att.ToggleSound = "items/UI_Menu_Select.wav"
+
+att.DroppedModel = "models/weapons/attachments/upgrades/stock_sniper.mdl"
+
+att.EntityCategory = "ArcCW - Apex Legends"
+att.EntityIcon = "entities/attach_icons/apex_stock_sniper_1.png"

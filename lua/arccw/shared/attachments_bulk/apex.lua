@@ -9,6 +9,7 @@ local mag_types = {
             [1] = {2, 4, 7, 7}, -- Volt SMG
         },
         "entities/ammo_light_reloaded.png",
+        "models/weapons/attachments/upgrades/mag_energy.mdl",
     },
     ["light"] = {
         "Extended Light Magazine",
@@ -17,6 +18,7 @@ local mag_types = {
             [2] = {3, 6, 9, 9}, -- RE-45
         },
         "entities/ammo_light_reloaded.png",
+        "models/weapons/attachments/upgrades/mag_light.mdl",
     },
     ["heavy"] = {
         "Extended Heavy Magazine",
@@ -28,6 +30,7 @@ local mag_types = {
             [5] = {5, 10, 15, 15}, -- Prowler Burst SMG, M600 Spitfire
         },
         "entities/ammo_heavy_reloaded.png",
+        "models/weapons/attachments/upgrades/mag_heavy.mdl",
 
     },
     ["sniper"] = {
@@ -37,6 +40,7 @@ local mag_types = {
             [2] = {2, 4, 6, 6}, -- Longbow DMR
         },
         "entities/ammo_sniper_reloaded.png",
+        "models/weapons/attachments/upgrades/mag_sniper.mdl",
     },
 }
 
@@ -91,6 +95,8 @@ for k, v in pairs(mag_types) do
                 att.Desc_Pros = {"apex.autoreload"}
                 att.AutoReloadMaterial = v[3]
             end
+
+            att.DroppedModel = v[4]
 
             ArcCW.LoadAttachmentType(att, "apex_mag_" .. k .. j .. "_" .. i)
         end
