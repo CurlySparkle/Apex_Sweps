@@ -29,7 +29,7 @@ else
         if IsValid(Apex_AutoReloadPanel) then Apex_AutoReloadPanel:Remove() end
         Apex_AutoReloadPanel = vgui.Create("DImage")
         Apex_AutoReloadPanel:SetSize(512, 64)
-        Apex_AutoReloadPanel:SetPos(ScrW() * 0.5 - 256, ScrH() * 0.8 - 32)
+        Apex_AutoReloadPanel:SetPos(ScrW() - 512 + 64, ScrH() * 0.7)
         Apex_AutoReloadPanel:SetImage(wep:GetBuff_Override("AutoReloadMaterial") or "entities/ammo_heavy_reloaded.png")
 
         Apex_AutoReloadPanel.Gun = vgui.Create("DImage", Apex_AutoReloadPanel)
