@@ -51,17 +51,18 @@ else
         ]]
 
         Apex_AutoReloadPanel.CreateTime = CurTime()
-        Apex_AutoReloadPanel.Alpha = 1
+        Apex_AutoReloadPanel.Alpha = 0
 
         Apex_AutoReloadPanel.Think = function()
-            if Apex_AutoReloadPanel.CreateTime + 3 < CurTime() then
-                Apex_AutoReloadPanel.Alpha = math.Approach(Apex_AutoReloadPanel.Alpha, 0, FrameTime() * 1)
+            if Apex_AutoReloadPanel.CreateTime + 3.5 < CurTime() then
+                Apex_AutoReloadPanel.Alpha = math.Approach(Apex_AutoReloadPanel.Alpha, 0, FrameTime() * 2)
                 if Apex_AutoReloadPanel.Alpha <= 0 then
                     Apex_AutoReloadPanel:Remove()
-                else
-                    Apex_AutoReloadPanel:SetAlpha(Apex_AutoReloadPanel.Alpha * 255)
                 end
+            elseif Apex_AutoReloadPanel.Alpha < 1 then
+                Apex_AutoReloadPanel.Alpha = math.Approach(Apex_AutoReloadPanel.Alpha, 1, FrameTime() * 5)
             end
+            Apex_AutoReloadPanel:SetAlpha(Apex_AutoReloadPanel.Alpha * 255)
         end
     end)
 end
