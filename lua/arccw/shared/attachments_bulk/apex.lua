@@ -7,8 +7,9 @@ local mag_types = {
         "Extended Energy Magazine",
         {
             [1] = {2, 4, 7, 7}, -- Volt SMG
+			[2] = {4, 8, 12, 12}, -- Devotion LMG
         },
-        "entities/ammo_light_reloaded.png",
+        "entities/ammo_energy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_energy.mdl",
     },
     ["light"] = {

@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "ammocounter/plate3/numbers_plate2"
+	"$basetexture" "ammocounter/plate2/numbers_plate2"
 	"$additive" "1"
 	"$decal" "1"
      "$nocull" "1"
@@ -10,7 +10,7 @@
 		ArcCW_AMMO
 		{
 			resultVar 1
-			prefixstring "ammocounter/plate3/numbers_plate"
+			prefixstring "ammocounter/plate2/numbers_plate"
 		}
 	}
 }
