@@ -8,7 +8,7 @@ local mag_types = {
         {
             [1] = {2, 4, 7, 7}, -- Volt SMG
         },
-        "entities/ammo_light_reloaded.png",
+        "entities/ammo_energy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_energy.mdl",
     },
     ["light"] = {
@@ -83,7 +83,7 @@ for k, v in pairs(mag_types) do
             att.Add_ClipSize = v[2][j][i]
 
             att.EntityIcon = icon
-            att.EntityCategory = "ArcCW - Apex Legends"
+            att.EntityCategory = "ArcCW - Apex Legends (Att.)"
 
             if j > 1 then
                 att.InvAtt = "apex_mag_" .. k .. "1_" .. i
