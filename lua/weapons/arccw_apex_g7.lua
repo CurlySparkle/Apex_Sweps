@@ -223,7 +223,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_sniper_mags"}
+        Slot = {"apex_mag_light1"}
     },
     {
         PrintName = "Hold Style",
