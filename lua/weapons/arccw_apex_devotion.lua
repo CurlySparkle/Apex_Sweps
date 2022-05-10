@@ -3,14 +3,14 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_devotion")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Devotion LMG"
-SWEP.Trivia_Class = "Light machine gun"
-SWEP.Trivia_Desc = "The Devotion LMG, It has a unique RPM acceleration mechanic: the longer the Devotion is fired continuously, the faster its fire rate will become, up to a cap."
+SWEP.Trivia_Class = "Machine Gun"
+SWEP.Trivia_Desc = "Energy actuated machine gun that ramps up its fire rate over time."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
 SWEP.Slot = 2
@@ -57,7 +57,7 @@ SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
 SWEP.PhysBulletMuzzleVelocity = 33500 * ArcCW.HUToM
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 16,
@@ -72,22 +72,9 @@ local balance = {
     }
 }
 
-function SWEP:ArcCW_Apex_Setup()
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
-        self[i] = v
-    end
-end
-DEFINE_BASECLASS("arccw_base")
-function SWEP:Initialize()
-    BaseClass.Initialize(self)
-
-    self:ArcCW_Apex_Setup()
-end
-
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 35 -- DefaultClip is automatically set.
-SWEP.Primary.Ammo = "ar2"
+SWEP.Primary.Ammo = "apex_energy"
 
 SWEP.Recoil = 0.425
 SWEP.RecoilSide = 0.215
@@ -108,13 +95,7 @@ SWEP.Firemodes = {
     }
 }
 SWEP.Hook_ModifyRPM = function(wep, delay)
-    local max = math.min(14, wep:GetCapacity())
-
-    local delta = wep:GetBurstCount() / max
-
-    local mult = Lerp(delta, 1, 1.5)
-
-    return delay / mult
+    return delay / Lerp(wep:GetBurstCount() / 15, 1, 3)
 end
 
 SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
@@ -258,11 +239,11 @@ SWEP.Animations = {
         Source = "draw_first",
         SoundTable = {
             {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotFoley_fr00_2ch_v1_01.wav", t = 0 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt01_fr06_2ch_v1_01.wav", t = 6 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_Energy_fr11_2ch_v1_01.wav", t = 11 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotEquip_fr13_2ch_v1_01.wav", t = 13 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt02_fr15_2ch_v1_01.wav", t = 15 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_WpnMvmnt_fr20_2ch_v1_01.wav", t = 20 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt01_fr06_2ch_v1_01.wav", t = 6 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_Energy_fr11_2ch_v1_01.wav", t = 11 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotEquip_fr13_2ch_v1_01.wav", t = 13 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt02_fr15_2ch_v1_01.wav", t = 15 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_WpnMvmnt_fr20_2ch_v1_01.wav", t = 20 / 30},
         },
     },
     ["draw"] = {
@@ -320,13 +301,13 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr05_2ch_v1_01.wav", t = 5 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr65_2ch_v1_01.wav", t = 65 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr74_2ch_v1_01.wav", t = 74 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr65_2ch_v1_01.wav", t = 65 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr74_2ch_v1_01.wav", t = 74 / 30},
 
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01A.wav", t = 8 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01B.wav", t = 8 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagIn_fr43_2ch_v1_01.wav", t = 43 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagHit_fr63_2ch_v1_01.wav", t = 63 / 30}
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01A.wav", t = 8 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01B.wav", t = 8 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagIn_fr43_2ch_v1_01.wav", t = 43 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagHit_fr63_2ch_v1_01.wav", t = 63 / 30}
         },
     },
     ["reload_empty"] = {
@@ -334,14 +315,14 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr03_2ch_v1_01.wav", t = 5 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr66_2ch_v1_01.wav", t = 65 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr96_2ch_v1_01.wav", t = 74 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr66_2ch_v1_01.wav", t = 65 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr96_2ch_v1_01.wav", t = 74 / 30},
 
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_EmptyMagOut_fr05_2ch_v1_01.wav", t = 5 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagIn_fr41_2ch_v1_01.wav", t = 41 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagHit_fr61_2ch_v1_01.wav", t = 61 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_AccuateBoltResonate_fr80_2ch_v1_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_Energy_fr86_2ch_v1_01.wav", t = 86 / 30}
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_EmptyMagOut_fr05_2ch_v1_01.wav", t = 5 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagIn_fr41_2ch_v1_01.wav", t = 41 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagHit_fr61_2ch_v1_01.wav", t = 61 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_AccuateBoltResonate_fr80_2ch_v1_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_Energy_fr86_2ch_v1_01.wav", t = 86 / 30}
     },
 },
 }

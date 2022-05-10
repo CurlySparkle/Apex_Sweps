@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_peacekeeper")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -63,7 +63,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.8,
 }
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 9,
@@ -77,19 +77,6 @@ local balance = {
         Penetration = 15,
     }
 }
-
-function SWEP:ArcCW_Apex_Setup()
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
-        self[i] = v
-    end
-end
-DEFINE_BASECLASS("arccw_base")
-function SWEP:Initialize()
-    BaseClass.Initialize(self)
-
-    self:ArcCW_Apex_Setup()
-end
 
 SWEP.Tracer = "tfa_apex_energy_tracer_rifle" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1
@@ -156,7 +143,7 @@ SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 100
 SWEP.SightsDispersion = 0
 
-SWEP.Primary.Ammo = "buckshot"
+SWEP.Primary.Ammo = "apex_shotgun"
 
 SWEP.ShootVol = 160 -- volume of shoot sound
 
@@ -268,7 +255,7 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.Hook_Think = ArcCW.ADSReload
+SWEP.Hook_Think = ArcCW.Apex.BlendSights
 
 SWEP.Animations = {
     ["idle"] = {

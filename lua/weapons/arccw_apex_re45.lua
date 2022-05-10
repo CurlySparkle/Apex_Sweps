@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_re45")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -61,7 +61,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.9,
 }
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 12,
@@ -75,23 +75,6 @@ local balance = {
         Penetration = 20,
     }
 }
-
-function SWEP:ArcCW_Apex_Setup()
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
-        self[i] = v
-    end
-end
-DEFINE_BASECLASS("arccw_base")
-function SWEP:Initialize()
-    BaseClass.Initialize(self)
-
-    self:ArcCW_Apex_Setup()
-end
-
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 16 -- DefaultClip is automatically set.
@@ -119,7 +102,7 @@ SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a d
 SWEP.HipDispersion = 120 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 100
 
-SWEP.Primary.Ammo = "pistol"
+SWEP.Primary.Ammo = "apex_light"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound

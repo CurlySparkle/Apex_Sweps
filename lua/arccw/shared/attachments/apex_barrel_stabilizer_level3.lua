@@ -28,6 +28,8 @@ att.Hook_Compatible = function(wep)
     if wep:GetIsShotgun() then return false end
 end
 
-
 att.GivesFlags = {"muz_long"}
 att.ExcludeFlags = {"tac_short"}
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_barrel_3.png"

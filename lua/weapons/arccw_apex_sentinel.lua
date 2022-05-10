@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_sentinel")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -43,7 +43,6 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 70
@@ -82,12 +81,12 @@ SWEP.VisualRecoilMult = 0.2
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true -- do not cycle on last shot
 
-SWEP.Delay = 60 / 31 -- 60 / RPM.
-SWEP.Num = 1 -- number of shots per trigger pull.
+SWEP.Delay = 60 / 31
+SWEP.Num = 1
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "FIRE"
+        PrintName = "fcg.bolt"
     },
     {
         Mode = 0
@@ -99,7 +98,7 @@ SWEP.HipDispersion = 500
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 300
 
-SWEP.Primary.Ammo = "XBowBolt"
+SWEP.Primary.Ammo = "apex_sniper"
 
 SWEP.ShootVol = 180 -- volume of shoot sound
 

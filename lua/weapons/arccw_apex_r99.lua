@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_r99")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -62,7 +62,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.8,
 }
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 11,
@@ -117,7 +117,7 @@ SWEP.AccuracyMOA = 6
 SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 100
 
-SWEP.Primary.Ammo = "smg1"
+SWEP.Primary.Ammo = "apex_light"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound

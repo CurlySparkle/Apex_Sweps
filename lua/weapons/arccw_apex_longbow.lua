@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_longbow")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -95,7 +95,7 @@ SWEP.HipDispersion = 500
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 100
 
-SWEP.Primary.Ammo = "SniperPenetratedRound"
+SWEP.Primary.Ammo = "apex_sniper"
 
 SWEP.ShootVol = 160 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound

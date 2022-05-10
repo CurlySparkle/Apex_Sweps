@@ -3,13 +3,13 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_volt")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Volt SMG"
-SWEP.Trivia_Class = "Sub machine gun"
+SWEP.Trivia_Class = "Submachine Gun"
 SWEP.Trivia_Desc = "Energy-actuated SMG with incredible stopping power."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
@@ -52,12 +52,9 @@ SWEP.Damage = 16
 SWEP.DamageMin = 16
 SWEP.Range = 170
 SWEP.Penetration = 10
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
 SWEP.PhysBulletMuzzleVelocity = 23500 * ArcCW.HUToM
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 17,
@@ -72,22 +69,9 @@ local balance = {
     }
 }
 
-function SWEP:ArcCW_Apex_Setup()
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
-        self[i] = v
-    end
-end
-DEFINE_BASECLASS("arccw_base")
-function SWEP:Initialize()
-    BaseClass.Initialize(self)
-
-    self:ArcCW_Apex_Setup()
-end
-
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
-SWEP.Primary.Ammo = "ar2"
+SWEP.Primary.Ammo = "apex_energy"
 
 SWEP.Recoil = 0.425
 SWEP.RecoilSide = 0.215
@@ -222,7 +206,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_mag_energy"}
+        Slot = {"apex_mag_energy1"}
     },
     {
         PrintName = "Extras",

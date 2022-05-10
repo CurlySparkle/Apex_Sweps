@@ -18,5 +18,5 @@ att.ToggleSound = "items/UI_Menu_Select.wav"
 
 att.DroppedModel = "models/weapons/attachments/upgrades/mag_heavy2.mdl"
 
-att.EntityCategory = "ArcCW - Apex Legends"
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
 att.EntityIcon = "entities/attach_icons/apex_pump_2.png"

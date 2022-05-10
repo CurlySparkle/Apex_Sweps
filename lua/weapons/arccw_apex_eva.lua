@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_eva")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -47,7 +47,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 1,
 }
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 6,
@@ -62,23 +62,8 @@ local balance = {
     }
 }
 
-function SWEP:ArcCW_Apex_Setup()
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
-        self[i] = v
-    end
-end
-DEFINE_BASECLASS("arccw_base")
-function SWEP:Initialize()
-    BaseClass.Initialize(self)
-
-    self:ArcCW_Apex_Setup()
-end
-
 SWEP.Penetration = 2
 SWEP.DamageType = DMG_BUCKSHOT
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 700 -- projectile or phys bullet muzzle velocity
 SWEP.PhysBulletMuzzleVelocity = 16000 * ArcCW.HUToM
 
 SWEP.Num = 9
@@ -131,7 +116,7 @@ SWEP.AccuracyMOA = 50 -- accuracy in Minutes of Angle. There are 60 MOA in a deg
 SWEP.HipDispersion = 300 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 100
 
-SWEP.Primary.Ammo = "buckshot" -- what ammo type the gun uses
+SWEP.Primary.Ammo = "apex_shotgun" -- what ammo type the gun uses
 
 SWEP.ShootVol = 180 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound

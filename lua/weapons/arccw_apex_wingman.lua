@@ -3,19 +3,15 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_wingman")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Wingman"
 SWEP.Trivia_Class = "Revolver"
-SWEP.Trivia_Desc = "The Wingman is a revolver that utilizes Heavy Rounds."
+SWEP.Trivia_Desc = "Powerful revolver with an equally powerful kick."
 SWEP.Trivia_Manufacturer = "Brockhaurd Manufacturing"
-SWEP.Trivia_Country = "Unkown"
-SWEP.Trivia_Calibre = "Heavy Rounds"
-SWEP.Trivia_Year = "2734"
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true
@@ -36,19 +32,40 @@ SWEP.WorldModelOffset = {
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 45
-SWEP.DamageMin = 25 -- damage done at maximum range
-SWEP.Range = 85 -- in METRES
-SWEP.Penetration = 15
-SWEP.DamageType = DMG_BULLET
+SWEP.DamageMin = 45
+SWEP.Range = 75
+SWEP.RangeMin = 25
 
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.ChamberSize = 0 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 6 -- DefaultClip is automatically set.
+SWEP.Penetration = 8
+SWEP.PhysBulletMuzzleVelocity = 18000 * ArcCW.HUToM
+SWEP.ChamberSize = 0
+SWEP.Primary.ClipSize = 6
 
-SWEP.PhysBulletMuzzleVelocity = 600
+SWEP.Apex_Balance = {
+    [0] = {
+        -- Apex Legends Settings
+        Damage = 45,
+        DamageMin = 45,
+    },
+    [1] = {
+        -- Arcwc Settings
+        Damage = 55,
+        DamageMin = 35,
+    }
+}
 
-SWEP.Recoil = 1.75
-SWEP.RecoilSide = 1.75
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 2.15,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.9,
+    [HITGROUP_RIGHTLEG] = 0.9,
+}
+
+SWEP.Recoil = 2
+SWEP.RecoilSide = 1.25
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 
@@ -57,7 +74,7 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "DACT"
+        PrintName = "fcg.dact"
     },
     {
         Mode = 0
@@ -71,7 +88,7 @@ SWEP.AccuracyMOA = 5 -- accuracy in Minutes of Angle. There are 60 MOA in a degr
 SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 50
 
-SWEP.Primary.Ammo = "357" -- what ammo type the gun uses
+SWEP.Primary.Ammo = "apex_heavy" -- what ammo type the gun uses
 
 SWEP.ShootVol = 160 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound

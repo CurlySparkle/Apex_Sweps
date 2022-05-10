@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_hemlok")
 end
 
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_apex_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -51,7 +51,7 @@ SWEP.Range = 15
 SWEP.Penetration = 15
 SWEP.PhysBulletMuzzleVelocity = 27500 * ArcCW.HUToM
 
-local balance = {
+SWEP.Apex_Balance = {
     [0] = {
         -- Apex Legends Settings
         Damage = 20,
@@ -65,19 +65,6 @@ local balance = {
         Penetration = 20,
     }
 }
-
-function SWEP:ArcCW_Apex_Setup()
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
-        self[i] = v
-    end
-end
-DEFINE_BASECLASS("arccw_base")
-function SWEP:Initialize()
-    BaseClass.Initialize(self)
-
-    self:ArcCW_Apex_Setup()
-end
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 1.75,
@@ -123,7 +110,7 @@ SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a d
 SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 
-SWEP.Primary.Ammo = "ar2"
+SWEP.Primary.Ammo = "apex_heavy"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 -- SWEP.ShootPitch = 101 -- pitch of shoot sound
