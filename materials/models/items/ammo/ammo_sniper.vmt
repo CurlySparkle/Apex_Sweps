@@ -1,6 +1,6 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models\items\ammo\Ammo_d"
+	"$basetexture"				"models\items\ammo\Ammo_d2"
 	"$bumpmap"					"models\items\ammo\Ammo_n"
 	"$phongexponenttexture"		"models\items\ammo\Ammo_e"
 	"$color2"					"[0.8 0.8 0.8]"

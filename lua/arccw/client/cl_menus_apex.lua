@@ -13,4 +13,8 @@ function ArcCW_Apex_Options( CPanel )
     CPanel:AddControl("Label", {Text = "0. Apex Settings, the default damage balance as in Apex Legends."})
     CPanel:AddControl("Label", {Text = "1. ArcCW Settings, good for deathmatch servers. This will balance the weapons damage to behave similarly to other weaponry to make them feel more decent."})
     CPanel:AddControl("Label", {Text = "Altrough this will not change things such as fire rate or animation speeds and neiter recoil or accuracy. This primarily will only affect the damage for more decency agains't players or stronger NPCs."})
+	CPanel:AddControl("Slider", {Label = "Ammo Type", Command = "arccw_apex_ammo", min = 0, max = 1 })
+    CPanel:AddControl("Label", {Text = "Changes the ammo type the Apex weapons use"})
+    CPanel:AddControl("Label", {Text = "0. Apex Ammo Type"})
+    CPanel:AddControl("Label", {Text = "1. HL2 Ammo Type"})
 end

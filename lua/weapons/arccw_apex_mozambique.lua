@@ -123,7 +123,7 @@ SWEP.Primary.Ammo = "apex_shotgun" -- what ammo type the gun uses
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = { "^weapons/mozambique/fire_1.wav", "^weapons/mozambique/fire_2.wav", "^weapons/mozambique/fire_3.wav" }
+SWEP.ShootSound = "ArcCW_APEX.Mozambique.Fire"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"

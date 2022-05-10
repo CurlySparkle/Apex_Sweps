@@ -1,4 +1,61 @@
 sound.Add( {
+    name = "ArcCW_APEX.Mozambique_Hammer.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/mozambique/fire_hammerpoint_1.wav",
+		"^weapons/mozambique/fire_hammerpoint_2.wav",
+		"^weapons/mozambique/fire_hammerpoint_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Mozambique_Hammer.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Mozambique.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/mozambique/fire_1.wav",
+		"^weapons/mozambique/fire_2.wav",
+		"^weapons/mozambique/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Mozambique.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Havoc.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {90, 110},
+    sound = {
+        "^weapons/Havoc/wpn_havoc_fire_1.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Start")
+
+sound.Add( {
+    name = "ArcCW_APEX.Havoc.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/Havoc/wpn_havoc_fire_loop_1.wav",
+		"^weapons/Havoc/wpn_havoc_fire_loop_2.wav",
+		"^weapons/Havoc/wpn_havoc_fire_loop_3.wav",
+		"^weapons/Havoc/wpn_havoc_fire_loop_4.wav",
+		"^weapons/Havoc/wpn_havoc_fire_loop_5.wav",
+		"^weapons/Havoc/wpn_havoc_fire_loop_6.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Havoc.Fire")
+
+sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -88,6 +145,20 @@ sound.Add( {
     }
 } )
 util.PrecacheSound("ArcCW_APEX.P2020.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.P2020_HammerPoint.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/p2020/fire_hammerpoint_1.wav",
+		"^weapons/p2020/fire_hammerpoint_2.wav",
+		"^weapons/p2020/fire_hammerpoint_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.P2020_HammerPoint.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.G7.Fire",
@@ -248,6 +319,36 @@ sound.Add( {
     }
 } )
 util.PrecacheSound("ArcCW_APEX.RE45.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.RE45_Hammer.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+--    pitch = {90, 110},
+    sound = {
+        "^weapons/re45/fire_hammerpoint_1.wav",
+        "^weapons/re45/fire_hammerpoint_2.wav",
+        "^weapons/re45/fire_hammerpoint_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire_Start")
+
+sound.Add( {
+    name = "ArcCW_APEX.RE45_Hammer.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/re45/fire_hammerpoint_loop_1.wav",
+		"^weapons/re45/fire_hammerpoint_loop_2.wav",
+		"^weapons/re45/fire_hammerpoint_loop_3.wav",
+		"^weapons/re45/fire_hammerpoint_loop_4.wav",
+		"^weapons/re45/fire_hammerpoint_loop_5.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",

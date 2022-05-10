@@ -108,8 +108,8 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 101 -- pitch of shoot sound
 
 
-SWEP.FirstShootSound = "ArcCW_APEX.R99.Fire_Start"
-SWEP.ShootSound = "ArcCW_APEX.R99.Fire"
+SWEP.FirstShootSound = "ArcCW_APEX.RE45.Fire_Start"
+SWEP.ShootSound = "ArcCW_APEX.RE45.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
