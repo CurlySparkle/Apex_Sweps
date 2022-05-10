@@ -1,4 +1,39 @@
 sound.Add( {
+    name = "ArcCW_APEX.Devotion.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {90, 110},
+    sound = {
+        "^weapons/devotion/fire_1.wav",
+		"^weapons/devotion/fire_2.wav",
+		"^weapons/devotion/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Devotion.Fire_Start")
+
+sound.Add( {
+    name = "ArcCW_APEX.Devotion.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/devotion/fire_loop_1.wav",
+		"^weapons/devotion/fire_loop_2.wav",
+		"^weapons/devotion/fire_loop_3.wav",
+		"^weapons/devotion/fire_loop_4.wav",
+		"^weapons/devotion/fire_loop_5.wav",
+		"^weapons/devotion/fire_loop_6.wav",
+		"^weapons/devotion/fire_loop_7.wav",
+		"^weapons/devotion/fire_loop_8.wav",
+		"^weapons/devotion/fire_loop_9.wav",
+		"^weapons/devotion/fire_loop_10.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Devotion.Fire")
+
+sound.Add( {
     name = "ArcCW_APEX.Eva.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
