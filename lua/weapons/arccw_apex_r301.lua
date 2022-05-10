@@ -300,6 +300,9 @@ SWEP.Animations = {
         Source = "inspect_out",
         LHIK = true,
         LHIKOut = 0.6,
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_End_V2_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",

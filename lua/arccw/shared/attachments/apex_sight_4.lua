@@ -16,7 +16,7 @@ att.Model = "models/weapons/attachments/sight_1.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 13, -0.2),
+        Pos = Vector(0, 8, -0.35),
         Ang = Angle(0, 0, 0),
         Magnification = 2,
     }

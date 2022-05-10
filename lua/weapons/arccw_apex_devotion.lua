@@ -15,8 +15,8 @@ SWEP.Trivia_Manufacturer = "Wonyeon"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-6, -1.5, 1)
-SWEP.CrouchAng = Angle(0.837, 0, -56.513)
+SWEP.CrouchPos = Vector(-5.5, -1.5, 1.5)
+SWEP.CrouchAng = Angle(0.623, 0.015, -53.174)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -40,7 +40,7 @@ SWEP.ViewModel = "models/weapons/c_apex_devotion.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_devotion.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-7, 4, -4.7),
+    pos        =    Vector(-4.5, 4, -5.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -136,7 +136,7 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 SWEP.PhysTracerProfile = 6
 
-SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_medium"
+SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_big"
 SWEP.MuzzleFlashColor = Color(25, 125, 255)
 
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
@@ -167,7 +167,7 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -5, 0),
+    Pos = Vector(0, -2, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.15,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -180,10 +180,10 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 SWEP.AttachmentElements = {
-    ["weapon_sights"] = {
+    ["weapon_sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
@@ -208,9 +208,10 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-        InstalledEles = {"weapon_sights", "weapon_dot"},
-        CorrectivePos = Vector(1.88,0,-0.4),
-        CorrectiveAng = Angle(0, 0, 3.845)
+        ExtraSightDist = -3,
+        InstalledEles = {"weapon_sight", "weapon_dot"},
+        CorrectivePos = Vector(1.6,0,-0.55),
+        CorrectiveAng = Angle(-0.94, -0.287, 5.581)
     },
     {
         PrintName = "Muzzle Type",
@@ -301,9 +302,18 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_LMG_Start_V1_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_LMG_Mid_V1_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_LMG_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 316 / 30}
+    },
     },
     ["reload"] = {
         Source = "reload",
@@ -323,16 +333,15 @@ SWEP.Animations = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftMagSlide_fr01_2ch_v1_01.wav", t = 1 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_BoltPullSettle_fr12_2ch_v1_01.wav", t = 12 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr16_2ch_v1_01.wav", t = 16 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav", t = 29 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleSettle_fr69_2ch_v1_01.wav", t = 69 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagOut_fr04_2ch_v1_01.wav", t = 4 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr49_2ch_v1_01.wav", t = 49 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr34_2ch_v1_01.wav", t = 34 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_01.wav", t = 58 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftPullMag_fr65_2ch_v1_03.wav", t = 65 / 30}
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr03_2ch_v1_01.wav", t = 5 / 30},
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr66_2ch_v1_01.wav", t = 65 / 30},
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr96_2ch_v1_01.wav", t = 74 / 30},
+
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_EmptyMagOut_fr05_2ch_v1_01.wav", t = 5 / 30},
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagIn_fr41_2ch_v1_01.wav", t = 41 / 30},
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagHit_fr61_2ch_v1_01.wav", t = 61 / 30},
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_AccuateBoltResonate_fr80_2ch_v1_01.wav", t = 80 / 30},
+			{p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_Energy_fr86_2ch_v1_01.wav", t = 86 / 30}
     },
 },
 }
