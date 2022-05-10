@@ -327,9 +327,9 @@ sound.Add( {
     level = 100,
 --    pitch = {90, 110},
     sound = {
-        "^weapons/re45/fire_hammerpoint_1.wav",
-        "^weapons/re45/fire_hammerpoint_2.wav",
-        "^weapons/re45/fire_hammerpoint_3.wav",
+        "^weapons/re45/fire_1.wav",
+        "^weapons/re45/fire_2.wav",
+        "^weapons/re45/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire_Start")
@@ -346,6 +346,7 @@ sound.Add( {
 		"^weapons/re45/fire_hammerpoint_loop_3.wav",
 		"^weapons/re45/fire_hammerpoint_loop_4.wav",
 		"^weapons/re45/fire_hammerpoint_loop_5.wav",
+		"^weapons/re45/fire_hammerpoint_loop_6.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire")
