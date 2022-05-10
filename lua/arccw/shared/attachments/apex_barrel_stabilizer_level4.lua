@@ -30,4 +30,4 @@ att.GivesFlags = {"muz_long"}
 att.ExcludeFlags = {"tac_short"}
 
 att.EntityCategory = "ArcCW - Apex Legends (Att.)"
-att.EntityIcon = "entities/attach_icons/apex_barrel_4w.png"
+att.EntityIcon = "entities/attach_icons/apex_barrel_4.png"

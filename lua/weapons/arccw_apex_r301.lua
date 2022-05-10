@@ -98,6 +98,9 @@ SWEP.Firemodes = {
         Mode = 2,
     },
     {
+        Mode = 1,
+    },
+    {
         Mode = 0
     }
 }
@@ -213,7 +216,11 @@ SWEP.Attachments = {
         Slot = {"apex_mag_light1"}
     },
     {
-        PrintName = "Foregrip Type",
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_anvil"},
+    },
+    {
+        PrintName = "Foregrip",
         Slot = {"apex_fg"},
         Bone = "def_c_base",
         Offset = {

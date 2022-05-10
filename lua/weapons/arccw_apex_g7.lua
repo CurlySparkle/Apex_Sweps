@@ -213,6 +213,10 @@ SWEP.Attachments = {
         Slot = {"apex_mag_light1"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_dtap"},
+    },
+    {
         PrintName = "Hold Style",
         Slot = {"g7_special"},
         Bone = "def_c_base",

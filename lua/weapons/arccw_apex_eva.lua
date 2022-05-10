@@ -226,6 +226,10 @@ SWEP.Attachments = {
         Slot = {"apex_shotgun_bolt"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_dtap2"},
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}

@@ -9,7 +9,7 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "VK-47 Flatline"
-SWEP.Trivia_Class = "Assault rifle"
+SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Automatic rifle that packs a punch."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
@@ -208,6 +208,10 @@ SWEP.Attachments = {
     {
         PrintName = "Mag Type",
         Slot = {"apex_mag_heavy3"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_anvil2"},
     },
     {
         PrintName = "Extras",

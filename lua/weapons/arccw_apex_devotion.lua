@@ -76,8 +76,8 @@ SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 35 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "apex_energy"
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.2
+SWEP.RecoilSide = 0.15
 SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1

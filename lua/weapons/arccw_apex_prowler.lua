@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Prowler Burst PDW"
-SWEP.Trivia_Class = "Sub machine gun"
-SWEP.Trivia_Desc = "The Prowler Burst PDW, also called the Prowler SMG or Prowler, is a sub machine gun that utilizes Heavy Rounds. It fires in a 5-rounds burst."
+SWEP.Trivia_Class = "Submachine Gun"
+SWEP.Trivia_Desc = "Bullpup submachine gun that fires five rounds at a high rate of fire. The fire control and design gives this weapon excellent handling and low recoi."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 2
@@ -84,31 +84,29 @@ SWEP.ChamberSize = 0 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 20 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.225
+SWEP.RecoilSide = 0.1
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.1
 
-SWEP.Delay = 60 / 900 -- 60 / RPM.
+SWEP.Delay = 60 / 1260 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 
 SWEP.Firemodes = {
     {
         Mode = -5,
         RunawayBurst = true,
-    },
-    {
-        Mode = 1,
+        PostBurstDelay = 0.25
     },
     {
         Mode = 0
     }
 }
 
-SWEP.AccuracyMOA = 1.95 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 150
+SWEP.AccuracyMOA = 1.15 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.HipDispersion = 175 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 75
 
 SWEP.Primary.Ammo = "apex_heavy"
 
@@ -225,6 +223,10 @@ SWEP.Attachments = {
     {
         PrintName = "Mag Type",
         Slot = {"apex_mag_heavy5"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_selfire"}
     },
     {
         PrintName = "Extras",
