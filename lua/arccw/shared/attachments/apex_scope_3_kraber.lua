@@ -45,4 +45,5 @@ att.HolosightMagnificationMax = 8
 
 att.Mult_SightTime = 1.1
 att.Mult_SpeedMult = 0.9
+att.Mult_SightedSpeedMult = 0.3
 att.Mult_Sway = 0.1
