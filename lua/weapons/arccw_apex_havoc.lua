@@ -135,9 +135,9 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 4, 0),
+    Pos = Vector(0, 3, 0.2),
     Ang = Angle(0, 0, 0),
-    Magnification = 1.1,
+    Magnification = 1.15,
         Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -190,7 +190,10 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-        InstalledEles = {"weapon_sights", "weapon_dot"}
+        InstalledEles = {"weapon_sights", "weapon_dot"},
+        ExtraSightDist = 3,
+        CorrectivePos = Vector(2.15,0,-0.46),
+        CorrectiveAng = Angle(-4.14, -3.623, 6.436)
     },
     {
         PrintName = "Stock Type",
