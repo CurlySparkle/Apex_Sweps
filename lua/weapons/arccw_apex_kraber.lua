@@ -19,8 +19,8 @@ SWEP.Slot = 4
 
 SWEP.Sway = 0.1
 
-SWEP.CrouchPos = Vector(-8, -2, 1.5)
-SWEP.CrouchAng = Angle(0, 0, -53)
+SWEP.CrouchPos = Vector(-9.5, -5, 0.5)
+SWEP.CrouchAng = Angle(0, 0, -53.128)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -67,7 +67,7 @@ SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 4
 SWEP.MaxRecoilBlowback = 1
 
@@ -169,14 +169,18 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
         PrintName = "Optic Type", -- print name
-        DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "apex_scope_snipers", "apex_optic"}, -- what kind of attachments can fit here, can be string or table
+        DefaultAttName = "None",
+        Slot = {"kraber"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
@@ -184,10 +188,15 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-        Installed = "apex_scope_1",
-        ExtraSightDist = 8,
+        Installed = "apex_scope_1_kraber",
         CorrectivePos = Vector(3.65, 0, 0.1),
         CorrectiveAng = Angle(0, 0, 2.337)
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
@@ -218,6 +227,8 @@ SWEP.Animations = {
         Source = "draw_first",
         SoundTable = {
             {p = 100, s = "weapons/kraber/mech_kraber_ads_in_2ch_v1_01.wav", t = 0 / 30},
+			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 18 / 30},
+			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 27 / 30}
         },
     },
     ["draw"] = {
@@ -240,16 +251,16 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "fire",
         -- Time = 9 / 10,
-        MinProgress = 0.9,
+        MinProgress = 1,
     },
     ["cycle"] = {
         Source = "rechamber",
-        ShellEjectAt = 0.45,
+        ShellEjectAt = 0.5,
         -- Time = 63 / 40,
         MinProgress = 0.875,
         SoundTable = {
-            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 10 / 40},
-			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 20 / 40}
+            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
+			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 24 / 30}
         },
     },
     ["enter_sight"] = {
@@ -263,12 +274,12 @@ SWEP.Animations = {
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",
-        ShellEjectAt = 0.45,
+        ShellEjectAt = 0.5,
         -- Time = 63 / 40,
         MinProgress = 0.875,
         SoundTable = {
-            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_02.wav", t = 10 / 40},
-			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_02.wav", t = 20 / 40}
+            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 16 / 30},
+			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 22 / 30}
         },
     },
     ["exit_sight"] = {

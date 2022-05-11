@@ -1,16 +1,23 @@
 "VertexlitGeneric"
 {
-"$basetexture"				"models\weapons\kraber\kraber_sr_d"
-"$bumpmap"					"models\weapons\kraber\kraber_sr_n"
-"$phongexponenttexture"		"models\weapons\kraber\kraber_sr_e"
-"$color2"	"[0.8 0.8 0.8]"
-"$blendTintByBaseAlpha"	"1"
+	"$basetexture"				"models\weapons\kraber\kraber_base_main_d"
+	"$bumpmap"					"models\weapons\kraber\kraber_base_main_n"
+	"$phongexponenttexture"		"models\weapons\kraber\kraber_base_main_e"
+	"$color2"					"[0.8 0.8 0.8]"
+	"$blendTintByBaseAlpha"		"1"
 
-"$envmap"	"env_cubemap"
-"$envmaptint"	"[ .13 .13 .13 ]"
+	"$envmap"					"env_cubemap"
+	"$envmaptint"				"[ .13 .13 .13 ]"
 
-"$phong"	"1"
-"$phongexponent"	"30"
-"$phongboost"	"5"
-"$phongfresnelranges"	"[0.25 0.5 1]"
+	"$phong"					"1"
+	"$phongboost"				"5"
+	"$phongfresnelranges"		"[0.25 0.5 1]"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"80"	
+	"$rimlightboost"			".2"
+	"$rimmask"					"1"
+	"$nocull"					"1"
+     //"$lightwarptexture" "models\weapons\car101\lightwarp_soft"
+
 }

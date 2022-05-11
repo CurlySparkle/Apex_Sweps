@@ -38,6 +38,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_car.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_car.mdl"
+SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-2, 4.5, -4),
     ang        =    Angle(-10, 0, 180),
@@ -117,7 +118,7 @@ SWEP.ShootPitch = 100 -- pitch of shoot soun
 SWEP.FirstShootSound = "ArcCW_APEX.CAR.Fire_Start"
 SWEP.ShootSound = "ArcCW_APEX.CAR.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
-SWEP.ShootSoundSilenced = ""
+SWEP.ShootSoundSilenced = "ArcCW_APEX.CAR.Fire"
 SWEP.DistantShootSound = ""
 
 SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
@@ -175,14 +176,12 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = true
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
@@ -231,6 +230,52 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
+    },
+    -- {
+        -- PrintName = "Special Optics", -- print name
+        -- ExtraSightDist = 1,
+        -- DefaultAttName = "None",
+        -- Slot = {"optic", "optic_lp"},
+        -- Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
+        -- Offset = {
+            -- vpos = Vector(0, 0.15, 0), -- offset that the attachment will be relative to the bone
+            -- vang = Angle(90, 0, -90),
+            -- wpos = Vector(0, 0, 0),
+            -- wang = Angle(0, 0, 0),
+        -- },
+        -- VMScale = Vector(1.2, 1.2, 1.2),
+        -- InstalledEles = {"sight"},
+        -- CorrectivePos = Vector(1.75,0,-0.1),
+        -- CorrectiveAng = Angle(-1.318, 0, 4.45)
+    -- },
+    -- {
+        -- PrintName = "Special Muzzles",
+        -- DefaultAttName = "None",
+        -- Slot = "muzzle",
+        -- Bone = "muzzle_flash",
+        -- Offset = {
+            -- vpos = Vector(0, 0, 0),
+            -- vang = Angle(0, 0, -90),
+            -- wpos = Vector(0, 0, 0),
+            -- wang = Angle(0, 0, 0),
+        -- },
+    -- },
+    -- {
+        -- PrintName = "Special Tactical",
+        -- Slot = "tac",
+        -- Bone = "def_c_base",
+        -- Offset = {
+            -- vpos = Vector(0, -5.5, 15),
+            -- vang = Angle(90, 0, 90),
+            -- wpos = Vector(0, 0, 0),
+            -- wang = Angle(0, 0, 0),
+        -- },
+    -- },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
