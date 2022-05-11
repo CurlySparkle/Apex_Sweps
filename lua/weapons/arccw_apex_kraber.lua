@@ -36,10 +36,10 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_kraber.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_kraber.mdl"
+SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-8.5, 5.5, -5.5),
+    pos        =    Vector(-10, 8, -5.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -191,6 +191,10 @@ SWEP.Attachments = {
         Installed = "apex_scope_1_kraber",
         CorrectivePos = Vector(3.65, 0, 0.1),
         CorrectiveAng = Angle(0, 0, 2.337)
+    },
+    {
+        PrintName = "Stock Type",
+        Slot = {"apex_sniper_stock"}
     },
 	{
         PrintName = "Skin",

@@ -204,6 +204,10 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.Attachments = {
@@ -228,6 +232,12 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_dtap2"},
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
