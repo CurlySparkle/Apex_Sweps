@@ -1,6 +1,6 @@
 if CLIENT then
-    killicon.Add( "arccw_apex_devotion", "VGUI/apex_killicon_devotion", Color(251, 85, 25, 255))
-    SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_devotion")
+    killicon.Add( "arccw_apex_havoc", "VGUI/apex_killicon_havoc", Color(251, 85, 25, 255))
+    SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_havoc")
 end
 
 SWEP.Base = "arccw_apex_base"
@@ -8,15 +8,15 @@ SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
-SWEP.PrintName = "Devotion LMG"
-SWEP.Trivia_Class = "Machine Gun"
-SWEP.Trivia_Desc = "Energy actuated machine gun that ramps up its fire rate over time."
+SWEP.PrintName = "HAVOC"
+SWEP.Trivia_Class = "Assault Rifle"
+SWEP.Trivia_Desc = "Charged energy weapon that requires winding up."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-5.5, -1.5, 1.5)
-SWEP.CrouchAng = Angle(0.623, 0.015, -53.174)
+SWEP.CrouchPos = Vector(-6, -1.5, 1)
+SWEP.CrouchAng = Angle(0.837, 0, -56.513)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -36,11 +36,11 @@ SWEP.NPCWeight = 250
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/c_apex_devotion.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_devotion.mdl"
+SWEP.ViewModel = "models/weapons/c_apex_havoc.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_havoc.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-4.5, 4, -5.5),
+    pos        =    Vector(-7, 4, -4.7),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -48,43 +48,33 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 16
+SWEP.Damage = 18
 SWEP.DamageMin = 16
 SWEP.Range = 170
 SWEP.Penetration = 10
-SWEP.DamageType = DMG_BULLET
-SWEP.ShootEntity = nil -- entity to fire, if any
-SWEP.MuzzleVelocity = 550 -- projectile or phys bullet muzzle velocity IN M/S
-SWEP.PhysBulletMuzzleVelocity = 33500 * ArcCW.HUToM
+SWEP.PhysBulletMuzzleVelocity = 30500 * ArcCW.HUToM
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 16,
-        DamageMin = 16,
-        Penetration = 10,
-    },
     [1] = {
         -- Arcwc Settings
-        Damage = 19,
+        Damage = 24,
         DamageMin = 18,
-        Penetration = 30,
     }
 }
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 35 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 24
 SWEP.Primary.Ammo = "apex_energy"
 
-SWEP.Recoil = 0.2
-SWEP.RecoilSide = 0.15
+SWEP.Recoil = 0.45
+SWEP.RecoilSide = 0.175
 SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1
-SWEP.VisualRecoilMult = 0.1
+SWEP.VisualRecoilMult = 0.5
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Delay = 60 / 300 -- 60 / RPM.
+SWEP.Delay = 60 / 672 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
@@ -94,19 +84,16 @@ SWEP.Firemodes = {
         Mode = 0
     }
 }
-SWEP.Hook_ModifyRPM = function(wep, delay)
-    return delay / Lerp(wep:GetBurstCount() / 15, 1, 3)
-end
 
-SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 525 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 155
+SWEP.AccuracyMOA = 1.5 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 75
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.FirstShootSound = "ArcCW_APEX.Devotion.Fire_Start"
-SWEP.ShootSound = "ArcCW_APEX.Devotion.Fire"
+SWEP.FirstShootSound = "ArcCW_APEX.Volt.Fire_Start"
+SWEP.ShootSound = "ArcCW_APEX.Volt.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -148,9 +135,9 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -2, 0),
+    Pos = Vector(0, -1, 0),
     Ang = Angle(0, 0, 0),
-    Magnification = 1.15,
+    Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -161,10 +148,10 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
 SWEP.AttachmentElements = {
-    ["weapon_sight"] = {
+    ["weapon_sights"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
@@ -175,6 +162,8 @@ SWEP.AttachmentElements = {
         },
     },
 }
+
+SWEP.TriggerDelay = true
 
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
@@ -189,20 +178,7 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-        ExtraSightDist = -3,
-        InstalledEles = {"weapon_sight", "weapon_dot"},
-        CorrectivePos = Vector(1.6,0,-0.55),
-        CorrectiveAng = Angle(-0.94, -0.287, 5.581)
-    },
-    {
-        PrintName = "Muzzle Type",
-        DefaultAttName = "Barrel Stabilizer",
-        Slot = "apex_muzzle",
-        Bone = "def_c_suppressor",
-        Offset = {
-            vpos = Vector(0, 0, 0),
-            vang = Angle(90, 0, -90),
-        },
+        InstalledEles = {"weapon_sights", "weapon_dot"}
     },
     {
         PrintName = "Stock Type",
@@ -214,7 +190,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_turbo2"}
+        Slot = {"apex_hopup_turbo"}
     },
     {
         PrintName = "Extras",
@@ -242,12 +218,11 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotFoley_fr00_2ch_v1_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt01_fr06_2ch_v1_01.wav", t = 6 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_Energy_fr11_2ch_v1_01.wav", t = 11 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotEquip_fr13_2ch_v1_01.wav", t = 13 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt02_fr15_2ch_v1_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_WpnMvmnt_fr20_2ch_v1_01.wav", t = 20 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_Foley_fr01_2ch_v1_01.wav", t = 1 / 35},
+            {p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_GunRattle_fr01_2ch_v1_01.wav", t = 1 / 35},
+            {p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltRelease_fr18_2ch_v1_01.wav", t = 18 / 35},
+            {p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_01.wav", t = 21 / 35},
+            {p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_GunRattleGrab_fr30_2ch_v1_01.wav", t = 30 / 35}
         },
     },
     ["draw"] = {
@@ -287,56 +262,45 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
-        SoundTable = {
-            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 0 / 30},
-    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
-        SoundTable = {
-            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_LMG_Start_V1_2ch_01.wav", t = 1 / 30},
-            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_LMG_Mid_V1_2ch_01.wav", t = 96 / 30},
-            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_LMG_Mid_V1_2ch_02.wav", t = 240 / 30},
-            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 316 / 30}
-    },
     },
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr05_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr65_2ch_v1_01.wav", t = 65 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr74_2ch_v1_01.wav", t = 74 / 30},
-
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01A.wav", t = 8 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01B.wav", t = 8 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagIn_fr43_2ch_v1_01.wav", t = 43 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagHit_fr63_2ch_v1_01.wav", t = 63 / 30}
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Foley_LftArmMagIn_fr01_2ch_v1_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattle_fr01_2ch_v1_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr16_2ch_v1_01.wav", t = 16 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattleMagIn_fr21_2ch_v1_01.wav", t = 21 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav", t = 29 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Foley_LftArmMagPul_fr45_2ch_v1_01.wav", t = 45 / 30},
+            {p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattleMagIn_fr54_2ch_v1_01.wav", t = 54 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr03_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr66_2ch_v1_01.wav", t = 65 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr96_2ch_v1_01.wav", t = 74 / 30},
-
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_EmptyMagOut_fr05_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagIn_fr41_2ch_v1_01.wav", t = 41 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagHit_fr61_2ch_v1_01.wav", t = 61 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_AccuateBoltResonate_fr80_2ch_v1_01.wav", t = 80 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_Energy_fr86_2ch_v1_01.wav", t = 86 / 30}
-        },
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftMagSlide_fr01_2ch_v1_01.wav", t = 1 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_BoltPullSettle_fr12_2ch_v1_01.wav", t = 12 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr16_2ch_v1_01.wav", t = 16 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav", t = 29 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleSettle_fr69_2ch_v1_01.wav", t = 69 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagOut_fr04_2ch_v1_01.wav", t = 4 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr49_2ch_v1_01.wav", t = 49 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr34_2ch_v1_01.wav", t = 34 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_01.wav", t = 58 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftPullMag_fr65_2ch_v1_03.wav", t = 65 / 30},
+        }
+    },
+    ["trigger"] = {
+        Source = "fire_windup",
+        MinProgress = 0.5,
+    },
+    ["trigger_sight"] = {
+        Source = "iron_windup",
+        MinProgress = 0.5,
     },
 }
-
-SWEP.Hook_AddShootSound = function(wep, data)
-    if wep:GetBurstCount() == 3 then
-        if wep.Attachments[5].Installed == "apex_hopup_turbo2" then
-            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.wav")
-        else
-            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_0" .. math.random(1, 3) .. ".wav")
-        end
-    end
-end
