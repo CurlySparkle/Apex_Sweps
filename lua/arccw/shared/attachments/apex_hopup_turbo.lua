@@ -12,5 +12,7 @@ att.Slot = {"apex_hopup_turbo"}
 
 att.Override_TriggerDelay = false
 
+att.ActivateElements = {"charged_skin"}
+
 att.EntityCategory = "ArcCW - Apex Legends (Att.)"
 att.EntityIcon = "entities/attach_icons/hopup_apex_turbocharger.png"

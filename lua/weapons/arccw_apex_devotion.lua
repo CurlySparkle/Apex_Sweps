@@ -342,7 +342,7 @@ SWEP.Animations = {
 }
 
 SWEP.Hook_AddShootSound = function(wep, data)
-    if wep:GetBurstCount() == 3 then
+    if wep:GetBurstCount() == 1 then
         if wep.Attachments[5].Installed == "apex_hopup_turbo2" then
             wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.wav")
         else

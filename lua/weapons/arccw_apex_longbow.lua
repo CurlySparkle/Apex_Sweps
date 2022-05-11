@@ -164,6 +164,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -200,7 +204,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_mag_sniper1"}
+        Slot = {"apex_mag_sniper2"}
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

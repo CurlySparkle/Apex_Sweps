@@ -203,7 +203,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle Type",
         DefaultAttName = "Barrel Stabilizer",
-        Slot = "apex_muzzle",
+        Slot = {"apex_muzzle","muzzle"},
         Bone = "muzzle_flash",
         Offset = {
             vpos = Vector(0, 0, 0),
