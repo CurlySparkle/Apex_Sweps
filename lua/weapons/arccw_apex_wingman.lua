@@ -161,6 +161,10 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 SWEP.Attachments = {
     {
@@ -181,6 +185,12 @@ SWEP.Attachments = {
     {
         PrintName = "Mag Type",
         Slot = {"apex_mag_heavy1"}
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

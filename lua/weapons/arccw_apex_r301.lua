@@ -81,7 +81,7 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 18
+SWEP.Primary.ClipSize = 17
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.3
@@ -176,6 +176,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -213,7 +217,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_mag_light1"}
+        Slot = {"apex_mag_light3"}
     },
     {
         PrintName = "Hop-up",
@@ -229,6 +233,12 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
