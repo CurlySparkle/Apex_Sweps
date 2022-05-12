@@ -1,6 +1,6 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models\attachments\rifle_scope_lens_d"
+	"$basetexture"				"models\attachments\rifle_scope_lens_d_og"
 	"$bumpmap"					"models\attachments\rifle_scope_lens_n"
 	"$translucent"				"1"
 	"$color2"					"[0.8 0.8 0.8]"

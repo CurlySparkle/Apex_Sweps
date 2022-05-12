@@ -8,6 +8,7 @@
 
 "$envmap"	"env_cubemap"
 "$envmaptint"	"[ .13 .13 .13 ]"
+"$normalmapalphaenvmapmask"         "1"
 
 "$phong"	"1"
 "$phongexponent"	"30"

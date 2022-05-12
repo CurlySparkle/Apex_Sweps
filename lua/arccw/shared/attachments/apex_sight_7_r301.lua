@@ -11,13 +11,13 @@ att.Desc_Pros = {
 att.Desc_Cons = {
 }
 att.AutoStats = true
-att.Slot = {"apex_sights"}
+att.Slot = {"r301"}
 
 att.Model = "models/weapons/attachments/sight_7.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 9, -0.2),
+        Pos = Vector(0, 7.5, -1.25),
         Ang = Angle(0, 0, 0),
         Magnification = 1.2,
         ScrollFunc = ArcCW.SCROLL_ZOOM,

@@ -60,6 +60,20 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.Havoc.Fire")
 
 sound.Add( {
+    name = "ArcCW_APEX.Havoc.Fire_Alt",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/Havoc/fire_alt1.wav",
+		"^weapons/Havoc/fire_alt2.wav",
+		"^weapons/Havoc/fire_alt3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Alt")
+
+sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

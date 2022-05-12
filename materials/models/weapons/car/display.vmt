@@ -1,6 +1,6 @@
 "UnlitTwoTexture"
 {
-	"$basetexture" "ammocounter/display_blue"
+	"$basetexture" "ammocounter/display_blue3"
 	"$texture2" "ammocounter/display_digital2"
 	"$color2" "[0.6 1 2]"
 	//"$nocull" "1"

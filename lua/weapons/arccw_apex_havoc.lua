@@ -99,7 +99,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.Tracer = "tfa_apex_energy_tracer_rifle" -- override tracer (hitscan) effect
+SWEP.Tracer = "tfa_apex_tracer_energy_rifle" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
@@ -206,7 +206,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_turbo"}
+        Slot = {"apex_hopup_turbo","apex_hopup_selfire2"}
     },
 	{
         PrintName = "Skin",
@@ -327,16 +327,26 @@ SWEP.Animations = {
     },
     ["trigger"] = {
         Source = "fire_windup",
-        MinProgress = 0.4,
+        MinProgress = 15/30,
         SoundTable = {
             {p = 100, s = "weapons/havoc/wpn_havoc_windup_1p.wav", t = 0 / 30},
         },
     },
     ["trigger_sight"] = {
         Source = "iron_windup",
-        MinProgress = 0.4,
+        MinProgress = 15/30,
         SoundTable = {
             {p = 100, s = "weapons/havoc/wpn_havoc_windup_1p.wav", t = 0 / 30},
         },
+    },
+	["untrigger"] = {
+        Source = "fire_winddown",
+		{p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},
+        MinProgress = 1.0,
+    },
+    ["untrigger_sight"] = {
+        Source = "iron_winddown",
+		{p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},
+        MinProgress = 1.0,
     },
 }
