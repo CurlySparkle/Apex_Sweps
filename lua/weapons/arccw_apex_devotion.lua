@@ -342,11 +342,25 @@ SWEP.Animations = {
 }
 
 SWEP.Hook_AddShootSound = function(wep, data)
-    if wep:GetBurstCount() == 3 then
+    if wep:GetBurstCount() == 1 then
+        if wep.DevotionWindupSound then wep.DevotionWindupSound:Stop() end
         if wep.Attachments[5].Installed == "apex_hopup_turbo2" then
-            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.wav")
+            wep.DevotionWindupSound = CreateSound(wep, "weapons/devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.wav")
         else
-            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_0" .. math.random(1, 3) .. ".wav")
+            wep.DevotionWindupSound = CreateSound(wep, "weapons/devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_0" .. math.random(1, 3) .. ".wav")
+        end
+
+        wep.DevotionWindupSound:Play()
+    end
+    wep.DevotionLastBurst = wep:GetBurstCount()
+end
+
+SWEP.Hook_Think = function(wep)
+    if wep:GetBurstCount() == 0 and wep.DevotionWindupSound then
+        wep.DevotionWindupSound:Stop()
+        wep.DevotionWindupSound = nil
+        if wep.DevotionLastBurst > 10 then
+            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_WindDown_2ch_v1_01.wav")
         end
     end
 end
