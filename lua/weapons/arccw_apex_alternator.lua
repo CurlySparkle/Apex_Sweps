@@ -159,6 +159,10 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.WorldModelOffset = {
@@ -200,7 +204,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag Type",
-        Slot = {"apex_mag_light1"}
+        Slot = {"apex_mag_light4"}
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

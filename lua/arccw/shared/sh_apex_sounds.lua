@@ -31,9 +31,11 @@ sound.Add( {
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 100,
-    pitch = {90, 110},
+    pitch = {95, 105},
     sound = {
-        "^weapons/Havoc/wpn_havoc_fire_1.wav",
+        "^weapons/Havoc/fire_1.wav",
+		"^weapons/Havoc/fire_2.wav",
+		"^weapons/Havoc/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Start")
@@ -45,12 +47,14 @@ sound.Add( {
     level = 100,
     pitch = {95, 105},
     sound = {
-        "^weapons/Havoc/wpn_havoc_fire_loop_1.wav",
-		"^weapons/Havoc/wpn_havoc_fire_loop_2.wav",
-		"^weapons/Havoc/wpn_havoc_fire_loop_3.wav",
-		"^weapons/Havoc/wpn_havoc_fire_loop_4.wav",
-		"^weapons/Havoc/wpn_havoc_fire_loop_5.wav",
-		"^weapons/Havoc/wpn_havoc_fire_loop_6.wav",
+        "^weapons/Havoc/fire_loop_1.wav",
+		"^weapons/Havoc/fire_loop_2.wav",
+		"^weapons/Havoc/fire_loop_3.wav",
+		"^weapons/Havoc/fire_loop_4.wav",
+		"^weapons/Havoc/fire_loop_5.wav",
+		"^weapons/Havoc/fire_loop_6.wav",
+		"^weapons/Havoc/fire_loop_7.wav",
+		"^weapons/Havoc/fire_loop_8.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Havoc.Fire")
