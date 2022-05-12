@@ -105,7 +105,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 1
+SWEP.AccuracyMOA = 2
 SWEP.HipDispersion = 400
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 300
@@ -234,7 +234,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

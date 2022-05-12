@@ -106,8 +106,9 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 0.5
-SWEP.HipDispersion = 400 -- inaccuracy added by hip firing.
+SWEP.HipDispersion = 450 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 75
+SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "apex_light"
 

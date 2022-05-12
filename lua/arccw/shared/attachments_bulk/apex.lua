@@ -17,7 +17,7 @@ local mag_types = {
         {
             [1] = {2, 4, 7, 7},
             [2] = {3, 6, 9, 9}, -- RE-45
-			[3] = {2, 7, 10, 10}, -- R-301
+            [3] = {2, 7, 10, 10}, -- R-301
         },
         "entities/ammo_light_reloaded.png",
         "models/weapons/attachments/upgrades/mag_light.mdl",
@@ -104,3 +104,88 @@ for k, v in pairs(mag_types) do
         end
     end
 end
+
+-------------------------------------------------
+-- Barrel Extenders & Stabilizers
+-------------------------------------------------
+
+local stab = {
+    [1] = {
+        Mult_Recoil = 0.9,
+        Mult_RecoilSide = 0.8,
+        Add_BarrelLength = 4,
+    },
+    [2] = {
+        Mult_Recoil = 0.85,
+        Mult_RecoilSide = 0.65,
+        Add_BarrelLength = 6,
+    },
+    [3] = {
+        Mult_Recoil = 0.75,
+        Mult_RecoilSide = 0.5,
+        Add_BarrelLength = 8,
+    },
+}
+
+local supp = {
+    [1] = {
+        Mult_AccuracyMOA = 0.8,
+        Mult_PhysBulletMuzzleVelocity = 1.1,
+        Add_BarrelLength = 4,
+    },
+    [2] = {
+        Mult_AccuracyMOA = 0.65,
+        Mult_PhysBulletMuzzleVelocity = 1.15,
+        Add_BarrelLength = 6,
+    },
+    [3] = {
+        Mult_AccuracyMOA = 0.5,
+        Mult_PhysBulletMuzzleVelocity = 1.25,
+        Add_BarrelLength = 8,
+    },
+}
+
+local noshotguns = function(wep)
+    if wep:GetIsShotgun() then return false end
+end
+
+for i = 1, 3 do
+    local att = table.Copy(stab[i])
+
+    att.PrintName = "Barrel Stabilizer - Level " .. i
+    local icon = "entities/attach_icons/apex_barrel_" .. i .. ".png"
+    att.Icon = Material(icon, "mips smooth")
+    att.Description = "apex.barrel.stabilizer." .. i
+    att.AutoStats = true
+    att.Slot = "apex_muzzle"
+    att.SortOrder = 10
+    att.Override_MuzzleEffectAttachment = 1
+    att.IsMuzzleDevice = true
+
+    att.EntityIcon = icon
+    att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+
+    att.Hook_Compatible = noshotguns
+
+    ArcCW.LoadAttachmentType(att, "apex_muzz_stab_" .. i)
+
+    local att2 = table.Copy(supp[i])
+
+    att2.PrintName = "Barrel Extender - Level " .. i
+    local icon2 = "entities/attach_icons/apex_suppressor_" .. i .. ".png"
+    att2.Icon = Material(icon2, "mips smooth")
+    att2.Description = "apex.barrel.suppressor." .. i
+    att2.AutoStats = true
+    att2.Slot = "apex_muzzle"
+    att2.SortOrder = 5
+    att2.Override_MuzzleEffectAttachment = 1
+    att2.IsMuzzleDevice = true
+
+    att2.EntityIcon = icon2
+    att2.EntityCategory = "ArcCW - Apex Legends (Att.)"
+
+    att2.Hook_Compatible = noshotguns
+
+    ArcCW.LoadAttachmentType(att2, "apex_muzz_supp_" .. i)
+end
+

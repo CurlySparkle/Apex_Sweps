@@ -99,7 +99,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 6
+SWEP.AccuracyMOA = 12
 SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 100
 
@@ -221,7 +221,7 @@ SWEP.Attachments = {
         PrintName = "Mag Type",
         Slot = {"apex_mag_light1"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

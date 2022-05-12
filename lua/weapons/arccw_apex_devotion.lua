@@ -98,7 +98,7 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
     return delay / Lerp(wep:GetBurstCount() / 15, 1, 3)
 end
 
-SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.AccuracyMOA = 3
 SWEP.HipDispersion = 525 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 155
 
@@ -216,7 +216,7 @@ SWEP.Attachments = {
         PrintName = "Mag Type",
         Slot = {"apex_mag_energy2"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
