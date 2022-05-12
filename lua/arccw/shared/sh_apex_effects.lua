@@ -30,5 +30,6 @@ PrecacheParticleSystem("tfa_apex_tracer_pistol")
 
 PrecacheParticleSystem("tfa_apex_tracer_shotgun")
 PrecacheParticleSystem("tfa_apex_tracer_smg")
+PrecacheParticleSystem("tfa_apex_tracer_ar")
 PrecacheParticleSystem("tfa_apex_tracer_sniper")
 PrecacheParticleSystem("tfa_apex_tracer_havoc")

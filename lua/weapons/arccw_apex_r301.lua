@@ -21,7 +21,7 @@ SWEP.CrouchAng = Angle(1.037, 0.623, -53.174)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1, 1)
+SWEP.ActivePos = Vector(0, -1, 1.5)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
@@ -76,7 +76,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.Tracer = "hl2mmod_generic_tracer"
+SWEP.Tracer = "tfa_apex_tracer_ar"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
@@ -120,7 +120,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
+SWEP.MuzzleEffect = "muzzleflash_4"
 SWEP.MuzzleFlashColor = Color(255, 209, 66)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
