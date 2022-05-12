@@ -181,7 +181,7 @@ SWEP.TriggerDelay = true
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
-        PrintName = "Optic Type", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         Slot = {"apex_sights"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
@@ -197,11 +197,11 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(-4.14, -3.623, 6.436)
     },
     {
-        PrintName = "Stock Type",
+        PrintName = "Stock",
         Slot = {"apex_standard_stock"}
     },
     {
-        PrintName = "Mag Type",
+        PrintName = "Magazine",
         Slot = {"apex_mag_energy2"}
     },
     {
@@ -291,7 +291,7 @@ SWEP.Animations = {
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ArmLower_FR23_01.wav", t = 23 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_GunUp_FR92_01.wav", t = 92 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ShoulderPat_FR103_01.wav", t = 103 / 30},
-			
+
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockRelease_FR18_01.wav", t = 18 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_BarrelClose_FR25_01.wav", t = 25 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_BurnOnly_FR30_01.wav", t = 30 / 30},
@@ -312,7 +312,7 @@ SWEP.Animations = {
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ArmLower_FR23_01.wav", t = 23 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_GunUp_FR92_01.wav", t = 92 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ShoulderPat_FR103_01.wav", t = 103 / 30},
-			
+
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockRelease_FR18_01.wav", t = 18 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_BarrelClose_FR25_01.wav", t = 25 / 30},
 			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_BurnOnly_FR30_01.wav", t = 30 / 30},

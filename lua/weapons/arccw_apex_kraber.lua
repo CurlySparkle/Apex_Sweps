@@ -178,7 +178,7 @@ SWEP.AttachmentElements = {
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
-        PrintName = "Optic Type", -- print name
+        PrintName = "Optic",
         DefaultAttName = "None",
         Slot = {"kraber"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
@@ -193,7 +193,7 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(0, 0, 2.337)
     },
     {
-        PrintName = "Stock Type",
+        PrintName = "Stock",
         Slot = {"apex_sniper_stock"}
     },
 	{

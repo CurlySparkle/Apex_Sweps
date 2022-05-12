@@ -81,7 +81,7 @@ SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.625
+SWEP.Recoil = 0.55
 SWEP.RecoilSide = 0.215
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
@@ -99,7 +99,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 12
+SWEP.AccuracyMOA = 10
 SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 100
 
@@ -189,7 +189,7 @@ SWEP.AttachmentElements = {
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
-        PrintName = "Optic Type", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         Slot = "apex_sights", -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
@@ -204,8 +204,7 @@ SWEP.Attachments = {
          CorrectiveAng = Angle(0, 0, 3.494)
     },
     {
-        PrintName = "Muzzle Type",
-        DefaultAttName = "Barrel Stabilizer",
+        PrintName = "Muzzle",
         Slot = "apex_muzzle",
         Bone = "muzzle_flash",
         Offset = {
@@ -214,11 +213,11 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Stock Type",
+        PrintName = "Stock",
         Slot = {"apex_standard_stock"}
     },
     {
-        PrintName = "Mag Type",
+        PrintName = "Magazine",
         Slot = {"apex_mag_light1"}
     },
     {

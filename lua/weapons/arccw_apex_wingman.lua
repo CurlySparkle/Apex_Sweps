@@ -168,7 +168,7 @@ SWEP.AttachmentElements = {
 }
 SWEP.Attachments = {
     {
-        PrintName = "Optic Type", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         Slot = "apex_sights", -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
@@ -183,7 +183,7 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(-1.296, 0, 2.681)
     },
     {
-        PrintName = "Mag Type",
+        PrintName = "Magazine",
         Slot = {"apex_mag_heavy1"}
     },
 	{

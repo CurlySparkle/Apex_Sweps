@@ -131,16 +131,19 @@ local supp = {
     [1] = {
         Mult_AccuracyMOA = 0.8,
         Mult_PhysBulletMuzzleVelocity = 1.1,
+        Mult_MoveDispersion = 0.85,
         Add_BarrelLength = 4,
     },
     [2] = {
         Mult_AccuracyMOA = 0.65,
         Mult_PhysBulletMuzzleVelocity = 1.15,
+        Mult_MoveDispersion = 0.75,
         Add_BarrelLength = 6,
     },
     [3] = {
         Mult_AccuracyMOA = 0.5,
         Mult_PhysBulletMuzzleVelocity = 1.25,
+        Mult_MoveDispersion = 0.6,
         Add_BarrelLength = 8,
     },
 }
@@ -161,6 +164,7 @@ for i = 1, 3 do
     att.SortOrder = 10
     att.Override_MuzzleEffectAttachment = 1
     att.IsMuzzleDevice = true
+    att.Model = "models/weapons/attachments/barrel_" .. i .. ".mdl"
 
     att.EntityIcon = icon
     att.EntityCategory = "ArcCW - Apex Legends (Att.)"
@@ -180,6 +184,7 @@ for i = 1, 3 do
     att2.SortOrder = 5
     att2.Override_MuzzleEffectAttachment = 1
     att2.IsMuzzleDevice = true
+    att2.Model = "models/weapons/attachments/barrel_" .. (i + 3) .. ".mdl"
 
     att2.EntityIcon = icon2
     att2.EntityCategory = "ArcCW - Apex Legends (Att.)"

@@ -319,7 +319,7 @@ end
 
 -- SWEP.Attachments = {
     -- {
-        -- PrintName = "Optic Type", -- print name
+        -- PrintName = "Optic",
         -- DefaultAttName = "Iron Sights",
         -- Category = "r301", -- what kind of attachments can fit here, can be string or table
         -- Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
@@ -330,7 +330,7 @@ end
         -- CorrectiveAng = Angle(-0.846, 0, 5.955)
     -- },
     -- {
-        -- PrintName = "Muzzle Type",
+        -- PrintName = "Muzzle",
         -- DefaultAttName = "Barrel Stabilizer",
         -- Category = "apex_muzzle",
         -- Bone = "muzzle_flash",
@@ -338,11 +338,11 @@ end
         -- Ang = Angle(0, 0, -90),
     -- },
 	-- {
-        -- PrintName = "Stock Type",
+        -- PrintName = "Stock",
         -- Category = {"apex_standard_stock"}
     -- },
 	-- {
-        -- PrintName = "Mag Type",
+        -- PrintName = "Magazine",
         -- Category = {"apex_mag_light"}
     -- },
 	-- {

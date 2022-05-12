@@ -184,7 +184,7 @@ SWEP.AttachmentElements = {
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
-        PrintName = "Optic Type", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         Slot = {"apex_sights","apex_optic"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
@@ -200,8 +200,7 @@ SWEP.Attachments = {
         ExtraSightDist = -3
     },
     {
-        PrintName = "Muzzle Type",
-        DefaultAttName = "Barrel Stabilizer",
+        PrintName = "Muzzle",
         Slot = "apex_muzzle",
         Bone = "def_c_suppressor",
         Offset = {
@@ -210,11 +209,11 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Stock Type",
+        PrintName = "Stock",
         Slot = {"apex_standard_stock"}
     },
     {
-        PrintName = "Mag Type",
+        PrintName = "Magazine",
         Slot = {"apex_mag_heavy5"}
     },
     {
