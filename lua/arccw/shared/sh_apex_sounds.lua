@@ -1,4 +1,18 @@
 sound.Add( {
+    name = "ArcCW_APEX.Triple_Take.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/tripletake/wpn_doubletake_fire_1p_01.wav",
+		"^weapons/tripletake/wpn_doubletake_fire_1p_02.wav",
+		"^weapons/tripletake/wpn_doubletake_fire_1p_03.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Triple_Take.Fire")
+
+sound.Add( {
     name = "ArcCW_APEX.Mozambique_Hammer.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
