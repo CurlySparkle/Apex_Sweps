@@ -81,7 +81,7 @@ SWEP.ShotgunSpreadPattern = {
 }
 SWEP.NoRandSpread = true
 
-SWEP.Tracer = "hl2mmod_generic_tracer"
+SWEP.Tracer = "arccw_apex_tracer_shotgun"
 SWEP.TracerNum = 8 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -139,7 +139,7 @@ SWEP.Hook_AddShootSound = function(wep, data)
     end
 end
 
-SWEP.MuzzleEffect = "muzzleflash_shotgun"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_shotgun"
 SWEP.ShellModel = "models/shells/shelleject_shotshell.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellSounds = ArcCW.ShotgunShellSoundsTable

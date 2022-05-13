@@ -15,7 +15,7 @@ SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 2
 
-SWEP.CrouchPos = Vector(-4.324, 0, 1.5)
+SWEP.CrouchPos = Vector(-5, -1, 1.5)
 SWEP.CrouchAng = Angle(1.037, 0.623, -53.174)
 
 SWEP.SprintPos = Vector(0, 0, 0)
@@ -76,7 +76,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.Tracer = "tfa_apex_tracer_ar"
+SWEP.Tracer = "arccw_apex_tracer_ar"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
@@ -120,8 +120,12 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleFlashColor = Color(255, 209, 66)
+SWEP.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Start" end
+end
+
+SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
+SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
 SWEP.ShellScale = 1

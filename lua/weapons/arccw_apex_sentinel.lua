@@ -61,7 +61,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.9,
 }
 
-SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -107,7 +107,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_4"
 SWEP.ShootSoundSilenced = { "weapons/sentinel/fire_charged_1.wav", "weapons/sentinel/fire_charged_2.wav", "weapons/sentinel/fire_charged_3.wav" }
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzleflash_m82"
+SWEP.MuzzleEffect = "arccw_apex_muzzle_sniper"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 75
 SWEP.ShellScale = 1.6
@@ -174,7 +174,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "sentinel"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights", "apex_scope_snipers", "apex_optic"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone

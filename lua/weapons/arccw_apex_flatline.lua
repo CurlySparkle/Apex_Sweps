@@ -31,6 +31,14 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_flatline.mdl"
 SWEP.WorldModel = "models/weapons/w_irifle.mdl"
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos        =    Vector(-6, 4.3, -5),
+    ang        =    Angle(-10, 0, 180),
+    bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
+}
+
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 18
@@ -64,7 +72,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.75,
 }
 
-SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_ar" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -111,9 +119,9 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
+SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
-SWEP.ShellScale = 1
+SWEP.ShellScale = 0.5
 SWEP.ShellTime = 0.5
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 
@@ -167,14 +175,12 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = false
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
@@ -212,6 +218,12 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_anvil2"},
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

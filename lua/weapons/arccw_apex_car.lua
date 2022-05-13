@@ -78,7 +78,7 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.Tracer = "hl2mmod_generic_tracer" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_smg" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 2
 
@@ -121,8 +121,8 @@ SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = "ArcCW_APEX.CAR.Fire"
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
-SWEP.MuzzleFlashColor = Color(244, 209, 66)
+SWEP.MuzzleEffect = "muzzle_smgs_l4d"
+SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 95
 SWEP.ShellScale = 1
@@ -217,7 +217,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Slot = {"apex_mag_light1"}
+        Slot = {"apex_car_mags"}
     },
     {
         PrintName = "Hold Style",

@@ -40,13 +40,13 @@ SWEP.ViewModel = "models/weapons/c_apex_havoc.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_havoc.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-7, 4, -4.7),
+    pos        =    Vector(-8, 4.8, -5.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
 }
 
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOV = 75
 
 SWEP.Damage = 18
 SWEP.DamageMin = 16
@@ -66,13 +66,13 @@ SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 24
 SWEP.Primary.Ammo = "apex_energy"
 
-SWEP.Recoil = 0.45
-SWEP.RecoilSide = 0.175
-SWEP.RecoilRise = 0.4
+SWEP.Recoil = 0.75
+SWEP.RecoilSide = 0.575
+SWEP.RecoilRise = 0.75
 SWEP.RecoilPunch = 2.5
-SWEP.RecoilVMShake = 1
-SWEP.VisualRecoilMult = 0.5
-SWEP.MaxRecoilBlowback = 1
+SWEP.RecoilVMShake = 1.5
+SWEP.VisualRecoilMult = 5
+SWEP.MaxRecoilBlowback = 2
 
 SWEP.Delay = 60 / 572 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
@@ -99,7 +99,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.Tracer = "tfa_apex_tracer_energy_rifle" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_energy_rifle" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
@@ -149,7 +149,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 SWEP.AttachmentElements = {
     ["weapon_sights"] = {
@@ -341,12 +341,16 @@ SWEP.Animations = {
     },
 	["untrigger"] = {
         Source = "fire_winddown",
-		{p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},
+        SoundTable = {
+            {p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},
+        },
         MinProgress = 1.0,
     },
     ["untrigger_sight"] = {
         Source = "iron_winddown",
-		{p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},
+        SoundTable = {
+            {p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},
+        },
         MinProgress = 1.0,
     },
 }

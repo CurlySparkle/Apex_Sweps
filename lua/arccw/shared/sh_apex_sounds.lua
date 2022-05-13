@@ -577,6 +577,20 @@ sound.Add( {
 } )
 util.PrecacheSound("ArcCW_APEX.R301.Fire")
 
+sound.Add( {
+    name = "ArcCW_APEX.R301.Fire_Alt",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/r301/fire_semi_1.wav",
+        "^weapons/r301/fire_semi_2.wav",
+        "^weapons/r301/fire_semi_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.R301.Fire_Alt")
+
 -- R99
 sound.Add( {
     name = "ArcCW_APEX.R99.Fire_Start",

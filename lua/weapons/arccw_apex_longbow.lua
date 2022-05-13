@@ -60,7 +60,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.8,
 }
 
-SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 10

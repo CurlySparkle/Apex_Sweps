@@ -110,9 +110,9 @@ SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_357"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
 
-SWEP.Tracer = "tfa_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_pistol" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 

@@ -20,6 +20,7 @@ att.Override_Firemodes = {
         Mult_Damage = 2.5,
         Mult_DamageMin = 2.5,
         Add_AmmoPerShot = 1,
+		Override_Tracer = "arccw_apex_tracer_anvil"
     }
 }
 

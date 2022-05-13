@@ -120,12 +120,12 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_hmg"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1
 SWEP.ShellTime = 1
 
-SWEP.Tracer = "hl2mmod_generic_tracer" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_hmg" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 

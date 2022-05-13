@@ -22,7 +22,7 @@ SWEP.CrouchAng = Angle(0, 0, -53)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -2, 1)
+SWEP.ActivePos = Vector(0, -1.7, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
@@ -116,12 +116,12 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.Tracer = "hl2mmod_generic_tracer" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_smg" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 2
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
-SWEP.MuzzleFlashColor = Color(244, 209, 66)
+SWEP.MuzzleEffect = "muzzle_smgs_l4d"
+SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.55
@@ -247,10 +247,9 @@ SWEP.Animations = {
     ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
+		Mult = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/r99/slideforward_1.wav", t = 13 / 30},
-            {p = 100, s = "weapons/r99/slideback_1.wav", t = 17 / 30},
-            {p = 100, s = "weapons/r99/handgrab_1.wav", t = 19 / 30}
+            {p = 100, s = "weapons/r99/deploy_1.wav", t = 1 / 30},
         },
     },
     ["draw"] = {
@@ -290,6 +289,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_End_V2_2ch_01.wav", t = 316 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",

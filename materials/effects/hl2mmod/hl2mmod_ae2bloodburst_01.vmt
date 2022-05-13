@@ -1,9 +1,0 @@
-"unlitgeneric"
-{
-	$basetexture "effects/HL2MMod/HL2MMod_AE2BloodBurst_01"
-	$vertexcolor "1"
-	$vertexalpha "1"
-	$alphatest "1"
-	$allowalphatocoverage "0"
-    $alphatestreference ".4"
-}

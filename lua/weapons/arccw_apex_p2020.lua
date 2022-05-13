@@ -116,7 +116,12 @@ SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
-SWEP.MuzzleEffect = "muzzleflash_pistol"
+SWEP.MuzzleEffect = "muzzle_pistols_l4d"
+
+SWEP.Tracer = "arccw_apex_tracer_pistol" -- override tracer (hitscan) effect
+SWEP.TracerNum = 1 -- tracer every X
+SWEP.TracerWidth = 2
+
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.55

@@ -69,7 +69,7 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.Tracer = "arccw_tracer" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_smg" -- override tracer (hitscan) effect
 SWEP.TracerWidth = 5
 
 SWEP.ChamberSize = 1
@@ -109,7 +109,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "hl2mmod_muzzleflash_smg1"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.2

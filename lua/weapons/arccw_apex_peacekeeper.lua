@@ -78,7 +78,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.Tracer = "tfa_apex_energy_tracer_rifle" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_energy_shotgun" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1
 SWEP.TracerWidth = 1
 SWEP.PhysTracerProfile = 6
