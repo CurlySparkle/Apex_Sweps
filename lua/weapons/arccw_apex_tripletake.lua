@@ -81,6 +81,21 @@ SWEP.RecoilPunchBackMaxSights = 1
 
 SWEP.Delay = 60 / 72 -- 60 / RPM.
 SWEP.Num = 3 -- number of shots per trigger pull.
+-- Just 3 happy bullets side-by-side
+SWEP.ShotgunSpreadPattern = {
+    [1] = Angle(0, -1.0, 0),
+    [2] = Angle(0, 0, 0),
+    [3] = Angle(0, 1.0, 0),
+}
+SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
+    local d = Lerp(wep:GetSightDelta(), 0.75, 1)
+    local p = wep.ShotgunSpreadPattern[data.num]
+    data.ang = Angle(p.p * d, p.y * d, 0)
+
+    return data
+end
+SWEP.NoRandSpread = true
+
 SWEP.Firemodes = {
     {
         Mode = 1,
@@ -96,6 +111,7 @@ SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 100
 
 SWEP.Primary.Ammo = "apex_energy"
+SWEP.AmmoPerShot = 3
 
 SWEP.ShootVol = 160 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
