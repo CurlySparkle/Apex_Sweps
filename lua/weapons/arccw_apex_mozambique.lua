@@ -341,3 +341,19 @@ SWEP.Animations = {
         Source = "sprint_out",
     },
 }
+
+SWEP.Hook_Think = function(wep)
+	if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+		wep.ShotgunSpreadPattern = {
+			[1] = Angle(-0.45, 0, 0),
+			[2] = Angle(0.4, 0.35, 0),
+			[3] = Angle(0.4, -0.35, 0),
+		}
+	else
+		wep.ShotgunSpreadPattern = {
+			[1] = Angle(-0.9, 0, 0),
+			[2] = Angle(0.8, 0.7, 0),
+			[3] = Angle(0.8, -0.7, 0),
+		}
+	end
+end

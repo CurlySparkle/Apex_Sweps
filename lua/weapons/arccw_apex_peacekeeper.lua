@@ -132,6 +132,49 @@ SWEP.ShotgunSpreadPattern = {
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
     local d = Lerp(wep:GetSightDelta(), 0.8, 1) * -0.85
     local p = wep.ShotgunSpreadPattern[data.num]
+	
+	if wep:GetSightDelta() >= 1 then
+		wep.ShotgunSpreadPattern = { 
+			[1] = Angle((95*1)/100, 0, 0),
+			[2] = Angle((95*2)/100, 0, 0), 
+			
+			[3] = Angle((95*0.5)/100, (95*0.866)/100, 0),
+			[4] = Angle((95*1)/100, (95*1.732)/100, 0), 
+			
+			[5] = Angle((95*0.5)/100, (95*-0.866)/100, 0), 
+			[6] = Angle((95*1)/100, (95*-1.732)/100, 0), 
+
+			[7] = Angle((95*-0.766)/100, (95*0.643)/100, 0), 
+			[8] = Angle((95*-1.532)/100, (95*1.287)/100, 0), 
+			
+			[9] = Angle((95*-0.766)/100, (95*-0.643)/100, 0), 
+			[10] = Angle((95*-1.532)/100, (95*-1.287)/100, 0), 
+			
+			[11] = Angle(0.0, 0.0, 0),
+		}
+	end
+	
+	if wep:GetSightDelta() < 1 then
+		wep.ShotgunSpreadPattern = {
+			[1] = Angle(1, 0, 0),
+			[2] = Angle(2, 0, 0),
+
+			[3] = Angle(0.5, 0.866, 0), -- cos(60), sin(60)
+			[4] = Angle(1, 1.732, 0),
+
+			[5] = Angle(0.5, -0.866, 0), -- cos(300), sin(300)
+			[6] = Angle(1, -1.732, 0),
+
+			[7] = Angle(-0.766, 0.643, 0), -- cos(140), sin(140)
+			[8] = Angle(-1.532, 1.287, 0),
+
+			[9] = Angle(-0.766, -0.643, 0), -- cos(220), sin(220)
+			[10] = Angle(-1.532, -1.287, 0),
+
+			[11] = Angle(0, 0, 0),
+		}
+	end
+	
     data.ang = Angle(p.p * d, p.y * d, 0)
 
     return data
@@ -219,6 +262,18 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["charged_skin"] = {
+        VMSkin = 2,
+        WMSkin = 2,
+    },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
+    ["skin_charged"] = {
+        VMSkin = 3,
+        WMSkin = 3,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -242,6 +297,12 @@ SWEP.Attachments = {
     {
         PrintName = "Shotgun Bolt",
         Slot = {"apex_shotgun_bolt"}
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
@@ -273,9 +334,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Pickup_Rare_2ch_v1_01.wav", t = 1 / 30},
-            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.wav", t = 7 / 30},
-            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.wav", t = 7 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 1 / 30},
         },
     },

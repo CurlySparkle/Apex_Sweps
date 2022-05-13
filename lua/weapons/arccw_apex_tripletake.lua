@@ -32,7 +32,7 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_tripletake.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_tripletake.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4.3, -4.5),
@@ -343,3 +343,19 @@ SWEP.Animations = {
     },
 },
 }
+
+SWEP.Hook_Think = function(wep)
+	if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+		wep.ShotgunSpreadPattern = {
+			[1] = Angle(0.0, -0.7, 0.0), 
+			[2] = Angle(0.0, 0.0, 0.0), 
+			[3] = Angle(0.0, 0.7, 0.0), 
+		}
+	else
+		wep.ShotgunSpreadPattern = {
+			[1] = Angle(0, -1.0, 0),
+			[2] = Angle(0, 0, 0),
+			[3] = Angle(0, 1.0, 0),
+		}
+	end
+end
