@@ -8,6 +8,7 @@ local mag_types = {
         {
             [1] = {2, 4, 7, 7}, -- Volt SMG
             [2] = {4, 8, 12, 12}, -- Devotion LMG, HAVOC
+			[3] = {3, 6, 9, 9}, -- Triple Take
         },
         "entities/ammo_energy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_energy.mdl",

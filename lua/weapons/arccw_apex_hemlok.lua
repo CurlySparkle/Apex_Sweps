@@ -127,7 +127,7 @@ SWEP.Tracer = "arccw_apex_tracer_smg"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
+SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.1

@@ -32,7 +32,7 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_tripletake.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_tripletake.mdl"
+SWEP.WorldModel = "models/weapons/w_irifle.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4.3, -4.5),
@@ -223,7 +223,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Slot = {"apex_mag_sniper2"}
+        Slot = {"apex_mag_energy3"}
     },
 	{
         PrintName = "Skin",
