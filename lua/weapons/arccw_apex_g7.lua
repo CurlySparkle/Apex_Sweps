@@ -175,6 +175,15 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["weapon_dot"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 1},
+        },
+    },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -182,7 +191,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "apex_scope_snipers", "apex_optic"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights", "g7"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
@@ -190,8 +199,8 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-        InstalledEles = {"weapon_sights"},
-        CorrectivePos = Vector(1.98, 0, -0.75),
+        InstalledEles = {"weapon_sights","weapon_dot"},
+        CorrectivePos = Vector(1.99, 0, -0.7),
         CorrectiveAng = Angle(0, 0, 3.6),
         ExtraSightDist = -1.5
     },
@@ -226,6 +235,12 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
@@ -311,6 +326,12 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_02.wav", t = 240 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 316 / 30}
     },
+    },
+    ["1_to_2"] = {
+        Source = "firemode1",
+    },
+    ["2_to_1"] = {
+        Source = "firemode2",
     },
     ["reload"] = {
         Source = "reload",
