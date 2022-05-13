@@ -313,7 +313,17 @@ SWEP.Animations = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {s = "weapons/tripletake/wpn_dmr_emptyreload_magpull_fr8_2ch_v1_01.wav", t = 8 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmGrabMag_fr04_2ch_v1_01.wav", t = 4 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmMagOut_fr29_2ch_v2_01.wav", t = 29 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmPullBolt_fr60_2ch_v2_01.wav", t = 60 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmGrabGun_fr90_2ch_v2_01.wav", t = 90 / 30},
+			
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr04_2ch_v2_01.wav", t = 4 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_MagHitEject_fr19_2ch_v1_01.wav", t = 19 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_MagInsert_fr46_2ch_v2_01.wav", t = 46 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr56_2ch_v1_01.wav", t = 56 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_AccuateBolt_fr77_2ch_v2_01.wav", t = 77 / 30},
+			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr79_2ch_v2_01.wav", t = 79 / 30}
     },
 },
 }
