@@ -107,7 +107,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_4"
 SWEP.ShootSoundSilenced = { "weapons/sentinel/fire_charged_1.wav", "weapons/sentinel/fire_charged_2.wav", "weapons/sentinel/fire_charged_3.wav" }
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "arccw_apex_muzzle_sniper"
+SWEP.MuzzleEffect = "muzzleflash_shotgun"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 75
 SWEP.ShellScale = 1.6
