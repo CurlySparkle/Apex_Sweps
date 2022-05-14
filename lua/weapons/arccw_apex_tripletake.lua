@@ -62,8 +62,9 @@ SWEP.BodyDamageMults = {
 
 SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.TracerCol = Color(255, 85, 25)
+SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerWidth = 10
+SWEP.PhysTracerProfile = 6
 
 SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 17
@@ -105,10 +106,10 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 0.2
-SWEP.HipDispersion = 500
+SWEP.AccuracyMOA = 1
+SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 100
-SWEP.JumpDispersion = 100
+SWEP.JumpDispersion = 150
 
 SWEP.Primary.Ammo = "apex_energy"
 SWEP.AmmoPerShot = 3
