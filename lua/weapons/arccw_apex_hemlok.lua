@@ -122,6 +122,7 @@ SWEP.ShootSound = "ArcCW_APEX.Hemlok.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
+SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 SWEP.Tracer = "arccw_apex_tracer_smg"
 SWEP.TracerNum = 1 -- tracer every X

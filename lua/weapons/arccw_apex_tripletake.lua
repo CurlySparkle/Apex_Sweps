@@ -121,6 +121,7 @@ SWEP.ShootSound = "ArcCW_APEX.Triple_Take.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
+SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 local s = "weapons/wpn_lowammo_rifle01.wav"
 local p = {

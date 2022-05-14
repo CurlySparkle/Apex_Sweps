@@ -194,6 +194,7 @@ SWEP.ShootSound = "ArcCW_APEX.Peacekeeper.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
+SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 local s = "weapons/wpn_lowammo_shotgun1.wav"
 local p = {
@@ -408,6 +409,12 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_Mid_V1_2ch_02.wav", t = 240 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_End_V1_2ch_01.wav", t = 316 / 30}
     },
+    },
+    ["1_to_2"] = {
+        Source = "firemode1",
+    },
+    ["2_to_1"] = {
+        Source = "firemode2",
     },
     ["reload"] = {
         Source = "reload",

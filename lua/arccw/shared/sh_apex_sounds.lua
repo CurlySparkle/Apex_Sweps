@@ -675,6 +675,19 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.Flatline.Fire_Alt",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/Flatline/fire_alt_1.wav",
+        "^weapons/Flatline/fire_alt_2.wav",
+        "^weapons/Flatline/fire_alt_3.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Alternator.Ads",
     channel = CHAN_ITEM + 6,
     volume = 1.0,

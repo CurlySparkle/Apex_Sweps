@@ -2,7 +2,7 @@
 {
 	"$basetexture" "ammocounter/display_blue3"
 	"$texture2" "ammocounter/scanline"
-	"$color2" "[0.7 0.7 1]"
+	"$color2" "[0.3 0.7 1]"
 	//"$nocull" "1"
 	"Proxies"
 	{

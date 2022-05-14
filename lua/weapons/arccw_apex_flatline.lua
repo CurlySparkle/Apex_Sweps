@@ -118,11 +118,16 @@ SWEP.ShootSound = "ArcCW_APEX.Flatline.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
+SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
+
+SWEP.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.Flatline.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.Flatline.Fire_Start" end
+end
 
 SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellScale = 0.5
-SWEP.ShellTime = 0.5
+SWEP.ShellTime = 0.7
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on

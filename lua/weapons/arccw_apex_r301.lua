@@ -119,6 +119,7 @@ SWEP.ShootSound = "ArcCW_APEX.R301.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
+SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 SWEP.Hook_GetShootSound = function(wep, fsound)
     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Start" end

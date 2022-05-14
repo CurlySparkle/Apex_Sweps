@@ -111,14 +111,16 @@ SWEP.ShootPitch = 101 -- pitch of shoot sound
 SWEP.FirstShootSound = "ArcCW_APEX.RE45.Fire_Start"
 SWEP.ShootSound = "ArcCW_APEX.RE45.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_A"
-SWEP.ShootSoundSilenced = ""
+SWEP.FirstShootSoundSilenced = "ArcCW_APEX.RE45.Fire_Start"
+SWEP.ShootSoundSilenced = "ArcCW_APEX.RE45.Fire"
+
 SWEP.DistantShootSound = ""
 
 SWEP.Tracer = "arccw_apex_tracer_pistol"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
+SWEP.MuzzleEffect = "muzzle_pistols_l4d"
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.25
@@ -149,7 +151,7 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, 4, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -178,6 +180,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -199,7 +205,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Muzzle",
-        Slot = "apex_muzzle",
+        Slot = {"apex_muzzle","muzzle"},
         Bone = "muzzle_flash",
         Offset = {
             vpos = Vector(0, 0, 0),
@@ -211,6 +217,12 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_light2"}
+    },
+	{
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
