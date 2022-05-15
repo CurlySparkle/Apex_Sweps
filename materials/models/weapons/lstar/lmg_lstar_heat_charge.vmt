@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+//	"$basetexture"				"models\weapons\lstar\lmg_lstar_si"
+//	"$additive"					"1"
+	
+	$no_draw					1
+//	$selfillumtint				"[2.5 .7 .1]"
+//	$selfillummask				"models\weapons\lstar\lmg_lstar_si"
+}
