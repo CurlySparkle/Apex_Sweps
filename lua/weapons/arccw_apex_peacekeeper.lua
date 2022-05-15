@@ -423,6 +423,12 @@ SWEP.Animations = {
 }
 
 SWEP.Hook_Think = function(wep)
+
+	local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "sights", Lerp(coolilove, 0, 1) ) -- thanks fesiug
+
     local charge = wep:GetNWFloat("ApexCharge", 0)
     if wep:GetBuff_Override("ApexCharge") and wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS then
         wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 1))
