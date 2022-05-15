@@ -196,7 +196,7 @@ SWEP.Attachments = {
         PrintName = "Stock",
         Slot = {"apex_sniper_stock"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -231,8 +231,8 @@ SWEP.Animations = {
         Source = "draw_first",
         SoundTable = {
             {p = 100, s = "weapons/kraber/mech_kraber_ads_in_2ch_v1_01.wav", t = 0 / 30},
-			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 27 / 30}
+            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 18 / 30},
+            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 27 / 30}
         },
     },
     ["draw"] = {
@@ -261,10 +261,10 @@ SWEP.Animations = {
         Source = "rechamber",
         ShellEjectAt = 0.5,
         -- Time = 63 / 40,
-        MinProgress = 0.875,
+        MinProgress = 1.5,
         SoundTable = {
             {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
-			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 24 / 30}
+            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 24 / 30}
         },
     },
     ["enter_sight"] = {
@@ -280,10 +280,10 @@ SWEP.Animations = {
         Source = "iron_rechamber",
         ShellEjectAt = 0.5,
         -- Time = 63 / 40,
-        MinProgress = 0.875,
+        MinProgress = 1.5,
         SoundTable = {
             {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltback_2ch_v1_01.wav", t = 16 / 30},
-			{p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 22 / 30}
+            {p = 100, s = "weapons/kraber/wpn_krabersniper_1p_reload_boltforward_2ch_v1_01.wav", t = 22 / 30}
         },
     },
     ["exit_sight"] = {
