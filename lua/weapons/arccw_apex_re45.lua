@@ -219,6 +219,10 @@ SWEP.Attachments = {
         Slot = {"apex_mag_light2"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_qdraw", "apex_hopup_hp2"}
+    },
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -321,7 +325,7 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
-        MinProgress = 97/40,
+        MinProgress = 97 / 40,
         SoundTable = {
             {p = 100, s = "weapons/re45/wpn_re45_emptyreload_magpull_fr4_2ch_v1_01.wav", t = 4 / 30},
             {p = 100, s = "weapons/re45/Wpn_RE45_EmptyReload_MagInsert_fr27_2ch_v2_01.wav", t = 27 / 30},

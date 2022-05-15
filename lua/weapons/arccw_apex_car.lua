@@ -202,7 +202,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Muzzle",
-        Slot = {"apex_muzzle","muzzle"},
+        Slot = {"apex_muzzle"},
         Bone = "muzzle_flash",
         Offset = {
             vpos = Vector(0, 0, 0),
@@ -217,7 +217,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Slot = {"apex_car_mags"}
+        Slot = {"apex_mag_light1", "apex_mag_heavy6"}
     },
     {
         PrintName = "Hold Style",
@@ -230,47 +230,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
     },
-    -- {
-        -- PrintName = "Special Optics", -- print name
-        -- ExtraSightDist = 1,
-        -- DefaultAttName = "None",
-        -- Slot = {"optic", "optic_lp"},
-        -- Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
-        -- Offset = {
-            -- vpos = Vector(0, 0.15, 0), -- offset that the attachment will be relative to the bone
-            -- vang = Angle(90, 0, -90),
-            -- wpos = Vector(0, 0, 0),
-            -- wang = Angle(0, 0, 0),
-        -- },
-        -- VMScale = Vector(1.2, 1.2, 1.2),
-        -- InstalledEles = {"sight"},
-        -- CorrectivePos = Vector(1.75,0,-0.1),
-        -- CorrectiveAng = Angle(-1.318, 0, 4.45)
-    -- },
-    -- {
-        -- PrintName = "Special Muzzles",
-        -- DefaultAttName = "None",
-        -- Slot = "muzzle",
-        -- Bone = "muzzle_flash",
-        -- Offset = {
-            -- vpos = Vector(0, 0, 0),
-            -- vang = Angle(0, 0, -90),
-            -- wpos = Vector(0, 0, 0),
-            -- wang = Angle(0, 0, 0),
-        -- },
-    -- },
-    -- {
-        -- PrintName = "Special Tactical",
-        -- Slot = "tac",
-        -- Bone = "def_c_base",
-        -- Offset = {
-            -- vpos = Vector(0, -5.5, 15),
-            -- vang = Angle(90, 0, 90),
-            -- wpos = Vector(0, 0, 0),
-            -- wang = Angle(0, 0, 0),
-        -- },
-    -- },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

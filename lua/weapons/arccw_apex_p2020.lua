@@ -89,7 +89,7 @@ SWEP.Firemodes = {
 SWEP.NPCWeaponType = "weapon_pistol"
 SWEP.NPCWeight = 100
 
-SWEP.AccuracyMOA = 7
+SWEP.AccuracyMOA = 5
 SWEP.HipDispersion = 125 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 75
 SWEP.JumpDispersion = 300
@@ -198,6 +198,10 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_light1"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_qdraw", "apex_hopup_hp"}
     },
     {
         PrintName = "Extras",
