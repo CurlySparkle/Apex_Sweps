@@ -1,4 +1,46 @@
 sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/fire_1.wav",
+		"^weapons/3030/fire_2.wav",
+		"^weapons/3030/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Fire_Semi_Charged",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/fire_semicharged_1.wav",
+		"^weapons/3030/fire_semicharged_2.wav",
+		"^weapons/3030/fire_semicharged_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Semi_Charged")
+
+sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Fire_Charged",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/fire_charged_1.wav",
+		"^weapons/3030/fire_charged_2.wav",
+		"^weapons/3030/fire_charged_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Charged")
+
+sound.Add( {
     name = "ArcCW_APEX.Triple_Take.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
