@@ -49,8 +49,8 @@ SWEP.WorldModelOffset = {
 SWEP.ViewModelFOV = 75
 
 SWEP.Damage = 18
-SWEP.DamageMin = 16
-SWEP.Range = 170
+SWEP.DamageMin = 18
+SWEP.Range = 100
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 30500 * ArcCW.HUToM
 

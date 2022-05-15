@@ -199,3 +199,271 @@ for i = 1, 3 do
     ArcCW.LoadAttachmentType(att2, "apex_muzz_supp_" .. i)
 end
 
+-------------------------------------------------
+-- Hop-ups
+-------------------------------------------------
+
+local hopups = {
+    ["dtap"] = {
+        name = "Double Tap Trigger",
+        icon = "entities/attach_icons/hopup_apex_doubletap.png",
+        desc = "Gives the weapon an additional firemode that shoots two rounds in rapid succession.",
+        variants = {
+            -- G7 Scout
+            [1] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        Mode = -2,
+                        RunawayBurst = true,
+                        PostBurstDelay = 0.333,
+                        Mult_RPM = 5,
+                        Override_ShotRecoilTable = {[1] = 0.1},
+                    }
+                }
+            },
+            -- EVA-8 Auto
+            [2] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        Mode = -2,
+                        RunawayBurst = true,
+                        PostBurstDelay = 0.45,
+                        Mult_RPM = 4,
+                    }
+                }
+            },
+            -- Mozambique
+            [3] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        Mode = -2,
+                        RunawayBurst = true,
+                        PostBurstDelay = 0.6,
+                        Mult_RPM = 4,
+                    }
+                }
+            }
+        }
+    },
+    ["turbo"] = {
+        name = "Turbocharger",
+        icon = "entities/attach_icons/hopup_apex_turbocharger.png",
+        variants = {
+            -- HAVOC
+            [1] = {
+                Description = "Improves performance of wind-up weapons.\n\nThe HAVOC can shoot immediately without charging up.",
+                Override_TriggerDelay = false,
+                ActivateElements = {"charged_skin"},
+            },
+            -- Devotion
+            [2] = {
+                Description = "Improves performance of wind-up weapons.\n\nThe Devotion reaches its maximum firerate much faster.",
+                Hook_ModifyRPM = function(wep, delay)
+                    return delay / Lerp(wep:GetBurstCount() / 10, 1, 3)
+                end,
+                Hook_ModifyRPM_Priority = 10,
+            }
+        }
+    },
+    ["selfire"] = {
+        name = "Select Fire",
+        icon = "entities/attach_icons/hopup_apex_selectfire.png",
+        variants = {
+            -- Prowler SMG
+            [1] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe Prowler receives an automatic firemode with increased recoil and decreased firerate.",
+                Override_Firemodes = {
+                    {
+                        Mode = -5,
+                        RunawayBurst = true,
+                    },
+                    {
+                        Mode = 2,
+                        Mult_RPM = 900 / 1260,
+                        Mult_Recoil = 1.25,
+                        Mult_RecoilSide = 1.5
+                    },
+                    {
+                        Mode = 0
+                    }
+                }
+            },
+            -- HAVOC
+            [2] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe HAVOC receives a semi-automatic firemode that releases a laser beam.",
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        Mode = 1,
+                        Mult_RPM = 107 / 672,
+                        Mult_Recoil = 0.85,
+                        Mult_RecoilSide = 0.85,
+                        Add_AmmoPerShot = 3,
+                        Override_Damage = 60,
+                        Override_DamageMin = 50,
+                        Override_Tracer = "tfa_apex_tracer_havoc",
+                        Override_AlwaysPhysBullet = false,
+                        Override_NeverPhysBullet = true,
+                    },
+                    {
+                        Mode = 0
+                    }
+                },
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.Havoc.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.Havoc.Fire_Start" end
+                end
+            },
+            -- P2020
+            [3] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe P2020 receives a 3-round burst mode with reduced recoil.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        Mode = -3,
+                        Mult_RPM = 1.5,
+                        PostBurstDelay = 0.2,
+                        RunawayBurst = true,
+                        Mult_Recoil = 0.75,
+                        Mult_RecoilSide = 0.75
+                    },
+                    {
+                        Mode = 0
+                    }
+                }
+            },
+            -- Hemlok
+            [4] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe Hemlok receives an automatic firemode with reduced firerate.",
+                Override_Firemodes = {
+                    {
+                        Mode = -3,
+                        RunawayBurst = true,
+                        PostBurstDelay = 0.175,
+                    },
+                    {
+                        Mode = 2,
+                        Mult_RPM = 550 / 900,
+                    },
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        Mode = 0
+                    }
+                }
+            },
+        },
+    },
+    ["hp"] = {
+        name = "Hammerpoint Rounds",
+        icon = "entities/attach_icons/hopup_apex_hammerpoint.png",
+        desc = "Weapon damage against non-armored players is increased significantly.",
+        variants = {
+            -- P2020
+            [1] = {
+                Hook_BulletHit = function(wep, data)
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 then
+                        -- this doesn't do the fancy check apex does, but also hl2 armor is weird and I would prefer to work with a new armor system
+                        data.damage = data.damage * 1.5
+                    end
+                end
+            },
+            -- RE-45 Auto, Mozambique
+            [2] = {
+                Hook_BulletHit = function(wep, data)
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 then
+                        data.damage = data.damage * 1.35
+                    end
+                end
+            },
+        }
+    },
+    ["anvil"] = {
+        name = "Anvil Receiver",
+        icon = "entities/attach_icons/hopup_apex_anvil.png",
+        desc = "The weapon's semi-automatic fire mode is modified to fire an slower, more powerful shot that costs 2 rounds.",
+        variants = {
+            -- R-301 Carbine
+            [1] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        Mode = 1,
+                        Mult_RPM = 300 / 810,
+                        Mult_Damage = 2.5,
+                        Mult_DamageMin = 2.5,
+                        Add_AmmoPerShot = 1,
+                        Override_Tracer = "arccw_apex_tracer_anvil"
+                    }
+                }
+            },
+            -- VK-47 Flatline
+            [2] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        Mode = 1,
+                        Mult_RPM = 300 / 600,
+                        Mult_Damage = 2.25,
+                        Mult_DamageMin = 2.25,
+                        Add_AmmoPerShot = 1,
+                        Override_Tracer = "arccw_apex_tracer_anvil"
+                    }
+                }
+            }
+        }
+    },
+    ["qdraw"] = {
+        name = "Quickdraw Holster",
+        icon = "entities/attach_icons/hopup_apex_quickdrawholster.png",
+        desc = "Improves the weapon's handling speed drastically.",
+        variants = {
+            [1] = {
+                Mult_DrawTime = 0.25,
+                Mult_HolsterTime = 0.25,
+                Mult_SightTime = 0.25,
+                Mult_HipDispersion = 0.5,
+            }
+        }
+    }
+}
+
+for k, v in SortedPairs(hopups) do
+    for i = 1, #v.variants do
+        local att = table.Copy(v.variants[i])
+
+        att.PrintName = "Hop-up - " .. v.name
+        att.AbbrevName = v.name
+        att.Icon = Material(v.icon, "mips smooth")
+        if v.desc then att.Description = v.desc end
+        att.AutoStats = true
+        att.Slot = "apex_hopup_" .. k .. (i > 1 and i or "")
+
+        if i > 1 then
+            att.InvAtt = "apex_hopup_" .. k
+        else
+            att.EntityIcon = v.icon
+            att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+            att.DroppedModel = "models/weapons/attachments/upgrades/mod_chip.mdl"
+        end
+
+        ArcCW.LoadAttachmentType(att, "apex_hopup_" .. k .. (i > 1 and i or ""))
+    end
+end

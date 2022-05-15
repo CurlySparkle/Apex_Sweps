@@ -2,7 +2,7 @@ att.PrintName = "2x-4x Variable AOG"
 att.Icon = Material("entities/attach_icons/apex_2-4x.png", "mips smooth")
 att.Description = "Mid-range AOG."
 
-att.SortOrder = 0.75
+att.SortOrder = 0.125
 
 att.Desc_Pros = {
     "autostat.holosight",

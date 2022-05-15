@@ -84,8 +84,8 @@ SWEP.ChamberSize = 1 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 18 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.35
+SWEP.RecoilSide = 0.2
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.1
@@ -97,6 +97,7 @@ SWEP.Firemodes = {
     {
         Mode = -3,
         RunawayBurst = true,
+        PostBurstDelay = 0.175,
     },
     {
         Mode = 1,
@@ -106,7 +107,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 3
+SWEP.AccuracyMOA = 2
 SWEP.HipDispersion = 325
 SWEP.MoveDispersion = 75
 SWEP.JumpDispersion = 300
@@ -226,6 +227,10 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_heavy4"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_selfire4"}
     },
     {
         PrintName = "Extras",

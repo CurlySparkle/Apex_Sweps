@@ -103,7 +103,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 2
+SWEP.AccuracyMOA = 3
 SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300
@@ -224,7 +224,7 @@ SWEP.Attachments = {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_anvil2"},
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
