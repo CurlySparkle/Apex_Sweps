@@ -65,8 +65,8 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.75,
 }
 
-SWEP.ChamberSize = 1
-SWEP.Primary.ClipSize = 13
+SWEP.ChamberSize = 0
+SWEP.Primary.ClipSize = 14
 
 SWEP.PhysBulletMuzzleVelocity = 500
 
@@ -252,10 +252,10 @@ SWEP.Animations = {
     ["holster_empty"] = {
         Source = "holster_empty",
     },
-    ["idle_iron"] = {
+    ["idle_sight"] = {
         Source = "iron_idle",
     },
-    ["idle_iron_empty"] = {
+    ["idle_sight_empty"] = {
         Source = "iron_idle_empty",
     },
     ["fire"] = {
@@ -276,7 +276,7 @@ SWEP.Animations = {
         Source = "iron_fire",
         ShellEjectAt = 0,
     },
-    ["fire_iron_empty"] = {
+    ["fire_sight_empty"] = {
         Source = "iron_fire_empty",
         ShellEjectAt = 0,
     },
