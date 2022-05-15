@@ -72,7 +72,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 35 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "apex_energy"
 

@@ -6,7 +6,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"car_special"}
-
+att.Free = true
 att.LHIK = true
 
 att.Model = "models/weapons/attachments/car.mdl"

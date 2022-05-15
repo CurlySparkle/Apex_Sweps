@@ -62,7 +62,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 24
 SWEP.Primary.Ammo = "apex_energy"
 
@@ -208,7 +208,7 @@ SWEP.Attachments = {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_turbo","apex_hopup_selfire2"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -241,7 +241,7 @@ SWEP.Animations = {
         Source = "draw_first",
         SoundTable = {
             {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_FirstDraw_Foley_Raise_FR01_01.wav", t = 1 / 35},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_FirstDraw_Foley_Raise_FR12_01.wav", t = 12 / 35},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_FirstDraw_Foley_Raise_FR12_01.wav", t = 12 / 35},
         },
     },
     ["draw"] = {
@@ -288,20 +288,20 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_Raise_FR01_01.wav", t = 1 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ArmLower_FR23_01.wav", t = 23 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_GunUp_FR92_01.wav", t = 92 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ShoulderPat_FR103_01.wav", t = 103 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ArmLower_FR23_01.wav", t = 23 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_GunUp_FR92_01.wav", t = 92 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ShoulderPat_FR103_01.wav", t = 103 / 30},
 
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockRelease_FR18_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_BarrelClose_FR25_01.wav", t = 25 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_BurnOnly_FR30_01.wav", t = 30 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_CanOnly_FR30_01.wav", t = 30 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterBounce_FR44_01.wav", t = 44 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterInsert_FR56_01.wav", t = 56 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEnergy_FR80_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEngage_FR80_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockPower_FR80_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockSpark_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockRelease_FR18_01.wav", t = 18 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_BarrelClose_FR25_01.wav", t = 25 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_BurnOnly_FR30_01.wav", t = 30 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_CanOnly_FR30_01.wav", t = 30 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterBounce_FR44_01.wav", t = 44 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterInsert_FR56_01.wav", t = 56 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEnergy_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEngage_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockPower_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockSpark_FR80_01.wav", t = 80 / 30},
         },
     },
     ["reload_empty"] = {
@@ -309,37 +309,37 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_Raise_FR01_01.wav", t = 1 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ArmLower_FR23_01.wav", t = 23 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_GunUp_FR92_01.wav", t = 92 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ShoulderPat_FR103_01.wav", t = 103 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ArmLower_FR23_01.wav", t = 23 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_GunUp_FR92_01.wav", t = 92 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Foley_ShoulderPat_FR103_01.wav", t = 103 / 30},
 
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockRelease_FR18_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_BarrelClose_FR25_01.wav", t = 25 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_BurnOnly_FR30_01.wav", t = 30 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_CanOnly_FR30_01.wav", t = 30 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterBounce_FR44_01.wav", t = 44 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterInsert_FR56_01.wav", t = 56 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEnergy_FR80_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEngage_FR80_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockPower_FR80_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockSpark_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockRelease_FR18_01.wav", t = 18 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_BarrelClose_FR25_01.wav", t = 25 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_BurnOnly_FR30_01.wav", t = 30 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterEject_CanOnly_FR30_01.wav", t = 30 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterBounce_FR44_01.wav", t = 44 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_CanisterInsert_FR56_01.wav", t = 56 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEnergy_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockEngage_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockPower_FR80_01.wav", t = 80 / 30},
+            {p = 100, s = "weapons/havoc/Wpn_HavocAR_1P_Reload_Mech_LockSpark_FR80_01.wav", t = 80 / 30},
         },
     },
     ["trigger"] = {
         Source = "fire_windup",
-        MinProgress = 15/30,
+        MinProgress = 15 / 30,
         SoundTable = {
             {p = 100, s = "weapons/havoc/wpn_havoc_windup_1p.wav", t = 0 / 30},
         },
     },
     ["trigger_sight"] = {
         Source = "iron_windup",
-        MinProgress = 15/30,
+        MinProgress = 15 / 30,
         SoundTable = {
             {p = 100, s = "weapons/havoc/wpn_havoc_windup_1p.wav", t = 0 / 30},
         },
     },
-	["untrigger"] = {
+    ["untrigger"] = {
         Source = "fire_winddown",
         SoundTable = {
             {p = 100, s = "weapons/havoc/wpn_havoc_winddown_1p.wav", t = 0 / 30},

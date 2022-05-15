@@ -65,7 +65,7 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 10
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 5
 SWEP.MaxRecoilBlowback = 1
 
@@ -205,7 +205,7 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Slot = {"apex_mag_sniper2"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

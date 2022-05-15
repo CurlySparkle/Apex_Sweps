@@ -82,7 +82,7 @@ SWEP.Tracer = "arccw_apex_tracer_smg" -- override tracer (hitscan) effect
 SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 2
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 20
 SWEP.ExtendedClipSize = 30
 SWEP.MaxRecoilBlowback = 1
@@ -98,11 +98,21 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 
 SWEP.Firemodes = {
     {
+        PrintName = "fcg.apex.heavy",
         Mode = 2,
+        RestoreAmmo = true,
     },
+    {
+        PrintName = "fcg.apex.light",
+        Mode = 2,
+        Override_Ammo = "apex_light",
+        RestoreAmmo = true,
+    },
+    --[[] -- trust me this is for the best
     {
         Mode = 0
     }
+    ]]
 }
 
 SWEP.AccuracyMOA = 4
@@ -353,5 +363,13 @@ SWEP.Animations = {
             {s = "weapons/car/Wpn_Car_Reload_BoltFwd_New_v1_01.wav", t = 61 / 30},
             {s = "weapons/car/wpn_car_emptyreload_handrest_fr61_2ch_v1_01.wav", t = 61 / 30}
         },
+    },
+    ["1_to_2"] = {
+        Source = {"switchammo1", "switchammo2", "switchammo3"},
+        Blocking = true
+    },
+    ["2_to_1"] = {
+        Source = {"switchammo1", "switchammo2", "switchammo3"},
+        Blocking = true
     },
 }

@@ -6,7 +6,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"g7_special"}
-
+att.Free = true
 att.LHIK = true
 
 att.Model = "models/weapons/attachments/fg_g7.mdl"

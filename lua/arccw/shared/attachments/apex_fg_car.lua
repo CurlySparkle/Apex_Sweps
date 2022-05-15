@@ -6,7 +6,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"apex_fg"}
-
+att.Free = true
 att.LHIK = true
 
 att.Model = "models/weapons/attachments/FG_Car.mdl"

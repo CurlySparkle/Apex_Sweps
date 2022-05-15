@@ -19,15 +19,15 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = "apex_extras2"
-
+att.Free = true
 att.Hook_BulletHit = function(wep, data)
     if CLIENT then return end
 
     if data.tr.Hit and data.tr.Entity:IsNPC() then
-	    wep.Owner:EmitSound( ApexHitSound )
+        wep.Owner:EmitSound( ApexHitSound )
     elseif data.tr.Entity:IsNextBot() and data.tr.Hit then
-	    wep.Owner:EmitSound( ApexHitSound )
-	elseif data.tr.Entity:IsPlayer() and data.tr.Hit then
-	    wep.Owner:EmitSound( ApexHitSound )
+        wep.Owner:EmitSound( ApexHitSound )
+    elseif data.tr.Entity:IsPlayer() and data.tr.Hit then
+        wep.Owner:EmitSound( ApexHitSound )
     end
 end

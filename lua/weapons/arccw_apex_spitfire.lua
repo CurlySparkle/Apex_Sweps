@@ -79,7 +79,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 35
 SWEP.Primary.Ammo = "apex_heavy"
 

@@ -80,7 +80,7 @@ SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 SWEP.MuzzleVelocity = 750 -- projectile or phys bullet muzzle velocity
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 18 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 

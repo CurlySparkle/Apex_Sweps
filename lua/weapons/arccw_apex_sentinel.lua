@@ -65,7 +65,7 @@ SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 4
 SWEP.MaxRecoilBlowback = 1
 

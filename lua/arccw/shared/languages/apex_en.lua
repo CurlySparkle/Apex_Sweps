@@ -3,6 +3,12 @@ L = {}
 L["fcg.apex.charge"] = "Charged Shot"
 L["fcg.apex.charge.abbrev"] = "CHRG"
 
+L["fcg.apex.light"] = "Light Rounds"
+L["fcg.apex.light.abbrev"] = "LIGHT"
+
+L["fcg.apex.heavy"] = "Heavy Rounds"
+L["fcg.apex.heavy.abbrev"] = "HEAVY"
+
 L["apex.mag.1"] = "An attachment that increases weapon capacity by a little."
 L["apex.mag.2"] = "An attachment that increases weapon capacity noticeably."
 L["apex.mag.3"] = "An attachment that increases weapon capacity significantly."

@@ -9,7 +9,7 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "30-30 Repeater"
-SWEP.Trivia_Class = "Marksman"
+SWEP.Trivia_Class = "Designated Marksman Rifle"
 SWEP.Trivia_Desc = "Semi-auto heavy repeater."
 SWEP.Trivia_Manufacturer = "Holdener Arms"
 
@@ -80,8 +80,8 @@ SWEP.Tracer = "arccw_apex_tracer_ar" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 5
+SWEP.ChamberSize = 0
+SWEP.Primary.ClipSize = 6
 
 SWEP.PhysBulletMuzzleVelocity = 550
 
@@ -227,7 +227,7 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Slot = {"apex_mag_heavy2"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -281,7 +281,7 @@ SWEP.Animations = {
     ["cycle"] = {
         Source = "rechamber",
         MinProgress = 0.35,
-		ShellEjectAt = 0.1,
+        ShellEjectAt = 0.1,
         SoundTable = {
             {p = 100, s = "weapons/3030/3030_Reload_Lever.wav", t = 0 / 30},
         },
@@ -296,7 +296,7 @@ SWEP.Animations = {
     ["cycle_sight"] = {
         Source = "iron_rechamber",
         MinProgress = 0.35,
-		ShellEjectAt = 0.1,
+        ShellEjectAt = 0.1,
         SoundTable = {
             {p = 100, s = "weapons/3030/3030_Reload_Lever.wav", t = 0 / 30},
         },
@@ -396,10 +396,10 @@ SWEP.Animations = {
             -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
             -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
             -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.wav", t = 10 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
         },
     },
     ["reload_empty"] = {
@@ -413,11 +413,11 @@ SWEP.Animations = {
             -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
             -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
             -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.wav", t = 10 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
-			-- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
     },
 },
 }

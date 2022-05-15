@@ -80,7 +80,7 @@ SWEP.Tracer = "arccw_apex_tracer_ar"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 17
 SWEP.MaxRecoilBlowback = 1
 

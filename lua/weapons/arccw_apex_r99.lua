@@ -77,7 +77,7 @@ SWEP.Apex_Balance = {
     }
 }
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
@@ -247,7 +247,7 @@ SWEP.Animations = {
     ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
-		Mult = 0.6,
+        Mult = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/r99/deploy_1.wav", t = 1 / 30},
         },
