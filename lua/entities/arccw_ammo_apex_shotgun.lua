@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 ENT.Base                      = "arccw_ammo_apex_light"
 
-ENT.PrintName                 = "Shotgun Ammo"
+ENT.PrintName                 = "Shotgun Shells"
 ENT.Category                  = "ArcCW - Apex Legends (Ammo)"
 
 ENT.Spawnable                 = true

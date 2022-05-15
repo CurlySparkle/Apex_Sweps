@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 ENT.Base                      = "arccw_ammo"
 
-ENT.PrintName                 = "Light Ammo"
+ENT.PrintName                 = "Light Rounds"
 ENT.Category                  = "ArcCW - Apex Legends (Ammo)"
 
 ENT.Spawnable                 = true
