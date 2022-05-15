@@ -102,6 +102,11 @@ SWEP.NoLastCycle = true -- do not cycle on last shot
 SWEP.Delay = 60 / 55 -- 60 / RPM.
 SWEP.Num = 11 -- number of shots per trigger pull.
 SWEP.Firemodes = {
+	{
+        Mode = 1,
+        PrintName = "fcg.apex.charge",
+        ApexCharge = true
+    },
     {
         Mode = 1,
         PrintName = "fcg.lever"
@@ -130,52 +135,17 @@ SWEP.ShotgunSpreadPattern = {
     [11] = Angle(0, 0, 0),
 }
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
-    local d = Lerp(wep:GetSightDelta(), 0.8, 1) * -0.85
+    local d = 1
+    local chg = wep:GetNWFloat("ApexCharge", 0)
+    if chg >= 1 then
+        d = d * 0.35
+    elseif chg >= 0.67 then
+        d = d * 0.65
+    elseif chg >= 0.33 then
+        d = d * 0.85
+    end
     local p = wep.ShotgunSpreadPattern[data.num]
-	
-	if wep:GetSightDelta() >= 1 then
-		wep.ShotgunSpreadPattern = { 
-			[1] = Angle((95*1)/100, 0, 0),
-			[2] = Angle((95*2)/100, 0, 0), 
-			
-			[3] = Angle((95*0.5)/100, (95*0.866)/100, 0),
-			[4] = Angle((95*1)/100, (95*1.732)/100, 0), 
-			
-			[5] = Angle((95*0.5)/100, (95*-0.866)/100, 0), 
-			[6] = Angle((95*1)/100, (95*-1.732)/100, 0), 
-
-			[7] = Angle((95*-0.766)/100, (95*0.643)/100, 0), 
-			[8] = Angle((95*-1.532)/100, (95*1.287)/100, 0), 
-			
-			[9] = Angle((95*-0.766)/100, (95*-0.643)/100, 0), 
-			[10] = Angle((95*-1.532)/100, (95*-1.287)/100, 0), 
-			
-			[11] = Angle(0.0, 0.0, 0),
-		}
-	end
-	
-	if wep:GetSightDelta() < 1 then
-		wep.ShotgunSpreadPattern = {
-			[1] = Angle(1, 0, 0),
-			[2] = Angle(2, 0, 0),
-
-			[3] = Angle(0.5, 0.866, 0), -- cos(60), sin(60)
-			[4] = Angle(1, 1.732, 0),
-
-			[5] = Angle(0.5, -0.866, 0), -- cos(300), sin(300)
-			[6] = Angle(1, -1.732, 0),
-
-			[7] = Angle(-0.766, 0.643, 0), -- cos(140), sin(140)
-			[8] = Angle(-1.532, 1.287, 0),
-
-			[9] = Angle(-0.766, -0.643, 0), -- cos(220), sin(220)
-			[10] = Angle(-1.532, -1.287, 0),
-
-			[11] = Angle(0, 0, 0),
-		}
-	end
-	
-    data.ang = Angle(p.p * d, p.y * d, 0)
+    data.ang = Angle(p.p * d, p.y * d,0)
 
     return data
 end
@@ -451,3 +421,29 @@ SWEP.Animations = {
     },
 },
 }
+
+SWEP.Hook_Think = function(wep)
+    local charge = wep:GetNWFloat("ApexCharge", 0)
+    if wep:GetBuff_Override("ApexCharge") and wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 1))
+        if SERVER then
+            local f = wep:GetNWFloat("ApexCharge", 0)
+            if f >= 1 and charge < 1 then
+                wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick1_2ch_v1_01.wav")
+            elseif f >= 0.67 and charge < 0.67 then
+                wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick2_2ch_v1_01.wav")
+            elseif f >= 0.33 and charge < 0.33 then
+                wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick3_2ch_v1_01.wav")
+            elseif f > 0 and charge == 0 then
+                wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_ChargeStart_2ch_v1_01.wav")
+            end
+        end
+    elseif charge > 0 then
+        wep:SetNWFloat("ApexCharge", 0)
+        wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_ChargeEnd_2ch_v1_01.wav")
+    end
+end
+
+SWEP.Hook_PostFireBullets = function(wep)
+    wep:SetNWFloat("ApexCharge", 0)
+end
