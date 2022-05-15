@@ -8,7 +8,7 @@ local mag_types = {
         {
             [1] = {2, 4, 7, 7}, -- Volt SMG
             [2] = {4, 8, 12, 12}, -- Devotion LMG, HAVOC
-			[3] = {3, 6, 9, 9}, -- Triple Take
+            [3] = {3, 6, 9, 9}, -- Triple Take
         },
         "entities/ammo_energy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_energy.mdl",
@@ -16,10 +16,10 @@ local mag_types = {
     ["light"] = {
         "Extended Light Magazine",
         {
-            [1] = {2, 4, 7, 7},
+            [1] = {2, 4, 7, 7}, -- CAR SMG
             [2] = {3, 6, 9, 9}, -- RE-45
             [3] = {2, 7, 10, 10}, -- R-301
-			[4] = {3, 6, 8, 8}, -- Alternator
+            [4] = {3, 6, 8, 8}, -- Alternator
         },
         "entities/ammo_light_reloaded.png",
         "models/weapons/attachments/upgrades/mag_light.mdl",
@@ -32,6 +32,7 @@ local mag_types = {
             [3] = {5, 8, 10, 10}, -- VK-47 Flatline
             [4] = {6, 9, 12, 12}, -- Hemlok Burst AR
             [5] = {5, 10, 15, 15}, -- Prowler Burst SMG, M600 Spitfire
+            [6] = {2, 4, 7, 7}, -- CAR SMG
         },
         "entities/ammo_heavy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_heavy.mdl",
@@ -163,7 +164,7 @@ for i = 1, 3 do
     att.Description = "apex.barrel.stabilizer." .. i
     att.AutoStats = true
     att.Slot = "apex_muzzle"
-	att.Override_MuzzleEffect = "muzzle_pistols_l4d"
+    att.Override_MuzzleEffect = "muzzle_pistols_l4d"
     att.SortOrder = 10
     att.Override_MuzzleEffectAttachment = 1
     att.IsMuzzleDevice = true
@@ -184,7 +185,7 @@ for i = 1, 3 do
     att2.Description = "apex.barrel.suppressor." .. i
     att2.AutoStats = true
     att2.Slot = "apex_muzzle"
-	att2.Override_MuzzleEffect = "muzzle_pistols_l4d"
+    att2.Override_MuzzleEffect = "muzzle_pistols_l4d"
     att2.SortOrder = 5
     att2.Override_MuzzleEffectAttachment = 1
     att2.IsMuzzleDevice = true

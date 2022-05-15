@@ -228,6 +228,10 @@ SWEP.Attachments = {
         Slot = {"apex_shotgun_bolt"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_qdraw", "apex_hopup_hp2"}
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
@@ -343,17 +347,17 @@ SWEP.Animations = {
 }
 
 SWEP.Hook_Think = function(wep)
-	if wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		wep.ShotgunSpreadPattern = {
-			[1] = Angle(-0.45, 0, 0),
-			[2] = Angle(0.4, 0.35, 0),
-			[3] = Angle(0.4, -0.35, 0),
-		}
-	else
-		wep.ShotgunSpreadPattern = {
-			[1] = Angle(-0.9, 0, 0),
-			[2] = Angle(0.8, 0.7, 0),
-			[3] = Angle(0.8, -0.7, 0),
-		}
-	end
+    if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+        wep.ShotgunSpreadPattern = {
+            [1] = Angle(-0.45, 0, 0),
+            [2] = Angle(0.4, 0.35, 0),
+            [3] = Angle(0.4, -0.35, 0),
+        }
+    else
+        wep.ShotgunSpreadPattern = {
+            [1] = Angle(-0.9, 0, 0),
+            [2] = Angle(0.8, 0.7, 0),
+            [3] = Angle(0.8, -0.7, 0),
+        }
+    end
 end
