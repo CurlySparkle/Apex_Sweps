@@ -326,7 +326,7 @@ local hopups = {
             },
             -- P2020
             [3] = {
-                Description = "Weapons gains an alternative firemode.\n\nThe P2020 receives a 3-round burst mode with reduced recoil.",
+                Description = "Weapons gains an alternative firemode.\n\nThe P2020 receives a 3-round burst mode with increased muzzle velocity.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -334,10 +334,9 @@ local hopups = {
                     {
                         Mode = -3,
                         Mult_RPM = 1.5,
-                        PostBurstDelay = 0.2,
+                        PostBurstDelay = 0.25,
                         RunawayBurst = true,
-                        Mult_Recoil = 0.75,
-                        Mult_RecoilSide = 0.75
+                        Mult_PhysBulletMuzzleVelocity = 1.5,
                     },
                     {
                         Mode = 0
