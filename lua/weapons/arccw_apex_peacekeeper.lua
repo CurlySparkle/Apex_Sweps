@@ -102,7 +102,7 @@ SWEP.NoLastCycle = true -- do not cycle on last shot
 SWEP.Delay = 60 / 55 -- 60 / RPM.
 SWEP.Num = 11 -- number of shots per trigger pull.
 SWEP.Firemodes = {
-	{
+    {
         Mode = 1,
         PrintName = "fcg.apex.charge",
         ApexCharge = true
@@ -145,7 +145,7 @@ SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
         d = d * 0.85
     end
     local p = wep.ShotgunSpreadPattern[data.num]
-    data.ang = Angle(p.p * d, p.y * d,0)
+    data.ang = Angle(p.p * -d, p.y * d,0)
 
     return data
 end
@@ -269,7 +269,7 @@ SWEP.Attachments = {
         PrintName = "Shotgun Bolt",
         Slot = {"apex_shotgun_bolt"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -396,10 +396,10 @@ SWEP.Animations = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.wav", t = 10 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30},
         },
     },
     ["reload_empty"] = {
@@ -413,18 +413,18 @@ SWEP.Animations = {
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
             {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.wav", t = 10 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
-			{p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
+            {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30},
     },
 },
 }
 
 SWEP.Hook_Think = function(wep)
 
-	local vm = wep:GetOwner():GetViewModel()
+    local vm = wep:GetOwner():GetViewModel()
     local delta = wep:GetSightDelta()
     local coolilove = math.cos(delta * (math.pi / 2))
     vm:SetPoseParameter( "sights", Lerp(coolilove, 0, 1) ) -- thanks fesiug

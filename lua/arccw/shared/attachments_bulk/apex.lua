@@ -441,7 +441,31 @@ local hopups = {
                 Mult_HipDispersion = 0.5,
             }
         }
-    }
+    },
+    ["shatter"] = {
+        name = "Shatter Caps",
+        icon = "entities/attach_icons/hopup_apex_quickdrawholster.png",
+        desc = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern.",
+        variants = {
+            [1] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        ApexCharge = true,
+                        PrintName = "fcg.lever"
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = 1,
+                        Override_Num = 7,
+                        Override_Damage = 49,
+                        Override_DamageMin = 49,
+                        Override_AccuracyMOA = 40
+                    }
+                }
+            }
+        }
+    },
 }
 
 for k, v in SortedPairs(hopups) do

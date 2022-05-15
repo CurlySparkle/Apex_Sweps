@@ -3,6 +3,9 @@ L = {}
 L["fcg.apex.charge"] = "Charged Shot"
 L["fcg.apex.charge.abbrev"] = "CHRG"
 
+L["fcg.apex.shatter"] = "Shatter Caps"
+L["fcg.apex.shatter.abbrev"] = "SHTR"
+
 L["fcg.apex.light"] = "Light Rounds"
 L["fcg.apex.light.abbrev"] = "LIGHT"
 

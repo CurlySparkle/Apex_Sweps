@@ -102,6 +102,7 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 1,
+        ApexCharge = true,
         PrintName = "fcg.lever"
     },
     {
@@ -226,6 +227,10 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_heavy2"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_shatter"}
     },
     {
         PrintName = "Skin",
@@ -424,11 +429,11 @@ SWEP.Animations = {
 
 SWEP.Hook_Think = function(wep)
     local charge = wep:GetNWFloat("ApexCharge", 0)
-    if wep:GetBuff_Override("ApexCharge") and wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS and wep:Clip1() > 1 then
-        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 1))
+    if wep:GetBuff_Override("ApexCharge") and  wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS and wep:Clip1() > 0 then
+        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 0.35))
         if SERVER then
             local f = wep:GetNWFloat("ApexCharge", 0)
-            if f >= 0.33 and charge < 0.33 then
+            if f >= 1 and charge < 1 then
                 wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
             elseif f > 0 and charge == 0 then
                 wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Start_1ch_v2_01.wav")
@@ -438,18 +443,22 @@ SWEP.Hook_Think = function(wep)
         wep:SetNWFloat("ApexCharge", 0)
         wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Stop_1ch_v1_01.wav")
     end
-	
-	if charge > 0 and charge <= 0.999 then
-		wep.ShootSound = "ArcCW_APEX.3030Repeater.Fire_Semi_Charged"
-	elseif charge >= 1 then
-		wep.Damage = 57
-		wep.DamageMin = 57
-		wep.ShootSound = "ArcCW_APEX.3030Repeater.Fire_Charged"
-	else
-		wep.Damage = 42
-		wep.DamageMin = 42
-		wep.ShootSound = "ArcCW_APEX.3030Repeater.Fire"
-	end
+end
+
+SWEP.M_Hook_Mult_Damage = function(wep, data)
+    data.mult = data.mult * Lerp(wep:GetNWFloat("ApexCharge", 0), 1, 1.36)
+end
+SWEP.M_Hook_Mult_DamageMin = function(wep, data)
+    data.mult = data.mult * Lerp(wep:GetNWFloat("ApexCharge", 0), 1, 1.36)
+end
+
+SWEP.Hook_GetShootSound = function(wep, sound)
+    local c = wep:GetNWFloat("ApexCharge", 0)
+    if c >= 1 then
+        return "ArcCW_APEX.3030Repeater.Fire_Charged"
+    elseif c > 0 then
+        return "ArcCW_APEX.3030Repeater.Fire_Semi_Charged"
+    end
 end
 
 SWEP.Hook_PostFireBullets = function(wep)
