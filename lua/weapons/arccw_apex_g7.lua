@@ -83,7 +83,7 @@ SWEP.MaxRecoilBlowback = 1
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 1.1
+SWEP.Recoil = 0.7
 SWEP.RecoilSide = 0.345
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5

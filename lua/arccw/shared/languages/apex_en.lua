@@ -1,5 +1,8 @@
 L = {}
 
+L["fcg.apex.charge"] = "Charged Shot"
+L["fcg.apex.charge.abbrev"] = "CHRG"
+
 L["apex.mag.1"] = "An attachment that increases weapon capacity by a little."
 L["apex.mag.2"] = "An attachment that increases weapon capacity noticeably."
 L["apex.mag.3"] = "An attachment that increases weapon capacity significantly."

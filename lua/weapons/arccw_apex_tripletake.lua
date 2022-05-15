@@ -9,7 +9,7 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Triple Take"
-SWEP.Trivia_Class = "Marksman"
+SWEP.Trivia_Class = "Designated Marksman Rifle"
 SWEP.Trivia_Desc = "Triple-barrel marksman rifle."
 SWEP.Trivia_Manufacturer = "Burrell Defense"
 
@@ -44,8 +44,8 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 63
-SWEP.DamageMin = 63
+SWEP.Damage = 21
+SWEP.DamageMin = 21
 SWEP.Range = 10
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 32000 * ArcCW.HUToM
@@ -66,13 +66,13 @@ SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerWidth = 10
 SWEP.PhysTracerProfile = 6
 
-SWEP.ChamberSize = 1 -- how many rounds can be chambered.
-SWEP.Primary.ClipSize = 17
+SWEP.ChamberSize = 0
+SWEP.Primary.ClipSize = 18
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 1.5
+SWEP.Recoil = 1
 SWEP.RecoilSide = 0.5
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
@@ -84,12 +84,20 @@ SWEP.Delay = 60 / 72 -- 60 / RPM.
 SWEP.Num = 3 -- number of shots per trigger pull.
 -- Just 3 happy bullets side-by-side
 SWEP.ShotgunSpreadPattern = {
-    [1] = Angle(0, -1.0, 0),
+    [1] = Angle(0, -0.5, 0),
     [2] = Angle(0, 0, 0),
-    [3] = Angle(0, 1.0, 0),
+    [3] = Angle(0, 0.5, 0),
 }
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
-    local d = Lerp(wep:GetSightDelta(), 0.75, 1)
+    local d = 1
+    local chg = wep:GetNWFloat("ApexCharge", 0)
+    if chg >= 1 then
+        d = d * 0.25
+    elseif chg >= 0.67 then
+        d = d * 0.5
+    elseif chg >= 0.33 then
+        d = d * 0.75
+    end
     local p = wep.ShotgunSpreadPattern[data.num]
     data.ang = Angle(p.p * d, p.y * d, 0)
 
@@ -100,6 +108,11 @@ SWEP.NoRandSpread = true
 SWEP.Firemodes = {
     {
         Mode = 1,
+        PrintName = "fcg.apex.charge",
+        ApexCharge = true
+    },
+    {
+        Mode = 1,
     },
     {
         Mode = 0
@@ -108,7 +121,7 @@ SWEP.Firemodes = {
 
 SWEP.AccuracyMOA = 1
 SWEP.HipDispersion = 200
-SWEP.MoveDispersion = 100
+SWEP.MoveDispersion = 50
 SWEP.JumpDispersion = 150
 
 SWEP.Primary.Ammo = "apex_energy"
@@ -227,7 +240,7 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Slot = {"apex_mag_energy3"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -323,14 +336,14 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_LftArm_fr02_2ch_v1_01.wav", t = 2 / 30},
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_LftArmMagOut_fr18_2ch_v1_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_LftArmMagIn_fr45_2ch_v2_01.wav", t = 45 / 30},
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_WpnSettle_fr64_2ch_v2_01.wav", t = 64 / 30},
-			
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechGunRattle_fr01_2ch_v2_01.wav", t = 1 / 30},
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechMagRelease_fr18_2ch_v1_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechMagIn_fr42_2ch_v1_01.wav", t = 42 / 30},
-			{p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechGunRattle_fr62_2ch_v2_01.wav", t = 62 / 30}
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_LftArmMagOut_fr18_2ch_v1_01.wav", t = 18 / 30},
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_LftArmMagIn_fr45_2ch_v2_01.wav", t = 45 / 30},
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_Foley_WpnSettle_fr64_2ch_v2_01.wav", t = 64 / 30},
+
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechGunRattle_fr01_2ch_v2_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechMagRelease_fr18_2ch_v1_01.wav", t = 18 / 30},
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechMagIn_fr42_2ch_v1_01.wav", t = 42 / 30},
+            {p = 100, s = "weapons/tripletake/Wpn_DoubleTake_Reload_MechGunRattle_fr62_2ch_v2_01.wav", t = 62 / 30}
         },
     },
     ["reload_empty"] = {
@@ -338,32 +351,42 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmGrabMag_fr04_2ch_v1_01.wav", t = 4 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmMagOut_fr29_2ch_v2_01.wav", t = 29 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmPullBolt_fr60_2ch_v2_01.wav", t = 60 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmGrabGun_fr90_2ch_v2_01.wav", t = 90 / 30},
-			
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr04_2ch_v2_01.wav", t = 4 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_MagHitEject_fr19_2ch_v1_01.wav", t = 19 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_MagInsert_fr46_2ch_v2_01.wav", t = 46 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr56_2ch_v1_01.wav", t = 56 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_AccuateBolt_fr77_2ch_v2_01.wav", t = 77 / 30},
-			{s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr79_2ch_v2_01.wav", t = 79 / 30}
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmMagOut_fr29_2ch_v2_01.wav", t = 29 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmPullBolt_fr60_2ch_v2_01.wav", t = 60 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Foley_LftArmGrabGun_fr90_2ch_v2_01.wav", t = 90 / 30},
+
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr04_2ch_v2_01.wav", t = 4 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_MagHitEject_fr19_2ch_v1_01.wav", t = 19 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_MagInsert_fr46_2ch_v2_01.wav", t = 46 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr56_2ch_v1_01.wav", t = 56 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_AccuateBolt_fr77_2ch_v2_01.wav", t = 77 / 30},
+            {s = "weapons/tripletake/Wpn_DoubleTake_Reload_Empty_Mech_GunRattle_fr79_2ch_v2_01.wav", t = 79 / 30}
     },
 },
 }
 
 SWEP.Hook_Think = function(wep)
-	if wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		wep.ShotgunSpreadPattern = {
-			[1] = Angle(0.0, -0.7, 0.0), 
-			[2] = Angle(0.0, 0.0, 0.0), 
-			[3] = Angle(0.0, 0.7, 0.0), 
-		}
-	else
-		wep.ShotgunSpreadPattern = {
-			[1] = Angle(0, -1.0, 0),
-			[2] = Angle(0, 0, 0),
-			[3] = Angle(0, 1.0, 0),
-		}
-	end
+    local charge = wep:GetNWFloat("ApexCharge", 0)
+    if wep:GetBuff_Override("ApexCharge") and wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 1))
+        if SERVER then
+            local f = wep:GetNWFloat("ApexCharge", 0)
+            if f >= 1 and charge < 1 then
+                wep:EmitSound("weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_01.wav")
+            elseif f >= 0.67 and charge < 0.67 then
+                wep:EmitSound("weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_02.wav")
+            elseif f >= 0.33 and charge < 0.33 then
+                wep:EmitSound("weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_03.wav")
+            elseif f > 0 and charge == 0 then
+                wep:EmitSound("weapons/tripletake/Wpn_DoubleTake_ChargedShot_ChargeStart_2ch_v1_01.wav")
+            end
+        end
+    elseif charge > 0 then
+        wep:SetNWFloat("ApexCharge", 0)
+        wep:EmitSound("weapons/tripletake/Wpn_DoubleTake_ChargedShot_ChargeEnd_2ch_v2_01.wav")
+    end
+end
+
+SWEP.Hook_PostFireBullets = function(wep)
+    wep:SetNWFloat("ApexCharge", 0)
 end
