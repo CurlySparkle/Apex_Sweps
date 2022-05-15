@@ -40,11 +40,11 @@ if CLIENT then
                         local BarCount = tostring(OurWeapon:Clip1())
                         local suffix = "blah"
                         
-                        if OurWeapon:GetMaxClip1() == 15 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
+                        if OurWeapon:GetMaxClip1() == 16 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
                             suffix = "_lvl1"
-                        elseif OurWeapon:GetMaxClip1() == 17 then
+                        elseif OurWeapon:GetMaxClip1() == 18 then
                             suffix = "_lvl2"
-                        elseif OurWeapon:GetMaxClip1() == 20 then
+                        elseif OurWeapon:GetMaxClip1() == 21 then
                             suffix = "_lvl3"
                         else
                             suffix = "_lvl0"

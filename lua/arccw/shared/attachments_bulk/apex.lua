@@ -312,7 +312,7 @@ local hopups = {
                         Add_AmmoPerShot = 3,
                         Override_Damage = 60,
                         Override_DamageMin = 50,
-                        Override_Tracer = "tfa_apex_tracer_havoc",
+                        Override_Tracer = "arccw_apex_tracer_havoc",
                         Override_AlwaysPhysBullet = false,
                         Override_NeverPhysBullet = true,
                     },
