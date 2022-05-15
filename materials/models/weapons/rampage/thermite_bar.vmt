@@ -1,0 +1,21 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models/weapons/rampage/thermite_bar_d"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "2"
+	"$detailframe"	"0"
+	"$translucent" 	"0"
+	"$additive"	"0"
+
+	$color2 "[1 1 1]"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
+}

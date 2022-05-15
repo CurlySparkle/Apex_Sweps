@@ -1,0 +1,21 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\rampage\dragon_base_parts_d"
+"$bumpmap" "models\weapons\rampage\dragon_base_parts_n"
+"$PhongExponentTexture" "models\weapons\rampage\dragon_base_parts_e"
+"$color2"	"[0.8 0.8 0.8]"
+"$blendTintByBaseAlpha"	"1"
+"$basemapalphaphongmask" "1"
+
+"$envmap"	"env_cubemap"
+"$envmaptint"	"[ .08 .08 .08 ]"
+"$envmapfresnel" "1"
+"$envmapFresnelMinMaxExp" "[10 40 .4]"
+
+"$phong"	"1"
+"$phongexponent"	"30"
+"$phongboost"	"5"
+"$phongfresnelranges"	"[0.25 0.5 1]"
+//"$phongfresnelranges" "[.1 .4 2]"
+
+}

@@ -1,4 +1,37 @@
 sound.Add( {
+    name = "ArcCW_APEX.LSTAR.Fire_Start",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/lstar/fire_1.wav",
+		"^weapons/lstar/fire_2.wav",
+		"^weapons/lstar/fire_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.LSTAR.Fire_Start")
+
+sound.Add( {
+    name = "ArcCW_APEX.LSTAR.Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/lstar/fire_loop_1.wav",
+		"^weapons/lstar/fire_loop_2.wav",
+		"^weapons/lstar/fire_loop_3.wav",
+		"^weapons/lstar/fire_loop_4.wav",
+		"^weapons/lstar/fire_loop_5.wav",
+		"^weapons/lstar/fire_loop_6.wav",
+		"^weapons/lstar/fire_loop_7.wav",
+		"^weapons/lstar/fire_loop_8.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.LSTAR.Fire")
+
+sound.Add( {
     name = "ArcCW_APEX.3030Repeater.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
