@@ -445,9 +445,9 @@ local hopups = {
     ["shatter"] = {
         name = "Shatter Caps",
         icon = "entities/attach_icons/hopup_apex_shattercaps.png",
-        desc = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern.",
         variants = {
             [1] = {
+                Description = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern, but cannot charge up damage.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -463,7 +463,25 @@ local hopups = {
                         Override_AccuracyMOA = 40
                     }
                 }
-            }
+            },
+            [2] = {
+                Description = "Weapon gains an additional firemode that shoots 3 pellets in a shotgun pattern, consuming 2 rounds per shot at a lower rate of fire.",
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = 2,
+                        Override_Num = 3,
+                        Override_Damage = 24,
+                        Override_DamageMin = 24,
+                        Override_AccuracyMOA = 30,
+                        Override_AmmoPerShot = 2,
+                        Mult_RPM = 0.75
+                    }
+                }
+            },
         }
     },
     ["skull"] = {

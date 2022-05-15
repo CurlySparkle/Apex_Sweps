@@ -220,7 +220,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_qdraw", "apex_hopup_hp2"}
+        Slot = {"apex_hopup_qdraw", "apex_hopup_hp2", "apex_hopup_shatter2"}
     },
     {
         PrintName = "Skin",
@@ -333,6 +333,13 @@ SWEP.Animations = {
             {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 47 / 30},
             {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltfront_fr50_2ch_v1_02.wav", t = 50 / 30},
             {p = 100, s = "weapons/re45/wpn_re45_emptyreload_handrest_fr55_2ch_v1_01.wav", t = 55 / 30}
+        },
+    },
+    ["trigger"] = {
+        Source = "idle",
+        MinProgress = 0.4,
+        SoundTable = {
+            {p = 100, s = "weapons/3030/3030_Charge_Spin_Whine_Start_1ch_v2_01.wav", t = 0 / 30}
         },
     },
 }
