@@ -2,7 +2,7 @@ att.PrintName = "3x HCOG (Ranger)"
 att.Icon = Material("entities/attach_icons/apex_3x.png", "mips smooth")
 att.Description = "Mid-range holographic optic."
 
-att.SortOrder = 0.75
+att.SortOrder = 0.25
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -35,3 +35,6 @@ att.Mult_SightsDispersion = 1
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_3x.png"

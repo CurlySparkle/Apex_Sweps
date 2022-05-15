@@ -133,19 +133,19 @@ local supp = {
     [1] = {
         Mult_AccuracyMOA = 0.8,
         Mult_PhysBulletMuzzleVelocity = 1.1,
-        Mult_MoveDispersion = 0.85,
+        Mult_MoveDispersion = 0.8,
         Add_BarrelLength = 4,
     },
     [2] = {
         Mult_AccuracyMOA = 0.65,
         Mult_PhysBulletMuzzleVelocity = 1.15,
-        Mult_MoveDispersion = 0.75,
+        Mult_MoveDispersion = 0.65,
         Add_BarrelLength = 6,
     },
     [3] = {
         Mult_AccuracyMOA = 0.5,
-        Mult_PhysBulletMuzzleVelocity = 1.25,
-        Mult_MoveDispersion = 0.6,
+        Mult_PhysBulletMuzzleVelocity = 1.3,
+        Mult_MoveDispersion = 0.5,
         Add_BarrelLength = 8,
     },
 }

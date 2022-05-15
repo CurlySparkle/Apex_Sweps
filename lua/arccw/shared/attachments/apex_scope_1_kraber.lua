@@ -12,6 +12,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"kraber"}
+att.InvAtt = "apex_scope_1"
 
 att.Model = "models/weapons/attachments/scope_1.mdl"
 

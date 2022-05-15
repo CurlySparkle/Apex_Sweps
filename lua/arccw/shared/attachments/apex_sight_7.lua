@@ -2,7 +2,7 @@ att.PrintName = "1x Digital Threat"
 att.Icon = Material("entities/attach_icons/apex_1x_dig.png", "mips smooth")
 att.Description = "Close-range optic with threat highlighting."
 
-att.SortOrder = 0.75
+att.SortOrder = 2
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -49,3 +49,6 @@ att.Mult_Sway = 0.5
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_1x_dig.png"
