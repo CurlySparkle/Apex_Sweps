@@ -206,6 +206,10 @@ SWEP.Attachments = {
         Slot = {"apex_mag_sniper2"}
     },
     {
+        PrintName = "Hopup",
+        Slot = {"apex_hopup_skull2"}
+    },
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

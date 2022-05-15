@@ -444,7 +444,7 @@ local hopups = {
     },
     ["shatter"] = {
         name = "Shatter Caps",
-        icon = "entities/attach_icons/hopup_apex_quickdrawholster.png",
+        icon = "entities/attach_icons/hopup_apex_shattercaps.png",
         desc = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern.",
         variants = {
             [1] = {
@@ -466,6 +466,37 @@ local hopups = {
             }
         }
     },
+    ["skull"] = {
+        name = "Skullpiercer Rifling",
+        icon = "entities/attach_icons/hopup_apex_skullpiercer.png",
+        desc = "Weapon does increased damage on a headshot.",
+        variants = {
+            -- Wingman
+            [1] = {
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 2.5,
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.9,
+                    [HITGROUP_RIGHTLEG] = 0.9,
+                }
+            },
+            -- Longbow DMR
+            [2] = {
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 2.5,
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.8,
+                    [HITGROUP_RIGHTLEG] = 0.8,
+                }
+            },
+        }
+    }
 }
 
 for k, v in SortedPairs(hopups) do
