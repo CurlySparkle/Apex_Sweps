@@ -44,3 +44,6 @@ att.HolosightMagnificationMax = 4
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_2-4x.png"

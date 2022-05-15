@@ -2,7 +2,7 @@ att.PrintName = "2x HCOG (Bruiser)"
 att.Icon = Material("entities/attach_icons/apex_1x_hcog.png", "mips smooth")
 att.Description = "Magnified holographic optic."
 
-att.SortOrder = 1
+att.SortOrder = 0.5
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -18,7 +18,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 8, -0.35),
         Ang = Angle(0, 0, 0),
-        Magnification = 2,
+        Magnification = 2.15,
     }
 }
 
@@ -34,3 +34,6 @@ att.Mult_SightTime = 1.05
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_1x_hcog.png"

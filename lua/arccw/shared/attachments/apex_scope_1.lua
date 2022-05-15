@@ -38,3 +38,6 @@ att.HolosightMagnification = 6
 att.Mult_SightTime = 1.1
 att.Mult_SpeedMult = 0.9
 att.Mult_Sway = 0.1
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_6x.png"

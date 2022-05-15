@@ -18,7 +18,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 8, -0.65),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.25,
+        Magnification = 1.15,
     }
 }
 
@@ -36,3 +36,6 @@ att.Mult_Sway = 0.5
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
+
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_1x_holo.png"

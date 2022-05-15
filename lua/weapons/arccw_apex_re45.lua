@@ -205,7 +205,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Muzzle",
-        Slot = {"apex_muzzle","muzzle"},
+        Slot = {"apex_muzzle"},
         Bone = "muzzle_flash",
         Offset = {
             vpos = Vector(0, 0, 0),
@@ -218,7 +218,7 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Slot = {"apex_mag_light2"}
     },
-	{
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

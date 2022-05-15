@@ -11,6 +11,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"r301"}
+att.InvAtt = "apex_sight_5"
 
 att.Model = "models/weapons/attachments/sight_1.mdl"
 
@@ -21,7 +22,7 @@ att.AdditionalSights = {
         Magnification = 2,
         ScrollFunc = ArcCW.SCROLL_NONE,
         Thermal = true,
-        ThermalHighlightColor = Color(255, 255, 0),		
+        ThermalHighlightColor = Color(255, 255, 0),
     }
 }
 
