@@ -41,6 +41,22 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Charged")
 
 sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Reload_Insert",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/3030_Reload_Bullet_1ch_01.wav",
+		"^weapons/3030/3030_Reload_Bullet_1ch_02.wav",
+		"^weapons/3030/3030_Reload_Bullet_1ch_03.wav",
+		"^weapons/3030/3030_Reload_Bullet_1ch_04.wav",
+		"^weapons/3030/3030_Reload_Bullet_1ch_05.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.3030Repeater.Reload_Insert")
+
+sound.Add( {
     name = "ArcCW_APEX.Triple_Take.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

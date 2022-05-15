@@ -1,0 +1,15 @@
+"UnlitGeneric"
+{
+	"$basetexture" "ammocounter/plate_r99/numbers_plate3"
+	"$additive" "1"
+	"$decal" "1"
+//     "$color2" "0.9 1 1"
+	Proxies // proxies are listed inside this block
+	{
+	ArcCW_AMMO
+		{
+			resultVar 2
+			prefixstring "ammocounter/plate_r99/numbers_plate"
+		}
+	}
+}

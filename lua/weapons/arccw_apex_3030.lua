@@ -354,7 +354,7 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0,
         SoundTable = {
-            {s = "weapons/3030/3030_Reload_Bullet_1ch_01.wav", t = 5 / 30},
+            {s = "ArcCW_APEX.3030Repeater.Reload_Insert", t = 5 / 30},
         },
     },
     ["sgreload_finish"] = {
@@ -373,7 +373,7 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 0,
         SoundTable = {
-            {s = "weapons/3030/3030_Reload_Bullet_1ch_01.wav", t = 7 / 30},
+            {s = "ArcCW_APEX.3030Repeater.Reload_Insert", t = 8 / 30},
         },
     },
     ["sgreload_finish_empty"] = {

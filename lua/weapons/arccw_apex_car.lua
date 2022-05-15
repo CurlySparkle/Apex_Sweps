@@ -108,11 +108,6 @@ SWEP.Firemodes = {
         Override_Ammo = "apex_light",
         RestoreAmmo = true,
     },
-    --[[] -- trust me this is for the best
-    {
-        Mode = 0
-    }
-    ]]
 }
 
 SWEP.AccuracyMOA = 4
@@ -130,6 +125,7 @@ SWEP.ShootSound = "ArcCW_APEX.CAR.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = "ArcCW_APEX.CAR.Fire"
 SWEP.DistantShootSound = ""
+SWEP.FiremodeSound = ""
 
 SWEP.MuzzleEffect = "muzzle_smgs_l4d"
 SWEP.MuzzleFlashColor = Color(255, 255, 55)
@@ -365,11 +361,33 @@ SWEP.Animations = {
         },
     },
     ["1_to_2"] = {
-        Source = {"switchammo1", "switchammo2", "switchammo3"},
-        Blocking = true
+        Source = {"switchammo1"},
+        Blocking = true,
+        LHIK = true,
+        LHIKIn = 0.6,
+        LHIKOut = 0.6,
+        SoundTable = {
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_PopOutMag__fr07_v1_01.wav", t = 7 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_PullOutMag__fr025_v1_01.wav", t = 25 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_InsertMag__fr040_v1_01.wav", t = 40 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_SlapMag__fr069_v1_01.wav", t = 69 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_Charge__fr086_v1_01.wav", t = 86 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_Settle__fr099_v1_01.wav", t = 99 / 30}
+        },
     },
     ["2_to_1"] = {
-        Source = {"switchammo1", "switchammo2", "switchammo3"},
-        Blocking = true
+        Source = {"switchammo2"},
+        Blocking = true,
+        LHIK = true,
+        LHIKIn = 0.6,
+        LHIKOut = 0.6,
+        SoundTable = {
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagEject__fr009_v1_01.wav", t = 9 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagPullOut__fr026_v1_01.wav", t = 26 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_NewMagGrab__fr037_v1_01.wav", t = 37 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertBump__fr059_v1_01.wav", t = 59 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr069_v1_01.wav", t = 69 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr088_v1_01.wav", t = 88 / 30}
     },
+},
 }
