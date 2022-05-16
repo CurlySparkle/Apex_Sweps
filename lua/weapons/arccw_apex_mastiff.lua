@@ -202,6 +202,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.Attachments = {
@@ -225,6 +229,12 @@ SWEP.Attachments = {
         Slot = {"apex_sg"}
     },
     {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
+    },
+    {
         PrintName = "Extras",
         Installed = "apex_hitsound_headshot",
         Slot = {"apex_extras"}
@@ -240,6 +250,9 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
+    ["idle_empty"] = {
+        Source = "idle_empty",
+    },
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
@@ -250,15 +263,33 @@ SWEP.Animations = {
         Source = "draw",
         Mult = 0.9,
     },
+    ["draw_empty"] = {
+        Source = "draw_empty",
+        Mult = 0.9,
+    },
     ["holster"] = {
         Source = "holster",
+        Mult = 0.9,
+    },
+    ["holster_empty"] = {
+        Source = "holster_empty",
         Mult = 0.9,
     },
     ["idle_iron"] = {
         Source = "iron_idle",
     },
+    ["idle_iron_empty"] = {
+        Source = "iron_idle_empty",
+    },
     ["fire"] = {
-        Source = "fire",
+        Source = {"fire"},
+        ShellEjectAt = 0.1,
+        SoundTable = {
+            {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
+        },
+    },
+    ["fire_empty"] = {
+        Source = {"fire_empty"},
         ShellEjectAt = 0.1,
         SoundTable = {
             {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
@@ -266,6 +297,9 @@ SWEP.Animations = {
     },
     ["enter_sight"] = {
         Source = "iron_in",
+    },
+    ["enter_sight_empty"] = {
+        Source = "iron_in_empty",
     },
     ["fire_sight"] = {
         Source = "iron_fire",
@@ -276,6 +310,9 @@ SWEP.Animations = {
     },
     ["exit_sight"] = {
         Source = "iron_out",
+    },
+    ["exit_sight_empty"] = {
+        Source = "iron_out_empty",
     },
     ["bash"] = {
         Source = {"melee"},
