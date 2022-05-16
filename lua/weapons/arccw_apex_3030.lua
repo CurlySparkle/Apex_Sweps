@@ -452,6 +452,16 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
     data.mult = data.mult * Lerp(wep:GetNWFloat("ApexCharge", 0), 1, 1.36)
 end
 
+SWEP.O_Hook_Override_Num = function(wep,data)
+	if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+		data.current = 1
+		data.winningslot = -1
+	else
+		data.current = 7
+		data.winningslot = 1
+	end
+end
+
 SWEP.Hook_GetShootSound = function(wep, sound)
     local c = wep:GetNWFloat("ApexCharge", 0)
     if c >= 1 then
