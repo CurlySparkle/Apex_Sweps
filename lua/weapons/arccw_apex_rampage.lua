@@ -307,3 +307,26 @@ SWEP.Animations = {
 
 SWEP.TTTWeaponType = "weapon_zm_mac10"
 SWEP.TTTWeight = 100
+
+--I was feeling sleepy when i did that, forgive me.
+SWEP.Hook_ModifyRPM = function(wep,delay)
+	--PrintTable(wep:GetCurrentFiremode())
+	if wep:GetCurrentFiremode().ApexCharge != nil then
+		wep.Delay = 60 / 380
+		delay = 60 / 380
+	else
+		wep.Delay = 60 / 300
+		delay = 60 / 300
+	end
+end
+
+SWEP.Hook_GetShootSound = function(wep, sound)
+    local mode = wep:GetCurrentFiremode()
+    if mode.ApexCharge != nil then
+		wep.FirstShootSound = "ArcCW_APEX.Rampage_Charged.Fire_Start"
+        return "ArcCW_APEX.Rampage_Charged.Fire"
+	else
+		wep.FirstShootSound = "ArcCW_APEX.Rampage.Fire_Start"
+        return "ArcCW_APEX.Rampage.Fire"
+    end
+end
