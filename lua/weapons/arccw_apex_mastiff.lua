@@ -226,7 +226,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Shotgun Bolt",
-        Slot = {"apex_sg"}
+        Slot = {"apex_shotgun_bolt"}
     },
     {
         PrintName = "Skin",
