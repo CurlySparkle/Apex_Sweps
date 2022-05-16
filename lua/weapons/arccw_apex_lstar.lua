@@ -15,13 +15,13 @@ SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 3
 
-SWEP.CrouchPos = Vector(-5, -1, 1.5)
-SWEP.CrouchAng = Angle(1.037, 0.623, -53.174)
+SWEP.CrouchPos = Vector(-6, -1, 1)
+SWEP.CrouchAng = Angle(0.582, 0.623, -53.181)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1, 1.5)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
@@ -203,9 +203,10 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(90, 0, -90),
         },
+		ExtraSightDist = 1,
         InstalledEles = {"weapon_sights", "weapon_dot"},
-         CorrectivePos = Vector(1.57,0,-0.5),
-         CorrectiveAng = Angle(-0.846, 0, 5.955)
+        CorrectivePos = Vector(1.98,0,-0.23),
+        CorrectiveAng = Angle(-0.011, 0.004, 4.242)
     },
     {
         PrintName = "Muzzle",
