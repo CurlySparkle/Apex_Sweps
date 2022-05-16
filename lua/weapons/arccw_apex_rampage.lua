@@ -1,6 +1,6 @@
 if CLIENT then
-    killicon.Add( "arccw_apex_flatline", "VGUI/apex_killicon_flatline", Color(251, 85, 25, 255))
-    SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_flatline")
+    killicon.Add( "arccw_apex_rampage", "VGUI/apex_killicon_rampage", Color(251, 85, 25, 255))
+    SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_rampage")
 end
 
 SWEP.Base = "arccw_apex_base"
@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Rampage LMG"
-SWEP.Trivia_Class = "Light machine gun"
-SWEP.Trivia_Desc = "Fire Powered LMG. Charge with Thermites."
+SWEP.Trivia_Class = "Light Machine Gun"
+SWEP.Trivia_Desc = "Rampart's custom made machine gun with high damage. Can be charged with a Thermite grenade to increase rate of fire."
 SWEP.Trivia_Manufacturer = "Rampart/SWCC"
 
 SWEP.Slot = 3
@@ -54,8 +54,8 @@ SWEP.Apex_Balance = {
         DamageMin = 15,
     },
     [2] = {
-        Damage = 19,
-        DamageMin = 14,
+        Damage = 20,
+        DamageMin = 20,
     },
 }
 
@@ -91,13 +91,10 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 2,
-    },
-    {
-        Mode = 0
     }
 }
 
-SWEP.AccuracyMOA = 3
+SWEP.AccuracyMOA = 4
 SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300
@@ -177,7 +174,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"weapon_sights"},
-		ExtraSightDist = 2.5,
+        ExtraSightDist = 2.5,
         CorrectivePos = Vector(1.7, 0, -0.35),
         CorrectiveAng = Angle(0, 0, 3.9)
     },
@@ -196,7 +193,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Slot = {"apex_mag_heavy4"}
+        Slot = {"apex_mag_heavy7"}
     },
     {
         PrintName = "Skin",

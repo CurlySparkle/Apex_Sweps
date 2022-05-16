@@ -16,7 +16,7 @@ local mag_types = {
             [1] = {2, 4, 7, 7}, -- Volt SMG
             [2] = {4, 8, 12, 12}, -- Devotion LMG, HAVOC
             [3] = {3, 6, 9, 9}, -- Triple Take
-			[4] = {4, 6, 12, 12}, -- Rampage
+            [4] = {4, 6, 12, 12}, -- Rampage
         },
         "entities/ammo_energy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_energy.mdl",
@@ -41,6 +41,7 @@ local mag_types = {
             [4] = {6, 9, 12, 12}, -- Hemlok Burst AR
             [5] = {5, 10, 15, 15}, -- Prowler Burst SMG, M600 Spitfire
             [6] = {2, 4, 7, 7}, -- CAR SMG
+            [7] = {4, 6, 12, 12}, -- Rampage LMG
         },
         "entities/ammo_heavy_reloaded.png",
         "models/weapons/attachments/upgrades/mag_heavy.mdl",
@@ -750,7 +751,7 @@ local hopups = {
                     },
                     {
                         PrintName = "fcg.apex.shatter",
-						ApexCharge = true,
+                        ApexCharge = true,
                         Mode = 1,
                         Override_Num = 7,
                         Override_Damage = 49,
