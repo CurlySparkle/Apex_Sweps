@@ -126,17 +126,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.SightedSpeedMult = 0.5
 SWEP.IronSightStruct = {
@@ -336,3 +325,14 @@ SWEP.Animations = {
     },
 },
 }
+
+if engine.ActiveGamemode == "terrortown" then
+    SWEP.Override_Ammo = "none"
+    SWEP.AutoSpawnable = false
+    SWEP.ForceDefaultClip = 0
+    SWEP.CanBuy = {1, 2} --{ROLE_TRAITOR, ROLE_DETECTIVE}
+    SWEP.EquipMenuData = {
+        type = "Weapon",
+        desc = "Powerful sniper rifle.\n\nHas 4 rounds and cannot be reloaded."
+    }
+end

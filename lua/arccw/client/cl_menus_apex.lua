@@ -1,20 +1,41 @@
-hook.Add( "PopulateToolMenu", "ArcCW_Apex_Options", function()
-    spawnmenu.AddToolMenuOption( "Options", "ArcCW", "ArcCW_Apex_Options", "Apex Weapons", "", "", ArcCW_Apex_Options)
-end )
+local ApexPanel = {
+    { type = "h", text = "#arccw.apex_info" },
 
-function ArcCW_Apex_Options( CPanel )
+    { type = "o", text = "#arccw.cvar.apex_bal", var = "arccw_apex_bal", sv = true,
+            choices = {[-1] = "#arccw.cvar.apex_bal.-1", [0] = "#arccw.cvar.apex_bal.0", [1] = "#arccw.cvar.apex_bal.1", [2] = "#arccw.cvar.apex_bal.2"}},
+    { type = "h", text = "#arccw.cvar.apex_bal.desc" },
+    { type = "c", text = "#arccw.cvar.apex_bal.desc.0" },
+    { type = "c", text = "#arccw.cvar.apex_bal.desc.1" },
+    { type = "c", text = "#arccw.cvar.apex_bal.desc.2" },
 
-    CPanel:AddControl("Header", {Description = "All options below are serverside and require a restart to apply."})
-    CPanel:AddControl("Header", {Description = ""})
+    { type = "b", text = "#arccw.cvar.apex_ammo", var = "arccw_apex_ammo", sv = true },
+    { type = "b", text = "#arccw.cvar.apex_ttt_ammo", var = "arccw_apex_ttt_ammo", sv = true },
+    { type = "c", text = "#arccw.cvar.apex_ttt_ammo.desc" },
+    { type = "b", text = "#arccw.cvar.apex_ttt_exclusive", var = "arccw_apex_ttt_exclusive", sv = true },
+    { type = "c", text = "#arccw.cvar.apex_ttt_exclusive.desc" },
 
-    CPanel:AddControl("Header", {Description = "Damage Balance."})
-    CPanel:AddControl("Label", {Text = "This controls how the Apex weapons are balanced on their overall damage."})
-    CPanel:AddControl("Slider", {Label = "What to balance?", Command = "arccw_apex_bal", min = 0, max = 1 })
-    CPanel:AddControl("Label", {Text = "0. Apex Settings, the default damage balance as in Apex Legends."})
-    CPanel:AddControl("Label", {Text = "1. ArcCW Settings, good for deathmatch servers. This will balance the weapons damage to behave similarly to other weaponry to make them feel more decent."})
-    CPanel:AddControl("Label", {Text = "Altrough this will not change things such as fire rate or animation speeds and neiter recoil or accuracy. This primarily will only affect the damage for more decency agains't players or stronger NPCs."})
-	CPanel:AddControl("Slider", {Label = "Ammo Type", Command = "arccw_apex_ammo", min = 0, max = 1 })
-    CPanel:AddControl("Label", {Text = "Changes the ammo type the Apex weapons use"})
-    CPanel:AddControl("Label", {Text = "0. Apex Ammo Type"})
-    CPanel:AddControl("Label", {Text = "1. HL2 Ammo Type"})
-end
+}
+
+hook.Add("PopulateToolMenu", "ArcCW_GSOE_Options", function()
+    spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_Options_Apex", "#arccw.menus.apex", "", "", function(panel)
+        ArcCW.GeneratePanelElements(panel, ApexPanel)
+    end)
+end)
+
+hook.Add("TTTSettingsTabs", "ArcCW_Apex", function(dtabs)
+
+    local padding = dtabs:GetPadding() * 2
+
+    local panellist = vgui.Create("DPanelList", dtabs)
+    panellist:StretchToParent(0,0,padding,0)
+    panellist:EnableVerticalScrollbar(true)
+    panellist:SetPadding(10)
+    panellist:SetSpacing(10)
+
+    local form = vgui.Create("DForm", panellist)
+    form:SetName("#arccw.menus.apex")
+    ArcCW.GeneratePanelElements(form, ApexPanel)
+    panellist:AddItem(form)
+
+    dtabs:AddSheet("ArcCW Apex", panellist, "icon16/gun.png", false, false, "ArcCW Settings")
+end)

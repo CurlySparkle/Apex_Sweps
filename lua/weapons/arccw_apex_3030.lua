@@ -62,18 +62,23 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 42,
-        DamageMin = 42,
-        Penetration = 15,
-    },
     [1] = {
-        -- Arcwc Settings
         Damage = 48,
         DamageMin = 35,
-        Penetration = 15,
-    }
+    },
+    [2] = {
+        Damage = 30, -- 3 shot kill (remember damage gets charged up to +36%)
+        DamageMin = 30,
+        BodyDamageMults = {
+            [HITGROUP_HEAD] = 2.15, -- Head + chest = lethal (104dmg)
+            [HITGROUP_CHEST] = 1,
+            [HITGROUP_STOMACH] = 1,
+            [HITGROUP_LEFTARM] = 1,
+            [HITGROUP_RIGHTARM] = 1,
+            [HITGROUP_LEFTLEG] = 0.75,
+            [HITGROUP_RIGHTLEG] = 0.75,
+        }
+    },
 }
 
 SWEP.Tracer = "arccw_apex_tracer_ar" -- override tracer (hitscan) effect
@@ -154,17 +159,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
@@ -431,10 +425,12 @@ SWEP.Hook_Think = function(wep)
     local charge = wep:GetNWFloat("ApexCharge", 0)
     if wep:GetBuff_Override("ApexCharge") and  wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS and wep:Clip1() > 0 then
         wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 0.35))
-        if SERVER then
+        if (game.SinglePlayer() and SERVER) or CLIENT then
             local f = wep:GetNWFloat("ApexCharge", 0)
             if f >= 1 and charge < 1 then
-                wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
+                --wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
+                wep.ApexLoopSound = CreateSound(wep, "weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
+                wep.ApexLoopSound:Play()
             elseif f > 0 and charge == 0 then
                 wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Start_1ch_v2_01.wav")
             end
@@ -442,6 +438,7 @@ SWEP.Hook_Think = function(wep)
     elseif charge > 0 then
         wep:SetNWFloat("ApexCharge", 0)
         wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Stop_1ch_v1_01.wav")
+        if wep.ApexLoopSound then wep.ApexLoopSound:Stop() wep.ApexLoopSound = nil end
     end
 end
 
@@ -473,4 +470,8 @@ end
 
 SWEP.Hook_PostFireBullets = function(wep)
     wep:SetNWFloat("ApexCharge", 0)
+    if wep.ApexLoopSound then wep.ApexLoopSound:Stop() wep.ApexLoopSound = nil end
 end
+
+SWEP.TTTWeaponType = {"weapon_zm_rifle", "weapon_zm_mac10"}
+SWEP.TTTWeight = 75

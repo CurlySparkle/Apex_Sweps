@@ -1,5 +1,8 @@
-CreateConVar("arccw_apex_bal", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Tweaks the balancing for the Apex Legends Weapons. See the options page under Options > ArcCW > Apex Settings for more information.", 0, 1)
-CreateConVar("arccw_apex_ammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "If set, use hl2 ammo types instead of custom ammo types.", 0, 1)
+CreateConVar("arccw_apex_bal", -1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Tweaks the balancing for the Apex Legends Weapons.", -1, 2)
+CreateConVar("arccw_apex_ammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use HL2 ammo types instead of custom ammo types.", 0, 1)
+
+CreateConVar("arccw_apex_ttt_ammo", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Replace ArcCW TTT ammo replacements with Apex ammo types.", 0, 1)
+CreateConVar("arccw_apex_ttt_exclusive", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Only allow Apex weapons to spawn in TTT (and not other ArcCW weapons).", 0, 1)
 
 ArcCW.Apex = {}
 
@@ -24,16 +27,61 @@ ArcCW.Apex.AmmoConvert = {
     apex_sniper = "SniperPenetratedRound"
 }
 
+ArcCW.Apex.BalanceMode = nil
+
+function ArcCW.Apex.GetBalanceMode()
+    local val = ArcCW.Apex.BalanceMode or GetConVar("arccw_apex_bal"):GetInt()
+    if val == -1 then
+        if engine.ActiveGamemode() == "terrortown" then
+            ArcCW.Apex.BalanceMode = 2
+        elseif DarkRP then
+            ArcCW.Apex.BalanceMode = 1
+        else
+            ArcCW.Apex.BalanceMode = 0
+        end
+        val = ArcCW.Apex.BalanceMode
+    end
+    return val
+end
+
 function ArcCW.Apex.Setup(self, balance)
-    local val = GetConVar("arccw_apex_bal"):GetInt()
-    for i, v in pairs(balance[val]) do
+    local val = ArcCW.Apex.GetBalanceMode()
+    for i, v in pairs(balance[val] or {}) do
         self[i] = v
     end
-
-    if not GetConVar("arccw_apex_ammo"):GetBool() then
-        self.Primary.Ammo = ArcCW.Apex.AmmoConvert[self.Primary.Ammo]
-    end
 end
+
+hook.Add("InitPostEntity", "ArcCW_Apex", function()
+
+    ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 3
+    ArcCW.TTTAmmoToClipMax["apex_heavy"] = 20 * 3
+    ArcCW.TTTAmmoToClipMax["apex_energy"] = 20 * 3
+    ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 3
+    ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 3
+
+    if GetConVar("arccw_apex_ttt_ammo"):GetBool() and !GetConVar("arccw_apex_ammo"):GetBool() then
+        ArcCW.AmmoEntToArcCW["item_ammo_pistol_ttt"] = "arccw_ammo_apex_light"
+        ArcCW.AmmoEntToArcCW["item_ammo_smg1_ttt"] = "arccw_ammo_apex_heavy"
+        ArcCW.AmmoEntToArcCW["item_ammo_revolver_ttt"] = "arccw_ammo_apex_sniper"
+        ArcCW.AmmoEntToArcCW["item_box_buckshot_ttt"] = "arccw_ammo_apex_shotgun"
+        ArcCW.AmmoEntToArcCW["item_ammo_357_ttt"] = "arccw_ammo_apex_energy"
+    end
+
+    for i, k in pairs(weapons.GetList()) do
+        if !weapons.IsBasedOn(k.ClassName, "arccw_base") then continue end
+        local stored = weapons.GetStored(k.ClassName) -- necessary?
+
+        if GetConVar("arccw_apex_ttt_exclusive"):GetBool() and !weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
+            stored.TTTWeight = 0
+            stored.NPCWeight = 0
+        end
+
+        if GetConVar("arccw_apex_ammo"):GetBool() and weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
+            stored.Primary.Ammo = ArcCW.Apex.AmmoConvert[stored.Primary.Ammo] or stored.Primary.Ammo
+        end
+    end
+    ArcCW.RandomWeaponCache = {}
+end)
 
 if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")

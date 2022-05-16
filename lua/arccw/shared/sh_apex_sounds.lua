@@ -6,8 +6,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/lstar/fire_1.wav",
-		"^weapons/lstar/fire_2.wav",
-		"^weapons/lstar/fire_3.wav",
+        "^weapons/lstar/fire_2.wav",
+        "^weapons/lstar/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.LSTAR.Fire_Start")
@@ -20,13 +20,13 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/lstar/fire_loop_1.wav",
-		"^weapons/lstar/fire_loop_2.wav",
-		"^weapons/lstar/fire_loop_3.wav",
-		"^weapons/lstar/fire_loop_4.wav",
-		"^weapons/lstar/fire_loop_5.wav",
-		"^weapons/lstar/fire_loop_6.wav",
-		"^weapons/lstar/fire_loop_7.wav",
-		"^weapons/lstar/fire_loop_8.wav",
+        "^weapons/lstar/fire_loop_2.wav",
+        "^weapons/lstar/fire_loop_3.wav",
+        "^weapons/lstar/fire_loop_4.wav",
+        "^weapons/lstar/fire_loop_5.wav",
+        "^weapons/lstar/fire_loop_6.wav",
+        "^weapons/lstar/fire_loop_7.wav",
+        "^weapons/lstar/fire_loop_8.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.LSTAR.Fire")
@@ -39,8 +39,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/3030/fire_1.wav",
-		"^weapons/3030/fire_2.wav",
-		"^weapons/3030/fire_3.wav",
+        "^weapons/3030/fire_2.wav",
+        "^weapons/3030/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire")
@@ -53,8 +53,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/3030/fire_semicharged_1.wav",
-		"^weapons/3030/fire_semicharged_2.wav",
-		"^weapons/3030/fire_semicharged_3.wav",
+        "^weapons/3030/fire_semicharged_2.wav",
+        "^weapons/3030/fire_semicharged_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Semi_Charged")
@@ -67,8 +67,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/3030/fire_charged_1.wav",
-		"^weapons/3030/fire_charged_2.wav",
-		"^weapons/3030/fire_charged_3.wav",
+        "^weapons/3030/fire_charged_2.wav",
+        "^weapons/3030/fire_charged_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Charged")
@@ -81,10 +81,10 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/3030/3030_Reload_Bullet_1ch_01.wav",
-		"^weapons/3030/3030_Reload_Bullet_1ch_02.wav",
-		"^weapons/3030/3030_Reload_Bullet_1ch_03.wav",
-		"^weapons/3030/3030_Reload_Bullet_1ch_04.wav",
-		"^weapons/3030/3030_Reload_Bullet_1ch_05.wav",
+        "^weapons/3030/3030_Reload_Bullet_1ch_02.wav",
+        "^weapons/3030/3030_Reload_Bullet_1ch_03.wav",
+        "^weapons/3030/3030_Reload_Bullet_1ch_04.wav",
+        "^weapons/3030/3030_Reload_Bullet_1ch_05.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.3030Repeater.Reload_Insert")
@@ -97,8 +97,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/tripletake/wpn_doubletake_fire_1p_01.wav",
-		"^weapons/tripletake/wpn_doubletake_fire_1p_02.wav",
-		"^weapons/tripletake/wpn_doubletake_fire_1p_03.wav",
+        "^weapons/tripletake/wpn_doubletake_fire_1p_02.wav",
+        "^weapons/tripletake/wpn_doubletake_fire_1p_03.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Triple_Take.Fire")
@@ -111,8 +111,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/mozambique/fire_hammerpoint_1.wav",
-		"^weapons/mozambique/fire_hammerpoint_2.wav",
-		"^weapons/mozambique/fire_hammerpoint_3.wav",
+        "^weapons/mozambique/fire_hammerpoint_2.wav",
+        "^weapons/mozambique/fire_hammerpoint_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Mozambique_Hammer.Fire")
@@ -125,8 +125,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/mozambique/fire_1.wav",
-		"^weapons/mozambique/fire_2.wav",
-		"^weapons/mozambique/fire_3.wav",
+        "^weapons/mozambique/fire_2.wav",
+        "^weapons/mozambique/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Mozambique.Fire")
@@ -139,8 +139,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/Havoc/fire_1.wav",
-		"^weapons/Havoc/fire_2.wav",
-		"^weapons/Havoc/fire_3.wav",
+        "^weapons/Havoc/fire_2.wav",
+        "^weapons/Havoc/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Start")
@@ -153,13 +153,13 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/Havoc/fire_loop_1.wav",
-		"^weapons/Havoc/fire_loop_2.wav",
-		"^weapons/Havoc/fire_loop_3.wav",
-		"^weapons/Havoc/fire_loop_4.wav",
-		"^weapons/Havoc/fire_loop_5.wav",
-		"^weapons/Havoc/fire_loop_6.wav",
-		"^weapons/Havoc/fire_loop_7.wav",
-		"^weapons/Havoc/fire_loop_8.wav",
+        "^weapons/Havoc/fire_loop_2.wav",
+        "^weapons/Havoc/fire_loop_3.wav",
+        "^weapons/Havoc/fire_loop_4.wav",
+        "^weapons/Havoc/fire_loop_5.wav",
+        "^weapons/Havoc/fire_loop_6.wav",
+        "^weapons/Havoc/fire_loop_7.wav",
+        "^weapons/Havoc/fire_loop_8.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Havoc.Fire")
@@ -172,8 +172,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/Havoc/fire_alt1.wav",
-		"^weapons/Havoc/fire_alt2.wav",
-		"^weapons/Havoc/fire_alt3.wav",
+        "^weapons/Havoc/fire_alt2.wav",
+        "^weapons/Havoc/fire_alt3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Alt")
@@ -186,8 +186,8 @@ sound.Add( {
     pitch = {90, 110},
     sound = {
         "^weapons/devotion/fire_1.wav",
-		"^weapons/devotion/fire_2.wav",
-		"^weapons/devotion/fire_3.wav",
+        "^weapons/devotion/fire_2.wav",
+        "^weapons/devotion/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Devotion.Fire_Start")
@@ -200,15 +200,15 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/devotion/fire_loop_1.wav",
-		"^weapons/devotion/fire_loop_2.wav",
-		"^weapons/devotion/fire_loop_3.wav",
-		"^weapons/devotion/fire_loop_4.wav",
-		"^weapons/devotion/fire_loop_5.wav",
-		"^weapons/devotion/fire_loop_6.wav",
-		"^weapons/devotion/fire_loop_7.wav",
-		"^weapons/devotion/fire_loop_8.wav",
-		"^weapons/devotion/fire_loop_9.wav",
-		"^weapons/devotion/fire_loop_10.wav",
+        "^weapons/devotion/fire_loop_2.wav",
+        "^weapons/devotion/fire_loop_3.wav",
+        "^weapons/devotion/fire_loop_4.wav",
+        "^weapons/devotion/fire_loop_5.wav",
+        "^weapons/devotion/fire_loop_6.wav",
+        "^weapons/devotion/fire_loop_7.wav",
+        "^weapons/devotion/fire_loop_8.wav",
+        "^weapons/devotion/fire_loop_9.wav",
+        "^weapons/devotion/fire_loop_10.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Devotion.Fire")
@@ -221,8 +221,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/eva/fire_1.wav",
-		"^weapons/eva/fire_2.wav",
-		"^weapons/eva/fire_3.wav",
+        "^weapons/eva/fire_2.wav",
+        "^weapons/eva/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Eva.Fire")
@@ -235,8 +235,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/wingman/fire_1.wav",
-		"^weapons/wingman/fire_2.wav",
-		"^weapons/wingman/fire_3.wav",
+        "^weapons/wingman/fire_2.wav",
+        "^weapons/wingman/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Wingman.Fire")
@@ -249,8 +249,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/mastiff/fire_1.wav",
-		"^weapons/mastiff/fire_2.wav",
-		"^weapons/mastiff/fire_3.wav",
+        "^weapons/mastiff/fire_2.wav",
+        "^weapons/mastiff/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Mastiff.Fire")
@@ -263,8 +263,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/p2020/fire_1.wav",
-		"^weapons/p2020/fire_2.wav",
-		"^weapons/p2020/fire_3.wav",
+        "^weapons/p2020/fire_2.wav",
+        "^weapons/p2020/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.P2020.Fire")
@@ -277,8 +277,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/p2020/fire_hammerpoint_1.wav",
-		"^weapons/p2020/fire_hammerpoint_2.wav",
-		"^weapons/p2020/fire_hammerpoint_3.wav",
+        "^weapons/p2020/fire_hammerpoint_2.wav",
+        "^weapons/p2020/fire_hammerpoint_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.P2020_HammerPoint.Fire")
@@ -291,8 +291,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/G7/fire_1.wav",
-		"^weapons/G7/fire_2.wav",
-		"^weapons/G7/fire_3.wav",
+        "^weapons/G7/fire_2.wav",
+        "^weapons/G7/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.G7.Fire")
@@ -305,8 +305,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/Longbow/fire_1.wav",
-		"^weapons/Longbow/fire_2.wav",
-		"^weapons/Longbow/fire_3.wav",
+        "^weapons/Longbow/fire_2.wav",
+        "^weapons/Longbow/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
@@ -319,8 +319,8 @@ sound.Add( {
 --    pitch = {95, 105},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_01.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_02.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_03.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_02.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_CloudyTail_2ch_v2_03.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Peacekeeper.CloudyTail")
@@ -333,11 +333,11 @@ sound.Add( {
 --    pitch = {95, 105},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_01.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_02.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_03.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_04.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_05.wav",
-		"^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_06.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_02.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_03.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_04.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_05.wav",
+        "^weapons/peacekeeper/Wpn_Peacekeeper_1p_WpnFire_Powerchord_2ch_v3_06.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Peacekeeper.Powerchord")
@@ -350,8 +350,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/peacekeeper/fire_1.wav",
-		"^weapons/peacekeeper/fire_2.wav",
-		"^weapons/peacekeeper/fire_3.wav",
+        "^weapons/peacekeeper/fire_2.wav",
+        "^weapons/peacekeeper/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Peacekeeper.Fire")
@@ -402,10 +402,10 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/prowler/fire_loop_1.wav",
-		"^weapons/prowler/fire_loop_2.wav",
-		"^weapons/prowler/fire_loop_3.wav",
-		"^weapons/prowler/fire_loop_4.wav",
-		"^weapons/prowler/fire_loop_5.wav",
+        "^weapons/prowler/fire_loop_2.wav",
+        "^weapons/prowler/fire_loop_3.wav",
+        "^weapons/prowler/fire_loop_4.wav",
+        "^weapons/prowler/fire_loop_5.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Prowler.Fire")
@@ -432,13 +432,13 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/re45/fire_loop_1.wav",
-		"^weapons/re45/fire_loop_2.wav",
-		"^weapons/re45/fire_loop_3.wav",
-		"^weapons/re45/fire_loop_4.wav",
-		"^weapons/re45/fire_loop_5.wav",
-		"^weapons/re45/fire_loop_6.wav",
-		"^weapons/re45/fire_loop_7.wav",
-		"^weapons/re45/fire_loop_8.wav",
+        "^weapons/re45/fire_loop_2.wav",
+        "^weapons/re45/fire_loop_3.wav",
+        "^weapons/re45/fire_loop_4.wav",
+        "^weapons/re45/fire_loop_5.wav",
+        "^weapons/re45/fire_loop_6.wav",
+        "^weapons/re45/fire_loop_7.wav",
+        "^weapons/re45/fire_loop_8.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.RE45.Fire")
@@ -465,11 +465,11 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/re45/fire_hammerpoint_loop_1.wav",
-		"^weapons/re45/fire_hammerpoint_loop_2.wav",
-		"^weapons/re45/fire_hammerpoint_loop_3.wav",
-		"^weapons/re45/fire_hammerpoint_loop_4.wav",
-		"^weapons/re45/fire_hammerpoint_loop_5.wav",
-		"^weapons/re45/fire_hammerpoint_loop_6.wav",
+        "^weapons/re45/fire_hammerpoint_loop_2.wav",
+        "^weapons/re45/fire_hammerpoint_loop_3.wav",
+        "^weapons/re45/fire_hammerpoint_loop_4.wav",
+        "^weapons/re45/fire_hammerpoint_loop_5.wav",
+        "^weapons/re45/fire_hammerpoint_loop_6.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire")

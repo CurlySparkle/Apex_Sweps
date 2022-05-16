@@ -181,3 +181,5 @@ SWEP.Animations = {
     },
 }
 
+SWEP.TTTWeaponType = {"weapon_zm_molotov", "weapon_ttt_confgrenade", "weapon_ttt_smokegrenade"}
+SWEP.TTTWeight = 100

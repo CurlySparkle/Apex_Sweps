@@ -70,16 +70,10 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 17,
-        DamageMin = 17,
-    },
     [1] = {
-        -- Arcwc Settings
-        Damage = 19,
-        DamageMin = 15,
-    }
+        Damage = 25,
+        DamageMin = 25,
+    },
 }
 
 SWEP.Tracer = "arccw_apex_tracer_ar"
@@ -146,17 +140,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
     Pos = Vector(0, -2, 0),
@@ -359,18 +342,21 @@ SWEP.Animations = {
 },
 }
 
-SWEP.Hook_Think = function(wep)
-	local heat = wep:GetHeat()
-	local alertheat = (80*wep.HeatCapacity)/100
+SWEP.TTTWeaponType = "weapon_zm_sledge"
+SWEP.TTTWeight = 100
 
-	if heat >= alertheat and heat < wep:GetMaxHeat() then
-		if wep.CreatedHeatSound == false then
-			wep.HeatAlarm = CreateSound(wep,"weapons/lstar/Wpn_LSTAR_1p_OverheatAlarm_2ch_v1_01.wav")
-			wep.HeatAlarm:Play()
-			wep.CreatedHeatSound = true
-		end
-	else
-		wep.CreatedHeatSound = false
-		if wep.HeatAlarm then wep.HeatAlarm:Stop() end
-	end
+SWEP.Hook_Think = function(wep)
+    local heat = wep:GetHeat()
+    local alertheat = (80 * wep.HeatCapacity) / 100
+
+    if heat >= alertheat and heat < wep:GetMaxHeat() then
+        if wep.CreatedHeatSound == false then
+            wep.HeatAlarm = CreateSound(wep,"weapons/lstar/Wpn_LSTAR_1p_OverheatAlarm_2ch_v1_01.wav")
+            wep.HeatAlarm:Play()
+            wep.CreatedHeatSound = true
+        end
+    else
+        wep.CreatedHeatSound = false
+        if wep.HeatAlarm then wep.HeatAlarm:Stop() end
+    end
 end

@@ -47,23 +47,19 @@ SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 14
 SWEP.DamageMin = 14
-SWEP.Range = 15
-SWEP.Penetration = 15
+SWEP.Range = 90
+SWEP.Penetration = 9
 SWEP.PhysBulletMuzzleVelocity = 18000 * ArcCW.HUToM
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 14,
-        DamageMin = 14,
-        Penetration = 15,
-    },
     [1] = {
-        -- Arcwc Settings
         Damage = 21,
         DamageMin = 18,
-        Penetration = 20,
-    }
+    },
+    [2] = {
+        Damage = 10, -- No idea how balanced this is!
+        DamageMin = 10,
+    },
 }
 
 SWEP.BodyDamageMults = {
@@ -140,19 +136,6 @@ SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
-
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.LungeLength = 64
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
     Pos = Vector(0, 0, 0),
@@ -381,3 +364,6 @@ SWEP.Animations = {
         },
     },
 }
+
+SWEP.TTTWeaponType = "weapon_zm_mac10"
+SWEP.TTTWeight = 100

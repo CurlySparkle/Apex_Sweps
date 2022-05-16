@@ -37,18 +37,14 @@ SWEP.RangeMin = 0
 SWEP.Range = 50
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 11,
-        DamageMin = 11,
-        Penetration = 2,
-    },
     [1] = {
-        -- Arcwc Settings
         Damage = 14,
         DamageMin = 14,
-        Penetration = 10,
-    }
+    },
+    [1] = {
+        Damage = 9, -- equivalent to TTT shotgun but slightly better since you can line up headshots
+        DamageMin = 9,
+    },
 }
 
 SWEP.HullSize = 0
@@ -122,7 +118,7 @@ SWEP.NPCWeaponType = "weapon_shotgun"
 SWEP.NPCWeight = 100
 
 SWEP.AccuracyMOA = 40 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
+SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 50
 
 SWEP.Primary.Ammo = "apex_shotgun" -- what ammo type the gun uses
@@ -194,17 +190,6 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
-
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.AttachmentElements = {
     ["sight"] = {
@@ -412,3 +397,6 @@ SWEP.Animations = {
         Source = "sprint_out",
     },
 }
+
+SWEP.TTTWeaponType = "weapon_zm_shotgun"
+SWEP.TTTWeight = 100
