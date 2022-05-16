@@ -56,6 +56,9 @@ SWEP.Range = 15
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 22000 * ArcCW.HUToM
 
+SWEP.ShootEntity = "arccw_apex_proj_lstarplasma" -- entity to fire, if any
+SWEP.MuzzleVelocity = 300 -- projectile or phys bullet muzzle velocity
+
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 1.75,
     [HITGROUP_CHEST] = 1,

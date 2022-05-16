@@ -38,6 +38,7 @@ PrecacheParticleSystem("tfa_apex_muzzle_sniper")
 PrecacheParticleSystem("tfa_apex_energy_muzzle_big") 
 PrecacheParticleSystem("tfa_apex_energy_muzzle_medium")
 PrecacheParticleSystem("tfa_apex_energy_muzzle_shotgun")
+PrecacheParticleSystem("tfa_apex_energy_muzzle_lstar")
 
 --ENERGY TRACERS
 PrecacheParticleSystem("tfa_apex_energy_tracer_ar")
@@ -47,5 +48,5 @@ PrecacheParticleSystem("tfa_apex_energy_tracer_shotgun")
 PrecacheParticleSystem("tfa_apex_energy_tracer_smg") 
 PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
 PrecacheParticleSystem("tfa_apex_tracer_havoc")
-
-
+PrecacheParticleSystem("tfa_apex_lstar_projectile")
+PrecacheParticleSystem("tfa_apex_lstar_explode_core")
