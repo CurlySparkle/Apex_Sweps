@@ -1,0 +1,15 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\rampage\ammo_counter_screen_bg_col"
+"$model" "1"
+"$selfillum" "1"
+"Proxies" 
+    	{ 
+      		"AnimatedTexture" 
+       		{ 
+          			"animatedTextureVar" "$basetexture" 
+          			"animatedTextureFrameNumVar" "$frame" 
+          			"animatedTextureFrameRate" "30"
+       		}
+   	 }
+}

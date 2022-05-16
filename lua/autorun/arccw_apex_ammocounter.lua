@@ -60,5 +60,36 @@ if CLIENT then
                 end
         end
     } )
+	
+	matproxy.Add( {
+        name = "ArcCW_AMMO_BAR_F",
+        init = function( self, mat, values )
+            self.ResultTo = values.resultvar
+            self.Prefix = values.prefixstring
+        end,
+        bind = function( self, mat, ent )
+                local Place = self.ResultTo
+                local texture
+
+                if LocalPlayer():GetActiveWeapon() then
+                    local OurWeapon = LocalPlayer():GetActiveWeapon()
+                    if OurWeapon.ArcCW then
+                        local KnowYourPlace = string.sub(string.reverse(OurWeapon:Clip1()), Place, Place)
+                        local digits = string.format( tonumber(KnowYourPlace) or 0 )
+						
+						if OurWeapon:Clip1() >= 9 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
+							texture = self.Prefix .. 9
+						else
+							texture = self.Prefix .. digits
+                        end
+
+                    end
+                end
+
+                if texture then
+                    mat:SetTexture( "$basetexture", texture )
+                end
+        end
+    } )
 end
 

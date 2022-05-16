@@ -434,7 +434,7 @@ SWEP.Hook_Think = function(wep)
         if SERVER then
             local f = wep:GetNWFloat("ApexCharge", 0)
             if f >= 1 and charge < 1 then
-                wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick3_2ch_v1_01.wav")
+                wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick4_2ch_v1_01.wav")
             elseif f >= 0.67 and charge < 0.67 then
                 wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick2_2ch_v1_01.wav")
             elseif f >= 0.33 and charge < 0.33 then

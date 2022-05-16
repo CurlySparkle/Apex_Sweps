@@ -6,7 +6,7 @@
 //     "$color2" "0.9 1 1"
 	Proxies // proxies are listed inside this block
 	{
-		ArcCW_AMMO
+		ArcCW_AMMO_BAR_F
 		{
 			resultVar 1
 			prefixstring "ammocounter/plate_tripletake/numbers_plate"
