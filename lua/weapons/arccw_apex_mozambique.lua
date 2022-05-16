@@ -348,4 +348,4 @@ SWEP.Hook_Think = function(wep)
 end
 
 SWEP.TTTWeaponType = {"weapon_zm_pistol", "weapon_ttt_glock", "weapon_zm_revolver"}
-SWEP.TTTWeight = 50
+SWEP.TTTWeight = 35

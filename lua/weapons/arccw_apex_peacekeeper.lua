@@ -439,4 +439,4 @@ SWEP.Hook_PostFireBullets = function(wep)
 end
 
 SWEP.TTTWeaponType = "weapon_zm_shotgun"
-SWEP.TTTWeight = 100
+SWEP.TTTWeight = 75
