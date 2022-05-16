@@ -203,7 +203,7 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(90, 0, -90),
         },
-		ExtraSightDist = 1,
+        ExtraSightDist = 1,
         InstalledEles = {"weapon_sights", "weapon_dot"},
         CorrectivePos = Vector(1.98,0,-0.23),
         CorrectiveAng = Angle(-0.011, 0.004, 4.242)
@@ -221,7 +221,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        Slot = {"apex_standard_stock"}
+        Slot = {"apex_stock_standard2"}
     },
     {
         PrintName = "Magazine",

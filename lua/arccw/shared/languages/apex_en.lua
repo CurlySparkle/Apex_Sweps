@@ -26,3 +26,7 @@ L["apex.barrel.stabilizer.3"] = "An attachment that reduces weapon recoil signif
 L["apex.barrel.suppressor.1"] = "An attachment that increases weapon accuracy and muzzle velocity by a little."
 L["apex.barrel.suppressor.2"] = "An attachment that increases weapon accuracy and muzzle velocity noticeably."
 L["apex.barrel.suppressor.3"] = "An attachment that increases weapon accuracy and muzzle velocity significantly."
+
+L["apex.stock.1"] = "An attachment that improves weapon handling by a little."
+L["apex.stock.2"] = "An attachment that improves weapon handling noticeably."
+L["apex.stock.3"] = "An attachment that improves weapon handling significantly."

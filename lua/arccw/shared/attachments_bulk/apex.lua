@@ -222,6 +222,156 @@ for i = 1, 3 do
 end
 
 -------------------------------------------------
+-- Stocks
+-------------------------------------------------
+
+local stock_types = {
+    ["standard"] = {
+        "Standard Stock",
+        "models/weapons/attachments/upgrades/stock_regular.mdl",
+        "entities/attach_icons/apex_stock_{}.png",
+        {
+            -- All (excl. L-STAR)
+            [1] = {
+                [1] = {
+                    Mult_ReloadTime = 0.967,
+                    Mult_DrawTime = 0.85,
+                    Mult_HolsterTime = 0.85,
+                    Mult_SightTime = 0.85,
+                    Mult_Sway = 0.85,
+                },
+                [2] = {
+                    Mult_ReloadTime = 0.933,
+                    Mult_DrawTime = 0.8,
+                    Mult_HolsterTime = 0.8,
+                    Mult_SightTime = 0.8,
+                    Mult_Sway = 0.75,
+                },
+                [3] = {
+                    Mult_ReloadTime = 0.9,
+                    Mult_DrawTime = 0.75,
+                    Mult_HolsterTime = 0.75,
+                    Mult_SightTime = 0.75,
+                    Mult_Sway = 0.55,
+                }
+            },
+            -- L-STAR
+            [2] = {
+                [1] = {
+                    Mult_FixTime = 0.967,
+                    Mult_DrawTime = 0.85,
+                    Mult_HolsterTime = 0.85,
+                    Mult_SightTime = 0.85,
+                    Mult_Sway = 0.85,
+                },
+                [2] = {
+                    Mult_FixTime = 0.933,
+                    Mult_DrawTime = 0.8,
+                    Mult_HolsterTime = 0.8,
+                    Mult_SightTime = 0.8,
+                    Mult_Sway = 0.75,
+                },
+                [3] = {
+                    Mult_FixTime = 0.9,
+                    Mult_DrawTime = 0.75,
+                    Mult_HolsterTime = 0.75,
+                    Mult_SightTime = 0.75,
+                    Mult_Sway = 0.55,
+                }
+            }
+        },
+    },
+    ["sniper"] = {
+        "Sniper Stock",
+        "models/weapons/attachments/upgrades/stock_sniper.mdl",
+        "entities/attach_icons/apex_stock_sniper_{}.png",
+        {
+            -- All (excl. 30-30)
+            [1] = {
+                [1] = {
+                    Mult_ReloadTime = 0.967,
+                    Mult_DrawTime = 0.9,
+                    Mult_HolsterTime = 0.9,
+                    Mult_SightTime = 0.9,
+                    Mult_Sway = 0.85,
+                },
+                [2] = {
+                    Mult_ReloadTime = 0.933,
+                    Mult_DrawTime = 0.85,
+                    Mult_HolsterTime = 0.85,
+                    Mult_SightTime = 0.85,
+                    Mult_Sway = 0.5,
+                },
+                [3] = {
+                    Mult_ReloadTime = 0.9,
+                    Mult_DrawTime = 0.8,
+                    Mult_HolsterTime = 0.8,
+                    Mult_SightTime = 0.8,
+                    Mult_Sway = 0.2,
+                }
+            },
+            -- 30-30
+            [2] = {
+                [1] = {
+                    Mult_ReloadTime = 0.95,
+                    Mult_DrawTime = 0.9,
+                    Mult_HolsterTime = 0.9,
+                    Mult_SightTime = 0.9,
+                    Mult_Sway = 0.85,
+                },
+                [2] = {
+                    Mult_ReloadTime = 0.875,
+                    Mult_DrawTime = 0.85,
+                    Mult_HolsterTime = 0.85,
+                    Mult_SightTime = 0.85,
+                    Mult_Sway = 0.5,
+                },
+                [3] = {
+                    Mult_ReloadTime = 0.8,
+                    Mult_DrawTime = 0.8,
+                    Mult_HolsterTime = 0.8,
+                    Mult_SightTime = 0.8,
+                    Mult_Sway = 0.2,
+                }
+            }
+        },
+    }
+}
+
+
+for k, v in pairs(stock_types) do
+    for j = 1, #v[4] do
+        for i = 1, #v[4][j] do
+            local att = table.Copy(v[4][j][i])
+            local l =  " - Level " .. i
+            att.PrintName = v[1] .. l
+            att.AbbrevName = (v[5] or v[1]) .. l
+            local icon = string.Replace(v[3], "{}", i)
+            att.Icon = Material(icon, "mips smooth")
+            att.Description = "apex.stock." .. i
+            att.AutoStats = true
+            att.Slot = "apex_stock_" .. k .. (j > 1 and j or "")
+            att.SortOrder = i
+
+            att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+            att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+            att.ToggleSound = "items/UI_Menu_Select.wav"
+
+            if j > 1 then
+                att.InvAtt = "apex_stock_" .. k .. "_" .. i
+            else
+                att.EntityIcon = icon
+                att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+            end
+
+            att.DroppedModel = v[2]
+
+            ArcCW.LoadAttachmentType(att, "apex_stock_" .. k .. (j > 1 and j or "") .. "_" .. i)
+        end
+    end
+end
+
+-------------------------------------------------
 -- Hop-ups
 -------------------------------------------------
 
