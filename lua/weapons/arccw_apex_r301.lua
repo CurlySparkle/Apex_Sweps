@@ -323,6 +323,12 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_SMG_End_V2_2ch_01.wav", t = 316 / 30}
     },
     },
+    ["1_to_2"] = {
+        Source = "firemode1",
+    },
+    ["2_to_1"] = {
+        Source = "firemode2",
+    },
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
