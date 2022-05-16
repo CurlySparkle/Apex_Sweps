@@ -358,3 +358,19 @@ SWEP.Animations = {
     },
 },
 }
+
+SWEP.Hook_Think = function(wep)
+	local heat = wep:GetHeat()
+	local alertheat = (80*wep.HeatCapacity)/100
+
+	if heat >= alertheat and heat < wep:GetMaxHeat() then
+		if wep.CreatedHeatSound == false then
+			wep.HeatAlarm = CreateSound(wep,"weapons/lstar/Wpn_LSTAR_1p_OverheatAlarm_2ch_v1_01.wav")
+			wep.HeatAlarm:Play()
+			wep.CreatedHeatSound = true
+		end
+	else
+		wep.CreatedHeatSound = false
+		if wep.HeatAlarm then wep.HeatAlarm:Stop() end
+	end
+end
