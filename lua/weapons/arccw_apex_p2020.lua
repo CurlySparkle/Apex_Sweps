@@ -176,6 +176,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 SWEP.GuaranteeLaser = true
 
@@ -202,6 +206,12 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_qdraw", "apex_hopup_hp", "apex_hopup_selfire3"}
+    },
+    {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
@@ -310,6 +320,12 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_02.wav", t = 240 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 316 / 30}
     },
+    },
+    ["1_to_2"] = {
+        Source = "firemode_1",
+    },
+    ["2_to_1"] = {
+        Source = "firemode_2",
     },
     ["reload"] = {
         Source = "reload",
