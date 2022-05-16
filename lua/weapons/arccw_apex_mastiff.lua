@@ -41,7 +41,7 @@ SWEP.Apex_Balance = {
         Damage = 14,
         DamageMin = 14,
     },
-    [1] = {
+    [2] = {
         Damage = 9, -- equivalent to TTT shotgun but slightly better since you can line up headshots
         DamageMin = 9,
     },
@@ -108,6 +108,9 @@ SWEP.Firemodes = {
     {
         PrintName = "fcg.slam",
         Mode = 2,
+    },
+    {
+        Mode = 0
     }
 }
 
@@ -237,9 +240,6 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    ["idle_empty"] = {
-        Source = "idle_dry",
-    },
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
@@ -258,14 +258,7 @@ SWEP.Animations = {
         Source = "iron_idle",
     },
     ["fire"] = {
-        Source = {"fire", "fire"},
-        ShellEjectAt = 0.1,
-        SoundTable = {
-            {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
-        },
-    },
-    ["fire_empty"] = {
-        Source = {"fire_dry"},
+        Source = "fire",
         ShellEjectAt = 0.1,
         SoundTable = {
             {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
