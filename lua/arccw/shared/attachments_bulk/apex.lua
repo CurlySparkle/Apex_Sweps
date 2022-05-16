@@ -694,6 +694,7 @@ local hopups = {
                     },
                     {
                         PrintName = "fcg.apex.shatter",
+						ApexCharge = true,
                         Mode = 1,
                         Override_Num = 7,
                         Override_Damage = 49,
