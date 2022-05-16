@@ -2,18 +2,16 @@ L = {}
 
 L["fcg.apex.charge"] = "Precision Choke"
 L["fcg.apex.charge.abbrev"] = "CHOKE"
-
 L["fcg.apex.shatter"] = "Shatter Caps"
 L["fcg.apex.shatter.abbrev"] = "SHTR"
-
 L["fcg.apex.light"] = "Light Rounds"
 L["fcg.apex.light.abbrev"] = "LIGHT"
-
 L["fcg.apex.heavy"] = "Heavy Rounds"
 L["fcg.apex.heavy.abbrev"] = "HEAVY"
-
 L["fcg.apex.alt"] = "Alternator"
 L["fcg.apex.alt.abbrev"] = "ALTR"
+L["fcg.apex.rapid"] = "Rapid Fire"
+L["fcg.apex.rapid.abbrev"] = "RAPID"
 
 L["apex.mag.1"] = "An attachment that increases weapon capacity by a little."
 L["apex.mag.2"] = "An attachment that increases weapon capacity noticeably."

@@ -188,7 +188,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hopup",
-        Slot = {"apex_hopup_skull", "apex_hopup_qdraw"}
+        Slot = {"apex_hopup_skull", "apex_hopup_qdraw", "apex_hopup_loader"}
     },
     {
         PrintName = "Skin",

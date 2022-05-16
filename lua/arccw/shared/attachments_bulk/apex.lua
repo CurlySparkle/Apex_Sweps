@@ -225,6 +225,20 @@ end
 -- Hop-ups
 -------------------------------------------------
 
+local function loadertime(wep, data)
+    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
+    if wep:Clip1() > 0 and wep:Clip1() <= cs * (wep:GetBuff_Override("ApexLoaderMin") or 0) then
+        data.mult = data.mult * 0.75
+    end
+end
+local function loadercapacity(wep, data)
+    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
+    if wep:Clip1() > 0 and (wep:Clip1() <= cs * (wep:GetBuff_Override("ApexLoaderMin") or 0) or wep:Clip1() > cs) then
+        return cs + (wep:GetBuff_Override("ApexLoaderAdd") or 0)
+    end
+end
+
+
 local hopups = {
     ["dtap"] = {
         name = "Double Tap Trigger",
@@ -398,6 +412,25 @@ local hopups = {
                     },
                     {
                         Mode = 1,
+                    },
+                    {
+                        Mode = 0
+                    }
+                }
+            },
+            -- G7 Scout
+            [5] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe G7 Scout receives a faster semi-automatic firemode with less damage.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        Mode = 1,
+                        Mult_RPM = 420 / 240,
+                        Override_Damage = 30,
+                        Override_DamageMin = 30,
+                        PrintName = "fcg.apex.rapid",
                     },
                     {
                         Mode = 0
@@ -615,6 +648,36 @@ local hopups = {
             },
         }
     },
+    ["loader"] = {
+        name = "Boosted Loader",
+        icon = "entities/attach_icons/hopup_apex_choke.png",
+        desc = "Reloading while low and not empty increases speed and grants additional ammo.",
+        variants = {
+            -- Wingman
+            [1] = {
+                ApexLoaderMin = 0.34,
+                ApexLoaderAdd = 2,
+                M_Hook_Mult_ReloadTime = loadertime,
+                Hook_GetCapacity = loadercapacity
+            },
+            -- Hemlok Burst AR
+            [2] = {
+                ApexLoaderAdd = 6,
+                M_Hook_Mult_ReloadTime = function(wep, data)
+                    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
+                    if wep:Clip1() > 0 and wep:Clip1() <= 3 + (cs - 18) * 0.5 then
+                        data.mult = data.mult * 0.75
+                    end
+                end,
+                Hook_GetCapacity = function(wep, data)
+                    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
+                    if wep:Clip1() > 0 and (wep:Clip1() <= 3 + (cs - 18) * 0.5 or wep:Clip1() > cs) then
+                        return cs + (wep:GetBuff_Override("ApexLoaderAdd") or 0)
+                    end
+                end
+            },
+        }
+    }
 }
 
 for k, v in SortedPairs(hopups) do
