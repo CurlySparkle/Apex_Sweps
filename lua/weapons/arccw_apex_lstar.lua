@@ -9,9 +9,9 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "L-STAR EMG"
-SWEP.Trivia_Class = "Light machine gun"
-SWEP.Trivia_Desc = "The L-STAR EMG, also called L-STAR, is an energy machine gun that utilizes Energy Ammo. It fires red plasma orb-like projectiles."
-SWEP.Trivia_Manufacturer = "Wonyeon"
+SWEP.Trivia_Class = "Light Machine Gun"
+SWEP.Trivia_Desc = "Cyclic particle accelerating weapon that fires hot plasma bursts. Sustained fire will melt the generator core, requiring a reload."
+SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 3
 
@@ -82,11 +82,14 @@ SWEP.Apex_Balance = {
 SWEP.Tracer = "arccw_apex_tracer_ar"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
+SWEP.PhysTracerProfile = 1
 
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 30
 SWEP.MaxRecoilBlowback = 1
 SWEP.BottomlessClip = true
+
+SWEP.AlwaysPhysBullet = true
 
 SWEP.Recoil = 0.7
 SWEP.RecoilSide = 0.2
@@ -106,9 +109,9 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 2
-SWEP.HipDispersion = 400
-SWEP.MoveDispersion = 100
+SWEP.AccuracyMOA = 5
+SWEP.HipDispersion = 350
+SWEP.MoveDispersion = 50
 SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "apex_energy"
@@ -218,7 +221,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Slot = {"apex_mag_energy"}
+        Slot = {"apex_mag_lstar"}
     },
     {
         PrintName = "Skin",
@@ -239,10 +242,10 @@ SWEP.Attachments = {
 }
 
 SWEP.Jamming = true
-SWEP.HeatCapacity = 30 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
-SWEP.HeatDissipation = 2 -- rounds' worth of heat lost per second
+SWEP.HeatCapacity = 20 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
+SWEP.HeatDissipation = 10 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
-SWEP.HeatDelayTime = 0.5
+SWEP.HeatDelayTime = 0.125
 SWEP.HeatFix = true -- when the "fix" animation is played, all heat is restored.
 SWEP.HeatOverflow = false -- if true, heat is allowed to exceed capacity (this only applies when the default overheat handling is overridden)
 
@@ -310,9 +313,9 @@ SWEP.Animations = {
             {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt2_2ch_v1_01.wav", t = 25 / 30},
             {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt3_2ch_v1_01.wav", t = 55 / 30},
             {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt4_2ch_v1_01.wav", t = 80 / 30},
-			{p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt5_2ch_v1_01.wav", t = 115 / 30},
-			{p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.wav", t = 135 / 30},
-			{p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt7_2ch_v1_01.wav", t = 155 / 30}
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt5_2ch_v1_01.wav", t = 115 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.wav", t = 135 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt7_2ch_v1_01.wav", t = 155 / 30}
     },
     },
     ["fix"] = {
@@ -326,10 +329,10 @@ SWEP.Animations = {
             {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_c_1ch_v1_01.wav", t = 5 / 30},
             {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt1_2ch_v1_01.wav", t = 10 / 30},
             {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt2_2ch_v1_01.wav", t = 25 / 30},
-			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt3_2ch_v1_01.wav", t = 55 / 30},
-			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt4_2ch_v1_01.wav", t = 65 / 30},
-			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt5_2ch_v1_01.wav", t = 75 / 30},
-			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt6_2ch_v1_01.wav", t = 85 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt3_2ch_v1_01.wav", t = 55 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt4_2ch_v1_01.wav", t = 65 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt5_2ch_v1_01.wav", t = 75 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt6_2ch_v1_01.wav", t = 85 / 30},
         },
     },
     ["reload"] = {

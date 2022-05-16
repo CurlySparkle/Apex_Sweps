@@ -9,6 +9,7 @@ att.AutoStats = true
 att.Slot = {"apex_standard_stock"}
 
 -- att.Mult_Recoil = 0.95
+att.Mult_FixTime = 0.97
 att.Mult_ReloadTime = 0.97
 att.Mult_DrawTime = 0.85
 att.Mult_HipDispersion = 1.05

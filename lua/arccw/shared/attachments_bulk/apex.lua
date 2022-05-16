@@ -85,13 +85,14 @@ for k, v in pairs(mag_types) do
             att.AutoStats = true
             att.Slot = "apex_mag_" .. k .. j
             att.SortOrder = i
-            att.Add_ClipSize = v[2][j][i]
 
-            att.EntityIcon = icon
-            att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+            att.Add_ClipSize = v[2][j][i]
 
             if j > 1 then
                 att.InvAtt = "apex_mag_" .. k .. "1_" .. i
+            else
+                att.EntityIcon = icon
+                att.EntityCategory = "ArcCW - Apex Legends (Att.)"
             end
 
             if i == 4 then
@@ -106,6 +107,27 @@ for k, v in pairs(mag_types) do
             ArcCW.LoadAttachmentType(att, "apex_mag_" .. k .. j .. "_" .. i)
         end
     end
+end
+
+-- L-STAR magazine
+for i = 1, 4 do
+    local att = {}
+    att.PrintName = "Extended Energy Magazine - Level " .. i
+    att.AbbrevName = "Extended Mag - Level " .. i
+    att.Icon = Material("entities/attach_icons/apex_ext_energy_" .. i .. ".png", "mips smooth")
+    att.Description = "apex.mag." .. i
+    att.AutoStats = true
+    att.Slot = "apex_mag_lstar"
+    att.SortOrder = i
+
+    att.Mult_HeatCapacity = 1 + math.min(i, 3) * 0.1
+    att.Mult_HeatDissipation = 1 + math.min(i, 3) * 0.1
+
+    att.InvAtt = "apex_mag_energy1_" .. i
+
+    att.DroppedModel = "models/weapons/attachments/upgrades/mag_energy.mdl"
+
+    ArcCW.LoadAttachmentType(att, "apex_mag_lstar_" .. i)
 end
 
 -------------------------------------------------
