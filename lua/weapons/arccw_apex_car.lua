@@ -344,7 +344,6 @@ SWEP.Animations = {
     },
     ["1_to_2"] = {
         Source = {"switchammo1"},
-        Blocking = true,
         LHIK = true,
         LHIKIn = 0.6,
         LHIKOut = 0.6,
@@ -359,7 +358,6 @@ SWEP.Animations = {
     },
     ["2_to_1"] = {
         Source = {"switchammo2"},
-        Blocking = true,
         LHIK = true,
         LHIKIn = 0.6,
         LHIKOut = 0.6,
@@ -370,8 +368,8 @@ SWEP.Animations = {
             {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertBump__fr059_v1_01.wav", t = 59 / 30},
             {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr069_v1_01.wav", t = 69 / 30},
             {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr088_v1_01.wav", t = 88 / 30}
+        },
     },
-},
 }
 
 SWEP.TTTWeaponType = {"weapon_ttt_m16", "weapon_zm_mac10"}

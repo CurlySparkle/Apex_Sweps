@@ -101,9 +101,6 @@ SWEP.RunawayBurst = false
 SWEP.Firemodes = {
     {
         Mode = 1,
-    },
-    {
-        Mode = 0
     }
 }
 

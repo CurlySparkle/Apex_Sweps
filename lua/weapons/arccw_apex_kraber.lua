@@ -89,9 +89,6 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = "fcg.bolt"
-    },
-    {
-        Mode = 0
     }
 }
 

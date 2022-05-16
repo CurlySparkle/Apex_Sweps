@@ -73,9 +73,6 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = "fcg.dact"
-    },
-    {
-        Mode = 0
     }
 }
 

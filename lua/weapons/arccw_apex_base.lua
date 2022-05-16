@@ -18,6 +18,8 @@ function SWEP:Initialize()
     end
 end
 
+SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
+
 SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.LungeLength = 72
 SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
@@ -33,6 +35,15 @@ SWEP.MeleeAttackTime = 0.2
 
 SWEP.Sway = 0.4
 
+SWEP.LockSightsInPriorityAnim = true
+
 if ArcCW.Apex.GetBalanceMode() == 2 then
     SWEP.MeleeDamage = 30
+end
+
+SWEP.Hook_ChangeFiremode = function(wep)
+    if wep:GetState() == ArcCW.STATE_SIGHTS then
+        wep:ExitSights()
+        wep:SetPriorityAnim(CurTime() + 0.75)
+    end
 end

@@ -511,9 +511,6 @@ local hopups = {
                         Mult_RPM = 900 / 1260,
                         Mult_Recoil = 1.25,
                         Mult_RecoilSide = 1.5
-                    },
-                    {
-                        Mode = 0
                     }
                 }
             },
@@ -535,9 +532,6 @@ local hopups = {
                         Override_Tracer = "arccw_apex_tracer_havoc",
                         Override_AlwaysPhysBullet = false,
                         Override_NeverPhysBullet = true,
-                    },
-                    {
-                        Mode = 0
                     }
                 },
                 Hook_GetShootSound = function(wep, fsound)
@@ -557,9 +551,6 @@ local hopups = {
                         PostBurstDelay = 0.25,
                         RunawayBurst = true,
                         Mult_PhysBulletMuzzleVelocity = 1.5,
-                    },
-                    {
-                        Mode = 0
                     }
                 }
             },
@@ -578,9 +569,6 @@ local hopups = {
                     },
                     {
                         Mode = 1,
-                    },
-                    {
-                        Mode = 0
                     }
                 }
             },
@@ -598,9 +586,6 @@ local hopups = {
                         Mult_DamageMin = 30 / 36,
                         Mult_Recoil = 0.85,
                         PrintName = "fcg.apex.rapid",
-                    },
-                    {
-                        Mode = 0
                     }
                 }
             },
@@ -625,9 +610,6 @@ local hopups = {
                         Override_Tracer = "arccw_apex_tracer_havoc",
                         Override_AlwaysPhysBullet = false,
                         Override_NeverPhysBullet = true,
-                    },
-                    {
-                        Mode = 0
                     }
                 },
                 Hook_GetShootSound = function(wep, fsound)
@@ -937,9 +919,6 @@ local hopups = {
                     {
                         Mode = 1,
                         PrintName = "fcg.lever"
-                    },
-                    {
-                        Mode = 0
                     }
                 }
             },
@@ -953,9 +932,6 @@ local hopups = {
                     },
                     {
                         Mode = 1,
-                    },
-                    {
-                        Mode = 0
                     }
                 }
             },

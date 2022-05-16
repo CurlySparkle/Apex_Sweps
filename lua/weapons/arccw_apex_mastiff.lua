@@ -108,9 +108,6 @@ SWEP.Firemodes = {
     {
         PrintName = "fcg.slam",
         Mode = 2,
-    },
-    {
-        Mode = 0
     }
 }
 

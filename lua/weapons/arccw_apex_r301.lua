@@ -97,9 +97,6 @@ SWEP.Firemodes = {
     },
     {
         Mode = 1,
-    },
-    {
-        Mode = 0
     }
 }
 
@@ -117,7 +114,6 @@ SWEP.ShootSound = "ArcCW_APEX.R301.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
-SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 SWEP.Hook_GetShootSound = function(wep, fsound)
     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Start" end
@@ -312,9 +308,11 @@ SWEP.Animations = {
     },
     ["1_to_2"] = {
         Source = "firemode1",
+        MinProgress = 0.15,
     },
     ["2_to_1"] = {
         Source = "firemode2",
+        MinProgress = 0.15,
     },
     ["reload"] = {
         Source = "reload",

@@ -100,9 +100,6 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 2,
-    },
-    {
-        Mode = 0
     }
 }
 
@@ -309,7 +306,6 @@ SWEP.Animations = {
         Source = "overheat",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
         LHIK = true,
-        Blocking = true,
         LHIKOut = 0.9,
         SoundTable = {
             {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_lr_2ch_v1_01.wav", t = 0 / 30},

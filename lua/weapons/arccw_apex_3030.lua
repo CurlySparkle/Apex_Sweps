@@ -109,11 +109,7 @@ SWEP.Firemodes = {
         Mode = 1,
         ApexCharge = true,
         PrintName = "fcg.lever"
-    },
-    {
-        Mode = 0
-    }
-}
+    }}
 
 SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
@@ -331,9 +327,11 @@ SWEP.Animations = {
     },
     ["1_to_2"] = {
         Source = "firemode1",
+        MinProgress = 0.15,
     },
     ["2_to_1"] = {
         Source = "firemode2",
+        MinProgress = 0.15,
     },
     ["sgreload_start"] = {
         Source = "reload_start",

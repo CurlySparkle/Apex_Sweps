@@ -94,11 +94,7 @@ SWEP.Firemodes = {
         Mode = -5,
         RunawayBurst = true,
         PostBurstDelay = 0.25
-    },
-    {
-        Mode = 0
-    }
-}
+    }}
 
 SWEP.AccuracyMOA = 1.15 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 175 -- inaccuracy added by hip firing.
@@ -307,9 +303,11 @@ SWEP.Animations = {
     },
     ["1_to_2"] = {
         Source = "firemode_1",
+        MinProgress = 0.15,
     },
     ["2_to_1"] = {
         Source = "firemode_2",
+        MinProgress = 0.15,
     },
     ["reload"] = {
         Source = "reload",

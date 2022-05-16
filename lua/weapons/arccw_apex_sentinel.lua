@@ -99,11 +99,7 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = "fcg.bolt"
-    },
-    {
-        Mode = 0
-    }
-}
+    }}
 
 SWEP.AccuracyMOA = 0.2
 SWEP.HipDispersion = 500
@@ -135,7 +131,6 @@ SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
-
 
 SWEP.SightedSpeedMult = 0.2
 SWEP.IronSightStruct = {

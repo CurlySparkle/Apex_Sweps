@@ -97,9 +97,6 @@ SWEP.Firemodes = {
     },
     {
         Mode = 1,
-    },
-    {
-        Mode = 0
     }
 }
 
@@ -277,9 +274,11 @@ SWEP.Animations = {
     },
     ["1_to_2"] = {
         Source = "firemode_switch1",
+        MinProgress = 0.15,
     },
     ["2_to_1"] = {
         Source = "firemode_switch2",
+        MinProgress = 0.15,
     },
     ["1_to_2_sight"] = {
         Source = "ads_firemode_switch",
