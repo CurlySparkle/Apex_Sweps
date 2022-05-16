@@ -184,10 +184,6 @@ local supp = {
     },
 }
 
-local noshotguns = function(wep)
-    if wep:GetIsShotgun() then return false end
-end
-
 for i = 1, 3 do
     local att = table.Copy(stab[i])
 
@@ -226,7 +222,7 @@ for i = 1, 3 do
     att2.Override_MuzzleEffectAttachment = 1
     att2.IsMuzzleDevice = true
     att2.Model = "models/weapons/attachments/barrel_" .. (i + 3) .. ".mdl"
-    att.RandomWeight = rand_weight[i]
+    att2.RandomWeight = rand_weight[i]
 
     att2.EntityIcon = icon2
     att2.EntityCategory = "ArcCW - Apex Legends (Att.)"
@@ -387,6 +383,84 @@ for k, v in pairs(stock_types) do
             ArcCW.LoadAttachmentType(att, "apex_stock_" .. k .. (j > 1 and j or "") .. "_" .. i)
         end
     end
+end
+
+-------------------------------------------------
+-- Shotgun Bolts & Loaders
+-------------------------------------------------
+
+local bolt = {
+    [1] = {
+        Mult_RPM = 1.1,
+        Mult_CycleTime = 0.92,
+    },
+    [2] = {
+        Mult_RPM = 1.15,
+        Mult_CycleTime = 0.87,
+    },
+    [3] = {
+        Mult_RPM = 1.2,
+        Mult_CycleTime = 0.83,
+    },
+}
+
+local loader = {
+    [1] = {
+        Mult_ReloadTime = 0.9,
+    },
+    [2] = {
+        Mult_ReloadTime = 0.85,
+    },
+    [3] = {
+        Mult_ReloadTime = 0.8,
+
+    },
+}
+
+for i = 1, 3 do
+    local att = table.Copy(bolt[i])
+
+    att.PrintName = "Shotgun Bolt - Level " .. i
+    local icon = "entities/attach_icons/apex_pump_" .. i .. ".png"
+    att.Icon = Material(icon, "mips smooth")
+    att.Description = "apex.sg.bolt." .. i
+    att.AutoStats = true
+    att.Slot = "apex_sg"
+    att.SortOrder = 10
+
+    att.Model = "models/weapons/attachments/upgrades/mag_heavy2.mdl"
+    att.RandomWeight = rand_weight[i]
+
+    att.EntityIcon = icon
+    att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+
+    att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att.ToggleSound = "items/UI_Menu_Select.wav"
+
+    ArcCW.LoadAttachmentType(att, "apex_sg_bolt_" .. i)
+
+    local att2 = table.Copy(loader[i])
+
+    att2.PrintName = "Shotgun Loader - Level " .. i
+    local icon2 = "entities/attach_icons/apex_pump_" .. i .. ".png"
+    att2.Icon = Material(icon2, "mips smooth")
+    att2.Description = "apex.sg.load." .. i
+    att2.AutoStats = true
+    att2.Slot = "apex_sg"
+    att2.SortOrder = 5
+
+    att2.DroppedModel = "models/weapons/attachments/upgrades/mag_heavy2.mdl"
+    att2.RandomWeight = rand_weight[i]
+
+    att2.EntityIcon = icon2
+    att2.EntityCategory = "ArcCW - Apex Legends (Att.)"
+
+    att2.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att2.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att2.ToggleSound = "items/UI_Menu_Select.wav"
+
+    ArcCW.LoadAttachmentType(att2, "apex_sg_load_" .. i)
 end
 
 -------------------------------------------------
