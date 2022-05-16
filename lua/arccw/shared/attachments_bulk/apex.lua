@@ -800,7 +800,7 @@ local hopups = {
     },
     ["loader"] = {
         name = "Boosted Loader",
-        icon = "entities/attach_icons/hopup_apex_choke.png",
+        icon = "entities/attach_icons/hopup_apex_boostedloader.png",
         desc = "Reloading while low and not empty increases speed and grants additional ammo.",
         variants = {
             -- Wingman
