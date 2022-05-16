@@ -13,7 +13,7 @@ SWEP.Trivia_Class = "Pistol"
 SWEP.Trivia_Desc = "Compact triple-barrel shotgun. Commonly ridiculed by participants of the Apex Games, it is nevertheless capable in the right hands.\n\nFires 3 pellets in a triangular pattern, tightened when aiming."
 SWEP.Trivia_Manufacturer = "Altamirano Armory"
 
-SWEP.Slot = 2
+SWEP.Slot = 1
 
 SWEP.UseHands = true
 
@@ -37,18 +37,14 @@ SWEP.RangeMin = 0
 SWEP.Range = 50
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 15,
-        DamageMin = 15,
-        Penetration = 2,
-    },
     [1] = {
-        -- Arcwc Settings
         Damage = 17,
-        DamageMin = 17,
-        Penetration = 10,
-    }
+        DamageMin = 10,
+    },
+    [2] = {
+        Damage = 12, -- Roughly equivalent to TTT deagle
+        DamageMin = 12,
+    },
 }
 
 SWEP.BodyDamageMults = {
@@ -188,17 +184,6 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
-
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.AttachmentElements = {
     ["sight"] = {
@@ -361,3 +346,6 @@ SWEP.Hook_Think = function(wep)
         }
     end
 end
+
+SWEP.TTTWeaponType = {"weapon_zm_pistol", "weapon_ttt_glock", "weapon_zm_revolver"}
+SWEP.TTTWeight = 50

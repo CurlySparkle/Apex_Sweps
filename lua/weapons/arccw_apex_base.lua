@@ -32,3 +32,12 @@ SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
 SWEP.Sway = 0.4
+
+-- Technically Apex has some sort of headshot falloff thing going on. I can't be bothered though
+function SWEP:GetHeadshotMultiplier(victim, dmginfo)
+    return 1
+end
+
+if ArcCW.Apex.GetBalanceMode() == 2 then
+    SWEP.MeleeDamage = 30
+end

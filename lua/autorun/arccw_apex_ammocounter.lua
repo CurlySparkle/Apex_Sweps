@@ -39,7 +39,7 @@ if CLIENT then
                     if OurWeapon.ArcCW then
                         local BarCount = tostring(OurWeapon:Clip1())
                         local suffix = "blah"
-                        
+
                         if OurWeapon:GetMaxClip1() == 16 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
                             suffix = "_lvl1"
                         elseif OurWeapon:GetMaxClip1() == 18 then
@@ -60,8 +60,8 @@ if CLIENT then
                 end
         end
     } )
-	
-	matproxy.Add( {
+
+    matproxy.Add( {
         name = "ArcCW_AMMO_BAR_F",
         init = function( self, mat, values )
             self.ResultTo = values.resultvar
@@ -76,11 +76,11 @@ if CLIENT then
                     if OurWeapon.ArcCW then
                         local KnowYourPlace = string.sub(string.reverse(OurWeapon:Clip1()), Place, Place)
                         local digits = string.format( tonumber(KnowYourPlace) or 0 )
-						
-						if OurWeapon:Clip1() >= 9 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
-							texture = self.Prefix .. 9
-						else
-							texture = self.Prefix .. digits
+
+                        if OurWeapon:Clip1() >= 9 then --Not the way i would do but, i don't know how to get the equiped att on the current gun
+                            texture = self.Prefix .. 9
+                        else
+                            texture = self.Prefix .. digits
                         end
 
                     end

@@ -47,9 +47,21 @@ SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 70
 SWEP.DamageMin = 70
-SWEP.Range = 15
+SWEP.Range = 200
 SWEP.Penetration = 30
 SWEP.PhysBulletMuzzleVelocity = 31000 * ArcCW.HUToM
+
+
+SWEP.Apex_Balance = {
+    [1] = {
+        Damage = 85,
+        DamageMin = 40,
+    },
+    [2] = {
+        Damage = 55, -- roughly equivalent to TTT scout
+        DamageMin = 55
+    },
+}
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2,
@@ -124,17 +136,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.SightedSpeedMult = 0.2
 SWEP.IronSightStruct = {
@@ -329,6 +330,9 @@ SWEP.Animations = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 86 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 100 / 30},
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_ReChamber_Fr109_2ch_v2_01.wav", t = 109 / 30}
+        },
     },
-},
 }
+
+SWEP.TTTWeaponType = "weapon_zm_rifle"
+SWEP.TTTWeight = 100

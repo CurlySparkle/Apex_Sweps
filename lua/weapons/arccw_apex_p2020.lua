@@ -36,23 +36,19 @@ SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 18
 SWEP.DamageMin = 18
-SWEP.Range = 10
-SWEP.Penetration = 10
+SWEP.Range = 75
+SWEP.Penetration = 6
 SWEP.PhysBulletMuzzleVelocity = 18500 * ArcCW.HUToM
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 18,
-        DamageMin = 18,
-        Penetration = 10,
-    },
     [1] = {
-        -- Arcwc Settings
         Damage = 21,
-        DamageMin = 21,
-        Penetration = 20,
-    }
+        DamageMin = 12,
+    },
+    [2] = {
+        Damage = 14, -- similar to TTT pistol but fires much faster. don't want to mess with rpm as that makes the gun feel less authentic
+        DamageMin = 14,
+    },
 }
 
 SWEP.BodyDamageMults = {
@@ -104,17 +100,6 @@ SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_F"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.MuzzleEffect = "muzzle_pistols_l4d"
 
@@ -329,3 +314,6 @@ SWEP.Animations = {
     },
     },
 }
+
+SWEP.TTTWeaponType = "weapon_zm_pistol"
+SWEP.TTTWeight = 100

@@ -42,16 +42,14 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 6
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 45,
-        DamageMin = 45,
-    },
     [1] = {
-        -- Arcwc Settings
         Damage = 55,
         DamageMin = 35,
-    }
+    },
+    [2] = {
+        Damage = 30, -- Roughly equivalent to TTT deagle but fires faster (156/100 rpm)
+        DamageMin = 30,
+    },
 }
 
 SWEP.BodyDamageMults = {
@@ -98,17 +96,6 @@ SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_A"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
 
@@ -337,3 +324,6 @@ sound.Add({
     volume = 1.0,
     sound = "weapons/wingman/wpn_wingman_reload_handgrab_fr66_2ch_v1_01.wav"
 })
+
+SWEP.TTTWeaponType = "weapon_zm_revolver"
+SWEP.TTTWeight = 100

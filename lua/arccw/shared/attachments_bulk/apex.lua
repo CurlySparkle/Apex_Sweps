@@ -1,3 +1,10 @@
+local rand_weight = {
+    [1] = 55,
+    [2] = 25,
+    [3] = 19,
+    [4] = 1,
+}
+
 -------------------------------------------------
 -- Magazines
 -------------------------------------------------
@@ -85,6 +92,7 @@ for k, v in pairs(mag_types) do
             att.AutoStats = true
             att.Slot = "apex_mag_" .. k .. j
             att.SortOrder = i
+            att.RandomWeight = rand_weight[i]
 
             att.Add_ClipSize = v[2][j][i]
 
@@ -119,6 +127,7 @@ for i = 1, 4 do
     att.AutoStats = true
     att.Slot = "apex_mag_lstar"
     att.SortOrder = i
+    att.RandomWeight = rand_weight[i]
 
     att.Mult_HeatCapacity = 1 + math.min(i, 3) * 0.1
     att.Mult_HeatDissipation = 1 + math.min(i, 3) * 0.1
@@ -191,11 +200,14 @@ for i = 1, 3 do
     att.Override_MuzzleEffectAttachment = 1
     att.IsMuzzleDevice = true
     att.Model = "models/weapons/attachments/barrel_" .. i .. ".mdl"
+    att.RandomWeight = rand_weight[i]
 
     att.EntityIcon = icon
     att.EntityCategory = "ArcCW - Apex Legends (Att.)"
 
-    att.Hook_Compatible = noshotguns
+    att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att.ToggleSound = "items/UI_Menu_Select.wav"
 
     ArcCW.LoadAttachmentType(att, "apex_muzz_stab_" .. i)
 
@@ -212,11 +224,14 @@ for i = 1, 3 do
     att2.Override_MuzzleEffectAttachment = 1
     att2.IsMuzzleDevice = true
     att2.Model = "models/weapons/attachments/barrel_" .. (i + 3) .. ".mdl"
+    att.RandomWeight = rand_weight[i]
 
     att2.EntityIcon = icon2
     att2.EntityCategory = "ArcCW - Apex Legends (Att.)"
 
-    att2.Hook_Compatible = noshotguns
+    att2.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att2.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att2.ToggleSound = "items/UI_Menu_Select.wav"
 
     ArcCW.LoadAttachmentType(att2, "apex_muzz_supp_" .. i)
 end
@@ -352,6 +367,7 @@ for k, v in pairs(stock_types) do
             att.AutoStats = true
             att.Slot = "apex_stock_" .. k .. (j > 1 and j or "")
             att.SortOrder = i
+            att.RandomWeight = rand_weight[i]
 
             att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
             att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
@@ -570,16 +586,17 @@ local hopups = {
             },
             -- G7 Scout
             [5] = {
-                Description = "Weapons gains an alternative firemode.\n\nThe G7 Scout receives a faster semi-automatic firemode with less damage.",
+                Description = "Weapons gains an alternative firemode.\n\nThe G7 Scout receives a faster semi-automatic firemode with less damage and recoil.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
                     },
                     {
                         Mode = 1,
-                        Mult_RPM = 420 / 240,
-                        Override_Damage = 30,
-                        Override_DamageMin = 30,
+                        Mult_RPM = 360 / 240,
+                        Mult_Damage = 30 / 36,
+                        Mult_DamageMin = 30 / 36,
+                        Mult_Recoil = 0.85,
                         PrintName = "fcg.apex.rapid",
                     },
                     {
@@ -588,6 +605,36 @@ local hopups = {
                 }
             },
         },
+        variants_ttt = {
+            [2] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe HAVOC receives a semi-automatic firemode that releases a laser beam.",
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        Mode = 1,
+                        Mult_RPM = 107 / 672,
+                        Mult_Recoil = 0.85,
+                        Mult_RecoilSide = 0.85,
+                        Add_AmmoPerShot = 3,
+                        Override_Range = 50,
+                        Override_RangeMin = 15,
+                        Override_Damage = 57,
+                        Override_DamageMin = 40,
+                        Override_Tracer = "arccw_apex_tracer_havoc",
+                        Override_AlwaysPhysBullet = false,
+                        Override_NeverPhysBullet = true,
+                    },
+                    {
+                        Mode = 0
+                    }
+                },
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.Havoc.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.Havoc.Fire_Start" end
+                end
+            },
+        }
     },
     ["hp"] = {
         name = "Hammerpoint Rounds",
@@ -597,7 +644,7 @@ local hopups = {
             -- P2020
             [1] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         -- this doesn't do the fancy check apex does, but also hl2 armor is weird and I would prefer to work with a new armor system
                         data.damage = data.damage * 1.5
                     end
@@ -606,8 +653,24 @@ local hopups = {
             -- RE-45 Auto, Mozambique
             [2] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.35
+                    end
+                end
+            },
+        },
+        variants_ttt = {
+            [1] = {
+                Hook_BulletHit = function(wep, data)
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                        data.damage = data.damage * 1.3
+                    end
+                end
+            },
+            [2] = {
+                Hook_BulletHit = function(wep, data)
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                        data.damage = data.damage * 1.15
                     end
                 end
             },
@@ -684,7 +747,8 @@ local hopups = {
                         Override_Num = 7,
                         Override_Damage = 49,
                         Override_DamageMin = 49,
-                        Override_AccuracyMOA = 40
+                        Override_AccuracyMOA = 35,
+                        Mult_HipDispersion = 0.5,
                     }
                 }
             },
@@ -701,7 +765,7 @@ local hopups = {
                         Override_Num = 3,
                         Override_Damage = 30,
                         Override_DamageMin = 30,
-                        Override_AccuracyMOA = 35,
+                        Override_AccuracyMOA = 40,
                         Override_AmmoPerShot = 2,
                         Mult_RPM = 0.75
                     }
@@ -722,6 +786,54 @@ local hopups = {
                         Override_Damage = 144,
                         Override_DamageMin = 144,
                         Override_AccuracyMOA = 45
+                    }
+                }
+            },
+        },
+        variants_ttt = {
+            [1] = {
+                Description = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern, but cannot charge up damage.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        ApexCharge = true,
+                        PrintName = "fcg.lever"
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = 1,
+                        Override_Num = 7,
+                        Override_Damage = 35,
+                        Override_DamageMin = 35,
+                        Override_AccuracyMOA = 35,
+                        Mult_HipDispersion = 0.5,
+                        Override_BodyDamageMults = {
+                            [HITGROUP_HEAD] = 1.25,
+                            [HITGROUP_CHEST] = 1,
+                            [HITGROUP_STOMACH] = 1,
+                            [HITGROUP_LEFTARM] = 1,
+                            [HITGROUP_RIGHTARM] = 1,
+                            [HITGROUP_LEFTLEG] = 0.8,
+                            [HITGROUP_RIGHTLEG] = 0.8,
+                        }
+                    }
+                }
+            },
+            [2] = {
+                Description = "Weapon gains an additional firemode that shoots 3 pellets in a shotgun pattern, consuming 2 rounds per shot at a lower rate of fire.",
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = 2,
+                        Override_Num = 3,
+                        Override_Damage = 24,
+                        Override_DamageMin = 24,
+                        Override_AccuracyMOA = 40,
+                        Override_AmmoPerShot = 2,
+                        Mult_RPM = 0.75
                     }
                 }
             },
@@ -748,6 +860,32 @@ local hopups = {
             [2] = {
                 Override_BodyDamageMults = {
                     [HITGROUP_HEAD] = 2.5,
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.8,
+                    [HITGROUP_RIGHTLEG] = 0.8,
+                }
+            },
+        },
+        variants_ttt = {
+            -- Wingman
+            [1] = {
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 3.5, -- one-shot hs kill!
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.9,
+                    [HITGROUP_RIGHTLEG] = 0.9,
+                }
+            },
+            -- Longbow DMR
+            [2] = {
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 3, -- can now one-hit hs armored targets
                     [HITGROUP_CHEST] = 1,
                     [HITGROUP_STOMACH] = 1,
                     [HITGROUP_LEFTARM] = 1,
@@ -832,7 +970,7 @@ local hopups = {
 
 for k, v in SortedPairs(hopups) do
     for i = 1, #v.variants do
-        local att = table.Copy(v.variants[i])
+        local att = table.Copy(GetConVar("arccw_apex_bal"):GetInt() == 2 and v.variants_ttt and v.variants_ttt[i] or v.variants[i])
 
         att.PrintName = "Hop-up - " .. v.name
         att.AbbrevName = v.name

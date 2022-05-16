@@ -46,10 +46,20 @@ SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 21
 SWEP.DamageMin = 21
-SWEP.Range = 10
+SWEP.Range = 200
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 32000 * ArcCW.HUToM
 
+SWEP.Apex_Balance = {
+    [1] = {
+        Damage = 25,
+        DamageMin = 20,
+    },
+    [2] = {
+        Damage = 18, -- honestly no idea how well this will feel. 2 shot kill on chest (108)
+        DamageMin = 18
+    },
+}
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2.15,
     [HITGROUP_CHEST] = 1,
@@ -161,17 +171,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
     Pos = Vector(0, -5, 0),
@@ -389,3 +388,6 @@ end
 SWEP.Hook_PostFireBullets = function(wep)
     wep:SetNWFloat("ApexCharge", 0)
 end
+
+SWEP.TTTWeaponType = "weapon_zm_rifle"
+SWEP.TTTWeight = 100

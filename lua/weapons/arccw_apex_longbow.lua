@@ -46,9 +46,29 @@ SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 55
 SWEP.DamageMin = 55
-SWEP.Range = 10
-SWEP.Penetration = 10
+SWEP.Range = 300
+SWEP.Penetration = 15
 SWEP.PhysBulletMuzzleVelocity = 30500 * ArcCW.HUToM
+
+SWEP.Apex_Balance = {
+    [1] = {
+        Damage = 60,
+        DamageMin = 40,
+    },
+    [2] = {
+        Damage = 45, -- slightly weaker than TTT scout (fires faster)
+        DamageMin = 45,
+        BodyDamageMults = {
+            [HITGROUP_HEAD] = 2.25, -- lethal on unarmored headshot (101)
+            [HITGROUP_CHEST] = 1,
+            [HITGROUP_STOMACH] = 1,
+            [HITGROUP_LEFTARM] = 1,
+            [HITGROUP_RIGHTARM] = 1,
+            [HITGROUP_LEFTLEG] = 0.8,
+            [HITGROUP_RIGHTLEG] = 0.8,
+        }
+    },
+}
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 2.15,
@@ -122,17 +142,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
     Pos = Vector(0, -1, 0),
@@ -333,3 +342,6 @@ sound.Add({
     volume = 1.0,
     sound = "weapons/wpn_sniper_holster_lr_v1_1.wav"
 })
+
+SWEP.TTTWeaponType = "weapon_zm_rifle"
+SWEP.TTTWeight = 100

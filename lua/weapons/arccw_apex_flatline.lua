@@ -43,23 +43,20 @@ SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 18
 SWEP.DamageMin = 18
-SWEP.Range = 10
+SWEP.Range = 200
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
 
 SWEP.Apex_Balance = {
-    [0] = {
-        -- Apex Legends Settings
-        Damage = 18,
-        DamageMin = 18,
-        Penetration = 10,
-    },
     [1] = {
         -- Arcwc Settings
-        Damage = 21,
-        DamageMin = 21,
-        Penetration = 20,
-    }
+        Damage = 32,
+        DamageMin = 15,
+    },
+    [2] = {
+        Damage = 14,
+        DamageMin = 14,
+    },
 }
 
 SWEP.BodyDamageMults = {
@@ -141,17 +138,6 @@ SWEP.ProceduralIronFire = false
 
 SWEP.CaseBones = {}
 
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
 
 SWEP.IronSightStruct = {
     Pos = Vector(0, -1, 0),
@@ -330,6 +316,9 @@ SWEP.Animations = {
             {s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.wav", t = 11 / 30},
             {s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.wav", t = 43 / 30},
             {s = "weapons/flatline/wpn_vinson_reload_empty_charge_fr60_2ch_v1_01.wav", t = 60 / 30}
+        },
     },
-},
 }
+
+SWEP.TTTWeaponType = "weapon_zm_mac10"
+SWEP.TTTWeight = 100
