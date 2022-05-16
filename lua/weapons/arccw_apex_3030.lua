@@ -450,10 +450,10 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
 end
 
 SWEP.O_Hook_Override_Num = function(wep,data)
-	if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+	if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
 		data.current = 1
 		data.winningslot = -1
-	else
+	elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and not wep:GetNWState() == ArcCW.STATE_SIGHTS then
 		data.current = 7
 		data.winningslot = 1
 	end
