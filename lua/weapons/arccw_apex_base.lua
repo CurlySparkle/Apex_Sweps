@@ -30,3 +30,5 @@ SWEP.MeleeDamageType = DMG_CLUB
 SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
+
+SWEP.Sway = 0.4
