@@ -84,15 +84,15 @@ SWEP.Delay = 60 / 72 -- 60 / RPM.
 SWEP.Num = 3 -- number of shots per trigger pull.
 -- Just 3 happy bullets side-by-side
 SWEP.ShotgunSpreadPattern = {
-    [1] = Angle(0, -0.5, 0),
+    [1] = Angle(0, -0.4, 0),
     [2] = Angle(0, 0, 0),
-    [3] = Angle(0, 0.5, 0),
+    [3] = Angle(0, 0.4, 0),
 }
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
     local d = 1
     local chg = wep:GetNWFloat("ApexCharge", 0)
     if chg >= 1 then
-        d = d * 0.25
+        d = d * 0.15
     elseif chg >= 0.67 then
         d = d * 0.5
     elseif chg >= 0.33 then
@@ -106,11 +106,6 @@ end
 SWEP.NoRandSpread = true
 
 SWEP.Firemodes = {
-    {
-        Mode = 1,
-        PrintName = "fcg.apex.charge",
-        ApexCharge = true
-    },
     {
         Mode = 1,
     },
@@ -239,6 +234,10 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_energy3"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_choke2"}
     },
     {
         PrintName = "Skin",

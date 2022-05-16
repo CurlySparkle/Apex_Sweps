@@ -251,6 +251,24 @@ local hopups = {
                         Mult_RPM = 4,
                     }
                 }
+            },
+            -- Alternator
+            [4] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 2,
+                    },
+                    {
+                        Mode = 2,
+                        PrintName = "fcg.apex.alt",
+                        Mult_RPM = 0.5,
+                    }
+                },
+                Hook_ModifyRPM = function(wep, delay)
+                    if wep:GetFireMode() == 2 and wep:GetBurstCount() % 2 == 0 then
+                        return 0.035
+                    end
+                end
             }
         }
     },
@@ -275,7 +293,7 @@ local hopups = {
         }
     },
     ["selfire"] = {
-        name = "Select Fire",
+        name = "Selectfire Receiver",
         icon = "entities/attach_icons/hopup_apex_selectfire.png",
         variants = {
             -- Prowler SMG
@@ -446,6 +464,7 @@ local hopups = {
         name = "Shatter Caps",
         icon = "entities/attach_icons/hopup_apex_shattercaps.png",
         variants = {
+            -- 30-30 Repeater
             [1] = {
                 Description = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern, but cannot charge up damage.",
                 Override_Firemodes = {
@@ -464,6 +483,7 @@ local hopups = {
                     }
                 }
             },
+            -- RE-45 Auto
             [2] = {
                 Description = "Weapon gains an additional firemode that shoots 3 pellets in a shotgun pattern, consuming 2 rounds per shot at a lower rate of fire.",
                 Override_Firemodes = {
@@ -474,11 +494,29 @@ local hopups = {
                         PrintName = "fcg.apex.shatter",
                         Mode = 2,
                         Override_Num = 3,
-                        Override_Damage = 24,
-                        Override_DamageMin = 24,
-                        Override_AccuracyMOA = 30,
+                        Override_Damage = 30,
+                        Override_DamageMin = 30,
+                        Override_AccuracyMOA = 35,
                         Override_AmmoPerShot = 2,
                         Mult_RPM = 0.75
+                    }
+                }
+            },
+            -- Kraber 50cal Sniper
+            [3] = {
+                Description = "Weapon gains an additional firemode that shoots 24 pellets in a shotgun pattern.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        PrintName = "fcg.bolt"
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = 1,
+                        Override_Num = 24,
+                        Override_Damage = 144,
+                        Override_DamageMin = 144,
+                        Override_AccuracyMOA = 45
                     }
                 }
             },
@@ -514,7 +552,47 @@ local hopups = {
                 }
             },
         }
-    }
+    },
+    ["choke"] = {
+        name = "Precision Choke",
+        icon = "entities/attach_icons/hopup_apex_choke.png",
+        desc = "Weapon gains an additional firemode that reduces weapon spread while aiming down sights.",
+        variants = {
+            -- Peacekeeper
+            [1] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        PrintName = "fcg.apex.charge",
+                        ApexCharge = true
+                    },
+                    {
+                        Mode = 1,
+                        PrintName = "fcg.lever"
+                    },
+                    {
+                        Mode = 0
+                    }
+                }
+            },
+            -- Triple Take
+            [2] = {
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        PrintName = "fcg.apex.charge",
+                        ApexCharge = true
+                    },
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        Mode = 0
+                    }
+                }
+            },
+        }
+    },
 }
 
 for k, v in SortedPairs(hopups) do

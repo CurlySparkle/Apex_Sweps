@@ -83,7 +83,7 @@ SWEP.VisualRecoilMult = 0.2
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true -- do not cycle on last shot
 
-SWEP.Delay = 60 / 25
+SWEP.Delay = 60 / 60
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -147,6 +147,7 @@ SWEP.IronSightStruct = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
+    CrosshairInSights = true,
 }
 
 SWEP.HoldtypeHolstered = "passive"
@@ -195,6 +196,10 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Slot = {"apex_sniper_stock"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_shatter3"}
     },
     {
         PrintName = "Skin",
@@ -249,13 +254,13 @@ SWEP.Animations = {
             {p = 100, s = "weapons/kraber/mech_kraber_ads_in_2ch_v1_03.wav", t = 0 / 30},
         },
     },
-    ["idle_iron"] = {
+    ["idle_sight"] = {
         Source = "iron_idle",
     },
     ["fire"] = {
         Source = "fire",
         -- Time = 9 / 10,
-        MinProgress = 1,
+        MinProgress = 0.8,
     },
     ["cycle"] = {
         Source = "rechamber",
@@ -274,7 +279,7 @@ SWEP.Animations = {
     ["fire_sight"] = {
         Source = "iron_fire",
         -- Time = 9 / 10,
-        MinProgress = 0.9,
+        MinProgress = 0.8,
     },
     ["cycle_sight"] = {
         Source = "iron_rechamber",

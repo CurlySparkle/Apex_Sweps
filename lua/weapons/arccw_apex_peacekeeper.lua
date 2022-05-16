@@ -104,11 +104,6 @@ SWEP.Num = 11 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "fcg.apex.charge",
-        ApexCharge = true
-    },
-    {
-        Mode = 1,
         PrintName = "fcg.lever"
     },
     {
@@ -268,6 +263,10 @@ SWEP.Attachments = {
     {
         PrintName = "Shotgun Bolt",
         Slot = {"apex_shotgun_bolt"}
+    },
+    {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_choke"}
     },
     {
         PrintName = "Skin",
