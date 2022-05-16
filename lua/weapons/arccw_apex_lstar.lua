@@ -28,6 +28,9 @@ SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -1)
 SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
 
+SWEP.CustomizePos = Vector(0, 0, 0)
+SWEP.CustomizeAng = Angle(0, 0, 0)
+
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 250
 
@@ -119,8 +122,8 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.FiremodeSound = ""
 
-SWEP.MuzzleEffect = ""
-SWEP.MuzzleFlashColor = Color(255, 255, 55)
+SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_medium"
+SWEP.MuzzleFlashColor = Color(255, 0, 0)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
 SWEP.ShellScale = 1
@@ -236,7 +239,7 @@ SWEP.Attachments = {
 }
 
 SWEP.Jamming = true
-SWEP.HeatCapacity = 100 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
+SWEP.HeatCapacity = 30 -- rounds that can be fired non-stop before the gun jams, playing the "fix" animation
 SWEP.HeatDissipation = 2 -- rounds' worth of heat lost per second
 SWEP.HeatLockout = true -- overheating means you cannot fire until heat has been fully depleted
 SWEP.HeatDelayTime = 0.5
@@ -255,7 +258,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/ltar/Wpn_LSTAR_ReloadOverheatR5_Pt4_2ch_v1_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt4_2ch_v1_01.wav", t = 0 / 30},
     },
     },
     ["draw"] = {
@@ -269,18 +272,12 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = {"fire", "fire2"},
-        SoundTable = {
-            {p = 100, s = "weapons/ltar/Wpn_LSTAR_CooldownLR_2ch_v3_01.wav", t = 10 / 30},
-    },
     },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
         Source = "iron_fire",
-        SoundTable = {
-            {p = 100, s = "weapons/ltar/Wpn_LSTAR_CooldownLR_2ch_v3_02.wav", t = 10 / 30},
-    },
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -301,7 +298,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/ltar/Wpn_LSTAR_Inspect_Pt7_2ch_v1_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.wav", t = 0 / 30},
     },
     },
     ["idle_inspect"] = {
@@ -309,22 +306,30 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/ltar/Wpn_LSTAR_Inspect_Pt1_2ch_v1_01.wav", t = 1 / 30},
-            {p = 100, s = "weapons/ltar/Weapon_Inspect_Foley_SMG_Mid_V2_2ch_01.wav", t = 96 / 30},
-            {p = 100, s = "weapons/ltar/Weapon_Inspect_Foley_SMG_Mid_V2_2ch_02.wav", t = 240 / 30},
-            {p = 100, s = "weapons/ltar/Weapon_Inspect_Foley_SMG_End_V2_2ch_01.wav", t = 316 / 30}
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt1_2ch_v1_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt2_2ch_v1_01.wav", t = 25 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt3_2ch_v1_01.wav", t = 55 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt4_2ch_v1_01.wav", t = 80 / 30},
+			{p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt5_2ch_v1_01.wav", t = 115 / 30},
+			{p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.wav", t = 135 / 30},
+			{p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt7_2ch_v1_01.wav", t = 155 / 30}
     },
     },
     ["fix"] = {
         Source = "overheat",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
         LHIK = true,
+        Blocking = true,
         LHIKOut = 0.9,
         SoundTable = {
-            {p = 150, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt1_2ch_v1_01.wav", t = 0 / 30},
-            {p = 150, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt2_2ch_v1_01.wav", t = 10 / 30},
-            {p = 150, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt3_2ch_v1_01.wav", t = 20 / 30},
-            {p = 150, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt4_2ch_v1_01.wav", t = 30 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_lr_2ch_v1_01.wav", t = 0 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_c_1ch_v1_01.wav", t = 5 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt1_2ch_v1_01.wav", t = 10 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt2_2ch_v1_01.wav", t = 25 / 30},
+			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt3_2ch_v1_01.wav", t = 55 / 30},
+			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt4_2ch_v1_01.wav", t = 65 / 30},
+			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt5_2ch_v1_01.wav", t = 75 / 30},
+			{p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt6_2ch_v1_01.wav", t = 85 / 30},
         },
     },
     ["reload"] = {
