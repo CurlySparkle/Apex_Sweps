@@ -172,6 +172,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -214,6 +218,12 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_selfire4", "apex_hopup_loader2"}
+    },
+    {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

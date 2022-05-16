@@ -648,14 +648,28 @@ local hopups = {
                         -- this doesn't do the fancy check apex does, but also hl2 armor is weird and I would prefer to work with a new armor system
                         data.damage = data.damage * 1.5
                     end
+                end,
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.P2020_HammerPoint.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.P2020.Fire" end
                 end
             },
-            -- RE-45 Auto, Mozambique
+            -- RE-45 Auto
             [2] = {
                 Hook_BulletHit = function(wep, data)
                     if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.35
                     end
+                end
+            },
+            -- Mozambique
+            [3] = {
+                Hook_BulletHit = function(wep, data)
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                        data.damage = data.damage * 1.35
+                    end
+                end,
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique_Hammer.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique.Fire" end
                 end
             },
         },
@@ -674,7 +688,17 @@ local hopups = {
                     end
                 end
             },
-        }
+            [3] = {
+                Hook_BulletHit = function(wep, data)
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                        data.damage = data.damage * 1.15
+                    end
+                end,
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique_Hammer.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique.Fire" end
+                end
+            },
+        },
     },
     ["anvil"] = {
         name = "Anvil Receiver",
@@ -743,6 +767,7 @@ local hopups = {
                     },
                     {
                         PrintName = "fcg.apex.shatter",
+						ApexCharge = true,
                         Mode = 1,
                         Override_Num = 7,
                         Override_Damage = 49,

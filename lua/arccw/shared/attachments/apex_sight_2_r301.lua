@@ -23,7 +23,22 @@ att.AdditionalSights = {
         ScrollFunc = ArcCW.SCROLL_NONE,
         ZoomLevels = 1,
         ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
-    }
+    },
+	{
+        Pos = Vector(0, 8, -1.62),
+        Ang = Angle(0, 0, 0),
+        Magnification = 2.15,		
+        HolosightBone = "holosight",
+        HolosightData = {
+            Holosight = true,
+            HolosightReticle =  Material("sights/holo6.png", "mips sharp"),
+			HolosightNoFlare = true,
+            HolosightSize = 3,
+			HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl",
+            Colorable = false,
+            HolosightNoHSP = false
+        },	
+    },
 }
 
 att.Holosight = true

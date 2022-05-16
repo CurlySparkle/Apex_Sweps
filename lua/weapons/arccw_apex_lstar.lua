@@ -122,7 +122,7 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.FiremodeSound = ""
 
-SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_medium"
+SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_lstar"
 SWEP.MuzzleFlashColor = Color(255, 0, 0)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
@@ -344,3 +344,19 @@ SWEP.Animations = {
 
 SWEP.TTTWeaponType = "weapon_zm_sledge"
 SWEP.TTTWeight = 100
+
+SWEP.Hook_Think = function(wep)
+    local heat = wep:GetHeat()
+    local alertheat = (80 * wep.HeatCapacity) / 100
+
+    if heat >= alertheat and heat < wep:GetMaxHeat() then
+        if wep.CreatedHeatSound == false then
+            wep.HeatAlarm = CreateSound(wep,"weapons/lstar/Wpn_LSTAR_1p_OverheatAlarm_2ch_v1_01.wav")
+            wep.HeatAlarm:Play()
+            wep.CreatedHeatSound = true
+        end
+    else
+        wep.CreatedHeatSound = false
+        if wep.HeatAlarm then wep.HeatAlarm:Stop() end
+    end
+end

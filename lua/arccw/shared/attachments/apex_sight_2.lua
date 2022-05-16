@@ -26,17 +26,17 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 8, -0.62),
         Ang = Angle(0, 0, 0),
-        Magnification = 2.15,
-        --[[]
+        Magnification = 2.15,		
         HolosightBone = "holosight",
         HolosightData = {
             Holosight = true,
-            HolosightReticle =  Material("sights/holo6.png", "mips"),
+            HolosightReticle =  Material("sights/holo6.png", "mips sharp"),
+			HolosightNoFlare = true,
             HolosightSize = 3,
-            Colorable = true,
-            HolosightNoHSP = true
-        },
-        ]]
+			HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl",
+            Colorable = false,
+            HolosightNoHSP = false
+        },	
     },
 }
 
