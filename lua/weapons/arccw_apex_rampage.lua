@@ -1,6 +1,6 @@
 if CLIENT then
-    killicon.Add( "arccw_apex_flatline", "VGUI/apex_killicon_flatline", Color(251, 85, 25, 255))
-    SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_flatline")
+    killicon.Add( "arccw_apex_rampage", "VGUI/apex_killicon_rampage", Color(251, 85, 25, 255))
+    SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_rampage")
 end
 
 SWEP.Base = "arccw_apex_base"
