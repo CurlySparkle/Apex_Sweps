@@ -54,10 +54,10 @@ SWEP.Apex_Balance = {
         DamageMin = 36,
     },
     [2] = {
-        Damage = 30,
-        DamageMin = 30,
+        Damage = 25,
+        DamageMin = 25,
         BodyDamageMults = {
-            [HITGROUP_HEAD] = 2, -- head + chest + chest = lethal (120);
+            [HITGROUP_HEAD] = 2,
             [HITGROUP_CHEST] = 1,
             [HITGROUP_STOMACH] = 1,
             [HITGROUP_LEFTARM] = 1,
