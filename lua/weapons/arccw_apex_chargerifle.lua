@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Charge Rifle"
-SWEP.Trivia_Class = "Designated Marksman Rifle"
-SWEP.Trivia_Desc = "A energy-discharging weapon. Fires a deadly beam of energy upon a target, the heat generated from charging is hot enough to damage flesh during charge-up."
+SWEP.Trivia_Class = "Sniper Rifle"
+SWEP.Trivia_Desc = "A energy-discharging weapon shooting a deadly beam of energy upon a target.\nUnlike its predecessor, the model produced by Vinson Dynamics emits the beam as it is charging up, instead of releasing all of the energy as a single shot."
 SWEP.Trivia_Manufacturer = "Vinson Dynamics"
 
 SWEP.Slot = 3
@@ -189,36 +189,12 @@ SWEP.Attachments = {
         ExtraSightDist = -1.5
     },
     {
-        PrintName = "Muzzle",
-        Slot = "apex_muzzle",
-        Bone = "def_c_suppressor",
-        Offset = {
-            vpos = Vector(0, 0, 0),
-            vang = Angle(90, 0, -90),
-        },
-    },
-    {
         PrintName = "Stock",
         Slot = {"apex_stock_sniper"}
     },
     {
-        PrintName = "Magazine",
-        Slot = {"apex_mag_light1"}
-    },
-    {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_dtap", "apex_hopup_selfire5"},
-    },
-    {
-        PrintName = "Hold Style",
-        Slot = {"g7_special"},
-        Bone = "def_c_base",
-        Offset = {
-            vpos = Vector(3.5, -5.5, -7),
-            vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
-        },
+        Slot = {},
     },
     {
         PrintName = "Skin",
