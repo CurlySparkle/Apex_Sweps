@@ -35,7 +35,7 @@ SWEP.MeleeAttackTime = 0.2
 
 SWEP.Sway = 0.4
 
-SWEP.LockSightsInPriorityAnim = true
+SWEP.LockSightsInPriorityAnim = false
 
 if ArcCW.Apex.GetBalanceMode() == 2 then
     SWEP.MeleeDamage = 30
