@@ -162,6 +162,16 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["Thermite_to_Frag"] = {
+        VMBodygroups = {
+            {ind = 3, bg = 2},
+        },
+    },
+    ["Frag_to_Thermite"] = {
+        VMBodygroups = {
+            {ind = 3, bg = 1},
+        },
+    },
     ["skin"] = {
         VMSkin = 1,
         WMSkin = 1,
