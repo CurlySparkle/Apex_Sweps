@@ -334,7 +334,7 @@ SWEP.TTTWeight = 100
 
 SWEP.Jamming = true
 SWEP.HeatGain = -2.5
-SWEP.HeatCapacity = 90
+SWEP.HeatCapacity = 90 + 4 -- plus duration of charge animation
 SWEP.HeatDissipation = 1
 SWEP.HeatLockout = false
 SWEP.HeatDelayTime = 0

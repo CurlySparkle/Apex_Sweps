@@ -6,8 +6,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/rampage/fire_1.wav",
-		"^weapons/rampage/fire_2.wav",
-		"^weapons/rampage/fire_3.wav",
+        "^weapons/rampage/fire_2.wav",
+        "^weapons/rampage/fire_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Rampage.Fire_Start")
@@ -20,10 +20,10 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/rampage/fire_loop_1.wav",
-		"^weapons/rampage/fire_loop_2.wav",
-		"^weapons/rampage/fire_loop_3.wav",
-		"^weapons/rampage/fire_loop_4.wav",
-		"^weapons/rampage/fire_loop_5.wav",
+        "^weapons/rampage/fire_loop_2.wav",
+        "^weapons/rampage/fire_loop_3.wav",
+        "^weapons/rampage/fire_loop_4.wav",
+        "^weapons/rampage/fire_loop_5.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Rampage.Fire")
@@ -36,8 +36,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/rampage/fire_charged_1.wav",
-		"^weapons/rampage/fire_charged_2.wav",
-		"^weapons/rampage/fire_charged_3.wav",
+        "^weapons/rampage/fire_charged_2.wav",
+        "^weapons/rampage/fire_charged_3.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Rampage_Charged.Fire_Start")
@@ -50,10 +50,10 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/rampage/fire_charged_loop_1.wav",
-		"^weapons/rampage/fire_charged_loop_2.wav",
-		"^weapons/rampage/fire_charged_loop_3.wav",
-		"^weapons/rampage/fire_charged_loop_4.wav",
-		"^weapons/rampage/fire_charged_loop_5.wav",
+        "^weapons/rampage/fire_charged_loop_2.wav",
+        "^weapons/rampage/fire_charged_loop_3.wav",
+        "^weapons/rampage/fire_charged_loop_4.wav",
+        "^weapons/rampage/fire_charged_loop_5.wav",
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Rampage_Charged.Fire")

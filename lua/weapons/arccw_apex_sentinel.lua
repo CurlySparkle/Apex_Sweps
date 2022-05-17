@@ -327,7 +327,50 @@ SWEP.Animations = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_ReChamber_Fr109_2ch_v2_01.wav", t = 109 / 30}
         },
     },
+    ["charge"] = {
+        Source = "charge",
+        Time = 5,
+        SoundTable = {
+            {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
+        },
+    },
 }
 
 SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 100
+
+SWEP.Jamming = true
+SWEP.HeatGain = -15
+SWEP.HeatCapacity = 120 + 5 -- plus duration of charge animation
+SWEP.HeatDissipation = 1
+SWEP.HeatLockout = false
+SWEP.HeatDelayTime = 0
+
+SWEP.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetHeat() > 0 then
+        return "weapons/sentinel/fire_charged_" .. math.random(1, 3) .. ".wav"
+    end
+end
+
+SWEP.M_Hook_Mult_Damage = function(wep, data)
+    if wep:GetHeat() > 0 then
+        data.mult = data.mult * 1.25
+    end
+end
+
+SWEP.M_Hook_Mult_DamageMin = function(wep, data)
+    if wep:GetHeat() > 0 then
+        data.mult = data.mult * 1.25
+    end
+end
+
+SWEP.Hook_ChangeFiremode = function(wep)
+    -- TODO: check for batteries or something
+    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
+    wep:PlayAnimationEZ("charge", 1, true)
+    local n = CurTime() + wep:GetAnimKeyTime("charge", true)
+    wep:SetNextPrimaryFire(n)
+    wep:SetPriorityAnim(n)
+    wep:SetHeat(wep:GetMaxHeat())
+    return true
+end
