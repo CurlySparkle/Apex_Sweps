@@ -99,7 +99,12 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = "fcg.bolt"
-    }}
+    },
+	{
+		Mode = 1,
+		PrintName = "fcg.apex.amp"
+	}
+}
 
 SWEP.AccuracyMOA = 0.2
 SWEP.HipDispersion = 500
@@ -365,12 +370,21 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    -- TODO: check for batteries or something
-    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
-    wep:PlayAnimationEZ("charge", 1, true)
-    local n = CurTime() + wep:GetAnimKeyTime("charge", true)
-    wep:SetNextPrimaryFire(n)
-    wep:SetPriorityAnim(n)
-    wep:SetHeat(wep:GetMaxHeat())
-    return true
+    -- TODO: proper way maybe?
+	for k,v in pairs(wep.Firemodes) do
+		if v.Mode == 1 and v.PrintName == "fcg.apex.amp" then
+			if wep:GetOwner():Armor() >= 50 then
+				if SERVER then
+					wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50)
+				end
+				if wep:GetReloading() or wep:GetPriorityAnim() then return true end
+				wep:PlayAnimationEZ("charge", 1, true)
+				local n = CurTime() + wep:GetAnimKeyTime("charge", true)
+				wep:SetNextPrimaryFire(n)
+				wep:SetPriorityAnim(n)
+				wep:SetHeat(wep:GetMaxHeat())
+			end
+		end
+	end
+	return false
 end
