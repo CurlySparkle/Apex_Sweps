@@ -82,9 +82,9 @@ SWEP.MaxRecoilBlowback = 1
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 1
+SWEP.Recoil = 1.25
 SWEP.RecoilSide = 0.5
-SWEP.RecoilRise = 0.1
+SWEP.RecoilRise = 0.5
 SWEP.RecoilPunch = 2.5
 SWEP.VisualRecoilMult = 3
 SWEP.RecoilVMShake = 1
@@ -110,7 +110,7 @@ SWEP.Primary.Ammo = "apex_sniper"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = "ArcCW_APEX.G7.Fire"
+SWEP.ShootSound = {"weapons/chargerifle/fire_1.wav", "weapons/chargerifle/fire_2.wav", "weapons/chargerifle/fire_3.wav"}
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -374,6 +374,27 @@ SWEP.ShotRecoilTable = {
     [15] = 0,
 }
 
+SWEP.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetBurstCount() == 1 then
+        wep.ChargeSound = CreateSound(wep, "weapons/chargerifle/fire_windup_" .. math.random(1, 3) .. ".wav")
+        wep.ChargeSound:Play()
+        return ""
+    elseif wep:GetBurstCount() < 15 then
+        return ""
+    elseif wep.ChargeSound then
+        wep.ChargeSound:Stop()
+        wep.ChargeSound = nil
+        return ""
+    end
+end
+
+SWEP.Hook_OnHolster = function(wep)
+    if wep.ChargeSound then
+        wep.ChargeSound:Stop()
+        wep.ChargeSound = nil
+    end
+end
+
 SWEP.Hook_SelectFireAnimation = function(wep, curanim)
     if wep:GetBurstCount() < 15 and wep.Animations[curanim .. "_windup"] then
         return curanim .. "_windup"
@@ -394,7 +415,7 @@ end
 
 SWEP.Hook_ModifyRPM = function(wep, delay)
     if wep:GetBurstCount() < 15 then
-        return 0.025
+        return 0.03
     end
 end
 
