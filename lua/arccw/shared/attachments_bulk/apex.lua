@@ -713,6 +713,7 @@ local hopups = {
                         PostBurstDelay = 1
                     },
                     {
+                        PrintName = "fcg.apex.charge",
                         Mode = 1,
                         Override_TriggerDelay = true,
                         Mult_Damage = 75 / 45,
