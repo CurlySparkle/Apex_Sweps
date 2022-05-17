@@ -567,7 +567,32 @@ local hopups = {
                     return delay / Lerp(wep:GetBurstCount() / 10, 1, 3)
                 end,
                 Hook_ModifyRPM_Priority = 10,
-            }
+            },
+            -- Charge Rifle
+            [3] = {
+                Description = "Improves performance of wind-up weapons.\n\nThe Charge Rifle fires its charge quicker, but does less damage.\nFurthermore, it will use 1 Energy Ammo per shot instead of 2 Sniper Ammo.",
+                Mult_Damage = 30 / 45,
+                Mult_DamageMin = 20 / 30,
+                Override_Firemodes = {
+                    {
+                        PrintName = "fcg.semi",
+                        Mode = -11,
+                        RunawayBurst = true,
+                        PostBurstDelay = 0.25,
+                        Mult_RPM = 1.5,
+                    }
+                },
+                Override_AmmoPerShot = 1,
+                Override_Ammo = "apex_energy",
+                Hook_SelectFireAnimation = function(wep, curanim)
+                    if wep:GetBurstCount() <= 1 and wep.Animations[curanim .. "_windup2"] then
+                        return curanim .. "_windup2"
+                    elseif wep:GetBurstCount() <= (-wep:GetCurrentFiremode().Mode - 1) then
+                        return ""
+                    end
+                end,
+                Hook_SelectFireAnimation_Priority = 100
+            },
         }
     },
     ["selfire"] = {

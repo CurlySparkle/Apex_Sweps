@@ -194,7 +194,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {},
+        Slot = {"apex_hopup_turbo3"},
     },
     {
         PrintName = "Skin",
@@ -252,6 +252,10 @@ SWEP.Animations = {
     ["fire_windup"] = {
         Source = "fire_windup",
     },
+    ["fire_windup2"] = {
+        Source = "fire_windup",
+        Mult = 0.66667,
+    },
     ["enter_sight"] = {
         Source = "iron_in",
     },
@@ -261,6 +265,10 @@ SWEP.Animations = {
     },
     ["fire_sight_windup"] = {
         Source = "iron_fire_windup",
+    },
+    ["fire_sight_windup2"] = {
+        Source = "iron_fire_windup",
+        Mult = 0.66667,
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -355,7 +363,7 @@ SWEP.Hook_GetShootSound = function(wep, fsound)
         wep.ChargeSound = CreateSound(wep, "weapons/chargerifle/fire_windup_" .. math.random(1, 3) .. ".wav")
         wep.ChargeSound:Play()
         return ""
-    elseif wep:GetBurstCount() < 15 then
+    elseif wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
         return ""
     elseif wep.ChargeSound then
         wep.ChargeSound:Stop()
@@ -374,25 +382,27 @@ end
 SWEP.Hook_SelectFireAnimation = function(wep, curanim)
     if wep:GetBurstCount() <= 1 and wep.Animations[curanim .. "_windup"] then
         return curanim .. "_windup"
-    elseif wep:GetBurstCount() <= 15 then
+    elseif wep:GetBurstCount() <= (-wep:GetCurrentFiremode().Mode - 1) then
         return ""
     end
 end
 
-SWEP.M_Hook_Mult_Damage = function(wep, data)
-    if wep:GetBurstCount() < 15 then
-        data.mult = data.mult * 0.0667
+SWEP.ChargeDamage = 3
+
+SWEP.O_Hook_Override_Damage = function(wep, data)
+    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
+        return {current = wep:GetBuff("ChargeDamage")}
     end
 end
 
-SWEP.M_Hook_Mult_DamageMin = function(wep, data)
-    if wep:GetBurstCount() < 15 then
-        data.mult = data.mult * 0.0667
+SWEP.O_Hook_Override_DamageMin = function(wep, data)
+    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
+        return {current = wep:GetBuff("ChargeDamage")}
     end
 end
 
 SWEP.Hook_ModifyRPM = function(wep, delay)
-    if wep:GetBurstCount() < 15 then
+    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
         return 0.03
     end
 end
@@ -405,7 +415,7 @@ SWEP.O_Hook_Override_AmmoPerShot = function(wep, data)
 end
 
 SWEP.Hook_PreDoEffects = function(wep, data)
-    if wep:GetBurstCount() < 15 then
+    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
         return true
     end
 end
