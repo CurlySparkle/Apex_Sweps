@@ -1,5 +1,6 @@
 CreateConVar("arccw_apex_bal", -1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Tweaks the balancing for the Apex Legends Weapons.", -1, 2)
 CreateConVar("arccw_apex_ammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use HL2 ammo types instead of custom ammo types.", 0, 1)
+CreateConVar("arccw_apex_freecharge", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Make charging up the Sentinel and Rampage not cost anything.", 0, 1)
 
 CreateConVar("arccw_apex_ttt_ammo", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Replace ArcCW TTT ammo replacements with Apex ammo types.", 0, 1)
 CreateConVar("arccw_apex_ttt_exclusive", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Only allow Apex weapons to spawn in TTT (and not other ArcCW weapons).", 0, 1)

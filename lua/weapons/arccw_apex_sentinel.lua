@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Sentinel"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "A veritably powerful sniper rifle with the ability to charge a more powerful shot with the use of a shield battery."
+SWEP.Trivia_Desc = "A veritably powerful bolt action sniper rifle.\n\nPress the firemode key to charge up the weapon with 50 suit armor, increasing its damage."
 SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 4
@@ -58,8 +58,8 @@ SWEP.Apex_Balance = {
         DamageMin = 40,
     },
     [2] = {
-        Damage = 50, -- roughly equivalent to TTT scout
-        DamageMin = 50
+        Damage = 55, -- roughly equivalent to TTT scout
+        DamageMin = 55
     },
 }
 
@@ -93,18 +93,13 @@ SWEP.VisualRecoilMult = 0.2
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true -- do not cycle on last shot
 
-SWEP.Delay = 60 / 60
+SWEP.Delay = 60 / 90
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = "fcg.bolt"
-    },
-	{
-		Mode = 1,
-		PrintName = "fcg.apex.amp"
-	}
-}
+    }}
 
 SWEP.AccuracyMOA = 0.2
 SWEP.HipDispersion = 500
@@ -184,7 +179,6 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"ref_sight","ref_dot"},
-		ExtraSightDist = 3,
         CorrectivePos = Vector(2.69,0,-0.47),
         CorrectiveAng = Angle(-0.001, 0.005, 4.997)
     },
@@ -335,17 +329,9 @@ SWEP.Animations = {
     },
     ["charge"] = {
         Source = "charge",
+        Time = 5,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunUp_fr006_2ch_v1_01.wav", t = 6 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryEject_fr023_2ch_v1_01.wav", t = 24 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryGrab_fr033_2ch_v1_01.wav", t = 33 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryPlace_fr049_2ch_v1_01.wav", t = 49 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatterySlamIn_fr062_2ch_v1_01.wav", t = 62 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_ChargeUp_fr070_2ch_v2_01.wav", t = 70 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_SpinningBarrel_fr070_2ch_v1_01.wav", t = 70 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_PowerSurge_fr155_2ch_v1_01.wav", t = 155 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_Snap_fr155_2ch_v1_01.wav", t = 155 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunDown_fr182_2ch_v1_01.wav", t = 182 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
         },
     },
 }
@@ -379,21 +365,12 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    -- TODO: proper way maybe?
-	for k,v in pairs(wep.Firemodes) do
-		if v.Mode == 1 and v.PrintName == "fcg.apex.amp" then
-			if wep:GetOwner():Armor() >= 50 then
-				if SERVER then
-					wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50)
-				end
-				if wep:GetReloading() or wep:GetPriorityAnim() then return true end
-				wep:PlayAnimationEZ("charge", 1, true)
-				local n = CurTime() + wep:GetAnimKeyTime("charge", true)
-				wep:SetNextPrimaryFire(n)
-				wep:SetPriorityAnim(n)
-				wep:SetHeat(wep:GetMaxHeat())
-			end
-		end
-	end
-	return false
+    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():Armor() < 50) then return true end
+    if SERVER and not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50) end
+    wep:PlayAnimationEZ("charge", 1, true)
+    local n = CurTime() + wep:GetAnimKeyTime("charge", true)
+    wep:SetNextPrimaryFire(n)
+    wep:SetPriorityAnim(n)
+    wep:SetHeat(wep:GetMaxHeat())
+    return true
 end

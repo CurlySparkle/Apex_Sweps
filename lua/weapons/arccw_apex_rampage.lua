@@ -10,13 +10,13 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Rampage LMG"
 SWEP.Trivia_Class = "Light Machine Gun"
-SWEP.Trivia_Desc = "Rampart's custom made machine gun with high damage. Can be charged with a Thermite grenade to increase rate of fire."
+SWEP.Trivia_Desc = "Rampart's custom made machine gun with high damage but low fire rate.\n\nPress the firemode key to charge up the weapon with a grenade, increasing its rate of fire."
 SWEP.Trivia_Manufacturer = "Rampart/SWCC"
 
 SWEP.Slot = 3
 
 SWEP.CrouchPos = Vector(-6, 0, 1)
-SWEP.CrouchAng = Angle(1.552, -0.537, -57.822)
+SWEP.CrouchAng = Angle(0.837, 0, -56.513)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -92,10 +92,6 @@ SWEP.Firemodes = {
     {
         Mode = 2,
     },
-	{
-		Mode = 2,
-		PrintName = "fcg.apex.revdup"
-	}
 }
 
 SWEP.AccuracyMOA = 4
@@ -338,7 +334,7 @@ SWEP.TTTWeight = 100
 
 SWEP.Jamming = true
 SWEP.HeatGain = -2.5
-SWEP.HeatCapacity = 90 + 4 -- plus duration of charge animation
+SWEP.HeatCapacity = 90
 SWEP.HeatDissipation = 1
 SWEP.HeatLockout = false
 SWEP.HeatDelayTime = 0
@@ -357,18 +353,14 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-	for k,v in pairs(wep.Firemodes) do
-		if v.Mode == 2 and v.PrintName == "fcg.apex.revdup" then
-			if wep:GetOwner():GetAmmoCount("Grenade") >= 1 then
-				wep:GetOwner():RemoveAmmo(1,"Grenade")
-				if wep:GetReloading() or wep:GetPriorityAnim() then return true end
-				wep:PlayAnimationEZ("charge", 1, true)
-				local n = CurTime() + wep:GetAnimKeyTime("charge", true)
-				wep:SetNextPrimaryFire(n)
-				wep:SetPriorityAnim(n)
-				wep:SetHeat(wep:GetMaxHeat())
-			end
-		end
-	end
-	return false
+    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount("grenade") < 1) then return true end
+    if not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():RemoveAmmo(1, "grenade") end
+    wep:PlayAnimationEZ("charge", 1, true)
+    local n = CurTime() + wep:GetAnimKeyTime("charge", true)
+    wep:SetNextPrimaryFire(n)
+    wep:SetPriorityAnim(n)
+
+    wep:SetHeat(wep:GetMaxHeat())
+
+    return true
 end

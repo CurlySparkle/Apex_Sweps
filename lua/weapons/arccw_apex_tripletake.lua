@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Triple Take"
 SWEP.Trivia_Class = "Designated Marksman Rifle"
-SWEP.Trivia_Desc = "Triple-barrel marksman rifle."
+SWEP.Trivia_Desc = "Energy rifle with three barrels firing in a horizontal line."
 SWEP.Trivia_Manufacturer = "Burrell Defense"
 
 SWEP.Slot = 3
@@ -94,19 +94,19 @@ SWEP.Delay = 60 / 72 -- 60 / RPM.
 SWEP.Num = 3 -- number of shots per trigger pull.
 -- Just 3 happy bullets side-by-side
 SWEP.ShotgunSpreadPattern = {
-    [1] = Angle(0, -0.4, 0),
+    [1] = Angle(0, -0.5, 0),
     [2] = Angle(0, 0, 0),
-    [3] = Angle(0, 0.4, 0),
+    [3] = Angle(0, 0.5, 0),
 }
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
-    local d = 1
+    local d = Lerp(wep:GetSightDelta(), 0.75, 1)
     local chg = wep:GetNWFloat("ApexCharge", 0)
     if chg >= 1 then
         d = d * 0.15
     elseif chg >= 0.67 then
-        d = d * 0.5
+        d = d * 0.35
     elseif chg >= 0.33 then
-        d = d * 0.75
+        d = d * 0.65
     end
     local p = wep.ShotgunSpreadPattern[data.num]
     data.ang = Angle(p.p * d, p.y * d, 0)
@@ -366,7 +366,7 @@ SWEP.Hook_Think = function(wep)
     local charge = wep:GetNWFloat("ApexCharge", 0)
     if wep:GetBuff_Override("ApexCharge") and wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS and wep:Clip1() >= 1 then
         wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 1))
-        if (game.SinglePlayer() and SERVER) or CLIENT then
+        if (game.SinglePlayer() and SERVER) or (not game.SinglePlayer() and CLIENT) then
             local f = wep:GetNWFloat("ApexCharge", 0)
             if f >= 1 and charge < 1 then
                 wep:EmitSound("weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_04.wav")

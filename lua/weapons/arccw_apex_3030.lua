@@ -423,7 +423,7 @@ SWEP.Hook_Think = function(wep)
     local charge = wep:GetNWFloat("ApexCharge", 0)
     if wep:GetBuff_Override("ApexCharge") and  wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS and wep:Clip1() > 0 then
         wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 0.35))
-        if (game.SinglePlayer() and SERVER) or CLIENT then
+        if (game.SinglePlayer() and SERVER) or (not game.SinglePlayer() and CLIENT) then
             local f = wep:GetNWFloat("ApexCharge", 0)
             if f >= 1 and charge < 1 then
                 if wep.ApexLoopSound then

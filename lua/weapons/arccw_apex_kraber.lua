@@ -323,7 +323,7 @@ SWEP.Animations = {
 },
 }
 
-if engine.ActiveGamemode == "terrortown" then
+if engine.ActiveGamemode() == "terrortown" then
     SWEP.Override_Ammo = "none"
     SWEP.AutoSpawnable = false
     SWEP.ForceDefaultClip = 0

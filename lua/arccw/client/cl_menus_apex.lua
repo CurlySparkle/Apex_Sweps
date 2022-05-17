@@ -8,6 +8,10 @@ local ApexPanel = {
     { type = "c", text = "#arccw.cvar.apex_bal.desc.1" },
     { type = "c", text = "#arccw.cvar.apex_bal.desc.2" },
 
+    { type = "b", text = "#arccw.cvar.apex_freecharge", var = "arccw_apex_freecharge", sv = true },
+    { type = "c", text = "#arccw.cvar.apex_freecharge.desc" },
+
+
     { type = "b", text = "#arccw.cvar.apex_ammo", var = "arccw_apex_ammo", sv = true },
     { type = "b", text = "#arccw.cvar.apex_ttt_ammo", var = "arccw_apex_ttt_ammo", sv = true },
     { type = "c", text = "#arccw.cvar.apex_ttt_ammo.desc" },

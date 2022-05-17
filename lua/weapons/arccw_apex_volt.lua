@@ -60,8 +60,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 12,
-        DamageMin = 12,
+        Damage = 13,
+        DamageMin = 13,
     },
 }
 
@@ -69,12 +69,12 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "apex_energy"
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.215
+SWEP.Recoil = 0.3
+SWEP.RecoilSide = 0.3
 SWEP.RecoilRise = 0.4
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1
-SWEP.VisualRecoilMult = 0.1
+SWEP.VisualRecoilMult = 1
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Delay = 60 / 650 -- 60 / RPM.
@@ -82,9 +82,6 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 2,
-    },
-    {
-        Mode = 1,
     }
 }
 
