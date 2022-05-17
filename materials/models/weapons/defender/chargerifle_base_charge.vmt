@@ -1,0 +1,18 @@
+"unlitgeneric"
+{
+"$basetexture"				"models\weapons\defender\chargerifle_base_charge_d"
+"$translucent" "1"
+"$additive" "1"
+"$decal" "1"
+"$color2"	"[1 0.4 0]"
+
+"$detail"		"models\weapons\defender\heat_charge_detail"
+Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	10
+			textureScrollAngle 	0
+		}
+	}
