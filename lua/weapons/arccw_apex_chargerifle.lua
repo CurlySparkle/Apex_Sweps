@@ -396,8 +396,10 @@ SWEP.Hook_OnHolster = function(wep)
 end
 
 SWEP.Hook_SelectFireAnimation = function(wep, curanim)
-    if wep:GetBurstCount() < 15 and wep.Animations[curanim .. "_windup"] then
+    if wep:GetBurstCount() <= 1 and wep.Animations[curanim .. "_windup"] then
         return curanim .. "_windup"
+    elseif wep:GetBurstCount() <= 15 then
+        return ""
     end
 end
 
