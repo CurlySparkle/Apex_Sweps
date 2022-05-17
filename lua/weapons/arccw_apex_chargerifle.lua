@@ -42,9 +42,10 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 3
-SWEP.DamageMin = 3
-SWEP.Range = 200
+SWEP.Damage = 45
+SWEP.DamageMin = 45
+SWEP.Range = 300
+SWEP.RangeMin = 150
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 30000 * ArcCW.HUToM
 SWEP.AlwaysPhysBullet = false
@@ -56,22 +57,13 @@ SWEP.Apex_Balance = {
         DamageMin = 36,
     },
     [2] = {
-        Damage = 25,
-        DamageMin = 25,
-        BodyDamageMults = {
-            [HITGROUP_HEAD] = 2,
-            [HITGROUP_CHEST] = 1,
-            [HITGROUP_STOMACH] = 1,
-            [HITGROUP_LEFTARM] = 1,
-            [HITGROUP_RIGHTARM] = 1,
-            [HITGROUP_LEFTLEG] = 0.75,
-            [HITGROUP_RIGHTLEG] = 0.75,
-        }
+        Damage = 45,
+        DamageMin = 45,
     },
 }
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
+    [HITGROUP_HEAD] = 1.25,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
@@ -90,27 +82,30 @@ SWEP.MaxRecoilBlowback = 1
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 0.7
-SWEP.RecoilSide = 0.345
+SWEP.Recoil = 1
+SWEP.RecoilSide = 0.5
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
-SWEP.VisualRecoilMult = 1.25
+SWEP.VisualRecoilMult = 3
 SWEP.RecoilVMShake = 1
 
-SWEP.Delay = 60 / 240 -- 60 / RPM.
+SWEP.Delay = 60 / 60
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
-        Mode = 1,
+        PrintName = "fcg.semi",
+        Mode = -16,
+        RunawayBurst = true,
+        PostBurstDelay = 1
     }
 }
 
-SWEP.AccuracyMOA = 0.5
-SWEP.HipDispersion = 450 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 75
-SWEP.JumpDispersion = 300
+SWEP.AccuracyMOA = 0
+SWEP.HipDispersion = 0
+SWEP.MoveDispersion = 0
+SWEP.JumpDispersion = 0
 
-SWEP.Primary.Ammo = "apex_light"
+SWEP.Primary.Ammo = "apex_sniper"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -278,12 +273,18 @@ SWEP.Animations = {
         Source = {"fire", "fire2"},
         ShellEjectAt = 0.1,
     },
+    ["fire_windup"] = {
+        Source = "fire_windup",
+    },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
         Source = {"iron_fire", "iron_fire2"},
         ShellEjectAt = 0.1,
+    },
+    ["fire_sight_windup"] = {
+        Source = "iron_fire_windup",
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -331,7 +332,7 @@ SWEP.Animations = {
         LHIKIn = 0.3,
         LHIKOut = 0.6,
         SoundTable = {
-			--{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_grabmag_fr0_2ch_v1_01.wav", t = 8 / 30},
+            --{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_grabmag_fr0_2ch_v1_01.wav", t = 8 / 30},
             --{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_ejectmag_fr18_2ch_v1_01.wav", t = 14 / 30},
             --{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_insertmag_fr34_2ch_v1_01.wav", t = 39 / 30}
         },
@@ -352,5 +353,54 @@ SWEP.Animations = {
 },
 }
 
-SWEP.TTTWeaponType = {"weapon_zm_rifle", "weapon_ttt_m16"}
+SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 75
+
+SWEP.ShotRecoilTable = {
+    [1] = 0,
+    [2] = 0,
+    [3] = 0,
+    [4] = 0,
+    [5] = 0,
+    [6] = 0,
+    [7] = 0,
+    [8] = 0,
+    [9] = 0,
+    [10] = 0,
+    [11] = 0,
+    [12] = 0,
+    [13] = 0,
+    [14] = 0,
+    [15] = 0,
+}
+
+SWEP.Hook_SelectFireAnimation = function(wep, curanim)
+    if wep:GetBurstCount() < 15 and wep.Animations[curanim .. "_windup"] then
+        return curanim .. "_windup"
+    end
+end
+
+SWEP.M_Hook_Mult_Damage = function(wep, data)
+    if wep:GetBurstCount() < 15 then
+        data.mult = data.mult * 0.0667
+    end
+end
+
+SWEP.M_Hook_Mult_DamageMin = function(wep, data)
+    if wep:GetBurstCount() < 15 then
+        data.mult = data.mult * 0.0667
+    end
+end
+
+SWEP.Hook_ModifyRPM = function(wep, delay)
+    if wep:GetBurstCount() < 15 then
+        return 0.025
+    end
+end
+
+SWEP.AmmoPerShot = 2
+SWEP.O_Hook_Override_AmmoPerShot = function(wep, data)
+    if wep:GetBurstCount() > 0 then
+        return {current = 0}
+    end
+end

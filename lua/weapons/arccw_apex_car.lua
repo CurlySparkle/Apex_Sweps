@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "C.A.R. SMG"
 SWEP.Trivia_Class = "Submachine Gun"
-SWEP.Trivia_Desc = "Adaptable SMG capable of using two ammo calibres without an impact on performance."
+SWEP.Trivia_Desc = "Adaptable SMG capable of using two ammo types.\n\nPress the firemode key to swap between Light and Heavy rounds."
 SWEP.Trivia_Manufacturer = "Siwhan Industries"
 
 SWEP.Slot = 2
