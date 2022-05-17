@@ -12,7 +12,7 @@ Proxies
 		TextureScroll
 		{
 			textureScrollVar	$detailtexturetransform
-			textureScrollRate	10
-			textureScrollAngle 	0
+			textureScrollRate	1
+			textureScrollAngle 	90
 		}
 	}

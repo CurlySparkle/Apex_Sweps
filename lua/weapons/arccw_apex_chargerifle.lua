@@ -15,14 +15,17 @@ SWEP.Trivia_Manufacturer = "Vinson Dynamics"
 
 SWEP.Slot = 3
 
-SWEP.CrouchPos = Vector(-6, -2, 1)
+SWEP.CrouchPos = Vector(-9, -7, 1)
 SWEP.CrouchAng = Angle(0, 0, -53)
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, -6, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -2, 1)
+SWEP.ActivePos = Vector(0, -6, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.CustomizePos = Vector(0, -6, 0)
+SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 250
@@ -40,7 +43,7 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOV = 80
 
 SWEP.Damage = 45
 SWEP.DamageMin = 30
@@ -135,7 +138,7 @@ SWEP.CaseBones = {}
 
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -5, 0),
+    Pos = Vector(0, -10, -0.5),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -149,9 +152,6 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.AttachmentElements = {
     ["weapon_sights"] = {
@@ -288,6 +288,9 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.9,
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
@@ -295,10 +298,10 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
-            --{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Start_V1_2ch_01.wav", t = 1 / 30},
-            --{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_01.wav", t = 96 / 30},
-            --{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_02.wav", t = 240 / 30},
-            --{p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 316 / 30}
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Start_V1_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 316 / 30}
     },
     },
     ["1_to_2"] = {
@@ -316,9 +319,16 @@ SWEP.Animations = {
         LHIKIn = 0.3,
         LHIKOut = 0.6,
         SoundTable = {
-            --{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_grabmag_fr0_2ch_v1_01.wav", t = 8 / 30},
-            --{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_ejectmag_fr18_2ch_v1_01.wav", t = 14 / 30},
-            --{p = 100, s = "weapons/g7/wpn_g2a4_reload_empty_insertmag_fr34_2ch_v1_01.wav", t = 39 / 30}
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR04_ArmLift_2ch_v1_01.wav", t = 8 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR13_EjectMag_2ch_v1_01.wav", t = 13 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR18_SteamRelease_2ch_v1_01.wav", t = 18 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR41_ArmLift_2ch_v1_01.wav", t = 41 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR51_InsertMag_2ch_v1_01.wav", t = 51 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR61_TwistLever_2ch_v1_01.wav", t = 61 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR77_PullOut_2ch_v1_01.wav", t = 77 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR93_ArmLift_2ch_v1_01.wav", t = 93 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR105_SlapClosed_2ch_v1_01.wav", t = 105 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR121_HandSettle_2ch_v1_01.wav", t = 121 / 30}
         },
     },
     ["reload_empty"] = {
@@ -328,11 +338,17 @@ SWEP.Animations = {
         LHIKIn = 0.3,
         LHIKOut = 0.6,
         SoundTable = {
-            --{s = "weapons/g7/wpn_g2a4_reload_empty_grabmag_fr0_2ch_v1_01.wav", t = 0 / 30},
-            --{s = "weapons/g7/wpn_g2a4_reload_empty_ejectmag_fr18_2ch_v1_01.wav", t = 18 / 30},
-            --{s = "weapons/g7/wpn_g2a4_reload_empty_insertmag_fr34_2ch_v1_01.wav", t = 34 / 30},
-            --{s = "weapons/g7/wpn_g2a4_reload_handgrab_fr44_2ch_v1_01.wav", t = 44 / 30},
-            --{s = "weapons/g7/wpn_g2a4_reload_empty_charge_fr49_2ch_v1_01.wav", t = 49 / 30}
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR04_ArmLift_2ch_v1_01.wav", t = 8 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR13_EjectMag_2ch_v1_01.wav", t = 13 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR18_SteamRelease_2ch_v1_01.wav", t = 18 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR41_ArmLift_2ch_v1_01.wav", t = 41 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR51_InsertMag_2ch_v1_01.wav", t = 51 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR61_TwistLever_2ch_v1_01.wav", t = 61 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR77_PullOut_2ch_v1_01.wav", t = 77 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR93_ArmLift_2ch_v1_01.wav", t = 93 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_ReloadEmpty_FR100_SwitchFlip_2ch_v1_01.wav", t = 100 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_ReloadEmpty_FR113_SwitchFlip_2ch_v1_01.wav", t = 113 / 30},
+			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR105_SlapClosed_2ch_v1_01.wav", t = 145 / 30},
         },
     },
 }
