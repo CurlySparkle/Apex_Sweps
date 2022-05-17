@@ -93,7 +93,7 @@ SWEP.VisualRecoilMult = 0.2
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true -- do not cycle on last shot
 
-SWEP.Delay = 60 / 31
+SWEP.Delay = 60 / 60
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
