@@ -1,0 +1,21 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models/weapons/defender/charge_rifle_light_d"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "1"
+	"$detailframe"	"0"
+	"$translucent" 	"0"
+	"$additive"	"1"
+
+	$color2 "[1 0.35 0]"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
+}

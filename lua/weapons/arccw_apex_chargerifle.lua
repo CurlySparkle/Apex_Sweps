@@ -138,7 +138,7 @@ SWEP.CaseBones = {}
 
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -10, -0.5),
+    Pos = Vector(0, -8.5, -0.45),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -175,7 +175,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "g7"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights", "apex_optics","apex_scope_chargerifle"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
@@ -184,8 +184,8 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"weapon_sights","weapon_dot"},
-        CorrectivePos = Vector(1.99, 0, -0.7),
-        CorrectiveAng = Angle(0, 0, 3.6),
+        CorrectivePos = Vector(2.88, 0, 0.44),
+        CorrectiveAng = Angle(0, 0, 6.108),
         ExtraSightDist = -1.5
     },
     {
@@ -247,7 +247,6 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = {"fire", "fire2"},
-        ShellEjectAt = 0.1,
     },
     ["fire_windup"] = {
         Source = "fire_windup",
@@ -269,7 +268,6 @@ SWEP.Animations = {
     },
     ["fire_sight"] = {
         Source = {"iron_fire", "iron_fire2"},
-        ShellEjectAt = 0.1,
     },
     ["fire_sight_windup"] = {
         Source = "iron_fire_windup",
