@@ -16,7 +16,7 @@ SWEP.Trivia_Manufacturer = "Rampart/SWCC"
 SWEP.Slot = 3
 
 SWEP.CrouchPos = Vector(-6, 0, 1)
-SWEP.CrouchAng = Angle(0.837, 0, -56.513)
+SWEP.CrouchAng = Angle(1.552, -0.537, -57.822)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)

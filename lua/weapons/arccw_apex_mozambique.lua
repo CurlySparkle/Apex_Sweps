@@ -288,6 +288,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.4,
+		Mult = 0.9,
         SoundTable = {
             {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr00_2ch_v1_01.wav", t = 1 / 30},
             {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr22_2ch_v1_01.wav", t = 22 / 30},
@@ -309,6 +310,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.4,
+		Mult = 0.9,
         SoundTable = {
             {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part01_2ch_V1_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part02_2ch_V1_01.wav", t = 22 / 30},
@@ -321,7 +323,7 @@ SWEP.Animations = {
     },
     ["idle_sprint"] = {
         Source = "sprint",
-        mult = 0.8,
+        mult = 0.9,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
