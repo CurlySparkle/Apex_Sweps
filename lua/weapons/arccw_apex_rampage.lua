@@ -92,9 +92,6 @@ SWEP.Firemodes = {
     {
         Mode = 2,
     },
-	{
-        Mode = 2,
-    }
 }
 
 SWEP.AccuracyMOA = 4
@@ -246,8 +243,8 @@ SWEP.Animations = {
         Source = "draw_first",
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.wav", t = 25 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.wav", t = 25 / 30},
         },
     },
     ["draw"] = {
@@ -300,24 +297,21 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 316 / 30}
     },
     },
-    ["1_to_2"] = {
+    ["charge"] = {
         Source = "energize",
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
         },
     },
-    -- ["2_to_1"] = {
-        -- Source = "firemode2",
-    -- },
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_magout_2ch_v1_01b.wav", t = 15 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.wav", t = 25 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.wav", t = 45 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.wav", t = 55 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.wav", t = 25 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.wav", t = 45 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.wav", t = 55 / 30},
         },
     },
     ["reload_empty"] = {
@@ -326,11 +320,11 @@ SWEP.Animations = {
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_magout_2ch_v1_01b.wav", t = 15 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.wav", t = 25 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.wav", t = 45 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.wav", t = 55 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 65 / 30},
-			{p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.wav", t = 75 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.wav", t = 25 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.wav", t = 45 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.wav", t = 55 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 65 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.wav", t = 75 / 30},
         },
     },
 }
@@ -338,25 +332,33 @@ SWEP.Animations = {
 SWEP.TTTWeaponType = "weapon_zm_mac10"
 SWEP.TTTWeight = 100
 
---I was feeling sleepy when i did that, forgive me.
-SWEP.Hook_ModifyRPM = function(wep,delay)
-	--PrintTable(wep:GetCurrentFiremode())
-	if wep:GetCurrentFiremode().ApexCharge != nil then
-		wep.Delay = 60 / 390
-		delay = 60 / 390
-	else
-		wep.Delay = 60 / 300
-		delay = 60 / 300
-	end
+SWEP.Jamming = true
+SWEP.HeatGain = -2.5
+SWEP.HeatCapacity = 90
+SWEP.HeatDissipation = 1
+SWEP.HeatLockout = false
+SWEP.HeatDelayTime = 0
+
+SWEP.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetHeat() > 0 then
+        if fsound == wep.FirstShootSound then return "ArcCW_APEX.Rampage_Charged.Fire_Start"
+        else return "ArcCW_APEX.Rampage_Charged.Fire" end
+    end
 end
 
-SWEP.Hook_GetShootSound = function(wep, sound)
-    local mode = wep:GetCurrentFiremode()
-    if mode.ApexCharge != nil then
-		wep.FirstShootSound = "ArcCW_APEX.Rampage_Charged.Fire_Start"
-        return "ArcCW_APEX.Rampage_Charged.Fire"
-	else
-		wep.FirstShootSound = "ArcCW_APEX.Rampage.Fire_Start"
-        return "ArcCW_APEX.Rampage.Fire"
+SWEP.Hook_ModifyRPM = function(wep, delay)
+    if wep:GetHeat() > 0 then
+        return delay / 1.3
     end
+end
+
+SWEP.Hook_ChangeFiremode = function(wep)
+    -- TODO: check for a grenade or something
+    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
+    wep:PlayAnimationEZ("charge", 1, true)
+    local n = CurTime() + wep:GetAnimKeyTime("charge", true)
+    wep:SetNextPrimaryFire(n)
+    wep:SetPriorityAnim(n)
+    wep:SetHeat(wep:GetMaxHeat())
+    return true
 end
