@@ -194,7 +194,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_turbo3"},
+        Slot = {"apex_hopup_turbo3", "apex_hopup_shatter4", "apex_hopup_selfire6"},
     },
     {
         PrintName = "Skin",
@@ -256,6 +256,14 @@ SWEP.Animations = {
         Source = "fire_windup",
         Mult = 0.66667,
     },
+    ["trigger"] = {
+        Source = "fire_windup",
+        Mult = 1.25,
+        MinProgress = 0.6,
+    },
+    ["untrigger"] = {
+        Source = "idle",
+    },
     ["enter_sight"] = {
         Source = "iron_in",
     },
@@ -269,6 +277,14 @@ SWEP.Animations = {
     ["fire_sight_windup2"] = {
         Source = "iron_fire_windup",
         Mult = 0.66667,
+    },
+    ["trigger_sight"] = {
+        Source = "iron_fire_windup",
+        Mult = 1.25,
+        MinProgress = 0.6,
+    },
+    ["untrigger_sight"] = {
+        Source = "iron_idle",
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -290,7 +306,7 @@ SWEP.Animations = {
         LHIKOut = 0.9,
         SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Sniper_End_V1_2ch_01.wav", t = 0 / 30},
-    },
+        },
     },
     ["idle_inspect"] = {
         Source = "inspect",
@@ -322,13 +338,13 @@ SWEP.Animations = {
             {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR04_ArmLift_2ch_v1_01.wav", t = 8 / 30},
             {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR13_EjectMag_2ch_v1_01.wav", t = 13 / 30},
             {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR18_SteamRelease_2ch_v1_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR41_ArmLift_2ch_v1_01.wav", t = 41 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR51_InsertMag_2ch_v1_01.wav", t = 51 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR61_TwistLever_2ch_v1_01.wav", t = 61 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR77_PullOut_2ch_v1_01.wav", t = 77 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR93_ArmLift_2ch_v1_01.wav", t = 93 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR105_SlapClosed_2ch_v1_01.wav", t = 105 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR121_HandSettle_2ch_v1_01.wav", t = 121 / 30}
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR41_ArmLift_2ch_v1_01.wav", t = 41 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR51_InsertMag_2ch_v1_01.wav", t = 51 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR61_TwistLever_2ch_v1_01.wav", t = 61 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR77_PullOut_2ch_v1_01.wav", t = 77 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR93_ArmLift_2ch_v1_01.wav", t = 93 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR105_SlapClosed_2ch_v1_01.wav", t = 105 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR121_HandSettle_2ch_v1_01.wav", t = 121 / 30}
         },
     },
     ["reload_empty"] = {
@@ -341,14 +357,14 @@ SWEP.Animations = {
             {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR04_ArmLift_2ch_v1_01.wav", t = 8 / 30},
             {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR13_EjectMag_2ch_v1_01.wav", t = 13 / 30},
             {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR18_SteamRelease_2ch_v1_01.wav", t = 18 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR41_ArmLift_2ch_v1_01.wav", t = 41 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR51_InsertMag_2ch_v1_01.wav", t = 51 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR61_TwistLever_2ch_v1_01.wav", t = 61 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR77_PullOut_2ch_v1_01.wav", t = 77 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR93_ArmLift_2ch_v1_01.wav", t = 93 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_ReloadEmpty_FR100_SwitchFlip_2ch_v1_01.wav", t = 100 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_ReloadEmpty_FR113_SwitchFlip_2ch_v1_01.wav", t = 113 / 30},
-			{p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR105_SlapClosed_2ch_v1_01.wav", t = 145 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR41_ArmLift_2ch_v1_01.wav", t = 41 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR51_InsertMag_2ch_v1_01.wav", t = 51 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR61_TwistLever_2ch_v1_01.wav", t = 61 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR77_PullOut_2ch_v1_01.wav", t = 77 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR93_ArmLift_2ch_v1_01.wav", t = 93 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_ReloadEmpty_FR100_SwitchFlip_2ch_v1_01.wav", t = 100 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_ReloadEmpty_FR113_SwitchFlip_2ch_v1_01.wav", t = 113 / 30},
+            {p = 100, s = "weapons/chargerifle/Wpn_ChargeRifle_Reload_FR105_SlapClosed_2ch_v1_01.wav", t = 145 / 30},
         },
     },
 }
@@ -375,16 +391,42 @@ SWEP.ShotRecoilTable = {
 }
 
 SWEP.Hook_GetShootSound = function(wep, fsound)
+    if wep:GetCurrentFiremode().Mode >= 0 then return end
     if wep:GetBurstCount() == 1 then
         wep.ChargeSound = CreateSound(wep, "weapons/chargerifle/fire_windup_" .. math.random(1, 3) .. ".wav")
         wep.ChargeSound:Play()
         return ""
-    elseif wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
+    elseif wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return ""
     elseif wep.ChargeSound then
         wep.ChargeSound:Stop()
         wep.ChargeSound = nil
         return ""
+    end
+end
+
+SWEP.Hook_OnTriggerHeld = function(wep)
+    if SERVER then
+        if wep.ChargeSound then
+            wep.ChargeSound:Stop()
+            wep.ChargeSound = nil
+        end
+        wep.ChargeSound = CreateSound(wep, "weapons/chargerifle/fire_windup_" .. math.random(1, 3) .. ".wav")
+        wep.ChargeSound:Play()
+    end
+end
+
+SWEP.Hook_OnTriggerRelease = function(wep)
+    if wep.ChargeSound then
+        wep.ChargeSound:FadeOut(0.1)
+        wep.ChargeSound = nil
+    end
+end
+
+SWEP.Hook_PostFireBullets = function(wep)
+    if wep:GetCurrentFiremode().Mode >= 0 and wep.ChargeSound then
+        wep.ChargeSound:Stop()
+        wep.ChargeSound = nil
     end
 end
 
@@ -396,9 +438,10 @@ SWEP.Hook_OnHolster = function(wep)
 end
 
 SWEP.Hook_SelectFireAnimation = function(wep, curanim)
+    if wep:GetCurrentFiremode().Mode >= 0 then return end
     if wep:GetBurstCount() <= 1 and wep.Animations[curanim .. "_windup"] then
         return curanim .. "_windup"
-    elseif wep:GetBurstCount() <= (-wep:GetCurrentFiremode().Mode - 1) then
+    elseif wep:GetBurstCount() <= (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return ""
     end
 end
@@ -406,42 +449,42 @@ end
 SWEP.ChargeDamage = 3
 
 SWEP.O_Hook_Override_Damage = function(wep, data)
-    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
+    if wep:GetCurrentFiremode().Mode >= 0 then return end
+    if wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return {current = wep:GetBuff("ChargeDamage")}
     end
 end
 
 SWEP.O_Hook_Override_DamageMin = function(wep, data)
-    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
+    if wep:GetCurrentFiremode().Mode >= 0 then return end
+    if wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return {current = wep:GetBuff("ChargeDamage")}
     end
 end
 
 SWEP.Hook_ModifyRPM = function(wep, delay)
-    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
+    if wep:GetCurrentFiremode().Mode >= 0 then return end
+    if wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return 0.03
     end
 end
 
 SWEP.AmmoPerShot = 2
 SWEP.O_Hook_Override_AmmoPerShot = function(wep, data)
+    if wep:GetCurrentFiremode().Mode >= 0 then return end
     if wep:GetBurstCount() > 0 then
         return {current = 0}
     end
 end
 
 SWEP.O_Hook_Override_Tracer = function(wep, data)
-    if wep:GetBurstCount() < 15 then
+    if wep:GetCurrentFiremode().Mode < 0 and wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return {current = "arccw_apex_tracer_chargerifle"}
-	else
-		return {current = "arccw_apex_tracer_chargerifle_1"}
     end
 end
 
 SWEP.O_Hook_Override_MuzzleEffect = function(wep,data)
-    if wep:GetBurstCount() < 15 then
+    if wep:GetCurrentFiremode().Mode < 0 and wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return {current = "tfa_apex_chargerifle_muzzle_charge"}
-	else
-		return {current = "tfa_apex_chargerifle_muzzle"}
     end
 end

@@ -582,6 +582,18 @@ local hopups = {
                         Mult_RPM = 1.5,
                     }
                 },
+                Override_ShotRecoilTable = {
+                    [1] = 0,
+                    [2] = 0,
+                    [3] = 0,
+                    [4] = 0,
+                    [5] = 0,
+                    [6] = 0,
+                    [7] = 0,
+                    [8] = 0,
+                    [9] = 0,
+                    [10] = 0,
+                },
                 Override_AmmoPerShot = 1,
                 Override_Ammo = "apex_energy",
                 Hook_SelectFireAnimation = function(wep, curanim)
@@ -687,6 +699,25 @@ local hopups = {
                         Mult_DamageMin = 30 / 36,
                         Mult_Recoil = 0.85,
                         PrintName = "fcg.apex.rapid",
+                    }
+                }
+            },
+            -- Charge Rifle
+            [6] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe Charge Rifle receives a firemode that releases a more powerful charge, but without the windup beam.",
+                Override_Firemodes = {
+                    {
+                        PrintName = "fcg.semi",
+                        Mode = -16,
+                        RunawayBurst = true,
+                        PostBurstDelay = 1
+                    },
+                    {
+                        Mode = 1,
+                        Override_TriggerDelay = true,
+                        Mult_Damage = 75 / 45,
+                        Mult_DamageMin = 40 / 30,
+                        Override_ShotRecoilTable = {}
                     }
                 }
             },
@@ -894,6 +925,56 @@ local hopups = {
                         Override_Damage = 144,
                         Override_DamageMin = 144,
                         Override_AccuracyMOA = 45
+                    }
+                }
+            },
+            -- Charge Rifle
+            [4] = {
+                Description = "Weapon gains an additional firemode that splits the beam into up to 4 rays, decreasing in count and spread while it charges.\nCharge damage is significantly increased and final beam damage is decreased.",
+                Override_Firemodes = {
+                    {
+                        PrintName = "fcg.semi",
+                        Mode = -16,
+                        RunawayBurst = true,
+                        PostBurstDelay = 1
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = -21,
+                        RunawayBurst = true,
+                        PostBurstDelay = 1,
+                        Override_HullSize = 2,
+                        Mult_ChargeDamage = 4,
+                        Mult_Damage = 0.5,
+                        Mult_DamageMin = 0.5,
+                        O_Hook_Override_Num = function(wep, data)
+                            return {current = math.ceil(Lerp(wep:GetBurstCount() / 20, 4, 1))}
+                        end,
+                        O_Hook_Override_AccuracyMOA = function(wep, data)
+                            return {current = Lerp(wep:GetBurstCount() / 20, 60, 0)}
+                        end,
+                        Override_ShotRecoilTable = {
+                            [1] = 0,
+                            [2] = 0,
+                            [3] = 0,
+                            [4] = 0,
+                            [5] = 0,
+                            [6] = 0,
+                            [7] = 0,
+                            [8] = 0,
+                            [9] = 0,
+                            [10] = 0,
+                            [11] = 0,
+                            [12] = 0,
+                            [13] = 0,
+                            [14] = 0,
+                            [15] = 0,
+                            [16] = 0,
+                            [17] = 0,
+                            [18] = 0,
+                            [19] = 0,
+                            [20] = 0,
+                        }
                     }
                 }
             },
