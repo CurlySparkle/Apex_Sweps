@@ -414,7 +414,7 @@ SWEP.Hook_Think = function(wep)
     local charge = wep:GetNWFloat("ApexCharge", 0)
     if wep:GetBuff_Override("ApexCharge") and wep:GetNextPrimaryFire() < CurTime() and wep:GetNWState() == ArcCW.STATE_SIGHTS and wep:Clip1() >= 1 then
         wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() / 1))
-        if SERVER then
+        if (game.SinglePlayer() and SERVER) or CLIENT then
             local f = wep:GetNWFloat("ApexCharge", 0)
             if f >= 1 and charge < 1 then
                 wep:EmitSound("weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick4_2ch_v1_01.wav")

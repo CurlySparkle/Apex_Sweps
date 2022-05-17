@@ -57,8 +57,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 18, -- 2 full bursts on chest = lethal (108)
-        DamageMin = 18,
+        Damage = 15,
+        DamageMin = 15,
     },
 }
 

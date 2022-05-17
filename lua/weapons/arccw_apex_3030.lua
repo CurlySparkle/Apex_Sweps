@@ -426,7 +426,10 @@ SWEP.Hook_Think = function(wep)
         if (game.SinglePlayer() and SERVER) or CLIENT then
             local f = wep:GetNWFloat("ApexCharge", 0)
             if f >= 1 and charge < 1 then
-                --wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
+                if wep.ApexLoopSound then
+                    wep.ApexLoopSound:Stop()
+                    wep.ApexLoopSound = nil
+                end
                 wep.ApexLoopSound = CreateSound(wep, "weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
                 wep.ApexLoopSound:Play()
             elseif f > 0 and charge == 0 then
@@ -436,7 +439,10 @@ SWEP.Hook_Think = function(wep)
     elseif charge > 0 then
         wep:SetNWFloat("ApexCharge", 0)
         wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Stop_1ch_v1_01.wav")
-        if wep.ApexLoopSound then wep.ApexLoopSound:Stop() wep.ApexLoopSound = nil end
+        if wep.ApexLoopSound then
+            wep.ApexLoopSound:Stop()
+            wep.ApexLoopSound = nil
+        end
     end
 end
 
@@ -447,15 +453,17 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
     data.mult = data.mult * Lerp(wep:GetNWFloat("ApexCharge", 0), 1, 1.36)
 end
 
+--[[]
 SWEP.O_Hook_Override_Num = function(wep,data)
-	if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		data.current = 1
-		data.winningslot = -1
-	elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and not wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		data.current = 7
-		data.winningslot = 1
-	end
+    if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+        data.current = 1
+        data.winningslot = -1
+    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
+        data.current = 7
+        data.winningslot = 1
+    end
 end
+]]
 
 SWEP.Hook_GetShootSound = function(wep, sound)
     local c = wep:GetNWFloat("ApexCharge", 0)
@@ -468,7 +476,10 @@ end
 
 SWEP.Hook_PostFireBullets = function(wep)
     wep:SetNWFloat("ApexCharge", 0)
-    if wep.ApexLoopSound then wep.ApexLoopSound:Stop() wep.ApexLoopSound = nil end
+    if wep.ApexLoopSound then
+        wep.ApexLoopSound:Stop()
+        wep.ApexLoopSound = nil
+    end
 end
 
 SWEP.TTTWeaponType = {"weapon_zm_rifle", "weapon_zm_mac10"}
