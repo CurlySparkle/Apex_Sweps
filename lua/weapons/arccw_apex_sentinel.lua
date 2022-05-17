@@ -58,8 +58,8 @@ SWEP.Apex_Balance = {
         DamageMin = 40,
     },
     [2] = {
-        Damage = 55, -- roughly equivalent to TTT scout
-        DamageMin = 55
+        Damage = 50, -- roughly equivalent to TTT scout
+        DamageMin = 50
     },
 }
 
