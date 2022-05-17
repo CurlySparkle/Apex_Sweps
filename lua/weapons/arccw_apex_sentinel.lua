@@ -383,3 +383,11 @@ SWEP.Hook_ChangeFiremode = function(wep)
     wep:SetHeat(wep:GetMaxHeat())
     return true
 end
+
+SWEP.O_Hook_Override_Tracer = function(wep, data)
+    if wep:GetHeat() != 0 or wep:GetHeat() != nil then
+        return {current = "arccw_apex_tracer_energy_sniper"}
+	else
+		return {current = "arccw_apex_tracer_sniper"}
+    end
+end

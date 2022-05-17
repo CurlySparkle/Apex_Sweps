@@ -1,10 +1,10 @@
-EFFECT.TracerName = "tfa_apex_chargerifle_maxbeam"
+EFFECT.TracerName = "tfa_apex_chargerifle_beam"
 
 function EFFECT:Init(data)
 	self.WeaponEnt = data:GetEntity()
 	--print(self.ParticleName)
 	if not IsValid(self.WeaponEnt) then return end
-	self.Attachment = data:GetAttachment() or 1
+	self.Attachment = data:GetAttachment()
 	self.Position = self:GetTracerShootPos(data:GetStart(), self.WeaponEnt, self.Attachment)
 
 	if IsValid(self.WeaponEnt.Owner) then
@@ -27,13 +27,13 @@ function EFFECT:Init(data)
 
 	self.EndPos = data:GetOrigin()
 	-- util.ParticleTracerEx(self.ParticleName, self.StartPos, self.EndPos, false, self:EntIndex(), self.Attachment)
-	local pcf = CreateParticleSystem(self.WeaponEnt, self.TracerName, PATTACH_POINT, self.Attachment)
+	local pcf = CreateParticleSystem(self.WeaponEnt, self.TracerName, PATTACH_POINT_FOLLOW, self.Attachment)
 	if IsValid(pcf) then
 		pcf:SetControlPoint(0,self.Position)
 		pcf:SetControlPoint(1,self.EndPos)
 		pcf:StartEmission()
 	end
-	timer.Simple(5.0, function()
+	timer.Simple(0.15, function()
 		if IsValid(pcf) then
 			pcf:StopEmissionAndDestroyImmediately()
 		end

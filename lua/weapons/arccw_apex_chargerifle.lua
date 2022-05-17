@@ -75,7 +75,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 1,
 }
 
-SWEP.Tracer = "arccw_apex_tracer_beam_chargerifle_max" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_chargerifle_1" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -430,16 +430,18 @@ SWEP.O_Hook_Override_AmmoPerShot = function(wep, data)
     end
 end
 
-SWEP.Hook_PreDoEffects = function(wep, data)
-    if wep:GetBurstCount() < (-wep:GetCurrentFiremode().Mode - 1) then
-        return true
+SWEP.O_Hook_Override_Tracer = function(wep, data)
+    if wep:GetBurstCount() < 15 then
+        return {current = "arccw_apex_tracer_chargerifle"}
+	else
+		return {current = "arccw_apex_tracer_chargerifle_1"}
     end
 end
 
---[[]
-SWEP.O_Hook_Override_Tracer = function(wep, data)
-    if wep:GetBurstCount() <= 15 then
-        return {current = "arccw_apex_tracer_beam_chargerifle"}
+SWEP.O_Hook_Override_MuzzleEffect = function(wep,data)
+    if wep:GetBurstCount() < 15 then
+        return {current = "tfa_apex_chargerifle_muzzle_charge"}
+	else
+		return {current = "tfa_apex_chargerifle_muzzle"}
     end
 end
-]]
