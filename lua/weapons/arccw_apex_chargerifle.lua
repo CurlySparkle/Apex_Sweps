@@ -68,8 +68,8 @@ SWEP.BodyDamageMults = {
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
     [HITGROUP_RIGHTARM] = 1,
-    [HITGROUP_LEFTLEG] = 0.75,
-    [HITGROUP_RIGHTLEG] = 0.75,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
 }
 
 SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
@@ -349,8 +349,8 @@ SWEP.Animations = {
             --{s = "weapons/g7/wpn_g2a4_reload_empty_insertmag_fr34_2ch_v1_01.wav", t = 34 / 30},
             --{s = "weapons/g7/wpn_g2a4_reload_handgrab_fr44_2ch_v1_01.wav", t = 44 / 30},
             --{s = "weapons/g7/wpn_g2a4_reload_empty_charge_fr49_2ch_v1_01.wav", t = 49 / 30}
+        },
     },
-},
 }
 
 SWEP.TTTWeaponType = "weapon_zm_rifle"

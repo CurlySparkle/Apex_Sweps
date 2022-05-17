@@ -537,13 +537,16 @@ local hopups = {
                         Mode = 2,
                     },
                     {
-                        Mode = -2,
+                        Mode = 2,
                         PrintName = "fcg.apex.alt",
-                        Mult_RPM = 5,
-                        PostBurstDelay = 0.25,
-                        AutoBurst = true,
+                        Mult_RPM = 0.5,
                     }
                 },
+                Hook_ModifyRPM = function(wep, delay)
+                    if wep:GetFireMode() == 2 and wep:GetBurstCount() % 2 == 0 then
+                        return 0.035
+                    end
+                end
             }
         }
     },
