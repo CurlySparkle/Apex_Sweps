@@ -184,6 +184,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"ref_sight","ref_dot"},
+		ExtraSightDist = 3,
         CorrectivePos = Vector(2.69,0,-0.47),
         CorrectiveAng = Angle(-0.001, 0.005, 4.997)
     },
@@ -334,9 +335,17 @@ SWEP.Animations = {
     },
     ["charge"] = {
         Source = "charge",
-        Time = 5,
         SoundTable = {
-            {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunUp_fr006_2ch_v1_01.wav", t = 6 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryEject_fr023_2ch_v1_01.wav", t = 24 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryGrab_fr033_2ch_v1_01.wav", t = 33 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryPlace_fr049_2ch_v1_01.wav", t = 49 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatterySlamIn_fr062_2ch_v1_01.wav", t = 62 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_ChargeUp_fr070_2ch_v2_01.wav", t = 70 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_SpinningBarrel_fr070_2ch_v1_01.wav", t = 70 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_PowerSurge_fr155_2ch_v1_01.wav", t = 155 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_Snap_fr155_2ch_v1_01.wav", t = 155 / 30},
+			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunDown_fr182_2ch_v1_01.wav", t = 182 / 30},
         },
     },
 }
