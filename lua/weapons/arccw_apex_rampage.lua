@@ -366,7 +366,7 @@ SWEP.Hook_ChangeFiremode = function(wep)
 end
 
 SWEP.O_Hook_Override_Tracer = function(wep, data)
-    if wep:GetHeat() != 0 or wep:GetHeat() != nil then
+    if wep:GetHeat() > 0 then
         return {current = "arccw_apex_tracer_hmg_rampage"}
 	else
 		return {current = "arccw_apex_tracer_hmg"}
