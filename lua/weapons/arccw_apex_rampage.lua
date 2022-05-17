@@ -281,7 +281,7 @@ SWEP.Animations = {
     },
     },
     ["1_to_2"] = {
-        Source = "firemode1",
+        Source = "energize",
     },
     ["2_to_1"] = {
         Source = "firemode2",
