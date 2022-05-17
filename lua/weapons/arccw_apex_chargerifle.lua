@@ -43,7 +43,7 @@ SWEP.WorldModelOffset = {
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 45
-SWEP.DamageMin = 45
+SWEP.DamageMin = 30
 SWEP.Range = 300
 SWEP.RangeMin = 150
 SWEP.Penetration = 10
@@ -58,7 +58,7 @@ SWEP.Apex_Balance = {
     },
     [2] = {
         Damage = 45,
-        DamageMin = 45,
+        DamageMin = 30,
     },
 }
 
@@ -72,7 +72,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 1,
 }
 
-SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_beam_chargerifle_max" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -115,7 +115,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_sniper"
+SWEP.MuzzleEffect = "tfa_apex_chargerifle_muzzle"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 65
 SWEP.ShellScale = 1.55
@@ -427,3 +427,17 @@ SWEP.O_Hook_Override_AmmoPerShot = function(wep, data)
         return {current = 0}
     end
 end
+
+SWEP.Hook_PreDoEffects = function(wep, data)
+    if wep:GetBurstCount() < 15 then
+        return true
+    end
+end
+
+--[[]
+SWEP.O_Hook_Override_Tracer = function(wep, data)
+    if wep:GetBurstCount() <= 15 then
+        return {current = "arccw_apex_tracer_beam_chargerifle"}
+    end
+end
+]]
