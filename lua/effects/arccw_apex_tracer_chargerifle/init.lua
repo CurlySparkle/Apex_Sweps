@@ -1,4 +1,4 @@
-EFFECT.TracerName = "tfa_apex_chargerifle_beam"
+EFFECT.TracerName = "tfa_apex_chargerifle_beam_cont"
 
 function EFFECT:Init(data)
 	self.WeaponEnt = data:GetEntity()
