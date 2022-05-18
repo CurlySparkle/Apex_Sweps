@@ -32,6 +32,7 @@ SWEP.UseHands = true
 SWEP.ViewModel = "models/weapons/c_apex_rampage.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_rampage.mdl"
 SWEP.MirrorVMWM = true
+SWEP.MirrorWorldModel = "models/weapons/w_apex_rampage.mdl"
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4.3, -5),
     ang        =    Angle(-10, 0, 180),

@@ -183,7 +183,7 @@ SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
 SWEP.AttachmentElements = {
-    ["sight"] = {
+    ["weapon_dot"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
@@ -200,7 +200,7 @@ SWEP.Attachments = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
         },
-        InstalledEles = {"sight"},
+        InstalledEles = {"weapon_dot"},
         CorrectivePos = Vector(1.19, 0, -0.7),
         CorrectiveAng = Angle(-0.75, -0.44, 3.7),
         ExtraSightDist = 0,

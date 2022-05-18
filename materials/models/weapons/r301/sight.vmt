@@ -1,37 +1,21 @@
-"UnlitTwoTexture"
+"UnlitGeneric"
 {
-	"$nocull" "1"	
-	"$nodecal" "1"
-	"$additive" "1"
-	"$no_fullbright" 1
-	"$model" "1"
-	"$nofog" "1"
-	"$allowoverbright" "1"
-	"$translucent" "1"
-	"$selfillum" "1"
+	"$basetexture"	"models/weapons/r301/r301_sight_d3"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "2"
+	"$detailframe"	"0"
+	"$translucent" 	"1"
+	"$additive"	"1"
 
-	"$basetexture" "models\weapons\r301\r301_sight_d"
-	"$Texture2" "models\weapons\r301\noise_post"
-	"$color" "[1 0 0]"
-	"$color2" "[1 0 0]"
+	$color2 "[1 0 0]"
 
-	"$scrolling_rate" "10"
-	"$scrolling_angle" "0"
-     "$basetexturestransform" "center .5 .5 scale 1 1 rotate 1 translate 0 0"
-
-                "Proxies" 
-    	{ 
-      	"AnimatedTexture" 
-       	{ 
-          	"animatedTextureVar" "$basetexture" 
-          	"animatedTextureFrameNumVar" "$frame" 
-          	"animatedTextureFrameRate" "30"
-       	}
-	"TextureScroll"
+	Proxies
 	{
-	"texturescrollvar" "$texture2transform"
-	"texturescrollrate" $scrolling_rate
-	"texturescrollangle" $scrolling_angle
-	 }
-   	 }
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
 }

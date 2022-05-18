@@ -1,0 +1,20 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"models\weapons\caustic\caustic_gas_grenade_d"
+	"$bumpmap"					"models\weapons\caustic\caustic_gas_grenade_n"
+	"$PhongExponentTexture"		"models\weapons\caustic\caustic_gas_grenade_e"
+
+	$detail						"models\weapons\caustic\caustic_gas_grenade_si"
+    $detailscale                1
+   	$detailblendfactor 			1
+   	$detailblendmode			5
+
+	$envmap						env_cubemap
+	$envmaptint					"[ .02 .02 .02 ]"
+	$normalmapalphaenvmapmask	"1"	
+	
+	$phong						1
+	$phongexponent				10
+	$phongboost					5
+	$phongfresnelranges			"[0.25 0.5 1]"
+}

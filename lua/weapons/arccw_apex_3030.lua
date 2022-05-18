@@ -34,7 +34,7 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_3030.mdl"
-SWEP.WorldModel = "models/weapons/w_shotgun.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_3030.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6.5, 5.5, -1.5),
@@ -176,14 +176,19 @@ SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.AttachmentElements = {
-    ["ref_sight"] = {
+    ["weapon_sight"] = {
         VMBodygroups = {
             {ind = 1, bg = 1},
         },
     },
-    ["ref_dot"] = {
+    ["ref_sight_mount"] = {
         VMBodygroups = {
             {ind = 2, bg = 1},
+        },
+    },
+    ["weapon_dot"] = {
+        VMBodygroups = {
+            {ind = 3, bg = 1},
         },
     },
     ["skin"] = {
@@ -206,7 +211,7 @@ SWEP.Attachments = {
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0),
         },
-        InstalledEles = {"ref_sight","ref_dot"},
+        InstalledEles = {"weapon_sight","ref_sight_mount","weapon_dot"},
         CorrectivePos = Vector(2.4,0,-0.72),
         CorrectiveAng = Angle(-1.227, 0.298, 5.913)
     },

@@ -30,7 +30,7 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_flatline.mdl"
-SWEP.WorldModel = "models/weapons/w_irifle.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_flatline.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4.3, -5),

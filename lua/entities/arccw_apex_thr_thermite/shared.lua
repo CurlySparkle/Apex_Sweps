@@ -4,7 +4,7 @@ ENT.Type = "anim"
 ENT.Base = "base_entity"
 ENT.PrintName = "Incendiary Grenade"
 ENT.Spawnable = false
-ENT.Model = "models/weapons/arccw_go/w_eq_incendiarygrenade_thrown.mdl"
+ENT.Model = "models/weapons/w_apex_nade_thermite_thrown.mdl"
 
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Armed = false

@@ -34,7 +34,13 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_alternator.mdl"
-SWEP.WorldModel = "models/weapons/w_smg1.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_alternator.mdl"
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos = Vector(-5, 5, -5.5),
+    ang = Angle(-10, 0, 180-5)
+}
+
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 16
@@ -147,12 +153,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
-
-SWEP.MirrorVMWM = true
 SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
