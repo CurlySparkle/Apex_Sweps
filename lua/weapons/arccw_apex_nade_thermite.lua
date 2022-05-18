@@ -48,7 +48,7 @@ SWEP.ShootWhileSprint = false
 SWEP.Primary.ClipSize = 1
 
 SWEP.MuzzleVelocity = 1000
-SWEP.MuzzleVelocityAlt = nil
+SWEP.MuzzleVelocityAlt = 750
 SWEP.ShootEntity = "arccw_apex_thr_thermite"
 
 SWEP.TTTWeaponType = "weapon_zm_molotov"
@@ -152,6 +152,14 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
             {s = "weapons/grenades/Wpn_ThermiteGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}
+        },
+    },
+    ["throw_alt"] = {
+        Source = {"underhand"},
+		Mult = 1,
+        TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
+        SoundTable = {
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}
         },
     },
     ["bash"] = {

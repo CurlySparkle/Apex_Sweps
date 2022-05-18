@@ -16,15 +16,16 @@ AddCSLuaFile()
 function ENT:Initialize()
     if SERVER then
         self:SetModel( self.Model )
-        self:SetMoveType( MOVETYPE_VPHYSICS )
-        self:SetSolid( SOLID_VPHYSICS )
-        self:PhysicsInit( SOLID_VPHYSICS )
+		self:SetMoveType( MOVETYPE_VPHYSICS )
+		self:SetSolid( SOLID_VPHYSICS )
+		self:PhysicsInit( SOLID_VPHYSICS )
+		self:SetCollisionGroup( COLLISION_GROUP_NONE )
         self:DrawShadow( true )
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
             phys:Wake()
-            phys:SetBuoyancyRatio(1)
+            phys:SetBuoyancyRatio(0)
         end
 
         self.SpawnTime = CurTime()
@@ -45,7 +46,7 @@ function ENT:PhysicsCollide(data, physobj)
         if data.Speed > 75 then
             self:EmitSound(Sound("weapons/grenades/wpn_fraggrenade_1p_hardsurface_bounce_01_lr_v" .. math.random(1,2) .. ".wav"))
         elseif data.Speed > 25 then
-            self:EmitSound(Sound("weapons/grenades/Phys_Imp_FragGrenade_Concrete_1ch_v1_0" .. math.random(1,6) .. ".wav"))
+            self:EmitSound(Sound("weapons/grenades/grenade_bounce_2ch_v2_0" .. math.random(1,3) .. ".wav"))
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then

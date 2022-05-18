@@ -126,9 +126,9 @@ SWEP.CaseBones = {}
 
 SWEP.SightedSpeedMult = 0.5
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, 10, 0),
     Ang = Angle(0, 0, 0),
-    Magnification = 1.15,
+    Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
