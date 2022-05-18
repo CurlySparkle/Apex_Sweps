@@ -190,6 +190,10 @@ end
 
 function ENT:Draw()
     if CLIENT then
-        self:DrawModel()
+		if self:GetMoveType() != MOVETYPE_NONE then
+			self:DrawModel()
+		else
+			return true
+		end
     end
 end

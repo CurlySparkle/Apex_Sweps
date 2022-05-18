@@ -360,8 +360,8 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount("grenade") < 1) then return true end
-    if not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():RemoveAmmo(1, "grenade") end
+    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount("arccw_apex_nade_thermite") < 1) then return true end
+    if not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():RemoveAmmo(1, "arccw_apex_nade_thermite") end
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
     wep:SetNextPrimaryFire(n)
