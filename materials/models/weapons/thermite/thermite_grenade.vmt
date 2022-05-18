@@ -1,0 +1,20 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\thermite\thermite_d"
+"$bumpmap" "models\weapons\thermite\thermite_n"
+"$PhongExponentTexture" "models\weapons\thermite\thermite_e"
+
+"$detail"			"models\weapons\thermite\thermite_si2"
+"$detailscale"                    "1"
+"$detailblendfactor" 		"1"
+"$detailblendmode"			"5"
+	
+	$envmap						env_cubemap
+	$envmaptint					"[ .02 .02 .02 ]"
+	$normalmapalphaenvmapmask	"1"	
+	
+	$phong						1
+	$phongexponent				30
+	$phongboost					30
+	$phongfresnelranges			"[0.25 0.5 1]"
+}
