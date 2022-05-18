@@ -260,6 +260,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
+		RareSource = "draw_first_secret",
+		RareSourceChance = 50,
         SoundTable = {
             {p = 100, s = "weapons/3030/3030_Reload_Lever.wav", t = 5 / 30},
         },

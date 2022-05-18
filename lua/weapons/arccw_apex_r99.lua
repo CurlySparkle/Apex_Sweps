@@ -181,6 +181,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"ref_dot", "ref_sights"},
+		ExtraSightDist = 2,
          CorrectivePos = Vector(1.5,0,-0.8),
          CorrectiveAng = Angle(0, 0, 3.494)
     },

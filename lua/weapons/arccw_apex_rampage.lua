@@ -242,6 +242,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
+		RareSource = "draw_first_rampant",
+		RareSourceChance = 25,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
@@ -306,6 +308,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
+		RareSource = "reload_rampant",
+		RareSourceChance = 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
@@ -317,6 +321,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+		RareSource = "reload_empty_rampant",
+		RareSourceChance = 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},

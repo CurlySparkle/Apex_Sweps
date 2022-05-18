@@ -123,7 +123,7 @@ SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
 SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
-SWEP.ShellScale = 1
+SWEP.ShellScale = 0.5
 SWEP.ShellTime = 1
 -- SWEP.ShellRotateAngle = Angle(0, 0, 90)
 
