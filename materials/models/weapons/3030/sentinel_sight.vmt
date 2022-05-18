@@ -7,8 +7,6 @@
 	"$translucent" 	"1"
 	"$additive"	"1"
 
-	$color2 "[1 0 0]"
-
 	Proxies
 	{
 		TextureScroll

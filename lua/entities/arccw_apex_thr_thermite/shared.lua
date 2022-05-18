@@ -116,7 +116,7 @@ function ENT:Detonate()
     if not self:IsValid() or self.Armed then return end
     self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav")
     self.Armed = true
-    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_IdleBurn_2ch_v3_01.wav")
+    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
     self.FireSound:Play()
     self.ArcCW_Killable = false
 
