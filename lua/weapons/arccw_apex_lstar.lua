@@ -86,8 +86,6 @@ SWEP.Primary.ClipSize = 30
 SWEP.MaxRecoilBlowback = 1
 SWEP.BottomlessClip = true
 
-ArcCW.BottomlessMagicNumber = 0
-
 SWEP.AlwaysPhysBullet = true
 
 SWEP.Recoil = 0.7
