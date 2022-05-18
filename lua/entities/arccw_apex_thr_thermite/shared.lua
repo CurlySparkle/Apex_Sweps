@@ -89,7 +89,7 @@ function ENT:Think()
         local o = self.Owner
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(4 * i)
+        dmg:SetDamage(4) -- 4 * i
         dmg:SetInflictor(self or o)
         dmg:SetAttacker(o)
         dmg:SetDamageForce(Vector(0, 0, 0))
@@ -101,7 +101,7 @@ function ENT:Think()
                 local d = DamageInfo()
                 d:SetDamageType(DMG_BURN)
                 d:SetDamage(5)
-                d:SetInflictor(self)
+                d:SetInflictor(self or o)
                 d:SetAttacker(o)
                 d:SetDamageForce(Vector(0, 0, 0))
                 v:TakeDamageInfo(d)
@@ -134,14 +134,19 @@ function ENT:Detonate()
 
     local max_len = 250
 
+    -- If we throw the thermite onto a roof, it should not clip through it
+    local tr = util.QuickTrace(self:GetPos(), Vector(0, 0, 72), self)
+    local h = tr.Fraction * 72
+
+    -- If the thermite deploys into a wall, don't spawn duplicates
     local trace_left = util.TraceLine({
-        start = self:GetPos() + Vector(0, 0, 72),
-        endpos = self:GetPos() + Vector(0, 0, 72) + self.InitialDir * -max_len,
+        start = self:GetPos() + Vector(0, 0, h),
+        endpos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * -max_len,
         mask = MASK_SHOT_HULL,
     })
     local trace_right = util.TraceLine({
-        start = self:GetPos() + Vector(0, 0, 72),
-        endpos = self:GetPos() + Vector(0, 0, 72) + self.InitialDir * max_len,
+        start = self:GetPos() + Vector(0, 0, h),
+        endpos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * max_len,
         mask = MASK_SHOT_HULL,
     })
 
@@ -149,8 +154,8 @@ function ENT:Detonate()
         local r = timer.RepsLeft("thermite_" .. self:EntIndex())
         local i = (3 - r) / 3
         if trace_left.Fraction > i then
-            local pos = self:GetPos() + Vector(0, 0, 72) + self.InitialDir * -max_len * i
-            local t = util.QuickTrace(pos, Vector(0, 0, -72), self)
+            local pos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * -max_len * i
+            local t = util.QuickTrace(pos, Vector(0, 0, -h), self)
             local thermite = ents.Create("arccw_apex_thermite")
             thermite:SetPos(t.HitPos + Vector(0, 0, 8))
             thermite.Owner = self.Owner
@@ -160,8 +165,8 @@ function ENT:Detonate()
         end
 
         if trace_right.Fraction > i then
-            local pos = self:GetPos() + Vector(0, 0, 72) + self.InitialDir * max_len * i
-            local t = util.QuickTrace(pos, Vector(0, 0, -72), self)
+            local pos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * max_len * i
+            local t = util.QuickTrace(pos, Vector(0, 0, -h), self)
             local thermite = ents.Create("arccw_apex_thermite")
             thermite:SetPos(t.HitPos + Vector(0, 0, 8))
             thermite.Owner = self.Owner
