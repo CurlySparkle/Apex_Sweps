@@ -409,7 +409,7 @@ SWEP.Hook_OnTriggerHeld = function(wep)
             wep.ChargeSound:Stop()
             wep.ChargeSound = nil
         end
-        wep.ChargeSound = CreateSound(wep, "weapons/chargerifle/fire_windup_" .. math.random(1, 3) .. ".wav")
+        wep.ChargeSound = CreateSound(wep, "weapons/chargerifle/fire_windup_alt_1.wav")
         wep.ChargeSound:Play()
     end
 end
@@ -418,6 +418,7 @@ SWEP.Hook_OnTriggerRelease = function(wep)
     if wep.ChargeSound then
         wep.ChargeSound:FadeOut(0.1)
         wep.ChargeSound = nil
+        wep:EmitSound("weapons/chargerifle/fire_winddown.wav")
     end
 end
 
