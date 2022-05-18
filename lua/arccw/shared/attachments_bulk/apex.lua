@@ -889,6 +889,31 @@ local hopups = {
                         Override_DamageMin = 49,
                         Override_AccuracyMOA = 35,
                         Mult_HipDispersion = 0.5,
+						Override_ShotgunSpreadPattern = {
+							[1] = Angle(0, 1.2, 0),
+							[2] = Angle(0, -1.2, 0),
+							[3] = Angle(-0.3, 0, 0),
+							[4] = Angle(-1.2, 0, 0),
+							[5] = Angle(-1.6, 0.5, 0),
+							[6] = Angle(-1.6, -0.5, 0),
+							[7] = Angle(-2.8, 0.0, 0),
+						},
+						Override_NoRandSpread = true,
+						Hook_ShotgunSpreadOffset = function(wep, data)
+							local d = 1
+							local ref = {
+								[1] = Angle(0, 1.2, 0),
+								[2] = Angle(0, -1.2, 0),
+								[3] = Angle(-0.3, 0, 0),
+								[4] = Angle(-1.2, 0, 0),
+								[5] = Angle(-1.6, 0.5, 0),
+								[6] = Angle(-1.6, -0.5, 0),
+								[7] = Angle(-2.8, 0.0, 0),
+							}
+							local p = ref[data.num]
+							data.ang = Angle(p.p * -d, p.y * d, 0)
+							return data
+						end,
                     }
                 }
             },
