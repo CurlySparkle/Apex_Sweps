@@ -38,7 +38,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_havoc.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_havoc.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-8, 4.8, -5.5),
     ang        =    Angle(-10, 0, 180),
@@ -187,11 +187,11 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(7, 0.4, -7),
+            wang = Angle(-8, 4, 185)
         },
         InstalledEles = {"weapon_sights", "weapon_dot"},
-        ExtraSightDist = 3,
+        ExtraSightDist = 4,
         CorrectivePos = Vector(2.15,0,-0.46),
         CorrectiveAng = Angle(-4.14, -3.623, 6.436)
     },

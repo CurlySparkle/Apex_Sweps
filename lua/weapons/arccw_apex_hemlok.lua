@@ -34,10 +34,9 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_hemlok.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_hemlok.mdl"
-
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-7, 4, -5.5),
+    pos        =    Vector(-6.2, 4.3, -6),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -184,10 +183,12 @@ SWEP.Attachments = {
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
-            vang = Angle(90, 0, -90)
+            vang = Angle(90, 0, -90),
+            wpos = Vector(5, 0.5, -7),
+            wang = Angle(-9, 0, 185)
         },
         InstalledEles = {"ref_sights", "weapon_dot"},
-        ExtraSightDist = -3,
+        ExtraSightDist = -2,
          CorrectivePos = Vector(1.89, 0, -0.4),
          CorrectiveAng = Angle(-1.19, 0.066, 3.362)
     },
@@ -198,8 +199,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, -90),
+            wpos = Vector(22, 0.65, -7.1),
+            wang = Angle(-9, 0, 180)
         },
     },
     {

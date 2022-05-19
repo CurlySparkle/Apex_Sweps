@@ -38,7 +38,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_devotion.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_devotion.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-4.5, 4, -5.5),
     ang        =    Angle(-10, 0, 180),
@@ -182,8 +182,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(6, 0.75, -6.05),
+            wang = Angle(-10, 0, 185)
         },
         ExtraSightDist = -3,
         InstalledEles = {"weapon_sight", "weapon_dot"},
@@ -197,6 +197,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
+            wpos = Vector(31, 0.8, -8.3),
+            wang = Angle(-10, 0, 180)
         },
     },
     {

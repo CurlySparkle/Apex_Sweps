@@ -18,7 +18,8 @@ SWEP.Slot = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_mastiff.mdl"
-SWEP.MirrorVMWM = true
+SWEP.WorldModel = "models/weapons/c_apex_mastiff.mdl"
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-3, 4.5, -6),
     ang        =    Angle(-10, 0, 180),
@@ -26,7 +27,6 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.WorldModel = "models/weapons/c_apex_mastiff.mdl"
 SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"
@@ -217,8 +217,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 90),
-            wang = Angle(90, 0, -90),
+            wpos = Vector(9, 0.85, -7),
+            wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"sight","weapon_dot"},
 		ExtraSightDist = 4,

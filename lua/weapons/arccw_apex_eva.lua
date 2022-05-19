@@ -18,9 +18,9 @@ SWEP.Slot = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_eva8.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-3, 4.5, -6),
+    pos        =    Vector(-5, 4, -5.3),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -202,6 +202,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
+            wpos = Vector(7.5, 0.5, -6.5),
+            wang = Angle(-10, 0, 185)
         },
         ExtraSightDist = 3,
         InstalledEles = {"sight"},

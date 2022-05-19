@@ -34,8 +34,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_prowler.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_prowler.mdl"
-
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-9, 4.5, -4),
     ang        =    Angle(-10, 0, 180),
@@ -179,8 +178,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(90, 0, -90),
+            wpos = Vector(5, 0.35, -6.8),
+            wang = Angle(-7.5, 0, 190)
         },
         InstalledEles = {"ref_sights", "weapon_dot"},
         ExtraSightDist = 3.5,
@@ -194,8 +193,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, -90),
+            wpos = Vector(13, 0.9, -4),
+            wang = Angle(-10, 0, 190)
         },
     },
     {
