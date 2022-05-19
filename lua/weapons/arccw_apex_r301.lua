@@ -37,7 +37,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_r301.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_r301.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-5, 3.5, -5),
     ang        =    Angle(-10, 0, 180),
@@ -180,8 +180,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(90, 0, -90),
+            wpos = Vector(6, 0.35, -5.35),
+            wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"r301_sight", "r301_sight2"},
          CorrectivePos = Vector(1.57,0,-0.5),
@@ -194,8 +194,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(90, 0, -90)
+			wpos = Vector(26, 0.6, -6.9),
+            wang = Angle(-10, 0, 180)
         },
     },
     {
