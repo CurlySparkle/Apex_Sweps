@@ -18,6 +18,8 @@ L["fcg.apex.amp"] = "Amped"
 L["fcg.apex.amp.abbrev"] = "AMP"
 L["fcg.apex.charge"] = "Charged Shot"
 L["fcg.apex.charge.abbrev"] = "CHRG"
+L["fcg.apex.triple"] = "Triple Tap"
+L["fcg.apex.triple.abbrev"] = "TRI"
 
 L["apex.mag.1"] = "An attachment that increases capacity by a little."
 L["apex.mag.2"] = "An attachment that increases capacity noticeably."

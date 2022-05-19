@@ -100,6 +100,9 @@ SWEP.ShotgunSpreadPattern = {
     [3] = Angle(0, 0.5, 0),
 }
 SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
+    local p = wep.ShotgunSpreadPattern[data.num]
+    if not p then return end
+
     local d = Lerp(wep:GetSightDelta(), 0.75, 1)
     local chg = wep:GetNWFloat("ApexCharge", 0)
     if chg >= 1 then
@@ -109,7 +112,6 @@ SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
     elseif chg >= 0.33 then
         d = d * 0.65
     end
-    local p = wep.ShotgunSpreadPattern[data.num]
     data.ang = Angle(p.p * d, p.y * d, 0)
 
     return data
@@ -234,7 +236,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_choke2"}
+        Slot = {"apex_hopup_choke2", "apex_hopup_selfire7"}
     },
     {
         PrintName = "Skin",

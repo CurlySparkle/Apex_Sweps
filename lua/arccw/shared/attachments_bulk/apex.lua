@@ -722,6 +722,34 @@ local hopups = {
                     }
                 }
             },
+            -- Triple Take
+            [7] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe Triple Take receives a firemode that can fire its 3 barrels consecutively, with a delay between every 3 shots.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                    },
+                    {
+                        PrintName = "fcg.apex.triple",
+                        Mode = 1,
+                        Mult_RPM = 5,
+                        Hook_ModifyRPM = function(wep, delay)
+                            if wep:Clip1() > 0 and (wep:GetNthShot() - (wep.LastReloadNthShot or 0)) % 3 == 2 then
+                                return 0.8
+                            end
+                        end,
+                        Hook_PostReload = function(wep)
+                            wep.LastReloadNthShot = wep:GetNthShot()
+                        end,
+                        Override_ShotgunSpreadPattern = {},
+                        Override_Num = 1,
+                        Mult_Damage = 1 / 3,
+                        Mult_DamageMin = 1 / 3,
+                        Override_AmmoPerShot = 1,
+                        Mult_Recoil = 0.5,
+                    }
+                }
+            },
         },
         variants_ttt = {
             [2] = {
@@ -860,9 +888,9 @@ local hopups = {
         desc = "Improves the weapon's handling speed drastically.",
         variants = {
             [1] = {
-                Mult_DrawTime = 0.25,
-                Mult_HolsterTime = 0.25,
-                Mult_SightTime = 0.25,
+                Mult_DrawTime = 0.5,
+                Mult_HolsterTime = 0.5,
+                Mult_SightTime = 0.5,
                 Mult_HipDispersion = 0.5,
             }
         }
@@ -889,31 +917,31 @@ local hopups = {
                         Override_DamageMin = 49,
                         Override_AccuracyMOA = 35,
                         Mult_HipDispersion = 0.5,
-						Override_ShotgunSpreadPattern = {
-							[1] = Angle(0, 1.2, 0),
-							[2] = Angle(0, -1.2, 0),
-							[3] = Angle(-0.3, 0, 0),
-							[4] = Angle(-1.2, 0, 0),
-							[5] = Angle(-1.6, 0.5, 0),
-							[6] = Angle(-1.6, -0.5, 0),
-							[7] = Angle(-2.8, 0.0, 0),
-						},
-						Override_NoRandSpread = true,
-						Hook_ShotgunSpreadOffset = function(wep, data)
-							local d = 1
-							local ref = {
-								[1] = Angle(0, 1.2, 0),
-								[2] = Angle(0, -1.2, 0),
-								[3] = Angle(-0.3, 0, 0),
-								[4] = Angle(-1.2, 0, 0),
-								[5] = Angle(-1.6, 0.5, 0),
-								[6] = Angle(-1.6, -0.5, 0),
-								[7] = Angle(-2.8, 0.0, 0),
-							}
-							local p = ref[data.num]
-							data.ang = Angle(p.p * -d, p.y * d, 0)
-							return data
-						end,
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, 1.2, 0),
+                            [2] = Angle(0, -1.2, 0),
+                            [3] = Angle(-0.3, 0, 0),
+                            [4] = Angle(-1.2, 0, 0),
+                            [5] = Angle(-1.6, 0.5, 0),
+                            [6] = Angle(-1.6, -0.5, 0),
+                            [7] = Angle(-2.8, 0.0, 0),
+                        },
+                        Override_NoRandSpread = true,
+                        Hook_ShotgunSpreadOffset = function(wep, data)
+                            local d = 1
+                            local ref = {
+                                [1] = Angle(0, 1.2, 0),
+                                [2] = Angle(0, -1.2, 0),
+                                [3] = Angle(-0.3, 0, 0),
+                                [4] = Angle(-1.2, 0, 0),
+                                [5] = Angle(-1.6, 0.5, 0),
+                                [6] = Angle(-1.6, -0.5, 0),
+                                [7] = Angle(-2.8, 0.0, 0),
+                            }
+                            local p = ref[data.num]
+                            data.ang = Angle(p.p * -d, p.y * d, 0)
+                            return data
+                        end,
                     }
                 }
             },
