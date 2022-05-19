@@ -121,6 +121,7 @@ function ENT:Detonate()
     self.ArcCW_Killable = false
 
     self:SetMoveType(MOVETYPE_NONE)
+    self:SetNoDraw(true)
 
     timer.Simple(self.FireTime - 1, function()
         if not IsValid(self) then return end
