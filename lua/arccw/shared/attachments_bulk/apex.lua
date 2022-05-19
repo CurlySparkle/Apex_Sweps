@@ -759,6 +759,7 @@ local hopups = {
                         Mode = 2,
                     },
                     {
+                        PrintName = "fcg.apex.charge",
                         Mode = 1,
                         Mult_RPM = 107 / 672,
                         Mult_Recoil = 0.85,

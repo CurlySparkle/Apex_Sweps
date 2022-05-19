@@ -32,6 +32,7 @@ function ENT:Initialize()
     end
 end
 
+--[[]
 function ENT:Think()
     if not self.Armed or (self.NextDamageTick or 0) > CurTime() then return end
     for k, v in pairs(ents.FindInSphere(self:GetPos(), 64)) do
@@ -62,6 +63,7 @@ function ENT:Think()
     self.NextDamageTick = CurTime() + 0.2
     self.ArcCW_Killable = false
 end
+]]
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
@@ -80,7 +82,7 @@ function ENT:Think()
     local damaged = {}
     for i, ent in ipairs(self.Thermites) do
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
-        for k, v in pairs(ents.FindInSphere(ent:GetPos(), 64)) do
+        for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 64)) do
             if v:GetClass() ~= "arccw_apex_thermite" and v:GetClass() ~= "arccw_apex_thr_thermite" then
                 damaged[v] = (damaged[v] or 0) + 1
             end
