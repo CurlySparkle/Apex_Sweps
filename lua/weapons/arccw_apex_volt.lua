@@ -60,8 +60,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 13,
-        DamageMin = 13,
+        Damage = 14,
+        DamageMin = 14,
     },
 }
 
@@ -86,8 +86,9 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 1 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 225 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 75
+SWEP.HipDispersion = 300 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 100
+SWEP.JumpDispersion = 300
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound

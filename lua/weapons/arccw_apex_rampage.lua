@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Rampage LMG"
 SWEP.Trivia_Class = "Light Machine Gun"
-SWEP.Trivia_Desc = "Rampart's custom made machine gun with high damage but low fire rate.\n\nPress the firemode key to charge up the weapon with a grenade, increasing its rate of fire."
+SWEP.Trivia_Desc = "Rampart's custom made machine gun with high damage but low fire rate.\n\nPress the firemode key to charge up the weapon with a thermite grenade, increasing its rate of fire."
 SWEP.Trivia_Manufacturer = "Rampart/SWCC"
 
 SWEP.Slot = 3
@@ -70,7 +70,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.85,
 }
 
-SWEP.Tracer = "arccw_apex_tracer_ar" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_hmg" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -242,8 +242,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw_first",
-		RareSource = "draw_first_rampant",
-		RareSourceChance = 25,
+        RareSource = "draw_first_rampant",
+        RareSourceChance = 25,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
@@ -308,8 +308,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		RareSource = "reload_rampant",
-		RareSourceChance = 35,
+        RareSource = "reload_rampant",
+        RareSourceChance = 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
@@ -321,8 +321,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-		RareSource = "reload_empty_rampant",
-		RareSourceChance = 35,
+        RareSource = "reload_empty_rampant",
+        RareSourceChance = 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
@@ -360,8 +360,9 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount("arccw_apex_nade_thermite") < 1) then return true end
-    if not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():RemoveAmmo(1, "arccw_apex_nade_thermite") end
+    local nade = weapons.Get("arccw_apex_nade_thermite").Primary.Ammo
+    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount(nade) < 1) then return true end
+    if not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():RemoveAmmo(1, nade) end
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
     wep:SetNextPrimaryFire(n)
@@ -375,7 +376,5 @@ end
 SWEP.O_Hook_Override_Tracer = function(wep, data)
     if wep:GetHeat() > 0 then
         return {current = "arccw_apex_tracer_hmg_rampage"}
-	else
-		return {current = "arccw_apex_tracer_hmg"}
     end
 end

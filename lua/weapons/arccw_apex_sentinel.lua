@@ -192,8 +192,8 @@ SWEP.Attachments = {
         Slot = {"apex_mag_sniper1"}
     },
     {
-        PrintName = "Specials",
-        Slot = {"apex_specials"}
+        PrintName = "Hop-up",
+        Slot = {}
     },
     {
         PrintName = "Extras",
@@ -333,15 +333,15 @@ SWEP.Animations = {
         -- Time = 5,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunUp_fr006_2ch_v1_01.wav", t = 6 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryEject_fr023_2ch_v1_01.wav", t = 24 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryGrab_fr033_2ch_v1_01.wav", t = 33 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryPlace_fr049_2ch_v1_01.wav", t = 49 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatterySlamIn_fr062_2ch_v1_01.wav", t = 62 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_ChargeUp_fr070_2ch_v2_01.wav", t = 70 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_SpinningBarrel_fr070_2ch_v1_01.wav", t = 70 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_PowerSurge_fr155_2ch_v1_01.wav", t = 155 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_Snap_fr155_2ch_v1_01.wav", t = 155 / 30},
-			{p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunDown_fr182_2ch_v1_01.wav", t = 182 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryEject_fr023_2ch_v1_01.wav", t = 24 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryGrab_fr033_2ch_v1_01.wav", t = 33 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryPlace_fr049_2ch_v1_01.wav", t = 49 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatterySlamIn_fr062_2ch_v1_01.wav", t = 62 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_ChargeUp_fr070_2ch_v2_01.wav", t = 70 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_SpinningBarrel_fr070_2ch_v1_01.wav", t = 70 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_PowerSurge_fr155_2ch_v1_01.wav", t = 155 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_Snap_fr155_2ch_v1_01.wav", t = 155 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunDown_fr182_2ch_v1_01.wav", t = 182 / 30},
         },
     },
 }
@@ -386,9 +386,9 @@ SWEP.Hook_ChangeFiremode = function(wep)
 end
 
 SWEP.O_Hook_Override_Tracer = function(wep, data)
-	if wep:GetHeat() > 0 then
+    if wep:GetHeat() > 0 then
         return {current = "arccw_apex_tracer_energy_sniper"}
-	else
-		return {current = "arccw_apex_tracer_sniper"}
+    else
+        return {current = "arccw_apex_tracer_sniper"}
     end
 end
