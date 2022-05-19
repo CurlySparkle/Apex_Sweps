@@ -1214,7 +1214,7 @@ local hopups = {
     },
     ["dshell"] = {
         name = "Dual Shell",
-        icon = "entities/attach_icons/hopup_apex_quickdrawholster.png",
+        icon = "entities/attach_icons/hopup_apex_dualshell.png",
         desc = "Weapon loads two rounds per insertion when reloading.",
         variants = {
             [1] = {
