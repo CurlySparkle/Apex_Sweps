@@ -19,12 +19,12 @@ SWEP.NotForNPCs = true
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_nade_thermite.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_nade_thermite.mdl"
-SWEP.MirrorVMWM = true
-SWEP.WorldModelOffset = {
-    pos = Vector(-10.5, -3, -5),
-    ang = Angle(0, 0, -50)
-}
+SWEP.WorldModel = "models/weapons/w_apex_nade_thermite.mdl"
+-- SWEP.MirrorVMWM = true
+-- SWEP.WorldModelOffset = {
+    -- pos = Vector(-10.5, -3, -5),
+    -- ang = Angle(0, 0, -50)
+-- }
 
 SWEP.Firemodes = {
     {
@@ -47,8 +47,8 @@ SWEP.ShootWhileSprint = false
 
 SWEP.Primary.ClipSize = 1
 
-SWEP.MuzzleVelocity = 1000
-SWEP.MuzzleVelocityAlt = 750
+SWEP.MuzzleVelocity = 1500
+SWEP.MuzzleVelocityAlt = 550
 SWEP.ShootEntity = "arccw_apex_thr_thermite"
 
 SWEP.TTTWeaponType = "weapon_zm_molotov"

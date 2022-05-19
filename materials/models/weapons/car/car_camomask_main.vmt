@@ -19,6 +19,7 @@
 	"$rimlightboost"			".2"
 	"$rimmask"					"1"
 	"$nocull"					"1"
+
 	"Proxies"
 	{
 		"WeaponColorSkin"

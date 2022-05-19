@@ -19,12 +19,12 @@ SWEP.NotForNPCs = true
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_nade_frag.mdl"
-SWEP.WorldModel = "models/weapons/w_grenade.mdl"
-SWEP.MirrorVMWM = true
-SWEP.WorldModelOffset = {
-    pos = Vector(3, 2, -1),
-    ang = Angle(-10, 0, 180)
-}
+SWEP.WorldModel = "models/weapons/w_apex_nade_frag.mdl"
+-- SWEP.MirrorVMWM = true
+-- SWEP.WorldModelOffset = {
+    -- pos = Vector(3, 2, -1),
+    -- ang = Angle(-10, 0, 180)
+-- }
 
 SWEP.Firemodes = {
     {
