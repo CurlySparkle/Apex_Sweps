@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture"		"vgui/apex_nade_nox"
+	"$vertexcolor" 		1
+	"$vertexalpha" 		1
+	"$nolod" 			1
+}

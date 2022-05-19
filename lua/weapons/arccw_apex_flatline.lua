@@ -183,7 +183,7 @@ SWEP.Attachments = {
             wang = Angle(0, 0, 0),
         },
         InstalledEles = {"weapon_sights"},
-        CorrectivePos = Vector(1.7, 0, -0.35),
+        CorrectivePos = Vector(1.73, 0, -0.32),
         CorrectiveAng = Angle(0, 0, 3.9)
     },
     {

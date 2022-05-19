@@ -38,9 +38,9 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_car.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_car.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-2, 4.5, -4),
+    pos        =    Vector(-6, 4.3, -4.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -181,8 +181,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(6, 0.9, -5.2),
+            wang = Angle(-10, 0, 180)	
         },
         InstalledEles = {"sight"},
         CorrectivePos = Vector(1.75,0,-0.55),
@@ -191,12 +191,12 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         Slot = {"apex_muzzle"},
-        Bone = "muzzle_flash",
+        Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
-            vang = Angle(0, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            vang = Angle(90, 0, -90),
+			wpos = Vector(20.5, 1, -6),
+            wang = Angle(-10, 0, 180)	
         },
     },
     {

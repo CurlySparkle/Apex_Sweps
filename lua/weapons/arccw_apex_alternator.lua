@@ -34,12 +34,12 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_alternator.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_alternator.mdl"
-SWEP.MirrorVMWM = true
-SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
-}
+SWEP.WorldModel = "models/weapons/w_apex_alternator.mdl"
+-- SWEP.MirrorVMWM = true
+-- SWEP.WorldModelOffset = {
+    -- pos = Vector(-10, 4.5, -3.5),
+    -- ang = Angle(-10, 0, 180-5)
+-- }
 
 SWEP.ViewModelFOV = 65
 
@@ -136,10 +136,10 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
-SWEP.HoldtypeSights = "rpg"
+SWEP.HoldtypeActive = "revolver"
+SWEP.HoldtypeSights = "revolver"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
 
 SWEP.AttachmentElements = {
     ["weapon_sights"] = {
@@ -163,8 +163,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(1, 1.2, -4.8),
+            wang = Angle(-10.216, 0, 180)	
         },
         InstalledEles = {"weapon_sights"},
          CorrectivePos = Vector(1.665,0,-0.77),

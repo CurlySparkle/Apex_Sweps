@@ -38,11 +38,13 @@ SWEP.UseHands = true
 SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModelOffset = {
-    pos = Vector(-5, 5, -5.5),
-    ang = Angle(-10, 0, 180-5)
+    pos = Vector(-5.5, 4, -4.5),
+    ang = Angle(-10, 0, 180-5),
+	bone    =    "ValveBiped.Bip01_R_Hand",
+    scale   =   1,
 }
 
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 
 SWEP.ViewModelFOV = 70
 
@@ -145,7 +147,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
@@ -167,7 +169,7 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.GuaranteeLaser = true
+-- SWEP.GuaranteeLaser = true
 SWEP.Attachments = {
     {
         PrintName = "Optic",
@@ -177,8 +179,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(6, 0.9, -5.2),
+            wang = Angle(-10, 0, 180)	
         },
         InstalledEles = {"ref_dot", "ref_sights"},
 		ExtraSightDist = 2,
@@ -188,10 +190,12 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         Slot = "apex_muzzle",
-        Bone = "muzzle_flash",
+        Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
-            vang = Angle(0, 0, -90),
+            vang = Angle(90, 0, -90),
+			wpos = Vector(20, 1, -6),
+            wang = Angle(-10, 0, 180)	
         },
     },
     {

@@ -29,7 +29,7 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 
 SWEP.ViewModelFOV = 70
 
@@ -163,7 +163,7 @@ SWEP.AttachmentElements = {
         WMSkin = 1,
     },
 }
-SWEP.GuaranteeLaser = true
+-- SWEP.GuaranteeLaser = true
 
 SWEP.Attachments = {
     {
@@ -174,6 +174,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
+            wpos = Vector(3, 1.1, -3.5),
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"sight", "sight_mounth"},
         CorrectivePos = Vector(1.22,0,-0.8),
