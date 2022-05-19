@@ -202,7 +202,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights","3030"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         ExtraSightDist = 6,
         Offset = {
