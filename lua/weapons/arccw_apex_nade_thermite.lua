@@ -22,8 +22,8 @@ SWEP.ViewModel = "models/weapons/c_apex_nade_thermite.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_nade_thermite.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos = Vector(3, 2, -1),
-    ang = Angle(-10, 0, 180)
+    pos = Vector(-10.5, -3, -5),
+    ang = Angle(0, 0, -50)
 }
 
 SWEP.Firemodes = {
