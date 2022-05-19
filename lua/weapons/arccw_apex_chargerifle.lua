@@ -80,6 +80,7 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
 SWEP.ImpactDecal = "FadingScorch"
+SWEP.ImpactEffect = "StunstickImpact"
 
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 8
