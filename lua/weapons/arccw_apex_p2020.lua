@@ -22,7 +22,7 @@ SWEP.UseHands = true
 SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_p2020.mdl"
-SWEP.WorldModel = "models/weapons/w_pistol.mdl"
+SWEP.WorldModel = "models/weapons/c_apex_p2020.mdl"
 SWEP.WorldModelOffset = {
     pos = Vector(-10.5, 3.5, -2.2),
     ang = Angle(-10, 0, 180),
@@ -174,8 +174,6 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
         },
         InstalledEles = {"sight", "sight_mounth"},
         CorrectivePos = Vector(1.22,0,-0.8),
