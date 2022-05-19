@@ -280,6 +280,14 @@ SWEP.Animations = {
     ["idle_inspect"] = {
         Source = "inspect",
     },
+    ["1_to_2"] = {
+        Source = "firemode1",
+        MinProgress = 0.15,
+    },
+    ["2_to_1"] = {
+        Source = "firemode2",
+        MinProgress = 0.15,
+    },
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,

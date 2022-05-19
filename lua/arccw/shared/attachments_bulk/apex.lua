@@ -13,7 +13,7 @@ local mag_types = {
     ["energy"] = {
         "Extended Energy Magazine",
         {
-            [1] = {2, 4, 7, 7}, -- Volt SMG
+            [1] = {2, 4, 9, 9}, -- Volt SMG
             [2] = {4, 8, 12, 12}, -- Devotion LMG, HAVOC
             [3] = {3, 6, 9, 9}, -- Triple Take
             [4] = {4, 6, 12, 12}, -- Rampage
