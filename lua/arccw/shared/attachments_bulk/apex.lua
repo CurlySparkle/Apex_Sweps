@@ -975,7 +975,7 @@ local hopups = {
             },
             -- Kraber 50cal Sniper
             [3] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Kraber fires 25 pellets in a ring and cross pattern.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Kraber fires 25 pellets in a ring and cross pattern.\nAim dispersion from moving or hipfiring is significantly reduced.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -988,6 +988,9 @@ local hopups = {
                         Override_Damage = 150,
                         Override_DamageMin = 150,
                         Override_AccuracyMOA = 45,
+                        Mult_HipDispersion = 0.5,
+                        Mult_MoveDispersion = 0.5,
+                        Mult_JumpDispersion = 0.5,
                         Override_ShotgunSpreadPattern = {
                             [1] = Angle(0, 0.65, 0),
                             [2] = Angle(0, 1.25, 0),

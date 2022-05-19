@@ -80,8 +80,8 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 18 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.35
-SWEP.RecoilSide = 0.2
+SWEP.Recoil = 0.3
+SWEP.RecoilSide = 0.175
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.1
