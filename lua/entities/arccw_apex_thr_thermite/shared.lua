@@ -188,13 +188,3 @@ end
 function ENT:DrawTranslucent()
     self:Draw()
 end
-
-function ENT:Draw()
-    if CLIENT then
-		if self:GetMoveType() != MOVETYPE_NONE then
-			self:DrawModel()
-		else
-			return true
-		end
-    end
-end
