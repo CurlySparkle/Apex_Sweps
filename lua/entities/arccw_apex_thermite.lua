@@ -11,7 +11,7 @@ function ENT:Initialize()
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
         self:PhysicsInit(SOLID_VPHYSICS)
-        self:SetCollisionGroup(COLLISION_GROUP_INTERACTIVE_DEBRIS)
+        self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
         self:SetNoDraw(true)
         local phys = self:GetPhysicsObject()
 
@@ -36,8 +36,9 @@ end
 
 
 function ENT:PhysicsCollide(data, physobj)
-    if SERVER and not self.Stuck then
-        self:SetMoveType(MOVETYPE_NONE)
+    if SERVER and not self.Stuck and data.HitEntity:GetClass() ~= "arccw_apex_thr_thermite" then
+        self.Stuck = true
+        timer.Simple(0.01, function() self:SetMoveType(MOVETYPE_NONE) end)
     end
 end
 
@@ -51,22 +52,22 @@ function ENT:Think()
 
         if self.Ticks % 5 == 0 then
             local fire = emitter:Add(GetFireParticle(), self:GetPos())
-            fire:SetVelocity((VectorRand() * 5) + (self:GetAngles():Up() * 100))
+            fire:SetVelocity(self:GetAngles():Forward() * math.Rand(-300, 300) + VectorRand() * 100 + (self:GetAngles():Up() * 50))
             fire:SetGravity(Vector(0, 0, 100))
             fire:SetDieTime(math.Rand(0.25, 0.5))
             fire:SetStartAlpha(255)
             fire:SetEndAlpha(0)
-            fire:SetStartSize(50)
-            fire:SetEndSize(120)
+            fire:SetStartSize(10)
+            fire:SetEndSize(75)
             fire:SetRoll(math.Rand(-180, 180))
             fire:SetRollDelta(math.Rand(-0.2, 0.2))
             fire:SetColor(255, 255, 255)
-            fire:SetAirResistance(150)
+            fire:SetAirResistance(15)
             fire:SetPos(self:GetPos())
             fire:SetLighting(false)
             fire:SetCollide(true)
-            fire:SetBounce(0.75)
-            fire:SetNextThink(CurTime() + FrameTime())
+            fire:SetBounce(0.5)
+            --fire:SetNextThink(CurTime() + FrameTime())
 
             --[[]
             fire:SetThinkFunction(function(pa)
@@ -84,7 +85,7 @@ function ENT:Think()
             ]]
         end
 
-        if self.Ticks % 1 == 0 then
+        if self.Ticks % 2 == 0 then
             local fire = emitter:Add("effects/spark", self:GetPos())
             fire:SetVelocity(VectorRand() * 250 + Vector(0, 0, 250))
             fire:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), -1000))

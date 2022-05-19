@@ -9,6 +9,7 @@ ENT.Model = "models/weapons/w_apex_nade_thermite_thrown.mdl"
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Armed = false
 ENT.Thermites = {}
+ENT.Damaged = {}
 
 ENT.FireTime = 10
 
@@ -79,7 +80,7 @@ function ENT:Think()
     local damaged = {}
     for i, ent in ipairs(self.Thermites) do
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
-        for k, v in pairs(ents.FindInSphere(self:GetPos(), 64)) do
+        for k, v in pairs(ents.FindInSphere(ent:GetPos(), 64)) do
             if v:GetClass() ~= "arccw_apex_thermite" and v:GetClass() ~= "arccw_apex_thr_thermite" then
                 damaged[v] = (damaged[v] or 0) + 1
             end
@@ -89,19 +90,19 @@ function ENT:Think()
         local o = self.Owner
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(4) -- 4 * i
-        dmg:SetInflictor(self or o)
+        dmg:SetDamage(4)
+        dmg:SetInflictor(IsValid(self) and self or o)
         dmg:SetAttacker(o)
         dmg:SetDamageForce(Vector(0, 0, 0))
         v:TakeDamageInfo(dmg)
-        if v:IsNPC() or v:IsPlayer() or v:IsNextBot() then
+        if v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot() then
             if timer.Exists("thermite_burn_" .. v:EntIndex()) then timer.Remove("thermite_burn_" .. v:EntIndex()) end
             timer.Create("thermite_burn_" .. v:EntIndex(), 0.5, 5, function()
                 if not IsValid(v) or (v:IsPlayer() and not v:Alive()) then return end
                 local d = DamageInfo()
                 d:SetDamageType(DMG_BURN)
                 d:SetDamage(5)
-                d:SetInflictor(self or o)
+                d:SetInflictor(IsValid(self) and self or o)
                 d:SetAttacker(o)
                 d:SetDamageForce(Vector(0, 0, 0))
                 v:TakeDamageInfo(d)
@@ -123,15 +124,12 @@ function ENT:Detonate()
     self:SetMoveType(MOVETYPE_NONE)
     self:SetNoDraw(true)
 
-    timer.Simple(self.FireTime - 1, function()
-        if not IsValid(self) then return end
-        self.FireSound:ChangeVolume(0, 1)
-    end)
-
-    timer.Simple(self.FireTime, function()
-        if not IsValid(self) then return end
-        self:Remove()
-    end)
+    local eff = EffectData()
+    eff:SetOrigin(self:GetPos())
+    eff:SetMagnitude(2)
+    eff:SetScale(1)
+    eff:SetRadius(4)
+    util.Effect("Sparks", eff)
 
     local max_len = 250
 
@@ -151,14 +149,18 @@ function ENT:Detonate()
         mask = MASK_SHOT_HULL,
     })
 
+    local forward = self.InitialDir:Angle()
+
     timer.Create("thermite_" .. self:EntIndex(), 0.1, 3, function()
         local r = timer.RepsLeft("thermite_" .. self:EntIndex())
         local i = (3 - r) / 3
+
         if trace_left.Fraction > i then
             local pos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * -max_len * i
             local t = util.QuickTrace(pos, Vector(0, 0, -h), self)
             local thermite = ents.Create("arccw_apex_thermite")
             thermite:SetPos(t.HitPos + Vector(0, 0, 8))
+            thermite:SetAngles(forward)
             thermite.Owner = self.Owner
             thermite.FireTime = self.FireTime
             thermite:Spawn()
@@ -170,6 +172,7 @@ function ENT:Detonate()
             local t = util.QuickTrace(pos, Vector(0, 0, -h), self)
             local thermite = ents.Create("arccw_apex_thermite")
             thermite:SetPos(t.HitPos + Vector(0, 0, 8))
+            thermite:SetAngles(forward)
             thermite.Owner = self.Owner
             thermite.FireTime = self.FireTime
             thermite:Spawn()
@@ -179,12 +182,24 @@ function ENT:Detonate()
 
     local thermite = ents.Create("arccw_apex_thermite")
     thermite:SetPos(self:GetPos() + Vector(0, 0, 12))
+    thermite:SetAngles(forward)
     thermite.Owner = self.Owner
     thermite.FireTime = self.FireTime
     thermite:Spawn()
 
+    timer.Simple(self.FireTime - 1, function()
+        if not IsValid(self) then return end
+        self.FireSound:ChangeVolume(0, 1)
+        for k, v in ipairs(self.Thermites) do SafeRemoveEntity(v) end
+    end)
+
+    timer.Simple(self.FireTime, function()
+        if not IsValid(self) then return end
+        self:Remove()
+    end)
+
 end
 
 function ENT:DrawTranslucent()
-    self:Draw()
+    self:DrawModel()
 end
