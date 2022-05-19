@@ -57,8 +57,8 @@ SWEP.Apex_Balance = {
         DamageMin = 20,
     },
     [2] = {
-        Damage = 18, -- honestly no idea how well this will feel. 2 shot kill on chest (108)
-        DamageMin = 18
+        Damage = 19, -- honestly no idea how well this will feel. 2 shot kill on chest (108)
+        DamageMin = 19
     },
 }
 SWEP.BodyDamageMults = {

@@ -728,6 +728,9 @@ local hopups = {
                 Override_Firemodes = {
                     {
                         Mode = 1,
+                        Hook_PostFireBullets = function(wep)
+                            wep.LastReloadNthShot = wep:GetNthShot()
+                        end,
                     },
                     {
                         PrintName = "fcg.apex.triple",
@@ -740,6 +743,11 @@ local hopups = {
                         end,
                         Hook_PostReload = function(wep)
                             wep.LastReloadNthShot = wep:GetNthShot()
+                        end,
+                        Hook_PostFireBullets = function(wep)
+                            if wep:Clip1() > 0 and (wep:GetNthShot() - (wep.LastReloadNthShot or 0)) % 3 == 0 then
+                                wep:EmitSound("weapons/havoc/wpn_havoc_winddown_1p.wav", 70, 95)
+                            end
                         end,
                         Override_ShotgunSpreadPattern = {},
                         Override_Num = 1,
