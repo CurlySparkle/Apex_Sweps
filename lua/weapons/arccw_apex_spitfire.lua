@@ -161,6 +161,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -199,6 +203,12 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_heavy5"}
+    },
+    {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

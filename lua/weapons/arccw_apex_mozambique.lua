@@ -18,15 +18,15 @@ SWEP.Slot = 1
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_mozambique.mdl"
-SWEP.MirrorVMWM = true
+SWEP.WorldModel = "models/weapons/c_apex_mozambique.mdl"
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-3, 4.5, -6),
+    pos        =    Vector(-10.3, 3.2, -2.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
 }
 
-SWEP.WorldModel = "models/weapons/c_apex_mozambique.mdl"
 SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"
@@ -165,8 +165,8 @@ SWEP.IronSightStruct = {
 
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "shotgun"
-SWEP.HoldtypeSights = "ar2"
+SWEP.HoldtypeActive = "pistol"
+SWEP.HoldtypeSights = "revolver"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
@@ -199,11 +199,13 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
+            wpos = Vector(5, 0.8, -4.5),
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"weapon_dot"},
         CorrectivePos = Vector(1.19, 0, -0.7),
         CorrectiveAng = Angle(-0.75, -0.44, 3.7),
-        ExtraSightDist = 0,
+        ExtraSightDist = 1,
     },
     {
         PrintName = "Shotgun Bolt",
