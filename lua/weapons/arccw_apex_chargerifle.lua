@@ -461,10 +461,12 @@ SWEP.O_Hook_Override_DamageMin = function(wep, data)
     end
 end
 
+SWEP.ChargeDelay = 0.03
+
 SWEP.Hook_ModifyRPM = function(wep, delay)
     if wep:GetCurrentFiremode().Mode >= 0 then return end
     if wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
-        return 0.03
+        return wep:GetBuff("ChargeDelay")
     end
 end
 

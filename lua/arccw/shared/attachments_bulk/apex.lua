@@ -65,8 +65,9 @@ local function autoreload(wep)
     if wep:Clip1() < wep:GetCapacity() + wep:GetChamberSize() then
         timer.Create(t, 5, 1, function()
             if IsValid(wep) and (!IsValid(wep:GetOwner()) or wep:GetOwner():GetActiveWeapon() != wep) then
+                local old = wep:Clip1()
                 wep:RestoreAmmo()
-                if IsValid(wep:GetOwner()) and wep:GetOwner():IsPlayer() then
+                if old < wep:Clip1() and IsValid(wep:GetOwner()) and wep:GetOwner():IsPlayer() then
                     net.Start("arccw_apex_autoreload")
                         net.WriteEntity(wep)
                     net.Send(wep:GetOwner())
@@ -480,6 +481,13 @@ local function loadercapacity(wep, data)
     end
 end
 
+local chargeoffset = {
+    [1] = {1.414, 1.414},
+    [2] = {1.414, -1.414},
+    [3] = {-1.414, 1.414},
+    [4] = {-1.414, -1.414},
+    [5] = {0, 0},
+}
 
 local hopups = {
     ["dtap"] = {
@@ -1013,7 +1021,7 @@ local hopups = {
             },
             -- Charge Rifle
             [4] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Charge Rifle splits its beam into 4, decreasing in spread as it charges.\nCharge damage is significantly increased and final beam damage is decreased.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Charge Rifle splits its beam into 5, decreasing in spread as it charges.\nCharge damage is significantly increased and final beam damage is decreased.",
                 Override_Firemodes = {
                     {
                         PrintName = "fcg.semi",
@@ -1023,21 +1031,35 @@ local hopups = {
                     },
                     {
                         PrintName = "fcg.apex.shatter",
-                        Mode = -21,
+                        Mode = -9,
                         RunawayBurst = true,
                         PostBurstDelay = 1,
                         Override_HullSize = 2,
-                        Mult_ChargeDamage = 4,
+                        Mult_ChargeDamage = 10,
+                        Override_ChargeDelay = 0.08,
                         Mult_Damage = 0.5,
                         Mult_DamageMin = 0.5,
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, 1, 0),
+                            [2] = Angle(0, -1, 0),
+                            [3] = Angle(1, 0, 0),
+                            [4] = Angle(-1, 0, 0),
+                            [5] = Angle(0, 0, 0),
+                        },
+                        Hook_ShotgunSpreadOffset = function(wep, data)
+                            local s = Lerp(wep:GetBurstCount() / 8, 1.5, 0)
+                            data.ang = Angle(chargeoffset[data.num][1] * s, chargeoffset[data.num][2] * s, 0)
+                            return data
+                        end,
                         O_Hook_Override_Num = function(wep, data)
-                            if wep:GetBurstCount() <= 20 then
-                                return {current = 4}
+                            if wep:GetBurstCount() < 8 then
+                                return {current = 5}
                             end
                         end,
                         O_Hook_Override_AccuracyMOA = function(wep, data)
-                            return {current = Lerp(wep:GetBurstCount() / 20, 60, 0)}
+                            return {current = Lerp((wep:GetBurstCount() - 1) / 8, 60, 0)}
                         end,
+                        Override_NoRandSpread = true,
                         Override_ShotRecoilTable = {
                             [1] = 0,
                             [2] = 0,
@@ -1048,6 +1070,7 @@ local hopups = {
                             [7] = 0,
                             [8] = 0,
                             [9] = 0,
+                            --[[]
                             [10] = 0,
                             [11] = 0,
                             [12] = 0,
@@ -1059,6 +1082,7 @@ local hopups = {
                             [18] = 0,
                             [19] = 0,
                             [20] = 0,
+                            ]]
                         }
                     }
                 }
