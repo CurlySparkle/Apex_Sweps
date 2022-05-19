@@ -229,6 +229,10 @@ SWEP.Attachments = {
         Slot = {"apex_sg"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_dshell"}
+    },
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",

@@ -1211,7 +1211,17 @@ local hopups = {
                 end
             },
         }
-    }
+    },
+    ["dshell"] = {
+        name = "Dual Shell",
+        icon = "entities/attach_icons/hopup_apex_quickdrawholster.png",
+        desc = "Weapon loads two rounds per insertion when reloading.",
+        variants = {
+            [1] = {
+                Override_InsertAmount = 2,
+            }
+        }
+    },
 }
 
 for k, v in SortedPairs(hopups) do
