@@ -79,6 +79,8 @@ SWEP.Tracer = "arccw_apex_tracer_chargerifle_1" -- override tracer (hitscan) eff
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
+SWEP.ImpactDecal = "FadingScorch"
+
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 8
 SWEP.MaxRecoilBlowback = 1
