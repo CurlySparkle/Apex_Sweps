@@ -910,7 +910,7 @@ local hopups = {
         variants = {
             -- 30-30 Repeater
             [1] = {
-                Description = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern, but cannot charge up damage.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern, but cannot charge up damage.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -936,27 +936,12 @@ local hopups = {
                             [7] = Angle(-2.8, 0.0, 0),
                         },
                         Override_NoRandSpread = true,
-                        Hook_ShotgunSpreadOffset = function(wep, data)
-                            local d = 1
-                            local ref = {
-                                [1] = Angle(0, 1.2, 0),
-                                [2] = Angle(0, -1.2, 0),
-                                [3] = Angle(-0.3, 0, 0),
-                                [4] = Angle(-1.2, 0, 0),
-                                [5] = Angle(-1.6, 0.5, 0),
-                                [6] = Angle(-1.6, -0.5, 0),
-                                [7] = Angle(-2.8, 0.0, 0),
-                            }
-                            local p = ref[data.num]
-                            data.ang = Angle(p.p * -d, p.y * d, 0)
-                            return data
-                        end,
                     }
                 }
             },
             -- RE-45 Auto
             [2] = {
-                Description = "Weapon gains an additional firemode that shoots 3 pellets in a shotgun pattern, consuming 2 rounds per shot at a lower rate of fire.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
                 Override_Firemodes = {
                     {
                         Mode = 2,
@@ -964,18 +949,25 @@ local hopups = {
                     {
                         PrintName = "fcg.apex.shatter",
                         Mode = 2,
-                        Override_Num = 3,
-                        Override_Damage = 30,
-                        Override_DamageMin = 30,
+                        Override_Num = 4,
+                        Override_Damage = 32,
+                        Override_DamageMin = 32,
                         Override_AccuracyMOA = 40,
                         Override_AmmoPerShot = 2,
-                        Mult_RPM = 0.75
+                        Mult_RPM = 0.75,
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, 1.2, 0),
+                            [2] = Angle(0, -1.2, 0),
+                            [3] = Angle(-0.9, 0, 0),
+                            [4] = Angle(0.9, 0, 0),
+                        },
+                        Override_NoRandSpread = true,
                     }
                 }
             },
             -- Kraber 50cal Sniper
             [3] = {
-                Description = "Weapon gains an additional firemode that shoots 24 pellets in a shotgun pattern.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Kraber fires 25 pellets in a ring and cross pattern.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -984,16 +976,44 @@ local hopups = {
                     {
                         PrintName = "fcg.apex.shatter",
                         Mode = 1,
-                        Override_Num = 24,
-                        Override_Damage = 144,
-                        Override_DamageMin = 144,
-                        Override_AccuracyMOA = 45
+                        Override_Num = 25,
+                        Override_Damage = 150,
+                        Override_DamageMin = 150,
+                        Override_AccuracyMOA = 45,
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, 0.65, 0),
+                            [2] = Angle(0, 1.25, 0),
+                            [3] = Angle(0.65, 0, 0),
+                            [4] = Angle(1.25, 0, 0),
+                            [5] = Angle(-0.65, 0, 0),
+                            [6] = Angle(-1.25, 0, 0),
+                            [7] = Angle(0, -0.65, 0),
+                            [8] = Angle(0, -1.25, 0),
+                            [9] = Angle(0, 0, 0),
+                            [10] = Angle(0.0, 2.0, 0),
+                            [11] = Angle(0.765, 1.848, 0),
+                            [12] = Angle(1.414, 1.414, 0),
+                            [13] = Angle(1.848, 0.765, 0),
+                            [14] = Angle(2.0, 0.0, 0),
+                            [15] = Angle(1.848, -0.765, 0),
+                            [16] = Angle(1.414, -1.414, 0),
+                            [17] = Angle(0.765, -1.848, 0),
+                            [18] = Angle(0.0, -2.0, 0),
+                            [19] = Angle(-0.765, -1.848, 0),
+                            [20] = Angle(-1.414, -1.414, 0),
+                            [21] = Angle(-1.848, -0.765, 0),
+                            [22] = Angle(-2.0, -0.0, 0),
+                            [23] = Angle(-1.848, 0.765, 0),
+                            [24] = Angle(-1.414, 1.414, 0),
+                            [25] = Angle(-0.765, 1.848, 0),
+                        },
+                        Override_NoRandSpread = true,
                     }
                 }
             },
             -- Charge Rifle
             [4] = {
-                Description = "Weapon gains an additional firemode that splits the beam into up to 4 rays, decreasing in count and spread while it charges.\nCharge damage is significantly increased and final beam damage is decreased.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Charge Rifle splits its beam into 4, decreasing in spread as it charges.\nCharge damage is significantly increased and final beam damage is decreased.",
                 Override_Firemodes = {
                     {
                         PrintName = "fcg.semi",
@@ -1011,7 +1031,9 @@ local hopups = {
                         Mult_Damage = 0.5,
                         Mult_DamageMin = 0.5,
                         O_Hook_Override_Num = function(wep, data)
-                            return {current = math.ceil(Lerp(wep:GetBurstCount() / 20, 4, 1))}
+                            if wep:GetBurstCount() <= 20 then
+                                return {current = 4}
+                            end
                         end,
                         O_Hook_Override_AccuracyMOA = function(wep, data)
                             return {current = Lerp(wep:GetBurstCount() / 20, 60, 0)}
@@ -1044,7 +1066,7 @@ local hopups = {
         },
         variants_ttt = {
             [1] = {
-                Description = "Weapon gains an additional firemode that shoots 7 pellets in a shotgun pattern, but cannot charge up damage.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern, but cannot charge up damage.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -1059,20 +1081,21 @@ local hopups = {
                         Override_DamageMin = 35,
                         Override_AccuracyMOA = 35,
                         Mult_HipDispersion = 0.5,
-                        Override_BodyDamageMults = {
-                            [HITGROUP_HEAD] = 1.25,
-                            [HITGROUP_CHEST] = 1,
-                            [HITGROUP_STOMACH] = 1,
-                            [HITGROUP_LEFTARM] = 1,
-                            [HITGROUP_RIGHTARM] = 1,
-                            [HITGROUP_LEFTLEG] = 0.8,
-                            [HITGROUP_RIGHTLEG] = 0.8,
-                        }
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, 1.2, 0),
+                            [2] = Angle(0, -1.2, 0),
+                            [3] = Angle(-0.3, 0, 0),
+                            [4] = Angle(-1.2, 0, 0),
+                            [5] = Angle(-1.6, 0.5, 0),
+                            [6] = Angle(-1.6, -0.5, 0),
+                            [7] = Angle(-2.8, 0.0, 0),
+                        },
+                        Override_NoRandSpread = true,
                     }
                 }
             },
             [2] = {
-                Description = "Weapon gains an additional firemode that shoots 3 pellets in a shotgun pattern, consuming 2 rounds per shot at a lower rate of fire.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
                 Override_Firemodes = {
                     {
                         Mode = 2,
@@ -1080,12 +1103,19 @@ local hopups = {
                     {
                         PrintName = "fcg.apex.shatter",
                         Mode = 2,
-                        Override_Num = 3,
+                        Override_Num = 4,
                         Override_Damage = 24,
                         Override_DamageMin = 24,
                         Override_AccuracyMOA = 40,
                         Override_AmmoPerShot = 2,
-                        Mult_RPM = 0.75
+                        Mult_RPM = 0.75,
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, 1.2, 0),
+                            [2] = Angle(0, -1.2, 0),
+                            [3] = Angle(-0.9, 0, 0),
+                            [4] = Angle(0.9, 0, 0),
+                        },
+                        Override_NoRandSpread = true,
                     }
                 }
             },
