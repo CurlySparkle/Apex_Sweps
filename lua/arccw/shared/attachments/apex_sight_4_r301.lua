@@ -1,5 +1,5 @@
 att.PrintName = "2x HCOG (Bruiser)"
-att.Icon = Material("entities/attach_icons/apex_1x_hcog.png", "mips smooth")
+att.Icon = Material("entities/attach_icons/apex_2x.png", "mips smooth")
 att.Description = "Big reflex sight offers clarity."
 
 att.SortOrder = 1
