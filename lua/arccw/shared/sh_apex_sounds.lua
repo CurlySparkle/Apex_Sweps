@@ -1,4 +1,49 @@
 sound.Add( {
+    name = "ArcCW_APEX.Bocek.Fire_Charged",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/bocek/fire_charged_1.wav",
+        "^weapons/bocek/fire_charged_2.wav",
+        "^weapons/bocek/fire_charged_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Bocek.Fire_Charged")
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Fire_Uncharged",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/bocek/fire_uncharged_1.wav",
+        "^weapons/bocek/fire_uncharged_2.wav",
+        "^weapons/bocek/fire_uncharged_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Bocek.Fire_Uncharged")
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Empty",
+    channel = CHAN_WEAPON + 6,
+    volume = 0.5,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_01.wav",
+		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_02.wav",
+		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_03.wav",
+		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_04.wav",
+		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_05.wav",
+		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_06.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Bocek.Empty")
+
+sound.Add( {
     name = "ArcCW_APEX.Rampage.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
