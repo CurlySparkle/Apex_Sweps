@@ -30,6 +30,7 @@ PrecacheParticleSystem("tfa_apex_tracer_sniper")
 
 --MUZZLES
 PrecacheParticleSystem("tfa_apex_muzzle_ar")
+PrecacheParticleSystem("tfa_apex_muzzle_barrel")
 PrecacheParticleSystem("tfa_apex_muzzle_hmg")
 PrecacheParticleSystem("tfa_apex_muzzle_shotgun")
 PrecacheParticleSystem("tfa_apex_muzzle_smg")
