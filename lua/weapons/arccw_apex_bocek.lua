@@ -106,11 +106,12 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_sniper"
-SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
+SWEP.MuzzleEffect = nil
+SWEP.MuzzleFlashColor = Color(0,0,0)
+SWEP.ShellModel = nil
 SWEP.ShellPitch = 65
-SWEP.ShellScale = 1.55
-SWEP.ShellTime = 1
+SWEP.ShellScale = 0.001
+SWEP.ShellTime = 0
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
@@ -166,7 +167,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "g7"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
