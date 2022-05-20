@@ -17,7 +17,7 @@
 
 "$detail" "models\weapons\sentinel\sentinel_base_main_s"
 "$detailscale" "1"
-"$detailblendfactor" "0.0001"
+"$detailblendfactor" "0.01"
 "$detailblendmode" "5"
 }
 //Material setup by ShadowRUN 幸運な.
