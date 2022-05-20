@@ -88,9 +88,6 @@ if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")
     util.AddNetworkString("arccw_apex_hit")
 
-    CreateConVar("arccw_apex_hitsound", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use hit sounds on Apex Legends weapons.", 0, 1)
-    CreateConVar("arccw_apex_hitsound_headshot", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use headshot hit sounds on Apex Legends weapons.", 0, 1)
-
     local function hitsound(ply, hg, dmg)
         local attacker = dmg:GetAttacker()
         local inflictor = (attacker == dmg:GetInflictor()) and attacker:GetActiveWeapon() or dmg:GetInflictor()
@@ -105,6 +102,9 @@ if SERVER then
     hook.Add("ScalePlayerDamage", "ArcCW_Apex", hitsound)
     hook.Add("ScaleNPCDamage", "ArcCW_Apex", hitsound)
 else
+    CreateConVar("arccw_apex_hitsound", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use hit sounds on Apex Legends weapons.", 0, 1)
+    CreateConVar("arccw_apex_hitsound_headshot", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use headshot hit sounds on Apex Legends weapons.", 0, 1)
+
     sound.Add({
         name = "Apex_Hit_Sound",
         channel = CHAN_AUTO,
