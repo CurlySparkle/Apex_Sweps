@@ -201,7 +201,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        Slot = {"apex_stock_standard2"}
+        Slot = {"apex_stock_standard2", "apex_stock_precision"}
     },
     {
         PrintName = "Magazine",

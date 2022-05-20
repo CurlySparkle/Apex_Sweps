@@ -343,10 +343,65 @@ local stock_types = {
                 }
             }
         },
-    }
+    },
+    ["precision"] = {
+        "Precision Stock",
+        "models/weapons/attachments/upgrades/stock_regular.mdl",
+        "entities/attach_icons/apex_stock_{}.png",
+        {
+            [1] = {
+                [1] = {
+                    Mult_MoveDispersion = 0.7,
+                    Mult_RecoilSide = 0.9,
+                    Mult_SightTime = 0.85,
+                    Mult_Sway = 0.65,
+                },
+                [2] = {
+                    Mult_MoveDispersion = 0.6,
+                    Mult_RecoilSide = 0.85,
+                    Mult_SightTime = 0.8,
+                    Mult_Sway = 0.5,
+                },
+                [3] = {
+                    Mult_MoveDispersion = 0.5,
+                    Mult_RecoilSide = 0.8,
+                    Mult_SightTime = 0.75,
+                    Mult_Sway = 0.35,
+                }
+            },
+        },
+    },
+    ["combat"] = {
+        "Combat Stock",
+        "models/weapons/attachments/upgrades/stock_sniper.mdl",
+        "entities/attach_icons/apex_stock_sniper_{}.png",
+        {
+            [1] = {
+                [1] = {
+                    Mult_HipDispersion = 0.85,
+                    Mult_JumpDispersion = 0.75,
+                    Mult_SightTime = 0.9,
+                    Mult_Sway = 0.85,
+                },
+                [2] = {
+                    Mult_HipDispersion = 0.8,
+                    Mult_JumpDispersion = 0.5,
+                    Mult_SightTime = 0.85,
+                    Mult_Sway = 0.5,
+                },
+                [3] = {
+                    Mult_HipDispersion = 0.75,
+                    Mult_JumpDispersion = 0.25,
+                    Mult_SightTime = 0.8,
+                    Mult_Sway = 0.2,
+                }
+            }
+        },
+    },
 }
 
 
+local so = 1
 for k, v in pairs(stock_types) do
     for j = 1, #v[4] do
         for i = 1, #v[4][j] do
@@ -359,7 +414,7 @@ for k, v in pairs(stock_types) do
             att.Description = "apex.stock." .. i
             att.AutoStats = true
             att.Slot = "apex_stock_" .. k .. (j > 1 and j or "")
-            att.SortOrder = i
+            att.SortOrder = so
             att.RandomWeight = rand_weight[i]
 
             att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
@@ -378,6 +433,7 @@ for k, v in pairs(stock_types) do
             ArcCW.LoadAttachmentType(att, "apex_stock_" .. k .. (j > 1 and j or "") .. "_" .. i)
         end
     end
+    so = so + 1
 end
 
 -------------------------------------------------
