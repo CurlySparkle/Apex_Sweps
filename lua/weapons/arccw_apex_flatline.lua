@@ -193,7 +193,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-			wpos = Vector(21.5, 1, -6.7),
+            wpos = Vector(21.5, 1, -6.7),
             wang = Angle(-10, 0, 180)
         },
     },
@@ -214,16 +214,6 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
     },
 }
 

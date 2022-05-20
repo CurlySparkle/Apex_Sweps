@@ -221,7 +221,7 @@ SWEP.Attachments = {
             wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"sight","weapon_dot"},
-		ExtraSightDist = 4,
+        ExtraSightDist = 4,
          CorrectivePos = Vector(1.81,0,-0.7),
          CorrectiveAng = Angle(0, 0, 3.494)
     },
@@ -238,16 +238,6 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
     },
 }
 

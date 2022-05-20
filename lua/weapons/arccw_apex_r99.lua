@@ -40,7 +40,7 @@ SWEP.WorldModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModelOffset = {
     pos = Vector(-5.5, 4, -4.5),
     ang = Angle(-10, 0, 180-5),
-	bone    =    "ValveBiped.Bip01_R_Hand",
+    bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
 }
 
@@ -180,10 +180,10 @@ SWEP.Attachments = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
             wpos = Vector(6, 0.9, -5.2),
-            wang = Angle(-10, 0, 180)	
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"ref_dot", "ref_sights"},
-		ExtraSightDist = 2,
+        ExtraSightDist = 2,
          CorrectivePos = Vector(1.5,0,-0.8),
          CorrectiveAng = Angle(0, 0, 3.494)
     },
@@ -194,8 +194,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-			wpos = Vector(20, 1, -6),
-            wang = Angle(-10, 0, 180)	
+            wpos = Vector(20, 1, -6),
+            wang = Angle(-10, 0, 180)
         },
     },
     {
@@ -211,16 +211,6 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
     },
 }
 

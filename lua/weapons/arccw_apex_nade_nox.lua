@@ -99,16 +99,6 @@ SWEP.SprintTime = 0
 SWEP.IronSightStruct = false
 
 SWEP.Attachments = {
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
-    },
 }
 
 SWEP.Animations = {
@@ -122,21 +112,21 @@ SWEP.Animations = {
         Source = "draw",
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.wav", t = 0 / 30},
-			{s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
-			{s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
         },
     },
     ["draw"] = {
         Source = "draw",
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.wav", t = 0 / 30},
-			{s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
-			{s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.5,
+        Mult = 0.5,
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_ThrowOverhead_Windup_2ch_v1_01.wav", t = 1 / 30}
         },
@@ -163,7 +153,7 @@ SWEP.Animations = {
     },
     ["throw_alt"] = {
         Source = {"toss_overhead"},
-		Mult = 2,
+        Mult = 2,
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}
@@ -183,8 +173,8 @@ SWEP.Animations = {
         -- Source = "draw",
         -- SoundTable = {
             -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.wav", t = 0 / 30},
-			-- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
-			-- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
+            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
+            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
         -- },
     -- },
     ["enter_inspect"] = {

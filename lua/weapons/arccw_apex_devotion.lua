@@ -219,16 +219,6 @@ SWEP.Attachments = {
         PrintName = "Hop-up",
         Slot = {"apex_hopup_turbo2"}
     },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
-    },
 }
 
 SWEP.Animations = {

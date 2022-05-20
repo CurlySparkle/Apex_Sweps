@@ -97,16 +97,6 @@ SWEP.SprintTime = 0
 SWEP.IronSightStruct = false
 
 SWEP.Attachments = {
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
-    },
 }
 
 SWEP.Animations = {
@@ -156,7 +146,7 @@ SWEP.Animations = {
     },
     ["throw_alt"] = {
         Source = {"underhand"},
-		Mult = 1,
+        Mult = 1,
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}

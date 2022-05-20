@@ -46,8 +46,8 @@ SWEP.Apex_Balance = {
         DamageMin = 12,
     },
     [2] = {
-        Damage = 14, -- similar to TTT pistol but fires much faster. don't want to mess with rpm as that makes the gun feel less authentic
-        DamageMin = 14,
+        Damage = 12, -- similar to TTT pistol but fires much faster. don't want to mess with rpm as that makes the gun feel less authentic
+        DamageMin = 12,
     },
 }
 
@@ -194,16 +194,6 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
     },
 }
 

@@ -96,16 +96,6 @@ SWEP.SprintTime = 0
 SWEP.IronSightStruct = false
 
 SWEP.Attachments = {
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
-    },
 }
 
 SWEP.Animations = {

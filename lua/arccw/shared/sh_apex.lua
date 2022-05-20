@@ -60,7 +60,7 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
     ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 3
     ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 3
 
-    if GetConVar("arccw_apex_ttt_ammo"):GetBool() and !GetConVar("arccw_apex_ammo"):GetBool() then
+    if GetConVar("arccw_apex_ttt_ammo"):GetBool() and not GetConVar("arccw_apex_ammo"):GetBool() then
         ArcCW.AmmoEntToArcCW["item_ammo_pistol_ttt"] = "arccw_ammo_apex_light"
         ArcCW.AmmoEntToArcCW["item_ammo_smg1_ttt"] = "arccw_ammo_apex_heavy"
         ArcCW.AmmoEntToArcCW["item_ammo_revolver_ttt"] = "arccw_ammo_apex_sniper"
@@ -69,10 +69,10 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
     end
 
     for i, k in pairs(weapons.GetList()) do
-        if !weapons.IsBasedOn(k.ClassName, "arccw_base") then continue end
+        if not weapons.IsBasedOn(k.ClassName, "arccw_base") then continue end
         local stored = weapons.GetStored(k.ClassName) -- necessary?
 
-        if GetConVar("arccw_apex_ttt_exclusive"):GetBool() and !weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
+        if GetConVar("arccw_apex_ttt_exclusive"):GetBool() and not weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
             stored.TTTWeight = 0
             stored.NPCWeight = 0
         end
@@ -86,7 +86,51 @@ end)
 
 if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")
+    util.AddNetworkString("arccw_apex_hit")
+
+    CreateConVar("arccw_apex_hitsound", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use hit sounds on Apex Legends weapons.", 0, 1)
+    CreateConVar("arccw_apex_hitsound_headshot", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use headshot hit sounds on Apex Legends weapons.", 0, 1)
+
+    local function hitsound(ply, hg, dmg)
+        local attacker = dmg:GetAttacker()
+        local inflictor = (attacker == dmg:GetInflictor()) and attacker:GetActiveWeapon() or dmg:GetInflictor()
+        if not attacker:IsPlayer() or not weapons.IsBasedOn(inflictor:GetClass(), "arccw_apex_base") or (attacker.ApexLastHit or 0) == CurTime() then return end
+        attacker.ApexLastHit = CurTime()
+
+        net.Start("arccw_apex_hit")
+            net.WriteBool(hg == HITGROUP_HEAD)
+        net.Send(attacker)
+    end
+
+    hook.Add("ScalePlayerDamage", "ArcCW_Apex", hitsound)
+    hook.Add("ScaleNPCDamage", "ArcCW_Apex", hitsound)
 else
+    sound.Add({
+        name = "Apex_Hit_Sound",
+        channel = CHAN_AUTO,
+        level = 100,
+        volume = 1,
+        pitch = {90, 110},
+        sound = "player/flesh_bulletimpact_1p_vs_3p.wav"
+    })
+    sound.Add({
+        name = "Apex_Hit_Headshot",
+        channel = CHAN_AUTO,
+        level = 100,
+        volume = 1,
+        pitch = {80, 110},
+        sound = "player/player_hitbeep_headshotrapid_human_1p_vs_3p.wav"
+    })
+
+    net.Receive("arccw_apex_hit", function()
+        local hs = net.ReadBool()
+        if hs and GetConVar("arccw_apex_hitsound_headshot"):GetBool() then
+            LocalPlayer():EmitSound("Apex_Hit_Headshot")
+        elseif GetConVar("arccw_apex_hitsound"):GetBool() then
+            LocalPlayer():EmitSound("Apex_Hit_Sound")
+        end
+    end)
+
     net.Receive("arccw_apex_autoreload", function()
         local wep = net.ReadEntity()
 
@@ -118,4 +162,5 @@ else
             Apex_AutoReloadPanel:SetAlpha(Apex_AutoReloadPanel.Alpha * 255)
         end
     end)
+
 end

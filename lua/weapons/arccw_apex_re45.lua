@@ -66,8 +66,8 @@ SWEP.Apex_Balance = {
         DamageMin = 12,
     },
     [2] = {
-        Damage = 9, -- roughly equivalent to TTT glock
-        DamageMin = 9,
+        Damage = 10, -- roughly equivalent to TTT glock
+        DamageMin = 10,
     },
 }
 
@@ -179,7 +179,7 @@ SWEP.Attachments = {
             wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"ref_sights", "weapon_dot"},
-		ExtraSightDist = 1,
+        ExtraSightDist = 1,
         CorrectivePos = Vector(1.33,0,-0.55),
         CorrectiveAng = Angle(1.045, -0.682, 1.999)
     },
@@ -207,16 +207,6 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
     },
 }
 

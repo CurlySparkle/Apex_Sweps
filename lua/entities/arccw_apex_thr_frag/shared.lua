@@ -16,10 +16,10 @@ AddCSLuaFile()
 function ENT:Initialize()
     if SERVER then
         self:SetModel( self.Model )
-		self:SetMoveType( MOVETYPE_VPHYSICS )
-		self:SetSolid( SOLID_VPHYSICS )
-		self:PhysicsInit( SOLID_VPHYSICS )
-		self:SetCollisionGroup( COLLISION_GROUP_NONE )
+        self:SetMoveType( MOVETYPE_VPHYSICS )
+        self:SetSolid( SOLID_VPHYSICS )
+        self:PhysicsInit( SOLID_VPHYSICS )
+        self:SetCollisionGroup( COLLISION_GROUP_NONE )
         self:DrawShadow( true )
 
         local phys = self:GetPhysicsObject()
@@ -72,7 +72,7 @@ function ENT:Detonate()
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
             util.Effect("Explosion", effectdata)
-			util.Effect("hl2mmod_explosion_grenade", effectdata)
+            util.Effect("hl2mmod_explosion_grenade", effectdata)
             self:EmitSound("weapons/grenades/explode" .. math.random(1,3) .. ".wav", 120, 100, 1, CHAN_AUTO)
         end
 

@@ -164,7 +164,7 @@ SWEP.Attachments = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
             wpos = Vector(1, 1.2, -4.8),
-            wang = Angle(-10.216, 0, 180)	
+            wang = Angle(-10.216, 0, 180)
         },
         InstalledEles = {"weapon_sights"},
          CorrectivePos = Vector(1.665,0,-0.77),
@@ -177,7 +177,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-			wpos = Vector(9.5, 1.2, -5),
+            wpos = Vector(9.5, 1.2, -5),
             wang = Angle(-10, 0, 180)
         },
     },
@@ -198,16 +198,6 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Extras",
-        Installed = "apex_hitsound_headshot",
-        Slot = {"apex_extras"}
-    },
-    {
-        PrintName = "Extras 2",
-        Installed = "apex_hitsound",
-        Slot = {"apex_extras2"}
     },
 }
 

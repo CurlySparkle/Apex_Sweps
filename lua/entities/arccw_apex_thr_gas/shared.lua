@@ -143,7 +143,7 @@ function ENT:Think()
                     if !pa then return end
                     local col1 = Color(100, 175, 0)
                     local col2 = Color(0, 155, 0)
-					local col4 = Color(0, 100, 0)
+                    local col4 = Color(0, 100, 0)
 
                     local col3 = col1
                     local d = pa:GetLifeTime() / pa:GetDieTime()
