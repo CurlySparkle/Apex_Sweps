@@ -9,7 +9,7 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Bocek Compound Bow"
-SWEP.Trivia_Class = "Designated Marksman Rifle"
+SWEP.Trivia_Class = "Compound Bow"
 SWEP.Trivia_Desc = "It's literally just a bow."
 
 SWEP.Slot = 3
@@ -41,11 +41,12 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 25
-SWEP.DamageMin = 25
+SWEP.Damage = 20
+SWEP.DamageMin = 20
 SWEP.Range = 200
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 10000 * ArcCW.HUToM
+SWEP.PhysTracerProfile = 9
 
 SWEP.Apex_Balance = {
 }
@@ -71,6 +72,7 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 0
 SWEP.MaxRecoilBlowback = 1
 
+SWEP.CanFireUnderwater = true
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
 SWEP.Recoil = 0.5
@@ -293,11 +295,11 @@ SWEP.Animations = {
     },
     ["trigger"] = {
         Source = "fire_windup",
-        MinProgress = 0.06,
+        MinProgress = 0.05,
     },
     ["trigger_sight"] = {
         Source = "iron_fire_windup",
-        MinProgress = 0.06,
+        MinProgress = 0.05,
     },
     ["untrigger"] = {
         Source = "fire_winddown",
@@ -319,3 +321,18 @@ SWEP.TTTWeight = 50
 
 SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
+
+local function chargefraction(wep, a, b)
+    return Lerp((CurTime() - wep.LastTriggerTime - 0.1) / 0.54, a or 0, b or 1)
+
+end
+
+SWEP.M_Hook_Mult_Damage = function(wep, data)
+    data.mult = data.mult * chargefraction(wep, 1, 3)
+end
+SWEP.M_Hook_Mult_DamageMin = function(wep, data)
+    data.mult = data.mult * chargefraction(wep, 1, 3)
+end
+SWEP.M_Hook_Mult_PhysBulletMuzzleVelocity = function(wep, data)
+    data.mult = data.mult * chargefraction(wep, 1, 2.8)
+end
