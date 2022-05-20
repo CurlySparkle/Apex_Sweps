@@ -33,8 +33,8 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_chargerifle.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_chargerifle.mdl"
-SWEP.MirrorVMWM = true
+SWEP.WorldModel = "models/weapons/w_apex_chargerifle.mdl"
+SWEP.MirrorVMWM = false
 SWEP.MirrorWorldModel = "models/weapons/w_apex_chargerifle.mdl"
 SWEP.WorldModelOffset = {
     pos        =    Vector(-7.5, 5.5, -5),
@@ -78,6 +78,9 @@ SWEP.BodyDamageMults = {
 SWEP.Tracer = "arccw_apex_tracer_chargerifle_1" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
+
+SWEP.ImpactDecal = "FadingScorch"
+SWEP.ImpactEffect = "StunstickImpact"
 
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 8
@@ -180,8 +183,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(12, -0.25, -9.65),
+            wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"weapon_sights","weapon_dot"},
         CorrectivePos = Vector(2.88, 0, 0.44),

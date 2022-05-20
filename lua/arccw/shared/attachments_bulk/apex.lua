@@ -13,7 +13,7 @@ local mag_types = {
     ["energy"] = {
         "Extended Energy Magazine",
         {
-            [1] = {2, 4, 7, 7}, -- Volt SMG
+            [1] = {2, 4, 9, 9}, -- Volt SMG
             [2] = {4, 8, 12, 12}, -- Devotion LMG, HAVOC
             [3] = {3, 6, 9, 9}, -- Triple Take
             [4] = {4, 6, 12, 12}, -- Rampage
@@ -194,7 +194,7 @@ for i = 1, 3 do
     att.Description = "apex.barrel.stabilizer." .. i
     att.AutoStats = true
     att.Slot = "apex_muzzle"
-    att.Override_MuzzleEffect = "muzzle_pistols_l4d"
+    -- att.Override_MuzzleEffect = "muzzle_pistols_l4d" -- This looked pretty bad on energy weapons
     att.SortOrder = 10
     att.Override_MuzzleEffectAttachment = 1
     att.IsMuzzleDevice = true
@@ -218,7 +218,7 @@ for i = 1, 3 do
     att2.Description = "apex.barrel.suppressor." .. i
     att2.AutoStats = true
     att2.Slot = "apex_muzzle"
-    att2.Override_MuzzleEffect = "muzzle_pistols_l4d"
+    -- att2.Override_MuzzleEffect = "muzzle_pistols_l4d" -- This looked pretty bad on energy weapons
     att2.SortOrder = 5
     att2.Override_MuzzleEffectAttachment = 1
     att2.IsMuzzleDevice = true

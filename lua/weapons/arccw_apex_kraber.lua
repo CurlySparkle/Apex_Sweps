@@ -37,7 +37,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_kraber.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_kraber.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-10, 8, -5.5),
     ang        =    Angle(-10, 0, 180),
@@ -172,8 +172,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(7, 0.6, -8.15),
+            wang = Angle(-9, 0, 185)
         },
         Installed = "apex_scope_1_kraber",
         CorrectivePos = Vector(3.65, 0, 0.1),

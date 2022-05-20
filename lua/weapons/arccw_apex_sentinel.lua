@@ -34,9 +34,9 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_sentinel.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_sentinel.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_sentinel.mdl"
 SWEP.MirrorWorldModel = "models/weapons/w_apex_sentinel.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-8.5, 5.5, -5.5),
     ang        =    Angle(-10, 0, 180),
@@ -164,6 +164,18 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["charged"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
+    ["skin"] = {
+        VMSkin = 2,
+        WMSkin = 2,
+    },
+    ["skin_charged"] = {
+        VMSkin = 3,
+        WMSkin = 3,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -176,8 +188,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(5, 0.1, -7),
+            wang = Angle(-9, 0, 185)
         },
         InstalledEles = {"ref_sight","ref_dot"},
         CorrectivePos = Vector(2.69,0,-0.47),
@@ -194,6 +206,12 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {}
+    },
+    {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

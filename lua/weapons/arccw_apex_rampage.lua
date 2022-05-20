@@ -30,8 +30,8 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_rampage.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_rampage.mdl"
-SWEP.MirrorVMWM = true
+SWEP.WorldModel = "models/weapons/w_apex_rampage.mdl"
+SWEP.MirrorVMWM = false
 SWEP.MirrorWorldModel = "models/weapons/w_apex_rampage.mdl"
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4.3, -5),
@@ -186,8 +186,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(6, 1.4, -6.2),
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"weapon_sights","weapon_dot"},
         ExtraSightDist = 0,
@@ -201,6 +201,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
+            wpos = Vector(23, 1.45, -7.8),
+            wang = Angle(-10, 0, 180)
         },
     },
     {

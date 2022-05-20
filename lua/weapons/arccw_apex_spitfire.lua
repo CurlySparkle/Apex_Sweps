@@ -38,7 +38,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_spitfire.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_spitfire.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4, -6.5),
     ang        =    Angle(-10, 0, 180),
@@ -161,6 +161,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -173,13 +177,13 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(4, 0.4, -7.3),
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"weapon_sights", "weapon_dot"},
-        CorrectivePos = Vector(1.84,0,-0.45),
+        CorrectivePos = Vector(1.84,0,-0.42),
         CorrectiveAng = Angle(0, 0, 2.593),
-        ExtraSightDist = -3
+        ExtraSightDist = -2
     },
     {
         PrintName = "Muzzle",
@@ -188,6 +192,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
+            wpos = Vector(29, 0.5, -9.2),
+            wang = Angle(-9, 0, 180)
         },
     },
     {
@@ -197,6 +203,12 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_heavy5"}
+    },
+    {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",
@@ -267,6 +279,14 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
+    },
+    ["1_to_2"] = {
+        Source = "firemode1",
+        MinProgress = 0.15,
+    },
+    ["2_to_1"] = {
+        Source = "firemode2",
+        MinProgress = 0.15,
     },
     ["reload"] = {
         Source = "reload",

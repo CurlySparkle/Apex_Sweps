@@ -34,7 +34,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_re45.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_re45.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-10.8, 4, -2.7),
     ang        =    Angle(-10, 0, 180),
@@ -175,12 +175,13 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(90, 0, -90),
+            wpos = Vector(6, 1.3, -4.65),
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"ref_sights", "weapon_dot"},
-         CorrectivePos = Vector(1.33,0,-0.55),
-         CorrectiveAng = Angle(1.045, -0.682, 1.999)
+		ExtraSightDist = 1,
+        CorrectivePos = Vector(1.33,0,-0.55),
+        CorrectiveAng = Angle(1.045, -0.682, 1.999)
     },
     {
         PrintName = "Muzzle",
@@ -189,8 +190,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(0, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, -90),
+            wpos = Vector(12, 1.3, -4.5),
+            wang = Angle(-10, 0, 180)
         },
     },
     {

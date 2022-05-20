@@ -38,7 +38,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_volt.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_volt.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-7, 4, -4.7),
     ang        =    Angle(-10, 0, 180),
@@ -151,6 +151,10 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    ["skin"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
 }
 
 SWEP.GuaranteeLaser = true
@@ -163,10 +167,11 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(6, 0.2, -6),
+            wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"weapon_sights", "weapon_dot"},
+        ExtraSightDist = 3,
         CorrectivePos = Vector(1.88,0,-0.4),
         CorrectiveAng = Angle(0, 0, 3.845)
     },
@@ -177,6 +182,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
+            wpos = Vector(21.5, 0.3, -6.75),
+            wang = Angle(-10, 0, 180)
         },
     },
     {
@@ -186,6 +193,12 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"apex_mag_energy1"}
+    },
+    {
+        PrintName = "Skin",
+        Slot = {"skin_apex"},
+        DefaultAttName = "Default",
+        FreeSlot = true
     },
     {
         PrintName = "Extras",

@@ -40,9 +40,9 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_lstar.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_lstar.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-5, 3.5, -5),
+    pos        =    Vector(-9, 4, -6.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -180,8 +180,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(90, 0, -90),
+            wpos = Vector(4, 0, -8.8),
+            wang = Angle(-10, 0, 180)
         },
         ExtraSightDist = 1,
         InstalledEles = {"weapon_sights", "weapon_dot"},
@@ -195,8 +195,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(90, 0, -90)
+            wpos = Vector(14.5, 0.3, -6),
+            wang = Angle(-10, 0, 180)
         },
     },
     {

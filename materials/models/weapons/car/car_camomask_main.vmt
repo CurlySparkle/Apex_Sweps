@@ -3,7 +3,7 @@
 	"$basetexture"				"models\weapons\car\car_camomask_main_d"
 	"$bumpmap"					"models\weapons\car\car_base_main_n"
 	"$phongexponenttexture"		"models\weapons\car\car_base_main_e"
-	"$color2"					"[0.8 0.8 0.8]"
+	"$color2"					"[1 1 1]"
 	"$blendTintByBaseAlpha"		"1"
 	"$normalmapalphaenvmapmask" 1
 

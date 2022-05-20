@@ -21,7 +21,7 @@ SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_wingman.mdl"
-SWEP.MirrorVMWM = true
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-10.5, 3.5, -2.5),
     ang        =    Angle(-10, 0, 180),
@@ -159,8 +159,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(0, 0, 0),
-            wang = Angle(0, 0, 0),
+            wpos = Vector(5, 1, -4.5),
+            wang = Angle(-8, 0, 185)
         },
         InstalledEles = {"wingman_sight"},
         CorrectivePos = Vector(1.25,0,-0.78),
