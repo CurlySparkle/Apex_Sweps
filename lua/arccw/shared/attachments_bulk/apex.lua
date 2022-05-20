@@ -1054,11 +1054,6 @@ local hopups = {
                             end
                         end,
                         Override_AccuracyMOA = 0,
-                        --[[]
-                        O_Hook_Override_AccuracyMOA = function(wep, data)
-                            return {current = Lerp((wep:GetBurstCount() - 1) / 8, 60, 0)}
-                        end,
-                        ]]
                         Override_NoRandSpread = true,
                         Override_ShotRecoilTable = {
                             [1] = 0,
@@ -1070,20 +1065,36 @@ local hopups = {
                             [7] = 0,
                             [8] = 0,
                             [9] = 0,
-                            --[[]
-                            [10] = 0,
-                            [11] = 0,
-                            [12] = 0,
-                            [13] = 0,
-                            [14] = 0,
-                            [15] = 0,
-                            [16] = 0,
-                            [17] = 0,
-                            [18] = 0,
-                            [19] = 0,
-                            [20] = 0,
-                            ]]
                         }
+                    }
+                }
+            },
+            -- Bocek
+            [5] = {
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern, but with reduced damage and velocity charge up.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        PrintName = "fcg.apex.bow"
+                    },
+                    {
+                        PrintName = "fcg.apex.shatter",
+                        Mode = 1,
+                        Override_Num = 7,
+                        Mult_Damage = 1.75,
+                        Mult_DamageMin = 1.75,
+                        Override_AccuracyMOA = 0,
+                        Mult_HipDispersion = 0.5,
+                        Override_ShotgunSpreadPattern = {
+                            [1] = Angle(0, -1.2, 0),
+                            [2] = Angle(0, 1.2, 0),
+                            [3] = Angle(0.3, 0, 0),
+                            [4] = Angle(1.2, 0, 0),
+                            [5] = Angle(1.6, 0.5, 0),
+                            [6] = Angle(1.6, -0.5, 0),
+                            [7] = Angle(2.8, 0.0, 0),
+                        },
+                        Override_NoRandSpread = true,
                     }
                 }
             },

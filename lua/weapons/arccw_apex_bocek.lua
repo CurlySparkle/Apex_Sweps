@@ -82,25 +82,26 @@ SWEP.RecoilPunch = 2.5
 SWEP.VisualRecoilMult = 1.25
 SWEP.RecoilVMShake = 1
 
-SWEP.Delay = 60 / 100 -- 60 / RPM.
+SWEP.Delay = 60 / 90 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 1,
+        PrintName = "fcg.apex.bow"
     }
 }
 
 SWEP.AccuracyMOA = 0.5
 SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 25
-SWEP.JumpDispersion = 200
+SWEP.JumpDispersion = 100
 
 SWEP.Primary.Ammo = "xbowbolt"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = "ArcCW_APEX.G7.Fire"
+SWEP.ShootSound = {"weapons/bocek/fire_charged_1.wav", "weapons/bocek/fire_charged_2.wav", "weapons/bocek/fire_charged_3.wav"}
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -179,8 +180,8 @@ SWEP.Attachments = {
         ExtraSightDist = 0
     },
     {
-        PrintName = "Magazine",
-        Slot = {"apex_mag_light1"}
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_shatter5"},
     },
     {
         PrintName = "Hop-up",
@@ -335,16 +336,38 @@ local function chargefraction(wep, a, b)
 end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, 3)
+    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.2 or 3)
 end
 SWEP.M_Hook_Mult_DamageMin = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, 3)
+    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.2 or 3)
 end
 SWEP.M_Hook_Mult_PhysBulletMuzzleVelocity = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, 2.8)
+    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1.6 or 2.8)
 end
 
 SWEP.Hook_SelectFireAnimation = function(wep, anim)
     local i = math.Round(chargefraction(wep, 1, 5))
     if wep.Animations[anim .. "_" .. i] then return anim .. "_" .. i end
 end
+
+SWEP.Hook_GetShootSound = function(wep, sound)
+    if chargefraction(wep) < 1 then
+        return "weapons/bocek/fire_uncharged_" .. math.random(1, 3) .. ".wav"
+    end
+end
+
+--[[]
+SWEP.Hook_PreReload = function(wep)
+    if ((game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and true)) and wep:GetTriggerDelta() > 0 then
+        local anim = wep:SelectAnimation("untrigger")
+        if anim then
+            wep:PlayAnimation(anim, wep:GetBuff_Mult("Mult_TriggerDelayTime"), true, 0)
+        end
+        wep.LastTriggerTime = 0
+        wep.LastTriggerDuration = 0
+        wep:GetBuff_Hook("Hook_OnTriggerRelease")
+        wep:SetNextPrimaryFire(CurTime() + 0.15)
+    end
+    return true
+end
+]]
