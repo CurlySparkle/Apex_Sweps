@@ -1,4 +1,4 @@
-local ApexPanel = {
+local ApexPanel_SV = {
     { type = "h", text = "#arccw.apex_info" },
 
     { type = "o", text = "#arccw.cvar.apex_bal", var = "arccw_apex_bal", sv = true,
@@ -19,10 +19,18 @@ local ApexPanel = {
     { type = "c", text = "#arccw.cvar.apex_ttt_exclusive.desc" },
 
 }
+local ApexPanel_CL = {
+    { type = "h", text = "#arccw.clientcfg" },
+    { type = "b", text = "#arccw.cvar.apex_hitsound", var = "arccw_apex_hitsound"},
+    { type = "b", text = "#arccw.cvar.apex_hitsound_headshot", var = "arccw_apex_hitsound_headshot"},
+}
 
 hook.Add("PopulateToolMenu", "ArcCW_GSOE_Options", function()
-    spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_Options_Apex", "#arccw.menus.apex", "", "", function(panel)
-        ArcCW.GeneratePanelElements(panel, ApexPanel)
+    spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_Options_Apex_SV", "#arccw.menus.apex.sv", "", "", function(panel)
+        ArcCW.GeneratePanelElements(panel, ApexPanel_SV)
+    end)
+    spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_Options_Apex_CL", "#arccw.menus.apex.cl ", "", "", function(panel)
+        ArcCW.GeneratePanelElements(panel, ApexPanel_CL)
     end)
 end)
 
@@ -37,9 +45,14 @@ hook.Add("TTTSettingsTabs", "ArcCW_Apex", function(dtabs)
     panellist:SetSpacing(10)
 
     local form = vgui.Create("DForm", panellist)
-    form:SetName("#arccw.menus.apex")
-    ArcCW.GeneratePanelElements(form, ApexPanel)
+    form:SetName("#arccw.menus.apex.sv")
+    ArcCW.GeneratePanelElements(form, ApexPanel_SV)
     panellist:AddItem(form)
+
+    local form2 = vgui.Create("DForm", panellist)
+    form2:SetName("#arccw.menus.apex.cl")
+    ArcCW.GeneratePanelElements(form2, ApexPanel_CL)
+    panellist:AddItem(form2)
 
     dtabs:AddSheet("ArcCW Apex", panellist, "icon16/gun.png", false, false, "ArcCW Settings")
 end)

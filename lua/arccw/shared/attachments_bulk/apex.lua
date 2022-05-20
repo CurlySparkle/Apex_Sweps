@@ -150,17 +150,14 @@ local stab = {
     [1] = {
         Mult_Recoil = 0.9,
         Mult_RecoilSide = 0.8,
-        Add_BarrelLength = 4,
     },
     [2] = {
         Mult_Recoil = 0.85,
         Mult_RecoilSide = 0.65,
-        Add_BarrelLength = 6,
     },
     [3] = {
         Mult_Recoil = 0.75,
         Mult_RecoilSide = 0.5,
-        Add_BarrelLength = 8,
     },
 }
 
@@ -169,19 +166,16 @@ local supp = {
         Mult_AccuracyMOA = 0.8,
         Mult_PhysBulletMuzzleVelocity = 1.1,
         Mult_MoveDispersion = 0.8,
-        Add_BarrelLength = 4,
     },
     [2] = {
         Mult_AccuracyMOA = 0.65,
         Mult_PhysBulletMuzzleVelocity = 1.15,
         Mult_MoveDispersion = 0.65,
-        Add_BarrelLength = 6,
     },
     [3] = {
         Mult_AccuracyMOA = 0.5,
         Mult_PhysBulletMuzzleVelocity = 1.3,
         Mult_MoveDispersion = 0.5,
-        Add_BarrelLength = 8,
     },
 }
 
@@ -932,7 +926,7 @@ local hopups = {
                         Override_Num = 7,
                         Override_Damage = 49,
                         Override_DamageMin = 49,
-                        Override_AccuracyMOA = 35,
+                        Override_AccuracyMOA = 0,
                         Mult_HipDispersion = 0.5,
                         Override_ShotgunSpreadPattern = {
                             [1] = Angle(0, 1.2, 0),
@@ -960,7 +954,7 @@ local hopups = {
                         Override_Num = 4,
                         Override_Damage = 32,
                         Override_DamageMin = 32,
-                        Override_AccuracyMOA = 40,
+                        Override_AccuracyMOA = 0,
                         Override_AmmoPerShot = 2,
                         Mult_RPM = 0.75,
                         Override_ShotgunSpreadPattern = {
@@ -987,10 +981,10 @@ local hopups = {
                         Override_Num = 25,
                         Override_Damage = 150,
                         Override_DamageMin = 150,
-                        Override_AccuracyMOA = 45,
-                        Mult_HipDispersion = 0.5,
-                        Mult_MoveDispersion = 0.5,
-                        Mult_JumpDispersion = 0.5,
+                        Override_AccuracyMOA = 0,
+                        Mult_HipDispersion = 0.25,
+                        Mult_MoveDispersion = 0.25,
+                        Mult_JumpDispersion = 0.25,
                         Override_ShotgunSpreadPattern = {
                             [1] = Angle(0, 0.65, 0),
                             [2] = Angle(0, 1.25, 0),
@@ -1059,9 +1053,12 @@ local hopups = {
                                 return {current = 5}
                             end
                         end,
+                        Override_AccuracyMOA = 0,
+                        --[[]
                         O_Hook_Override_AccuracyMOA = function(wep, data)
                             return {current = Lerp((wep:GetBurstCount() - 1) / 8, 60, 0)}
                         end,
+                        ]]
                         Override_NoRandSpread = true,
                         Override_ShotRecoilTable = {
                             [1] = 0,

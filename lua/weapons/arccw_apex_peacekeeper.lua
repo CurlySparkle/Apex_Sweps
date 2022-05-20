@@ -138,8 +138,8 @@ SWEP.Hook_ShotgunSpreadOffset = function(wep, data)
 end
 SWEP.NoRandSpread = true
 
-SWEP.AccuracyMOA = 40 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
+SWEP.AccuracyMOA = 0
+SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 50
 SWEP.SightsDispersion = 0
 
