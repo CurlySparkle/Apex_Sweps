@@ -243,20 +243,9 @@ SWEP.Animations = {
     ["idle_iron"] = {
         Source = "iron_idle",
     },
-    ["fire"] = {
-        Source = "fire",
-    },
-    ["fire_empty"] = {
-        Source = "fire_empty",
-    },
+
     ["enter_sight"] = {
         Source = "iron_in",
-    },
-    ["fire_sight"] = {
-        Source = "iron_fire",
-    },
-    ["fire_sight_empty"] = {
-        Source = "iron_fire_empty",
     },
     ["exit_sight"] = {
         Source = "iron_out",
@@ -312,8 +301,36 @@ SWEP.Animations = {
     },
     ["idle_sight_trigger"] = {
         Source = "iron_fire_windup_loop"
-    }
+    },
+
+    ["fire"] = {
+        Source = "fire",
+    },
+    ["fire_empty"] = {
+        Source = "fire_empty",
+    },
+    ["fire_sight"] = {
+        Source = "iron_fire",
+    },
+    ["fire_sight_empty"] = {
+        Source = "iron_fire_empty",
+    },
 }
+
+for i = 1, 5 do
+    SWEP.Animations["fire_" .. i] = {
+        Source = "fire_" .. i
+    }
+    SWEP.Animations["fire_empty_" .. i] = {
+        Source = "fire_" .. i .. "_empty"
+    }
+    SWEP.Animations["fire_sight_" .. i] = {
+        Source = "iron_fire_" .. i
+    }
+    SWEP.Animations["fire_sight_empty_" .. i] = {
+        Source = "iron_fire_" .. i .. "_empty"
+    }
+end
 
 SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 50
@@ -335,4 +352,9 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
 end
 SWEP.M_Hook_Mult_PhysBulletMuzzleVelocity = function(wep, data)
     data.mult = data.mult * chargefraction(wep, 1, 2.8)
+end
+
+SWEP.Hook_SelectFireAnimation = function(wep, anim)
+    local i = math.Round(chargefraction(wep, 1, 5))
+    if wep.Animations[anim .. "_" .. i] then return anim .. "_" .. i end
 end
