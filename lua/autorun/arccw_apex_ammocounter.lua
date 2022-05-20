@@ -13,6 +13,11 @@ if CLIENT then
                     local OurWeapon = LocalPlayer():GetActiveWeapon()
                     if OurWeapon.ArcCW then
                         local KnowYourPlace = string.sub(string.reverse(OurWeapon:Clip1()), Place, Place)
+						
+						if OurWeapon.BottomlessClip == true then
+							KnowYourPlace = string.sub(string.reverse(OurWeapon:Ammo1()), Place, Place)
+						end
+						
                         local digits = string.format( tonumber(KnowYourPlace) or 0 )
 
                         texture = self.Prefix .. digits
