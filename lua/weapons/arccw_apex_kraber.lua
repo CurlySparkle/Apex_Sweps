@@ -314,8 +314,8 @@ SWEP.Animations = {
 }
 
 if engine.ActiveGamemode() == "terrortown" then
-    SWEP.Override_Ammo = "none"
     SWEP.AutoSpawnable = false
+    SWEP.Primary.Ammo = "none"
     SWEP.ForceDefaultClip = 0
     SWEP.CanBuy = {1, 2} --{ROLE_TRAITOR, ROLE_DETECTIVE}
     SWEP.Kind = 7 -- WEAPON_EQUIP2
