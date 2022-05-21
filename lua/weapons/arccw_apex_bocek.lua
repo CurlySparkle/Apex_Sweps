@@ -248,7 +248,7 @@ SWEP.Animations = {
     ["exit_sight_empty"] = {
         Source = "iron_out_empty",
     },
-    ["idle_iron_empty"] = {
+    ["idle_sight_empty"] = {
         Source = "iron_idle_empty",
     },
     ["enter_sight"] = {
@@ -257,7 +257,7 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
-    ["idle_iron"] = {
+    ["idle_sight"] = {
         Source = "iron_idle",
     },
     ["bash"] = {
@@ -284,17 +284,17 @@ SWEP.Animations = {
         LHIKOut = 0.6,
         SoundTable = {
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
-			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01.wav", t = 35 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01.wav", t = 35 / 30},
 
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01.wav", t = 0 / 30},
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01.wav", t = 142 / 30},
-			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt4_V1_2ch_01.wav", t = 183 / 30},
-			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt5_V1_2ch_01.wav", t = 230 / 30},
-			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt6_V1_2ch_01.wav", t = 300 / 30},
-			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt7_V1_2ch_01.wav", t = 385 / 30},
-			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt8_V1_2ch_01.wav", t = 425 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt4_V1_2ch_01.wav", t = 183 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt5_V1_2ch_01.wav", t = 230 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt6_V1_2ch_01.wav", t = 300 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt7_V1_2ch_01.wav", t = 385 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt8_V1_2ch_01.wav", t = 425 / 30},
     },
-	},
+    },
     ["enter_inspect_empty"] = {
         Source = "inspect_in_empty",
     },
@@ -316,19 +316,19 @@ SWEP.Animations = {
         Source = "fire_windup",
         MinProgress = 0.05,
         SoundTable = {
-        {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 15 / 30},
-        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 15 / 30},
-    },
+            {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 15 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 15 / 30},
+        },
     },
     ["trigger_sight"] = {
         Source = "iron_fire_windup",
         MinProgress = 0.05,
         SoundTable = {
-        {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 15 / 30},
-        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 15 / 30},
-    },
+            {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 15 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 15 / 30},
+        },
     },
     ["untrigger"] = {
         Source = "fire_winddown",
