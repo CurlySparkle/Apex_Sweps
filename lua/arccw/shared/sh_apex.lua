@@ -19,13 +19,15 @@ game.AddAmmoType({name = "apex_heavy"})
 game.AddAmmoType({name = "apex_shotgun"})
 game.AddAmmoType({name = "apex_energy"})
 game.AddAmmoType({name = "apex_sniper"})
+game.AddAmmoType({name = "apex_arrow"})
 
 ArcCW.Apex.AmmoConvert = {
     apex_light = "pistol",
     apex_heavy = "smg1",
     apex_energy = "ar2",
     apex_shotgun = "buckshot",
-    apex_sniper = "SniperPenetratedRound"
+    apex_sniper = "SniperPenetratedRound",
+    apex_arrow = "XBowBolt",
 }
 
 ArcCW.Apex.BalanceMode = nil
@@ -58,6 +60,7 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
     ArcCW.TTTAmmoToClipMax["apex_heavy"] = 20 * 4
     ArcCW.TTTAmmoToClipMax["apex_energy"] = 20 * 4
     ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 4
+    ArcCW.TTTAmmoToClipMax["apex_arrow"] = 16 * 4
     ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 4
 
     if GetConVar("arccw_apex_ttt_ammo"):GetBool() and not GetConVar("arccw_apex_ammo"):GetBool() then

@@ -44,7 +44,7 @@ SWEP.ViewModelFOV = 70
 SWEP.Damage = 20
 SWEP.DamageMin = 20
 SWEP.Range = 200
-SWEP.Penetration = 10
+SWEP.Penetration = 0
 SWEP.PhysBulletMuzzleVelocity = 10000 * ArcCW.HUToM
 SWEP.PhysTracerProfile = 9
 
@@ -96,7 +96,7 @@ SWEP.HipDispersion = 150
 SWEP.MoveDispersion = 25
 SWEP.JumpDispersion = 100
 
-SWEP.Primary.Ammo = "xbowbolt"
+SWEP.Primary.Ammo = "apex_arrow"
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -397,6 +397,9 @@ end
 
 SWEP.TriggerPullWhenEmpty = false
 
+if engine.ActiveGamemode() == "terrortown" then
+    SWEP.ForceDefaultAmmo = 32
+end
 --[[]
 SWEP.Hook_PreReload = function(wep)
     if ((game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and true)) and wep:GetTriggerDelta() > 0 then
@@ -412,3 +415,55 @@ SWEP.Hook_PreReload = function(wep)
     return true
 end
 ]]
+
+SWEP.Hook_BulletHit = function(wep, data)
+    local ent = data.tr.Entity
+
+    if wep:GetBuff("Num") == 1 and not data.ArrowMade then
+        data.ArrowMade = true
+        local arrow = ents.Create("arccw_apex_arrowpickup")
+        arrow:SetPos(data.tr.HitPos)
+        arrow:SetAngles(data.tr.Normal:Angle())
+        arrow:Spawn()
+        arrow:GetPhysicsObject():Sleep()
+
+        if ent:IsWorld() or IsValid(ent) then
+            arrow:SetSolid(SOLID_NONE)
+            arrow:SetMoveType(MOVETYPE_NONE)
+            arrow:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+
+            local f = {arrow}
+            table.Add(f, ent:GetChildren())
+
+            local bone = ent:TranslatePhysBoneToBone(data.tr.PhysicsBone) or ent:GetHitBoxBone(data.tr.HitBox, ent:GetHitboxSet())
+            local matrix = ent:GetBoneMatrix(bone or 0)
+            if bone and matrix then
+                local pos = matrix:GetTranslation()
+                local ang = matrix:GetAngles()
+                arrow:FollowBone(ent, bone)
+                local n_pos, n_ang = WorldToLocal(data.tr.HitPos, data.tr.Normal:Angle(), pos, ang)
+                arrow:SetLocalPos(n_pos)
+                arrow:SetLocalAngles(n_ang)
+                debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
+                arrow.CanPickup = false
+                ent.ApexStuckArrows = (ent.ApexStuckArrows or 0) + 1
+            elseif not ent:IsWorld() then
+                arrow:SetParent(ent)
+                arrow:GetParent():DontDeleteOnRemove(arrow)
+            else
+                arrow.AttachToWorld = true
+            end
+        end
+    end
+end
+
+hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
+    if (ent.ApexStuckArrows or 0) > 0 then
+        local arrow = ents.Create("arccw_ammo_apex_arrow")
+        arrow:SetPos(ent:WorldSpaceCenter())
+        arrow:SetAngles(ent:GetAngles())
+        arrow:Spawn()
+        arrow.AmmoCount = ent.ApexStuckArrows
+        arrow:SetNWInt("truecount", ent.ApexStuckArrows)
+    end
+end)
