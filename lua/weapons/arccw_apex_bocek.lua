@@ -14,13 +14,13 @@ SWEP.Trivia_Desc = "A bow that can be charged to increase damage and arrow veloc
 
 SWEP.Slot = 3
 
-SWEP.CrouchPos = Vector(-6, -2, 1)
-SWEP.CrouchAng = Angle(0, 0, -53)
+SWEP.CrouchPos = Vector(-2.5, -8.5, 3)
+SWEP.CrouchAng = Angle(-1, -1, 30)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -2, 1)
+SWEP.ActivePos = Vector(0, -2.5, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -171,9 +171,9 @@ SWEP.Attachments = {
             wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"weapon_sights"},
-        CorrectivePos = Vector(0, 0, 0),
-        CorrectiveAng = Angle(0, 0, -40.304),
-        ExtraSightDist = 0
+        CorrectivePos = Vector(2.6, 0, -2.6),
+        CorrectiveAng = Angle(3.554, -1.248, 40.304),
+        ExtraSightDist = 3
     },
     {
         PrintName = "Hop-up",
@@ -283,19 +283,18 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01", t = 0 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 25 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt3_V1_2ch_01", t = 45 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt4_V1_2ch_01", t = 65 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt5_V1_2ch_01", t = 85 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt6_V1_2ch_01", t = 105 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt7_V1_2ch_01", t = 125 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 145 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
+			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01.wav", t = 35 / 30},
 
-        {s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01", t = 0 / 30},
-        {s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01", t = 25 / 30},
-        },
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01.wav", t = 142 / 30},
+			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt4_V1_2ch_01.wav", t = 183 / 30},
+			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt5_V1_2ch_01.wav", t = 230 / 30},
+			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt6_V1_2ch_01.wav", t = 300 / 30},
+			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt7_V1_2ch_01.wav", t = 385 / 30},
+			{p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt8_V1_2ch_01.wav", t = 425 / 30},
     },
+	},
     ["enter_inspect_empty"] = {
         Source = "inspect_in_empty",
     },
