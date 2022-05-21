@@ -1,5 +1,5 @@
 att.PrintName = "4x-8x Variable Sniper Scope"
-att.Icon = Material("entities/attach_icons/apex_6x.png", "mips smooth")
+att.Icon = Material("entities/attach_icons/apex_4-8x.png", "mips smooth")
 att.Description = "Variable zoom medium-long range scope."
 
 att.SortOrder = 2.5
