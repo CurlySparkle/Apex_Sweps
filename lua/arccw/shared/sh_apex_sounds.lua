@@ -360,6 +360,20 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.Wingman.Fire")
 
 sound.Add( {
+    name = "ArcCW_APEX.Wingman.Fire_Skull",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/wingman/fire_skull_1.wav",
+        "^weapons/wingman/fire_skull_2.wav",
+        "^weapons/wingman/fire_skull_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Wingman.Fire_Skull")
+
+sound.Add( {
     name = "ArcCW_APEX.Mastiff.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -428,6 +442,20 @@ sound.Add( {
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Longbow.Fire_Skull",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/Longbow/fire_skull_1.wav",
+        "^weapons/Longbow/fire_skull_2.wav",
+        "^weapons/Longbow/fire_skull_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Longbow.Fire_Skull")
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.CloudyTail",

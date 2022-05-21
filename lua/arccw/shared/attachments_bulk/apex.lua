@@ -1248,7 +1248,10 @@ local hopups = {
                     [HITGROUP_RIGHTARM] = 1,
                     [HITGROUP_LEFTLEG] = 0.9,
                     [HITGROUP_RIGHTLEG] = 0.9,
-                }
+                },
+				Hook_GetShootSound = function(wep, fsound)
+                if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire" end
+                end
             },
             -- Longbow DMR
             [2] = {
@@ -1260,7 +1263,10 @@ local hopups = {
                     [HITGROUP_RIGHTARM] = 1,
                     [HITGROUP_LEFTLEG] = 0.8,
                     [HITGROUP_RIGHTLEG] = 0.8,
-                }
+                },
+				Hook_GetShootSound = function(wep, fsound)
+                if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire" end
+                end
             },
         },
         variants_ttt = {

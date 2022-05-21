@@ -30,9 +30,9 @@ att.AdditionalSights = {
         HolosightBone = "holosight",
         HolosightData = {
             Holosight = true,
-            HolosightReticle =  Material("sights/holo6.png", "mips sharp"),
+            HolosightReticle =  Material("sights/holo6.png", "mips"),
 			HolosightNoFlare = true,
-            HolosightSize = 3,
+            HolosightSize = 2.2,
 			HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl",
             Colorable = false,
             HolosightNoHSP = true
@@ -41,14 +41,14 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo7.png", "mips sharp")
+att.HolosightReticle = Material("sights/holo7.png", "mips")
 att.HolosightNoFlare = true
-att.HolosightSize = 3
+att.HolosightSize = 2.2
 att.HolosightBone = "holosight"
-att.HolosightNoHSP = false
+att.HolosightNoHSP = true
 att.HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl"
 att.Colorable = false
--- att.HolosightColor = Color(255, 0, 0)
+att.HolosightColor = Color(255, 25, 0)
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)

@@ -101,7 +101,7 @@ SWEP.Primary.Ammo = "apex_arrow"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = {"weapons/bocek/fire_charged_1.wav", "weapons/bocek/fire_charged_2.wav", "weapons/bocek/fire_charged_3.wav"}
+SWEP.ShootSound = "ArcCW_APEX.Bocek.Fire_Charged"
 SWEP.ShootDrySound = "ArcCW_APEX.Bocek.Empty"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
