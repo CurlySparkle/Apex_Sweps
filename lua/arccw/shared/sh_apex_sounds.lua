@@ -44,6 +44,19 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.Bocek.Empty")
 
 sound.Add( {
+    name = "ArcCW_APEX.Bocek.Charge",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/bocek/Apex_Weapon_Bow_Draw_v5_01.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_Draw_v5_02.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_Draw_v5_03.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Rampage.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Bocek Compound Bow"
 SWEP.Trivia_Class = "Compound Bow"
-SWEP.Trivia_Desc = "It's literally just a bow."
+SWEP.Trivia_Desc = "Hold fire to increase power."
 
 SWEP.Slot = 3
 
@@ -102,7 +102,7 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = {"weapons/bocek/fire_charged_1.wav", "weapons/bocek/fire_charged_2.wav", "weapons/bocek/fire_charged_3.wav"}
-SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
+SWEP.ShootDrySound = "ArcCW_APEX.Bocek.Empty"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
@@ -151,11 +151,6 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
-    ["weapon_dot"] = {
-        VMBodygroups = {
-            {ind = 2, bg = 1},
-        },
-    },
     ["skin"] = {
         VMSkin = 1,
         WMSkin = 1,
@@ -167,7 +162,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights_bocek"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
@@ -175,7 +170,7 @@ SWEP.Attachments = {
             wpos = Vector(14, 0.5, -7.4),
             wang = Angle(-10, 0, 185)
         },
-        InstalledEles = {"weapon_sights","weapon_dot"},
+        InstalledEles = {"weapon_sights"},
         CorrectivePos = Vector(1.99, 0, -0.7),
         CorrectiveAng = Angle(0, 0, 3.6),
         ExtraSightDist = 0
@@ -203,14 +198,18 @@ SWEP.Animations = {
     ["idle_empty"] = {
         Source = "idle_empty",
     },
-    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
     ["enter_sprint"] = {
         Source = "sprint_in",
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
     },
-    ["idle_sprint_empty"] = {Source = "sprint_empty", Mult = 0.9},
+    ["idle_sprint_empty"] = {
+        Source = "sprint_empty",
+    },
     ["enter_sprint_empty"] = {
         Source = "sprint_in_empty",
     },
@@ -223,6 +222,12 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
+		    {s = "weapons/bocek/Weapons_Bow_Drawfirst_Gearfoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
+            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
+		    {s = "weapons/bocek/Weapons_Bow_Drawfirst_Gearfoley_Pt2_V1_2ch_01.wav", t = 20 / 30},
+            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt2_V1_2ch_01.wav", t = 20 / 30},
+		    {s = "weapons/bocek/Weapons_Bow_Drawfirst_Gearfoley_Pt3_V1_2ch_01.wav", t = 35 / 30},
+            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt3_V1_2ch_01.wav", t = 35 / 30},
         },
     },
     ["draw"] = {
@@ -249,7 +254,6 @@ SWEP.Animations = {
     ["idle_iron_empty"] = {
         Source = "iron_idle_empty",
     },
-
     ["enter_sight"] = {
         Source = "iron_in",
     },
@@ -259,7 +263,6 @@ SWEP.Animations = {
     ["idle_iron"] = {
         Source = "iron_idle",
     },
-
     ["bash"] = {
         Source = {"melee"},
         LHIK = true,
@@ -283,9 +286,19 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01", t = 0 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 25 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt3_V1_2ch_01", t = 45 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt4_V1_2ch_01", t = 65 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt5_V1_2ch_01", t = 85 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt6_V1_2ch_01", t = 105 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt7_V1_2ch_01", t = 125 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 145 / 30},
+
+		{s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01", t = 0 / 30},
+		{s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01", t = 25 / 30},
         },
     },
-
     ["enter_inspect_empty"] = {
         Source = "inspect_in_empty",
     },
@@ -295,7 +308,7 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.9,
     },
-    ["idle_inspect"] = {
+    ["idle_inspect_empty"] = {
         Source = "inspect_empty",
         LHIK = true,
         LHIKIn = 0,
@@ -303,22 +316,23 @@ SWEP.Animations = {
         SoundTable = {
         },
     },
-
-    ["1_to_2"] = {
-        Source = "firemode1",
-        MinProgress = 0.15,
-    },
-    ["2_to_1"] = {
-        Source = "firemode2",
-        MinProgress = 0.15,
-    },
     ["trigger"] = {
         Source = "fire_windup",
         MinProgress = 0.05,
+        SoundTable = {
+		{s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 30 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 30 / 30},
+    },
     },
     ["trigger_sight"] = {
         Source = "iron_fire_windup",
         MinProgress = 0.05,
+        SoundTable = {
+		{s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 30 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 30 / 30},
+    },
     },
     ["untrigger"] = {
         Source = "fire_winddown",
@@ -332,7 +346,6 @@ SWEP.Animations = {
     ["idle_sight_trigger"] = {
         Source = "iron_fire_windup_loop"
     },
-
     ["fire"] = {
         Source = "fire",
     },
