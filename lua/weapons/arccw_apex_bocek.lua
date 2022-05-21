@@ -166,12 +166,12 @@ SWEP.Attachments = {
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
-            vang = Angle(90, 0, -90),
+            vang = Angle(90, 0, 0),
             wpos = Vector(14, 0.5, -7.4),
             wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"weapon_sights"},
-        CorrectivePos = Vector(1.99, 0, -0.7),
+        CorrectivePos = Vector(0, 0, 0),
         CorrectiveAng = Angle(0, 0, 3.6),
         ExtraSightDist = 0
     },
@@ -321,8 +321,8 @@ SWEP.Animations = {
         MinProgress = 0.05,
         SoundTable = {
 		{s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 30 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 30 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 15 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 15 / 30},
     },
     },
     ["trigger_sight"] = {
@@ -330,8 +330,8 @@ SWEP.Animations = {
         MinProgress = 0.05,
         SoundTable = {
 		{s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 30 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 30 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 15 / 30},
+		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 15 / 30},
     },
     },
     ["untrigger"] = {
