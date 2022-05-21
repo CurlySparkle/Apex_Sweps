@@ -127,7 +127,7 @@ SWEP.CaseBones = {}
 
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -5, 0),
+    Pos = Vector(0, 3, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.1,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -171,9 +171,9 @@ SWEP.Attachments = {
             wang = Angle(-10, 0, 185)
         },
         InstalledEles = {"weapon_sights"},
-        CorrectivePos = Vector(2.61, 0, -2.48),
-        CorrectiveAng = Angle(3.554, -1.248, 40.304),
-        ExtraSightDist = 3
+        CorrectivePos = Vector(2.65, 0, -2.67),
+        CorrectiveAng = Angle(0, 2.248, 40.304),
+        ExtraSightDist = 20
     },
     {
         PrintName = "Hop-up",
@@ -203,6 +203,7 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
+		Mult = 0.4,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
@@ -212,6 +213,7 @@ SWEP.Animations = {
     },
     ["enter_sprint_empty"] = {
         Source = "sprint_in_empty",
+		Mult = 0.4,
     },
     ["exit_sprint_empty"] = {
         Source = "sprint_out_empty",
@@ -286,7 +288,7 @@ SWEP.Animations = {
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01.wav", t = 35 / 30},
 
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01.wav", t = 10 / 30},
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01.wav", t = 142 / 30},
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt4_V1_2ch_01.wav", t = 183 / 30},
             {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt5_V1_2ch_01.wav", t = 230 / 30},
@@ -313,21 +315,19 @@ SWEP.Animations = {
         },
     },
     ["trigger"] = {
-        Source = "fire_windup",
+        Source = "fire_windup_full",
         MinProgress = 0.05,
         SoundTable = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 15 / 30},
-            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 15 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 17 / 30},
         },
     },
     ["trigger_sight"] = {
-        Source = "iron_fire_windup",
+        Source = "iron_fire_windup_full",
         MinProgress = 0.05,
         SoundTable = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 15 / 30},
-            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 15 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 17 / 30},
         },
     },
     ["untrigger"] = {
@@ -336,12 +336,12 @@ SWEP.Animations = {
     ["untrigger_sight"] = {
         Source = "iron_fire_winddown",
     },
-    ["idle_trigger"] = {
-        Source = "fire_windup_loop"
-    },
-    ["idle_sight_trigger"] = {
-        Source = "iron_fire_windup_loop"
-    },
+    -- ["idle_trigger"] = {
+        -- Source = "fire_windup_loop"
+    -- },
+    -- ["idle_sight_trigger"] = {
+        -- Source = "iron_fire_windup_loop"
+    -- },
     ["fire"] = {
         Source = "fire",
     },
