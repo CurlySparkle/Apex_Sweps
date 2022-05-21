@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Bocek Compound Bow"
 SWEP.Trivia_Class = "Compound Bow"
-SWEP.Trivia_Desc = "Hold fire to increase power."
+SWEP.Trivia_Desc = "A bow that can be charged to increase damage and arrow velocity.\nShot arrows can be recovered even from dead enemies, conserving ammo."
 
 SWEP.Slot = 3
 
@@ -177,7 +177,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_shatter5"},
+        Slot = {"apex_hopup_shatter5", "apex_hopup_selfire8"},
     },
     {
         PrintName = "Hop-up",
@@ -355,6 +355,14 @@ SWEP.Animations = {
     ["fire_sight_empty"] = {
         Source = "iron_fire_empty",
     },
+    ["fire_rapid"] = {
+        Source = "fire_1",
+        Mult = 1 / 2.5,
+    },
+    ["fire_sight_rapid"] = {
+        Source = "iron_fire_1",
+        Mult = 1 / 2.5,
+    },
 }
 
 for i = 1, 5 do
@@ -375,11 +383,14 @@ end
 SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 50
 
-
+SWEP.HeatCapacity = 25
+SWEP.HeatDissipation = 10
+SWEP.HeatDelayTime = 0.5
 SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
 
 local function chargefraction(wep, a, b)
+    if not wep:GetBuff_Override("Override_TriggerDelay", wep.TriggerDelay) then return a or 0 end
     return Lerp((CurTime() - wep.LastTriggerTime - 0.05) / 0.5, a or 0, b or 1)
 end
 
@@ -394,6 +405,7 @@ SWEP.M_Hook_Mult_PhysBulletMuzzleVelocity = function(wep, data)
 end
 
 SWEP.Hook_SelectFireAnimation = function(wep, anim)
+    if wep:GetCurrentFiremode().Mode == 2 and wep.Animations[anim .. "_rapid"] then return anim .. "_rapid" end
     local i = math.Round(chargefraction(wep, 1, 5))
     if wep.Animations[anim .. "_" .. i] then return anim .. "_" .. i end
 end

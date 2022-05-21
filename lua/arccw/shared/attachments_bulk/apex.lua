@@ -813,6 +813,30 @@ local hopups = {
                     }
                 }
             },
+            -- Bocek
+            [8] = {
+                Description = "Weapons gains an alternative firemode.\n\nThe Bocek receives an automatic firemode that lets loose arrows rapidly.\nFire rate decreases as more arrows are fired, and accuracy is reduced.",
+                Override_Firemodes = {
+                    {
+                        Mode = 1,
+                        PrintName = "fcg.apex.bow"
+                    },
+                    {
+                        Mode = 2,
+                        Override_TriggerDelay = false,
+                        Override_TriggerCharge = false,
+                        Override_AccuracyMOA = 15,
+                        Mult_ShootPitch = 1,
+                        Mult_Recoil = 0.3,
+                        Mult_HipDispersion = 2,
+                        Override_Jamming = true,
+                        Override_HeatLockout = false,
+                        Hook_ModifyRPM = function(wep, delay)
+                            return delay / Lerp((wep:GetHeat() - 3) / (wep:GetMaxHeat() - 3), 3, 1)
+                        end,
+                    }
+                }
+            },
         },
         variants_ttt = {
             [2] = {
