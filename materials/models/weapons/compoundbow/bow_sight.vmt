@@ -1,0 +1,20 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models/weapons/compoundbow/bow_sight_d"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "2"
+	"$detailframe"	"0"
+	"$translucent" 	"1"
+	"$model"		"1"
+	"$additive"	"1"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
+}

@@ -46,7 +46,7 @@ util.PrecacheSound("ArcCW_APEX.Bocek.Empty")
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Charge",
     channel = CHAN_WEAPON + 6,
-    volume = 1.0,
+    volume = 0.7,
     level = 100,
     pitch = {95, 105},
     sound = {
