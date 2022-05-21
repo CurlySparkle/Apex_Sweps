@@ -455,12 +455,8 @@ SWEP.Hook_BulletHit = function(wep, data)
                 arrow:SetLocalAngles(n_ang)
                 debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
                 arrow.CanPickup = false
-                ent.ApexStuckArrows = (ent.ApexStuckArrows or 0) + 1
             elseif not ent:IsWorld() then
                 arrow:SetParent(ent)
-                --arrow:GetParent():DontDeleteOnRemove(arrow)
-                --arrow.CanPickup = false
-                --ent.ApexStuckArrows = (ent.ApexStuckArrows or 0) + 1
             else
                 arrow.AttachToWorld = true
             end
@@ -468,26 +464,13 @@ SWEP.Hook_BulletHit = function(wep, data)
     end
 end
 
-hook.Add("PropBreak", "ArcCW_Apex", function(ply, prop)
+hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
     if CLIENT then return end
-    for k, v in pairs(prop:GetChildren()) do
+    for k, v in pairs(ent:GetChildren()) do
         if v:GetClass() == "arccw_apex_arrowpickup" then
             v:SetParent(NULL)
             v:InitPhys()
-        end
-    end
-end)
-
-hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
-    if CLIENT then return end
-    if (ent.ApexStuckArrows or 0) > 0 then
-        local arrow = ents.Create(ent.ApexStuckArrows == 1 and "arccw_apex_arrowpickup" or "arccw_ammo_apex_arrow")
-        arrow:SetPos(ent:WorldSpaceCenter())
-        arrow:SetAngles(ent:GetAngles())
-        arrow:Spawn()
-        if ent.ApexStuckArrows > 1 then
-            arrow.AmmoCount = ent.ApexStuckArrows
-            arrow:SetNWInt("truecount", ent.ApexStuckArrows)
+            v.CanPickup = true
         end
     end
 end)
