@@ -172,7 +172,7 @@ SWEP.Attachments = {
         },
         InstalledEles = {"weapon_sights"},
         CorrectivePos = Vector(0, 0, 0),
-        CorrectiveAng = Angle(0, 0, 3.6),
+        CorrectiveAng = Angle(0, 0, -40.304),
         ExtraSightDist = 0
     },
     {
@@ -222,11 +222,8 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
-		    {s = "weapons/bocek/Weapons_Bow_Drawfirst_Gearfoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
             {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
-		    {s = "weapons/bocek/Weapons_Bow_Drawfirst_Gearfoley_Pt2_V1_2ch_01.wav", t = 20 / 30},
             {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt2_V1_2ch_01.wav", t = 20 / 30},
-		    {s = "weapons/bocek/Weapons_Bow_Drawfirst_Gearfoley_Pt3_V1_2ch_01.wav", t = 35 / 30},
             {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt3_V1_2ch_01.wav", t = 35 / 30},
         },
     },
