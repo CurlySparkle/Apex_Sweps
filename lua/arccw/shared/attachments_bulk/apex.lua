@@ -1124,7 +1124,7 @@ local hopups = {
             },
             -- Bocek
             [5] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern, but with reduced damage and velocity charge up.",
+                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern.\nArrow velocity is decreased, and the arrow cannot be recovered after splitting.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
