@@ -318,6 +318,7 @@ if engine.ActiveGamemode() == "terrortown" then
     SWEP.AutoSpawnable = false
     SWEP.ForceDefaultClip = 0
     SWEP.CanBuy = {1, 2} --{ROLE_TRAITOR, ROLE_DETECTIVE}
+    SWEP.Kind = 7 -- WEAPON_EQUIP2
     SWEP.EquipMenuData = {
         type = "Weapon",
         desc = "Powerful sniper rifle.\n\nHas 4 rounds and cannot be reloaded."

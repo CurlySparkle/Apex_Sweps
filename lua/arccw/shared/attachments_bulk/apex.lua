@@ -771,8 +771,8 @@ local hopups = {
                         PrintName = "fcg.apex.charge",
                         Mode = 1,
                         Override_TriggerDelay = true,
-                        Mult_Damage = 75 / 45,
-                        Mult_DamageMin = 40 / 30,
+                        Mult_Damage = 80 / 45,
+                        Mult_DamageMin = 50 / 30,
                         Override_ShotRecoilTable = {}
                     }
                 }
