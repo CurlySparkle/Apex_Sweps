@@ -41,8 +41,8 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 20
-SWEP.DamageMin = 20
+SWEP.Damage = 25
+SWEP.DamageMin = 25
 SWEP.Range = 200
 SWEP.Penetration = 0
 SWEP.PhysBulletMuzzleVelocity = 10000 * ArcCW.HUToM
@@ -329,6 +329,15 @@ SWEP.Animations = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
             {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 17 / 30},
         },
+    },
+    ["enter_sight_trigger"] = {
+        Source = "iron_in_charge",
+    },
+    ["idle_sight_trigger"] = {
+        Source = "iron_idle_charge",
+    },
+    ["exit_sight_trigger"] = {
+        Source = "iron_out_charge",
     },
     ["untrigger"] = {
         Source = "fire_winddown",
