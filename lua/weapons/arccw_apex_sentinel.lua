@@ -193,7 +193,8 @@ SWEP.Attachments = {
         },
         InstalledEles = {"ref_sight","ref_dot"},
         CorrectivePos = Vector(2.69,0,-0.47),
-        CorrectiveAng = Angle(-0.001, 0.005, 4.997)
+        CorrectiveAng = Angle(-0.001, 0.005, 4.997),
+        RandomChance = 5,
     },
     {
         PrintName = "Stock",

@@ -224,7 +224,8 @@ SWEP.Attachments = {
         InstalledEles = {"weapon_sights","weapon_dot"},
         ExtraSightDist = -2,
         CorrectivePos = Vector(1.7,0,-0.43),
-        CorrectiveAng = Angle(-2.165, -1.132, 2.418)
+        CorrectiveAng = Angle(-2.165, -1.132, 2.418),
+        RandomChance = 2,
     },
     {
         PrintName = "Stock",

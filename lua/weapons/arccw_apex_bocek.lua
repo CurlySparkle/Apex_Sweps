@@ -173,7 +173,8 @@ SWEP.Attachments = {
         InstalledEles = {"weapon_sights"},
         CorrectivePos = Vector(2.65, 0, -2.67),
         CorrectiveAng = Angle(0, 2.248, 40.304),
-        ExtraSightDist = 20
+        ExtraSightDist = 20,
+        RandomChance = 2,
     },
     {
         PrintName = "Hop-up",
@@ -203,7 +204,7 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 0.4,
+        Mult = 0.4,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
@@ -213,7 +214,7 @@ SWEP.Animations = {
     },
     ["enter_sprint_empty"] = {
         Source = "sprint_in_empty",
-		Mult = 0.4,
+        Mult = 0.4,
     },
     ["exit_sprint_empty"] = {
         Source = "sprint_out_empty",
@@ -438,6 +439,12 @@ end
 
 SWEP.Hook_BulletHit = function(wep, data)
     local ent = data.tr.Entity
+
+    if data.tr.HitGroup == HITGROUP_HEAD then
+        data.dmg:ScaleDamage(chargefraction(wep, 1.25, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1.25 or 1.75))
+    elseif data.tr.HitGroup == HITGROUP_LEFTLEG or data.tr.HitGroup == HITGROUP_RIGHTLEG then
+        data.dmg:ScaleDamage(chargefraction(wep, 0.8, 0.9))
+    end
 
     if wep:GetBuff("Num") == 1 and not data.ArrowMade then
         data.ArrowMade = true

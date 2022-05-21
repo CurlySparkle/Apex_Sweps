@@ -211,9 +211,10 @@ SWEP.Attachments = {
             wpos = Vector(10, 0.3, -6.2),
             wang = Angle(-20, 0, 185)
         },
-        InstalledEles = {"weapon_sight","ref_sight_mount","weapon_dot"},
+        InstalledEles = {"weapon_sight", "ref_sight_mount", "weapon_dot"},
         CorrectivePos = Vector(2.4,0,-0.72),
-        CorrectiveAng = Angle(-1.227, 0.298, 5.913)
+        CorrectiveAng = Angle(-1.227, 0.298, 5.913),
+        RandomChance = 2,
     },
     {
         PrintName = "Stock",
