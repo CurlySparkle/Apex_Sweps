@@ -283,17 +283,17 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01", t = 0 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 25 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt3_V1_2ch_01", t = 45 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt4_V1_2ch_01", t = 65 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt5_V1_2ch_01", t = 85 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt6_V1_2ch_01", t = 105 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt7_V1_2ch_01", t = 125 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 145 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01", t = 0 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 25 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt3_V1_2ch_01", t = 45 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt4_V1_2ch_01", t = 65 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt5_V1_2ch_01", t = 85 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt6_V1_2ch_01", t = 105 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt7_V1_2ch_01", t = 125 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01", t = 145 / 30},
 
-		{s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01", t = 0 / 30},
-		{s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01", t = 25 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01", t = 0 / 30},
+        {s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01", t = 25 / 30},
         },
     },
     ["enter_inspect_empty"] = {
@@ -317,18 +317,18 @@ SWEP.Animations = {
         Source = "fire_windup",
         MinProgress = 0.05,
         SoundTable = {
-		{s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 15 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 15 / 30},
+        {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
+        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 15 / 30},
+        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_01.wav", t = 15 / 30},
     },
     },
     ["trigger_sight"] = {
         Source = "iron_fire_windup",
         MinProgress = 0.05,
         SoundTable = {
-		{s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 15 / 30},
-		{s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 15 / 30},
+        {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
+        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 15 / 30},
+        {s = "weapons/bocek/Apex_Weapon_Bow_Draw_Complete_v4_2ch_02.wav", t = 15 / 30},
     },
     },
     ["untrigger"] = {
@@ -380,8 +380,7 @@ SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
 
 local function chargefraction(wep, a, b)
-    return Lerp((CurTime() - wep.LastTriggerTime - 0.1) / 0.54, a or 0, b or 1)
-
+    return Lerp((CurTime() - wep.LastTriggerTime - 0.05) / 0.5, a or 0, b or 1)
 end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
@@ -459,7 +458,9 @@ SWEP.Hook_BulletHit = function(wep, data)
                 ent.ApexStuckArrows = (ent.ApexStuckArrows or 0) + 1
             elseif not ent:IsWorld() then
                 arrow:SetParent(ent)
-                arrow:GetParent():DontDeleteOnRemove(arrow)
+                --arrow:GetParent():DontDeleteOnRemove(arrow)
+                --arrow.CanPickup = false
+                --ent.ApexStuckArrows = (ent.ApexStuckArrows or 0) + 1
             else
                 arrow.AttachToWorld = true
             end
@@ -467,13 +468,26 @@ SWEP.Hook_BulletHit = function(wep, data)
     end
 end
 
+hook.Add("PropBreak", "ArcCW_Apex", function(ply, prop)
+    if CLIENT then return end
+    for k, v in pairs(prop:GetChildren()) do
+        if v:GetClass() == "arccw_apex_arrowpickup" then
+            v:SetParent(NULL)
+            v:InitPhys()
+        end
+    end
+end)
+
 hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
+    if CLIENT then return end
     if (ent.ApexStuckArrows or 0) > 0 then
-        local arrow = ents.Create("arccw_ammo_apex_arrow")
+        local arrow = ents.Create(ent.ApexStuckArrows == 1 and "arccw_apex_arrowpickup" or "arccw_ammo_apex_arrow")
         arrow:SetPos(ent:WorldSpaceCenter())
         arrow:SetAngles(ent:GetAngles())
         arrow:Spawn()
-        arrow.AmmoCount = ent.ApexStuckArrows
-        arrow:SetNWInt("truecount", ent.ApexStuckArrows)
+        if ent.ApexStuckArrows > 1 then
+            arrow.AmmoCount = ent.ApexStuckArrows
+            arrow:SetNWInt("truecount", ent.ApexStuckArrows)
+        end
     end
 end)

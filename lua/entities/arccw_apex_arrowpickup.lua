@@ -8,23 +8,23 @@ ENT.AmmoType = "apex_arrow"
 if SERVER then
     AddCSLuaFile()
 
+    function ENT:InitPhys()
+        self:PhysicsInitBox(Vector(-4, -1, -1), Vector(4, 1, 1))
+        self:SetMoveType(MOVETYPE_VPHYSICS)
+        self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
+        local phys = self:GetPhysicsObject()
+        if (phys:IsValid()) then
+            phys:Wake()
+            phys:SetMass(5)
+        end
+    end
+
     function ENT:Initialize()
         self:SetModel(self.Model)
         self:SetNoDraw(false)
         self:SetSolid(SOLID_VPHYSICS)
-        self:PhysicsInitBox(Vector(-4, -1, -1), Vector(4, 1, 1))
-        self:SetMoveType(MOVETYPE_VPHYSICS)
-        self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
+        self:InitPhys()
         self:DrawShadow(false)
-        local phys = self:GetPhysicsObject()
-
-        if (phys:IsValid()) then
-            phys:Wake()
-            phys:EnableGravity(false)
-            phys:SetBuoyancyRatio(0)
-            phys:SetDragCoefficient(0)
-            phys:SetMass(5)
-        end
 
         self:SetTrigger(true)
         self:UseTriggerBounds(true, 16)
