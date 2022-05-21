@@ -54,11 +54,11 @@ end
 
 hook.Add("InitPostEntity", "ArcCW_Apex", function()
 
-    ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 3
-    ArcCW.TTTAmmoToClipMax["apex_heavy"] = 20 * 3
-    ArcCW.TTTAmmoToClipMax["apex_energy"] = 20 * 3
-    ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 3
-    ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 3
+    ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 4
+    ArcCW.TTTAmmoToClipMax["apex_heavy"] = 20 * 4
+    ArcCW.TTTAmmoToClipMax["apex_energy"] = 20 * 4
+    ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 4
+    ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 4
 
     if GetConVar("arccw_apex_ttt_ammo"):GetBool() and not GetConVar("arccw_apex_ammo"):GetBool() then
         ArcCW.AmmoEntToArcCW["item_ammo_pistol_ttt"] = "arccw_ammo_apex_light"

@@ -13,6 +13,10 @@ ENT.AmmoType = "apex_light"
 ENT.AmmoCount = 20
 ENT.PickupSound = "items/Pickups_Ammo_Light_V1_1ch_01.wav"
 
+if engine.ActiveGamemode() == "terrortown" then
+    ENT.AmmoCount = ENT.AmmoCount * 2
+end
+
 function ENT:ApplyAmmo(ply)
     if self.USED then return end
     if engine.ActiveGamemode() == "terrortown" then

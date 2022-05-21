@@ -69,7 +69,7 @@ SWEP.TracerWidth = 2
 
 SWEP.BottomlessClip = true
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 0
+SWEP.Primary.ClipSize = 1
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.CanFireUnderwater = true
@@ -210,6 +210,13 @@ SWEP.Animations = {
     ["exit_sprint"] = {
         Source = "sprint_out",
     },
+    ["idle_sprint_empty"] = {Source = "sprint_empty", Mult = 0.9},
+    ["enter_sprint_empty"] = {
+        Source = "sprint_in_empty",
+    },
+    ["exit_sprint_empty"] = {
+        Source = "sprint_out_empty",
+    },
     ["ready"] = {
         Source = "draw_first",
         LHIK = true,
@@ -232,8 +239,15 @@ SWEP.Animations = {
     ["holster_empty"] = {
         Source = "holster_empty",
     },
-    ["idle_iron"] = {
-        Source = "iron_idle",
+
+    ["enter_sight_empty"] = {
+        Source = "iron_in_empty",
+    },
+    ["exit_sight_empty"] = {
+        Source = "iron_out_empty",
+    },
+    ["idle_iron_empty"] = {
+        Source = "iron_idle_empty",
     },
 
     ["enter_sight"] = {
@@ -242,6 +256,10 @@ SWEP.Animations = {
     ["exit_sight"] = {
         Source = "iron_out",
     },
+    ["idle_iron"] = {
+        Source = "iron_idle",
+    },
+
     ["bash"] = {
         Source = {"melee"},
         LHIK = true,
@@ -249,6 +267,7 @@ SWEP.Animations = {
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
     },
+
     ["enter_inspect"] = {
         Source = "inspect_in",
     },
@@ -264,8 +283,27 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
+        },
     },
+
+    ["enter_inspect_empty"] = {
+        Source = "inspect_in_empty",
     },
+    ["exit_inspect_empty"] = {
+        Source = "inspect_out_empty",
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.9,
+    },
+    ["idle_inspect"] = {
+        Source = "inspect_empty",
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.6,
+        SoundTable = {
+        },
+    },
+
     ["1_to_2"] = {
         Source = "firemode1",
         MinProgress = 0.15,
@@ -356,6 +394,8 @@ SWEP.Hook_GetShootSound = function(wep, sound)
         return "weapons/bocek/fire_uncharged_" .. math.random(1, 3) .. ".wav"
     end
 end
+
+SWEP.TriggerPullWhenEmpty = false
 
 --[[]
 SWEP.Hook_PreReload = function(wep)
