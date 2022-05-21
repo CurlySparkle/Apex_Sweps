@@ -6,7 +6,7 @@ ENT.PrintName                 = "Arrows"
 ENT.Category                  = "ArcCW - Apex Legends (Ammo)"
 
 ENT.Spawnable                 = true
-ENT.Model                     = "models/ammo/light_ammo.mdl"
+ENT.Model                     = "models/ammo/ammo_arrows.mdl"
 ENT.IconOverride              = "entities/items/apex_ammo_Arrows.png"
 
 ENT.AmmoType = "apex_arrow"
