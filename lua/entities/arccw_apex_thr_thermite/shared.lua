@@ -76,23 +76,34 @@ function ENT:OnRemove()
     self.FireSound:Stop()
 end
 
+local blacklist = {
+    ["arccw_apex_thermite"] = true,
+    ["arccw_apex_thr_thermite"] = true,
+    ["predicted_viewmodel"] = true,
+    ["entityflame"] = true,
+
+}
+
 function ENT:Think()
     if CLIENT then return end
     if (self.NextDamageTick or 0) > CurTime() then return end
     local damaged = {}
+    local toclear = table.Copy(self.Damaged)
     for i, ent in ipairs(self.Thermites) do
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
-        for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 64)) do
-            if v:GetClass() ~= "arccw_apex_thermite" and v:GetClass() ~= "arccw_apex_thr_thermite" then
-                damaged[v] = (damaged[v] or 0) + 1
+        for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 96)) do
+            if not damaged[v] and not blacklist[v:GetClass()] and not v:IsWeapon() then -- As it turns out, this will ignite ALL weapons on a player's inventory
+                damaged[v] = true
+                if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
             end
         end
     end
     for v, i in pairs(damaged) do
+        self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 1
         local o = self.Owner
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(4)
+        dmg:SetDamage(3 + self.Damaged[v:EntIndex()])
         dmg:SetInflictor(IsValid(self) and self or o)
         dmg:SetAttacker(o)
         dmg:SetDamageForce(Vector(0, 0, 0))
@@ -109,10 +120,15 @@ function ENT:Think()
                 d:SetDamageForce(Vector(0, 0, 0))
                 v:TakeDamageInfo(d)
             end)
+        elseif not v:IsOnFire() then
+            v:Ignite(5)
         end
         damaged[v] = true
     end
-    self.NextDamageTick = CurTime() + 0.2
+    for e, _ in pairs(toclear) do
+        self.Damaged[e] = 0
+    end
+    self.NextDamageTick = CurTime() + 0.15
 end
 
 function ENT:Detonate()

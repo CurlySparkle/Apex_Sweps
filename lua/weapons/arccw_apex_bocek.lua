@@ -442,6 +442,8 @@ SWEP.TriggerPullWhenEmpty = false
 
 if engine.ActiveGamemode() == "terrortown" then
     SWEP.StoredAmmo = 32
+else
+    SWEP.ForceDefaultAmmo = 32
 end
 --[[]
 SWEP.Hook_PreReload = function(wep)
@@ -460,6 +462,7 @@ end
 ]]
 
 SWEP.Hook_BulletHit = function(wep, data)
+    if CLIENT then return end
     local ent = data.tr.Entity
 
     if data.tr.HitGroup == HITGROUP_HEAD then

@@ -56,12 +56,12 @@ end
 
 hook.Add("InitPostEntity", "ArcCW_Apex", function()
 
-    ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 4
-    ArcCW.TTTAmmoToClipMax["apex_heavy"] = 20 * 4
-    ArcCW.TTTAmmoToClipMax["apex_energy"] = 20 * 4
-    ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 4
-    ArcCW.TTTAmmoToClipMax["apex_arrow"] = 16 * 4
-    ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 4
+    ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 3
+    ArcCW.TTTAmmoToClipMax["apex_heavy"] = 20 * 3
+    ArcCW.TTTAmmoToClipMax["apex_energy"] = 20 * 3
+    ArcCW.TTTAmmoToClipMax["apex_shotgun"] = 16 * 2
+    ArcCW.TTTAmmoToClipMax["apex_arrow"] = 16 * 2
+    ArcCW.TTTAmmoToClipMax["apex_sniper"] = 12 * 2
 
     if GetConVar("arccw_apex_ttt_ammo"):GetBool() and not GetConVar("arccw_apex_ammo"):GetBool() then
         ArcCW.AmmoEntToArcCW["item_ammo_pistol_ttt"] = "arccw_ammo_apex_light"
@@ -69,6 +69,10 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
         ArcCW.AmmoEntToArcCW["item_ammo_revolver_ttt"] = "arccw_ammo_apex_sniper"
         ArcCW.AmmoEntToArcCW["item_box_buckshot_ttt"] = "arccw_ammo_apex_shotgun"
         ArcCW.AmmoEntToArcCW["item_ammo_357_ttt"] = "arccw_ammo_apex_energy"
+    end
+
+    if engine.ActiveGamemode() == "terrortown" then
+
     end
 
     for i, k in pairs(weapons.GetList()) do
@@ -95,7 +99,7 @@ if SERVER then
 
     local function hitsound(ply, hg, dmg)
         local attacker = dmg:GetAttacker()
-        local inflictor = (attacker == dmg:GetInflictor()) and attacker:GetActiveWeapon() or dmg:GetInflictor()
+        local inflictor = (attacker == dmg:GetInflictor() and attacker:IsPlayer()) and attacker:GetActiveWeapon() or dmg:GetInflictor()
         if not attacker:IsPlayer() or not weapons.IsBasedOn(inflictor:GetClass(), "arccw_apex_base") or (attacker.ApexLastHit or 0) == CurTime() then return end
         attacker.ApexLastHit = CurTime()
 

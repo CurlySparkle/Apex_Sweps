@@ -12,7 +12,3 @@ ENT.IconOverride              = "entities/items/apex_ammo_shotgun.png"
 ENT.AmmoType = "apex_shotgun"
 ENT.AmmoCount = 16
 ENT.PickupSound = "items/Pickups_Ammo_Shotgun_V1_1ch_01.wav"
-
-if engine.ActiveGamemode() == "terrortown" then
-    ENT.AmmoCount = ENT.AmmoCount * 2
-end

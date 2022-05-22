@@ -14,5 +14,5 @@ ENT.AmmoCount = 20
 ENT.PickupSound = "items/Pickups_Ammo_Energy_V1_1ch_01.wav"
 
 if engine.ActiveGamemode() == "terrortown" then
-    ENT.AmmoCount = ENT.AmmoCount * 2
+    ENT.AmmoCount = ENT.AmmoCount * 1.5
 end
