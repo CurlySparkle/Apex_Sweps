@@ -26,6 +26,9 @@ SWEP.SprintAng = Angle(0, 0, 0)
 SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
+SWEP.CustomizePos = Vector(0, 0, 0)
+SWEP.CustomizeAng = Angle(0 , 0, 0)
+
 SWEP.NPCWeaponType = "weapon_crossbow"
 SWEP.NPCWeight = 250
 
@@ -149,9 +152,6 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_CROSSBOW
-
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.AttachmentElements = {
     ["ref_sight"] = {

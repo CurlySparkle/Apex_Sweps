@@ -57,6 +57,20 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.Rampage.Energize",
+    channel = CHAN_WEAPON,
+    volume = 1.0,
+    level = 140,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_01.wav",
+        "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_02.wav",
+        "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_03.wav",
+		"^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_05.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Rampage.Fire_Start",
     channel = CHAN_WEAPON,
     volume = 1.0,

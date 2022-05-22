@@ -24,6 +24,9 @@ SWEP.SprintAng = Angle(0, 0, 0)
 SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
+SWEP.CustomizePos = Vector(0, 0, 0)
+SWEP.CustomizeAng = Angle(0 , 0, 0)
+
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
@@ -145,9 +148,6 @@ SWEP.HoldtypeSights = "revolver"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 
-SWEP.CustomizePos = Vector(0, 0, 0)
-SWEP.CustomizeAng = Angle(0 , 0, 0)
-
 SWEP.AttachmentElements = {
     ["ref_sights"] = {
         VMBodygroups = {
@@ -257,7 +257,7 @@ SWEP.Animations = {
         LHIKEaseOut = 0.4,
     },
     ["enter_inspect"] = {
-        Source = "inspect",
+        Source = "inspect_in",
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.6,
@@ -265,6 +265,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 20 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
@@ -272,6 +275,17 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
+        SoundTable = {
+            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunFoley_2ch_V1__01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunSlide_Open_2ch_V1_01.wav", t = 169 / 30},
+            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunSlide_Close_2ch_V1_01.wav", t = 212 / 30},
+            {p = 100, s = "weapons/re45/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 229 / 30},
+
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Start_V1_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 316 / 30}
+        },
     },
     ["reload"] = {
         Source = "reload",
