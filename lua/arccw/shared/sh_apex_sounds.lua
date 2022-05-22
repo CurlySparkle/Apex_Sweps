@@ -939,6 +939,20 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.ArcStar.Throw",
+    channel = CHAN_WEAPON,
+    volume = 1.0,
+    level = 120,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_01.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_02.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_03.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_04.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Alternator.Ads",
     channel = CHAN_ITEM + 6,
     volume = 1.0,
