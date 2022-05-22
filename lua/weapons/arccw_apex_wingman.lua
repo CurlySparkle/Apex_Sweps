@@ -89,10 +89,22 @@ SWEP.ShootVol = 160 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.Wingman.Fire"
-SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_A"
+SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_H"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
+local s = "weapons/fx/wpn_lowammo_pistol1_triggerh_2ch_v1_04.wav"
+local p = {
+    [2] = 80,
+    [1] = 90,
+    [0] = 100,
+}
+SWEP.Hook_AddShootSound = function(wep, data)
+    local pitch = p[wep:Clip1()]
+    if pitch then
+        wep:MyEmitSound(s, 70, pitch, 0.5, CHAN_AUTO)
+    end
+end
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
 
@@ -127,6 +139,9 @@ SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.CustomizePos = Vector(0, -2, 1)
+SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
@@ -191,6 +206,9 @@ SWEP.Animations = {
     ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
     ["ready"] = {
         Source = "draw_first",
+        SoundTable = {
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_FirstPullout_V1_2ch.wav", t = 0 / 30},
+    },
     },
     ["draw"] = {
         Source = "draw",
@@ -206,12 +224,18 @@ SWEP.Animations = {
     },
     ["enter_sight"] = {
         Source = "iron_in",
+        SoundTable = {
+            {p = 100, s = "Apex_Ads_In_Wingman", t = 0 / 30},
+    },
     },
     ["fire_sight"] = {
         Source = "iron_fire",
     },
     ["exit_sight"] = {
         Source = "iron_out",
+        SoundTable = {
+            {p = 100, s = "Apex_Ads_In_Wingman", t = 0 / 30},
+    },
     },
     ["bash"] = {
         Source = {"melee"},
@@ -225,6 +249,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",
@@ -243,7 +270,15 @@ SWEP.Animations = {
         LHIKIn = 0.2,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
-        MinProgress = 60 / 40
+        MinProgress = 60 / 40,
+        Mult = 0.7,
+        SoundTable = {
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_open_fr7_2ch_v1_01.wav", t = 7 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_eject_fr21_2ch_v1_01.wav", t = 21 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_insertmag_fr47_2ch_v1_01.wav", t = 47 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_close_fr60_2ch_v1_01.wav", t = 60 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_handgrab_fr66_2ch_v1_01.wav", t = 66 / 40}
+    },
     },
     -- ["reload_empty"] = {
         -- Source = "reload_empty",
@@ -255,62 +290,6 @@ SWEP.Animations = {
         -- MinProgress = 97/40
     -- },
 }
-
-sound.Add({
-    name = "Apex_Draw_Pistol",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wpn_pistol_draw_lr_v1_1.wav"
-})
-
-sound.Add({
-    name = "Apex_Holster_Pistol",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wpn_pistol_holster_lr_v1_1.wav"
-})
-
-sound.Add({
-    name = "Wingman.Draw",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wingman/Weapon_Wingman_FirstPullout_V1_2ch.wav"
-})
-
-sound.Add({
-    name = "Wingman.reload1",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wingman/wpn_wingman_reload_open_fr7_2ch_v1_01.wav"
-})
-
-sound.Add({
-    name = "Wingman.reload2",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wingman/wpn_wingman_reload_eject_fr21_2ch_v1_01.wav"
-})
-
-sound.Add({
-    name = "Wingman.reload3",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wingman/wpn_wingman_reload_insertmag_fr47_2ch_v1_01.wav"
-})
-
-sound.Add({
-    name = "Wingman.reload4",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wingman/wpn_wingman_reload_close_fr60_2ch_v1_01.wav"
-})
-
-sound.Add({
-    name = "Wingman.reload5",
-    channel = 16,
-    volume = 1.0,
-    sound = "weapons/wingman/wpn_wingman_reload_handgrab_fr66_2ch_v1_01.wav"
-})
 
 SWEP.TTTWeaponType = "weapon_zm_revolver"
 SWEP.TTTWeight = 100

@@ -289,13 +289,19 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_01.wav", t = 96 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_02.wav", t = 240 / 30},
-            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 316 / 30}
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 525 / 30},
+			
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_button_press_2ch_v1.wav", t = 290 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_open_2ch_v1a.wav", t = 295 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_handle_close_2ch_v1a.wav", t = 509 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_body_close_2ch_v1a.wav", t = 515 / 30},
     },
     },
     ["charge"] = {
         Source = "energize",
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
+			{p = 100, s = "ArcCW_APEX.Rampage.Energize", t = 105 / 30},
         },
     },
     ["reload"] = {

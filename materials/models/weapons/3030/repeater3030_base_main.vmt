@@ -23,7 +23,6 @@
 	"$rimlightboost"			".2"
 	"$rimmask"					"1"
 	"$nocull"					"1"
-
+}
 //Material setup by ShadowRUN 幸運な, using various parts from Thanez' and 4Echo's materials. 
 //You are NOT allowed to edit/modify/redistribute these materials without my explicit permission.
-}

@@ -93,10 +93,22 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.P2020.Fire"
-SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_F"
+SWEP.ShootDrySound = "ArcCW_APEX.Pistol_Dry_D"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
+local s = "weapons/fx/wpn_lowammo_pistol1_triggerf_2ch_v1_01.wav"
+local p = {
+    [2] = 80,
+    [1] = 90,
+    [0] = 100,
+}
+SWEP.Hook_AddShootSound = function(wep, data)
+    local pitch = p[wep:Clip1()]
+    if pitch then
+        wep:MyEmitSound(s, 70, pitch, 0.5, CHAN_AUTO)
+    end
+end
 
 SWEP.MuzzleEffect = "muzzle_pistols_l4d"
 
@@ -210,11 +222,26 @@ SWEP.Animations = {
         Source = "idle",
     },
     ["idle_empty"] = {
-        Source = "idle_empty"
+        Source = "idle_empty",
     },
-    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
-    ["enter_sprint"] = {Source = "sprint_in", Mult = 1},
-    ["exit_sprint"] = {Source = "sprint_out", Mult = 1},
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+    },
+    ["idle_sprint_empty"] = {
+        Source = "sprint_empty",
+    },
+    ["enter_sprint_empty"] = {
+        Source = "sprint_in_empty",
+    },
+    ["exit_sprint_empty"] = {
+        Source = "sprint_out_empty",
+    },
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
@@ -286,6 +313,24 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "inspect",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Start_V1_2ch_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_01.wav", t = 96 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_02.wav", t = 240 / 30},
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 316 / 30}
+    },
+    },
+    ["enter_inspect_empty"] = {
+        Source = "inspect_in_empty",
+    },
+    ["exit_inspect_empty"] = {
+        Source = "inspect_out_empty",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 0 / 30},
+    },
+    },
+    ["idle_inspect_empty"] = {
+        Source = "inspect_empty",
         SoundTable = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_01.wav", t = 96 / 30},

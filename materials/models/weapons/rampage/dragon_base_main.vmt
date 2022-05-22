@@ -17,9 +17,9 @@
 "$phongfresnelranges"	"[0.25 0.5 1]"
 //"$phongfresnelranges" "[.1 .4 2]"
 
-$detail						"models\weapons\rampage\dragon_base_main_si"
-$detailscale                1
-$detailblendfactor 			1
-$detailblendmode			5
+"$detail"						"models\weapons\rampage\dragon_base_main_si"
+"$detailscale"                1
+"$detailblendfactor" 			1
+"$detailblendmode"			5
 
 }
