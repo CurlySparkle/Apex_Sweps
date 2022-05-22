@@ -57,11 +57,6 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-
-        timer.Simple(0.1, function()
-            if !IsValid(self) then return end
-            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-        end)
     end
 end
 
@@ -106,12 +101,14 @@ function ENT:Think()
             for _, i in pairs(ents.FindInSphere(self:GetPos(), 265)) do
                 i:TakeDamageInfo(dmg)
 
+                --[[]
                 if i:IsPlayer() and i:Alive() and i:GetObserverMode() == OBS_MODE_NONE then
                     local newang = (AngleRand() * 0.05)
                     newang.r = 0
                     i:SetEyeAngles(i:EyeAngles() + newang)
                     i:ScreenFade( SCREENFADE.IN, Color( 150, 175, 0 ), 0.75, 0.25 )
                 end
+                ]]
             end
 
             self.NextDamageTick = CurTime() + 1

@@ -1,8 +1,8 @@
 local rand_weight = {
-    [1] = 55,
-    [2] = 25,
-    [3] = 19,
-    [4] = 1,
+    [1] = 1,
+    [2] = 0.5,
+    [3] = 0.2,
+    [4] = 0.1,
 }
 
 -------------------------------------------------
@@ -64,7 +64,7 @@ local function autoreload(wep)
 
     if wep:Clip1() < wep:GetCapacity() + wep:GetChamberSize() then
         timer.Create(t, 5, 1, function()
-            if IsValid(wep) and (!IsValid(wep:GetOwner()) or wep:GetOwner():GetActiveWeapon() != wep) then
+            if IsValid(wep) and (not IsValid(wep:GetOwner()) or wep:GetOwner():GetActiveWeapon() ~= wep) then
                 local old = wep:Clip1()
                 wep:RestoreAmmo()
                 if old < wep:Clip1() and IsValid(wep:GetOwner()) and wep:GetOwner():IsPlayer() then
@@ -84,7 +84,7 @@ end
 for k, v in pairs(mag_types) do
     for j = 1, #v[2] do
         for i = 1, 4 do
-            if !v[2][j][i] then continue end
+            if not v[2][j][i] then continue end
             local att = {}
             local l =  " - Level " .. i
             att.PrintName = v[1] .. l
@@ -544,6 +544,7 @@ local hopups = {
         name = "Double Tap Trigger",
         icon = "entities/attach_icons/hopup_apex_doubletap.png",
         desc = "Gives the weapon an additional firemode that shoots two rounds in rapid succession.",
+        weight = 0.25,
         variants = {
             -- G7 Scout
             [1] = {
@@ -608,6 +609,7 @@ local hopups = {
     ["turbo"] = {
         name = "Turbocharger",
         icon = "entities/attach_icons/hopup_apex_turbocharger.png",
+        weight = 0.1,
         variants = {
             -- HAVOC
             [1] = {
@@ -665,6 +667,7 @@ local hopups = {
     ["selfire"] = {
         name = "Selectfire Receiver",
         icon = "entities/attach_icons/hopup_apex_selectfire.png",
+        weight = 0.25,
         variants = {
             -- Prowler SMG
             [1] = {
@@ -871,11 +874,12 @@ local hopups = {
         name = "Hammerpoint Rounds",
         icon = "entities/attach_icons/hopup_apex_hammerpoint.png",
         desc = "Weapon damage against non-armored players is increased significantly.",
+        weight = 0.25,
         variants = {
             -- P2020
             [1] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         -- this doesn't do the fancy check apex does, but also hl2 armor is weird and I would prefer to work with a new armor system
                         data.damage = data.damage * 1.5
                     end
@@ -887,7 +891,7 @@ local hopups = {
             -- RE-45 Auto
             [2] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.35
                     end
                 end
@@ -895,7 +899,7 @@ local hopups = {
             -- Mozambique
             [3] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.35
                     end
                 end,
@@ -907,21 +911,21 @@ local hopups = {
         variants_ttt = {
             [1] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.3
                     end
                 end
             },
             [2] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.15
                     end
                 end
             },
             [3] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() != "terrortown" or !data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
                         data.damage = data.damage * 1.15
                     end
                 end,
@@ -935,6 +939,7 @@ local hopups = {
         name = "Anvil Receiver",
         icon = "entities/attach_icons/hopup_apex_anvil.png",
         desc = "The weapon's semi-automatic fire mode is modified to fire an slower, more powerful shot that costs 2 rounds.",
+        weight = 0.1,
         variants = {
             -- R-301 Carbine
             [1] = {
@@ -974,6 +979,7 @@ local hopups = {
         name = "Quickdraw Holster",
         icon = "entities/attach_icons/hopup_apex_quickdrawholster.png",
         desc = "Improves the weapon's handling speed drastically.",
+        weight = 0.25,
         variants = {
             [1] = {
                 Mult_DrawTime = 0.5,
@@ -986,6 +992,7 @@ local hopups = {
     ["shatter"] = {
         name = "Shatter Caps",
         icon = "entities/attach_icons/hopup_apex_shattercaps.png",
+        weight = 0.25,
         variants = {
             -- 30-30 Repeater
             [1] = {
@@ -1236,10 +1243,11 @@ local hopups = {
     ["skull"] = {
         name = "Skullpiercer Rifling",
         icon = "entities/attach_icons/hopup_apex_skullpiercer.png",
-        desc = "Weapon does increased damage on a headshot.",
+        weight = 0.1,
         variants = {
             -- Wingman
             [1] = {
+                Description = "Weapon does increased damage on a headshot.",
                 Override_BodyDamageMults = {
                     [HITGROUP_HEAD] = 2.5,
                     [HITGROUP_CHEST] = 1,
@@ -1249,12 +1257,11 @@ local hopups = {
                     [HITGROUP_LEFTLEG] = 0.9,
                     [HITGROUP_RIGHTLEG] = 0.9,
                 },
-				Hook_GetShootSound = function(wep, fsound)
-                if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire" end
-                end
+                Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull",
             },
             -- Longbow DMR
             [2] = {
+                Description = "Weapon does increased damage on a headshot.",
                 Override_BodyDamageMults = {
                     [HITGROUP_HEAD] = 2.5,
                     [HITGROUP_CHEST] = 1,
@@ -1264,35 +1271,57 @@ local hopups = {
                     [HITGROUP_LEFTLEG] = 0.8,
                     [HITGROUP_RIGHTLEG] = 0.8,
                 },
-				Hook_GetShootSound = function(wep, fsound)
-                if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire" end
-                end
+                Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
+            },
+            -- Sentinel
+            [3] = {
+                Description = "Weapon does increased damage on a headshot.",
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 2.5,
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.9,
+                    [HITGROUP_RIGHTLEG] = 0.9,
+                }
             },
         },
         variants_ttt = {
             -- Wingman
             [1] = {
-                Override_BodyDamageMults = {
-                    [HITGROUP_HEAD] = 3.5, -- one-shot hs kill!
-                    [HITGROUP_CHEST] = 1,
-                    [HITGROUP_STOMACH] = 1,
-                    [HITGROUP_LEFTARM] = 1,
-                    [HITGROUP_RIGHTARM] = 1,
-                    [HITGROUP_LEFTLEG] = 0.9,
-                    [HITGROUP_RIGHTLEG] = 0.9,
-                }
+                Description = "Weapon will create a small explosion on a headshot.",
+                Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull",
+                Hook_BulletHit = function(wep, data)
+                    if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
+                    local effectdata = EffectData()
+                    effectdata:SetOrigin(data.tr.HitPos)
+                    util.Effect( "cball_explode", effectdata)
+                    util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 128, wep:GetDamage(data.range))
+                end
             },
             -- Longbow DMR
             [2] = {
-                Override_BodyDamageMults = {
-                    [HITGROUP_HEAD] = 3, -- can now one-hit hs armored targets
-                    [HITGROUP_CHEST] = 1,
-                    [HITGROUP_STOMACH] = 1,
-                    [HITGROUP_LEFTARM] = 1,
-                    [HITGROUP_RIGHTARM] = 1,
-                    [HITGROUP_LEFTLEG] = 0.8,
-                    [HITGROUP_RIGHTLEG] = 0.8,
-                }
+                Description = "Weapon will create an explosion on a headshot.",
+                Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
+                Hook_BulletHit = function(wep, data)
+                    if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
+                    local effectdata = EffectData()
+                    effectdata:SetOrigin(data.tr.HitPos)
+                    util.Effect("HelicopterMegaBomb", effectdata)
+                    util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 192, wep:GetDamage(data.range))
+                end
+            },
+            -- Sentinel
+            [3] = {
+                Description = "Weapon will create a massive explosion on a headshot.",
+                Hook_BulletHit = function(wep, data)
+                    if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
+                    local effectdata = EffectData()
+                    effectdata:SetOrigin(data.tr.HitPos)
+                    util.Effect("Explosion", effectdata)
+                    util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 256, wep:GetDamage(data.range))
+                end
             },
         }
     },
@@ -1300,6 +1329,7 @@ local hopups = {
         name = "Precision Choke",
         icon = "entities/attach_icons/hopup_apex_choke.png",
         desc = "Weapon gains an additional firemode that reduces weapon spread while aiming down sights.",
+        weight = 0.25,
         variants = {
             -- Peacekeeper
             [1] = {
@@ -1334,6 +1364,7 @@ local hopups = {
         name = "Boosted Loader",
         icon = "entities/attach_icons/hopup_apex_boostedloader.png",
         desc = "Reloading while low and not empty increases speed and grants additional ammo.",
+        weight = 0.25,
         variants = {
             -- Wingman
             [1] = {
@@ -1364,6 +1395,7 @@ local hopups = {
         name = "Dual Shell",
         icon = "entities/attach_icons/hopup_apex_dualshell.png",
         desc = "Weapon loads two rounds per insertion when reloading.",
+        weight = 0.25,
         variants = {
             [1] = {
                 Override_InsertAmount = 2,

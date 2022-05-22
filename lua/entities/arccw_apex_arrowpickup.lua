@@ -33,21 +33,33 @@ if SERVER then
         self.CanPickup = true
     end
 
-    function ENT:StartTouch(ply)
-        if self.CanPickup and ply:IsPlayer() then
-            self.CanPickup = false
+    function ENT:ApplyAmmo(ply)
+        if self.USED then return end
+        if engine.ActiveGamemode() == "terrortown" then
+            -- Stupid checks mate... but we'll play along unless an override exists
+            if !self.IgnoreTTTChecks and !ply:HasWeapon("arccw_apex_bocek") then return end
+
+            ply:GiveAmmo(1, self.AmmoType, true)
+            ply:EmitSound("items/Pickups_Ammo_Arrows_V1_1ch_0" .. math.random(1, 4) .. ".wav")
+            self.USED = true
+            self:Remove()
+        else
+            self.USED = true -- Prevent multiple uses
             ply:GiveAmmo(1, self.AmmoType, true)
             ply:EmitSound("items/Pickups_Ammo_Arrows_V1_1ch_0" .. math.random(1, 4) .. ".wav")
             self:Remove()
         end
     end
 
+    function ENT:StartTouch(ply)
+        if self.CanPickup and ply:IsPlayer() then
+            self:ApplyAmmo(ply)
+        end
+    end
+
     function ENT:Use(ply)
-        if self.CanPickup then
-            self.CanPickup = false
-            ply:GiveAmmo(1, self.AmmoType, true)
-            ply:EmitSound("items/Pickups_Ammo_Arrows_V1_1ch_0" .. math.random(1, 4) .. ".wav")
-            self:Remove()
+        if self.CanPickup and ply:IsPlayer() then
+            self:ApplyAmmo(ply)
         end
     end
 end
