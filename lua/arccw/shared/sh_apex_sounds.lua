@@ -360,6 +360,20 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.Wingman.Fire")
 
 sound.Add( {
+    name = "ArcCW_APEX.Wingman.Fire_Skull",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/wingman/fire_skull_1.wav",
+        "^weapons/wingman/fire_skull_2.wav",
+        "^weapons/wingman/fire_skull_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Wingman.Fire_Skull")
+
+sound.Add( {
     name = "ArcCW_APEX.Mastiff.Fire",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -428,6 +442,20 @@ sound.Add( {
     }
 } )
 util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
+
+sound.Add( {
+    name = "ArcCW_APEX.Longbow.Fire_Skull",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/Longbow/fire_skull_1.wav",
+        "^weapons/Longbow/fire_skull_2.wav",
+        "^weapons/Longbow/fire_skull_3.wav",
+    }
+} )
+util.PrecacheSound("ArcCW_APEX.Longbow.Fire_Skull")
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.CloudyTail",
@@ -1291,5 +1319,38 @@ sound.Add( {
     pitch = {95, 110},
     sound = {
         "^weapons/fx/wpn_lowammo_smg5_triggere_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Draw",
+    channel = CHAN_ITEM + 6,
+    volume = 0.5,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/bocek/Weapons_Bow_raise_V1_2ch_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Ads_in",
+    channel = CHAN_ITEM + 6,
+    volume = 0.3,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/bocek/Weapons_Bow_ADS_IN_GearFoley_V1_2ch_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Ads_out",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/bocek/Weapons_Bow_ADS_OUT_GearFoley_V1_2ch_01.wav",
     }
 } )

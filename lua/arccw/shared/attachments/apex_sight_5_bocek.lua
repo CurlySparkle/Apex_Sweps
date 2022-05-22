@@ -27,7 +27,7 @@ att.HolosightReticle = Material("sights/holo_bow.png", "mips")
 att.HolosightNoFlare = true
 att.HolosightSize = 3
 att.HolosightBone = "holosight"
-att.Colorable = true
+-- att.Colorable = true
 
 att.Mult_SightTime = 0.95
 att.Mult_Sway = 0.3

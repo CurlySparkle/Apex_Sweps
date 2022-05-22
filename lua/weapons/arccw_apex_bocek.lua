@@ -20,7 +20,7 @@ SWEP.CrouchAng = Angle(-1, -1, 30)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -2.5, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -33,7 +33,7 @@ SWEP.WorldModel = "models/weapons/c_apex_compound_bow.mdl"
 SWEP.MirrorVMWM = false
 SWEP.MirrorWorldModel = "models/weapons/c_apex_compound_bow.mdl"
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-4, 4.5, -5),
+    pos        =    Vector(-11, 4.5, -6),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -76,7 +76,7 @@ SWEP.MaxRecoilBlowback = 1
 SWEP.CanFireUnderwater = true
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 0.5
+SWEP.Recoil = 0.6
 SWEP.RecoilSide = 0.15
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
@@ -93,8 +93,8 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 0.5
-SWEP.HipDispersion = 150
-SWEP.MoveDispersion = 25
+SWEP.HipDispersion = 300
+SWEP.MoveDispersion = 55
 SWEP.JumpDispersion = 100
 
 SWEP.Primary.Ammo = "apex_arrow"
@@ -102,7 +102,7 @@ SWEP.Primary.Ammo = "apex_arrow"
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
-SWEP.ShootSound = {"weapons/bocek/fire_charged_1.wav", "weapons/bocek/fire_charged_2.wav", "weapons/bocek/fire_charged_3.wav"}
+SWEP.ShootSound = "ArcCW_APEX.Bocek.Fire_Charged"
 SWEP.ShootDrySound = "ArcCW_APEX.Bocek.Empty"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
@@ -152,6 +152,11 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["weapon_ammocounter"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 1},
+        },
+    },
     ["skin"] = {
         VMSkin = 1,
         WMSkin = 1,
@@ -168,8 +173,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, 0),
-            wpos = Vector(14, 0.5, -7.4),
-            wang = Angle(-10, 0, 185)
+            wpos = Vector(14.7, -0.6, -5.3),
+            wang = Angle(-10, 0, 220)
         },
         InstalledEles = {"weapon_sights"},
         CorrectivePos = Vector(2.65, 0, -2.67),
@@ -184,6 +189,13 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {},
+    },
+    {
+        PrintName = "Ammo Counter",
+        DefaultAttName = "None",
+        Slot = {"apex_special_bocek"},
+        Bone = "ja_ads_attachment",
+        InstalledEles = {"weapon_ammocounter"},
     },
     {
         PrintName = "Skin",
@@ -232,7 +244,7 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw",
+        Source = {"draw","draw2"},
         Mult = 1,
     },
     ["holster"] = {
