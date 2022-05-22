@@ -85,6 +85,16 @@ local soundData = {
 sound.Add(soundData)
 
 local soundData = {
+    name        = "Apex_Ads_In_Wingman",
+    channel     = CHAN_USER_BASE+1,
+    volume      = 0.1,
+    soundlevel  = 100,
+    pitch       = {95, 105},
+    sound       = genOrderedTbl("weapons/wingman/Mech_Wingman_ADS_In_v1_2ch_%i.wav", 6)
+}
+sound.Add(soundData)
+
+local soundData = {
     name        = "Apex_Ads_Out_Pistols",
     channel     = CHAN_USER_BASE+1,
     volume      = 1,
