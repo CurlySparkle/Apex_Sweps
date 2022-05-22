@@ -94,12 +94,12 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 
 SWEP.Firemodes = {
     {
-        PrintName = "fcg.apex.heavy",
+        PrintName = "Automatic",
         Mode = 2,
         RestoreAmmo = true,
     },
     {
-        PrintName = "fcg.apex.light",
+        PrintName = "Automatic",
         Mode = 2,
         Override_Ammo = "apex_light",
         RestoreAmmo = true,

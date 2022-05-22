@@ -21,7 +21,7 @@ SWEP.CrouchAng = Angle(0.837, 0, -56.513)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1.5, 1)
+SWEP.ActivePos = Vector(0, -2, 0.7)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -39,7 +39,7 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 18
 SWEP.DamageMin = 18
@@ -50,9 +50,10 @@ SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
 SWEP.Apex_Balance = {
     [1] = {
         -- Arcwc Settings
-        Damage = 32,
+        Damage = 23,
         DamageMin = 15,
     },
+        -- TTT Settings
     [2] = {
         Damage = 14,
         DamageMin = 14,
@@ -119,8 +120,8 @@ SWEP.Hook_GetShootSound = function(wep, fsound)
 end
 
 SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
-SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
-SWEP.ShellScale = 0.5
+SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
+SWEP.ShellScale = 1
 SWEP.ShellTime = 0.7
 -- SWEP.ShellRotateAngle = Angle(0, 0, 0)
 

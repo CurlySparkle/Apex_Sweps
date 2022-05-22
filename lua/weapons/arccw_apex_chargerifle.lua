@@ -21,10 +21,11 @@ SWEP.CrouchAng = Angle(0, 0, -53)
 SWEP.SprintPos = Vector(0, -6, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -6, 0)
+-- SWEP.ActivePos = Vector(0, -6, 0)
+SWEP.ActivePos = Vector(0, -5, 0.2)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.CustomizePos = Vector(0, -6, 0)
+SWEP.CustomizePos = Vector(0, -5, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -43,7 +44,7 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.ViewModelFOV = 80
+SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 45
 SWEP.DamageMin = 30
@@ -79,7 +80,7 @@ SWEP.Tracer = "arccw_apex_tracer_chargerifle_1" -- override tracer (hitscan) eff
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
---SWEP.ImpactDecal = "FadingScorch"
+SWEP.ImpactDecal = "FadingScorch"
 SWEP.ImpactEffect = "StunstickImpact"
 
 SWEP.ChamberSize = 0
