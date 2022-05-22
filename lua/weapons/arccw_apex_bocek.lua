@@ -69,7 +69,8 @@ SWEP.TracerWidth = 2
 
 SWEP.BottomlessClip = true
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 1
+SWEP.Primary.ClipSize = -1
+SWEP.Primary.DefaultClip = 0
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.CanFireUnderwater = true
@@ -428,7 +429,7 @@ end
 SWEP.TriggerPullWhenEmpty = false
 
 if engine.ActiveGamemode() == "terrortown" then
-    SWEP.ForceDefaultAmmo = 32
+    SWEP.StoredAmmo = 32
 end
 --[[]
 SWEP.Hook_PreReload = function(wep)

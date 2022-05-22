@@ -15,8 +15,8 @@ local ApexPanel_SV = {
     { type = "b", text = "#arccw.cvar.apex_ammo", var = "arccw_apex_ammo", sv = true },
     { type = "b", text = "#arccw.cvar.apex_ttt_ammo", var = "arccw_apex_ttt_ammo", sv = true },
     { type = "c", text = "#arccw.cvar.apex_ttt_ammo.desc" },
-    { type = "b", text = "#arccw.cvar.apex_ttt_exclusive", var = "arccw_apex_ttt_exclusive", sv = true },
-    { type = "c", text = "#arccw.cvar.apex_ttt_exclusive.desc" },
+    --{ type = "b", text = "#arccw.cvar.apex_ttt_exclusive", var = "arccw_apex_ttt_exclusive", sv = true },
+    --{ type = "c", text = "#arccw.cvar.apex_ttt_exclusive.desc" },
 
 }
 local ApexPanel_CL = {
@@ -24,6 +24,11 @@ local ApexPanel_CL = {
     { type = "b", text = "#arccw.cvar.apex_hitsound", var = "arccw_apex_hitsound"},
     { type = "b", text = "#arccw.cvar.apex_hitsound_headshot", var = "arccw_apex_hitsound_headshot"},
 }
+
+--[[]
+ArcCW.ClientMenus["ArcCW_Options_Apex_SV"] = ApexPanel_SV
+ArcCW.ClientMenus["ArcCW_Options_Apex_CL"] = ApexPanel_CL
+]]
 
 hook.Add("PopulateToolMenu", "ArcCW_GSOE_Options", function()
     spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_Options_Apex_SV", "#arccw.menus.apex.sv", "", "", function(panel)

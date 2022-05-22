@@ -3,7 +3,7 @@ CreateConVar("arccw_apex_ammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use HL2 am
 CreateConVar("arccw_apex_freecharge", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Make charging up the Sentinel and Rampage not cost anything.", 0, 1)
 
 CreateConVar("arccw_apex_ttt_ammo", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Replace ArcCW TTT ammo replacements with Apex ammo types.", 0, 1)
-CreateConVar("arccw_apex_ttt_exclusive", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Only allow Apex weapons to spawn in TTT (and not other ArcCW weapons).", 0, 1)
+--CreateConVar("arccw_apex_ttt_exclusive", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Only allow Apex weapons to spawn in TTT (and not other ArcCW weapons).", 0, 1)
 
 ArcCW.Apex = {}
 
@@ -75,10 +75,12 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
         if not weapons.IsBasedOn(k.ClassName, "arccw_base") then continue end
         local stored = weapons.GetStored(k.ClassName) -- necessary?
 
+        --[[]
         if GetConVar("arccw_apex_ttt_exclusive"):GetBool() and not weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
             stored.TTTWeight = 0
             stored.NPCWeight = 0
         end
+        ]]
 
         if GetConVar("arccw_apex_ammo"):GetBool() and weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
             stored.Primary.Ammo = ArcCW.Apex.AmmoConvert[stored.Primary.Ammo] or stored.Primary.Ammo
