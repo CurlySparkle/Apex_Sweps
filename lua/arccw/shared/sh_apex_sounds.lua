@@ -1321,3 +1321,36 @@ sound.Add( {
         "^weapons/fx/wpn_lowammo_smg5_triggere_2ch_v1_01.wav",
     }
 } )
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Draw",
+    channel = CHAN_ITEM + 6,
+    volume = 0.5,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/bocek/Weapons_Bow_raise_V1_2ch_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Ads_in",
+    channel = CHAN_ITEM + 6,
+    volume = 0.3,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/bocek/Weapons_Bow_ADS_IN_GearFoley_V1_2ch_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Bocek.Ads_out",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 100,
+    pitch = {95, 110},
+    sound = {
+        "^weapons/bocek/Weapons_Bow_ADS_OUT_GearFoley_V1_2ch_01.wav",
+    }
+} )

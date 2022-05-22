@@ -20,7 +20,7 @@ SWEP.CrouchAng = Angle(-1, -1, 30)
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -2.5, 1)
+SWEP.ActivePos = Vector(0, -2, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.NPCWeaponType = "weapon_ar2"
@@ -75,7 +75,7 @@ SWEP.MaxRecoilBlowback = 1
 SWEP.CanFireUnderwater = true
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 0.5
+SWEP.Recoil = 0.6
 SWEP.RecoilSide = 0.15
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
@@ -92,8 +92,8 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 0.5
-SWEP.HipDispersion = 150
-SWEP.MoveDispersion = 25
+SWEP.HipDispersion = 300
+SWEP.MoveDispersion = 55
 SWEP.JumpDispersion = 100
 
 SWEP.Primary.Ammo = "apex_arrow"
@@ -172,8 +172,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, 0),
-            wpos = Vector(14, 0.5, -7.4),
-            wang = Angle(-10, 0, 185)
+            wpos = Vector(14.7, -0.6, -5.3),
+            wang = Angle(-10, 0, 220)
         },
         InstalledEles = {"weapon_sights"},
         CorrectivePos = Vector(2.65, 0, -2.67),
@@ -243,7 +243,7 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw",
+        Source = {"draw","draw2"},
         Mult = 1,
     },
     ["holster"] = {
