@@ -8,7 +8,7 @@
 	{
 		ArcCW_AMMO_LSTAR
 		{
-			resultVar 3
+			resultVar 1
 			prefixstring "ammocounter/plate_lstar/numbers_plate"
 		}
 	}

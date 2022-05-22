@@ -151,6 +151,11 @@ SWEP.AttachmentElements = {
             {ind = 1, bg = 1},
         },
     },
+    ["weapon_ammocounter"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 1},
+        },
+    },
     ["skin"] = {
         VMSkin = 1,
         WMSkin = 1,
@@ -183,6 +188,13 @@ SWEP.Attachments = {
     {
         PrintName = "Hop-up",
         Slot = {},
+    },
+    {
+        PrintName = "Ammo Counter",
+        DefaultAttName = "None",
+        Slot = {"apex_special_bocek"},
+        Bone = "ja_ads_attachment",
+        InstalledEles = {"weapon_ammocounter"},
     },
     {
         PrintName = "Skin",
