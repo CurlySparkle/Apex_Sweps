@@ -49,6 +49,14 @@ SWEP.PhysBulletMuzzleVelocity = 10000 * ArcCW.HUToM
 SWEP.PhysTracerProfile = 9
 
 SWEP.Apex_Balance = {
+    [1] = {
+        Damage = 42,
+        DamageMin = 42,
+    },
+    [2] = {
+        Damage = 35,
+        DamageMin = 35,
+    },
 }
 
 -- Handled in code
@@ -417,10 +425,10 @@ local function chargefraction(wep, a, b)
 end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.2 or 3)
+    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.4 or 3)
 end
 SWEP.M_Hook_Mult_DamageMin = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.2 or 3)
+    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.4 or 3)
 end
 SWEP.M_Hook_Mult_PhysBulletMuzzleVelocity = function(wep, data)
     data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1.6 or 2.8)
