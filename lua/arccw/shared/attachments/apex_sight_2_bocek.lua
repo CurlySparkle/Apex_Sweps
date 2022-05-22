@@ -11,6 +11,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"apex_sights_bocek"}
+att.InvAtt = "apex_sight_2"
 
 att.Model = "models/weapons/attachments/bow_sight_1.mdl"
 
@@ -31,9 +32,9 @@ att.AdditionalSights = {
         HolosightData = {
             Holosight = true,
             HolosightReticle =  Material("sights/holo6.png", "mips"),
-			HolosightNoFlare = true,
+            HolosightNoFlare = true,
             HolosightSize = 2.2,
-			HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl",
+            HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl",
             Colorable = false,
             HolosightNoHSP = true
         },	

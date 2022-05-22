@@ -2,10 +2,8 @@ att.PrintName = "Color"
 -- att.Icon = Material("snowysnowtime/2k/ico/h3/sg_orange.png", "mips" )
 att.Description = "Colored skin based on your Physgun color"
 att.Desc_Pros = {
-    "  Purely Cosmetic"
 }
 att.Desc_Cons = {
-	"  Doesn't do anything else."
 }
 att.Slot = "skin_apex"
 

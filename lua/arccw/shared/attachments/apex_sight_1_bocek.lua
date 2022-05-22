@@ -1,8 +1,8 @@
-att.PrintName = "1x Holo"
-att.Icon = Material("entities/attach_icons/apex_1x_holo.png", "mips smooth")
-att.Description = "Small holographic optic."
+att.PrintName = "1x HCOG (Classic)"
+att.Icon = Material("entities/attach_icons/apex_1x_hcog.png", "mips smooth")
+att.Description = "Close range holographic optic."
 
-att.SortOrder = 1
+att.SortOrder = 0.5
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -11,8 +11,9 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"apex_sights_bocek"}
+att.InvAtt = "apex_sight_1"
 
-att.Model = "models/weapons/attachments/bow_sight_4.mdl"
+att.Model = "models/weapons/attachments/bow_sight_3.mdl"
 
 att.AdditionalSights = {
     {
@@ -23,19 +24,13 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo5.png", "mips smooth")
+att.HolosightReticle = Material("sights/holo3.png", "mips")
 att.HolosightNoFlare = true
-att.HolosightSize = 2
+att.HolosightSize = 3
 att.HolosightBone = "holosight"
-att.HolosightNoHSP = true
-att.Colorable = false
-att.HolosightColor = Color(255, 35, 0)
+att.Colorable = true
 
 att.Mult_SightTime = 1.05
-att.Mult_Sway = 0.5
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
-
-att.EntityCategory = "ArcCW - Apex Legends (Att.)"
-att.EntityIcon = "entities/attach_icons/apex_1x_holo.png"

@@ -11,7 +11,7 @@ att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"r301"}
-att.InvAtt = "apex_sight_2s"
+att.InvAtt = "apex_sight_2"
 
 att.Model = "models/weapons/attachments/sight_4.mdl"
 
