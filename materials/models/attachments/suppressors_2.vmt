@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture"				"models\attachments\suppressors_d2"
+	"$bumpmap"					"models\attachments\suppressors_n"
+	"$phongexponenttexture"		"models\attachments\suppressors_e"
+	
+	$envmap						env_cubemap
+	$envmaptint					"[ .02 .02 .02 ]"
+	$normalmapalphaenvmapmask	"1"	
+	
+	$phong						1
+	$phongexponent				10
+	$phongboost					1
+	$phongfresnelranges			"[0.25 0.5 1]"
+}
