@@ -50,7 +50,7 @@ SWEP.ViewModelFOV = 70
 SWEP.Damage = 145
 SWEP.DamageMin = 145
 SWEP.Range = 15
-SWEP.Penetration = 30
+SWEP.Penetration = 40
 SWEP.PhysBulletMuzzleVelocity = 29500 * ArcCW.HUToM
 
 SWEP.BodyDamageMults = {
@@ -321,6 +321,9 @@ if engine.ActiveGamemode() == "terrortown" then
     SWEP.Kind = 7 -- WEAPON_EQUIP2
     SWEP.EquipMenuData = {
         type = "Weapon",
-        desc = "Powerful sniper rifle.\n\nHas 4 rounds and cannot be reloaded."
+        desc = "Powerful sniper rifle with 4 shots.\n\nComes with scope, stock, and Shatter Caps attachments."
     }
+    SWEP.Attachments[1].Installed = "apex_scope_3_kraber"
+    SWEP.Attachments[2].Installed = "apex_stock_sniper_3"
+    SWEP.Attachments[3].Installed = "apex_hopup_shatter3"
 end

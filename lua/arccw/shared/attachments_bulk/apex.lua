@@ -379,19 +379,19 @@ local stock_types = {
             [1] = {
                 [1] = {
                     Mult_HipDispersion = 0.85,
-                    Mult_JumpDispersion = 0.75,
+                    Mult_Recoil = 0.85,
                     Mult_SightTime = 0.9,
                     Mult_Sway = 0.85,
                 },
                 [2] = {
                     Mult_HipDispersion = 0.8,
-                    Mult_JumpDispersion = 0.5,
+                    Mult_Recoil = 0.8,
                     Mult_SightTime = 0.85,
                     Mult_Sway = 0.5,
                 },
                 [3] = {
                     Mult_HipDispersion = 0.75,
-                    Mult_JumpDispersion = 0.25,
+                    Mult_Recoil = 0.75,
                     Mult_SightTime = 0.8,
                     Mult_Sway = 0.2,
                 }

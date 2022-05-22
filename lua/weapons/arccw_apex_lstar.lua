@@ -50,29 +50,34 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOV = 70
 
-SWEP.Damage = 26
+SWEP.Damage = 17
 SWEP.DamageMin = 17
-SWEP.Range = 15
+SWEP.Range = 150
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 22000 * ArcCW.HUToM
+SWEP.PhysBulletGravity = 0.5
 
 --SWEP.ShootEntity = "arccw_apex_proj_lstarplasma" -- entity to fire, if any
 --SWEP.MuzzleVelocity = 300 -- projectile or phys bullet muzzle velocity
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.75,
+    [HITGROUP_HEAD] = 1.5,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
     [HITGROUP_RIGHTARM] = 1,
-    [HITGROUP_LEFTLEG] = 0.75,
-    [HITGROUP_RIGHTLEG] = 0.75,
+    [HITGROUP_LEFTLEG] = 0.85,
+    [HITGROUP_RIGHTLEG] = 0.85,
 }
 
 SWEP.Apex_Balance = {
     [1] = {
         Damage = 25,
         DamageMin = 25,
+    },
+    [2] = {
+        Damage = 15,
+        DamageMin = 15,
     },
 }
 
@@ -103,10 +108,10 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 5
-SWEP.HipDispersion = 350
+SWEP.AccuracyMOA = 15
+SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 50
-SWEP.JumpDispersion = 300
+SWEP.JumpDispersion = 0
 
 SWEP.Primary.Ammo = "apex_energy"
 
