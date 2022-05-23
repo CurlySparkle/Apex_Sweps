@@ -21,6 +21,9 @@ SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.ThrowInertia = false
 
+SWEP.CookPrimFire = false
+SWEP.CookAltFire = false
+
 SWEP.Lunge = true
 SWEP.LungeLength = 72
 SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
