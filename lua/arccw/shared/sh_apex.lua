@@ -163,7 +163,10 @@ else
         sound = "player/player_hitbeep_headshotrapid_human_1p_vs_3p.wav"
     })
 
+    local lasthitsound = 0
     net.Receive("arccw_apex_hit", function()
+        if lasthitsound == CurTime() then return end
+        lasthitsound = CurTime()
         local hs = net.ReadBool()
         if hs and GetConVar("arccw_apex_hitsound_headshot"):GetBool() then
             LocalPlayer():EmitSound("Apex_Hit_Headshot")

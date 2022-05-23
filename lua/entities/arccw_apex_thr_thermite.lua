@@ -90,6 +90,8 @@ function ENT:Think()
             end
         end
     end
+
+    local hit = false
     for v, i in pairs(damaged) do
         self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 1
         local o = self.Owner
@@ -100,7 +102,14 @@ function ENT:Think()
         dmg:SetAttacker(o)
         dmg:SetDamageForce(Vector(0, 0, 0))
         v:TakeDamageInfo(dmg)
+
         if v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot() then
+            if not hit and IsValid(self:GetOwner()) and v ~= self:GetOwner() then
+                hit = true
+                net.Start("arccw_apex_hit")
+                    net.WriteBool(false)
+                net.Send(self:GetOwner())
+            end
             if timer.Exists("thermite_burn_" .. v:EntIndex()) then timer.Remove("thermite_burn_" .. v:EntIndex()) end
             timer.Create("thermite_burn_" .. v:EntIndex(), 0.5, 5, function()
                 if not IsValid(v) or (v:IsPlayer() and not v:Alive()) then return end
@@ -111,6 +120,11 @@ function ENT:Think()
                 d:SetAttacker(o)
                 d:SetDamageForce(Vector(0, 0, 0))
                 v:TakeDamageInfo(d)
+                if IsValid(self) and IsValid(self:GetOwner()) and v ~= self:GetOwner() then
+                    net.Start("arccw_apex_hit")
+                        net.WriteBool(false)
+                    net.Send(self:GetOwner())
+                end
             end)
         elseif not v:IsOnFire() then
             v:Ignite(5)
@@ -125,10 +139,10 @@ end
 
 function ENT:Detonate()
     if not self:IsValid() or self.Armed then return end
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav")
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 100)
     self.Armed = true
     self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
-    self.FireSound:Play()
+    self.FireSound:PlayEx(1, 95)
     self.ArcCW_Killable = false
 
     self:SetMoveType(MOVETYPE_NONE)
@@ -196,6 +210,7 @@ function ENT:Detonate()
     thermite.Owner = self.Owner
     thermite.FireTime = self.FireTime
     thermite:Spawn()
+    table.insert(self.Thermites, thermite)
 
     timer.Simple(self.FireTime - 1, function()
         if not IsValid(self) then return end
