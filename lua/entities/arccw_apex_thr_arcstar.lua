@@ -54,6 +54,7 @@ function ENT:Think()
             dmginfo:SetDamageType(DMG_SHOCK)
             dmginfo:SetAttacker(self:GetOwner())
             dmginfo:SetDamage(70 * f)
+            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - self:GetPos()):GetNormalized() * 9001 * f)
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
 
