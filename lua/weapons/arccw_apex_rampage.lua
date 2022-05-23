@@ -359,8 +359,15 @@ end
 
 SWEP.Hook_ChangeFiremode = function(wep)
     local nade = weapons.Get("arccw_apex_nade_thermite").Primary.Ammo
-    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount(nade) < 1) then return true end
-    if not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():RemoveAmmo(1, nade) end
+    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():HasWeapon("arccw_apex_nade_thermite") and wep:GetOwner():GetAmmoCount(nade) < 1) or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount(nade) < 1) then return true end
+    if not GetConVar("arccw_apex_freecharge"):GetBool() then 
+		wep:GetOwner():RemoveAmmo(1, nade) 
+		if wep:GetOwner():HasWeapon("arccw_apex_nade_thermite") and wep:GetOwner():GetAmmoCount(nade) < 1 then
+			if SERVER then
+				wep:GetOwner():StripWeapon("arccw_apex_nade_thermite")
+			end
+		end
+	end
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
     wep:SetNextPrimaryFire(n)

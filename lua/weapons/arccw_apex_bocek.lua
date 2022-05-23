@@ -442,7 +442,7 @@ end
 
 SWEP.Hook_GetShootSound = function(wep, sound)
     if chargefraction(wep) < 1 then
-        return "weapons/bocek/fire_uncharged_" .. math.random(1, 3) .. ".wav"
+        return "ArcCW_APEX.Bocek.Fire_Uncharged"
     end
 end
 

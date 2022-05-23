@@ -272,6 +272,13 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 60 / 40,
         Mult = 0.7,
+        SoundTable = {
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_open_fr7_2ch_v1_01.wav", t = 7 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_eject_fr21_2ch_v1_01.wav", t = 21 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_insertmag_fr47_2ch_v1_01.wav", t = 47 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_close_fr60_2ch_v1_01.wav", t = 60 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_handgrab_fr66_2ch_v1_01.wav", t = 66 / 40}
+    },
     },
 }
 

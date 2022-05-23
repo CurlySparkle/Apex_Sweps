@@ -406,15 +406,15 @@ SWEP.Hook_Think = function(wep)
                     wep.ApexLoopSound:Stop()
                     wep.ApexLoopSound = nil
                 end
-                wep.ApexLoopSound = CreateSound(wep, "weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav")
+                wep.ApexLoopSound = CreateSound(wep, "ArcCW_APEX.3030.ChargeLoop_2")
                 wep.ApexLoopSound:Play()
             elseif f > 0 and charge == 0 then
-                wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Start_1ch_v2_01.wav")
+                wep:EmitSound("ArcCW_APEX.3030.ChargeStart")
             end
         end
     elseif charge > 0 then
         wep:SetNWFloat("ApexCharge", 0)
-        wep:EmitSound("weapons/3030/3030_Charge_Spin_Whine_Stop_1ch_v1_01.wav")
+        wep:EmitSound("ArcCW_APEX.3030.ChargeEnd")
         if wep.ApexLoopSound then
             wep.ApexLoopSound:Stop()
             wep.ApexLoopSound = nil
