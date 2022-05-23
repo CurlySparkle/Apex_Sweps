@@ -1,6 +1,6 @@
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Fire_Charged",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -14,7 +14,7 @@ util.PrecacheSound("ArcCW_APEX.Bocek.Fire_Charged")
 
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Fire_Uncharged",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -28,7 +28,7 @@ util.PrecacheSound("ArcCW_APEX.Bocek.Fire_Uncharged")
 
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Empty",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 0.5,
     level = 140,
     pitch = {95, 105},
@@ -45,7 +45,7 @@ util.PrecacheSound("ArcCW_APEX.Bocek.Empty")
 
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Charge",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 0.7,
     level = 140,
     pitch = {95, 105},
@@ -58,7 +58,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Rampage.Energize",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -72,7 +72,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Rampage.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -86,7 +86,7 @@ util.PrecacheSound("ArcCW_APEX.Rampage.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Rampage.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -102,7 +102,7 @@ util.PrecacheSound("ArcCW_APEX.Rampage.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Rampage_Charged.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -116,7 +116,7 @@ util.PrecacheSound("ArcCW_APEX.Rampage_Charged.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Rampage_Charged.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -132,7 +132,7 @@ util.PrecacheSound("ArcCW_APEX.Rampage_Charged.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.LSTAR.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -146,7 +146,7 @@ util.PrecacheSound("ArcCW_APEX.LSTAR.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.LSTAR.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -165,7 +165,7 @@ util.PrecacheSound("ArcCW_APEX.LSTAR.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.3030Repeater.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -179,7 +179,7 @@ util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.3030Repeater.Fire_Semi_Charged",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -193,7 +193,7 @@ util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Semi_Charged")
 
 sound.Add( {
     name = "ArcCW_APEX.3030Repeater.Fire_Charged",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -207,7 +207,7 @@ util.PrecacheSound("ArcCW_APEX.3030Repeater.Fire_Charged")
 
 sound.Add( {
     name = "ArcCW_APEX.3030Repeater.Reload_Insert",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -223,7 +223,7 @@ util.PrecacheSound("ArcCW_APEX.3030Repeater.Reload_Insert")
 
 sound.Add( {
     name = "ArcCW_APEX.Triple_Take.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -237,7 +237,7 @@ util.PrecacheSound("ArcCW_APEX.Triple_Take.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Mozambique_Hammer.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -251,7 +251,7 @@ util.PrecacheSound("ArcCW_APEX.Mozambique_Hammer.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Mozambique.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -265,7 +265,7 @@ util.PrecacheSound("ArcCW_APEX.Mozambique.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Havoc.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -279,7 +279,7 @@ util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Havoc.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -298,7 +298,7 @@ util.PrecacheSound("ArcCW_APEX.Havoc.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Havoc.Fire_Alt",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -312,7 +312,7 @@ util.PrecacheSound("ArcCW_APEX.Havoc.Fire_Alt")
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {90, 110},
@@ -326,7 +326,7 @@ util.PrecacheSound("ArcCW_APEX.Devotion.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -347,7 +347,7 @@ util.PrecacheSound("ArcCW_APEX.Devotion.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Eva.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -361,7 +361,7 @@ util.PrecacheSound("ArcCW_APEX.Eva.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Wingman.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -375,7 +375,7 @@ util.PrecacheSound("ArcCW_APEX.Wingman.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Wingman.Fire_Skull",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -389,7 +389,7 @@ util.PrecacheSound("ArcCW_APEX.Wingman.Fire_Skull")
 
 sound.Add( {
     name = "ArcCW_APEX.Mastiff.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -403,7 +403,7 @@ util.PrecacheSound("ArcCW_APEX.Mastiff.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.P2020.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -417,7 +417,7 @@ util.PrecacheSound("ArcCW_APEX.P2020.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.P2020_HammerPoint.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -431,7 +431,7 @@ util.PrecacheSound("ArcCW_APEX.P2020_HammerPoint.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.G7.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -445,7 +445,7 @@ util.PrecacheSound("ArcCW_APEX.G7.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Longbow.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -459,7 +459,7 @@ util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Longbow.Fire_Skull",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -473,7 +473,7 @@ util.PrecacheSound("ArcCW_APEX.Longbow.Fire_Skull")
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.CloudyTail",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {95, 105},
@@ -487,7 +487,7 @@ util.PrecacheSound("ArcCW_APEX.Peacekeeper.CloudyTail")
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Powerchord",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {95, 105},
@@ -504,7 +504,7 @@ util.PrecacheSound("ArcCW_APEX.Peacekeeper.Powerchord")
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -518,7 +518,7 @@ util.PrecacheSound("ArcCW_APEX.Peacekeeper.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Hemlok.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -530,7 +530,7 @@ util.PrecacheSound("ArcCW_APEX.Hemlok.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Hemlok.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -542,7 +542,7 @@ util.PrecacheSound("ArcCW_APEX.Hemlok.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Prowler.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -556,7 +556,7 @@ util.PrecacheSound("ArcCW_APEX.Prowler.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Prowler.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -572,7 +572,7 @@ util.PrecacheSound("ArcCW_APEX.Prowler.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.RE45.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -586,7 +586,7 @@ util.PrecacheSound("ArcCW_APEX.RE45.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.RE45.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -605,7 +605,7 @@ util.PrecacheSound("ArcCW_APEX.RE45.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.RE45_Hammer.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -619,7 +619,7 @@ util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.RE45_Hammer.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -636,7 +636,7 @@ util.PrecacheSound("ArcCW_APEX.RE45_Hammer.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -649,7 +649,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -669,7 +669,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.WindUp",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -682,7 +682,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.TurboWindUp",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -693,7 +693,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Devotion.WindDown",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -704,7 +704,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.CAR.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -718,7 +718,7 @@ util.PrecacheSound("ArcCW_APEX.CAR.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.CAR.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -737,7 +737,7 @@ util.PrecacheSound("ArcCW_APEX.CAR.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Spitfire.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -750,7 +750,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Spitfire.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -766,7 +766,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Volt.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -778,7 +778,7 @@ util.PrecacheSound("ArcCW_APEX.Volt.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.Volt.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -795,7 +795,7 @@ util.PrecacheSound("ArcCW_APEX.Volt.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Alternator.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
 --    pitch = {90, 110},
@@ -811,7 +811,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.R301.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -825,7 +825,7 @@ util.PrecacheSound("ArcCW_APEX.R301.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.R301.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -844,7 +844,7 @@ util.PrecacheSound("ArcCW_APEX.R301.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.R301.Fire_Alt",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -859,7 +859,7 @@ util.PrecacheSound("ArcCW_APEX.R301.Fire_Alt")
 -- R99
 sound.Add( {
     name = "ArcCW_APEX.R99.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -873,7 +873,7 @@ util.PrecacheSound("ArcCW_APEX.R99.Fire_Start")
 
 sound.Add( {
     name = "ArcCW_APEX.R99.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -894,7 +894,7 @@ util.PrecacheSound("ArcCW_APEX.R99.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Flatline.Fire_Start",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -907,7 +907,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Flatline.Fire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -927,7 +927,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Flatline.Fire_Alt",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 140,
     pitch = {95, 105},
@@ -940,7 +940,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.ArcStar.Throw",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {95, 105},
@@ -954,7 +954,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.ArcStar.Draw",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 0.5,
     level = 120,
     pitch = {95, 105},
@@ -967,7 +967,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.ArcStar.Holster",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 0.1,
     level = 120,
     pitch = {95, 105},
@@ -980,7 +980,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Frag.Draw",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 0.5,
     level = 120,
     pitch = {90, 115},
@@ -991,7 +991,7 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Frag.Holster",
-    channel = CHAN_WEAPON,
+    channel = CHAN_AUTO,
     volume = 0.2,
     level = 120,
     pitch = {90, 115},
