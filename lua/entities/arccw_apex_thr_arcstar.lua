@@ -21,7 +21,7 @@ function ENT:Initialize()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
-            phys:AddAngleVelocity(Vector(0, -750, 1000))
+            phys:AddAngleVelocity(Vector(0, -700, 3000))
         end
 
         self.SpawnTime = CurTime()
@@ -34,13 +34,13 @@ function ENT:Think()
         local effectdata = EffectData()
         effectdata:SetOrigin(self:GetPos())
         effectdata:SetNormal(self:GetForward())
-        if self:WaterLevel() >= 1 then
-            util.Effect( "WaterSurfaceExplosion", effectdata )
-            self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
-        else
-            util.Effect( "Explosion", effectdata)
-            self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
-        end
+        effectdata:SetMagnitude(1)
+        effectdata:SetScale(1)
+        effectdata:SetRadius(32)
+        effectdata:SetEntity(self)
+        util.Effect("HelicopterMegaBomb", effectdata)
+
+        self:EmitSound("weapons/grenades/arcstar/explo_star_close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 125, 100, 1, CHAN_AUTO)
 
         for _, ent in pairs(ents.FindInSphere(self:GetPos(), 300)) do
             if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() then continue end
@@ -78,6 +78,8 @@ function ENT:PhysicsCollide(data, physobj)
     dmginfo:SetInflictor(self)
     tgt:TakeDamageInfo(dmginfo)
     local angles = self:GetAngles()
+
+    self:EmitSound("weapons/grenades/arcstar/Wpn_ArcStar_3P_Warning_StaticWindup_1ch_01.wav")
 
     if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
         timer.Simple(0, function()
@@ -123,7 +125,7 @@ function ENT:PhysicsCollide(data, physobj)
         self:UseTriggerBounds(true, 16)
     end
 
-    self.DetonateTime = CurTime() + 3
+    self.DetonateTime = CurTime() + 2.5
 end
 
 function ENT:OnRemove()
@@ -131,18 +133,9 @@ function ENT:OnRemove()
     self.FireSound:Stop()
 end
 
-function ENT:Detonate()
-    if not self:IsValid() or self.Armed then return end
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav")
-    self.Armed = true
-    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
-    self.FireSound:Play()
-end
-
 function ENT:DrawTranslucent()
     self:DrawModel()
 end
-
 
 function ENT:Draw()
     self:DrawModel()
