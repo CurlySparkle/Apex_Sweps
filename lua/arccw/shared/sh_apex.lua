@@ -104,10 +104,15 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
     ArcCW.RandomWeaponCache = {}
 end)
 
--- Not "truly" a slow, but stops player from sprinting.
 hook.Add("StartCommand", "ArcCW_Apex_ArcStarSlow", function(ply, ucmd)
     if (ply.ArcStarSlowEnd or 0) > CurTime() then
         ucmd:SetButtons(bit.band(ucmd:GetButtons(), bit.bnot(IN_SPEED)))
+    end
+end)
+hook.Add("SetupMove", "ArcCW_Apex_ArcStarSlow", function(ply, mv, ucmd)
+    if (ply.ArcStarSlowEnd or 0) > CurTime() then
+        mv:SetMaxSpeed(mv:GetMaxSpeed() * 0.7)
+        mv:SetMaxClientSpeed(mv:GetMaxClientSpeed() * 0.7)
     end
 end)
 
