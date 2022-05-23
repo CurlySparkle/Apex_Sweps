@@ -953,6 +953,54 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.ArcStar.Draw",
+    channel = CHAN_WEAPON,
+    volume = 0.5,
+    level = 120,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_01.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_02.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.ArcStar.Holster",
+    channel = CHAN_WEAPON,
+    volume = 0.1,
+    level = 120,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_01.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_02.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Frag.Draw",
+    channel = CHAN_WEAPON,
+    volume = 0.5,
+    level = 120,
+    pitch = {90, 115},
+    sound = {
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Frag.Holster",
+    channel = CHAN_WEAPON,
+    volume = 0.2,
+    level = 120,
+    pitch = {90, 115},
+    sound = {
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Alternator.Ads",
     channel = CHAN_ITEM + 6,
     volume = 1.0,

@@ -108,21 +108,19 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         SoundTable = {
-           {s = "weapons/grenades/wpn_fraggrenade_1p_draw_01.wav", t = 0 / 30},
-           {s = "weapons/grenades/wpn_fraggrenade_1p_prep_01.wav", t = 2 / 30}
+           {s = "ArcCW_APEX.Frag.Draw", t = 0 / 30},
         },
     },
     ["draw"] = {
         Source = "draw",
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_draw_01.wav", t = 0 / 30},
-            {s = "weapons/grenades/wpn_fraggrenade_1p_prep_01.wav", t = 2 / 30}
+            {s = "ArcCW_APEX.Frag.Draw", t = 0 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_prep_02.wav", t = 1 / 30}
+            {s = "ArcCW_APEX.Frag.Holster", t = 0 / 30}
         },
     },
     ["pre_throw"] = {
