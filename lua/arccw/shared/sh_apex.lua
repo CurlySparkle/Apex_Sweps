@@ -88,6 +88,9 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
 
         if GetConVar("arccw_apex_ammo"):GetBool() and weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
             stored.Primary.Ammo = ArcCW.Apex.AmmoConvert[stored.Primary.Ammo] or stored.Primary.Ammo
+            stored.AmmoEnt = ArcCW.TTTAmmoToEntity[stored.Primary.Ammo]
+        elseif weapons.IsBasedOn(k.ClassName, "arccw_apex_base") then
+            stored.AmmoEnt = "arccw_ammo_" .. stored.Primary.Ammo
         end
     end
     ArcCW.RandomWeaponCache = {}
