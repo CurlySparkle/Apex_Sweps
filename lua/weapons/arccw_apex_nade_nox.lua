@@ -137,7 +137,7 @@ SWEP.Animations = {
         -- MinProgress = 0.5,
     -- },
     ["fire"] = {
-        Source = "toss",
+        Source = "toss_overhead",
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30},
         },
@@ -150,7 +150,7 @@ SWEP.Animations = {
         },
     },
     ["throw_alt"] = {
-        Source = {"toss_overhead"},
+        Source = {"toss_underhand"},
         Mult = 2,
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
