@@ -67,7 +67,7 @@ end
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
-        self:Detonate()
+        self:Detonate(data.HitEntity)
     end
 end
 
@@ -137,13 +137,15 @@ function ENT:Think()
     self.NextDamageTick = CurTime() + 0.15
 end
 
-function ENT:Detonate()
+function ENT:Detonate(hitentity)
     if not self:IsValid() or self.Armed then return end
     self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 100)
     self.Armed = true
     self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
     self.FireSound:PlayEx(1, 95)
     self.ArcCW_Killable = false
+
+    if not IsValid(hitentity) or hitentity:IsWorld() then hitentity = nil end
 
     self:SetMoveType(MOVETYPE_NONE)
     self:SetNoDraw(true)
@@ -165,12 +167,14 @@ function ENT:Detonate()
     local trace_left = util.TraceLine({
         start = self:GetPos() + Vector(0, 0, h),
         endpos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * -max_len,
-        mask = MASK_SHOT_HULL,
+        mask = MASK_NPCSOLID_BRUSHONLY,
+        ignore = {self, hitentity},
     })
     local trace_right = util.TraceLine({
         start = self:GetPos() + Vector(0, 0, h),
         endpos = self:GetPos() + Vector(0, 0, h) + self.InitialDir * max_len,
-        mask = MASK_SHOT_HULL,
+        mask = MASK_NPCSOLID_BRUSHONLY,
+        ignore = {self, hitentity},
     })
 
     local forward = self.InitialDir:Angle()
@@ -205,7 +209,7 @@ function ENT:Detonate()
     end)
 
     local thermite = ents.Create("arccw_apex_thermite")
-    thermite:SetPos(self:GetPos() + Vector(0, 0, 12))
+    thermite:SetPos(self:GetPos() + Vector(0, 0, 8))
     thermite:SetAngles(forward)
     thermite.Owner = self.Owner
     thermite.FireTime = self.FireTime
