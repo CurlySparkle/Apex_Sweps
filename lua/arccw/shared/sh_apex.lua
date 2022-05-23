@@ -7,6 +7,14 @@ CreateConVar("arccw_apex_ttt_ammo", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Replac
 
 ArcCW.Apex = {}
 
+ArcCW.Apex.GrenadeBlacklist = {
+    ["arccw_apex_thr_arcstar"] = true,
+    ["arccw_apex_thermite"] = true,
+    ["arccw_apex_thr_thermite"] = true,
+    ["predicted_viewmodel"] = true,
+    ["entityflame"] = true,
+}
+
 ArcCW.Apex.BlendSights = function(wep)
     local vm = wep:GetOwner():GetViewModel()
     local delta = wep:GetSightDelta()
@@ -96,9 +104,25 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
     ArcCW.RandomWeaponCache = {}
 end)
 
+-- Not "truly" a slow, but stops player from sprinting.
+hook.Add("StartCommand", "ArcCW_Apex_ArcStarSlow", function(ply, ucmd)
+    if (ply.ArcStarSlowEnd or 0) > CurTime() then
+        ucmd:SetButtons(bit.band(ucmd:GetButtons(), bit.bnot(IN_SPEED)))
+    end
+end)
+
 if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")
     util.AddNetworkString("arccw_apex_hit")
+    util.AddNetworkString("arccw_apex_arcslow")
+
+    -- Since all move hooks are run client and server, we need to network it
+    function ArcCW.Apex.ArcStarSlow(ply, dur)
+        net.Start("arccw_apex_arcslow")
+            net.WriteFloat(dur + CurTime())
+        net.Send(ply)
+        ply.ArcStarSlowEnd = dur + CurTime()
+    end
 
     local function hitsound(ply, hg, dmg)
         local attacker = dmg:GetAttacker()
@@ -175,4 +199,7 @@ else
         end
     end)
 
+    net.Receive("arccw_apex_arcslow", function()
+        LocalPlayer().ArcStarSlowEnd = net.ReadFloat()
+    end)
 end

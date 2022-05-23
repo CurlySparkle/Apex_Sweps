@@ -39,15 +39,12 @@ SWEP.Primary.Ammo = "grenade"
 SWEP.Throwing = true
 SWEP.Singleton = false
 
--- SWEP.CookPrimFire = true
--- SWEP.CookAltFire = true
-
 SWEP.DrawCrosshair = false
 SWEP.ShootWhileSprint = false
 
 SWEP.Primary.ClipSize = 1
 
-SWEP.MuzzleVelocity = 1500
+SWEP.MuzzleVelocity = 1300
 SWEP.MuzzleVelocityAlt = 550
 SWEP.ShootEntity = "arccw_apex_thr_thermite"
 

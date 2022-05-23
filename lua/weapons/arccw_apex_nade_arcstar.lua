@@ -47,9 +47,9 @@ SWEP.ShootWhileSprint = false
 
 SWEP.Primary.ClipSize = 1
 
-SWEP.MuzzleVelocity = 1500
-SWEP.MuzzleVelocityAlt = 500
-SWEP.ShootEntity = "arccw_apex_thr_frag"
+SWEP.MuzzleVelocity = 2200
+SWEP.MuzzleVelocityAlt = 700
+SWEP.ShootEntity = "arccw_apex_thr_arcstar"
 
 SWEP.PullPinTime = 0.5
 

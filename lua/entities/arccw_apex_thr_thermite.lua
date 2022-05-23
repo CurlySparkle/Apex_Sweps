@@ -76,14 +76,6 @@ function ENT:OnRemove()
     self.FireSound:Stop()
 end
 
-local blacklist = {
-    ["arccw_apex_thermite"] = true,
-    ["arccw_apex_thr_thermite"] = true,
-    ["predicted_viewmodel"] = true,
-    ["entityflame"] = true,
-
-}
-
 function ENT:Think()
     if CLIENT then return end
     if (self.NextDamageTick or 0) > CurTime() then return end
@@ -92,7 +84,7 @@ function ENT:Think()
     for i, ent in ipairs(self.Thermites) do
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
         for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 96)) do
-            if not damaged[v] and not blacklist[v:GetClass()] and not v:IsWeapon() then -- As it turns out, this will ignite ALL weapons on a player's inventory
+            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() then -- As it turns out, this will ignite ALL weapons on a player's inventory
                 damaged[v] = true
                 if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
             end

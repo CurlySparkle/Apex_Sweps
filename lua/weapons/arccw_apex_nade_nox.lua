@@ -50,8 +50,8 @@ SWEP.Primary.ClipSize = 1
 
 SWEP.Recoil = 0
 
-SWEP.MuzzleVelocity = 1500
-SWEP.MuzzleVelocityAlt = 500
+SWEP.MuzzleVelocity = 1000
+SWEP.MuzzleVelocityAlt = 400
 SWEP.ShootEntity = "arccw_apex_thr_gas"
 
 SWEP.PullPinTime = 0
