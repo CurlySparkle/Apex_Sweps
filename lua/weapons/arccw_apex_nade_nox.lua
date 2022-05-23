@@ -26,7 +26,7 @@ SWEP.WorldModelOffset = {
     ang = Angle(-10, 0, 180)
 }
 
-
+SWEP.Delay = 2.25
 SWEP.Firemodes = {
     {
         Mode = 1,
@@ -151,7 +151,7 @@ SWEP.Animations = {
     },
     ["throw_alt"] = {
         Source = {"toss_underhand"},
-        Mult = 2,
+        Mult = 1.5,
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}

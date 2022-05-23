@@ -26,6 +26,7 @@ SWEP.WorldModel = "models/weapons/w_apex_nade_thermite.mdl"
     -- ang = Angle(0, 0, -50)
 -- }
 
+SWEP.Delay = 2
 SWEP.Firemodes = {
     {
         Mode = 1,

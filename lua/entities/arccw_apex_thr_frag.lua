@@ -10,17 +10,16 @@ ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.FuseTime = 3.5
 ENT.ArmTime = 0
 ENT.ImpactFuse = false
+ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 AddCSLuaFile()
 
 function ENT:Initialize()
     if SERVER then
-        self:SetModel( self.Model )
-        self:SetMoveType( MOVETYPE_VPHYSICS )
-        self:SetSolid( SOLID_VPHYSICS )
-        self:PhysicsInit( SOLID_VPHYSICS )
-        self:SetCollisionGroup( COLLISION_GROUP_NONE )
-        self:DrawShadow( true )
+        self:SetModel(self.Model)
+        self:SetMoveType(MOVETYPE_VPHYSICS)
+        self:SetSolid(SOLID_VPHYSICS)
+        self:PhysicsInit(SOLID_VPHYSICS)
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
@@ -29,15 +28,6 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-
-        if self.FuseTime <= 0 then
-            self:Detonate()
-        end
-
-        timer.Simple(0.1, function()
-            if !IsValid(self) then return end
-            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-        end)
     end
 end
 
