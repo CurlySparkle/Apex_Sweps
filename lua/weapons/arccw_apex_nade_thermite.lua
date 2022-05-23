@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_nade_thermite")
 end
 
-SWEP.Base = "arccw_base_nade"
+SWEP.Base = "arccw_apex_nade_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -29,7 +29,7 @@ SWEP.WorldModel = "models/weapons/w_apex_nade_thermite.mdl"
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "NADE"
+        PrintName = "fcg.nade",
     },
 }
 
@@ -51,23 +51,7 @@ SWEP.MuzzleVelocity = 1500
 SWEP.MuzzleVelocityAlt = 550
 SWEP.ShootEntity = "arccw_apex_thr_thermite"
 
-SWEP.TTTWeaponType = "weapon_zm_molotov"
-SWEP.NPCWeaponType = "weapon_grenade"
-SWEP.NPCWeight = 50
-
 SWEP.PullPinTime = 0.5
-
-SWEP.CrouchPos = Vector(0, -2, -0.5)
-SWEP.CrouchAng = Angle(0, 0, 0)
-
-SWEP.SprintPos = Vector(0, -2, 1)
-SWEP.SprintAng = Angle(0, 0, 0)
-
-SWEP.ActivePos = Vector(0, -2, 1)
-SWEP.ActiveAng = Angle(0, 0, 0)
-
-SWEP.CustomizePos = Vector(0, -2, 0)
-SWEP.CustomizeAng = Angle(0 , 0, 0)
 
 SWEP.ViewModelFOV = 70
 
@@ -77,22 +61,6 @@ SWEP.CamAttachment = 3
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -1)
 SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
-
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
-
-SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
-SWEP.LungeLength = 64 -- Maximum distance for lunging
-
-SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 60
-SWEP.MeleeDamageType = DMG_CLUB
-SWEP.MeleeTime = 1
-SWEP.MeleeGesture = nil
-SWEP.MeleeAttackTime = 0.2
-
-SWEP.SprintTime = 0
 
 SWEP.IronSightStruct = false
 

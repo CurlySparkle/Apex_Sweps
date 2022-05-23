@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_nade_nox")
 end
 
-SWEP.Base = "arccw_base_nade"
+SWEP.Base = "arccw_apex_nade_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -26,10 +26,11 @@ SWEP.WorldModelOffset = {
     ang = Angle(-10, 0, 180)
 }
 
+
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "NADE"
+        PrintName = "fcg.nade",
     },
 }
 
@@ -49,15 +50,12 @@ SWEP.Primary.ClipSize = 1
 
 SWEP.Recoil = 0
 
-SWEP.MuzzleVelocity = 2000
+SWEP.MuzzleVelocity = 1500
 SWEP.MuzzleVelocityAlt = 500
 SWEP.ShootEntity = "arccw_apex_thr_gas"
 
-SWEP.TTTWeaponType = "weapon_zm_molotov"
-SWEP.NPCWeaponType = "weapon_grenade"
-SWEP.NPCWeight = 50
-
--- SWEP.PullPinTime = 0
+SWEP.PullPinTime = 0
+SWEP.WindupTime = 0
 
 SWEP.CrouchPos = Vector(0, -2, -0.5)
 SWEP.CrouchAng = Angle(0, 0, 0)

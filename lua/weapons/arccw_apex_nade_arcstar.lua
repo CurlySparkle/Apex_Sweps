@@ -3,7 +3,7 @@ if CLIENT then
     SWEP.WepSelectIcon = surface.GetTextureID("VGUI/apex_nade_arcstar")
 end
 
-SWEP.Base = "arccw_base_nade"
+SWEP.Base = "arccw_apex_nade_base"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
@@ -29,7 +29,7 @@ SWEP.WorldModel = "models/weapons/c_apex_nade_arcstar.mdl"
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "NADE"
+        PrintName = "fcg.nade",
     },
 }
 
@@ -50,10 +50,6 @@ SWEP.Primary.ClipSize = 1
 SWEP.MuzzleVelocity = 1500
 SWEP.MuzzleVelocityAlt = 500
 SWEP.ShootEntity = "arccw_apex_thr_frag"
-
-SWEP.TTTWeaponType = "weapon_ttt_confgrenade"
-SWEP.NPCWeaponType = "weapon_grenade"
-SWEP.NPCWeight = 50
 
 SWEP.PullPinTime = 0.5
 
