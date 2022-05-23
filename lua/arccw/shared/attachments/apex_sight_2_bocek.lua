@@ -36,6 +36,7 @@ att.AdditionalSights = {
             HolosightSize = 2,
             HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl",
             Colorable = false,
+			HolosightColor = Color(255, 15, 0),
             HolosightNoHSP = true
         },	
     },
