@@ -1402,7 +1402,7 @@ sound.Add( {
     name = "ArcCW_APEX.Bocek.Draw",
     channel = CHAN_ITEM + 6,
     volume = 0.4,
-    level = 140,
+    level = 120,
     pitch = {95, 110},
     sound = {
         "^weapons/bocek/Weapons_Bow_raise_V1_2ch_01.wav",
@@ -1413,7 +1413,7 @@ sound.Add( {
     name = "ArcCW_APEX.Bocek.Ads_in",
     channel = CHAN_ITEM + 6,
     volume = 0.3,
-    level = 140,
+    level = 120,
     pitch = {95, 110},
     sound = {
         "^weapons/bocek/Weapons_Bow_ADS_IN_GearFoley_V1_2ch_01.wav",
@@ -1424,9 +1424,165 @@ sound.Add( {
     name = "ArcCW_APEX.Bocek.Ads_out",
     channel = CHAN_ITEM + 6,
     volume = 1.0,
-    level = 140,
+    level = 120,
     pitch = {95, 110},
     sound = {
         "^weapons/bocek/Weapons_Bow_ADS_OUT_GearFoley_V1_2ch_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.TripleTake.Level_Tick_3",
+    channel = CHAN_ITEM,
+    volume = 0.2,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_04.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.TripleTake.Level_Tick_2",
+    channel = CHAN_ITEM,
+    volume = 0.3,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_02.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.TripleTake.Level_Tick_1",
+    channel = CHAN_ITEM,
+    volume = 0.3,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.TripleTake.ChargeStart",
+    channel = CHAN_ITEM,
+    volume = 0.3,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_ChargeStart_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.TripleTake.ChargeEnd",
+    channel = CHAN_ITEM,
+    volume = 0.3,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_ChargeEnd_2ch_v2_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.ChargeStart",
+    channel = CHAN_ITEM,
+    volume = 0.4,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_ChargeStart_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.ChargeEnd",
+    channel = CHAN_ITEM,
+    volume = 0.4,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_ChargeEnd_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.Level_Tick_1",
+    channel = CHAN_ITEM,
+    volume = 0.4,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick1_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.Level_Tick_2",
+    channel = CHAN_ITEM,
+    volume = 0.4,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick2_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Peacekeeper.Level_Tick_3",
+    channel = CHAN_ITEM,
+    volume = 0.4,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick4_2ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.3030.ChargeStart",
+    channel = CHAN_ITEM,
+    volume = 0.4,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/3030/3030_Charge_Spin_Whine_Start_1ch_v2_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.3030.ChargeEnd",
+    channel = CHAN_ITEM,
+    volume = 0.5,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/3030/3030_Charge_Spin_Whine_Stop_1ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.3030.ChargeLoop",
+    channel = CHAN_ITEM,
+    volume = 0.5,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.3030.ChargeLoop_2",
+    channel = CHAN_ITEM,
+    volume = 0.5,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_01.wav",
+		"^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_02.wav",
+		"^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_03.wav",
     }
 } )
