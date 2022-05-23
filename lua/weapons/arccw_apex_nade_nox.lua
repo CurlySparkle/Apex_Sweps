@@ -44,7 +44,7 @@ SWEP.Singleton = false
 -- SWEP.CookAltFire = true
 
 SWEP.DrawCrosshair = false
-SWEP.ShootWhileSprint = true
+SWEP.ShootWhileSprint = false
 
 SWEP.Primary.ClipSize = 1
 
