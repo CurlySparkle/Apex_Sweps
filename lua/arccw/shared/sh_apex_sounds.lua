@@ -1434,7 +1434,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.Level_Tick_3",
     channel = CHAN_ITEM,
-    volume = 0.2,
+    volume = 0.4,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1445,7 +1445,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.Level_Tick_2",
     channel = CHAN_ITEM,
-    volume = 0.3,
+    volume = 0.4,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1456,7 +1456,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.Level_Tick_1",
     channel = CHAN_ITEM,
-    volume = 0.3,
+    volume = 0.4,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1467,7 +1467,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.ChargeStart",
     channel = CHAN_ITEM,
-    volume = 0.3,
+    volume = 0.4,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1478,7 +1478,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.ChargeEnd",
     channel = CHAN_ITEM,
-    volume = 0.3,
+    volume = 0.4,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1489,7 +1489,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.ChargeStart",
     channel = CHAN_ITEM,
-    volume = 0.4,
+    volume = 0.5,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1500,7 +1500,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.ChargeEnd",
     channel = CHAN_ITEM,
-    volume = 0.4,
+    volume = 0.5,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1511,7 +1511,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Level_Tick_1",
     channel = CHAN_ITEM,
-    volume = 0.4,
+    volume = 0.5,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1522,7 +1522,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Level_Tick_2",
     channel = CHAN_ITEM,
-    volume = 0.4,
+    volume = 0.5,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1533,7 +1533,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Level_Tick_3",
     channel = CHAN_ITEM,
-    volume = 0.4,
+    volume = 0.5,
     level = 120,
 --    pitch = {95, 110},
     sound = {
@@ -1544,7 +1544,7 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.3030.ChargeStart",
     channel = CHAN_ITEM,
-    volume = 0.4,
+    volume = 0.5,
     level = 120,
 --    pitch = {95, 110},
     sound = {
