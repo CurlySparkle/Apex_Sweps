@@ -42,6 +42,8 @@ function ENT:Think()
 
         self:EmitSound("weapons/grenades/arcstar/explo_star_close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 125, 100, 1, CHAN_AUTO)
 
+        local hit = false
+
         for _, ent in pairs(ents.FindInSphere(self:GetPos(), 300)) do
             if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() then continue end
             local distSqr = ent:GetPos():DistToSqr(self:GetPos())
@@ -61,6 +63,12 @@ function ENT:Think()
             if ent:IsPlayer() then
                 ArcCW.Apex.ArcStarSlow(ent, 5 * f)
             end
+            if not hit and IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (ent:IsPlayer() or ent:IsNPC() or ent:IsNextBot()) then
+                hit = true
+                net.Start("arccw_apex_hit")
+                    net.WriteBool(false)
+                net.Send(self:GetOwner())
+            end
         end
 
         self:Remove()
@@ -77,6 +85,13 @@ function ENT:PhysicsCollide(data, physobj)
     dmginfo:SetAttacker(self:GetOwner())
     dmginfo:SetInflictor(self)
     tgt:TakeDamageInfo(dmginfo)
+
+    if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot()) then
+        net.Start("arccw_apex_hit")
+            net.WriteBool(false)
+        net.Send(self:GetOwner())
+    end
+
     local angles = self:GetAngles()
 
     self:EmitSound("weapons/grenades/arcstar/Wpn_ArcStar_3P_Warning_StaticWindup_1ch_01.wav")
