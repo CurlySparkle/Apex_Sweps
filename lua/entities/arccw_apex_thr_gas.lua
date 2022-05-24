@@ -76,8 +76,9 @@ function ENT:Think()
             if self.NextDamageTick > CurTime() then return end
             local damaged = {}
             local toclear = table.Copy(self.Damaged)
+            local z = self:GetPos().z
             for k, v in pairs(ents.FindInSphere(self:GetPos(), 512)) do
-                if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() then
+                if math.abs(z - v:GetPos().z) <= 192 and not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() then
                     damaged[v] = true
                     if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
                 end
@@ -105,6 +106,7 @@ function ENT:Think()
                 self.Damaged[e] = 0
             end
             self.NextDamageTick = CurTime() + 1
+            --debugoverlay.Sphere(self:GetPos(), 512, 1.5, Color(175, 175, 100, 200), false)
         else
             local emitter = ParticleEmitter(self:GetPos())
 
@@ -113,41 +115,46 @@ function ENT:Think()
 
             if not self.Bursted then
                 self.Bursted = true
-                for i = 1, 50 do
-                    local fire = emitter:Add("particles/smokey", self:GetPos())
-                    local v = VectorRand() * 1024
-                    v.z = 128
+                for i = 1, 75 do
+                    local fire = emitter:Add("particle/smokestack", self:GetPos())
+                    local v = VectorRand()
+                    v.z = 0
+                    v = v:GetNormalized() * math.Rand(-1024, 1024)
+                    v.z = math.Rand(96, 128)
                     fire:SetVelocity(v)
-                    fire:SetGravity(Vector(math.Rand(-100, 100), math.Rand(-100, 100), -5))
-                    fire:SetDieTime(math.Rand(7, 10))
+                    fire:SetGravity(Vector(0, 0, 0))
+                    fire:SetDieTime(math.Rand(10, 15))
                     fire:SetStartAlpha(100)
                     fire:SetEndAlpha(0)
                     fire:SetStartSize(100)
                     fire:SetEndSize(250)
                     fire:SetRoll(math.Rand(-180, 180))
-                    fire:SetRollDelta(math.Rand(-0.2, 0.2))
+                    fire:SetRollDelta(math.Rand(-0.5, 0.5))
                     fire:SetColor(175, 175, 100)
-                    fire:SetAirResistance(128)
+                    fire:SetAirResistance(96)
                     fire:SetPos(self:GetPos())
                     fire:SetLighting(false)
                     fire:SetCollide(true)
                     fire:SetBounce(0.95)
                 end
             end
-            if self.Ticks % 5 == 0 then
-                local fire = emitter:Add("particles/smokey", self:GetPos())
-                fire:SetVelocity(VectorRand() * 128 + Vector(0, 0, 96))
-                fire:SetGravity(Vector(math.Rand(-100, 100), math.Rand(-100, 100), -5))
-                fire:SetDieTime(math.Rand(3, 6))
+            if self.Ticks % 3 == 0 then
+                local fire = emitter:Add("particle/smokestack", self:GetPos())
+                local v = VectorRand()
+                v.z = 0
+                v = v:GetNormalized() * math.Rand(-512, 512)
+                fire:SetVelocity(VectorRand() * 25)
+                fire:SetGravity(Vector(0, 0, 0))
+                fire:SetDieTime(math.Rand(6, 9))
                 fire:SetStartAlpha(100)
                 fire:SetEndAlpha(0)
-                fire:SetStartSize(75)
-                fire:SetEndSize(250)
+                fire:SetStartSize(100)
+                fire:SetEndSize(300)
                 fire:SetRoll(math.Rand(-180, 180))
                 fire:SetRollDelta(math.Rand(-0.2, 0.2))
                 fire:SetColor(175, 175, 100)
-                fire:SetAirResistance(128)
-                fire:SetPos(self:GetPos() + Vector(math.Rand(-256, 256), math.Rand(-256, 256), 0))
+                fire:SetAirResistance(32)
+                fire:SetPos(self:GetPos() + v)
                 fire:SetLighting(false)
                 fire:SetCollide(true)
                 fire:SetBounce(0.95)
@@ -213,10 +220,11 @@ function ENT:Detonate()
     self.Armed = true
 
     timer.Simple(1, function()
-        if IsValid(self) then self:SetArmed(true) end
-        self:EmitSound("weapons/grenades/nox/GasGrenade_Explo_Close_2ch_v1_0" .. math.random(1,3) .. ".wav", 120, 100, 1, CHAN_AUTO)
+        if not IsValid(self) then return end
+        self:SetArmed(true)
+        self:EmitSound("weapons/grenades/nox/GasGrenade_Explo_Close_2ch_v1_0" .. math.random(1,3) .. ".wav", 100, 100, 1, CHAN_AUTO)
         self.FireSound = CreateSound(self, "ArcCW_APEX.Nox.Gas_Loop_close")
-        self.FireSound:Play()
+        self.FireSound:PlayEx(1, 95)
     end)
 
     self:SetMoveType(MOVETYPE_NONE)
