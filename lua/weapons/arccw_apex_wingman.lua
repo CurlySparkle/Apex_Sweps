@@ -47,8 +47,8 @@ SWEP.Apex_Balance = {
         DamageMin = 35,
     },
     [2] = {
-        Damage = 30, -- Roughly equivalent to TTT deagle but fires faster (156/100 rpm)
-        DamageMin = 30,
+        Damage = 25, -- Roughly equivalent to TTT deagle but fires faster (156/100 rpm)
+        DamageMin = 25,
     },
 }
 
@@ -81,7 +81,7 @@ SWEP.NPCWeight = 100
 
 SWEP.AccuracyMOA = 5 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 50
+SWEP.MoveDispersion = 100
 
 SWEP.Primary.Ammo = "apex_heavy" -- what ammo type the gun uses
 

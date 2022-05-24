@@ -60,8 +60,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 16,
-        DamageMin = 16,
+        Damage = 15,
+        DamageMin = 15,
     },
 }
 

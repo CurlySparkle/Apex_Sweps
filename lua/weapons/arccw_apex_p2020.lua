@@ -46,8 +46,8 @@ SWEP.Apex_Balance = {
         DamageMin = 12,
     },
     [2] = {
-        Damage = 12, -- similar to TTT pistol but fires much faster. don't want to mess with rpm as that makes the gun feel less authentic
-        DamageMin = 12,
+        Damage = 10, -- similar to TTT pistol but fires much faster. don't want to mess with rpm as that makes the gun feel less authentic
+        DamageMin = 10,
     },
 }
 

@@ -54,10 +54,10 @@ SWEP.Apex_Balance = {
         DamageMin = 36,
     },
     [2] = {
-        Damage = 25,
-        DamageMin = 25,
+        Damage = 20,
+        DamageMin = 20,
         BodyDamageMults = {
-            [HITGROUP_HEAD] = 2,
+            [HITGROUP_HEAD] = 2.5,
             [HITGROUP_CHEST] = 1,
             [HITGROUP_STOMACH] = 1,
             [HITGROUP_LEFTARM] = 1,
@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 0.5
-SWEP.HipDispersion = 450 -- inaccuracy added by hip firing.
+SWEP.HipDispersion = 650 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 75
 SWEP.JumpDispersion = 300
 

@@ -66,8 +66,7 @@ SWEP.BodyDamageMults = {
 
 SWEP.Apex_Balance = {
     [1] = {
-        -- Arcwc Settings
-        Damage = 15,
+        Damage = 20,
         DamageMin = 10,
     },
     [2] = {

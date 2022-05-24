@@ -69,8 +69,8 @@ SWEP.Apex_Balance = {
         DamageMin = 12,
     },
     [2] = {
-        Damage = 10, -- roughly equivalent to TTT glock
-        DamageMin = 10,
+        Damage = 9, -- roughly equivalent to TTT glock
+        DamageMin = 9,
     },
 }
 
@@ -94,7 +94,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 15
-SWEP.HipDispersion = 120 -- inaccuracy added by hip firing.
+SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 100
 
 SWEP.Primary.Ammo = "apex_light"

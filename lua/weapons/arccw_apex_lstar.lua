@@ -110,7 +110,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 15
-SWEP.HipDispersion = 200
+SWEP.HipDispersion = 300
 SWEP.MoveDispersion = 50
 SWEP.JumpDispersion = 0
 
@@ -338,10 +338,12 @@ SWEP.TTTWeaponType = "weapon_zm_sledge"
 SWEP.TTTWeight = 100
 
 SWEP.Hook_Think = function(wep)
+    if (game.SinglePlayer() and CLIENT) or (not game.SinglePlayer() and SERVER) then return end
     local heat = wep:GetHeat()
     local alertheat = (80 * wep.HeatCapacity) / 100
 
-    if heat >= alertheat and heat < wep:GetMaxHeat() then
+    if IsValid(wep:GetOwner()) and wep:GetOwner():GetActiveWeapon() == wep
+            and heat >= alertheat and heat < wep:GetMaxHeat() then
         if wep.CreatedHeatSound == false then
             wep.HeatAlarm = CreateSound(wep,"weapons/lstar/Wpn_LSTAR_1p_OverheatAlarm_2ch_v1_01.wav")
             wep.HeatAlarm:Play()

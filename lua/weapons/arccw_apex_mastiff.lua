@@ -42,8 +42,8 @@ SWEP.Apex_Balance = {
         DamageMin = 14,
     },
     [2] = {
-        Damage = 9, -- equivalent to TTT shotgun but slightly better since you can line up headshots
-        DamageMin = 9,
+        Damage = 8, -- equivalent to TTT shotgun but slightly better since you can line up headshots
+        DamageMin = 8,
     },
 }
 

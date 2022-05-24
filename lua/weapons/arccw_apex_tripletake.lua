@@ -57,8 +57,8 @@ SWEP.Apex_Balance = {
         DamageMin = 20,
     },
     [2] = {
-        Damage = 19, -- honestly no idea how well this will feel. 2 shot kill on chest (108)
-        DamageMin = 19
+        Damage = 17,
+        DamageMin = 17
     },
 }
 SWEP.BodyDamageMults = {
@@ -124,10 +124,10 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 0
-SWEP.HipDispersion = 200
+SWEP.AccuracyMOA = 1
+SWEP.HipDispersion = 400
 SWEP.MoveDispersion = 50
-SWEP.JumpDispersion = 150
+SWEP.JumpDispersion = 300
 
 SWEP.Primary.Ammo = "apex_energy"
 SWEP.AmmoPerShot = 3
