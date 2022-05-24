@@ -1,0 +1,7 @@
+"SpriteCard"
+{
+"$baseTexture" "particle/electric1"
+"$translucent" 1
+"$additive" 1
+//"$overbrightfactor" 1
+}

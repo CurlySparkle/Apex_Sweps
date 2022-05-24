@@ -1,15 +1,6 @@
 game.AddParticles( "particles/apex_fx.pcf" )
 game.AddParticles( "particles/muzzleflashes_new.pcf" )
 
---MMOD
--- PrecacheParticleSystem("hl2mmod_generic_tracer")
--- PrecacheParticleSystem("hl2mmod_tracer_ar2")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_357")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_ar2")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_pistol")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_shotgun")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_smg1")
-
 --NEW MUZZLES
 PrecacheParticleSystem("muzzle_autorifles_l4d")
 PrecacheParticleSystem("muzzle_machinegun_l4d")
@@ -53,7 +44,10 @@ PrecacheParticleSystem("tfa_apex_energy_tracer_smg")
 PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
 PrecacheParticleSystem("tfa_apex_tracer_havoc")
 PrecacheParticleSystem("tfa_apex_lstar_projectile")
-PrecacheParticleSystem("tfa_apex_lstar_explode_core")
 PrecacheParticleSystem("tfa_apex_chargerifle_beam")
 PrecacheParticleSystem("tfa_apex_chargerifle_beam_cont")
 PrecacheParticleSystem("tfa_apex_chargerifle_maxbeam")
+
+-- MISC
+PrecacheParticleSystem("tfa_apex_lstar_explode_core")
+PrecacheParticleSystem("tfa_apex_arcstar_explode")
