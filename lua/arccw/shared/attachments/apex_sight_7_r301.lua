@@ -20,10 +20,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 7.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.2,
-        ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ZoomLevels = 1,
-        ZoomSound = "items/player_drop_loot_attachment_2ch_v1_5.wav",
+        Magnification = 1.15,
         Thermal = true,
         ThermalHighlightColor = Color(255, 50, 50),
         ThermalFullColor = true,
@@ -41,9 +38,7 @@ att.Colorable = false
 
 att.HolosightBlackbox = false
 
-att.HolosightMagnification = 1
-att.HolosightMagnificationMin = 1
-att.HolosightMagnificationMax = 1
+att.HolosightMagnification = 1.1
 
 att.Mult_SightTime = 0.95
 att.Mult_Sway = 0.5
