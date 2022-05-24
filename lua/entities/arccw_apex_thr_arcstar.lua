@@ -9,6 +9,18 @@ ENT.Model = "models/weapons/w_apex_nade_arcstar_thrown.mdl"
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Armed = false
 
+ENT.ImpactDamage = {
+    [0] = 10,
+    [1] = 25,
+    [2] = 25,
+}
+
+ENT.BlastDamage = {
+    [0] = 70,
+    [1] = 80,
+    [2] = 50,
+}
+
 function ENT:Initialize()
     if SERVER then
         self:SetModel(self.Model)
@@ -43,6 +55,7 @@ function ENT:Think()
         self:EmitSound("weapons/grenades/arcstar/explo_star_close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 125, 100, 1, CHAN_AUTO)
 
         local hit = false
+        local blastdmg = self.BlastDamage[ArcCW.Apex.GetBalanceMode()]
 
         for _, ent in pairs(ents.FindInSphere(self:GetPos(), 300)) do
             if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() then continue end
@@ -55,7 +68,7 @@ function ENT:Think()
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_SHOCK)
             dmginfo:SetAttacker(self:GetOwner())
-            dmginfo:SetDamage(70 * f)
+            dmginfo:SetDamage(blastdmg * f)
             dmginfo:SetDamageForce((ent:WorldSpaceCenter() - self:GetPos()):GetNormalized() * 9001 * f)
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
@@ -78,17 +91,30 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if self.Stuck then return end
     self.Stuck = true
+
     local tgt = data.HitEntity
+
+    local f = {self}
+    table.Add(f, tgt:GetChildren())
+
+    local tr = util.TraceLine({
+        start = data.HitPos - data.OurOldVelocity * 0.5,
+        endpos = data.HitPos + data.OurOldVelocity,
+        filter = f,
+        mask = MASK_SHOT
+    })
+    local hs = tr.Entity == tgt and tr.HitGroup == HITGROUP_HEAD
     local dmginfo = DamageInfo()
-    dmginfo:SetDamageType(DMG_NEVERGIB)
-    dmginfo:SetDamage(10)
+    dmginfo:SetDamageType(DMG_NEVERGIB + DMG_CRUSH)
+    dmginfo:SetDamage(self.ImpactDamage[ArcCW.Apex.GetBalanceMode()])
+    if hs then dmginfo:ScaleDamage(2) end
     dmginfo:SetAttacker(self:GetOwner())
     dmginfo:SetInflictor(self)
     tgt:TakeDamageInfo(dmginfo)
 
     if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot()) then
         net.Start("arccw_apex_hit")
-            net.WriteBool(false)
+            net.WriteBool(hs)
         net.Send(self:GetOwner())
     end
 
@@ -103,35 +129,32 @@ function ENT:PhysicsCollide(data, physobj)
             self:GetPhysicsObject():Sleep()
 
             if tgt:IsWorld() or IsValid(tgt) then
-                self:SetSolid(SOLID_NONE)
-                self:SetMoveType(MOVETYPE_NONE)
-                self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-
-                local f = {self}
-                table.Add(f, tgt:GetChildren())
-
-                local tr = util.TraceLine({
+                tr = util.TraceLine({
                     start = data.HitPos - data.OurOldVelocity * 0.5,
                     endpos = data.HitPos + data.OurOldVelocity,
                     filter = f,
                     mask = MASK_SHOT
                 })
-
-                local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())
-                local matrix = tgt:GetBoneMatrix(bone or 0)
-                if tr.Entity == tgt and bone and matrix then
-                    local pos = matrix:GetTranslation()
-                    local ang = matrix:GetAngles()
-                    self:FollowBone(tgt, bone)
-                    local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
-                    self:SetLocalPos(n_pos)
-                    self:SetLocalAngles(n_ang)
-                    debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
-                elseif not tgt:IsWorld() then
-                    self:SetParent(tgt)
-                    self:GetParent():DontDeleteOnRemove(self)
-                else
-                    self.AttachToWorld = true
+                local ent = tr.Entity
+                if IsValid(ent) then
+                    local bone = ent:TranslatePhysBoneToBone(tr.PhysicsBone) or ent:GetHitBoxBone(tr.HitBox, ent:GetHitboxSet())
+                    local matrix = tgt:GetBoneMatrix(bone or 0)
+                    self:SetSolid(SOLID_NONE)
+                    self:SetMoveType(MOVETYPE_NONE)
+                    self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+                    if ent == tgt and bone and matrix then
+                        local pos = matrix:GetTranslation()
+                        local ang = matrix:GetAngles()
+                        self:FollowBone(tgt, bone)
+                        local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
+                        self:SetLocalPos(n_pos)
+                        self:SetLocalAngles(n_ang)
+                    elseif not tgt:IsWorld() then
+                        self:SetParent(tgt)
+                        self:GetParent():DontDeleteOnRemove(self)
+                    else
+                        self.AttachToWorld = true
+                    end
                 end
             end
         end)
