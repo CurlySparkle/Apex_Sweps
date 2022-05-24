@@ -48,6 +48,7 @@ function ENT:Initialize()
 
         self.SpawnTime = CurTime()
         self.InitialDir = self.Owner:GetAngles():Right()
+        --self.Trail = util.SpriteTrail(self, 0, Color(150, 150, 150, 150), false, 6, 12, 0.5, 9, "trails/smoke")
     end
 end
 
@@ -63,7 +64,35 @@ function ENT:OnRemove()
 end
 
 function ENT:Think()
-    if CLIENT then return end
+    if CLIENT and not self:GetNoDraw() then
+        local emitter = ParticleEmitter(self:GetPos() + VectorRand() * 72)
+        if not self:IsValid() or self:WaterLevel() > 2 then return end
+        if not IsValid(emitter) then return end
+
+        self.NextFlareTime = self.NextFlareTime or CurTime()
+
+        if self.NextFlareTime <= CurTime() then
+            self.NextFlareTime = CurTime() + 0.025 / math.Clamp(self:GetVelocity():Length() / 1500, 1, 3)
+            local fire = emitter:Add("particle/smokestack", self:GetPos())
+            fire:SetVelocity(VectorRand() * 25)
+            fire:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), -50))
+            fire:SetDieTime(math.Rand(1, 2))
+            fire:SetStartAlpha(50)
+            fire:SetEndAlpha(0)
+            fire:SetStartSize(10)
+            fire:SetEndSize(50)
+            fire:SetRoll(math.Rand(-180, 180))
+            fire:SetRollDelta(math.Rand(-0.2, 0.2))
+            fire:SetColor(175, 175, 175)
+            fire:SetAirResistance(50)
+            fire:SetPos(self:GetPos())
+            fire:SetLighting(false)
+            fire:SetCollide(true)
+            fire:SetBounce(0.8)
+        end
+        emitter:Finish()
+        return
+    end
     if (self.NextDamageTick or 0) > CurTime() then return end
     local damaged = {}
     local toclear = table.Copy(self.Damaged)
@@ -129,12 +158,8 @@ end
 
 function ENT:Detonate(hitentity)
     if not self:IsValid() or self.Armed then return end
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 100)
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Dist_2ch_v1_0" .. math.random(1, 3) .. ".wav", 140, 100, 0.5)
+
     self.Armed = true
-    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
-    self.FireSound:PlayEx(1, 95)
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Dist_2ch_v1_0" .. math.random(1, 6) .. ".wav", 140, 100, 0.5)
 
     self.ArcCW_Killable = false
 
@@ -148,7 +173,21 @@ function ENT:Detonate(hitentity)
     eff:SetMagnitude(2)
     eff:SetScale(1)
     eff:SetRadius(4)
-    util.Effect("Sparks", eff)
+
+    if self:WaterLevel() >= 2 then
+        util.Effect("WaterSurfaceExplosion", eff)
+        self:Remove()
+        return
+    else
+        util.Effect("Sparks", eff)
+    end
+
+    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
+    self.FireSound:PlayEx(1, 95)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Dist_2ch_v1_0" .. math.random(1, 6) .. ".wav", 140, 100, 0.5)
+
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 100)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Dist_2ch_v1_0" .. math.random(1, 3) .. ".wav", 140, 100, 0.5)
 
     local max_len = 250
 
