@@ -43,6 +43,7 @@ function ENT:Initialize()
 
         self.SpawnTime = CurTime()
         self.Trail = util.SpriteTrail(self, 0, color_white, false, 2, 0, 0.5, 1, "effects/beam001_white")
+        self:SetPhysicsAttacker(self:GetOwner(), 10)
     end
 end
 
@@ -61,15 +62,15 @@ function ENT:Think()
         --effectdata:SetRadius(32)
         --effectdata:SetEntity(self)
         --util.Effect("HelicopterMegaBomb", effectdata)
-		
-		local explode = ents.Create( "info_particle_system" )
-		explode:SetKeyValue( "effect_name", "tfa_apex_arcstar_explode" )
-		explode:SetOwner( self.Owner )
-		explode:SetPos( self:GetPos() )
-		explode:Spawn()
-		explode:Activate()
-		explode:Fire( "start", "", 0 )
-		explode:Fire( "kill", "", 30 )
+
+        local explode = ents.Create( "info_particle_system" )
+        explode:SetKeyValue( "effect_name", "tfa_apex_arcstar_explode" )
+        explode:SetOwner( self.Owner )
+        explode:SetPos( self:GetPos() )
+        explode:Spawn()
+        explode:Activate()
+        explode:Fire( "start", "", 0 )
+        explode:Fire( "kill", "", 30 )
 
         self:EmitSound("weapons/grenades/arcstar/explo_star_close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 125, 100, 1, CHAN_AUTO)
 
@@ -80,8 +81,8 @@ function ENT:Think()
             if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent) then continue end
             local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
-            if distSqr > 9216 then -- 96 * 96
-                f = Lerp((distSqr - 9216) / (90000 - 9216), 1, 0.25)
+            if distSqr > 4900 then -- 70 * 70
+                f = Lerp((distSqr - 4900) / (90000 - 4900), 1, 0.25)
             end
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_SHOCK)

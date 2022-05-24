@@ -17,6 +17,12 @@ ENT.ArmTime = 0
 ENT.ImpactFuse = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
+ENT.BlastDamage = {
+    [0] = 100,
+    [1] = 300,
+    [2] = 100,
+}
+
 function ENT:Initialize()
     if SERVER then
         self:SetModel(self.Model)
@@ -31,8 +37,8 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-        self.Trail = util.SpriteTrail(self, 0, Color(255, 0, 0, 200), false, 4, 0, 1, 2, "trails/plasma")
-
+        self.Trail = util.SpriteTrail(self, 0, Color(255, 0, 0, 250), false, 4, 0, 1, 4, "trails/plasma")
+        self:SetPhysicsAttacker(self:GetOwner(), 10)
     end
 end
 
@@ -44,8 +50,19 @@ function ENT:PhysicsCollide(data, physobj)
             self:EmitSound(Sound("weapons/grenades/grenade_bounce_2ch_v2_0" .. math.random(1,3) .. ".wav"))
         end
 
-        if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then
-            self:Detonate()
+        if IsValid(data.HitEntity) and not data.HitEntity:IsWorld() and data.Speed > 50 then
+            local dmginfo = DamageInfo()
+            dmginfo:SetDamageType(DMG_NEVERGIB + DMG_CRUSH)
+            dmginfo:SetDamage(10)
+            dmginfo:SetAttacker(self:GetOwner())
+            dmginfo:SetInflictor(self)
+            dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
+            data.HitEntity:TakeDamageInfo(dmginfo)
+            if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() then
+                net.Start("arccw_apex_hit")
+                    net.WriteBool(false)
+                net.Send(self:GetOwner())
+            end
         end
     end
 end
@@ -58,7 +75,6 @@ end
 
 function ENT:Detonate()
     if SERVER then
-        if !self:IsValid() then return end
         local effectdata = EffectData()
             effectdata:SetOrigin( self:GetPos() )
 
@@ -66,14 +82,14 @@ function ENT:Detonate()
             util.Effect("WaterSurfaceExplosion", effectdata)
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
-			local explode = ents.Create( "info_particle_system" )
-			explode:SetKeyValue( "effect_name", "tfa_apex_frag_explode" )
-			explode:SetOwner( self.Owner )
-			explode:SetPos( self:GetPos() )
-			explode:Spawn()
-			explode:Activate()
-			explode:Fire( "start", "", 0 )
-			explode:Fire( "kill", "", 30 )
+            local explode = ents.Create( "info_particle_system" )
+            explode:SetKeyValue( "effect_name", "tfa_apex_frag_explode" )
+            explode:SetOwner( self.Owner )
+            explode:SetPos( self:GetPos() )
+            explode:Spawn()
+            explode:Activate()
+            explode:Fire( "start", "", 0 )
+            explode:Fire( "kill", "", 30 )
             --util.Effect("Explosion", effectdata)
             --util.Effect("hl2mmod_explosion_grenade", effectdata)
             self:EmitSound("weapons/grenades/explode" .. math.random(1,3) .. ".wav", 120, 100, 1, CHAN_AUTO)
@@ -84,10 +100,35 @@ function ENT:Detonate()
         if self.Owner:IsValid() then
             attacker = self.Owner
         end
-        util.BlastDamage(self, attacker, self:GetPos(), 400, 150)
 
+        local hit = false
+        local blastdmg = self.BlastDamage[ArcCW.Apex.GetBalanceMode()]
+        local pos = self:GetPos()
+
+        for _, ent in pairs(ents.FindInSphere(pos, 350)) do
+            if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent) then continue end
+            local distSqr = ent:GetPos():DistToSqr(pos)
+            local f = 1
+            if distSqr > 9216 then -- 96 * 96
+                f = Lerp((distSqr - 9216) / (122500 - 9216), 1, 0.25)
+            end
+            local dmginfo = DamageInfo()
+            dmginfo:SetDamageType(DMG_BLAST)
+            dmginfo:SetAttacker(attacker)
+            dmginfo:SetDamage(blastdmg * f)
+            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 9001 * f)
+            dmginfo:SetInflictor(self)
+            ent:TakeDamageInfo(dmginfo)
+
+            if not hit and IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (ent:IsPlayer() or ent:IsNPC() or ent:IsNextBot()) then
+                hit = true
+                net.Start("arccw_apex_hit")
+                    net.WriteBool(false)
+                net.Send(self:GetOwner())
+            end
+        end
         self:Remove()
-
+        util.Decal("Scorch", pos, pos - Vector(0, 0, 16))
     end
 end
 
