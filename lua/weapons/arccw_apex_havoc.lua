@@ -60,8 +60,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 15,
-        DamageMin = 15,
+        Damage = 16,
+        DamageMin = 16,
     },
 }
 
@@ -79,8 +79,8 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 24
 SWEP.Primary.Ammo = "apex_energy"
 
-SWEP.Recoil = 0.7
-SWEP.RecoilSide = 0.575
+SWEP.Recoil = 0.55
+SWEP.RecoilSide = 0.55
 SWEP.RecoilRise = 0.75
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 1.5
@@ -96,8 +96,8 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 4
-SWEP.HipDispersion = 250 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 75
+SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
+SWEP.MoveDispersion = 150
 SWEP.JumpDispersion = 300
 
 SWEP.SightedSpeedMult = 0.45

@@ -95,7 +95,7 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.AccuracyMOA = 5
+SWEP.AccuracyMOA = 6
 SWEP.HipDispersion = 600
 SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300

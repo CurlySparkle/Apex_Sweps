@@ -101,9 +101,9 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
     return delay / Lerp(wep:GetBurstCount() / 15, 1, 3)
 end
 
-SWEP.AccuracyMOA = 3
+SWEP.AccuracyMOA = 5
 SWEP.HipDispersion = 525 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 155
+SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300
 
 SWEP.SightedSpeedMult = 0.4

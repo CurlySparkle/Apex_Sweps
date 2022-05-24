@@ -55,6 +55,7 @@ SWEP.Range = 200
 SWEP.Penetration = 30
 SWEP.PhysBulletMuzzleVelocity = 31000 * ArcCW.HUToM
 
+SWEP.ChargeDamageMult = 1.25
 
 SWEP.Apex_Balance = {
     [1] = {
@@ -62,8 +63,9 @@ SWEP.Apex_Balance = {
         DamageMin = 40,
     },
     [2] = {
-        Damage = 55, -- roughly equivalent to TTT scout
-        DamageMin = 55
+        Damage = 60, -- roughly equivalent to TTT scout
+        DamageMin = 60,
+        ChargeDamageMult = 1.6, -- 96 per shot
     },
 }
 
@@ -106,8 +108,8 @@ SWEP.Firemodes = {
     }}
 
 SWEP.AccuracyMOA = 0.2
-SWEP.HipDispersion = 600
-SWEP.MoveDispersion = 50
+SWEP.HipDispersion = 800
+SWEP.MoveDispersion = 75
 SWEP.JumpDispersion = 300
 
 SWEP.SightedSpeedMult = 0.35
@@ -375,13 +377,13 @@ end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
     if wep:GetHeat() > 0 then
-        data.mult = data.mult * 1.25
+        data.mult = data.mult * wep.ChargeDamageMult
     end
 end
 
 SWEP.M_Hook_Mult_DamageMin = function(wep, data)
     if wep:GetHeat() > 0 then
-        data.mult = data.mult * 1.25
+        data.mult = data.mult * wep.ChargeDamageMult
     end
 end
 

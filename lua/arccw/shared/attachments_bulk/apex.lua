@@ -352,19 +352,19 @@ local stock_types = {
             [1] = {
                 [1] = {
                     Mult_MoveDispersion = 0.7,
-                    Mult_RecoilSide = 0.8,
+                    Mult_HipDispersion = 0.9,
                     Mult_SightTime = 0.85,
                     Mult_Sway = 0.65,
                 },
                 [2] = {
                     Mult_MoveDispersion = 0.6,
-                    Mult_RecoilSide = 0.7,
+                    Mult_HipDispersion = 0.885,
                     Mult_SightTime = 0.8,
                     Mult_Sway = 0.5,
                 },
                 [3] = {
                     Mult_MoveDispersion = 0.5,
-                    Mult_RecoilSide = 0.6,
+                    Mult_HipDispersion = 0.8,
                     Mult_SightTime = 0.75,
                     Mult_Sway = 0.35,
                 }
@@ -379,19 +379,19 @@ local stock_types = {
             [1] = {
                 [1] = {
                     Mult_SightedSpeedMult = 1.15,
-                    Mult_HipDispersion = 0.7,
+                    Mult_HipDispersion = 0.8,
                     Mult_SightTime = 0.9,
                     Mult_Sway = 0.85,
                 },
                 [2] = {
                     Mult_SightedSpeedMult = 1.2,
-                    Mult_HipDispersion = 0.6,
+                    Mult_HipDispersion = 0.7,
                     Mult_SightTime = 0.85,
                     Mult_Sway = 0.5,
                 },
                 [3] = {
                     Mult_SightedSpeedMult = 1.25,
-                    Mult_HipDispersion = 0.5,
+                    Mult_HipDispersion = 0.6,
                     Mult_SightTime = 0.8,
                     Mult_Sway = 0.2,
                 }

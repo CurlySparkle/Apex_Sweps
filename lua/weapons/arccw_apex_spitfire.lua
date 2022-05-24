@@ -100,8 +100,8 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 3
-SWEP.HipDispersion = 400 -- inaccuracy added by hip firing.
+SWEP.AccuracyMOA = 9
+SWEP.HipDispersion = 600 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 SWEP.JumpDispersion = 300
 

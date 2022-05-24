@@ -80,7 +80,7 @@ SWEP.Primary.ClipSize = 20 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.225
-SWEP.RecoilSide = 0.1
+SWEP.RecoilSide = 0.225
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.1
@@ -92,12 +92,12 @@ SWEP.Firemodes = {
     {
         Mode = -5,
         RunawayBurst = true,
-        PostBurstDelay = 0.25
+        PostBurstDelay = 0.33
     }}
 
-SWEP.AccuracyMOA = 1.15 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
-SWEP.HipDispersion = 175 -- inaccuracy added by hip firing.
-SWEP.MoveDispersion = 75
+SWEP.AccuracyMOA = 3
+SWEP.HipDispersion = 300
+SWEP.MoveDispersion = 150
 SWEP.JumpDispersion = 300
 
 SWEP.SightedSpeedMult = 0.75
