@@ -75,6 +75,7 @@ function ENT:PhysicsCollide(data, physobj)
             start = self:GetPos(),
             endpos = self:GetPos() - Vector(0, 0, 16),
             filter = self,
+            mask = MASK_SOLID,
         })
         if tr.Hit then
             self:Detonate()
