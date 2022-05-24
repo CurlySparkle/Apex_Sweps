@@ -340,7 +340,7 @@ SWEP.Animations = {
     },
     ["trigger"] = {
         Source = "fire_windup_full",
-        MinProgress = 0.05,
+        MinProgress = 0.04,
         SoundTable = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
             {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 17 / 30},
@@ -348,7 +348,7 @@ SWEP.Animations = {
     },
     ["trigger_sight"] = {
         Source = "iron_fire_windup_full",
-        MinProgress = 0.05,
+        MinProgress = 0.04,
         SoundTable = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
             {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 17 / 30},
@@ -369,12 +369,12 @@ SWEP.Animations = {
     ["untrigger_sight"] = {
         Source = "iron_fire_winddown",
     },
-    -- ["idle_trigger"] = {
-        -- Source = "fire_windup_loop"
-    -- },
-    -- ["idle_sight_trigger"] = {
-        -- Source = "iron_fire_windup_loop"
-    -- },
+    ["idle_trigger"] = {
+        Source = "fire_windup_loop"
+    },
+    ["idle_sight_trigger"] = {
+        Source = "iron_fire_windup_loop"
+    },
     ["fire"] = {
         Source = "fire",
     },
@@ -423,7 +423,7 @@ SWEP.TriggerCharge = true
 
 local function chargefraction(wep, a, b)
     if not wep:GetBuff_Override("Override_TriggerDelay", wep.TriggerDelay) then return a or 0 end
-    return Lerp((CurTime() - wep.LastTriggerTime - 0.05) / 0.5, a or 0, b or 1)
+    return Lerp((CurTime() - wep.LastTriggerTime) / 0.56, a or 0, b or 1)
 end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
@@ -438,7 +438,7 @@ end
 
 SWEP.Hook_SelectFireAnimation = function(wep, anim)
     if wep:GetCurrentFiremode().Mode == 2 and wep.Animations[anim .. "_rapid"] then return anim .. "_rapid" end
-    local i = math.Round(chargefraction(wep, 1, 5))
+    local i = math.floor(chargefraction(wep, 1, 5))
     if wep.Animations[anim .. "_" .. i] then return anim .. "_" .. i end
 end
 
