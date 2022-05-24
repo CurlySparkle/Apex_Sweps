@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 ENT.Type = "anim"
-ENT.Base = "base_entity"
+ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Arc Star"
 ENT.Spawnable = false
 ENT.Model = "models/weapons/w_apex_nade_arcstar_thrown.mdl"
@@ -64,13 +64,12 @@ function ENT:Think()
         local blastdmg = self.BlastDamage[ArcCW.Apex.GetBalanceMode()]
 
         for _, ent in pairs(ents.FindInSphere(pos, 300)) do
-            if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() then continue end
+            if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent) then continue end
             local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
             if distSqr > 9216 then -- 96 * 96
                 f = Lerp((distSqr - 9216) / (90000 - 9216), 1, 0.25)
             end
-
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_SHOCK)
             dmginfo:SetAttacker(self:GetOwner())
@@ -132,6 +131,7 @@ function ENT:PhysicsCollide(data, physobj)
 
     local angles = self:GetAngles()
 
+    self:EmitSound("weapons/grenades/arcstar/Phys_Imp_GrenadeArc_Flesh_3p_1ch_v1_0" .. math.random(1, 3) .. ".wav", 80)
     self:EmitSound("weapons/grenades/arcstar/Wpn_ArcStar_3P_Warning_StaticWindup_1ch_01.wav")
 
     if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
@@ -174,12 +174,4 @@ function ENT:PhysicsCollide(data, physobj)
     end
 
     self.DetonateTime = CurTime() + 2.5
-end
-
-function ENT:DrawTranslucent()
-    self:DrawModel()
-end
-
-function ENT:Draw()
-    self:DrawModel()
 end

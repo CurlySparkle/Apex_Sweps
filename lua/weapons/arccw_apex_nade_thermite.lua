@@ -37,12 +37,6 @@ SWEP.Firemodes = {
 SWEP.FuseTime = 3.5
 SWEP.Primary.Ammo = "grenade"
 
-SWEP.Throwing = true
-SWEP.Singleton = false
-
-SWEP.DrawCrosshair = false
-SWEP.ShootWhileSprint = false
-
 SWEP.Primary.ClipSize = 1
 
 SWEP.MuzzleVelocity = 1300
@@ -55,12 +49,6 @@ SWEP.ViewModelFOV = 70
 
 SWEP.MuzzleEffectAttachment = 1
 SWEP.CamAttachment = 3
-
-SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
-SWEP.BarrelOffsetHip = Vector(2, 0, -1)
-SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
-
-SWEP.IronSightStruct = false
 
 SWEP.Attachments = {
 }

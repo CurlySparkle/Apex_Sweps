@@ -1,5 +1,7 @@
+AddCSLuaFile()
+
 ENT.Type = "anim"
-ENT.Base = "base_entity"
+ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Fragnade"
 ENT.Author = ""
 ENT.Information = ""
@@ -11,8 +13,6 @@ ENT.FuseTime = 3.5
 ENT.ArmTime = 0
 ENT.ImpactFuse = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
-
-AddCSLuaFile()
 
 function ENT:Initialize()
     if SERVER then

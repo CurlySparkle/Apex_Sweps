@@ -4,6 +4,7 @@ SWEP.Category = "ArcCW - Apex Legends"
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Apex Nade Base"
+SWEP.DrawCrosshair = true
 
 SWEP.IronSightStruct = false
 
@@ -36,6 +37,12 @@ SWEP.MeleeDamageType = DMG_CLUB
 SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
+
+SWEP.HipDispersion = 150
+SWEP.MoveDispersion = 50
+
+SWEP.Throwing = true
+SWEP.Singleton = false
 
 if ArcCW.Apex.GetBalanceMode() == 2 then
     SWEP.MeleeDamage = 30

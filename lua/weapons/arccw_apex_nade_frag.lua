@@ -36,21 +36,11 @@ SWEP.Firemodes = {
 SWEP.FuseTime = 3.5
 SWEP.Primary.Ammo = "grenade"
 
-SWEP.Throwing = true
-SWEP.Singleton = false
-
-SWEP.DrawCrosshair = false
-SWEP.ShootWhileSprint = false
-
 SWEP.Primary.ClipSize = 1
 
 SWEP.MuzzleVelocity = 1300
 SWEP.MuzzleVelocityAlt = 500
 SWEP.ShootEntity = "arccw_apex_thr_frag"
-
-SWEP.TTTWeaponType = "weapon_ttt_confgrenade"
-SWEP.NPCWeaponType = "weapon_grenade"
-SWEP.NPCWeight = 50
 
 SWEP.PullPinTime = 0.5
 

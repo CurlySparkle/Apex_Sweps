@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 ENT.Type = "anim"
-ENT.Base = "base_entity"
+ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Incendiary Grenade"
 ENT.Spawnable = false
 ENT.Model = "models/weapons/w_apex_nade_thermite_thrown.mdl"
@@ -18,7 +18,7 @@ function ENT:Initialize()
         self:SetModel(self.Model)
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
-        self:PhysicsInit(SOLID_VPHYSICS)
+        self:PhysicsInitSphere(1, "weapon")
         self:DrawShadow(true)
         local phys = self:GetPhysicsObject()
 
@@ -31,39 +31,6 @@ function ENT:Initialize()
         self.InitialDir = self.Owner:GetAngles():Right()
     end
 end
-
---[[]
-function ENT:Think()
-    if not self.Armed or (self.NextDamageTick or 0) > CurTime() then return end
-    for k, v in pairs(ents.FindInSphere(self:GetPos(), 64)) do
-        if v:GetClass() ~= "arccw_apex_thermite" and v:GetClass() ~= "arccw_apex_thr_thermite" then
-            local o = self.Owner
-            local dmg = DamageInfo()
-            dmg:SetDamageType(DMG_BURN)
-            dmg:SetDamage(4)
-            dmg:SetInflictor(self or 0)
-            dmg:SetAttacker(o)
-            dmg:SetDamageForce(Vector(0, 0, 0))
-            v:TakeDamageInfo(dmg)
-            if v:IsNPC() or v:IsPlayer() or v:IsNextBot() then
-                if timer.Exists("thermite_burn_" .. v:EntIndex()) then timer.Remove("thermite_burn_" .. v:EntIndex()) end
-                timer.Create("thermite_burn_" .. v:EntIndex(), 0.5, 5, function()
-                    if not IsValid(v) or (v:IsPlayer() and not v:Alive()) then return end
-                    local d = DamageInfo()
-                    d:SetDamageType(DMG_BURN)
-                    d:SetDamage(5)
-                    d:SetInflictor(self)
-                    d:SetAttacker(o)
-                    d:SetDamageForce(Vector(0, 0, 0))
-                    v:TakeDamageInfo(d)
-                end)
-            end
-        end
-    end
-    self.NextDamageTick = CurTime() + 0.2
-    self.ArcCW_Killable = false
-end
-]]
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
@@ -83,8 +50,8 @@ function ENT:Think()
     local toclear = table.Copy(self.Damaged)
     for i, ent in ipairs(self.Thermites) do
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
-        for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 96)) do
-            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() then -- As it turns out, this will ignite ALL weapons on a player's inventory
+        for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 72)) do
+            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v) then -- As it turns out, this will ignite ALL weapons on a player's inventory
                 damaged[v] = true
                 if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
             end
@@ -179,7 +146,7 @@ function ENT:Detonate(hitentity)
 
     local forward = self.InitialDir:Angle()
 
-    timer.Create("thermite_" .. self:EntIndex(), 0.1, 3, function()
+    timer.Create("thermite_" .. self:EntIndex(), 0.15, 3, function()
         local r = timer.RepsLeft("thermite_" .. self:EntIndex())
         local i = (3 - r) / 3
 
@@ -227,8 +194,4 @@ function ENT:Detonate(hitentity)
         self:Remove()
     end)
 
-end
-
-function ENT:DrawTranslucent()
-    self:DrawModel()
 end

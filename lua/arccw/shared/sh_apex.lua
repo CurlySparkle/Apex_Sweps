@@ -13,6 +13,7 @@ ArcCW.Apex.GrenadeBlacklist = {
     ["arccw_apex_thr_thermite"] = true,
     ["predicted_viewmodel"] = true,
     ["entityflame"] = true,
+    ["worldspawn"] = true,
 }
 
 ArcCW.Apex.BlendSights = function(wep)

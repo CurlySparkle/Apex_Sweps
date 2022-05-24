@@ -1,5 +1,7 @@
+AddCSLuaFile()
+
 ENT.Type = "anim"
-ENT.Base = "base_entity"
+ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Gas Grenade"
 ENT.Author = ""
 ENT.Information = ""
@@ -18,8 +20,6 @@ ENT.Armed = false
 ENT.NextDamageTick = 0
 
 ENT.Ticks = 0
-
-AddCSLuaFile()
 
 sound.Add( {
     name = "ArcCW_APEX.Nox.Gas_Loop_close",
