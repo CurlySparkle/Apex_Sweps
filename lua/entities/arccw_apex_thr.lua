@@ -6,8 +6,8 @@ ENT.PrintName = "Base Apex Throwable"
 ENT.Spawnable = false
 ENT.Model = "models/weapons/w_apex_nade_arcstar_thrown.mdl"
 
-function ENT:CheckLOS(ent)
-    local origin = self:GetPos()
+function ENT:CheckLOS(ent, origin)
+    origin = origin or self:GetPos()
     if IsValid(self:GetParent()) then origin = self:GetParent():WorldSpaceCenter() end
     if ent == self:GetParent() then return true end
     local pos = ent:WorldSpaceCenter()

@@ -46,13 +46,32 @@ function ENT:Think()
     if SERVER then
         if CurTime() > self.SpawnTime + self.FireTime then self:Remove() return end
     else
-        local emitter = ParticleEmitter(self:GetPos())
+        local emitter = ParticleEmitter(self:GetPos() + VectorRand() * 72)
         if not self:IsValid() or self:WaterLevel() > 2 then return end
         if not IsValid(emitter) then return end
 
+        if self.Ticks % 10 == 0 then
+            local fire = emitter:Add("effects/fire_cloud" .. math.random(1, 2), self:GetPos())
+            fire:SetVelocity(VectorRand() * 50)
+            fire:SetGravity(Vector(0, 0, 15))
+            fire:SetDieTime(1)
+            fire:SetStartAlpha(100)
+            fire:SetEndAlpha(0)
+            fire:SetStartSize(10)
+            fire:SetEndSize(75)
+            fire:SetRoll(math.Rand(-180, 180))
+            fire:SetRollDelta(math.Rand(-0.2, 0.2))
+            fire:SetColor(255, 255, 255)
+            fire:SetAirResistance(15)
+            fire:SetPos(self:GetPos() + self:GetForward() * math.random(-32, 32))
+            fire:SetLighting(false)
+            fire:SetCollide(true)
+            fire:SetBounce(0)
+        end
+
         if self.Ticks % 5 == 0 then
             local fire = emitter:Add(GetFireParticle(), self:GetPos())
-            fire:SetVelocity(self:GetAngles():Forward() * math.Rand(-300, 300) + VectorRand() * 100 + (self:GetAngles():Up() * 50))
+            fire:SetVelocity(self:GetAngles():Forward() * math.Rand(-100, 100) + VectorRand() * 50 + (self:GetAngles():Up() * 50))
             fire:SetGravity(Vector(0, 0, 100))
             fire:SetDieTime(math.Rand(0.25, 0.5))
             fire:SetStartAlpha(255)
@@ -63,7 +82,7 @@ function ENT:Think()
             fire:SetRollDelta(math.Rand(-0.2, 0.2))
             fire:SetColor(255, 255, 255)
             fire:SetAirResistance(15)
-            fire:SetPos(self:GetPos())
+            fire:SetPos(self:GetPos() + VectorRand() * 16)
             fire:SetLighting(false)
             fire:SetCollide(true)
             fire:SetBounce(0.5)
@@ -98,7 +117,7 @@ function ENT:Think()
             fire:SetRollDelta(math.Rand(-0.2, 0.2))
             fire:SetColor(255, 135, 0)
             fire:SetAirResistance(50)
-            fire:SetPos(self:GetPos())
+            fire:SetPos(self:GetPos() + VectorRand() * 32)
             fire:SetLighting(false)
             fire:SetCollide(true)
             fire:SetBounce(0.8)

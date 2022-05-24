@@ -50,8 +50,9 @@ function ENT:Think()
     local toclear = table.Copy(self.Damaged)
     for i, ent in ipairs(self.Thermites) do
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
-        for k, v in pairs(ents.FindInSphere(ent:GetPos() + Vector(0, 0, 16), 72)) do
-            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v) then -- As it turns out, this will ignite ALL weapons on a player's inventory
+        local o = ent:GetPos() + Vector(0, 0, 16)
+        for k, v in pairs(ents.FindInSphere(o, 72)) do
+            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v, o) then -- As it turns out, this will ignite ALL weapons on a player's inventory
                 damaged[v] = true
                 if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
             end
@@ -107,9 +108,12 @@ end
 function ENT:Detonate(hitentity)
     if not self:IsValid() or self.Armed then return end
     self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 100)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Dist_2ch_v1_0" .. math.random(1, 3) .. ".wav", 140, 100, 0.5)
     self.Armed = true
     self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
     self.FireSound:PlayEx(1, 95)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Dist_2ch_v1_0" .. math.random(1, 6) .. ".wav", 140, 100, 0.5)
+
     self.ArcCW_Killable = false
 
     if not IsValid(hitentity) or hitentity:IsWorld() then hitentity = nil end
@@ -185,7 +189,8 @@ function ENT:Detonate(hitentity)
 
     timer.Simple(self.FireTime - 1, function()
         if not IsValid(self) then return end
-        self.FireSound:ChangeVolume(0, 1)
+        self.FireSound:Stop()
+        self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_End_2ch_v2_0" .. math.random(4, 8) .. ".wav", 95)
         for k, v in ipairs(self.Thermites) do SafeRemoveEntity(v) end
     end)
 
