@@ -44,6 +44,8 @@ SWEP.MoveDispersion = 50
 SWEP.Throwing = true
 SWEP.Singleton = false
 
+SWEP.ShootWhileSprint = false -- You cannot throw nades while sprinting on apex, so i thought it should be the same here
+
 if ArcCW.Apex.GetBalanceMode() == 2 then
     SWEP.MeleeDamage = 30
 end

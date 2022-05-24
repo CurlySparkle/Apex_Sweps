@@ -67,7 +67,6 @@ function ENT:Detonate()
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
             util.Effect("Explosion", effectdata)
-            util.Effect("hl2mmod_explosion_grenade", effectdata)
             self:EmitSound("weapons/grenades/explode" .. math.random(1,3) .. ".wav", 120, 100, 1, CHAN_AUTO)
         end
 

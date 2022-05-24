@@ -1,15 +1,6 @@
 game.AddParticles( "particles/apex_fx.pcf" )
 game.AddParticles( "particles/muzzleflashes_new.pcf" )
 
---MMOD
--- PrecacheParticleSystem("hl2mmod_generic_tracer")
--- PrecacheParticleSystem("hl2mmod_tracer_ar2")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_357")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_ar2")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_pistol")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_shotgun")
--- PrecacheParticleSystem("hl2mmod_muzzleflash_smg1")
-
 --NEW MUZZLES
 PrecacheParticleSystem("muzzle_autorifles_l4d")
 PrecacheParticleSystem("muzzle_machinegun_l4d")
