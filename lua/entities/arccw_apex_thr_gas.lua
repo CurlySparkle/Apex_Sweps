@@ -125,8 +125,8 @@ function ENT:Think()
                 self.Bursted = true
                 for i = 1, 75 do
                     local fire = emitter:Add("particle/smokestack", self:GetPos())
-                    fire:SetVelocity(randcircle(1024) + Vector(0, 0, math.Rand(96, 128)))
-                    fire:SetGravity(Vector(0, 0, -5))
+                    fire:SetVelocity(randcircle(1024) + Vector(0, 0, math.Rand(32, 64)))
+                    fire:SetGravity(Vector(0, 0, 0))
                     fire:SetDieTime(math.Rand(10, 15))
                     fire:SetStartAlpha(100)
                     fire:SetEndAlpha(0)
@@ -138,7 +138,7 @@ function ENT:Think()
                     fire:SetAirResistance(96)
                     fire:SetPos(self:GetPos())
                     fire:SetLighting(false)
-                    fire:SetCollide(true)
+                    fire:SetCollide(false)
                     fire:SetBounce(0.95)
                 end
             end
@@ -157,7 +157,7 @@ function ENT:Think()
                 fire:SetAirResistance(64)
                 fire:SetPos(self:GetPos())
                 fire:SetLighting(false)
-                fire:SetCollide(true)
+                fire:SetCollide(false)
                 fire:SetBounce(0.95)
             end
 
