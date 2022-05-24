@@ -1,5 +1,8 @@
 AddCSLuaFile()
 
+if CLIENT then
+    killicon.Add( "arccw_apex_thr_frag", "VGUI/apex_nade_killicon_frag", Color(251, 85, 25, 255))
+end
 ENT.Type = "anim"
 ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Fragnade"

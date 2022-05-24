@@ -1,5 +1,9 @@
 AddCSLuaFile()
 
+if CLIENT then
+    killicon.Add( "arccw_apex_thr_thermite", "VGUI/apex_nade_killicon_thermite", Color(251, 85, 25, 255))
+end
+
 ENT.Type = "anim"
 ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Incendiary Grenade"
@@ -12,6 +16,21 @@ ENT.Thermites = {}
 ENT.Damaged = {}
 
 ENT.FireTime = 10
+
+-- HL2 zombies are hard-coded to not take any DMG_BURN damage, but instead slowly burn out
+-- as cool as it looks in ravenholm, it feels awful against our case so we change dmgtype against them
+local specialfire = {
+    ["npc_zombie"] = true,
+    ["npc_zombie_torso"] = true,
+    ["npc_fastzombie"] = true,
+    ["npc_fastzombie_torso"] = true,
+    ["npc_poisonzombie"] = true,
+    ["npc_zombine"] = true,
+    ["npc_headcrab"] = true,
+    ["npc_headcrab_fast"] = true,
+    ["npc_headcrab_black"] = true,
+    ["npc_headcrab_poison"] = true,
+}
 
 function ENT:Initialize()
     if SERVER then
@@ -64,7 +83,7 @@ function ENT:Think()
         self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 1
         local o = self.Owner
         local dmg = DamageInfo()
-        dmg:SetDamageType(DMG_BURN)
+        dmg:SetDamageType(specialfire[v:GetClass()] and DMG_DIRECT or DMG_BURN)
         dmg:SetDamage(3 + self.Damaged[v:EntIndex()])
         dmg:SetInflictor(IsValid(self) and self or o)
         dmg:SetAttacker(o)
@@ -72,7 +91,7 @@ function ENT:Think()
         v:TakeDamageInfo(dmg)
 
         if v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot() then
-            if not hit and IsValid(self:GetOwner()) and v ~= self:GetOwner() then
+            if not hit and IsValid(self:GetOwner()) and v ~= self:GetOwner() and v:Health() > 0 then
                 hit = true
                 net.Start("arccw_apex_hit")
                     net.WriteBool(false)
@@ -80,15 +99,18 @@ function ENT:Think()
             end
             if timer.Exists("thermite_burn_" .. v:EntIndex()) then timer.Remove("thermite_burn_" .. v:EntIndex()) end
             timer.Create("thermite_burn_" .. v:EntIndex(), 0.5, 5, function()
-                if not IsValid(v) or (v:IsPlayer() and not v:Alive()) then return end
+                if not IsValid(v) or (v:IsPlayer() and not v:Alive()) then
+                    timer.Remove("thermite_burn_" .. v:EntIndex())
+                    return
+                end
                 local d = DamageInfo()
-                d:SetDamageType(DMG_BURN)
+                d:SetDamageType(specialfire[v:GetClass()] and DMG_DIRECT or DMG_BURN)
                 d:SetDamage(5)
                 d:SetInflictor(IsValid(self) and self or o)
                 d:SetAttacker(o)
                 d:SetDamageForce(Vector(0, 0, 0))
                 v:TakeDamageInfo(d)
-                if IsValid(self) and IsValid(self:GetOwner()) and v ~= self:GetOwner() then
+                if IsValid(self) and IsValid(self:GetOwner()) and v ~= self:GetOwner() and v:Health() > 0 then
                     net.Start("arccw_apex_hit")
                         net.WriteBool(false)
                     net.Send(self:GetOwner())

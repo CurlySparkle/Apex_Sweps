@@ -1,5 +1,9 @@
 AddCSLuaFile()
 
+if CLIENT then
+    killicon.Add( "arccw_apex_thr_gas", "VGUI/apex_nade_killicon_nox", Color(251, 85, 25, 255))
+end
+
 ENT.Type = "anim"
 ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Gas Grenade"
