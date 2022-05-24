@@ -18,6 +18,12 @@ ENT.Damaged = {}
 ENT.Armed = false
 ENT.FireTime = 30
 
+ENT.BalFireTime = {
+    [0] = 30,
+    [1] = 30,
+    [2] = 20
+}
+
 ENT.NextDamageTick = 0
 
 ENT.Ticks = 0
@@ -58,6 +64,7 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
+        self.FireTime = self.BalFireTime[ArcCW.Apex.GetBalanceMode()]
     end
 end
 
@@ -86,7 +93,7 @@ function ENT:Think()
             local toclear = table.Copy(self.Damaged)
             local z = self:GetPos().z
             for k, v in pairs(ents.FindInSphere(self:GetPos(), 512)) do
-                if math.abs(z - v:GetPos().z) <= 192 and not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() then
+                if math.abs(z - v:GetPos().z) <= 192 and not damaged[v] and (v:IsNPC() or v:IsPlayer() or v:IsNextBot()) then
                     damaged[v] = true
                     if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
                 end
