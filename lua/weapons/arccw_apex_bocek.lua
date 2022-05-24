@@ -148,7 +148,7 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
+SWEP.HoldtypeActive = "crossbow"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
@@ -415,9 +415,9 @@ end
 SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 50
 
-SWEP.HeatCapacity = 25
+SWEP.HeatCapacity = 15
 SWEP.HeatDissipation = 10
-SWEP.HeatDelayTime = 0.5
+SWEP.HeatDelayTime = 0.75
 SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
 

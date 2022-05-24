@@ -818,7 +818,7 @@ local hopups = {
             },
             -- Bocek
             [8] = {
-                Description = "Weapons gains an alternative firemode.\n\nThe Bocek receives an automatic firemode that lets loose arrows rapidly.\nFire rate decreases as more arrows are fired, and accuracy is reduced.",
+                Description = "Weapons gains an alternative firemode.\n\nThe Bocek receives an automatic firemode that lets loose arrows rapidly.\nFire rate decreases as more arrows are fired.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -828,14 +828,15 @@ local hopups = {
                         Mode = 2,
                         Override_TriggerDelay = false,
                         Override_TriggerCharge = false,
-                        Override_AccuracyMOA = 12,
-                        Mult_ShootPitch = 1,
+                        Override_AccuracyMOA = 25,
                         Mult_Recoil = 0.25,
-                        Mult_HipDispersion = 2,
+                        Mult_HipDispersion = 1.5,
+                        Mult_Damage = 20 / 25,
+                        Mult_DamageMin = 20 / 25,
                         Override_Jamming = true,
                         Override_HeatLockout = false,
                         Hook_ModifyRPM = function(wep, delay)
-                            return delay / Lerp((wep:GetHeat() - 3) / (wep:GetMaxHeat() - 3), 3, 1)
+                            return delay / Lerp(wep:GetHeat() / wep:GetMaxHeat(), 3.5, 1)
                         end,
                     }
                 }
