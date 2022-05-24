@@ -64,33 +64,35 @@ function ENT:OnRemove()
 end
 
 function ENT:Think()
-    if CLIENT and not self:GetNoDraw() then
-        local emitter = ParticleEmitter(self:GetPos() + VectorRand() * 72)
-        if not self:IsValid() or self:WaterLevel() > 2 then return end
-        if not IsValid(emitter) then return end
+    if CLIENT then
+        if not self:GetNoDraw() then
+            local emitter = ParticleEmitter(self:GetPos() + VectorRand() * 72)
+            if not self:IsValid() or self:WaterLevel() > 2 then return end
+            if not IsValid(emitter) then return end
 
-        self.NextFlareTime = self.NextFlareTime or CurTime()
+            self.NextFlareTime = self.NextFlareTime or CurTime()
 
-        if self.NextFlareTime <= CurTime() then
-            self.NextFlareTime = CurTime() + 0.025 / math.Clamp(self:GetVelocity():Length() / 1500, 1, 3)
-            local fire = emitter:Add("particle/smokestack", self:GetPos())
-            fire:SetVelocity(VectorRand() * 25)
-            fire:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), -50))
-            fire:SetDieTime(math.Rand(1, 2))
-            fire:SetStartAlpha(50)
-            fire:SetEndAlpha(0)
-            fire:SetStartSize(5)
-            fire:SetEndSize(50)
-            fire:SetRoll(math.Rand(-180, 180))
-            fire:SetRollDelta(math.Rand(-0.2, 0.2))
-            fire:SetColor(175, 175, 175)
-            fire:SetAirResistance(50)
-            fire:SetPos(self:GetPos())
-            fire:SetLighting(false)
-            fire:SetCollide(true)
-            fire:SetBounce(0.8)
+            if self.NextFlareTime <= CurTime() then
+                self.NextFlareTime = CurTime() + 0.025 / math.Clamp(self:GetVelocity():Length() / 1500, 1, 3)
+                local fire = emitter:Add("particle/smokestack", self:GetPos())
+                fire:SetVelocity(VectorRand() * 25)
+                fire:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), -50))
+                fire:SetDieTime(math.Rand(1, 2))
+                fire:SetStartAlpha(50)
+                fire:SetEndAlpha(0)
+                fire:SetStartSize(5)
+                fire:SetEndSize(50)
+                fire:SetRoll(math.Rand(-180, 180))
+                fire:SetRollDelta(math.Rand(-0.2, 0.2))
+                fire:SetColor(175, 175, 175)
+                fire:SetAirResistance(50)
+                fire:SetPos(self:GetPos())
+                fire:SetLighting(false)
+                fire:SetCollide(true)
+                fire:SetBounce(0.8)
+            end
+            emitter:Finish()
         end
-        emitter:Finish()
         return
     end
     if (self.NextDamageTick or 0) > CurTime() then return end
@@ -148,7 +150,6 @@ function ENT:Think()
         elseif not v:IsOnFire() then
             v:Ignite(5)
         end
-        damaged[v] = true
     end
     for e, _ in pairs(toclear) do
         self.Damaged[e] = 0
