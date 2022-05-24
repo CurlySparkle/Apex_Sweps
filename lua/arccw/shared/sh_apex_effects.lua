@@ -53,7 +53,10 @@ PrecacheParticleSystem("tfa_apex_energy_tracer_smg")
 PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
 PrecacheParticleSystem("tfa_apex_tracer_havoc")
 PrecacheParticleSystem("tfa_apex_lstar_projectile")
-PrecacheParticleSystem("tfa_apex_lstar_explode_core")
 PrecacheParticleSystem("tfa_apex_chargerifle_beam")
 PrecacheParticleSystem("tfa_apex_chargerifle_beam_cont")
 PrecacheParticleSystem("tfa_apex_chargerifle_maxbeam")
+
+-- MISC
+PrecacheParticleSystem("tfa_apex_lstar_explode_core")
+PrecacheParticleSystem("tfa_apex_arcstar_explode")
