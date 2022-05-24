@@ -113,9 +113,11 @@ function ENT:Think()
 
             if not self.Bursted then
                 self.Bursted = true
-                for i = 1, 25 do
+                for i = 1, 50 do
                     local fire = emitter:Add("particles/smokey", self:GetPos())
-                    fire:SetVelocity(Vector(math.Rand(-1024, 1024), math.Rand(-1024, 1024), 128))
+                    local v = VectorRand() * 1024
+                    v.z = 128
+                    fire:SetVelocity(v)
                     fire:SetGravity(Vector(math.Rand(-100, 100), math.Rand(-100, 100), -5))
                     fire:SetDieTime(math.Rand(7, 10))
                     fire:SetStartAlpha(100)
@@ -171,7 +173,7 @@ function ENT:Think()
             if self:GetNoDraw() then -- about to detonate
                 self.NextFlareTime = CurTime() + 0.025
                 fire:SetDieTime(math.Rand(0.75, 1))
-                fire:SetVelocity(VectorRand() * 128 + Vector(0, 0, 256))
+                fire:SetVelocity(VectorRand() * 256 + Vector(0, 0, -128))
                 fire:SetEndSize(150)
             else
                 self.NextFlareTime = CurTime() + 0.025 / math.Clamp(vel / 1000, 0.1, 3)
