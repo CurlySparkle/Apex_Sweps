@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Sentinel"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "A veritably powerful bolt action sniper rifle.\n\nPress the firemode key to charge up the weapon with 50 suit armor, increasing its damage."
+SWEP.Trivia_Desc = "A veritably powerful bolt action sniper rifle.\n\nPress the firemode key to charge up the weapon with an Arc Star, increasing its damage."
 SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 4
@@ -109,6 +109,8 @@ SWEP.AccuracyMOA = 0.2
 SWEP.HipDispersion = 600
 SWEP.MoveDispersion = 50
 SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.35
 
 SWEP.Primary.Ammo = "apex_sniper"
 
@@ -384,8 +386,10 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():Armor() < 50) then return true end
-    if SERVER and not GetConVar("arccw_apex_freecharge"):GetBool() then wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50) end
+    if CLIENT then return true end
+    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
+    if not ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_arcstar") then return true end
+
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
     wep:SetNextPrimaryFire(n)

@@ -57,8 +57,8 @@ SWEP.Apex_Balance = {
         DamageMin = 20,
     },
     [2] = {
-        Damage = 17,
-        DamageMin = 17
+        Damage = 15, -- Very strong with a 2-shot so knocked it down a peg (3-shot kill now)
+        DamageMin = 15
     },
 }
 SWEP.BodyDamageMults = {
@@ -128,6 +128,8 @@ SWEP.AccuracyMOA = 1
 SWEP.HipDispersion = 400
 SWEP.MoveDispersion = 50
 SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.5
 
 SWEP.Primary.Ammo = "apex_energy"
 SWEP.AmmoPerShot = 3

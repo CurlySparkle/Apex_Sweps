@@ -70,7 +70,19 @@ end
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
-        self:Detonate()
+
+        local tr = util.TraceLine({
+            start = self:GetPos(),
+            endpos = self:GetPos() - Vector(0, 0, 16),
+            filter = self,
+        })
+        if tr.Hit then
+            self:Detonate()
+        elseif data.Speed > 75 then
+            self:EmitSound("weapons/grenades/wpn_fraggrenade_1p_hardsurface_bounce_01_lr_v" .. math.random(1, 2) .. ".wav")
+        elseif data.Speed > 25 then
+            self:EmitSound("weapons/grenades/grenade_bounce_2ch_v2_0" .. math.random(1, 3) .. ".wav")
+        end
     end
 end
 

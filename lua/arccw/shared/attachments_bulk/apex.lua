@@ -378,20 +378,20 @@ local stock_types = {
         {
             [1] = {
                 [1] = {
-                    Mult_HipDispersion = 0.85,
-                    Mult_Recoil = 0.85,
+                    Mult_SightedSpeedMult = 1.15,
+                    Mult_HipDispersion = 0.7,
                     Mult_SightTime = 0.9,
                     Mult_Sway = 0.85,
                 },
                 [2] = {
-                    Mult_HipDispersion = 0.8,
-                    Mult_Recoil = 0.8,
+                    Mult_SightedSpeedMult = 1.2,
+                    Mult_HipDispersion = 0.6,
                     Mult_SightTime = 0.85,
                     Mult_Sway = 0.5,
                 },
                 [3] = {
-                    Mult_HipDispersion = 0.75,
-                    Mult_Recoil = 0.75,
+                    Mult_SightedSpeedMult = 1.25,
+                    Mult_HipDispersion = 0.5,
                     Mult_SightTime = 0.8,
                     Mult_Sway = 0.2,
                 }
@@ -1063,8 +1063,8 @@ local hopups = {
                         PrintName = "fcg.apex.shatter",
                         Mode = 1,
                         Override_Num = 25,
-                        Override_Damage = 150,
-                        Override_DamageMin = 150,
+                        Override_Damage = 300,
+                        Override_DamageMin = 300,
                         Override_AccuracyMOA = 0,
                         Mult_HipDispersion = 0.25,
                         Mult_MoveDispersion = 0.25,

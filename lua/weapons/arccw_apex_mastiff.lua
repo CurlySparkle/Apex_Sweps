@@ -120,6 +120,9 @@ SWEP.NPCWeight = 100
 SWEP.AccuracyMOA = 0
 SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 50
+SWEP.JumpDispersion = 150
+
+SWEP.SightedSpeedMult = 0.75
 
 SWEP.Primary.Ammo = "apex_shotgun" -- what ammo type the gun uses
 

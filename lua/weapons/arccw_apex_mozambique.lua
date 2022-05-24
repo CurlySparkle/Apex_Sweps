@@ -86,7 +86,7 @@ SWEP.TracerWidth = 2
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 6
 
-SWEP.Recoil = 0.5
+SWEP.Recoil = 0.4
 SWEP.RecoilSide = 0.75
 SWEP.MaxRecoilBlowback = 2
 SWEP.RecoilRise = 3
@@ -110,6 +110,9 @@ SWEP.NPCWeight = 100
 SWEP.AccuracyMOA = 0
 SWEP.HipDispersion = 100 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 50
+SWEP.JumpDispersion = 100
+
+SWEP.SightedSpeedMult = 0.9
 
 SWEP.Primary.Ammo = "apex_shotgun" -- what ammo type the gun uses
 

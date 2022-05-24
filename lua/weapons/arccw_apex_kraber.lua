@@ -92,10 +92,12 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 0.2
+SWEP.AccuracyMOA = 0.1
 SWEP.HipDispersion = 800
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 500
+
+SWEP.SightedSpeedMult = 0.35
 
 SWEP.Primary.Ammo = "apex_sniper"
 

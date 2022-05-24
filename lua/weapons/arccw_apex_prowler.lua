@@ -98,6 +98,9 @@ SWEP.Firemodes = {
 SWEP.AccuracyMOA = 1.15 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 175 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 75
+SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.75
 
 SWEP.Primary.Ammo = "apex_heavy"
 

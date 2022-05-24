@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Frag Grenade"
 SWEP.Trivia_Class = "Hand Grenade"
-SWEP.Trivia_Desc = "Explosive ordnance. Throw to start fuse."
+SWEP.Trivia_Desc = "Standard explosive ordnance with a timed fuse.\nDespite being the same model, these grenades cannot be cooked like the ones used by Pilots. Perhaps it is simply a difference in skill."
 
 SWEP.Slot = 4
 

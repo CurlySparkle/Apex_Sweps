@@ -106,6 +106,8 @@ SWEP.HipDispersion = 350 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300
 
+SWEP.SightedSpeedMult = 0.45
+
 SWEP.Primary.Ammo = "apex_heavy"
 
 SWEP.ShootVol = 120 -- volume of shoot sound

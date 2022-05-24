@@ -70,8 +70,8 @@ SWEP.Apex_Balance = {
         DamageMin = 10,
     },
     [2] = {
-        Damage = 9,
-        DamageMin = 9,
+        Damage = 10,
+        DamageMin = 10,
     },
 }
 
@@ -79,7 +79,7 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.55
+SWEP.Recoil = 0.5
 SWEP.RecoilSide = 0.215
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
@@ -97,6 +97,9 @@ SWEP.Firemodes = {
 SWEP.AccuracyMOA = 12
 SWEP.HipDispersion = 250
 SWEP.MoveDispersion = 100
+SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.75
 
 SWEP.Primary.Ammo = "apex_light"
 

@@ -105,6 +105,8 @@ SWEP.HipDispersion = 400
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 300
 
+SWEP.SightedSpeedMult = 0.45
+
 SWEP.Primary.Ammo = "apex_light"
 
 SWEP.ShootVol = 120 -- volume of shoot sound

@@ -103,6 +103,9 @@ SWEP.Firemodes = {
 SWEP.AccuracyMOA = 3
 SWEP.HipDispersion = 400 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
+SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.4
 
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound

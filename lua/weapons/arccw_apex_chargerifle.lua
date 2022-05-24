@@ -112,6 +112,8 @@ SWEP.HipDispersion = 0
 SWEP.MoveDispersion = 0
 SWEP.JumpDispersion = 0
 
+SWEP.SightedSpeedMult = 0.35
+
 SWEP.Primary.Ammo = "apex_sniper"
 
 SWEP.ShootVol = 120 -- volume of shoot sound

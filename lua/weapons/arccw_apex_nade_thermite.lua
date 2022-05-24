@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Thermite Grenade"
 SWEP.Trivia_Class = "Hand Grenade"
-SWEP.Trivia_Desc = "Creates a horizontal wall of flames."
+SWEP.Trivia_Desc = "Cylinder containing an incendiary compound.\nUpon impact, deploys a horizontal wall of flames.\nDamage increases over time, and lingers after leaving."
 
 SWEP.Slot = 4
 

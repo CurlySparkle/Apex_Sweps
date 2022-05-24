@@ -111,8 +111,10 @@ SWEP.Firemodes = {
 
 SWEP.AccuracyMOA = 15
 SWEP.HipDispersion = 300
-SWEP.MoveDispersion = 50
-SWEP.JumpDispersion = 0
+SWEP.MoveDispersion = 75
+SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.4
 
 SWEP.Primary.Ammo = "apex_energy"
 
@@ -336,6 +338,12 @@ SWEP.Animations = {
 
 SWEP.TTTWeaponType = "weapon_zm_sledge"
 SWEP.TTTWeight = 100
+
+if engine.ActiveGamemode() == "terrortown" then
+    SWEP.StoredAmmo = 30
+else
+    SWEP.ForceDefaultAmmo = 30
+end
 
 SWEP.Hook_Think = function(wep)
     if (game.SinglePlayer() and CLIENT) or (not game.SinglePlayer() and SERVER) then return end

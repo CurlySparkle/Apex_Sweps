@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Arc Star"
 SWEP.Trivia_Class = "Hand Grenade"
-SWEP.Trivia_Desc = "Sticks, then explodes after a short delay. Causes damage and blurred vision. "
+SWEP.Trivia_Desc = "Energy-based ordnance with a shuriken-inspired design.\nSticks upon impact and explodes after a short delay, slowing targets within.\nThrown farther and faster than regular grenades."
 
 SWEP.Slot = 4
 

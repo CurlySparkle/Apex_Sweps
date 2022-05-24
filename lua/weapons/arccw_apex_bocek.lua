@@ -102,8 +102,10 @@ SWEP.Firemodes = {
 
 SWEP.AccuracyMOA = 0.5
 SWEP.HipDispersion = 300
-SWEP.MoveDispersion = 55
-SWEP.JumpDispersion = 100
+SWEP.MoveDispersion = 100
+SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.75
 
 SWEP.Primary.Ammo = "apex_arrow"
 
@@ -449,10 +451,11 @@ end
 SWEP.TriggerPullWhenEmpty = false
 
 if engine.ActiveGamemode() == "terrortown" then
-    SWEP.StoredAmmo = 32
+    SWEP.StoredAmmo = 24
 else
-    SWEP.ForceDefaultAmmo = 32
+    SWEP.ForceDefaultAmmo = 24
 end
+
 --[[]
 SWEP.Hook_PreReload = function(wep)
     if ((game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and true)) and wep:GetTriggerDelta() > 0 then

@@ -63,6 +63,22 @@ function ArcCW.Apex.Setup(self, balance)
     end
 end
 
+function ArcCW.Apex.TryConsumeGrenade(ply, grenade)
+    if GetConVar("arccw_apex_freecharge"):GetBool() then return true end
+    local wpntbl = weapons.Get(grenade)
+    local ammo = wpntbl.Primary.Ammo
+
+    if ply:GetAmmoCount(ammo) > 0 then
+        ply:RemoveAmmo(1, ammo)
+        return true
+    elseif ply:HasWeapon(grenade) and ply:GetWeapon(grenade):Clip1() > 0 then
+        if not ply:GetWeapon(grenade):HasInfiniteAmmo() then ply:StripWeapon(grenade) end
+        return true
+    end
+
+    return false
+end
+
 hook.Add("InitPostEntity", "ArcCW_Apex", function()
 
     ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 3

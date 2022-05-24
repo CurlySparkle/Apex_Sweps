@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Rampage LMG"
 SWEP.Trivia_Class = "Light Machine Gun"
-SWEP.Trivia_Desc = "Rampart's custom made machine gun with high damage but low fire rate.\n\nPress the firemode key to charge up the weapon with a thermite grenade, increasing its rate of fire."
+SWEP.Trivia_Desc = "Custom machine gun with high damage but low fire rate.\n\nPress the firemode key to charge up the weapon with a Thermite Grenade, increasing its rate of fire."
 SWEP.Trivia_Manufacturer = "Rampart/SWCC"
 
 SWEP.Slot = 3
@@ -55,8 +55,8 @@ SWEP.Apex_Balance = {
         DamageMin = 15,
     },
     [2] = {
-        Damage = 20,
-        DamageMin = 20,
+        Damage = 18,
+        DamageMin = 18,
     },
 }
 
@@ -99,6 +99,8 @@ SWEP.AccuracyMOA = 5
 SWEP.HipDispersion = 600
 SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300
+
+SWEP.SightedSpeedMult = 0.4
 
 SWEP.Primary.Ammo = "apex_heavy"
 
@@ -290,7 +292,7 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_01.wav", t = 96 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_02.wav", t = 240 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 525 / 30},
-			
+
             {p = 100, s = "weapons/rampage/wpn_rampage_lookat_button_press_2ch_v1.wav", t = 290 / 30},
             {p = 100, s = "weapons/rampage/wpn_rampage_lookat_open_2ch_v1a.wav", t = 295 / 30},
             {p = 100, s = "weapons/rampage/wpn_rampage_lookat_handle_close_2ch_v1a.wav", t = 509 / 30},
@@ -301,7 +303,7 @@ SWEP.Animations = {
         Source = "energize",
         SoundTable = {
             {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
-			{p = 100, s = "ArcCW_APEX.Rampage.Energize", t = 105 / 30},
+            {p = 100, s = "ArcCW_APEX.Rampage.Energize", t = 105 / 30},
         },
     },
     ["reload"] = {
@@ -358,16 +360,10 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    local nade = weapons.Get("arccw_apex_nade_thermite").Primary.Ammo
-    if wep:GetReloading() or wep:GetPriorityAnim() or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():HasWeapon("arccw_apex_nade_thermite") and wep:GetOwner():GetAmmoCount(nade) < 1) or (not GetConVar("arccw_apex_freecharge"):GetBool() and wep:GetOwner():GetAmmoCount(nade) < 1) then return true end
-    if not GetConVar("arccw_apex_freecharge"):GetBool() then 
-		wep:GetOwner():RemoveAmmo(1, nade) 
-		if wep:GetOwner():HasWeapon("arccw_apex_nade_thermite") and wep:GetOwner():GetAmmoCount(nade) < 1 then
-			if SERVER then
-				wep:GetOwner():StripWeapon("arccw_apex_nade_thermite")
-			end
-		end
-	end
+    if CLIENT then return true end
+    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
+    if not ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_thermite") then return true end
+
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
     wep:SetNextPrimaryFire(n)

@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Nox Gas Grenade"
 SWEP.Trivia_Class = "Hand Grenade"
-SWEP.Trivia_Desc = "Blankets a large area in Nox gas."
+SWEP.Trivia_Desc = "Caustic's signature grenades, containing dangerous Nox gas.\nBlankets a large area in gas on impact, dealing increased damage over time.\nThrown instantly, but not as far as regular grenades."
 
 SWEP.Slot = 4
 
@@ -34,7 +34,6 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.FuseTime = 3.5
 SWEP.Primary.Ammo = "grenade"
 
 SWEP.Throwing = true
