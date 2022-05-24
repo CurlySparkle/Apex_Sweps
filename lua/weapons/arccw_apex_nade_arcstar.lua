@@ -39,7 +39,7 @@ SWEP.Primary.Ammo = "grenade"
 SWEP.Primary.ClipSize = 1
 
 SWEP.MuzzleVelocity = 2200
-SWEP.MuzzleVelocityAlt = 700
+SWEP.MuzzleVelocityAlt = 1300
 SWEP.ShootEntity = "arccw_apex_thr_arcstar"
 
 SWEP.PullPinTime = 0.5

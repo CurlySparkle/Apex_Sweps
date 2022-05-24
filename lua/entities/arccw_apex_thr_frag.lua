@@ -31,7 +31,7 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-        self.Trail = util.SpriteTrail(self, 0, Color(255, 0, 0, 200), false, 4, 0, 0.75, 2, "trails/plasma")
+        self.Trail = util.SpriteTrail(self, 0, Color(255, 0, 0, 200), false, 4, 0, 1, 2, "trails/plasma")
 
     end
 end

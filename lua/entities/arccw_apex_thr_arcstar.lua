@@ -42,7 +42,7 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-        self.Trail = util.SpriteTrail(self, 0, color_white, false, 2, 0, 0.5, 2, "effects/beam001_white")
+        self.Trail = util.SpriteTrail(self, 0, color_white, false, 2, 0, 0.5, 1, "effects/beam001_white")
     end
 end
 
