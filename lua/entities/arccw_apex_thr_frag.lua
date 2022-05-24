@@ -66,7 +66,16 @@ function ENT:Detonate()
             util.Effect("WaterSurfaceExplosion", effectdata)
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
-            util.Effect("Explosion", effectdata)
+			local explode = ents.Create( "info_particle_system" )
+			explode:SetKeyValue( "effect_name", "tfa_apex_frag_explode" )
+			explode:SetOwner( self.Owner )
+			explode:SetPos( self:GetPos() )
+			explode:Spawn()
+			explode:Activate()
+			explode:Fire( "start", "", 0 )
+			explode:Fire( "kill", "", 30 )
+            --util.Effect("Explosion", effectdata)
+            --util.Effect("hl2mmod_explosion_grenade", effectdata)
             self:EmitSound("weapons/grenades/explode" .. math.random(1,3) .. ".wav", 120, 100, 1, CHAN_AUTO)
         end
 

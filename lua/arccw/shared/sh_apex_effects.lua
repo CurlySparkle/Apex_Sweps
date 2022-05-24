@@ -51,3 +51,4 @@ PrecacheParticleSystem("tfa_apex_chargerifle_maxbeam")
 -- MISC
 PrecacheParticleSystem("tfa_apex_lstar_explode_core")
 PrecacheParticleSystem("tfa_apex_arcstar_explode")
+PrecacheParticleSystem("tfa_apex_frag_explode")
