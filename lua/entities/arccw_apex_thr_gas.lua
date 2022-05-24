@@ -67,6 +67,14 @@ function ENT:PhysicsCollide(data, physobj)
     end
 end
 
+-- UNIFORMLY generates a random point within a 2D circle
+-- Otherwise the smoke effect will look uneven
+local function randcircle(radius)
+    local r = radius * math.sqrt(math.random())
+    local theta = math.random() * 2 * math.pi
+    return Vector(r * math.cos(theta), r * math.sin(theta), 0)
+end
+
 function ENT:Think()
     if not self.SpawnTime then self.SpawnTime = CurTime() end
 
@@ -117,12 +125,8 @@ function ENT:Think()
                 self.Bursted = true
                 for i = 1, 75 do
                     local fire = emitter:Add("particle/smokestack", self:GetPos())
-                    local v = VectorRand()
-                    v.z = 0
-                    v = v:GetNormalized() * math.Rand(-1024, 1024)
-                    v.z = math.Rand(96, 128)
-                    fire:SetVelocity(v)
-                    fire:SetGravity(Vector(0, 0, 0))
+                    fire:SetVelocity(randcircle(1024) + Vector(0, 0, math.Rand(96, 128)))
+                    fire:SetGravity(Vector(0, 0, -5))
                     fire:SetDieTime(math.Rand(10, 15))
                     fire:SetStartAlpha(100)
                     fire:SetEndAlpha(0)
@@ -140,12 +144,9 @@ function ENT:Think()
             end
             if self.Ticks % 3 == 0 then
                 local fire = emitter:Add("particle/smokestack", self:GetPos())
-                local v = VectorRand()
-                v.z = 0
-                v = v:GetNormalized() * math.Rand(-512, 512)
-                fire:SetVelocity(VectorRand() * 25)
+                fire:SetVelocity(randcircle(640))
                 fire:SetGravity(Vector(0, 0, 0))
-                fire:SetDieTime(math.Rand(6, 9))
+                fire:SetDieTime(math.Rand(3, 5))
                 fire:SetStartAlpha(100)
                 fire:SetEndAlpha(0)
                 fire:SetStartSize(100)
@@ -153,8 +154,8 @@ function ENT:Think()
                 fire:SetRoll(math.Rand(-180, 180))
                 fire:SetRollDelta(math.Rand(-0.2, 0.2))
                 fire:SetColor(175, 175, 100)
-                fire:SetAirResistance(32)
-                fire:SetPos(self:GetPos() + v)
+                fire:SetAirResistance(64)
+                fire:SetPos(self:GetPos())
                 fire:SetLighting(false)
                 fire:SetCollide(true)
                 fire:SetBounce(0.95)
