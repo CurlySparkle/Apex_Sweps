@@ -111,21 +111,42 @@ function ENT:Think()
             if not self:IsValid() or self:WaterLevel() > 2 then return end
             if not IsValid(emitter) then return end
 
-            if self.Ticks % 3 == 0 then
+            if not self.Bursted then
+                self.Bursted = true
+                for i = 1, 25 do
+                    local fire = emitter:Add("particles/smokey", self:GetPos())
+                    fire:SetVelocity(Vector(math.Rand(-1024, 1024), math.Rand(-1024, 1024), 128))
+                    fire:SetGravity(Vector(math.Rand(-100, 100), math.Rand(-100, 100), -5))
+                    fire:SetDieTime(math.Rand(7, 10))
+                    fire:SetStartAlpha(100)
+                    fire:SetEndAlpha(0)
+                    fire:SetStartSize(100)
+                    fire:SetEndSize(250)
+                    fire:SetRoll(math.Rand(-180, 180))
+                    fire:SetRollDelta(math.Rand(-0.2, 0.2))
+                    fire:SetColor(175, 175, 100)
+                    fire:SetAirResistance(128)
+                    fire:SetPos(self:GetPos())
+                    fire:SetLighting(false)
+                    fire:SetCollide(true)
+                    fire:SetBounce(0.95)
+                end
+            end
+            if self.Ticks % 5 == 0 then
                 local fire = emitter:Add("particles/smokey", self:GetPos())
-                fire:SetVelocity( VectorRand() * 128 + Vector(0, 0, 96))
-                fire:SetGravity( Vector(math.Rand(-100, 100), math.Rand(-100, 100), -5) )
-                fire:SetDieTime( math.Rand(5, 8) )
-                fire:SetStartAlpha( 100 )
-                fire:SetEndAlpha( 0 )
-                fire:SetStartSize( 100 )
-                fire:SetEndSize( 250 )
-                fire:SetRoll( math.Rand(-180, 180) )
-                fire:SetRollDelta( math.Rand(-0.2,0.2) )
+                fire:SetVelocity(VectorRand() * 128 + Vector(0, 0, 96))
+                fire:SetGravity(Vector(math.Rand(-100, 100), math.Rand(-100, 100), -5))
+                fire:SetDieTime(math.Rand(3, 6))
+                fire:SetStartAlpha(100)
+                fire:SetEndAlpha(0)
+                fire:SetStartSize(75)
+                fire:SetEndSize(250)
+                fire:SetRoll(math.Rand(-180, 180))
+                fire:SetRollDelta(math.Rand(-0.2, 0.2))
                 fire:SetColor(175, 175, 100)
-                fire:SetAirResistance( 128 )
-                fire:SetPos( self:GetPos() + Vector(math.Rand(-256, 256), math.Rand(-256, 256), 0))
-                fire:SetLighting( false )
+                fire:SetAirResistance(128)
+                fire:SetPos(self:GetPos() + Vector(math.Rand(-256, 256), math.Rand(-256, 256), 0))
+                fire:SetLighting(false)
                 fire:SetCollide(true)
                 fire:SetBounce(0.95)
             end
@@ -145,23 +166,33 @@ function ENT:Think()
 
         self.NextFlareTime = self.NextFlareTime or CurTime()
         if self.NextFlareTime <= CurTime() then
-            self.NextFlareTime = CurTime() + 0.025 / math.Clamp(vel / 1000, 0.1, 3)
             local fire = emitter:Add("particle/smokestack", self:GetPos())
-            fire:SetVelocity(VectorRand() * 25)
+
+            if self:GetNoDraw() then -- about to detonate
+                self.NextFlareTime = CurTime() + 0.025
+                fire:SetDieTime(math.Rand(0.75, 1))
+                fire:SetVelocity(VectorRand() * 128 + Vector(0, 0, 256))
+                fire:SetEndSize(150)
+            else
+                self.NextFlareTime = CurTime() + 0.025 / math.Clamp(vel / 1000, 0.1, 3)
+                fire:SetDieTime(math.Rand(1, 2))
+                fire:SetVelocity(VectorRand() * 25)
+                fire:SetEndSize(50)
+            end
+
             fire:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), -50))
-            fire:SetDieTime(math.Rand(1, 2))
+
             fire:SetStartAlpha(100)
             fire:SetEndAlpha(0)
             fire:SetStartSize(10)
-            fire:SetEndSize(50)
             fire:SetRoll(math.Rand(-180, 180))
             fire:SetRollDelta(math.Rand(-0.2, 0.2))
-            fire:SetColor(155, 175, 100)
+            fire:SetColor(175, 175, 100)
             fire:SetAirResistance(50)
-            fire:SetPos(self:GetPos())
             fire:SetLighting(false)
             fire:SetCollide(true)
             fire:SetBounce(0.8)
+            fire:SetPos(self:GetPos())
         end
 
         emitter:Finish()
