@@ -26,7 +26,7 @@ function ENT:Initialize()
         self:SetModel(self.Model)
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
-        self:PhysicsInitSphere(2, "weapon")
+        self:PhysicsInitBox(Vector(-1, -1, -0.25), Vector(1, 1, 0.25))
         self:DrawShadow(true)
         local phys = self:GetPhysicsObject()
 
@@ -34,17 +34,23 @@ function ENT:Initialize()
             phys:Wake()
             phys:SetBuoyancyRatio(0)
             phys:AddAngleVelocity(Vector(0, -700, 3000))
+            phys:SetDragCoefficient(0.25)
         end
 
         self.SpawnTime = CurTime()
+        self.Trail = util.SpriteTrail(self, 0, color_white, false, 2, 0, 0.5, 2, "effects/beam001_white")
     end
 end
 
 function ENT:Think()
-    if SERVER and self.Stuck and self.DetonateTime < CurTime() then
+    if SERVER and self.Armed and self.DetonateTime < CurTime() then
+
+        local pos = self:GetPos()
+        if IsValid(self:GetParent()) then pos = self:GetParent():WorldSpaceCenter() end
+
         --util.BlastDamage(self, self:GetOwner(), self:GetPos(), 300, 90)
         local effectdata = EffectData()
-        effectdata:SetOrigin(self:GetPos())
+        effectdata:SetOrigin(pos)
         effectdata:SetNormal(self:GetForward())
         effectdata:SetMagnitude(1)
         effectdata:SetScale(1)
@@ -57,9 +63,9 @@ function ENT:Think()
         local hit = false
         local blastdmg = self.BlastDamage[ArcCW.Apex.GetBalanceMode()]
 
-        for _, ent in pairs(ents.FindInSphere(self:GetPos(), 300)) do
+        for _, ent in pairs(ents.FindInSphere(pos, 300)) do
             if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() then continue end
-            local distSqr = ent:GetPos():DistToSqr(self:GetPos())
+            local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
             if distSqr > 9216 then -- 96 * 96
                 f = Lerp((distSqr - 9216) / (90000 - 9216), 1, 0.25)
@@ -69,7 +75,7 @@ function ENT:Think()
             dmginfo:SetDamageType(DMG_SHOCK)
             dmginfo:SetAttacker(self:GetOwner())
             dmginfo:SetDamage(blastdmg * f)
-            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - self:GetPos()):GetNormalized() * 9001 * f)
+            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 9001 * f)
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
 
@@ -89,8 +95,8 @@ function ENT:Think()
 end
 
 function ENT:PhysicsCollide(data, physobj)
-    if self.Stuck then return end
-    self.Stuck = true
+    if self.Stuck or self.Armed then return end
+    self.Armed = true
 
     local tgt = data.HitEntity
 
@@ -98,7 +104,7 @@ function ENT:PhysicsCollide(data, physobj)
     table.Add(f, tgt:GetChildren())
 
     local tr = util.TraceLine({
-        start = data.HitPos - data.OurOldVelocity * 0.5,
+        start = data.HitPos,
         endpos = data.HitPos + data.OurOldVelocity,
         filter = f,
         mask = MASK_SHOT
@@ -118,6 +124,12 @@ function ENT:PhysicsCollide(data, physobj)
         net.Send(self:GetOwner())
     end
 
+    local effectdata = EffectData()
+    effectdata:SetOrigin(data.HitPos)
+    effectdata:SetNormal(data.HitNormal)
+    effectdata:SetRadius(32)
+    util.Effect("cball_bounce", effectdata)
+
     local angles = self:GetAngles()
 
     self:EmitSound("weapons/grenades/arcstar/Wpn_ArcStar_3P_Warning_StaticWindup_1ch_01.wav")
@@ -130,7 +142,7 @@ function ENT:PhysicsCollide(data, physobj)
 
             if tgt:IsWorld() or IsValid(tgt) then
                 tr = util.TraceLine({
-                    start = data.HitPos - data.OurOldVelocity * 0.5,
+                    start = data.HitPos,
                     endpos = data.HitPos + data.OurOldVelocity,
                     filter = f,
                     mask = MASK_SHOT
@@ -149,26 +161,19 @@ function ENT:PhysicsCollide(data, physobj)
                         local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
                         self:SetLocalPos(n_pos)
                         self:SetLocalAngles(n_ang)
+                        self:GetParent():DontDeleteOnRemove(self)
                     elseif not tgt:IsWorld() then
                         self:SetParent(tgt)
                         self:GetParent():DontDeleteOnRemove(self)
-                    else
-                        self.AttachToWorld = true
                     end
+                    self.Stuck = true
+                    self.AttachToWorld = tgt:IsWorld()
                 end
             end
         end)
-
-        self:SetTrigger(true)
-        self:UseTriggerBounds(true, 16)
     end
 
     self.DetonateTime = CurTime() + 2.5
-end
-
-function ENT:OnRemove()
-    if not self.FireSound then return end
-    self.FireSound:Stop()
 end
 
 function ENT:DrawTranslucent()
