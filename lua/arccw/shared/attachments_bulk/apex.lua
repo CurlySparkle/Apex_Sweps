@@ -518,16 +518,40 @@ end
 -- Hop-ups
 -------------------------------------------------
 
-local function loadertime(wep, data)
+local function canboost(wep)
+    local c = wep:GetClass()
     local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
-    if wep:Clip1() > 0 and wep:Clip1() <= cs * (wep:GetBuff_Override("ApexLoaderMin") or 0) then
-        data.mult = data.mult * 0.75
+    local c1 = wep:Clip1()
+    if c1 == 0 then return false end
+
+    if c == "arccw_apex_wingman" then
+        return c1 <= cs * 0.34
+    elseif c == "arccw_apex_hemlok" then
+        return c1 <= 3 + (cs - 18) * 0.5
+    end
+
+    return false
+end
+
+local function drawboostedtext(a)
+    if a > 0 then
+        local text = "Boosted Loader Ready"
+        surface.SetFont("ArcCWC2_12")
+        local tw, th = surface.GetTextSize(text)
+        local x, y = ScrW() * 0.5 - tw * 0.5, ScrH() * 0.575 - th * 0.5
+        surface.SetTextPos(x + 2, y + 2)
+        surface.SetTextColor(0, 0, 0, 150 * a)
+        surface.DrawText(text)
+        surface.SetTextPos(x, y)
+        surface.SetTextColor(255, 255, 255, 255 * a)
+        surface.DrawText(text)
     end
 end
-local function loadercapacity(wep, data)
-    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
-    if wep:Clip1() > 0 and (wep:Clip1() <= cs * (wep:GetBuff_Override("ApexLoaderMin") or 0) or wep:Clip1() > cs) then
-        return cs + (wep:GetBuff_Override("ApexLoaderAdd") or 0)
+
+local function boostsend(wep)
+    if canboost(wep) and wep:GetOwner():IsPlayer() then
+        net.Start("arccw_apex_loader")
+        net.Send(wep:GetOwner())
     end
 end
 
@@ -1369,26 +1393,51 @@ local hopups = {
         variants = {
             -- Wingman
             [1] = {
-                ApexLoaderMin = 0.34,
                 ApexLoaderAdd = 2,
-                M_Hook_Mult_ReloadTime = loadertime,
-                Hook_GetCapacity = loadercapacity
-            },
-            -- Hemlok Burst AR
-            [2] = {
-                ApexLoaderAdd = 6,
                 M_Hook_Mult_ReloadTime = function(wep, data)
-                    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
-                    if wep:Clip1() > 0 and wep:Clip1() <= 3 + (cs - 18) * 0.5 then
+                    if canboost(wep) then
                         data.mult = data.mult * 0.75
                     end
                 end,
                 Hook_GetCapacity = function(wep, data)
                     local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
-                    if wep:Clip1() > 0 and (wep:Clip1() <= 3 + (cs - 18) * 0.5 or wep:Clip1() > cs) then
+                    if canboost(wep, cs) or wep:Clip1() > cs then
                         return cs + (wep:GetBuff_Override("ApexLoaderAdd") or 0)
                     end
-                end
+                end,
+                Hook_PostDrawCrosshair = function(wep)
+                    if not wep:GetReloading() and canboost(wep) then
+                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 1, FrameTime() * 5)
+                    else
+                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 0, FrameTime() * 10)
+                    end
+                    drawboostedtext(wep.ApexLoaderAlpha)
+                end,
+                Hook_PostReload = boostsend,
+            },
+            -- Hemlok Burst AR
+            [2] = {
+                ApexLoaderAdd = 6,
+                M_Hook_Mult_ReloadTime = function(wep, data)
+                    if canboost(wep) then
+                        data.mult = data.mult * 0.75
+                    end
+                end,
+                Hook_GetCapacity = function(wep, data)
+                    local cs = wep:GetBuff("ClipSize", true, wep.RegularClipSize or wep.Primary.ClipSize)
+                    if canboost(wep) or wep:Clip1() > cs then
+                        return cs + (wep:GetBuff_Override("ApexLoaderAdd") or 0)
+                    end
+                end,
+                Hook_PostDrawCrosshair = function(wep)
+                    if not wep:GetReloading() and canboost(wep) then
+                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 1, FrameTime() * 5)
+                    else
+                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 0, FrameTime() * 10)
+                    end
+                    drawboostedtext(wep.ApexLoaderAlpha)
+                end,
+                Hook_PostReload = boostsend,
             },
         }
     },

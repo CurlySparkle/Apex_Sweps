@@ -34,7 +34,7 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_flatline.mdl"
 SWEP.WorldModel = "models/weapons/c_apex_flatline.mdl"
-SWEP.MirrorVMWM = false
+SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6, 4.3, -5),
     ang        =    Angle(-10, 0, 180),
@@ -156,7 +156,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_RPG
 
 SWEP.ExtraSightDist = 2.5
 

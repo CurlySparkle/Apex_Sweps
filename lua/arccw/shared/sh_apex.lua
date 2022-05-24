@@ -96,10 +96,6 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
         ArcCW.AmmoEntToArcCW["item_ammo_357_ttt"] = "arccw_ammo_apex_energy"
     end
 
-    if engine.ActiveGamemode() == "terrortown" then
-
-    end
-
     for i, k in pairs(weapons.GetList()) do
         if not weapons.IsBasedOn(k.ClassName, "arccw_base") then continue end
         local stored = weapons.GetStored(k.ClassName) -- necessary?
@@ -137,6 +133,7 @@ if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")
     util.AddNetworkString("arccw_apex_hit")
     util.AddNetworkString("arccw_apex_arcslow")
+    util.AddNetworkString("arccw_apex_loader")
 
     -- Since all move hooks are run client and server, we need to network it
     function ArcCW.Apex.ArcStarSlow(ply, dur)
@@ -179,6 +176,31 @@ else
         pitch = {80, 110},
         sound = "player/player_hitbeep_headshotrapid_human_1p_vs_3p.wav"
     })
+
+    net.Receive("arccw_apex_loader", function()
+        LocalPlayer():EmitSound("hud/UI_InGame_BoostedLoader_Reload_Bleeps_St_v2_0" .. math.random(1, 4) .. ".wav")
+
+        if IsValid(Apex_BoostedReloadPanel) then Apex_BoostedReloadPanel:Remove() end
+        Apex_BoostedReloadPanel = vgui.Create("DImage")
+        Apex_BoostedReloadPanel:SetSize(256, 64)
+        Apex_BoostedReloadPanel:SetPos(ScrW() * 0.5 - 128, ScrH() * 0.575 - 32)
+        Apex_BoostedReloadPanel:SetImage("hud/boosted_loader_reload.png")
+
+        Apex_BoostedReloadPanel.CreateTime = CurTime()
+        Apex_BoostedReloadPanel.Alpha = 0
+
+        Apex_BoostedReloadPanel.Think = function()
+            if Apex_BoostedReloadPanel.CreateTime + 1.5 < CurTime() then
+                Apex_BoostedReloadPanel.Alpha = math.Approach(Apex_BoostedReloadPanel.Alpha, 0, FrameTime() * 5)
+                if Apex_BoostedReloadPanel.Alpha <= 0 then
+                    Apex_BoostedReloadPanel:Remove()
+                end
+            elseif Apex_BoostedReloadPanel.Alpha < 0.75 then
+                Apex_BoostedReloadPanel.Alpha = math.Approach(Apex_BoostedReloadPanel.Alpha, 0.75, FrameTime() * 10)
+            end
+            Apex_BoostedReloadPanel:SetAlpha(Apex_BoostedReloadPanel.Alpha * 255)
+        end
+    end)
 
     local lasthitsound = 0
     net.Receive("arccw_apex_hit", function()
