@@ -73,7 +73,7 @@ function ENT:PhysicsCollide(data, physobj)
             self:SetAngles(angles)
             self:SetPos(data.HitPos)
 
-            if ((tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or not IsValid(tgt) then
+            if ((tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) then
                 --[[]
                 self.CanPickup = true
                 self:SetTrigger(true)
@@ -142,7 +142,7 @@ function ENT:ApplyAmmo(ply)
         if not self.IgnoreTTTChecks or ply:HasWeapon("arccw_apex_nade_arcstar") then return end
         local wep = ply:Give("arccw_apex_nade_arcstar")
         wep.Attachments[1].Installed = "apex_star_blade"
-        ply:EmitSound("items/Pickups_Ammo_Arrows_V1_1ch_0" .. math.random(1, 4) .. ".wav", nil, 90)
+        ply:EmitSound("weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_0" .. math.random(1, 3) .. ".wav", 70, 110, 0.7)
         self.USED = true
         self:Remove()
     else
@@ -154,7 +154,7 @@ function ENT:ApplyAmmo(ply)
             local tbl = weapons.Get("arccw_apex_nade_arcstar")
             ply:GiveAmmo(1, tbl.Primary.Ammo, true)
         end
-        ply:EmitSound("items/Pickups_Ammo_Arrows_V1_1ch_0" .. math.random(1, 4) .. ".wav")
+        ply:EmitSound("weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_0" .. math.random(1, 3) .. ".wav", 70, 110, 0.7)
         self:Remove()
     end
 end

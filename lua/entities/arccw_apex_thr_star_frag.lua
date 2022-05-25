@@ -50,9 +50,9 @@ function ENT:Think()
             local mass = 1
             if IsValid(phyobj) then
                 ent:SetPhysicsAttacker(self:GetOwner(), 5)
-                mass = phyobj:GetMass() ^ 0.6
+                mass = phyobj:GetMass() ^ 0.5
                 if ent == self:GetParent() then
-                    phyobj:ApplyForceOffset(self:GetForward() * 10000 * mass, self:GetPos())
+                    phyobj:ApplyForceOffset(self:GetForward() * 20000 * mass, self:GetPos())
                 end
             end
 
@@ -60,11 +60,16 @@ function ENT:Think()
             dmginfo:SetDamageType(DMG_BLAST)
             dmginfo:SetAttacker(self:GetOwner())
             dmginfo:SetDamage(blastdmg * f)
-            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 2000 * f * mass)
             if ent == self:GetParent() then
                 dmginfo:ScaleDamage(2)
             end
-            dmginfo:SetDamagePosition(pos)
+            if ent:IsRagdoll() and math.random() <= 0.05 then
+                -- MAXIMUM FUNNY
+                dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 9001 * f * mass)
+            else
+                dmginfo:SetDamagePosition(pos)
+                dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 2000 * f * mass)
+            end
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
 

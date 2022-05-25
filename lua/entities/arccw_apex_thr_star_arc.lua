@@ -80,11 +80,24 @@ function ENT:Think()
             if distSqr > 4900 then -- 70 * 70
                 f = Lerp((distSqr - 4900) / (90000 - 4900), 1, 0.25)
             end
+
+            local phyobj = ent:GetPhysicsObject()
+            local mass = 1
+            if IsValid(phyobj) then
+                ent:SetPhysicsAttacker(self:GetOwner(), 5)
+                mass = phyobj:GetMass() ^ 0.6
+            end
+
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_SHOCK)
             dmginfo:SetAttacker(self:GetOwner())
             dmginfo:SetDamage(blastdmg * f)
-            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 9001 * f)
+            dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 1000 * f * mass)
+            if not ent:IsRagdoll() then
+                -- Ragdolls will spin around if damage position is not set.
+                -- A bug, but a funny one so we keep that behavior
+                dmginfo:SetDamagePosition(pos)
+            end
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
 
