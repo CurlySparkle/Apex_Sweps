@@ -13,6 +13,9 @@ ENT.AmmoType = "apex_light"
 ENT.AmmoCount = 20
 ENT.PickupSound = "items/Pickups_Ammo_Light_V1_1ch_01.wav"
 
+ENT.DetonationRadius = 256
+ENT.DetonationDamage = 50
+
 if engine.ActiveGamemode() == "terrortown" then
     ENT.AmmoCount = ENT.AmmoCount * 1.5
 end
