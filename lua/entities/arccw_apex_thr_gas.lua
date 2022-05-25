@@ -81,7 +81,7 @@ function ENT:PhysicsCollide(data, physobj)
         if tr.Hit then
             self:Detonate()
         elseif data.Speed > 75 then
-            self:EmitSound("weapons/grenades/wpn_fraggrenade_1p_hardsurface_bounce_01_lr_v" .. math.random(1, 2) .. ".wav")
+            self:EmitSound("weapons/grenades/imp_physics_grenade_default_hard_bounce_0" .. math.random(1, 8) .. ".wav")
         elseif data.Speed > 25 then
             self:EmitSound("weapons/grenades/grenade_bounce_2ch_v2_0" .. math.random(1, 3) .. ".wav")
         end

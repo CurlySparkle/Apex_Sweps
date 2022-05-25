@@ -72,8 +72,9 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 1,
 }
 
-SWEP.AlwaysPhysBullet = true
-SWEP.Tracer = "arccw_apex_tracer_sniper" -- override tracer (hitscan) effect
+SWEP.AlwaysPhysBullet = false
+SWEP.NeverPhysBullet = true
+SWEP.Tracer = "arccw_apex_tracer_energy_rifle" -- Testing Purposes lol
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
@@ -83,7 +84,6 @@ SWEP.Primary.ClipSize = -1
 SWEP.Primary.DefaultClip = 0
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.CanFireUnderwater = true
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
 SWEP.Recoil = 0.6

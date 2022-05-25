@@ -8,6 +8,7 @@ att.Desc_Pros = {
 att.Desc_Cons = {
 }
 att.Slot = {"apex_star"}
+att.ActivateElements = {"skin_2"}
 
 att.Override_ShootEntity = "arccw_apex_thr_star_blade"
 att.Mult_ThrowTime = 0.75
