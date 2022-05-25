@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 if CLIENT then
-    killicon.Add( "arccw_apex_thr_arcstar", "VGUI/apex_nade_killicon_arcstar", Color(251, 85, 25, 255))
+    killicon.Add( "arccw_apex_thr_star_arc", "VGUI/apex_nade_killicon_arcstar", Color(251, 85, 25, 255))
 end
 
 ENT.Type = "anim"
@@ -9,6 +9,7 @@ ENT.Base = "arccw_apex_thr"
 ENT.PrintName = "Arc Star"
 ENT.Spawnable = false
 ENT.Model = "models/weapons/w_apex_nade_arcstar_thrown.mdl"
+ENT.TrailColor = Color(175, 175, 255, 250)
 
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Armed = false
@@ -25,24 +26,25 @@ ENT.BlastDamage = {
     [2] = 50,
 }
 
+function ENT:InitPhys()
+    self:PhysicsInitBox(Vector(-1, -1, -0.25), Vector(1, 1, 0.25))
+    self:SetMoveType(MOVETYPE_VPHYSICS)
+    self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+    local phys = self:GetPhysicsObject()
+    if (phys:IsValid()) then
+        phys:Wake()
+        phys:SetBuoyancyRatio(0)
+        phys:AddAngleVelocity(Vector(0, -700, 3000))
+        phys:SetDragCoefficient(0.25)
+    end
+end
+
 function ENT:Initialize()
     if SERVER then
-        self:SetModel(self.Model)
-        self:SetMoveType(MOVETYPE_VPHYSICS)
-        self:SetSolid(SOLID_VPHYSICS)
-        self:PhysicsInitBox(Vector(-1, -1, -0.25), Vector(1, 1, 0.25))
-        self:DrawShadow(true)
-        local phys = self:GetPhysicsObject()
-
-        if phys:IsValid() then
-            phys:Wake()
-            phys:SetBuoyancyRatio(0)
-            phys:AddAngleVelocity(Vector(0, -700, 3000))
-            phys:SetDragCoefficient(0.25)
-        end
-
+        self:SetModel(self.Model or "models/weapons/w_apex_nade_arcstar_thrown.mdl")
+        self:InitPhys()
         self.SpawnTime = CurTime()
-        self.Trail = util.SpriteTrail(self, 0, color_white, false, 2, 0, 0.5, 1, "effects/beam001_white")
+        self.Trail = util.SpriteTrail(self, 0, self.TrailColor, false, 2, 0, 0.5, 1, "effects/beam001_white")
         self:SetPhysicsAttacker(self:GetOwner(), 10)
     end
 end

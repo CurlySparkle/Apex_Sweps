@@ -12,6 +12,7 @@ ArcCW.Apex.GrenadeBlacklist = {
     ["arccw_apex_thermite"] = true,
     ["arccw_apex_thr_thermite"] = true,
     ["arccw_apex_thr_frag_fire"] = true,
+    ["arccw_apex_thr_star_fire"] = true,
 
     ["predicted_viewmodel"] = true,
     ["entityflame"] = true,
@@ -31,6 +32,11 @@ ArcCW.Apex.FireDirectDamage = {
     ["npc_headcrab_fast"] = true,
     ["npc_headcrab_black"] = true,
     ["npc_headcrab_poison"] = true,
+}
+
+ArcCW.Apex.StuckPickups = {
+    ["arccw_apex_arrowpickup"] = true,
+    ["arccw_apex_thr_star_blade"] = true,
 }
 
 
@@ -175,6 +181,18 @@ if SERVER then
     hook.Add("ScalePlayerDamage", "ArcCW_Apex", hitsound)
     hook.Add("ScaleNPCDamage", "ArcCW_Apex", hitsound)
 
+    hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
+        if CLIENT then return end
+        for k, v in pairs(ent:GetChildren()) do
+            if ArcCW.Apex.StuckPickups[v:GetClass()] then
+                v:SetParent(NULL)
+                v:InitPhys()
+                v.CanPickup = true
+                v:SetTrigger(true)
+                v:UseTriggerBounds(true, 16)
+            end
+        end
+    end)
 
     ArcCW.Apex.NoxSources = {}
     ArcCW.Apex.NoxDamaged = {}

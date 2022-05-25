@@ -33,6 +33,12 @@ if SERVER then
         self.CanPickup = true
     end
 
+    function ENT:Think()
+        if not IsValid(self:GetParent()) then
+            self:SetParent(NULL)
+        end
+    end
+
     function ENT:ApplyAmmo(ply)
         if self.USED then return end
         if engine.ActiveGamemode() == "terrortown" then

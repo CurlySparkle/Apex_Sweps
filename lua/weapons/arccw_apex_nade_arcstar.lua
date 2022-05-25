@@ -40,7 +40,7 @@ SWEP.Primary.ClipSize = 1
 
 SWEP.MuzzleVelocity = 2200
 SWEP.MuzzleVelocityAlt = 1300
-SWEP.ShootEntity = "arccw_apex_thr_arcstar"
+SWEP.ShootEntity = "arccw_apex_thr_star_arc"
 
 SWEP.PullPinTime = 0.5
 
@@ -52,6 +52,12 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE
 SWEP.AnimShootAlt = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 SWEP.Attachments = {
+    {
+        PrintName = "Payload",
+        DefaultAttName = "Arc",
+        DefaultAttIcon = Material("entities/arccw_apex_nade_arcstar.png", "mips smooth"),
+        Slot = {"apex_star"},
+    }
 }
 
 SWEP.Animations = {

@@ -2,7 +2,7 @@ att.PrintName = "Pro Mod. Frag Grenade"
 att.AbbrevName = "Pro"
 att.Icon = Material("entities/arccw_apex_nade_frag.png", "mips smooth")
 
-att.Description = "Modified grenade with a 3-second cooked fuse.\nCommonly seen in the hands of Pilots, who rely on the cooked fuse to breach indoor spaces at high speeds."
+att.Description = "Modified grenade with a 3-second cooked fuse.\nLethal radius is slightly increased, but damage falloff is significantly higher.\n\nCommonly seen in the hands of Pilots, who rely on the cooked fuse to breach indoor spaces at high speeds."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {

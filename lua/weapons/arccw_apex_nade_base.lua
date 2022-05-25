@@ -44,6 +44,9 @@ SWEP.MoveDispersion = 50
 SWEP.Throwing = true
 SWEP.Singleton = false
 
+SWEP.WindupTime = 0
+SWEP.WindupMinimum = 1
+
 SWEP.ShootWhileSprint = false -- You cannot throw nades while sprinting on apex, so i thought it should be the same here
 
 if ArcCW.Apex.GetBalanceMode() == 2 then

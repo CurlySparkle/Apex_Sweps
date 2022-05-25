@@ -519,14 +519,3 @@ SWEP.Hook_BulletHit = function(wep, data)
         end
     end
 end
-
-hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
-    if CLIENT then return end
-    for k, v in pairs(ent:GetChildren()) do
-        if v:GetClass() == "arccw_apex_arrowpickup" then
-            v:SetParent(NULL)
-            v:InitPhys()
-            v.CanPickup = true
-        end
-    end
-end)
