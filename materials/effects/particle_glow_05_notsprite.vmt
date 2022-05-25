@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "effects/particle_glow_05_notsprite"
+	"$additive" "1"
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+}
