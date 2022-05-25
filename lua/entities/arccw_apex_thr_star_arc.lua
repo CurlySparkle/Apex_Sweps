@@ -39,7 +39,7 @@ function ENT:InitPhys()
         phys:Wake()
         phys:SetBuoyancyRatio(0)
         phys:AddAngleVelocity(Vector(0, -700, 3000))
-        phys:SetDragCoefficient(0.25)
+        phys:SetDragCoefficient(self.DragCoefficient or 0.25)
     end
 end
 
@@ -57,7 +57,7 @@ function ENT:Think()
     if SERVER and self.Armed and self.DetonateTime < CurTime() then
 
         local pos = self:GetPos()
-        if IsValid(self:GetParent()) then pos = self:GetParent():WorldSpaceCenter() end
+        --if IsValid(self:GetParent()) then pos = self:GetParent():WorldSpaceCenter() end
 
         local explode = ents.Create( "info_particle_system" )
         explode:SetKeyValue( "effect_name", "tfa_apex_arcstar_explode" )
@@ -111,7 +111,7 @@ function ENT:Think()
         fire:SetStartSize(10)
         fire:SetEndSize(10)
         fire:SetRoll(math.Rand(-180, 180))
-        fire:SetRollDelta(math.Rand(-0.2, 0.2))
+        fire:SetRollDelta(2)
         fire:SetColor(125, 160, 125)
         fire:SetAirResistance(25)
         fire:SetPos(self:GetPos() - self:GetForward() * 16)
@@ -121,6 +121,7 @@ function ENT:Think()
         fire:SetThinkFunction(function(pa)
             if not IsValid(self) then return end
             local s = Lerp((CurTime() - self.StuckTime) / 2.5, 0.25, 1) ^ 2
+            pa:SetRollDelta(1 + s * 3)
             pa:SetPos(self:GetPos() - self:GetForward() * 16)
             pa:SetStartSize(s * 90 * math.Rand(0.9, 1.1))
             pa:SetEndSize(s * 90 * math.Rand(0.9, 1.1))
@@ -150,11 +151,13 @@ function ENT:PhysicsCollide(data, physobj)
     })
     local hs = tr.Entity == tgt and tr.HitGroup == HITGROUP_HEAD
     local dmginfo = DamageInfo()
-    dmginfo:SetDamageType(DMG_NEVERGIB + DMG_CRUSH)
+    dmginfo:SetDamageType(DMG_SLASH)
     dmginfo:SetDamage(self.ImpactDamage[ArcCW.Apex.GetBalanceMode()])
     if hs then dmginfo:ScaleDamage(2) end
     dmginfo:SetAttacker(self:GetOwner())
     dmginfo:SetInflictor(self)
+    dmginfo:SetDamageForce(data.OurOldVelocity * 3)
+    dmginfo:SetDamagePosition(data.HitPos)
     tgt:TakeDamageInfo(dmginfo)
 
     if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot()) then

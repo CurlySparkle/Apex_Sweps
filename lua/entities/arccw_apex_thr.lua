@@ -17,7 +17,7 @@ function ENT:CheckLOS(ent, origin)
         filter = {self, self:GetParent()},
         mask = MASK_SHOT
     })
-    if tr1.Fraction > 0.99 then return true end
+    if tr1.Fraction > 0.99 or tr1.Entity == ent then return true end
 
     -- only bother with extra traces if it is a player, npc or nextbot
     if not ent:IsPlayer() and not ent:IsNPC() and not ent:IsNextBot() then return false end
@@ -29,7 +29,7 @@ function ENT:CheckLOS(ent, origin)
         filter = {self, self:GetParent()},
         mask = MASK_SHOT
     })
-    if tr2.Fraction > 0.99 then return true end
+    if tr2.Fraction > 0.99 or tr2.Entity == ent then return true end
 
     local tr3 = util.TraceLine({
         start = origin,
@@ -37,7 +37,7 @@ function ENT:CheckLOS(ent, origin)
         filter = {self, self:GetParent()},
         mask = MASK_SHOT
     })
-    if tr3.Fraction > 0.99 then return true end
+    if tr3.Fraction > 0.99 or tr3.Entity == ent then return true end
 
     return false
 end

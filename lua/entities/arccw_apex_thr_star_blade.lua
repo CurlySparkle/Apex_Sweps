@@ -11,12 +11,13 @@ ENT.Spawnable = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.TrailColor = Color(125, 0, 0, 250)
-
+ENT.DragCoefficient = 0.15
 ENT.ImpactDamage = {
     [0] = 150,
     [1] = 200,
     [2] = 100,
 }
+ENT.Hits = 0
 
 function ENT:Think()
     if CLIENT then return end
@@ -40,11 +41,20 @@ function ENT:PhysicsCollide(data, physobj)
     })
     local hs = tr.Entity == tgt and tr.HitGroup == HITGROUP_HEAD
     local dmginfo = DamageInfo()
-    dmginfo:SetDamageType(DMG_NEVERGIB + DMG_CRUSH)
+    dmginfo:SetDamageType(DMG_SLASH)
     dmginfo:SetDamage(self.ImpactDamage[ArcCW.Apex.GetBalanceMode()])
-    if hs then dmginfo:ScaleDamage(2) end
+    if hs then
+        dmginfo:ScaleDamage(2)
+    elseif tr.Entity == tgt and (tr.HitGroup == HITGROUP_LEFTLEG or tr.HitGroup == HITGROUP_RIGHTLEG) then
+        dmginfo:ScaleDamage(0.5)
+    end
+    if self.Hits > 1 then
+        dmginfo:ScaleDamage(1 / (self.Hits - 1))
+    end
     dmginfo:SetAttacker(self:GetOwner())
     dmginfo:SetInflictor(self)
+    dmginfo:SetDamageForce(data.OurOldVelocity * 3)
+    dmginfo:SetDamagePosition(data.HitPos)
     tgt:TakeDamageInfo(dmginfo)
 
     if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot()) then
@@ -53,13 +63,8 @@ function ENT:PhysicsCollide(data, physobj)
         net.Send(self:GetOwner())
     end
 
-    local effectdata = EffectData()
-    effectdata:SetOrigin(data.HitPos)
-    effectdata:SetNormal(data.HitNormal)
-    effectdata:SetRadius(32)
-    util.Effect("cball_explode", effectdata)
-
     local angles = data.OurOldVelocity:GetNormalized():Angle()
+    local oldvel = data.OurOldVelocity
 
     self:EmitSound("weapons/grenades/arcstar/Phys_Imp_GrenadeArc_Flesh_3p_1ch_v1_0" .. math.random(1, 3) .. ".wav", 80)
 
@@ -68,12 +73,25 @@ function ENT:PhysicsCollide(data, physobj)
             self:SetAngles(angles)
             self:SetPos(data.HitPos)
 
-
-            if not tgt:IsWorld() and tgt:Health() <= 0 then
+            if ((tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or not IsValid(tgt) then
+                --[[]
                 self.CanPickup = true
                 self:SetTrigger(true)
                 self:UseTriggerBounds(true, 16)
+                ]]
+                -- Pierce straight through the target!
+                self.Hits = self.Hits + 1
+                self:GetPhysicsObject():SetVelocityInstantaneous(oldvel)
+                self.Armed = false
             elseif tgt:IsWorld() or IsValid(tgt) then
+                if IsValid(self.Trail) then SafeRemoveEntityDelayed(self.Trail, 1.5) end
+
+                local effectdata = EffectData()
+                effectdata:SetOrigin(data.HitPos)
+                effectdata:SetNormal(data.HitNormal)
+                effectdata:SetRadius(32)
+                util.Effect("cball_explode", effectdata)
+
                 self:GetPhysicsObject():Sleep()
                 tr = util.TraceLine({
                     start = data.HitPos,

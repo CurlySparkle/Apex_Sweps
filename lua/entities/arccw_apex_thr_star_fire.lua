@@ -13,9 +13,9 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.TrailColor = Color(255, 125, 0, 150)
 
 ENT.ImpactDamage = {
-    [0] = 25,
-    [1] = 50,
-    [2] = 50,
+    [0] = 10,
+    [1] = 10,
+    [2] = 10,
 }
 
 ENT.FireTime = 8
@@ -145,7 +145,7 @@ function ENT:Think()
         local o = self.Owner
         local dmg = DamageInfo()
         dmg:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN)
-        dmg:SetDamage(math.min(20, 6 + self.Damaged[v:EntIndex()] * 4))
+        dmg:SetDamage(math.min(20, 4 + self.Damaged[v:EntIndex()] * 3))
         dmg:SetInflictor(IsValid(self) and self or o)
         dmg:SetAttacker(o)
         v:TakeDamageInfo(dmg)
@@ -185,11 +185,13 @@ function ENT:PhysicsCollide(data, physobj)
     })
     local hs = tr.Entity == tgt and tr.HitGroup == HITGROUP_HEAD
     local dmginfo = DamageInfo()
-    dmginfo:SetDamageType(DMG_NEVERGIB + DMG_CRUSH)
+    dmginfo:SetDamageType(DMG_SLASH)
     dmginfo:SetDamage(self.ImpactDamage[ArcCW.Apex.GetBalanceMode()])
     if hs then dmginfo:ScaleDamage(2) end
     dmginfo:SetAttacker(self:GetOwner())
     dmginfo:SetInflictor(self)
+    dmginfo:SetDamageForce(data.OurOldVelocity * 3)
+    dmginfo:SetDamagePosition(data.HitPos)
     tgt:TakeDamageInfo(dmginfo)
 
     local hit = false
@@ -205,7 +207,7 @@ function ENT:PhysicsCollide(data, physobj)
         dmginfo = DamageInfo()
         dmginfo:SetDamageType(ArcCW.Apex.FireDirectDamage[ent:GetClass()] and DMG_DIRECT or DMG_BURN)
         dmginfo:SetAttacker(self:GetOwner())
-        dmginfo:SetDamage(50)
+        dmginfo:SetDamage(25)
         dmginfo:SetInflictor(self)
         ent:TakeDamageInfo(dmginfo)
 

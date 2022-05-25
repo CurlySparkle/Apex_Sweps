@@ -14,6 +14,7 @@ ArcCW.Apex.GrenadeBlacklist = {
     ["arccw_apex_thr_frag_fire"] = true,
     ["arccw_apex_thr_star_fire"] = true,
 
+    ["viewmodel"] = true,
     ["predicted_viewmodel"] = true,
     ["entityflame"] = true,
     ["worldspawn"] = true,
@@ -34,9 +35,12 @@ ArcCW.Apex.FireDirectDamage = {
     ["npc_headcrab_poison"] = true,
 }
 
-ArcCW.Apex.StuckPickups = {
+ArcCW.Apex.StickyStuff = {
     ["arccw_apex_arrowpickup"] = true,
     ["arccw_apex_thr_star_blade"] = true,
+    ["arccw_apex_thr_star_fire"] = true,
+    ["arccw_apex_thr_star_arc"] = true,
+    ["arccw_apex_thr_star_frag"] = true,
 }
 
 
@@ -184,12 +188,28 @@ if SERVER then
     hook.Add("EntityRemoved", "ArcCW_Apex", function(ent)
         if CLIENT then return end
         for k, v in pairs(ent:GetChildren()) do
-            if ArcCW.Apex.StuckPickups[v:GetClass()] then
+            if ArcCW.Apex.StickyStuff[v:GetClass()] then
                 v:SetParent(NULL)
                 v:InitPhys()
-                v.CanPickup = true
-                v:SetTrigger(true)
-                v:UseTriggerBounds(true, 16)
+                if v.CanPickup == false then
+                    v.CanPickup = true
+                    v:SetTrigger(true)
+                    v:UseTriggerBounds(true, 16)
+                end
+            end
+        end
+    end)
+
+    hook.Add("PostPlayerDeath", "ArcCW_Apex", function(ent)
+        for k, v in pairs(ent:GetChildren()) do
+            if ArcCW.Apex.StickyStuff[v:GetClass()] then
+                v:SetParent(NULL)
+                v:InitPhys()
+                if v.CanPickup == false then
+                    v.CanPickup = true
+                    v:SetTrigger(true)
+                    v:UseTriggerBounds(true, 16)
+                end
             end
         end
     end)

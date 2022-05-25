@@ -45,7 +45,7 @@ SWEP.Throwing = true
 SWEP.Singleton = false
 
 SWEP.WindupTime = 0
-SWEP.WindupMinimum = 1
+SWEP.WindupMinimum = 0.5
 
 SWEP.ShootWhileSprint = false -- You cannot throw nades while sprinting on apex, so i thought it should be the same here
 
