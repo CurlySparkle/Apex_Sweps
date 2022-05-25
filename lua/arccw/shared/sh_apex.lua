@@ -107,6 +107,16 @@ function ArcCW.Apex.TryConsumeGrenade(ply, grenade)
     return false
 end
 
+hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
+    ArcCW:AddBulletProfile("apex_bocek", {
+        color = Color(255, 255, 255),
+        sprite_head = false,
+        sprite_tail = Material("effects/smoke_trail"),
+        size = 0.4,
+        tail_length = 1,
+    })
+end)
+
 hook.Add("InitPostEntity", "ArcCW_Apex", function()
 
     ArcCW.TTTAmmoToClipMax["apex_light"] = 20 * 3
@@ -150,6 +160,7 @@ hook.Add("StartCommand", "ArcCW_Apex_ArcSlow", function(ply, ucmd)
         ucmd:SetButtons(bit.band(ucmd:GetButtons(), bit.bnot(IN_SPEED)))
     end
 end)
+
 hook.Add("SetupMove", "ArcCW_Apex_ArcSlow", function(ply, mv, ucmd)
     if (ply.ArcSlowEnd or 0) > CurTime() then
         mv:SetMaxSpeed(mv:GetMaxSpeed() * 0.7)

@@ -74,9 +74,8 @@ SWEP.BodyDamageMults = {
 
 SWEP.AlwaysPhysBullet = true
 SWEP.NeverPhysBullet = false
-SWEP.Tracer = "arccw_apex_tracer_energy_rifle"
-SWEP.TracerNum = 1 -- tracer every X
-SWEP.TracerWidth = 2
+SWEP.PhysTracerProfile = "apex_bocek"
+SWEP.TracerNum = 1
 
 SWEP.BottomlessClip = true
 SWEP.ChamberSize = 0
