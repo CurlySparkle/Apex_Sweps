@@ -20,7 +20,7 @@ SWEP.AutoReload = false
 SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_wingman.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_wingman.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-10.5, 3.5, -2.5),

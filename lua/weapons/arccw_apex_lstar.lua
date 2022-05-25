@@ -39,7 +39,7 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_lstar.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_lstar.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_lstar.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-9, 4, -6.5),

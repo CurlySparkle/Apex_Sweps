@@ -36,7 +36,8 @@ SWEP.CamAttachment = 3
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_r99.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_r99.mdl"
+SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos = Vector(-5.5, 4, -4.5),
     ang = Angle(-10, 0, 180-5),
@@ -44,7 +45,6 @@ SWEP.WorldModelOffset = {
     scale   =   1,
 }
 
-SWEP.MirrorVMWM = false
 
 SWEP.ViewModelFOV = 70
 

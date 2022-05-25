@@ -35,7 +35,6 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_tripletake.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_tripletake.mdl"
-SWEP.MirrorWorldModel = "models/weapons/w_apex_tripletake.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-9, 4, -4.5),

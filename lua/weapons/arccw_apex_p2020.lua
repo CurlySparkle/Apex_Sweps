@@ -22,7 +22,7 @@ SWEP.UseHands = true
 SWEP.CamAttachment = 3
 
 SWEP.ViewModel = "models/weapons/c_apex_p2020.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_p2020.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_p2020.mdl"
 SWEP.WorldModelOffset = {
     pos = Vector(-10.5, 3.5, -2.2),
     ang = Angle(-10, 0, 180),

@@ -18,7 +18,7 @@ SWEP.Slot = 1
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_mozambique.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_mozambique.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_mozambique.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-10.3, 3.2, -2.5),

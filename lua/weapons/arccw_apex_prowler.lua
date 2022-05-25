@@ -33,7 +33,7 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_prowler.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_prowler.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_prowler.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-9, 4.5, -4),
