@@ -23,10 +23,10 @@ SWEP.ViewModel = "models/weapons/c_apex_wingman.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_wingman.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-10.5, 3.5, -2.5),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(4.5, 1.5, 2.25),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.ViewModelFOV = 70

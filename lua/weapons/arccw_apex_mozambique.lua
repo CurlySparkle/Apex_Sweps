@@ -21,12 +21,11 @@ SWEP.ViewModel = "models/weapons/c_apex_mozambique.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_mozambique.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-10.3, 3.2, -2.5),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(4.5, 1.5, 2.25),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
-
 SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"
@@ -171,7 +170,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "pistol"
 SWEP.HoldtypeSights = "revolver"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_REVOLVER
 
 SWEP.CrouchPos = Vector(-3, -4, 0)
 SWEP.CrouchAng = Angle(1.081, -0.071, -21.688)

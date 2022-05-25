@@ -21,12 +21,11 @@ SWEP.ViewModel = "models/weapons/c_apex_mastiff.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_mastiff.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-3, 4.5, -6),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(14, 1, 1.5),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
-
 SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"

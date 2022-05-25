@@ -39,10 +39,10 @@ SWEP.ViewModel = "models/weapons/c_apex_re45.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_re45.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-10.8, 4, -2.7),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(4.5, 1.5, 2.25),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.ViewModelFOV = 70
@@ -149,7 +149,7 @@ SWEP.HoldtypeHolstered = "normal"
 SWEP.HoldtypeActive = "pistol"
 SWEP.HoldtypeSights = "revolver"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
 
 SWEP.AttachmentElements = {
     ["ref_sights"] = {

@@ -40,10 +40,10 @@ SWEP.ViewModel = "models/weapons/c_apex_sentinel.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_sentinel.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-8.5, 5.5, -5.5),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(13, 1, 2),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.ViewModelFOV = 70
@@ -151,10 +151,10 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
+SWEP.HoldtypeActive = "shotgun"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_CROSSBOW
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_REVOLVER
 
 SWEP.AttachmentElements = {
     ["ref_sight"] = {

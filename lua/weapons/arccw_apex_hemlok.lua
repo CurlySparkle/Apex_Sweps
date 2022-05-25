@@ -36,10 +36,10 @@ SWEP.ViewModel = "models/weapons/c_apex_hemlok.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_hemlok.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =  Vector(13, 1, 2),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(13, 1, 2),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.ViewModelFOV = 70

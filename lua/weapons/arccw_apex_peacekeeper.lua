@@ -39,10 +39,10 @@ SWEP.ViewModel = "models/weapons/c_apex_peacekeeper.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_peacekeeper.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-6.5, 5.5, -1.5),
-    ang        =    Angle(-20, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(14, 1, 1.5),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.Damage = 9
@@ -101,7 +101,8 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = "fcg.lever"
-    }}
+    }
+}
 
 SWEP.ShotgunSpreadPattern = {
     [1] = Angle(1, 0, 0),
@@ -192,10 +193,10 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
-SWEP.HoldtypeSights = "rpg"
+SWEP.HoldtypeActive = "shotgun"
+SWEP.HoldtypeSights = "ar2"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_CROSSBOW
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0 , 0, 0)

@@ -39,12 +39,11 @@ SWEP.ViewModel = "models/weapons/c_apex_r99.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_r99.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos = Vector(-5.5, 4, -4.5),
-    ang = Angle(-10, 0, 180-5),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(13, 1, 2),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
-
 
 SWEP.ViewModelFOV = 70
 
@@ -146,7 +145,7 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
+SWEP.HoldtypeActive = "smg"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1

@@ -24,9 +24,10 @@ SWEP.CamAttachment = 3
 SWEP.ViewModel = "models/weapons/c_apex_p2020.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_p2020.mdl"
 SWEP.WorldModelOffset = {
-    pos = Vector(-10.5, 3.5, -2.2),
+    pos = Vector(4.5, 1.5, 2.25),
     ang = Angle(-10, 0, 180),
-    scale   =   1,
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.MirrorVMWM = false

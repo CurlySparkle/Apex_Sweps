@@ -36,10 +36,10 @@ SWEP.ViewModel = "models/weapons/c_apex_prowler.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_prowler.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-9, 4.5, -4),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos = Vector(13, 1, 2),
+    ang = Angle(-10, 0, 180),
+    bone = "ValveBiped.Bip01_R_Hand",
+    scale = 1
 }
 
 SWEP.ViewModelFOV = 70
@@ -146,7 +146,7 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "rpg"
+SWEP.HoldtypeActive = "smg"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
@@ -303,7 +303,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG1,
         LHIK = true,
         LHIKIn = 0.2,
         LHIKOut = 0.4,
@@ -325,7 +325,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG1,
         LHIK = true,
         LHIKIn = 0.2,
         LHIKOut = 0.5,
