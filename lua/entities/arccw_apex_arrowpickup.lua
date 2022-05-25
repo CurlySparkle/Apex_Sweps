@@ -30,6 +30,15 @@ if SERVER then
         self:UseTriggerBounds(true, 16)
         SafeRemoveEntityDelayed(self, 60)
 
+		local impacteff = ents.Create( "info_particle_system" )
+		impacteff:SetKeyValue( "effect_name", "tfa_apex_bocek_impact" )
+		impacteff:SetOwner( self )
+		impacteff:SetPos( self:GetPos() )
+		impacteff:Spawn()
+		impacteff:Activate()
+		impacteff:Fire( "start", "", 0 )
+		impacteff:Fire( "kill", "", 30 )
+
         self.CanPickup = true
     end
 
