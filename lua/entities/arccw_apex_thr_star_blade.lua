@@ -59,7 +59,7 @@ function ENT:PhysicsCollide(data, physobj)
     effectdata:SetRadius(32)
     util.Effect("cball_explode", effectdata)
 
-    local angles = self:GetAngles()
+    local angles = data.OurOldVelocity:GetNormalized():Angle()
 
     self:EmitSound("weapons/grenades/arcstar/Phys_Imp_GrenadeArc_Flesh_3p_1ch_v1_0" .. math.random(1, 3) .. ".wav", 80)
 

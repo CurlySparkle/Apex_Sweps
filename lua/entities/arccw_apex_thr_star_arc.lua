@@ -26,6 +26,10 @@ ENT.BlastDamage = {
     [2] = 50,
 }
 
+function ENT:SetupDataTables()
+    self:NetworkVar("Bool", 0, "Stuck")
+end
+
 function ENT:InitPhys()
     self:PhysicsInitBox(Vector(-1, -1, -0.25), Vector(1, 1, 0.25))
     self:SetMoveType(MOVETYPE_VPHYSICS)
@@ -96,11 +100,41 @@ function ENT:Think()
         end
 
         self:Remove()
+    elseif CLIENT and self:GetStuck() and not self.StuckTime then
+        self.StuckTime = CurTime()
+        local emitter = ParticleEmitter(self:GetPos())
+        if not IsValid(emitter) then return end
+        local fire = emitter:Add("effects/bluemuzzle", self:GetPos())
+        fire:SetDieTime(2.75)
+        fire:SetStartAlpha(100)
+        fire:SetEndAlpha(100)
+        fire:SetStartSize(10)
+        fire:SetEndSize(10)
+        fire:SetRoll(math.Rand(-180, 180))
+        fire:SetRollDelta(math.Rand(-0.2, 0.2))
+        fire:SetColor(125, 160, 125)
+        fire:SetAirResistance(25)
+        fire:SetPos(self:GetPos() - self:GetForward() * 16)
+        fire:SetLighting(false)
+        fire:SetCollide(false)
+        fire:SetNextThink(CurTime() + FrameTime())
+        fire:SetThinkFunction(function(pa)
+            if not IsValid(self) then return end
+            local s = Lerp((CurTime() - self.StuckTime) / 2.5, 0.25, 1) ^ 2
+            pa:SetPos(self:GetPos() - self:GetForward() * 16)
+            pa:SetStartSize(s * 90 * math.Rand(0.9, 1.1))
+            pa:SetEndSize(s * 90 * math.Rand(0.9, 1.1))
+            local a = math.Rand(85, 115)
+            pa:SetStartAlpha(a)
+            pa:SetEndAlpha(a)
+            pa:SetNextThink(CurTime() + FrameTime())
+        end)
+        emitter:Finish()
     end
 end
 
 function ENT:PhysicsCollide(data, physobj)
-    if self.Stuck or self.Armed then return end
+    if self:GetStuck() or self.Armed then return end
     self.Armed = true
 
     local tgt = data.HitEntity
@@ -135,7 +169,7 @@ function ENT:PhysicsCollide(data, physobj)
     effectdata:SetRadius(32)
     util.Effect("cball_bounce", effectdata)
 
-    local angles = self:GetAngles()
+    local angles = data.OurOldVelocity:GetNormalized():Angle()
 
     self:EmitSound("weapons/grenades/arcstar/Phys_Imp_GrenadeArc_Flesh_3p_1ch_v1_0" .. math.random(1, 3) .. ".wav", 80)
     self:EmitSound("weapons/grenades/arcstar/Wpn_ArcStar_3P_Warning_StaticWindup_1ch_01.wav")
@@ -154,7 +188,7 @@ function ENT:PhysicsCollide(data, physobj)
                     mask = MASK_SHOT
                 })
                 local ent = tr.Entity
-                if IsValid(ent) then
+                if ent:IsWorld() or IsValid(ent) then
                     local bone = ent:TranslatePhysBoneToBone(tr.PhysicsBone) or ent:GetHitBoxBone(tr.HitBox, ent:GetHitboxSet())
                     local matrix = tgt:GetBoneMatrix(bone or 0)
                     self:SetSolid(SOLID_NONE)
@@ -172,7 +206,7 @@ function ENT:PhysicsCollide(data, physobj)
                         self:SetParent(tgt)
                         self:GetParent():DontDeleteOnRemove(self)
                     end
-                    self.Stuck = true
+                    self:SetStuck(true)
                     self.AttachToWorld = tgt:IsWorld()
                 end
             end
@@ -181,3 +215,24 @@ function ENT:PhysicsCollide(data, physobj)
 
     self.DetonateTime = CurTime() + 2.5
 end
+
+-- draws over world
+--[[]
+local glow = Material("effects/blueblackflash")
+function ENT:Draw()
+    self:DrawModel()
+    if self:GetStuck() then
+        self.StuckTime = self.StuckTime or CurTime()
+        local s = 0.25
+        if CurTime() - self.StuckTime > 2 then
+            s = s + Lerp((CurTime() - self.StuckTime - 2) / 0.5, 0, 1) ^ 2
+        else
+            s = s + Lerp((CurTime() - self.StuckTime) / 2.5, 1, 0) ^ 2
+        end
+        cam.Start3D()
+            render.SetMaterial(glow)
+            render.DrawSprite(self:GetPos() + self:GetForward() * 16, s * math.Rand(150, 200), s * math.Rand(150, 200), Color(255, 255, 255, 75))
+        cam.End3D()
+    end
+end
+]]
