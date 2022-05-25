@@ -51,6 +51,25 @@ SWEP.CamAttachment = 3
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE
 SWEP.AnimShootAlt = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
+SWEP.AttachmentElements = {
+    ["skin_1"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
+    ["skin_2"] = {
+        VMSkin = 2,
+        WMSkin = 2,
+    },
+    ["skin_3"] = {
+        VMSkin = 3,
+        WMSkin = 3,
+    },
+    ["skin_4"] = {
+        VMSkin = 4,
+        WMSkin = 4,
+    },
+}
+
 SWEP.Attachments = {
     {
         PrintName = "Payload",

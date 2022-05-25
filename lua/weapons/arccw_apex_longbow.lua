@@ -54,10 +54,17 @@ SWEP.Apex_Balance = {
     [1] = {
         Damage = 60,
         DamageMin = 40,
+		HipDispersion = 500,
+		MoveDispersion = 100,
+		JumpDispersion = 100,
     },
     [2] = {
         Damage = 45, -- slightly weaker than TTT scout (fires faster)
         DamageMin = 45,
+		AccuracyMOA = 0.2,
+		HipDispersion = 850,
+		MoveDispersion = 100,
+		JumpDispersion = 300,
         BodyDamageMults = {
             [HITGROUP_HEAD] = 2.25, -- lethal on unarmored headshot (101)
             [HITGROUP_CHEST] = 1,

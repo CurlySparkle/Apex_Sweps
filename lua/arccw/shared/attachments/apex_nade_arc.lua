@@ -8,6 +8,7 @@ att.Desc_Pros = {
 att.Desc_Cons = {
 }
 att.Slot = {"apex_nade"}
+att.ActivateElements = {"skin_3"}
 
 att.Override_ShootEntity = "arccw_apex_thr_frag_arc"
 att.Override_CookPrimFire = true

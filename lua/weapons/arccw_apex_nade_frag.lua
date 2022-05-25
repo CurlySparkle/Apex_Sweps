@@ -46,6 +46,21 @@ SWEP.PullPinTime = 0.5
 
 SWEP.ViewModelFOV = 70
 
+SWEP.AttachmentElements = {
+    ["skin_1"] = {
+        VMSkin = 1,
+        WMSkin = 1,
+    },
+    ["skin_2"] = {
+        VMSkin = 2,
+        WMSkin = 2,
+    },
+    ["skin_3"] = {
+        VMSkin = 3,
+        WMSkin = 3,
+    },
+}
+
 SWEP.Attachments = {
     {
         PrintName = "Payload",

@@ -50,6 +50,7 @@ SWEP.Range = 200
 SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
 
+
 SWEP.Apex_Balance = {
     [1] = {
         -- Arcwc Settings
