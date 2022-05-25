@@ -65,6 +65,7 @@ function ENT:Initialize()
 
         self.SpawnTime = CurTime()
         self.FireTime = self.BalFireTime[ArcCW.Apex.GetBalanceMode()]
+        table.insert(ArcCW.Apex.NoxSources, self)
     end
 end
 
@@ -101,6 +102,7 @@ function ENT:Think()
     if self:GetArmed() then
 
         if SERVER then
+            --[[]
             if self.NextDamageTick > CurTime() then return end
             local damaged = {}
             local toclear = table.Copy(self.Damaged)
@@ -135,6 +137,7 @@ function ENT:Think()
             end
             self.NextDamageTick = CurTime() + 1
             --debugoverlay.Sphere(self:GetPos(), 512, 1.5, Color(175, 175, 100, 200), false)
+            ]]
         else
             local emitter = ParticleEmitter(self:GetPos())
 

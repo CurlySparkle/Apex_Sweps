@@ -156,6 +156,51 @@ if SERVER then
 
     hook.Add("ScalePlayerDamage", "ArcCW_Apex", hitsound)
     hook.Add("ScaleNPCDamage", "ArcCW_Apex", hitsound)
+
+
+    ArcCW.Apex.NoxSources = {}
+    ArcCW.Apex.NoxDamaged = {}
+    local nextnox = 0
+    hook.Add("Think", "ArcCW_Apex_Nox", function()
+        if #ArcCW.Apex.NoxSources == 0 or nextnox > CurTime() then return end
+        nextnox = CurTime() + 1
+        local damaged = {}
+        local toclear = table.Copy(ArcCW.Apex.NoxDamaged)
+        for id, ent in ipairs(ArcCW.Apex.NoxSources) do
+            if not IsValid(ent) then table.remove(ArcCW.Apex.NoxSources, id) continue end
+            if ent.GetArmed and not ent:GetArmed() then continue end
+            local z = ent:GetPos().z
+            for k, v in pairs(ents.FindInSphere(ent:GetPos(), 512)) do
+                if math.abs(z - v:GetPos().z) <= 192 and not damaged[v] and (v:IsNPC() or v:IsPlayer() or v:IsNextBot()) then
+                    damaged[v] = ent
+                    if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
+                end
+            end
+        end
+
+        local hit = {}
+        for v, ent in pairs(damaged) do
+            ArcCW.Apex.NoxDamaged[v:EntIndex()] = (ArcCW.Apex.NoxDamaged[v:EntIndex()] or 0) + 0.5
+            local o = ent:GetOwner()
+            local dmg = DamageInfo()
+            dmg:SetDamageType(DMG_NERVEGAS)
+            dmg:SetDamage(math.floor(4.5 + ArcCW.Apex.NoxDamaged[v:EntIndex()]))
+            dmg:SetInflictor(IsValid(ent) and ent or o)
+            dmg:SetAttacker(o)
+            dmg:SetDamageForce(Vector(0, 0, 0))
+            v:TakeDamageInfo(dmg)
+            if not hit[o] and (v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot()) and IsValid(o) and v ~= o and v:Health() > 0 then
+                hit[o] = true
+                net.Start("arccw_apex_hit")
+                    net.WriteBool(false)
+                net.Send(ent:GetOwner())
+            end
+        end
+
+        for e, _ in pairs(toclear) do
+            ArcCW.Apex.NoxDamaged[e] = nil
+        end
+    end)
 else
     CreateConVar("arccw_apex_hitsound", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use hit sounds on Apex Legends weapons.", 0, 1)
     CreateConVar("arccw_apex_hitsound_headshot", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use headshot hit sounds on Apex Legends weapons.", 0, 1)
