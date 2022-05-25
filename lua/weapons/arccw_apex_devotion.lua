@@ -40,7 +40,7 @@ SWEP.ViewModel = "models/weapons/c_apex_devotion.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_devotion.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-4.5, 4, -5.5),
+    pos        =  Vector(12.5, 1, 2),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -101,7 +101,7 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
     return delay / Lerp(wep:GetBurstCount() / 15, 1, 3)
 end
 
-SWEP.AccuracyMOA = 5
+SWEP.AccuracyMOA = 10
 SWEP.HipDispersion = 525 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 125
 SWEP.JumpDispersion = 300
