@@ -53,16 +53,6 @@ function ENT:Think()
         local pos = self:GetPos()
         if IsValid(self:GetParent()) then pos = self:GetParent():WorldSpaceCenter() end
 
-        --util.BlastDamage(self, self:GetOwner(), self:GetPos(), 300, 90)
-       -- local effectdata = EffectData()
-        --effectdata:SetOrigin(pos)
-        --effectdata:SetNormal(self:GetForward())
-        --effectdata:SetMagnitude(1)
-        --effectdata:SetScale(1)
-        --effectdata:SetRadius(32)
-        --effectdata:SetEntity(self)
-        --util.Effect("HelicopterMegaBomb", effectdata)
-
         local explode = ents.Create( "info_particle_system" )
         explode:SetKeyValue( "effect_name", "tfa_apex_arcstar_explode" )
         explode:SetOwner( self.Owner )
@@ -93,9 +83,9 @@ function ENT:Think()
             ent:TakeDamageInfo(dmginfo)
 
             if ent:IsPlayer() then
-                ArcCW.Apex.ArcStarSlow(ent, 5 * f)
+                ArcCW.Apex.ArcSlow(ent, 5 * f)
             end
-            if not hit and IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (ent:IsPlayer() or ent:IsNPC() or ent:IsNextBot()) then
+            if not hit and IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and ent ~= self:GetOwner() and (ent:IsPlayer() or ent:IsNPC() or ent:IsNextBot()) then
                 hit = true
                 net.Start("arccw_apex_hit")
                     net.WriteBool(false)

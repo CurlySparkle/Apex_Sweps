@@ -47,6 +47,12 @@ SWEP.PullPinTime = 0.5
 SWEP.ViewModelFOV = 70
 
 SWEP.Attachments = {
+    {
+        PrintName = "Payload",
+        DefaultAttName = "Frag",
+        DefaultAttIcon = Material("entities/arccw_apex_nade_frag.png", "mips smooth"),
+        Slot = {"apex_nade"},
+    }
 }
 
 SWEP.Animations = {

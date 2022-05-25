@@ -10,12 +10,11 @@ ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
+ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.FuseTime = 3.5
-ENT.ArmTime = 0
-ENT.ImpactFuse = false
-ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
+ENT.TrailColor = Color(255, 0, 0, 250)
 
 ENT.BlastDamage = {
     [0] = 100,
@@ -37,7 +36,7 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-        self.Trail = util.SpriteTrail(self, 0, Color(255, 0, 0, 250), false, 4, 0, 1, 4, "trails/plasma")
+        self.Trail = util.SpriteTrail(self, 0, self.TrailColor, false, 4, 0, 1, 4, "trails/plasma")
         self:SetPhysicsAttacker(self:GetOwner(), 10)
     end
 end
@@ -120,7 +119,7 @@ function ENT:Detonate()
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
 
-            if not hit and IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and (ent:IsPlayer() or ent:IsNPC() or ent:IsNextBot()) then
+            if not hit and IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() and ent ~= self:GetOwner() and (ent:IsPlayer() or ent:IsNPC() or ent:IsNextBot()) then
                 hit = true
                 net.Start("arccw_apex_hit")
                     net.WriteBool(false)

@@ -11,10 +11,28 @@ ArcCW.Apex.GrenadeBlacklist = {
     ["arccw_apex_thr_arcstar"] = true,
     ["arccw_apex_thermite"] = true,
     ["arccw_apex_thr_thermite"] = true,
+    ["arccw_apex_thr_frag_fire"] = true,
+
     ["predicted_viewmodel"] = true,
     ["entityflame"] = true,
     ["worldspawn"] = true,
 }
+
+-- HL2 zombies are hard-coded to not take any DMG_BURN damage, but instead slowly burn out
+-- as cool as it looks in ravenholm, it feels awful against our case so we change dmgtype against them
+ArcCW.Apex.FireDirectDamage = {
+    ["npc_zombie"] = true,
+    ["npc_zombie_torso"] = true,
+    ["npc_fastzombie"] = true,
+    ["npc_fastzombie_torso"] = true,
+    ["npc_poisonzombie"] = true,
+    ["npc_zombine"] = true,
+    ["npc_headcrab"] = true,
+    ["npc_headcrab_fast"] = true,
+    ["npc_headcrab_black"] = true,
+    ["npc_headcrab_poison"] = true,
+}
+
 
 ArcCW.Apex.BlendSights = function(wep)
     local vm = wep:GetOwner():GetViewModel()
@@ -117,13 +135,13 @@ hook.Add("InitPostEntity", "ArcCW_Apex", function()
     ArcCW.RandomWeaponCache = {}
 end)
 
-hook.Add("StartCommand", "ArcCW_Apex_ArcStarSlow", function(ply, ucmd)
-    if (ply.ArcStarSlowEnd or 0) > CurTime() then
+hook.Add("StartCommand", "ArcCW_Apex_ArcSlow", function(ply, ucmd)
+    if (ply.ArcSlowEnd or 0) > CurTime() then
         ucmd:SetButtons(bit.band(ucmd:GetButtons(), bit.bnot(IN_SPEED)))
     end
 end)
-hook.Add("SetupMove", "ArcCW_Apex_ArcStarSlow", function(ply, mv, ucmd)
-    if (ply.ArcStarSlowEnd or 0) > CurTime() then
+hook.Add("SetupMove", "ArcCW_Apex_ArcSlow", function(ply, mv, ucmd)
+    if (ply.ArcSlowEnd or 0) > CurTime() then
         mv:SetMaxSpeed(mv:GetMaxSpeed() * 0.7)
         mv:SetMaxClientSpeed(mv:GetMaxClientSpeed() * 0.7)
     end
@@ -136,11 +154,11 @@ if SERVER then
     util.AddNetworkString("arccw_apex_loader")
 
     -- Since all move hooks are run client and server, we need to network it
-    function ArcCW.Apex.ArcStarSlow(ply, dur)
+    function ArcCW.Apex.ArcSlow(ply, dur)
         net.Start("arccw_apex_arcslow")
             net.WriteFloat(dur + CurTime())
         net.Send(ply)
-        ply.ArcStarSlowEnd = dur + CurTime()
+        ply.ArcSlowEnd = dur + CurTime()
     end
 
     local function hitsound(ply, hg, dmg)
@@ -331,6 +349,6 @@ else
     end)
 
     net.Receive("arccw_apex_arcslow", function()
-        LocalPlayer().ArcStarSlowEnd = net.ReadFloat()
+        LocalPlayer().ArcSlowEnd = net.ReadFloat()
     end)
 end

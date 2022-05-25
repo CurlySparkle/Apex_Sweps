@@ -17,21 +17,6 @@ ENT.Damaged = {}
 
 ENT.FireTime = 10
 
--- HL2 zombies are hard-coded to not take any DMG_BURN damage, but instead slowly burn out
--- as cool as it looks in ravenholm, it feels awful against our case so we change dmgtype against them
-local specialfire = {
-    ["npc_zombie"] = true,
-    ["npc_zombie_torso"] = true,
-    ["npc_fastzombie"] = true,
-    ["npc_fastzombie_torso"] = true,
-    ["npc_poisonzombie"] = true,
-    ["npc_zombine"] = true,
-    ["npc_headcrab"] = true,
-    ["npc_headcrab_fast"] = true,
-    ["npc_headcrab_black"] = true,
-    ["npc_headcrab_poison"] = true,
-}
-
 function ENT:Initialize()
     if SERVER then
         self:SetModel(self.Model)
@@ -114,7 +99,7 @@ function ENT:Think()
         self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 1
         local o = self.Owner
         local dmg = DamageInfo()
-        dmg:SetDamageType(specialfire[v:GetClass()] and DMG_DIRECT or DMG_BURN)
+        dmg:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN)
         dmg:SetDamage(3 + self.Damaged[v:EntIndex()])
         dmg:SetInflictor(IsValid(self) and self or o)
         dmg:SetAttacker(o)
@@ -135,7 +120,7 @@ function ENT:Think()
                     return
                 end
                 local d = DamageInfo()
-                d:SetDamageType(specialfire[v:GetClass()] and DMG_DIRECT or DMG_BURN)
+                d:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN)
                 d:SetDamage(5)
                 d:SetInflictor(IsValid(self) and self or o)
                 d:SetAttacker(o)
