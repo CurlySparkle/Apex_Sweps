@@ -1454,7 +1454,7 @@ local hopups = {
     },
     ["kinetic"] = {
         name = "Kinetic Feeder",
-        icon = "entities/attach_icons/hopup_apex_dualshell.png",
+        icon = "entities/attach_icons/hopup_apex_kineticfeeder.png",
         desc = "While sliding, automatically load ammo into the weapon, and weapon spread is tightened.",
         weight = 0.25,
         variants = {
