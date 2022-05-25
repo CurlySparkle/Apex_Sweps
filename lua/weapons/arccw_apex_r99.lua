@@ -180,7 +180,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(6, 0.9, -5.2),
+            wpos = Vector(6, 1.0, -5.31),
             wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"ref_dot", "ref_sights"},
@@ -195,7 +195,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-            wpos = Vector(20, 1, -6),
+            wpos = Vector(20, 1.0, -5.8),
             wang = Angle(-10, 0, 180)
         },
     },

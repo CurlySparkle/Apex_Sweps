@@ -208,8 +208,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(5, 0.8, -4.5),
-            wang = Angle(-10, 0, 180)
+            wpos = Vector(7.2, 1.4, -5.25),
+            wang = Angle(-10, -2.0, 180)
         },
         InstalledEles = {"weapon_dot"},
         CorrectivePos = Vector(1.19, 0, -0.7),
