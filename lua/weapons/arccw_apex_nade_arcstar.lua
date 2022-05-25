@@ -19,7 +19,7 @@ SWEP.NotForNPCs = true
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_nade_arcstar.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_nade_arcstar.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_nade_arcstar.mdl"
 -- SWEP.MirrorVMWM = true
 -- SWEP.WorldModelOffset = {
     -- pos = Vector(3, 2, -1),
