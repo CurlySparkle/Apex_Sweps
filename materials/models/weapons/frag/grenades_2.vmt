@@ -4,8 +4,10 @@
 	"$bumpmap"					"models\weapons\frag\grenades_n"
 	"$phongexponenttexture"		"models\weapons\frag\grenades_e"
 
-     $selfillum                	1
-	$selfillummask				"models\weapons\frag\grenades_si_2"
+	$detail						"models\weapons\frag\grenades_si_2"
+     $detailscale                1
+   	$detailblendfactor 			1
+   	$detailblendmode			5
 
 	$envmap						env_cubemap
 	$envmaptint					"[ .02 .02 .02 ]"
@@ -16,14 +18,4 @@
 	$phongboost					3
 	$phongfresnelranges			"[0.25 0.5 1]"
 
-	"Proxies"
-	{
-		"Sine"
-		{
-			"resultVar" "$selfIllumTint"
-			"sinemin" 0.0
-			"sinemax" 2.0
-			"sineperiod" 1.0
-		}
-	}
 }

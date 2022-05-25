@@ -14,6 +14,8 @@ SWEP.Trivia_Desc = "Standard explosive ordnance with a timed fuse and a large bl
 
 SWEP.Slot = 4
 
+SWEP.CamAttachment = 3
+
 SWEP.NotForNPCs = true
 
 SWEP.UseHands = true

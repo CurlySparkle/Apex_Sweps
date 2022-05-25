@@ -14,6 +14,8 @@ SWEP.Trivia_Desc = "Caustic's signature grenades, containing dangerous Nox gas.\
 
 SWEP.Slot = 4
 
+SWEP.CamAttachment = 3
+
 SWEP.NotForNPCs = true
 
 SWEP.UseHands = true
