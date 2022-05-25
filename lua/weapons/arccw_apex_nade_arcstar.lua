@@ -48,6 +48,9 @@ SWEP.ViewModelFOV = 70
 
 SWEP.CamAttachment = 3
 
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE
+SWEP.AnimShootAlt = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
+
 SWEP.Attachments = {
 }
 

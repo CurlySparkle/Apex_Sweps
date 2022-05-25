@@ -55,6 +55,11 @@ SWEP.CamAttachment = 3
 
 SWEP.IronSightStruct = false
 
+SWEP.HoldtypeActive = "slam"
+
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_MELEE2
+SWEP.AnimShootAlt = ACT_HL2MP_GESTURE_RANGE_ATTACK_SLAM
+
 SWEP.Attachments = {
 }
 
