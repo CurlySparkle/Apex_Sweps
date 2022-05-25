@@ -34,11 +34,17 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_3030.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_3030.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_3030.mdl"
 SWEP.MirrorVMWM = false
+-- SWEP.WorldModelOffset = {
+    -- pos        =    Vector(-6.5, 5, -1.5),
+    -- ang        =    Angle(-20, 0, 180),
+    -- bone    =    "ValveBiped.Bip01_R_Hand",
+    -- scale   =   1,
+-- }
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-6.5, 5, -1.5),
-    ang        =    Angle(-20, 0, 180),
+    pos        =    Vector(15, 0.5, -3),
+    ang        =    Angle(-20, 180, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
 }
