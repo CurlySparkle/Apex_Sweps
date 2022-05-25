@@ -37,7 +37,7 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_havoc.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_havoc.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_havoc.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-8, 4.8, -5.5),

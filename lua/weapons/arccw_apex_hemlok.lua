@@ -33,7 +33,7 @@ SWEP.NPCWeight = 250
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_hemlok.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_hemlok.mdl"
+SWEP.WorldModel = "models/weapons/w_apex_hemlok.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     pos        =    Vector(-6.2, 4.3, -6),
