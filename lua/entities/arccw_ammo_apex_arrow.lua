@@ -12,3 +12,5 @@ ENT.IconOverride              = "entities/items/apex_ammo_Arrows.png"
 ENT.AmmoType = "apex_arrow"
 ENT.AmmoCount = 16
 ENT.PickupSound = "items/Pickups_Ammo_Arrows_V1_1ch_01.wav"
+
+ENT.DetonationDamage = -1
