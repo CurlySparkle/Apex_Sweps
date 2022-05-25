@@ -74,7 +74,7 @@ SWEP.Apex_Balance = {
     },
 }
 
-SWEP.Tracer = "arccw_apex_tracer_energy_shotgun" -- override tracer (hitscan) effect
+SWEP.Tracer = "arccw_apex_tracer_energy_sg" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1
 SWEP.TracerWidth = 1
 SWEP.PhysTracerProfile = 6
@@ -249,7 +249,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_choke"}
+        Slot = {"apex_hopup_choke", "apex_hopup_kinetic2"}
     },
     {
         PrintName = "Skin",
@@ -409,7 +409,7 @@ SWEP.Hook_Think = function(wep)
                 wep:EmitSound("ArcCW_APEX.Peacekeeper.ChargeStart")
             end
         end
-    elseif charge > 0 then
+    elseif wep:GetBuff_Override("ApexCharge") and charge > 0 then
         wep:SetNWFloat("ApexCharge", 0)
         wep:EmitSound("ArcCW_APEX.Peacekeeper.ChargeEnd")
     end

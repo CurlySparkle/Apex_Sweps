@@ -239,7 +239,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_choke2", "apex_hopup_selfire7"}
+        Slot = {"apex_hopup_choke2", "apex_hopup_selfire7", "apex_hopup_kinetic"}
     },
     {
         PrintName = "Skin",
@@ -374,7 +374,7 @@ SWEP.Hook_Think = function(wep)
                 wep:EmitSound("ArcCW_APEX.TripleTake.ChargeStart")
             end
         end
-    elseif charge > 0 then
+    elseif wep:GetBuff_Override("ApexCharge") and charge > 0 then
         wep:SetNWFloat("ApexCharge", 0)
         wep:EmitSound("ArcCW_APEX.TripleTake.ChargeEnd")
     end
