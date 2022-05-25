@@ -72,9 +72,9 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 1,
 }
 
-SWEP.AlwaysPhysBullet = false
-SWEP.NeverPhysBullet = true
-SWEP.Tracer = "arccw_apex_tracer_energy_rifle" -- Testing Purposes lol
+SWEP.AlwaysPhysBullet = true
+SWEP.NeverPhysBullet = false
+SWEP.Tracer = "arccw_apex_tracer_energy_rifle"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 

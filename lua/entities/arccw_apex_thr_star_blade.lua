@@ -73,7 +73,7 @@ function ENT:PhysicsCollide(data, physobj)
             self:SetAngles(angles)
             self:SetPos(data.HitPos)
 
-            if ((tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) then
+            if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) then
                 --[[]
                 self.CanPickup = true
                 self:SetTrigger(true)
