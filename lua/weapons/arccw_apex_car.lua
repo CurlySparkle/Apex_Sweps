@@ -44,10 +44,10 @@ SWEP.ViewModel = "models/weapons/c_apex_car.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_car.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-6, 4.3, -4.5),
-    ang        =    Angle(-10, 0, 180),
-    bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    pos        =  Vector(7, 1, 3.5),
+    ang        =  Angle(-10, 0, 180),
+    bone       =  "ValveBiped.Bip01_R_Hand",
+    scale      =  0.9,
 }
 
 SWEP.Damage = 13
@@ -98,12 +98,12 @@ SWEP.Num = 1 -- number of shots per trigger pull.
 
 SWEP.Firemodes = {
     {
-        PrintName = "fcg.auto",
+        PrintName = "fcg.apex.heavy",
         Mode = 2,
         RestoreAmmo = true,
     },
     {
-        PrintName = "fcg.auto",
+        PrintName = "fcg.apex.light",
         Mode = 2,
         Override_Ammo = "apex_light",
         RestoreAmmo = true,
@@ -159,10 +159,10 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "ar2"
+SWEP.HoldtypeActive = "smg"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
 
 SWEP.AttachmentElements = {
     ["sight"] = {
