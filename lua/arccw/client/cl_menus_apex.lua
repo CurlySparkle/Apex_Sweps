@@ -1,5 +1,5 @@
 local ApexPanel_SV = {
-    { type = "h", text = "#arccw.apex_info" },
+    { type = "h", text = "#arccw.adminonly" },
 
     { type = "o", text = "#arccw.cvar.apex_bal", var = "arccw_apex_bal", sv = true,
             choices = {[-1] = "#arccw.cvar.apex_bal.-1", [0] = "#arccw.cvar.apex_bal.0", [1] = "#arccw.cvar.apex_bal.1", [2] = "#arccw.cvar.apex_bal.2"}},
@@ -10,7 +10,6 @@ local ApexPanel_SV = {
 
     { type = "b", text = "#arccw.cvar.apex_freecharge", var = "arccw_apex_freecharge", sv = true },
     { type = "c", text = "#arccw.cvar.apex_freecharge.desc" },
-
 
     { type = "b", text = "#arccw.cvar.apex_ammo", var = "arccw_apex_ammo", sv = true },
     { type = "b", text = "#arccw.cvar.apex_ttt_ammo", var = "arccw_apex_ttt_ammo", sv = true },
@@ -23,6 +22,9 @@ local ApexPanel_CL = {
     { type = "h", text = "#arccw.clientcfg" },
     { type = "b", text = "#arccw.cvar.apex_hitsound", var = "arccw_apex_hitsound"},
     { type = "b", text = "#arccw.cvar.apex_hitsound_headshot", var = "arccw_apex_hitsound_headshot"},
+    { type = "b", text = "#arccw.cvar.apex_hitmarker", var = "arccw_apex_hitmarker"},
+    { type = "b", text = "#arccw.cvar.apex_hitmarker_headshot", var = "arccw_apex_hitmarker_headshot"},
+    { type = "i", text = "#arccw.cvar.apex_hitmarker_size", var = "arccw_apex_hitmarker_size", min = 16, max = 64},
 }
 
 --[[]

@@ -1464,23 +1464,11 @@ local hopups = {
                     local charge = wep:GetNWFloat("ApexCharge", 0)
                     if owner:OnGround() and owner:GetVelocity():Length() > 100 and owner:Crouching() then
                         wep.ApexSlideLoad = wep.ApexSlideLoad or CurTime() + 0.5
-                        if SERVER and wep.ApexSlideLoad < CurTime() then
+                        if SERVER and wep:Clip1() < wep:GetCapacity() and wep.ApexSlideLoad < CurTime() then
                             wep.ApexSlideLoad = CurTime() + 0.5
                             wep:RestoreAmmo(1)
                         end
-                        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() * 0.5))
-                        if (game.SinglePlayer() and SERVER) or (not game.SinglePlayer() and CLIENT) then
-                            local f = wep:GetNWFloat("ApexCharge", 0)
-                            if f >= 1 and charge < 1 then
-                                wep:EmitSound("ArcCW_APEX.TripleTake.Level_Tick_3")
-                            elseif f >= 0.67 and charge < 0.67 then
-                                wep:EmitSound("ArcCW_APEX.TripleTake.Level_Tick_2")
-                            elseif f >= 0.33 and charge < 0.33 then
-                                wep:EmitSound("ArcCW_APEX.TripleTake.Level_Tick_1")
-                            elseif f > 0 and charge == 0 then
-                                wep:EmitSound("ArcCW_APEX.TripleTake.ChargeStart")
-                            end
-                        end
+                        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() * 0.75))
                     elseif charge > 0 then
                         wep:SetNWFloat("ApexCharge", math.max(0, charge - FrameTime()))
                         wep.ApexSlideLoad = nil
@@ -1493,23 +1481,11 @@ local hopups = {
                     local charge = wep:GetNWFloat("ApexCharge", 0)
                     if owner:OnGround() and owner:GetVelocity():Length() > 100 and owner:Crouching() then
                         wep.ApexSlideLoad = wep.ApexSlideLoad or CurTime() + 1
-                        if SERVER and wep.ApexSlideLoad < CurTime() then
+                        if SERVER and wep:Clip1() < wep:GetCapacity() and wep.ApexSlideLoad < CurTime() then
                             wep.ApexSlideLoad = CurTime() + 1
                             wep:RestoreAmmo(1)
                         end
-                        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() * 0.75))
-                        if (game.SinglePlayer() and SERVER) or (not game.SinglePlayer() and CLIENT) then
-                            local f = wep:GetNWFloat("ApexCharge", 0)
-                            if f >= 1 and charge < 1 then
-                                wep:EmitSound("ArcCW_APEX.Peacekeeper.Level_Tick_3")
-                            elseif f >= 0.67 and charge < 0.67 then
-                                wep:EmitSound("ArcCW_APEX.Peacekeeper.Level_Tick_2")
-                            elseif f >= 0.33 and charge < 0.33 then
-                                wep:EmitSound("ArcCW_APEX.Peacekeeper.Level_Tick_1")
-                            elseif f > 0 and charge == 0 then
-                                wep:EmitSound("ArcCW_APEX.Peacekeeper.ChargeStart")
-                            end
-                        end
+                        wep:SetNWFloat("ApexCharge", math.min(1, charge + FrameTime() * 1))
                     elseif charge > 0 then
                         wep:SetNWFloat("ApexCharge", math.max(0, charge - FrameTime()))
                         wep.ApexSlideLoad = nil

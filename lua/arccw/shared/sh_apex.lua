@@ -202,8 +202,11 @@ if SERVER then
         end
     end)
 else
-    CreateConVar("arccw_apex_hitsound", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use hit sounds on Apex Legends weapons.", 0, 1)
-    CreateConVar("arccw_apex_hitsound_headshot", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Use headshot hit sounds on Apex Legends weapons.", 0, 1)
+    CreateConVar("arccw_apex_hitsound", 1, FCVAR_ARCHIVE, "Use hit sounds on Apex Legends weapons.", 0, 1)
+    CreateConVar("arccw_apex_hitsound_headshot", 1, FCVAR_ARCHIVE, "Use headshot hit sounds on Apex Legends weapons.", 0, 1)
+    CreateConVar("arccw_apex_hitmarker", 1, FCVAR_ARCHIVE, "Use hit markers on Apex Legends weapons.", 0, 1)
+    CreateConVar("arccw_apex_hitmarker_headshot", 1, FCVAR_ARCHIVE, "Hitmarker turns red on a headshot.", 0, 1)
+    CreateConVar("arccw_apex_hitmarker_size", 24, FCVAR_ARCHIVE, "Set the hitmarker size (scaled to your resolution).", 16, 64)
 
     sound.Add({
         name = "Apex_Hit_Sound",
@@ -222,6 +225,7 @@ else
         sound = "player/player_hitbeep_headshotrapid_human_1p_vs_3p.wav"
     })
 
+    local Apex_BoostedReloadPanel
     net.Receive("arccw_apex_loader", function()
         LocalPlayer():EmitSound("hud/UI_InGame_BoostedLoader_Reload_Bleeps_St_v2_0" .. math.random(1, 4) .. ".wav")
 
@@ -247,7 +251,11 @@ else
         end
     end)
 
+    local Apex_Hitmarker
     local lasthitsound = 0
+    local hit_normal = Color(255, 255, 255)
+    local hit_head = Color(255, 0, 0)
+    local hitmarkermat = Material("hud/hitmarker.png", "smooth mips")
     net.Receive("arccw_apex_hit", function()
         if lasthitsound == CurTime() then return end
         lasthitsound = CurTime()
@@ -257,8 +265,39 @@ else
         elseif GetConVar("arccw_apex_hitsound"):GetBool() then
             LocalPlayer():EmitSound("Apex_Hit_Sound")
         end
+
+        if GetConVar("arccw_apex_hitmarker"):GetBool() then
+            if not IsValid(Apex_Hitmarker) then
+                Apex_Hitmarker = vgui.Create("DImage")
+                local s = ScreenScale(GetConVar("arccw_apex_hitmarker_size"):GetInt())
+                Apex_Hitmarker:SetSize(s, s)
+                Apex_Hitmarker:Center()
+                Apex_Hitmarker:SetMaterial(hitmarkermat)
+                Apex_Hitmarker.Think = function()
+                    if Apex_Hitmarker.Alpha > 0 and Apex_Hitmarker.LastHit + 0.1 < CurTime() then
+                        Apex_Hitmarker.Alpha = math.max(Apex_Hitmarker.Alpha - FrameTime() * 10, 0)
+                    end
+                    if Apex_Hitmarker.Alpha <= 0 then
+                        Apex_Hitmarker:Remove()
+                    else
+                        Apex_Hitmarker:SetAlpha(Apex_Hitmarker.Alpha * 255)
+                    end
+                end
+            end
+
+            if GetConVar("arccw_apex_hitmarker_headshot"):GetBool() and hs then
+                Apex_Hitmarker:SetImageColor(hit_head)
+            else
+                Apex_Hitmarker:SetImageColor(hit_normal)
+            end
+
+            Apex_Hitmarker.LastHit = CurTime()
+            Apex_Hitmarker.Alpha = 1
+
+        end
     end)
 
+    local Apex_AutoReloadPanel
     net.Receive("arccw_apex_autoreload", function()
         local wep = net.ReadEntity()
 
