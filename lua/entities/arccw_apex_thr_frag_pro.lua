@@ -13,6 +13,7 @@ ENT.AdminSpawnable = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
+ENT.Skin = 3
 ENT.FuseTime = 5
 ENT.TrailColor = Color(0, 200, 0, 250)
 

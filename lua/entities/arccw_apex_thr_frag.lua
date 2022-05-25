@@ -28,6 +28,7 @@ function ENT:Initialize()
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
         self:PhysicsInit(SOLID_VPHYSICS)
+        self:SetSkin(self.Skin or 0)
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
