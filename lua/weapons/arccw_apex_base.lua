@@ -33,6 +33,10 @@ SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2
 
+-- SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
+-- SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
+SWEP.CamAttachment = 3 -- This doesn't seem to work if its here on the base :(
+
 SWEP.Sway = 0.4
 
 SWEP.LockSightsInPriorityAnim = false

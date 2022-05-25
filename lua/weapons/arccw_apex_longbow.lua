@@ -27,8 +27,6 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 250
 
-SWEP.CamAttachment = 3
-
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_longbow.mdl"
@@ -140,6 +138,7 @@ SWEP.ShellTime = 1
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
+SWEP.CamAttachment = 3
 
 SWEP.BarrelLength = 15
 

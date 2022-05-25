@@ -14,6 +14,8 @@ SWEP.Trivia_Desc = "Cylinder containing an incendiary compound.\nUpon impact, de
 
 SWEP.Slot = 4
 
+SWEP.CamAttachment = 3
+
 SWEP.NotForNPCs = true
 
 SWEP.UseHands = true

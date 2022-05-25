@@ -14,6 +14,8 @@ SWEP.Trivia_Desc = "Energy-based ordnance with a shuriken-inspired design.\nStic
 
 SWEP.Slot = 4
 
+SWEP.CamAttachment = 3
+
 SWEP.NotForNPCs = true
 
 SWEP.UseHands = true
