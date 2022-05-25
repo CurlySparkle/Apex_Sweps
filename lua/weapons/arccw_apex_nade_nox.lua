@@ -19,12 +19,12 @@ SWEP.NotForNPCs = true
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_nade_nox.mdl"
-SWEP.WorldModel = "models/weapons/c_apex_nade_nox.mdl"
-SWEP.MirrorVMWM = true
-SWEP.WorldModelOffset = {
-    pos = Vector(3, 2, -1),
-    ang = Angle(-10, 0, 180)
-}
+SWEP.WorldModel = "models/weapons/w_apex_nade_nox.mdl"
+-- SWEP.MirrorVMWM = true
+-- SWEP.WorldModelOffset = {
+    -- pos = Vector(3, 2, -1),
+    -- ang = Angle(-10, 0, 180)
+-- }
 
 SWEP.Delay = 2.25
 SWEP.Firemodes = {
@@ -115,7 +115,7 @@ SWEP.Animations = {
     },
     ["throw_alt"] = {
         Source = {"toss_underhand"},
-        Mult = 1.5,
+        Mult = 1.6,
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
             {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}

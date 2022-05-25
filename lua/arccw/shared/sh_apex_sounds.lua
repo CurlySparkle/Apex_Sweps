@@ -1,4 +1,48 @@
 sound.Add( {
+    name = "ArcCW_APEX.DeadEye.Bow_Activate_Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+--    pitch = {95, 105},
+    sound = {
+        "^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_01.wav",
+		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_02.wav",
+		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_03.wav",
+		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_04.wav",
+		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_05.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.DeadEye.Sentinel_Activate_Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+--    pitch = {95, 105},
+    sound = {
+        "^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_01.wav",
+		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_02.wav",
+		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_03.wav",
+		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_04.wav",
+		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_05.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.DeadEye.Activate",
+    channel = CHAN_ITEM,
+    volume = 0.7,
+    level = 120,
+--    pitch = {95, 105},
+    sound = {
+        "^hud/Deadeye_Hopup_Activate_Sweetener_V3_01.wav",
+		"^hud/Deadeye_Hopup_Activate_Sweetener_V3_02.wav",
+		"^hud/Deadeye_Hopup_Activate_Sweetener_V3_03.wav",
+		"^hud/Deadeye_Hopup_Activate_Sweetener_V3_04.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Bocek.Fire_Charged",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -10,7 +54,6 @@ sound.Add( {
         "^weapons/bocek/fire_charged_3.wav",
     }
 } )
-util.PrecacheSound("ArcCW_APEX.Bocek.Fire_Charged")
 
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Fire_Uncharged",
@@ -24,7 +67,6 @@ sound.Add( {
         "^weapons/bocek/fire_uncharged_3.wav",
     }
 } )
-util.PrecacheSound("ArcCW_APEX.Bocek.Fire_Uncharged")
 
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Empty",
@@ -41,7 +83,6 @@ sound.Add( {
 		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_06.wav",
     }
 } )
-util.PrecacheSound("ArcCW_APEX.Bocek.Empty")
 
 sound.Add( {
     name = "ArcCW_APEX.Bocek.Charge",

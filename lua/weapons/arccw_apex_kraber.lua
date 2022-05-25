@@ -174,8 +174,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(7, 0.6, -8.15),
-            wang = Angle(-9, 0, 185)
+            wpos = Vector(8.4, 1.0, -8.70),
+            wang = Angle(-9, 0, 180)
         },
         Installed = "apex_scope_1_kraber",
         CorrectivePos = Vector(3.65, 0, 0.1),
