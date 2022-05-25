@@ -13,6 +13,8 @@ SWEP.Trivia_Class = "Designated Marksman Rifle"
 SWEP.Trivia_Desc = "Semi-auto heavy repeater."
 SWEP.Trivia_Manufacturer = "Holdener Arms"
 
+SWEP.SpawnmenuType = "Marksman"
+
 SWEP.Slot = 3
 
 SWEP.Sway = 0.25

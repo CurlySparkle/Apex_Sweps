@@ -21,7 +21,7 @@ SWEP.ViewModel = "models/weapons/c_apex_eva8.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_eva8.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-5, 4, -5.3),
+    pos        =  Vector(14, 1, 2),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     scale   =   1,
@@ -171,7 +171,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "shotgun"
 SWEP.HoldtypeSights = "ar2"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_REVOLVER
 
 SWEP.CrouchPos = Vector(-6, -1, 1)
 SWEP.CrouchAng = Angle(1.923, -1.375, -45.334)

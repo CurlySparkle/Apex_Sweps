@@ -12,6 +12,8 @@ SWEP.PrintName = "Bocek Compound Bow"
 SWEP.Trivia_Class = "Compound Bow"
 SWEP.Trivia_Desc = "A bow that can be charged to increase damage and arrow velocity.\nShot arrows can be recovered even from dead enemies, conserving ammo."
 
+SWEP.SpawnmenuType = "Marksman"
+
 SWEP.Slot = 3
 
 SWEP.CrouchPos = Vector(-2.5, -8.5, 3)

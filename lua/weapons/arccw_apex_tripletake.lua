@@ -13,6 +13,8 @@ SWEP.Trivia_Class = "Designated Marksman Rifle"
 SWEP.Trivia_Desc = "Energy rifle with three barrels firing in a horizontal line."
 SWEP.Trivia_Manufacturer = "Burrell Defense"
 
+SWEP.SpawnmenuType = "Marksman"
+
 SWEP.Slot = 3
 
 SWEP.CrouchPos = Vector(-6.5, -3, 2)

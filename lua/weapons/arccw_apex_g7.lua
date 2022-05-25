@@ -13,6 +13,8 @@ SWEP.Trivia_Class = "Designated Marksman Rifle"
 SWEP.Trivia_Desc = "A long-lasting rifle design tracing back to even before the Frontier War. With excellent damage and a high rate of fire, this is a flexible weapon in medium to long range engagements."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
+SWEP.SpawnmenuType = "Marksman"
+
 SWEP.Slot = 3
 
 SWEP.CrouchPos = Vector(-6, -2, 1)
@@ -33,10 +35,10 @@ SWEP.ViewModel = "models/weapons/c_apex_g7.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_g7.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-4, 4.5, -5),
+    pos        =  Vector(12.5, 1, 2),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
-    scale   =   1,
+    scale   =  1,
 }
 
 SWEP.ViewModelFOV = 70

@@ -159,7 +159,7 @@ SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_RPG
 
 SWEP.AttachmentElements = {
     ["weapon_sights"] = {
@@ -302,7 +302,7 @@ SWEP.Animations = {
     },
     ["fix"] = {
         Source = "overheat",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         LHIK = true,
         LHIKOut = 0.9,
         SoundTable = {

@@ -47,7 +47,7 @@ SWEP.WorldModelOffset = {
     pos        =  Vector(7, 1, 3.5),
     ang        =  Angle(-10, 0, 180),
     bone       =  "ValveBiped.Bip01_R_Hand",
-    scale      =  0.9,
+    scale      =  1,
 }
 
 SWEP.Damage = 13
