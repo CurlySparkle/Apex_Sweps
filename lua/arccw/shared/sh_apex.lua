@@ -112,8 +112,9 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         color = Color(255, 255, 255),
         sprite_head = false,
         sprite_tail = Material("effects/smoke_trail"),
-        size = 0.4,
-        tail_length = 1,
+        model = "models/ammo/w_arrow_projectile.mdl",
+        size = 1.5,
+        tail_length = 0.15,
     })
 end)
 
