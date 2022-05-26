@@ -75,7 +75,7 @@ SWEP.Tracer = "arccw_apex_tracer_energy_sniper" -- override tracer (hitscan) eff
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerWidth = 10
-SWEP.PhysTracerProfile = 6
+SWEP.PhysTracerProfile = "apex_bullet_energy"
 
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 18

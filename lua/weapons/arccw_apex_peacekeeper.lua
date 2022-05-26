@@ -77,7 +77,7 @@ SWEP.Apex_Balance = {
 SWEP.Tracer = "arccw_apex_tracer_energy_sg" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1
 SWEP.TracerWidth = 1
-SWEP.PhysTracerProfile = 6
+SWEP.PhysTracerProfile = "apex_bullet_energy"
 
 SWEP.ChamberSize = 0 -- how many rounds can be chambered.
 SWEP.Primary.ClipSize = 5
