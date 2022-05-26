@@ -1,6 +1,6 @@
 att.PrintName = "1x HCOG (Classic)"
 att.Icon = Material("entities/attach_icons/apex_1x_hcog.png", "mips smooth")
-att.Description = "reflex sight which offers clarity."
+att.Description = "Close range holographic optic."
 
 att.SortOrder = 1
 
@@ -17,23 +17,20 @@ att.Model = "models/weapons/attachments/sight_2.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 10, -1.3),
+        Pos = Vector(0, 8, -1.3),
         Ang = Angle(0, 0, 0),
-        Magnification = 1,
-        ScrollFunc = ArcCW.SCROLL_NONE,
-        Thermal = true,
-        ThermalHighlightColor = Color(255, 255, 0),
+        Magnification = 1.25,
     }
 }
 
 att.Holosight = true
 att.HolosightReticle = Material("sights/holo3.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 4
+att.HolosightSize = 3
 att.HolosightBone = "holosight"
 att.HolosightNoHSP = true
 att.Colorable = false
-att.HolosightColor = Color(255, 25, 0)
+-- att.HolosightColor = Color(255, 25, 0)
 
 att.Mult_SightTime = 1.05
 

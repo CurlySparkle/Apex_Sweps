@@ -181,7 +181,7 @@ SWEP.Attachments = {
             wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"wingman_sight"},
-        CorrectivePos = Vector(1.25,0,-0.78),
+        CorrectivePos = Vector(1.25,0,-0.72),
         CorrectiveAng = Angle(-1.296, 0, 2.681)
     },
     {

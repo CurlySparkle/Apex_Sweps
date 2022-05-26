@@ -16,19 +16,20 @@ att.Model = "models/weapons/attachments/sight_1.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 8, -0.35),
+        Pos = Vector(0, 7.8, -0.35),
         Ang = Angle(0, 0, 0),
-        Magnification = 2.15,
+        Magnification = 1.75,
     }
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo2.png", "mips")
+att.HolosightReticle = Material("sights/holo2.png", "mips smooth")
 att.HolosightNoFlare = true
 att.HolosightSize = 3
 att.HolosightBone = "holosight"
+att.HolosightPiece = "models/weapons/attachments/sight_1_hsp.mdl"
 att.Colorable = false
-att.HolosightColor = Color(255, 35, 0)
+-- att.HolosightColor = Color(255, 35, 0)
 
 att.Mult_SightTime = 1.05
 

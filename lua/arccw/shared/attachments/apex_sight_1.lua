@@ -16,14 +16,14 @@ att.Model = "models/weapons/attachments/sight_2.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(-0.05, 9, -0.3),
+        Pos = Vector(-0.05, 8, -0.3),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
+        Magnification = 1.25,
     }
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo3.png", "mips")
+att.HolosightReticle = Material("sights/holo3.png", "mips smooth")
 att.HolosightNoFlare = true
 att.HolosightSize = 3
 att.HolosightBone = "holosight"
