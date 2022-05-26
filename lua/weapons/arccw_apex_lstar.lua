@@ -81,11 +81,8 @@ SWEP.Apex_Balance = {
     },
 }
 
-SWEP.Tracer = "arccw_apex_tracer_ar"
-SWEP.TracerNum = 1 -- tracer every X
-SWEP.TracerWidth = 3
-SWEP.PhysTracerProfile = 1
-
+SWEP.PhysTracerProfile = "apex_lstar"
+SWEP.TracerNum = 1
 
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 30
