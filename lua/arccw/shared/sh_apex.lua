@@ -140,7 +140,7 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     })
 
     ArcCW:AddBulletProfile("apex_bullet_energy", {
-        color = Color(83, 140, 255),
+        color = Color(80, 150, 255),
         sprite_head = Material("effects/cmbglow_nocolor"),
         sprite_tail = Material("effects/apexlaser"),
 		model = "models/weapons/w_bullet.mdl",
