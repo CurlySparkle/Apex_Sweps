@@ -109,12 +109,11 @@ end
 
 hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     ArcCW:AddBulletProfile("apex_bocek", {
-        color = Color(255, 255, 255),
+        color = Color(192, 192, 255),
         sprite_head = false,
-        sprite_tail = Material("effects/smoke_trail"),
-        model = "models/ammo/w_arrow_projectile.mdl",
-        size = 1.5,
-        tail_length = 0.15,
+        sprite_tail = Material("effects/apexlaser"),
+        size = 0.6,
+        tail_length = 1,
     })
 end)
 
