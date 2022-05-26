@@ -15,7 +15,7 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.Skin = 2
 ENT.FuseTime = 2
-ENT.TrailColor = Color(0, 50, 255, 250)
+ENT.TrailColor = Color(200, 200, 200, 250)
 
 ENT.BlastDamage = {
     [0] = 90,
