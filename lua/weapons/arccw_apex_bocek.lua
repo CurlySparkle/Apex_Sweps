@@ -413,6 +413,8 @@ for i = 1, 5 do
     }
 end
 
+SWEP.CanFireUnderwater = true
+
 SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 50
 
