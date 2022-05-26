@@ -14,7 +14,8 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.FuseTime = 3.5
-ENT.TrailColor = Color(255, 0, 0, 250)
+ENT.TrailColor = Color(255, 0, 0, 255)
+ENT.TrailTexture = "sprites/bluelaser1" -- this is exactly the one hl2 frag uses. Why blue? idk blame gaben
 
 ENT.BlastDamage = {
     [0] = 100,
@@ -37,7 +38,11 @@ function ENT:Initialize()
         end
 
         self.SpawnTime = CurTime()
-        self.Trail = util.SpriteTrail(self, 0, self.TrailColor, false, 4, 0, 1, 4, "trails/plasma")
+        self.Trail = util.SpriteTrail(self, 0, self.TrailColor, false, 4, 0, 0.5, 4, self.TrailTexture or "sprites/bluelaser1")
+        if IsValid(self.Trail) then
+            self.Trail:SetRenderMode(RENDERMODE_TRANSADD)
+            self.Trail:SetRenderFX(kRenderFxNone)
+        end
         self:SetPhysicsAttacker(self:GetOwner(), 10)
     end
 end
