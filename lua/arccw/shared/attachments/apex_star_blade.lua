@@ -16,5 +16,6 @@ att.Mult_PullPinTime = 0.6
 att.Mult_ReloadTime = 0.6
 att.Mult_RPM = 1.25
 
-att.Override_WindupTime = 0.5
-att.Mult_MuzzleVelocity = 1.5
+att.Override_WindupTime = 0.8
+att.Override_WindupMinimum = 0.25
+att.Mult_MuzzleVelocity = 2
