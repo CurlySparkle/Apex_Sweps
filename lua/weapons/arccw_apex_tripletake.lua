@@ -156,7 +156,7 @@ SWEP.Hook_AddShootSound = function(wep, data)
     end
 end
 
-SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_shotgun"
+SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_ttake"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 85
 SWEP.ShellScale = 1.55

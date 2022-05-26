@@ -113,7 +113,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.SMG_Dry_E"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "muzzle_smgs_l4d"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.2

@@ -113,7 +113,7 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
-SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_hmg"
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellScale = 0.5
 SWEP.ShellTime = 0.7

@@ -118,7 +118,7 @@ SWEP.Tracer = "arccw_apex_tracer_pistol"
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 3
 
-SWEP.MuzzleEffect = "muzzle_pistols_l4d"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_pistol"
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.25

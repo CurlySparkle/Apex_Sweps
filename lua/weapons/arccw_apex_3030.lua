@@ -149,7 +149,7 @@ SWEP.Hook_AddShootSound = function(wep, data)
     end
 end
 
-SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_dmr"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1.2
 SWEP.ShellTime = 1

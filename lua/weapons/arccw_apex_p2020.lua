@@ -113,7 +113,7 @@ SWEP.Hook_AddShootSound = function(wep, data)
     end
 end
 
-SWEP.MuzzleEffect = "muzzle_pistols_l4d"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_pistol"
 
 SWEP.Tracer = "arccw_apex_tracer_pistol" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X

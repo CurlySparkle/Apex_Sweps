@@ -129,7 +129,7 @@ SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_sniper"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_dmr"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 85
 SWEP.ShellScale = 1.55

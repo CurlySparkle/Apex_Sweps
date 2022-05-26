@@ -117,7 +117,7 @@ SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 SWEP.PhysTracerProfile = 6
 
-SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_medium"
+SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_havoc"
 SWEP.MuzzleFlashColor = Color(25, 125, 255)
 
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"

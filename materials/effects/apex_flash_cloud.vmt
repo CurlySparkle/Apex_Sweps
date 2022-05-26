@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "effects/apex_flash_cloud"
+	
+	"$additive" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+}
