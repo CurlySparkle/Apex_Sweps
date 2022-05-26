@@ -406,3 +406,19 @@ SWEP.O_Hook_Override_Tracer = function(wep, data)
         return {current = "arccw_apex_tracer_sniper"}
     end
 end
+
+SWEP.O_Hook_Override_PhysTracerProfile = function(wep, data)
+    if wep:GetHeat() > 0 then
+        return {current = "apex_bullet_energy"}
+    else
+        return {current = "apex_bullet"}
+    end
+end
+
+SWEP.O_Hook_Override_MuzzleEffect = function(wep,data)
+    if wep:GetHeat() > 0 then
+        return {current = "tfa_apex_muzzle_dmr_charged"}
+    else
+        return {current = "tfa_apex_muzzle_dmr"}
+    end
+end
