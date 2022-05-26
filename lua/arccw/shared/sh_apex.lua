@@ -115,7 +115,7 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         model = "models/ammo/w_arrow_projectile.mdl",
         size = 1,
         size_min = 0.15,
-        tail_length = 0.5,
+        tail_length = 0.15,
     })
 
     ArcCW:AddBulletProfile("apex_lstar", {
