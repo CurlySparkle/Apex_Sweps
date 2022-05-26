@@ -6,6 +6,8 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "Apex Base"
 SWEP.Apex_Balance = nil
 
+SWEP.PhysTracerProfile = "apex_bullet"
+
 DEFINE_BASECLASS("arccw_base")
 function SWEP:Initialize()
     BaseClass.Initialize(self)

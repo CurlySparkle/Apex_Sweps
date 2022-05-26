@@ -128,34 +128,39 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     })
 
     ArcCW:AddBulletProfile("apex_bullet", {
-        color = Color(255, 185, 133),
-        sprite_head = nil,
-        sprite_tail = false,
-        size = 0.0,
-        tail_length = 0.0,
+        color = Color(255, 180, 128),
+        sprite_head = Material("effects/cmbglow_nocolor"),
+        sprite_tail = Material("effects/apexlaser"),
         model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-        particle = "tfa_apex_bullet_trail"
+        size = 1.4,
+		size_min = 0.4,
+        tail_length = 0.4,
+        --particle = "tfa_apex_bullet_trail"
     })
 
     ArcCW:AddBulletProfile("apex_bullet_energy", {
-        color = Color(106, 165, 255),
-        sprite_head = nil,
-        sprite_tail = false,
-        model = "models/weapons/w_bullet.mdl",
+        color = Color(83, 140, 255),
+        sprite_head = Material("effects/cmbglow_nocolor"),
+        sprite_tail = Material("effects/apexlaser"),
+		model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-        particle = "tfa_apex_bullet_energy_trail"
+		size = 1.4,
+		size_min = 0.4,
+        tail_length = 0.4,
+        --particle = "tfa_apex_bullet_energy_trail"
     })
 
     ArcCW:AddBulletProfile("apex_bullet_sentinel", {
-        color = Color(255, 106, 106),
-        sprite_head = nil,
-        sprite_tail = false,
-        size = 1.0,
-        tail_length = 0.1,
-        model = "models/weapons/w_bullet.mdl",
+        color = Color(164, 170, 255),
+        sprite_head = Material("effects/cmbglow_nocolor"),
+        sprite_tail = Material("effects/apexlaser"),
+		model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-        particle = "tfa_apex_bullet_sent_trail"
+		size = 1.8,
+		size_min = 0.6,
+        tail_length = 0.8,
+        --particle = "tfa_apex_bullet_sent_trail"
     })
 end)
 
