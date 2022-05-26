@@ -110,55 +110,52 @@ end
 hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     ArcCW:AddBulletProfile("apex_bocek", {
         color = Color(192, 192, 255),
-        sprite_head = false,
+        sprite_head = nil,
         sprite_tail = Material("effects/apexlaser"),
-		model = "models/ammo/w_arrow_projectile.mdl",
-        size = 0.6,
-        tail_length = 1,
+        model = "models/ammo/w_arrow_projectile.mdl",
+        size = 1,
+        size_min = 0.15,
+        tail_length = 0.5,
     })
-	
-	ArcCW:AddBulletProfile("apex_lstar", {
+
+    ArcCW:AddBulletProfile("apex_lstar", {
         color = Color(255, 106, 106),
         sprite_head = false,
         sprite_tail = false,
-        size = 0.0,
-        tail_length = 0.0,
-		model = "models/weapons/w_bullet.mdl",
-		model_nodraw = true,
-		particle = "tfa_apex_lstar_projectile"
+        model = "models/weapons/w_bullet.mdl",
+        model_nodraw = true,
+        particle = "tfa_apex_lstar_projectile"
     })
-	
-	ArcCW:AddBulletProfile("apex_bullet", {
+
+    ArcCW:AddBulletProfile("apex_bullet", {
         color = Color(255, 185, 133),
-        sprite_head = false,
+        sprite_head = nil,
         sprite_tail = false,
         size = 0.0,
         tail_length = 0.0,
-		model = "models/weapons/w_bullet.mdl",
-		model_nodraw = true,
-		particle = "tfa_apex_bullet_trail"
+        model = "models/weapons/w_bullet.mdl",
+        model_nodraw = true,
+        particle = "tfa_apex_bullet_trail"
     })
-	
-	ArcCW:AddBulletProfile("apex_bullet_energy", {
-        color = Color(255, 106, 106),
-        sprite_head = false,
+
+    ArcCW:AddBulletProfile("apex_bullet_energy", {
+        color = Color(106, 165, 255),
+        sprite_head = nil,
         sprite_tail = false,
-        size = 0.0,
-        tail_length = 0.0,
-		model = "models/weapons/w_bullet.mdl",
-		model_nodraw = true,
-		particle = "tfa_apex_bullet_energy_trail"
+        model = "models/weapons/w_bullet.mdl",
+        model_nodraw = true,
+        particle = "tfa_apex_bullet_energy_trail"
     })
-	
-	ArcCW:AddBulletProfile("apex_bullet_sentinel", {
+
+    ArcCW:AddBulletProfile("apex_bullet_sentinel", {
         color = Color(255, 106, 106),
-        sprite_head = false,
+        sprite_head = nil,
         sprite_tail = false,
         size = 1.0,
         tail_length = 0.1,
-		model = "models/weapons/w_bullet.mdl",
-		model_nodraw = true,
-		particle = "tfa_apex_bullet_sent_trail"
+        model = "models/weapons/w_bullet.mdl",
+        model_nodraw = true,
+        particle = "tfa_apex_bullet_sent_trail"
     })
 end)
 
