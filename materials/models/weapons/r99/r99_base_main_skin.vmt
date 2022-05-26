@@ -26,10 +26,10 @@
 
 "Proxies"
 	{
-		"WeaponColorSkin"
-		{
+	"WeaponColorSkin"
+	{
 			"resultVar"			"$color2"
 			"$default" 		"1 1 1"
-		}
 	}
+   }
 }
