@@ -54,8 +54,8 @@ SWEP.PhysBulletMuzzleVelocity = 19500 * ArcCW.HUToM
 
 SWEP.Apex_Balance = {
     [1] = {
-        Damage = 22,
-        DamageMin = 15,
+        Damage = 21,
+        DamageMin = 16,
     },
     [2] = {
         Damage = 14,

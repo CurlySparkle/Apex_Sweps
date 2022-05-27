@@ -72,8 +72,8 @@ SWEP.BodyDamageMults = {
 
 SWEP.Apex_Balance = {
     [1] = {
-        Damage = 25,
-        DamageMin = 25,
+        Damage = 31,
+        DamageMin = 17,
     },
     [2] = {
         Damage = 15,

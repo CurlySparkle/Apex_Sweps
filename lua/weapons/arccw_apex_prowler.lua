@@ -185,7 +185,7 @@ SWEP.Attachments = {
             wang = Angle(-7.5, 0, 180)
         },
         InstalledEles = {"ref_sights", "weapon_dot"},
-        ExtraSightDist = 3.5,
+        ExtraSightDist = 4,
          CorrectivePos = Vector(2.17, 0, 0),
          CorrectiveAng = Angle(-1.131, 1.373, 7.821)
     },
@@ -250,14 +250,14 @@ SWEP.Animations = {
         Source = "iron_idle",
     },
     ["fire"] = {
-        Source = {"fire", "fire2", "fire3"},
+        Source = {"fire"},
         ShellEjectAt = 0,
     },
     ["enter_sight"] = {
         Source = "iron_in",
     },
     ["fire_sight"] = {
-        Source = {"iron_fire", "iron_fire2"},
+        Source = {"iron_fire"},
         ShellEjectAt = 0,
     },
     ["exit_sight"] = {
@@ -294,11 +294,11 @@ SWEP.Animations = {
     },
     },
     ["1_to_2"] = {
-        Source = "firemode_1",
+        Source = "firemode1",
         MinProgress = 0.15,
     },
     ["2_to_1"] = {
-        Source = "firemode_2",
+        Source = "firemode2",
         MinProgress = 0.15,
     },
     ["reload"] = {
