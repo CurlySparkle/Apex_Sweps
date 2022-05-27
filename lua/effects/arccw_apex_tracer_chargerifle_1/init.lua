@@ -29,8 +29,8 @@ function EFFECT:Init(data)
     -- util.ParticleTracerEx(self.ParticleName, self.StartPos, self.EndPos, false, self:EntIndex(), self.Attachment)
     local pcf = CreateParticleSystem(self.WeaponEnt, self.TracerName, PATTACH_POINT_FOLLOW, self.Attachment)
     if IsValid(pcf) then
-        pcf:SetControlPoint(0,self.Position)
-        pcf:SetControlPoint(1,self.EndPos)
+        pcf:SetControlPoint(1,self.Position)
+        pcf:SetControlPoint(2,self.EndPos)
         pcf:StartEmission()
     end
     timer.Simple(5.0, function()
