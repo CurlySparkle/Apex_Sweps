@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "HAVOC"
 SWEP.Trivia_Class = "Assault Rifle"
-SWEP.Trivia_Desc = "Charged energy weapon that requires winding up."
+SWEP.Trivia_Desc = "Charged energy weapon using a coilgun mechanism, requiring winding up before it can fire. Recoil is intense, but so is its firepower."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
 SWEP.Slot = 2
@@ -60,8 +60,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 16,
-        DamageMin = 16,
+        Damage = 17,
+        DamageMin = 17,
     },
 }
 

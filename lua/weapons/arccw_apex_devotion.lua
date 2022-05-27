@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Devotion LMG"
 SWEP.Trivia_Class = "Machine Gun"
-SWEP.Trivia_Desc = "Energy actuated machine gun that ramps up its fire rate over time."
+SWEP.Trivia_Desc = "Energy actuated machine gun with an internal motor, ramping up its fire rate as the trigger is held."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
 SWEP.Slot = 2
@@ -62,8 +62,8 @@ SWEP.Apex_Balance = {
         DamageMin = 12,
     },
     [2] = {
-        Damage = 11,
-        DamageMin = 11,
+        Damage = 12,
+        DamageMin = 12,
     },
 }
 
@@ -212,14 +212,14 @@ SWEP.Attachments = {
         Slot = {"apex_mag_energy2"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_turbo2"}
+    },
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
-    },
-    {
-        PrintName = "Hop-up",
-        Slot = {"apex_hopup_turbo2"}
     },
 }
 

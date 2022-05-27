@@ -55,9 +55,10 @@ function ENT:PhysicsCollide(data, physobj)
             self:EmitSound(Sound("weapons/grenades/grenade_bounce_2ch_v2_0" .. math.random(1,3) .. ".wav"))
         end
 
-        if IsValid(data.HitEntity) and not data.HitEntity:IsWorld() and data.Speed > 50 then
+        if IsValid(data.HitEntity) and not data.HitEntity:IsWorld() and data.Speed > 50 and (self.NextHit or 0) < CurTime() then
+            self.NextHit = CurTime() + 0.1
             local dmginfo = DamageInfo()
-            dmginfo:SetDamageType(DMG_NEVERGIB + DMG_CRUSH)
+            dmginfo:SetDamageType(DMG_CRUSH)
             dmginfo:SetDamage(10)
             dmginfo:SetAttacker(self:GetOwner())
             dmginfo:SetInflictor(self)

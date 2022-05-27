@@ -13,7 +13,7 @@ function SWEP:Initialize()
     BaseClass.Initialize(self)
 
     if self.Apex_Balance then
-        local val = GetConVar("arccw_apex_bal"):GetInt()
+        local val = ArcCW.Apex.GetBalanceMode()
         for i, v in pairs(self.Apex_Balance[val] or {}) do
             self[i] = v
         end

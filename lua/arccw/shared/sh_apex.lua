@@ -134,7 +134,7 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
         size = 1.2,
-		size_min = 0.2,
+        size_min = 0.2,
         tail_length = 0.2,
         --particle = "tfa_apex_bullet_trail"
     })
@@ -146,7 +146,7 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
         size = 1.4,
-		size_min = 0.4,
+        size_min = 0.4,
         tail_length = 0.4,
         --particle = "tfa_apex_bullet_trail"
     })
@@ -155,10 +155,10 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         color = Color(80, 150, 255),
         sprite_head = Material("effects/cmbglow_nocolor"),
         sprite_tail = Material("effects/apexlaser"),
-		model = "models/weapons/w_bullet.mdl",
+        model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-		size = 1.4,
-		size_min = 0.4,
+        size = 1.4,
+        size_min = 0.4,
         tail_length = 0.4,
         --particle = "tfa_apex_bullet_energy_trail"
     })
@@ -167,10 +167,10 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         color = Color(164, 170, 255),
         sprite_head = Material("effects/cmbglow_nocolor"),
         sprite_tail = Material("effects/apexlaser"),
-		model = "models/weapons/w_bullet.mdl",
+        model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-		size = 1.8,
-		size_min = 0.6,
+        size = 1.8,
+        size_min = 0.6,
         tail_length = 0.8,
         --particle = "tfa_apex_bullet_sent_trail"
     })
@@ -222,10 +222,11 @@ end)
 
 hook.Add("SetupMove", "ArcCW_Apex_ArcSlow", function(ply, mv, ucmd)
     if (ply.ArcSlowEnd or 0) > CurTime() then
-        mv:SetMaxSpeed(mv:GetMaxSpeed() * 0.7)
-        mv:SetMaxClientSpeed(mv:GetMaxClientSpeed() * 0.7)
+        mv:SetMaxSpeed(mv:GetMaxSpeed() * 0.5)
+        mv:SetMaxClientSpeed(mv:GetMaxClientSpeed() * 0.5)
     end
 end)
+
 
 if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")
@@ -458,5 +459,31 @@ else
 
     net.Receive("arccw_apex_arcslow", function()
         LocalPlayer().ArcSlowEnd = net.ReadFloat()
+    end)
+
+    hook.Add("RenderScreenspaceEffects", "ArcCW_Apex_ArcSlow", function()
+        if (LocalPlayer().ArcSlowEnd or 0) > CurTime() then
+            local delta = math.Clamp((LocalPlayer().ArcSlowEnd - CurTime()) / 2, 0, 1) ^ 0.75
+
+            DrawMaterialOverlay("effects/water_warp01", delta * 0.5)
+            DrawMotionBlur(0.5 * delta, 0.75, 0.01)
+            DrawColorModify({
+                [ "$pp_colour_addr" ] = 0,
+                [ "$pp_colour_addg" ] = 0,
+                [ "$pp_colour_addb" ] = 0,
+                [ "$pp_colour_brightness" ] = 0.35 * delta,
+                [ "$pp_colour_contrast" ] = 1 - delta * 0.5,
+                [ "$pp_colour_colour" ] = 1 - delta,
+                [ "$pp_colour_mulr" ] = 0,
+                [ "$pp_colour_mulg" ] = 0,
+                [ "$pp_colour_mulb" ] = 0,
+            })
+        end
+    end )
+
+    hook.Add("HUDShouldDraw", "ArcCW_Apex_ArcSlow", function(ele)
+        if (LocalPlayer().ArcSlowEnd or 0) > CurTime() and ele ~= "CHudWeaponSelection" then
+            return false
+        end
     end)
 end

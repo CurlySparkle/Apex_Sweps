@@ -56,8 +56,9 @@ SWEP.Apex_Balance = {
         DamageMin = 42,
     },
     [2] = {
-        Damage = 25,
-        DamageMin = 25,
+        Damage = 20,
+        DamageMin = 20,
+        PhysBulletMuzzleVelocity = 7500 * ArcCW.HUToM
     },
 }
 
@@ -424,16 +425,22 @@ SWEP.HeatDelayTime = 0.75
 SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
 
+local chargemult = {
+    [0] = {3, 2.4},
+    [1] = {3, 2.4},
+    [2] = {2.45, 3},
+}
+
 local function chargefraction(wep, a, b)
     if not wep:GetBuff_Override("Override_TriggerDelay", wep.TriggerDelay) then return a or 0 end
     return Lerp((CurTime() - wep.LastTriggerTime) / 0.56, a or 0, b or 1)
 end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.4 or 3)
+    data.mult = data.mult * chargefraction(wep, 1, chargemult[ArcCW.Apex.GetBalanceMode()][wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1 or 2])
 end
 SWEP.M_Hook_Mult_DamageMin = function(wep, data)
-    data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 2.4 or 3)
+    data.mult = data.mult * chargefraction(wep, 1, chargemult[ArcCW.Apex.GetBalanceMode()][wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1 or 2])
 end
 SWEP.M_Hook_Mult_PhysBulletMuzzleVelocity = function(wep, data)
     data.mult = data.mult * chargefraction(wep, 1, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1.6 or 2.8)
@@ -480,9 +487,9 @@ SWEP.Hook_BulletHit = function(wep, data)
     local ent = data.tr.Entity
 
     if data.tr.HitGroup == HITGROUP_HEAD then
-        data.dmg:ScaleDamage(chargefraction(wep, 1.25, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1.25 or 1.75))
+        data.damage = data.damage * chargefraction(wep, 1.25, wep:GetBuff_Override("Override_Num", wep.Num) > 1 and 1.25 or 1.75)
     elseif data.tr.HitGroup == HITGROUP_LEFTLEG or data.tr.HitGroup == HITGROUP_RIGHTLEG then
-        data.dmg:ScaleDamage(chargefraction(wep, 0.8, 0.9))
+        data.damage = data.damage * chargefraction(wep, 0.8, 0.9)
     end
 
     if wep:GetBuff("Num") == 1 and not data.ArrowMade then

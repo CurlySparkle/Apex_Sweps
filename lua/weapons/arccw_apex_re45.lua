@@ -69,8 +69,8 @@ SWEP.Apex_Balance = {
         DamageMin = 12,
     },
     [2] = {
-        Damage = 8, -- roughly equivalent to TTT glock
-        DamageMin = 8,
+        Damage = 10, -- roughly equivalent to TTT glock
+        DamageMin = 10,
     },
 }
 
@@ -78,8 +78,8 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 16 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.425
-SWEP.RecoilSide = 0.5
+SWEP.Recoil = 0.35
+SWEP.RecoilSide = 0.4
 SWEP.RecoilRise = 0.1
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.1
@@ -94,7 +94,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 15
-SWEP.HipDispersion = 250
+SWEP.HipDispersion = 200
 SWEP.MoveDispersion = 150
 SWEP.JumpDispersion = 300
 

@@ -12,7 +12,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Kraber .50-Cal Sniper"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "Powerful bolt-action sniper rifle."
+SWEP.Trivia_Desc = "Powerful bolt-action rifle loaded with rounds wider and longer than a finger.\n\nSuch firepower became necessary after Spectres and Reapers started being deployed in the Frontier War. Although for Pilots, the real reason to use these is for the style points and montage clips."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 4

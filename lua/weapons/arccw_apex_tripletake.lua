@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Triple Take"
 SWEP.Trivia_Class = "Designated Marksman Rifle"
-SWEP.Trivia_Desc = "Energy rifle with three barrels firing in a horizontal line."
+SWEP.Trivia_Desc = "Energy rifle with three barrels firing in a horizontal line. In the past, it is confusingly named the \"Double Take\", despite also firing 3 rounds."
 SWEP.Trivia_Manufacturer = "Burrell Defense"
 
 SWEP.SpawnmenuType = "Marksman"
@@ -125,7 +125,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 1
-SWEP.HipDispersion = 500
+SWEP.HipDispersion = 400
 SWEP.MoveDispersion = 75
 SWEP.JumpDispersion = 300
 

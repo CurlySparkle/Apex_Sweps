@@ -52,3 +52,18 @@ SWEP.ShootWhileSprint = false -- You cannot throw nades while sprinting on apex,
 if ArcCW.Apex.GetBalanceMode() == 2 then
     SWEP.MeleeDamage = 30
 end
+
+DEFINE_BASECLASS("arccw_base_nade")
+function SWEP:Initialize()
+    BaseClass.Initialize(self)
+
+    if self.Apex_Balance then
+        local val = ArcCW.Apex.GetBalanceMode()
+        for i, v in pairs(self.Apex_Balance[val] or {}) do
+            self[i] = v
+        end
+    end
+end
+
+-- Sliding Ability
+SWEP.SuppressSlidingViewModelTilt = true

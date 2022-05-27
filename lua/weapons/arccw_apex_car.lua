@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "C.A.R. SMG"
 SWEP.Trivia_Class = "Submachine Gun"
-SWEP.Trivia_Desc = "Adaptable SMG capable of using two ammo types.\n\nPress the firemode key to swap between Light and Heavy rounds."
+SWEP.Trivia_Desc = "Adaptable weapon capable of using two ammo types. Boasts incredibly high hipfire precision for a SMG, and is a favourite of wall-running Pilots.\n\nPress the firemode key to swap between Light and Heavy rounds.\nThe two ammo types have identical performance."
 SWEP.Trivia_Manufacturer = "Siwhan Industries"
 
 SWEP.Slot = 2
@@ -87,7 +87,7 @@ SWEP.Primary.ClipSize = 20
 SWEP.ExtendedClipSize = 30
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.4
+SWEP.Recoil = 0.3
 SWEP.RecoilSide = 0.25
 SWEP.RecoilRise = 0.8
 SWEP.VisualRecoilMult = 0.65
@@ -111,7 +111,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.AccuracyMOA = 4
-SWEP.HipDispersion = 200 -- inaccuracy added by hip firing.
+SWEP.HipDispersion = 150 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 100
 SWEP.JumpDispersion = 300
 

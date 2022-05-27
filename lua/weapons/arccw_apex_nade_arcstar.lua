@@ -35,7 +35,6 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.FuseTime = 3.5
 SWEP.Primary.Ammo = "grenade"
 
 SWEP.Primary.ClipSize = 1

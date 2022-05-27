@@ -19,9 +19,9 @@ ENT.ImpactDamage = {
 }
 
 ENT.BlastDamage = {
-    [0] = 120,
-    [1] = 150,
-    [2] = 100,
+    [0] = 75,
+    [1] = 100,
+    [2] = 50,
 }
 
 function ENT:Think()
@@ -38,37 +38,40 @@ function ENT:Think()
         local hit = false
         local blastdmg = self.BlastDamage[ArcCW.Apex.GetBalanceMode()]
 
+        local optimized = IsValid(self:GetParent()) and (self:GetParent():IsPlayer() or self:GetParent():IsNPC() or self:GetParent():IsNextBot())
+
         for _, ent in pairs(ents.FindInSphere(pos, 200)) do
             if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent, pos) then continue end
-            local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
+
+            local distSqr = ent:GetPos():DistToSqr(pos)
             if distSqr > 4096 then -- 64 * 64
                 f = Lerp((distSqr - 4096) / (40000 - 4096), 1, 0.25)
             end
+
 
             local phyobj = ent:GetPhysicsObject()
             local mass = 1
             if IsValid(phyobj) then
                 ent:SetPhysicsAttacker(self:GetOwner(), 5)
                 mass = phyobj:GetMass() ^ 0.5
-                if ent == self:GetParent() then
-                    phyobj:ApplyForceOffset(self:GetForward() * 20000 * mass, self:GetPos())
-                end
             end
+
+            ent:SetPhysicsAttacker(self:GetOwner(), 5)
 
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_BLAST)
             dmginfo:SetAttacker(self:GetOwner())
             dmginfo:SetDamage(blastdmg * f)
-            if ent == self:GetParent() then
+            if ent == self:GetParent() or optimized then
                 dmginfo:ScaleDamage(2)
             end
-            if ent:IsRagdoll() and math.random() <= 0.05 then
+            if ent ~= self:GetParent() and math.random() <= 0.05 then
                 -- MAXIMUM FUNNY
                 dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 9001 * f * mass)
             else
                 dmginfo:SetDamagePosition(pos)
-                dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 2000 * f * mass)
+                dmginfo:SetDamageForce((ent:WorldSpaceCenter() - pos):GetNormalized() * 3000 * f * mass)
             end
             dmginfo:SetInflictor(self)
             ent:TakeDamageInfo(dmginfo)
@@ -78,6 +81,31 @@ function ENT:Think()
                 net.Start("arccw_apex_hit")
                     net.WriteBool(false)
                 net.Send(self:GetOwner())
+            end
+        end
+
+        -- HEAT SEEKING DUMPSTERS
+        local physobj = IsValid(self:GetParent()) and self:GetParent():GetPhysicsObject()
+        if IsValid(physobj) then
+            local tgt, tgtdistsqr
+            for _, ply in pairs(player.GetAll()) do
+                if ply:Alive() and ply ~= self:GetOwner() then
+                    local dot = (ply:GetPos() - self:GetPos()):GetNormalized():Dot(self:GetForward())
+                    if dot > 0.5 then
+                        local distsqr = ply:GetPos():DistToSqr(self:GetPos())
+                        if distsqr <= 490000 and (not tgt or distsqr < tgtdistsqr) then
+                            tgt = ply
+                            tgtdistsqr = distsqr
+                        end
+                    end
+                end
+            end
+            local mass = physobj:GetMass() ^ 0.5
+            if IsValid(tgt) then
+                local f = (math.Clamp(tgtdistsqr / 490000 * 0.5, 0, 0.5) + 0.5) ^ 2
+                physobj:ApplyForceCenter((tgt:WorldSpaceCenter() - self:GetParent():GetPos()):GetNormalized() * 20000 * mass * f + Vector(0, 0, 1000 * mass * f))
+            else
+                physobj:ApplyForceOffset(self:GetForward() * 20000 * mass, self:GetPos())
             end
         end
 
@@ -131,7 +159,7 @@ function ENT:PhysicsCollide(data, physobj)
     if hs then dmginfo:ScaleDamage(2) end
     dmginfo:SetAttacker(self:GetOwner())
     dmginfo:SetInflictor(self)
-    dmginfo:SetDamageForce(data.OurOldVelocity * 3)
+    dmginfo:SetDamageForce(data.OurOldVelocity * 1)
     dmginfo:SetDamagePosition(data.HitPos)
     tgt:TakeDamageInfo(dmginfo)
 

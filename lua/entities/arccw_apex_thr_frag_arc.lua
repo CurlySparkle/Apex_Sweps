@@ -18,9 +18,9 @@ ENT.FuseTime = 2
 ENT.TrailColor = Color(200, 200, 200, 250)
 
 ENT.BlastDamage = {
-    [0] = 90,
-    [1] = 200,
-    [2] = 80,
+    [0] = 80,
+    [1] = 150,
+    [2] = 50,
 }
 
 function ENT:Detonate()

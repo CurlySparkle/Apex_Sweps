@@ -14,7 +14,7 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.Skin = 3
-ENT.FuseTime = 5
+ENT.FuseTime = 2.5
 ENT.TrailColor = Color(0, 200, 0, 250)
 
 function ENT:Detonate()
@@ -54,7 +54,7 @@ function ENT:Detonate()
             local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
             if distSqr > 16384 then -- 128 * 128
-                f = Lerp((distSqr - 16384) / (122500 - 16384), 0.8, 0.2)
+                f = Lerp((distSqr - 16384) / (122500 - 16384), 0.75, 0.15)
             end
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_BLAST)

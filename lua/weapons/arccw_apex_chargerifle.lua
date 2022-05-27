@@ -477,7 +477,7 @@ end
 
 SWEP.O_Hook_Override_Tracer = function(wep, data)
     if wep:GetCurrentFiremode().Mode < 0 and wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
-        return {current = "arccw_apex_tracer_chargerifle"}
+        return {current = wep:GetBuff("Num") > 1 and "arccw_apex_tracer_chargerifle_2" or "arccw_apex_tracer_chargerifle"}
     end
 end
 

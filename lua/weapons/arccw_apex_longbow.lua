@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Longbow DMR"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "A veritably powerful sniper rifle with the ability to perform follow up shots relatively quickly. Its design is based off the R-201 Carbine, modified with a higher power caliber, sniper stock and longer barrel."
+SWEP.Trivia_Desc = "A versatile sniper rifle with the ability to perform follow up shots quickly. Its design is based off the R-201 Carbine, modified with a higher power caliber, sniper stock and longer barrel."
 SWEP.Trivia_Manufacturer = "Lastimosa Armory"
 
 SWEP.Slot = 3
@@ -52,17 +52,17 @@ SWEP.Apex_Balance = {
     [1] = {
         Damage = 60,
         DamageMin = 40,
-		HipDispersion = 500,
-		MoveDispersion = 100,
-		JumpDispersion = 100,
+        HipDispersion = 500,
+        MoveDispersion = 100,
+        JumpDispersion = 100,
     },
     [2] = {
         Damage = 45, -- slightly weaker than TTT scout (fires faster)
         DamageMin = 45,
-		AccuracyMOA = 0.2,
-		HipDispersion = 850,
-		MoveDispersion = 100,
-		JumpDispersion = 300,
+        AccuracyMOA = 0.2,
+        HipDispersion = 850,
+        MoveDispersion = 100,
+        JumpDispersion = 300,
         BodyDamageMults = {
             [HITGROUP_HEAD] = 2.25, -- lethal on unarmored headshot (101)
             [HITGROUP_CHEST] = 1,
@@ -71,7 +71,8 @@ SWEP.Apex_Balance = {
             [HITGROUP_RIGHTARM] = 1,
             [HITGROUP_LEFTLEG] = 0.8,
             [HITGROUP_RIGHTLEG] = 0.8,
-        }
+        },
+        Delay = 60 / 100 -- Minor boost since it can't two-shot anymore
     },
 }
 

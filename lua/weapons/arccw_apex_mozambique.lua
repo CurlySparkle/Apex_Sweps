@@ -41,8 +41,8 @@ SWEP.Apex_Balance = {
         DamageMin = 10,
     },
     [2] = {
-        Damage = 13, -- Roughly equivalent to TTT deagle
-        DamageMin = 13,
+        Damage = 11, -- Roughly equivalent to TTT deagle but fires faster. This thing can actually shred so keep it low
+        DamageMin = 11,
     },
 }
 

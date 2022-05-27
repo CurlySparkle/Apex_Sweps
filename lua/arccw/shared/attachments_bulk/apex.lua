@@ -549,9 +549,15 @@ local function drawboostedtext(a)
 end
 
 local function boostsend(wep)
-    if canboost(wep) and wep:GetOwner():IsPlayer() then
+    if SERVER and canboost(wep) and wep:GetOwner():IsPlayer() then
         net.Start("arccw_apex_loader")
         net.Send(wep:GetOwner())
+    end
+end
+
+local function hp(wep, data, mul)
+    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+        data.damage = data.damage * mul
     end
 end
 
@@ -854,9 +860,6 @@ local hopups = {
                         Override_TriggerCharge = false,
                         Override_AccuracyMOA = 25,
                         Mult_Recoil = 0.25,
-                        Mult_HipDispersion = 1.5,
-                        Mult_Damage = 20 / 25,
-                        Mult_DamageMin = 20 / 25,
                         Override_Jamming = true,
                         Override_HeatLockout = false,
                         Hook_ModifyRPM = function(wep, delay)
@@ -904,10 +907,7 @@ local hopups = {
             -- P2020
             [1] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
-                        -- this doesn't do the fancy check apex does, but also hl2 armor is weird and I would prefer to work with a new armor system
-                        data.damage = data.damage * 1.5
-                    end
+                    hp(wep, data, 1.5)
                 end,
                 Hook_GetShootSound = function(wep, fsound)
                     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.P2020_HammerPoint.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.P2020.Fire" end
@@ -916,17 +916,13 @@ local hopups = {
             -- RE-45 Auto
             [2] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
-                        data.damage = data.damage * 1.35
-                    end
+                    hp(wep, data, 1.35)
                 end
             },
             -- Mozambique
             [3] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
-                        data.damage = data.damage * 1.35
-                    end
+                    hp(wep, data, 1.35)
                 end,
                 Hook_GetShootSound = function(wep, fsound)
                     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique_Hammer.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique.Fire" end
@@ -936,23 +932,17 @@ local hopups = {
         variants_ttt = {
             [1] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
-                        data.damage = data.damage * 1.3
-                    end
+                    hp(wep, data, 1.3)
                 end
             },
             [2] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
-                        data.damage = data.damage * 1.15
-                    end
+                    hp(wep, data, 1.15)
                 end
             },
             [3] = {
                 Hook_BulletHit = function(wep, data)
-                    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
-                        data.damage = data.damage * 1.15
-                    end
+                    hp(wep, data, 1.15)
                 end,
                 Hook_GetShootSound = function(wep, fsound)
                     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique_Hammer.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Mozambique.Fire" end

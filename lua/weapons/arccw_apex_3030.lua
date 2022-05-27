@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "30-30 Repeater"
 SWEP.Trivia_Class = "Designated Marksman Rifle"
-SWEP.Trivia_Desc = "Semi-auto heavy repeater."
+SWEP.Trivia_Desc = "An old-school design made modern, this rifle has no external magazine, and uses a lever under the grip to cycle. A fitting weapon for the Frontier.\nAiming down sights revs up the battery mechanism, increasing damage for the next round."
 SWEP.Trivia_Manufacturer = "Holdener Arms"
 
 SWEP.SpawnmenuType = "Marksman"

@@ -9,8 +9,8 @@ SWEP.Category = "ArcCW - Apex Legends" -- edit this if you like
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "Hemlok Burst AR"
-SWEP.Trivia_Class = "Assault rifle"
-SWEP.Trivia_Desc = "The Hemlok Burst AR, also called Hemlok, is an assault rifle that utilizes Heavy Rounds. It may be switched between a 3-shot burst and single fire modes. "
+SWEP.Trivia_Class = "Assault Rifle"
+SWEP.Trivia_Desc = "Burst-fire rifle capable of killing in one burst if all shots hit the head.\n\nIt is rumored among Militia soldiers that the IMC procures these because their grunts are poorly trained, although the Hemlok is a common sight on either side of the battlefield."
 SWEP.Trivia_Manufacturer = "Wonyeon"
 
 SWEP.Slot = 2
@@ -56,8 +56,17 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 10,
-        DamageMin = 10,
+        Damage = 12,
+        DamageMin = 12,
+        BodyDamageMults = {
+            [HITGROUP_HEAD] = 3,
+            [HITGROUP_CHEST] = 1,
+            [HITGROUP_STOMACH] = 1,
+            [HITGROUP_LEFTARM] = 1,
+            [HITGROUP_RIGHTARM] = 1,
+            [HITGROUP_LEFTLEG] = 0.75,
+            [HITGROUP_RIGHTLEG] = 0.75,
+        }
     },
 }
 

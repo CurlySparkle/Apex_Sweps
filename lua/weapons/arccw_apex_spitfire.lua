@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "M600 Spitfire"
 SWEP.Trivia_Class = "Light Machine Gun"
-SWEP.Trivia_Desc = "A light machine gun with a generous capacity and controllable rate of fire."
+SWEP.Trivia_Desc = "A light machine gun with a generous capacity and controllable rate of fire.\n\nDeploying the Spitfire behing Amped Shields is a tried and true strategy of the Frontier War, separating the real Pilots from the rabble."
 SWEP.Trivia_Manufacturer = "Siwhan Industries"
 
 SWEP.Slot = 3
@@ -100,7 +100,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 9
+SWEP.AccuracyMOA = 7
 SWEP.HipDispersion = 600 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 SWEP.JumpDispersion = 300
