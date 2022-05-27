@@ -41,7 +41,8 @@ function ENT:PhysicsCollide(data, physobj)
     })
     local hs = tr.Entity == tgt and tr.HitGroup == HITGROUP_HEAD
     local dmginfo = DamageInfo()
-    dmginfo:SetDamageType(DMG_SLASH)
+    -- TTT assumes DMG_SLASH is the knife and applies lots of DNA. Don't.
+    dmginfo:SetDamageType(engine.ActiveGamemode() == "terrortown" and DMG_CRUSH or DMG_SLASH)
     dmginfo:SetDamage(self.ImpactDamage[ArcCW.Apex.GetBalanceMode()])
     if hs then
         dmginfo:ScaleDamage(2)
@@ -73,12 +74,7 @@ function ENT:PhysicsCollide(data, physobj)
             self:SetAngles(angles)
             self:SetPos(data.HitPos)
 
-            if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) then
-                --[[]
-                self.CanPickup = true
-                self:SetTrigger(true)
-                self:UseTriggerBounds(true, 16)
-                ]]
+            if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) or string.find(tgt:GetClass(), "breakable") then
                 -- Pierce straight through the target!
                 self.Hits = self.Hits + 1
                 self:GetPhysicsObject():SetVelocityInstantaneous(oldvel)
@@ -142,6 +138,8 @@ function ENT:ApplyAmmo(ply)
         if ply:HasWeapon("arccw_apex_nade_arcstar") then return end
         local wep = ply:Give("arccw_apex_nade_arcstar")
         wep.Attachments[1].Installed = "apex_star_blade"
+        wep:AdjustAtts()
+        wep:NetworkWeapon(ply)
         ply:EmitSound("weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_0" .. math.random(1, 3) .. ".wav", 70, 110, 0.7)
         self.USED = true
         self:Remove()
@@ -150,6 +148,8 @@ function ENT:ApplyAmmo(ply)
         if not ply:HasWeapon("arccw_apex_nade_arcstar") then
             local wep = ply:Give("arccw_apex_nade_arcstar")
             wep.Attachments[1].Installed = "apex_star_blade"
+            wep:AdjustAtts()
+            wep:NetworkWeapon(ply)
         else
             local tbl = weapons.Get("arccw_apex_nade_arcstar")
             ply:GiveAmmo(1, tbl.Primary.Ammo, true)
