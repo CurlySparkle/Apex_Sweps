@@ -70,8 +70,29 @@ function ENT:Initialize()
 end
 
 function ENT:PhysicsCollide(data, physobj)
-    if SERVER then
-
+    local tgt = data.HitEntity
+    local dmginfo = DamageInfo()
+    dmginfo:SetDamageType(DMG_GENERIC)
+    dmginfo:SetDamage(10)
+    dmginfo:SetAttacker(self:GetOwner())
+    dmginfo:SetInflictor(self)
+    dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
+    tgt:TakeDamageInfo(dmginfo)
+    if IsValid(self:GetOwner()) and  (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and self:GetOwner():IsPlayer() then
+        net.Start("arccw_apex_hit")
+            net.WriteBool(false)
+        net.Send(self:GetOwner())
+    end
+    if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) or string.find(tgt:GetClass(), "breakable") then
+        local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
+        timer.Simple(0, function()
+            if IsValid(self) then
+                self:SetAngles(ang)
+                self:SetPos(pos)
+                self:GetPhysicsObject():SetVelocityInstantaneous(vel)
+            end
+        end)
+    else
         local tr = util.TraceLine({
             start = self:GetPos(),
             endpos = self:GetPos() - Vector(0, 0, 16),

@@ -42,7 +42,8 @@ function ENT:PhysicsCollide(data, physobj)
     local hs = tr.Entity == tgt and tr.HitGroup == HITGROUP_HEAD
     local dmginfo = DamageInfo()
     -- TTT assumes DMG_SLASH is the knife and applies lots of DNA. Don't.
-    dmginfo:SetDamageType(engine.ActiveGamemode() == "terrortown" and DMG_CRUSH or DMG_SLASH)
+    dmginfo:SetDamageType(engine.ActiveGamemode() == "terrortown" and DMG_GENERIC or DMG_SLASH)
+    if string.find(tgt:GetClass(), "breakable") then dmginfo:SetDamageType(DMG_CRUSH) end
     dmginfo:SetDamage(self.ImpactDamage[ArcCW.Apex.GetBalanceMode()])
     if hs then
         dmginfo:ScaleDamage(2)

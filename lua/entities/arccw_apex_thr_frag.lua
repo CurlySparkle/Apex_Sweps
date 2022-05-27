@@ -51,25 +51,37 @@ function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.Speed > 75 then
             self:EmitSound(Sound("weapons/grenades/wpn_fraggrenade_1p_hardsurface_bounce_01_lr_v" .. math.random(1,2) .. ".wav"))
+
+            local tgt = data.HitEntity
+            if IsValid(tgt) and not tgt:IsWorld() and (self.NextHit or 0) < CurTime() then
+                self.NextHit = CurTime() + 0.1
+                local dmginfo = DamageInfo()
+                dmginfo:SetDamageType(DMG_GENERIC)
+                dmginfo:SetDamage(10)
+                dmginfo:SetAttacker(self:GetOwner())
+                dmginfo:SetInflictor(self)
+                dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
+                tgt:TakeDamageInfo(dmginfo)
+                if IsValid(self:GetOwner()) and  (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and self:GetOwner():IsPlayer() then
+                    net.Start("arccw_apex_hit")
+                        net.WriteBool(false)
+                    net.Send(self:GetOwner())
+                end
+                if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) or string.find(tgt:GetClass(), "breakable") then
+                    local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
+                    timer.Simple(0, function()
+                        if IsValid(self) then
+                            self:SetAngles(ang)
+                            self:SetPos(pos)
+                            self:GetPhysicsObject():SetVelocityInstantaneous(vel)
+                        end
+                    end)
+                end
+            end
         elseif data.Speed > 25 then
             self:EmitSound(Sound("weapons/grenades/grenade_bounce_2ch_v2_0" .. math.random(1,3) .. ".wav"))
         end
 
-        if IsValid(data.HitEntity) and not data.HitEntity:IsWorld() and data.Speed > 50 and (self.NextHit or 0) < CurTime() then
-            self.NextHit = CurTime() + 0.1
-            local dmginfo = DamageInfo()
-            dmginfo:SetDamageType(DMG_CRUSH)
-            dmginfo:SetDamage(10)
-            dmginfo:SetAttacker(self:GetOwner())
-            dmginfo:SetInflictor(self)
-            dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
-            data.HitEntity:TakeDamageInfo(dmginfo)
-            if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() then
-                net.Start("arccw_apex_hit")
-                    net.WriteBool(false)
-                net.Send(self:GetOwner())
-            end
-        end
     end
 end
 
