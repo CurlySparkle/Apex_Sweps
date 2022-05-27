@@ -28,6 +28,9 @@ SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -1)
 SWEP.BarrelOffsetCrouch = Vector(0, 0, -2)
 
+SWEP.CustomizePos = Vector(0, -1, 1.5)
+SWEP.CustomizeAng = Angle(0, 0, 0)
+
 SWEP.NPCWeaponType = "weapon_ar2"
 SWEP.NPCWeight = 250
 
@@ -74,9 +77,10 @@ SWEP.Apex_Balance = {
     },
 }
 
+SWEP.PhysTracerProfile = "apex_bullet"
 SWEP.Tracer = "arccw_apex_tracer_ar"
 SWEP.TracerNum = 1 -- tracer every X
-SWEP.TracerWidth = 3
+-- SWEP.TracerWidth = 3
 
 SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 17
@@ -121,7 +125,7 @@ SWEP.Hook_GetShootSound = function(wep, fsound)
     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Start" end
 end
 
-SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_ar"
 SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
