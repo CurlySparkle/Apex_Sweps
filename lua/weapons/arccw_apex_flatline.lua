@@ -74,6 +74,7 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.75,
 }
 
+SWEP.PhysTracerProfile = "apex_bullet"
 SWEP.Tracer = "arccw_apex_tracer_ar" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
@@ -125,7 +126,7 @@ SWEP.Hook_GetShootSound = function(wep, fsound)
     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.Flatline.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.Flatline.Fire_Start" end
 end
 
-SWEP.MuzzleEffect = "weapon_muzzle_flash_huntingrifle"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_ar"
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1
 SWEP.ShellTime = 0.7
