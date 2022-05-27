@@ -42,13 +42,13 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/c_apex_car.mdl"
 SWEP.WorldModel = "models/weapons/w_apex_car.mdl"
-SWEP.MirrorVMWM = false
-SWEP.WorldModelOffset = {
-    pos        =  Vector(7, 1, 3.5),
-    ang        =  Angle(-10, 0, 180),
-    bone       =  "ValveBiped.Bip01_R_Hand",
-    scale      =  1,
-}
+-- SWEP.MirrorVMWM = false
+-- SWEP.WorldModelOffset = {
+    -- pos        =  Vector(7, 1, 3.5),
+    -- ang        =  Angle(-10, 0, 180),
+    -- bone       =  "ValveBiped.Bip01_R_Hand",
+    -- scale      =  1,
+-- }
 
 SWEP.Damage = 13
 SWEP.DamageMin = 13
@@ -159,7 +159,7 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "smg"
+SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SMG1
@@ -187,7 +187,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
             vang = Angle(90, 0, -90),
-            wpos = Vector(8, 1.0, -6.1),
+            wpos = Vector(7, 0.7, -6.1),
             wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"sight"},
@@ -201,7 +201,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-            wpos = Vector(20.5, 1.05, -6.4),
+            wpos = Vector(20.5, 0.6, -6.45),
             wang = Angle(-10, 0, 180)
         },
     },
