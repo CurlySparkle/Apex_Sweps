@@ -1673,3 +1673,55 @@ sound.Add( {
 		"^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_03.wav",
     }
 } )
+
+sound.Add( {
+    name = "ArcCW_APEX.Volt.Mag_Out",
+    channel = CHAN_ITEM + 6,
+    volume = 0.75,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_01.wav",
+		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_02.wav",
+		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Volt.Mag_In",
+    channel = CHAN_ITEM + 6,
+    volume = 0.75,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav",
+		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_02.wav",
+		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Volt.Bolt_Release",
+    channel = CHAN_ITEM + 6,
+    volume = 0.75,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_01.wav",
+		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_02.wav",
+		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Volt.Draw_Bolt_Release",
+    channel = CHAN_ITEM + 6,
+    volume = 0.75,
+    level = 120,
+--    pitch = {95, 110},
+    sound = {
+        "^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_01.wav",
+		"^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_02.wav",
+		"^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_03.wav",
+    }
+} )

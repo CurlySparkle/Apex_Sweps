@@ -221,7 +221,7 @@ SWEP.Animations = {
             {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_Foley_fr01_2ch_v1_01.wav", t = 1 / 35},
             {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_GunRattle_fr01_2ch_v1_01.wav", t = 1 / 35},
             {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltRelease_fr18_2ch_v1_01.wav", t = 18 / 35},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_01.wav", t = 21 / 35},
+            {v = 25, p = 100, s = "ArcCW_APEX.Volt.Draw_Bolt_Release", t = 21 / 35},
             {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_GunRattleGrab_fr30_2ch_v1_01.wav", t = 30 / 35}
         },
     },
@@ -269,35 +269,31 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        --[[] -- handled in sequence
         SoundTable = {
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Foley_LftArmMagIn_fr01_2ch_v1_01.wav", t = 1 / 30},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattle_fr01_2ch_v1_01.wav", t = 1 / 30},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr16_2ch_v1_01.wav", t = 16 / 30},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattleMagIn_fr21_2ch_v1_01.wav", t = 21 / 30},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav", t = 29 / 30},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Foley_LftArmMagPul_fr45_2ch_v1_01.wav", t = 45 / 30},
-            {v = 25, p = 100, s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattleMagIn_fr54_2ch_v1_01.wav", t = 54 / 30}
+            {s = "weapons/volt/Wpn_Volt_br_reload_02_Foley_LftArmMagIn_fr01_2ch_v1_01.wav", t = 1 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattle_fr01_2ch_v1_01.wav", t = 1 / 30},
+            {s = "ArcCW_APEX.Volt.Mag_Out", t = 15 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattleMagIn_fr21_2ch_v1_01.wav", t = 21 / 30},
+            {s = "ArcCW_APEX.Volt.Mag_In", t = 29 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reload_02_Foley_LftArmMagPul_fr45_2ch_v1_01.wav", t = 45 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reload_02_Mech_GunRattleMagIn_fr54_2ch_v1_01.wav", t = 54 / 30}
         },
-        ]]
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        --[[]
         SoundTable = {
             {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftMagSlide_fr01_2ch_v1_01.wav", t = 1 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_BoltPullSettle_fr12_2ch_v1_01.wav", t = 12 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr16_2ch_v1_01.wav", t = 16 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav", t = 29 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleSettle_fr69_2ch_v1_01.wav", t = 69 / 30},
             {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagOut_fr04_2ch_v1_01.wav", t = 4 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr49_2ch_v1_01.wav", t = 49 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_BoltPullSettle_fr12_2ch_v1_01.wav", t = 12 / 30},
+            {s = "ArcCW_APEX.Volt.Mag_Out", t = 16 / 30},
+            {s = "ArcCW_APEX.Volt.Mag_In", t = 29 / 30},
             {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr34_2ch_v1_01.wav", t = 34 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_01.wav", t = 58 / 30},
-            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftPullMag_fr65_2ch_v1_03.wav", t = 65 / 30}
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleMagIn_fr49_2ch_v1_01.wav", t = 49 / 30},
+            {s = "ArcCW_APEX.Volt.Bolt_Release", t = 58 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Foley_ArmLftPullMag_fr65_2ch_v1_03.wav", t = 65 / 30},
+            {s = "weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_GunRattleSettle_fr69_2ch_v1_01.wav", t = 69 / 30}
         },
-        ]]
     },
 }
 

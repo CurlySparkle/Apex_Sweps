@@ -65,8 +65,8 @@ SWEP.BodyDamageMults = {
 
 SWEP.Apex_Balance = {
     [1] = {
-        Damage = 12,
-        DamageMin = 6,
+        Damage = 15,
+        DamageMin = 9,
     },
     [2] = {
         Damage = 7, -- marginally less damage than TTT shotgun (tighter spread)
