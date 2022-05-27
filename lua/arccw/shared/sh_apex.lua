@@ -130,12 +130,12 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     ArcCW:AddBulletProfile("apex_bullet_smg", { -- My version of trying this out - Twilight
         color = Color(255, 180, 128),
         sprite_head = Material("effects/cmbglow_nocolor"),
-        sprite_tail = Material("effects/spark1"),
+        sprite_tail = Material("effects/spark"),
         model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-        size = 1.2,
-        size_min = 0.2,
-        tail_length = 0.2,
+        size = 1,
+        size_min = 0.1,
+        tail_length = 0.1,
         --particle = "tfa_apex_bullet_trail"
     })
 

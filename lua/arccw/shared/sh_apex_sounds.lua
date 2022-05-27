@@ -980,6 +980,20 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.ArcStar.PreThrow",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_01.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_02.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_03.wav",
+		"^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_04.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.ArcStar.Throw",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
@@ -1022,22 +1036,54 @@ sound.Add( {
 sound.Add( {
     name = "ArcCW_APEX.Frag.Draw",
     channel = CHAN_WEAPON + 6,
-    volume = 0.5,
+    volume = 1,
     level = 120,
     pitch = {90, 115},
     sound = {
-        "^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_01.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_draw_03.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_draw_04.wav",
     }
 } )
 
 sound.Add( {
     name = "ArcCW_APEX.Frag.Holster",
     channel = CHAN_WEAPON + 6,
-    volume = 0.2,
+    volume = 0.5,
     level = 120,
     pitch = {90, 115},
     sound = {
-        "^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_01.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_draw_03.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_draw_04.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Frag.PreThrow",
+    channel = CHAN_WEAPON + 6,
+    volume = 1,
+    level = 120,
+    pitch = {90, 115},
+    sound = {
+        "^weapons/grenades/wpn_fraggrenade_1p_prethrow_01.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_prethrow_02.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_prethrow_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Frag.Throw",
+    channel = CHAN_WEAPON + 6,
+    volume = 1,
+    level = 120,
+    pitch = {90, 115},
+    sound = {
+        "^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_01.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.wav",
+		"^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_03.wav",
     }
 } )
 

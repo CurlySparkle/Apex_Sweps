@@ -111,30 +111,28 @@ SWEP.Animations = {
     ["pre_throw"] = {
         Source = "pullpin",
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.wav", t = 0 / 30},
-            {s = "weapons/grenades/wpn_fraggrenade_1p_pinpull_2ch_v2_01.wav", t = 2 / 30}
+            {s = "ArcCW_APEX.Frag.PreThrow", t = 0 / 30},
         },
         MinProgress = 0.5,
     },
     ["fire"] = {
         Source = "pullpin",
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_prep_01.wav", t = 0 / 30},
-            {s = "weapons/grenades/wpn_fraggrenade_1p_pinpull_2ch_v2_01.wav", t = 2 / 30}
+            {s = "ArcCW_APEX.Frag.PreThrow", t = 0 / 30},
         },
     },
     ["throw"] = {
         Source = {"toss_overhead"},
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_01.wav", t = 2 / 30}
+            {s = "ArcCW_APEX.Frag.Throw", t = 0 / 30}
         },
     },
     ["throw_alt"] = {
         Source = {"underhand"},
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_03.wav", t = 2 / 30}
+            {s = "ArcCW_APEX.Frag.Throw", t = 0 / 30}
         },
     },
     ["bash"] = {

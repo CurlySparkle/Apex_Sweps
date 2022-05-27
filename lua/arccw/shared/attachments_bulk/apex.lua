@@ -917,6 +917,9 @@ local hopups = {
             [2] = {
                 Hook_BulletHit = function(wep, data)
                     hp(wep, data, 1.35)
+                end,
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 2 and fsound == wep.ShootSound then return "ArcCW_APEX.RE45_Hammer.Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.RE45.Fire" end
                 end
             },
             -- Mozambique
@@ -1272,7 +1275,10 @@ local hopups = {
                     [HITGROUP_LEFTLEG] = 0.9,
                     [HITGROUP_RIGHTLEG] = 0.9,
                 },
-                Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull",
+--                Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull", -- This doesn't seem to work, its been tested and so far it still plays the normal fire sound - Twilight
+				Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire" end
+                end
             },
             -- Longbow DMR
             [2] = {
@@ -1286,7 +1292,10 @@ local hopups = {
                     [HITGROUP_LEFTLEG] = 0.8,
                     [HITGROUP_RIGHTLEG] = 0.8,
                 },
-                Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
+--                Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
+				Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire" end
+                end
             },
             -- Sentinel
             [3] = {

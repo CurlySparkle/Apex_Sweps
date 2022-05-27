@@ -113,14 +113,14 @@ SWEP.Animations = {
     ["pre_throw"] = {
         Source = "pullpin",
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.wav", t = 0 / 30},
+            {s = "ArcCW_APEX.ArcStar.PreThrow", t = 0 / 30},
         },
         MinProgress = 0.5,
     },
     ["fire"] = {
         Source = "pullpin",
         SoundTable = {
-            {s = "weapons/grenades/wpn_fraggrenade_1p_prep_01.wav", t = 0 / 30},
+            {s = "ArcCW_APEX.ArcStar.PreThrow", t = 0 / 30},
         },
     },
     ["throw"] = {

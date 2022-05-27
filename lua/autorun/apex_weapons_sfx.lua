@@ -75,16 +75,6 @@ local soundData = {
 sound.Add(soundData)
 
 local soundData = {
-    name        = "Apex_Ads_In_Pistols",
-    channel     = CHAN_USER_BASE+1,
-    volume      = 1,
-    soundlevel  = 100,
-    pitch       = {90, 110},
-    sound       = genOrderedTbl("weapons/wpn_pistol_ads_in_lr_v1_%i.wav", 2)
-}
-sound.Add(soundData)
-
-local soundData = {
     name        = "Apex_Ads_In_Wingman",
     channel     = CHAN_USER_BASE+1,
     volume      = 0.1,
@@ -101,6 +91,36 @@ local soundData = {
     soundlevel  = 100,
     pitch       = {90, 110},
     sound       = genOrderedTbl("weapons/wpn_pistol_ads_out_lr_v1_%i.wav", 3)
+}
+sound.Add(soundData)
+
+local soundData = {
+    name        = "Apex_Ads_In_Pistols",
+    channel     = CHAN_USER_BASE+1,
+    volume      = 1,
+    soundlevel  = 100,
+    pitch       = {90, 110},
+    sound       = genOrderedTbl("weapons/wpn_pistol_ads_in_lr_v1_%i.wav", 2)
+}
+sound.Add(soundData)
+
+local soundData = {
+    name        = "Apex_Ads_Out_Pistol",
+    channel     = CHAN_USER_BASE+1,
+    volume      = 1,
+    soundlevel  = 100,
+    pitch       = {90, 110},
+    sound       = genOrderedTbl("weapons/wpn_pistol_ads_out_lr_v1_%i.wav", 3)
+}
+sound.Add(soundData)
+
+local soundData = {
+    name        = "Apex_Ads_In_Pistol",
+    channel     = CHAN_USER_BASE+1,
+    volume      = 1,
+    soundlevel  = 100,
+    pitch       = {90, 110},
+    sound       = genOrderedTbl("weapons/wpn_pistol_ads_in_lr_v1_%i.wav", 2)
 }
 sound.Add(soundData)
 
@@ -141,6 +161,26 @@ local soundData = {
     soundlevel  = 100,
     pitch       = {90, 110},
     sound       = genOrderedTbl("weapons/wpn_rifle_ads_out_lr_v1_%i.wav", 3)
+}
+sound.Add(soundData)
+
+local soundData = {
+    name        = "Apex_Draw_Pistol",
+    channel     = CHAN_USER_BASE+1,
+    volume      = 1,
+    soundlevel  = 100,
+    pitch       = {90, 110},
+    sound       = genOrderedTbl("weapons/wpn_pistol_draw_lr_v1_%i.wav", 3)
+}
+sound.Add(soundData)
+
+local soundData = {
+    name        = "Apex_Holster_Pistol",
+    channel     = CHAN_USER_BASE+1,
+    volume      = 1,
+    soundlevel  = 100,
+    pitch       = {90, 110},
+    sound       = genOrderedTbl("weapons/wpn_pistol_holster_lr_v1_%i.wav", 3)
 }
 sound.Add(soundData)
 
