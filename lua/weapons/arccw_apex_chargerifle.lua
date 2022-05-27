@@ -181,7 +181,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"apex_sights", "apex_optics","apex_scope_chargerifle"}, -- what kind of attachments can fit here, can be string or table
+        Slot = {"apex_sights","charger","apex_scope_chargerifle"}, -- what kind of attachments can fit here, can be string or table
         Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
         Offset = {
             vpos = Vector(0, 0, 0), -- offset that the attachment will be relative to the bone
