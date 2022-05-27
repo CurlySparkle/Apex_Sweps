@@ -120,7 +120,7 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = {"weapons/chargerifle/fire_1.wav", "weapons/chargerifle/fire_2.wav", "weapons/chargerifle/fire_3.wav"}
-SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
+SWEP.ShootDrySound = "ArcCW_APEX.ChargeRifle_Dry"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
