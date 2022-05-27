@@ -67,7 +67,7 @@ SWEP.BodyDamageMults = {
 SWEP.Apex_Balance = {
     [1] = {
         Damage = 33,
-        DamageMin = 16,
+        DamageMin = 19,
     },
     [2] = {
         Damage = 10, -- Similar to HUGE but about half as fast
