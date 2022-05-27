@@ -53,3 +53,6 @@ SWEP.Hook_ChangeFiremode = function(wep)
         wep:SetPriorityAnim(CurTime() + 0.75)
     end
 end
+
+-- Sliding Ability
+SWEP.SuppressSlidingViewModelTilt = true
