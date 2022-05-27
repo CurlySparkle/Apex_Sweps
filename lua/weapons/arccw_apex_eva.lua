@@ -137,7 +137,7 @@ SWEP.Hook_AddShootSound = function(wep, data)
     end
 end
 
-SWEP.MuzzleEffect = "muzzleflash_shotgun"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_shotgun"
 SWEP.ShellModel = "models/shells/shelleject_shotshell.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellSounds = ArcCW.ShotgunShellSoundsTable
