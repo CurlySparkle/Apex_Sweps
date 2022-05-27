@@ -1,0 +1,21 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models/attachments/cro_threat_optic_light_d"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "1"
+	"$detailblendfactor" 		"0.05"
+	"$detailframe"	"0"
+	"$translucent" 	"0"
+	"$additive"	"0"
+	"$decal"	"1"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
+}
