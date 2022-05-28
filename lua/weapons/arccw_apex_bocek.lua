@@ -433,6 +433,7 @@ local chargemult = {
 
 local function chargefraction(wep, a, b)
     if not wep:GetBuff_Override("Override_TriggerDelay", wep.TriggerDelay) then return a or 0 end
+    if wep.LastTriggerTime <= 0 then return a or 0 end
     return Lerp((CurTime() - wep.LastTriggerTime) / 0.56, a or 0, b or 1)
 end
 
