@@ -39,3 +39,7 @@ att.HolosightMagnification = 6
 att.Mult_SightTime = 1.1
 att.Mult_SpeedMult = 0.9
 att.Mult_Sway = 0.1
+
+att.AttachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
+att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
+att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"

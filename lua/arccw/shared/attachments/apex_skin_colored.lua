@@ -11,6 +11,6 @@ att.Free = true
 
 att.ActivateElements = {"skin"}
 
-att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_1.wav"
-att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_1.wav"
-att.ToggleSound = "items/UI_Menu_Select.wav"
+att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_7.wav"
+att.DetachSound = "items/player_pickup_loot_attachment_2ch_v1_6.wav"
+att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"

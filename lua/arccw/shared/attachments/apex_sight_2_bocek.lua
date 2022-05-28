@@ -54,3 +54,7 @@ att.HolosightColor = Color(255, 25, 0)
 
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
+
+att.AttachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
+att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
+att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"

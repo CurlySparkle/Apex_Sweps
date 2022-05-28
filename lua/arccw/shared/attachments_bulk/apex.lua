@@ -99,6 +99,10 @@ for k, v in pairs(mag_types) do
 
             att.Add_ClipSize = v[2][j][i]
 
+            att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+            att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+            att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"
+
             if j > 1 then
                 att.InvAtt = "apex_mag_" .. k .. "1_" .. i
             else
@@ -200,7 +204,7 @@ for i = 1, 3 do
 
     att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
     att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
-    att.ToggleSound = "items/UI_Menu_Select.wav"
+    att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"
 
     ArcCW.LoadAttachmentType(att, "apex_muzz_stab_" .. i)
 
@@ -419,7 +423,7 @@ for k, v in pairs(stock_types) do
 
             att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
             att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
-            att.ToggleSound = "items/UI_Menu_Select.wav"
+            att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"
 
             if j > 1 then
                 att.InvAtt = "apex_stock_" .. k .. "_" .. i
