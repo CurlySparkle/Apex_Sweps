@@ -968,13 +968,13 @@ local hopups = {
             -- Alternator
             [1] = {
                 Hook_BulletHit = function(wep, data)
-                    hp(wep, data, 1.55)
+                    disr(wep, data, 1.55)
                 end,
             },
             -- RE-45 Auto
             [2] = {
                 Hook_BulletHit = function(wep, data)
-                    hp(wep, data, 1.7)
+                    disr(wep, data, 1.7)
                 end
             },
 		},
