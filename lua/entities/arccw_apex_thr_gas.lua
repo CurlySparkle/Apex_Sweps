@@ -109,14 +109,6 @@ function ENT:PhysicsCollide(data, physobj)
     end
 end
 
--- UNIFORMLY generates a random point within a 2D circle
--- Otherwise the smoke effect will look uneven
-local function randcircle(radius)
-    local r = radius * math.sqrt(math.random())
-    local theta = math.random() * 2 * math.pi
-    return Vector(r * math.cos(theta), r * math.sin(theta), 0)
-end
-
 function ENT:Think()
     if not self.SpawnTime then self.SpawnTime = CurTime() end
 
@@ -169,7 +161,7 @@ function ENT:Think()
                 self.Bursted = true
                 for i = 1, 75 do
                     local fire = emitter:Add("particle/smokestack", self:GetPos())
-                    fire:SetVelocity(randcircle(1024) + Vector(0, 0, math.Rand(32, 64)))
+                    fire:SetVelocity(ArcCW.Apex.CircleRandVector(1024) + Vector(0, 0, math.Rand(32, 64)))
                     fire:SetGravity(Vector(0, 0, 0))
                     fire:SetDieTime(math.Rand(10, 15))
                     fire:SetStartAlpha(100)
@@ -188,7 +180,7 @@ function ENT:Think()
             end
             if self.Ticks % 3 == 0 then
                 local fire = emitter:Add("particle/smokestack", self:GetPos())
-                fire:SetVelocity(randcircle(640))
+                fire:SetVelocity(ArcCW.Apex.CircleRandVector(640))
                 fire:SetGravity(Vector(0, 0, 0))
                 fire:SetDieTime(math.Rand(3, 5))
                 fire:SetStartAlpha(100)

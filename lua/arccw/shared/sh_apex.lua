@@ -107,6 +107,13 @@ function ArcCW.Apex.TryConsumeGrenade(ply, grenade)
     return false
 end
 
+-- Generate a Vector that points to a random point in a circle from origin UNIFORMLY
+function ArcCW.Apex.CircleRandVector(radius)
+    local r = radius * math.sqrt(math.random())
+    local theta = math.random() * 2 * math.pi
+    return Vector(r * math.cos(theta), r * math.sin(theta), 0)
+end
+
 hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     ArcCW:AddBulletProfile("apex_bocek", {
         color = Color(192, 192, 255),

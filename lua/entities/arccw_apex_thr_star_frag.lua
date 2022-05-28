@@ -110,29 +110,29 @@ function ENT:Detonate()
 end
 
 function ENT:ThinkEffect()
-    local emitter = ParticleEmitter(self:GetPos())
-    if not IsValid(emitter) then return end
     self.NextFlareTime = self.NextFlareTime or CurTime()
     if self.NextFlareTime <= CurTime() then
-        self.NextFlareTime = CurTime() + 0.025
+        local emitter = ParticleEmitter(self:GetPos())
+        if not IsValid(emitter) then return end
+        self.NextFlareTime = CurTime() + 0.02
         local fire = emitter:Add("particle/smokestack", self:GetPos())
-        fire:SetVelocity(self:GetForward() * -800 + VectorRand() * 50)
+        fire:SetVelocity(self:GetForward() * -1000 + VectorRand() * 50)
         fire:SetGravity(Vector(0, 0, -25))
-        fire:SetDieTime(math.Rand(0.3, 0.5))
+        fire:SetDieTime(math.Rand(0.15, 0.3))
         fire:SetStartAlpha(75)
         fire:SetEndAlpha(0)
         fire:SetStartSize(10)
         fire:SetEndSize(35)
         fire:SetRoll(math.Rand(-180, 180))
         fire:SetRollDelta(math.Rand(-0.2, 0.2))
-        fire:SetColor(125, 160, 125)
+        fire:SetColor(155, 160, 155)
         fire:SetAirResistance(25)
         fire:SetPos(self:GetPos())
         fire:SetLighting(false)
         fire:SetCollide(true)
         fire:SetBounce(0.8)
+        emitter:Finish()
     end
-    emitter:Finish()
 end
 
 function ENT:Arm(data)

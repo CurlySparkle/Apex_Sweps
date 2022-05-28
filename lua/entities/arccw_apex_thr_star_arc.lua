@@ -58,8 +58,8 @@ function ENT:Think()
     if SERVER and self.Armed and (self.DetonateTime or math.huge) < CurTime() then
         self:Detonate()
         self:Remove()
-    elseif CLIENT and self:GetStuck() and not self.StuckTime then
-        self.StuckTime = CurTime()
+    elseif CLIENT and self:GetStuck() then
+        self.StuckTime = self.StuckTime or CurTime()
         self:ThinkEffect()
     end
 end
@@ -122,6 +122,7 @@ function ENT:Detonate()
 end
 
 function ENT:ThinkEffect()
+    if self.StuckTime ~= CurTime() then return end
     local emitter = ParticleEmitter(self:GetPos())
     if not IsValid(emitter) then return end
     local fire = emitter:Add("effects/particle_glow_01_notsprite", self:GetPos())

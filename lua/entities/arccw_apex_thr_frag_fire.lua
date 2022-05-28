@@ -5,7 +5,7 @@ if CLIENT then
 end
 ENT.Type = "anim"
 ENT.Base = "arccw_apex_thr_frag"
-ENT.PrintName = "Firebomb"
+ENT.PrintName = "Firecracker"
 ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
@@ -14,8 +14,8 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.Skin = 1
-ENT.FuseTime = 4
-ENT.FireTime = 12
+ENT.FuseTime = 3
+ENT.Booms = 0
 ENT.TrailColor = Color(255, 200, 50, 250)
 ENT.TrailTexture = "sprites/purplelaser1"
 
@@ -30,67 +30,104 @@ function ENT:Think()
     end
     if not self.Armed then return end
     if (self.NextDamageTick or 0) > CurTime() then return end
-    local damaged = {}
-    local toclear = table.Copy(self.Damaged)
-    for i, ent in ipairs(self.Thermites) do
-        if not IsValid(ent) then table.remove(self.Thermites, i) continue end
-        local o = ent:GetPos() + Vector(0, 0, 16)
-        for k, v in pairs(ents.FindInSphere(o, 72)) do
-            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v, o) then -- As it turns out, this will ignite ALL weapons on a player's inventory
-                damaged[v] = true
-                if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
-            end
-        end
+
+    local eff = EffectData()
+    eff:SetOrigin(self:GetPos())
+    eff:SetMagnitude(2)
+    eff:SetScale(1)
+    eff:SetRadius(4)
+    util.Effect("HelicopterMegaBomb", eff)
+
+    if self.Booms == 1 then
+        local explode = ents.Create( "info_particle_system" )
+        explode:SetKeyValue( "effect_name", "tfa_apex_frag_explode" )
+        explode:SetOwner( self.Owner )
+        explode:SetPos( self:GetPos() )
+        explode:Spawn()
+        explode:Activate()
+        explode:Fire( "start", "", 0 )
+        explode:Fire( "kill", "", 30 )
+        self:EmitSound("weapons/grenades/explode3.wav", 100, 90, 1)
+    else
+        self:EmitSound("weapons/ar2/ar2_altfire.wav", 90, 115, 0.75)
     end
 
-    local hit = false
-    for v, i in pairs(damaged) do
-        self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 1
-        local o = self.Owner
-        local dmg = DamageInfo()
-        dmg:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN)
-        dmg:SetDamage(math.floor(4 + self.Damaged[v:EntIndex()] * 1.5))
-        dmg:SetInflictor(IsValid(self) and self or o)
-        dmg:SetAttacker(o)
-        dmg:SetDamageForce(Vector(0, 0, 0))
-        v:TakeDamageInfo(dmg)
+    local targets = {}
 
-        if v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot() then
-            if not hit and IsValid(self:GetOwner()) and v ~= self:GetOwner() and v:Health() > 0 then
-                hit = true
-                net.Start("arccw_apex_hit")
-                    net.WriteBool(false)
-                net.Send(self:GetOwner())
-            end
-            if timer.Exists("thermite_burn_" .. v:EntIndex()) then timer.Remove("thermite_burn_" .. v:EntIndex()) end
-            timer.Create("thermite_burn_" .. v:EntIndex(), 0.5, 8, function()
-                if not IsValid(v) or (v:IsPlayer() and not v:Alive()) then
-                    timer.Remove("thermite_burn_" .. v:EntIndex())
-                    return
+    local hit = false
+    for k, v in pairs(ents.FindInSphere(self:GetPos(), 700)) do
+        if not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v, o) then
+            local distSqr = v:GetPos():DistToSqr(self:GetPos())
+            local dmgd = false
+            if distSqr <= (self.Booms == 1 and 90000 or 40000) then
+                dmgd = true
+                local f = 1
+                if distSqr > 9216 then -- 96 * 96
+                    f = Lerp((distSqr - 9216) / (122500 - 9216), 1, 0.25)
                 end
-                local d = DamageInfo()
-                d:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN)
-                d:SetDamage(5)
-                d:SetInflictor(IsValid(self) and self or o)
-                d:SetAttacker(o)
-                d:SetDamageForce(Vector(0, 0, 0))
-                v:TakeDamageInfo(d)
-                if IsValid(self) and IsValid(self:GetOwner()) and v ~= self:GetOwner() and v:Health() > 0 then
+
+                local phyobj = v:GetPhysicsObject()
+                local mass = 1
+                if IsValid(phyobj) then
+                    v:SetPhysicsAttacker(self:GetOwner(), 5)
+                    mass = phyobj:GetMass() ^ 0.5
+                end
+
+                local dmg = DamageInfo()
+                dmg:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN + (self.Booms == 1 and DMG_BLAST or 0))
+                dmg:SetDamage(f * (self.Booms == 1 and 60 or 25))
+                dmg:SetInflictor(self)
+                dmg:SetAttacker(self:GetOwner())
+                dmg:SetDamagePosition(self:GetPos())
+                dmg:SetDamageForce((v:WorldSpaceCenter() - self:GetPos()):GetNormalized() * (self.Booms == 1 and 4000 or 1500) * f * mass)
+                v:TakeDamageInfo(dmg)
+            end
+
+            if v:Health() > 0 and (v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot()) then
+                if dmgd and not hit and IsValid(self:GetOwner()) and v ~= self:GetOwner() then
+                    hit = true
                     net.Start("arccw_apex_hit")
                         net.WriteBool(false)
                     net.Send(self:GetOwner())
                 end
-            end)
-        elseif not v:IsOnFire() then
-            v:Ignite(5)
+                table.insert(targets, v)
+            end
         end
     end
-    for e, _ in pairs(toclear) do
-        self.Damaged[e] = 0
+
+    if #targets > 0 and math.random() <= 0.5 then
+        local tgt = targets[math.random(1, #targets)]
+        self:GetPhysicsObject():SetVelocityInstantaneous((tgt:WorldSpaceCenter() - self:GetPos()) * math.Rand(0.8, 1.25) + VectorRand() * 250)
+    else
+        self:GetPhysicsObject():SetVelocityInstantaneous(ArcCW.Apex.CircleRandVector(256) * 3 + Vector(0, 0, math.Rand(0, 128)))
     end
-    self.NextDamageTick = CurTime() + 0.15
+
+    self.Booms = self.Booms - 1
+    if self.Booms <= 0 then self:Remove() end
+    self.NextDamageTick = CurTime() + math.Rand(0.25, 1)
 end
 
+function ENT:Detonate(hitentity)
+    if not self:IsValid() or self.Armed then return end
+
+    self.Armed = true
+    self.ArcCW_Killable = false
+    self.Booms = math.random(6, 10)
+
+    --self:SetMoveType(MOVETYPE_NONE)
+    --self:SetNoDraw(true)
+
+    if self:WaterLevel() >= 2 then
+        local eff = EffectData()
+        eff:SetOrigin(self:GetPos())
+        util.Effect("WaterSurfaceExplosion", eff)
+        self:Remove()
+        return
+    end
+end
+
+-- Old feature: Ring of flames
+--[[]
 function ENT:Detonate(hitentity)
     if not self:IsValid() or self.Armed then return end
 
@@ -113,7 +150,7 @@ function ENT:Detonate(hitentity)
         self:Remove()
         return
     else
-        util.Effect("Sparks", eff)
+        util.Effect("HelicopterMegaBomb", eff)
     end
 
     self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
@@ -184,3 +221,4 @@ function ENT:Detonate(hitentity)
     end)
 
 end
+]]
