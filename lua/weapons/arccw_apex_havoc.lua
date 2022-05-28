@@ -346,5 +346,7 @@ SWEP.Animations = {
     },
 }
 
+SWEP.TriggerPullWhenEmpty = false
+
 SWEP.TTTWeaponType = {"weapon_zm_mac10", "weapon_ttt_m16"}
 SWEP.TTTWeight = 50
