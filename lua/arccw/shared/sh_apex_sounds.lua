@@ -6,10 +6,10 @@ sound.Add( {
 --    pitch = {95, 105},
     sound = {
         "^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_01.wav",
-		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_02.wav",
-		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_03.wav",
-		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_04.wav",
-		"^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_05.wav",
+        "^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_02.wav",
+        "^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_03.wav",
+        "^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_04.wav",
+        "^hud/Apex_Weapon_Bow_Deadeye_Shot_V1_2ch_05.wav",
     }
 } )
 
@@ -21,10 +21,10 @@ sound.Add( {
 --    pitch = {95, 105},
     sound = {
         "^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_01.wav",
-		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_02.wav",
-		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_03.wav",
-		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_04.wav",
-		"^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_05.wav",
+        "^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_02.wav",
+        "^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_03.wav",
+        "^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_04.wav",
+        "^hud/Weapons_Deadeye_Sentinel_Shot_V1_2ch_05.wav",
     }
 } )
 
@@ -36,9 +36,9 @@ sound.Add( {
 --    pitch = {95, 105},
     sound = {
         "^hud/Deadeye_Hopup_Activate_Sweetener_V3_01.wav",
-		"^hud/Deadeye_Hopup_Activate_Sweetener_V3_02.wav",
-		"^hud/Deadeye_Hopup_Activate_Sweetener_V3_03.wav",
-		"^hud/Deadeye_Hopup_Activate_Sweetener_V3_04.wav",
+        "^hud/Deadeye_Hopup_Activate_Sweetener_V3_02.wav",
+        "^hud/Deadeye_Hopup_Activate_Sweetener_V3_03.wav",
+        "^hud/Deadeye_Hopup_Activate_Sweetener_V3_04.wav",
     }
 } )
 
@@ -76,11 +76,11 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_01.wav",
-		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_02.wav",
-		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_03.wav",
-		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_04.wav",
-		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_05.wav",
-		"^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_06.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_02.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_03.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_04.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_05.wav",
+        "^weapons/bocek/Apex_Weapon_Bow_empty_V1_2ch_06.wav",
     }
 } )
 
@@ -107,7 +107,7 @@ sound.Add( {
         "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_01.wav",
         "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_02.wav",
         "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_03.wav",
-		"^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_05.wav",
+        "^weapons/rampage/wpn_rampage_thermite_charge_2ch_04_05.wav",
     }
 } )
 
@@ -987,9 +987,9 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_01.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_02.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_03.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_04.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_02.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_03.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_PreThrow_2ch_v2_04.wav",
     }
 } )
 
@@ -1001,9 +1001,9 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_01.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_02.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_03.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_04.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_02.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_03.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Throw_2ch_v2_04.wav",
     }
 } )
 
@@ -1015,8 +1015,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_01.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_02.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_03.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_02.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_03.wav",
     }
 } )
 
@@ -1028,8 +1028,8 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_01.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_02.wav",
-		"^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_03.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_02.wav",
+        "^weapons/grenades/arcstar/Wpn_Firestar_Draw_2ch_v2_03.wav",
     }
 } )
 
@@ -1041,9 +1041,9 @@ sound.Add( {
     pitch = {90, 115},
     sound = {
         "^weapons/grenades/wpn_fraggrenade_1p_draw_01.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_draw_03.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_draw_04.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_03.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_04.wav",
     }
 } )
 
@@ -1055,9 +1055,9 @@ sound.Add( {
     pitch = {90, 115},
     sound = {
         "^weapons/grenades/wpn_fraggrenade_1p_draw_01.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_draw_03.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_draw_04.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_02.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_03.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_draw_04.wav",
     }
 } )
 
@@ -1069,8 +1069,8 @@ sound.Add( {
     pitch = {90, 115},
     sound = {
         "^weapons/grenades/wpn_fraggrenade_1p_prethrow_01.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_prethrow_02.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_prethrow_03.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_prethrow_02.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_prethrow_03.wav",
     }
 } )
 
@@ -1082,8 +1082,8 @@ sound.Add( {
     pitch = {90, 115},
     sound = {
         "^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_01.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.wav",
-		"^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_03.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.wav",
+        "^weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_03.wav",
     }
 } )
 
@@ -1493,7 +1493,7 @@ sound.Add( {
     pitch = {95, 110},
     sound = {
         "^weapons/chargerifle/wpn_chargerifle_1p_trigger_1ch_v1_01.wav",
-		"^weapons/chargerifle/wpn_chargerifle_1p_trigger_1ch_v1_02.wav",
+        "^weapons/chargerifle/wpn_chargerifle_1p_trigger_1ch_v1_02.wav",
     }
 } )
 
@@ -1532,10 +1532,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.Level_Tick_3",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.4,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_04.wav",
     }
@@ -1543,10 +1542,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.Level_Tick_2",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.4,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_02.wav",
     }
@@ -1554,10 +1552,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.Level_Tick_1",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.4,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_LevelTick1_2ch_v1_01.wav",
     }
@@ -1565,10 +1562,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.ChargeStart",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.4,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_ChargeStart_2ch_v1_01.wav",
     }
@@ -1576,10 +1572,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.TripleTake.ChargeEnd",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.4,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/tripletake/Wpn_DoubleTake_ChargedShot_ChargeEnd_2ch_v2_01.wav",
     }
@@ -1590,7 +1585,6 @@ sound.Add( {
     channel = CHAN_ITEM,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_ChargeStart_2ch_v1_01.wav",
     }
@@ -1598,10 +1592,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.ChargeEnd",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_ChargeEnd_2ch_v1_01.wav",
     }
@@ -1609,10 +1602,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Level_Tick_1",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick1_2ch_v1_01.wav",
     }
@@ -1620,10 +1612,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Level_Tick_2",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick2_2ch_v1_01.wav",
     }
@@ -1631,10 +1622,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.Level_Tick_3",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/peacekeeper/Wpn_Peacekeeper_ChargedShot_LevelTick4_2ch_v1_01.wav",
     }
@@ -1642,10 +1632,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.3030.ChargeStart",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/3030/3030_Charge_Spin_Whine_Start_1ch_v2_01.wav",
     }
@@ -1653,10 +1642,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.3030.ChargeEnd",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/3030/3030_Charge_Spin_Whine_Stop_1ch_v1_01.wav",
     }
@@ -1664,10 +1652,9 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.3030.ChargeLoop",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/3030/3030_Charge_Spin_Whine_Loop_1ch_v1_01.wav",
     }
@@ -1675,14 +1662,13 @@ sound.Add( {
 
 sound.Add( {
     name = "ArcCW_APEX.3030.ChargeLoop_2",
-    channel = CHAN_ITEM,
+    channel = CHAN_ITEM + 1,
     volume = 0.5,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_01.wav",
-		"^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_02.wav",
-		"^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_03.wav",
+        "^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_02.wav",
+        "^weapons/3030/3030_Charge_Spin_Whine_Loop1_1ch_v1_03.wav",
     }
 } )
 
@@ -1691,11 +1677,10 @@ sound.Add( {
     channel = CHAN_ITEM + 6,
     volume = 0.75,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_01.wav",
-		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_02.wav",
-		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_03.wav",
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_02.wav",
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagOut_fr15_2ch_v1_03.wav",
     }
 } )
 
@@ -1704,11 +1689,10 @@ sound.Add( {
     channel = CHAN_ITEM + 6,
     volume = 0.75,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_01.wav",
-		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_02.wav",
-		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_03.wav",
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_02.wav",
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_MagIn_fr29_2ch_v1_03.wav",
     }
 } )
 
@@ -1717,11 +1701,10 @@ sound.Add( {
     channel = CHAN_ITEM + 6,
     volume = 0.75,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_01.wav",
-		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_02.wav",
-		"^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_03.wav",
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_02.wav",
+        "^weapons/volt/Wpn_Volt_br_reloadempty_02_Mech_BoltPullRelease_fr58_2ch_v1_03.wav",
     }
 } )
 
@@ -1730,10 +1713,9 @@ sound.Add( {
     channel = CHAN_ITEM + 6,
     volume = 0.75,
     level = 120,
---    pitch = {95, 110},
     sound = {
         "^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_01.wav",
-		"^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_02.wav",
-		"^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_03.wav",
+        "^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_02.wav",
+        "^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_03.wav",
     }
 } )
