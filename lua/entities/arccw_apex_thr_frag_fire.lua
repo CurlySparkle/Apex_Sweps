@@ -14,7 +14,7 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 ENT.Model = "models/weapons/w_apex_nade_frag_thrown.mdl"
 ENT.Skin = 1
-ENT.FuseTime = 3
+ENT.FuseTime = 1.5
 ENT.Booms = 0
 ENT.TrailColor = Color(255, 200, 50, 250)
 ENT.TrailTexture = "sprites/purplelaser1"
@@ -22,7 +22,6 @@ ENT.TrailTexture = "sprites/purplelaser1"
 ENT.Armed = false
 ENT.Thermites = {}
 ENT.Damaged = {}
-
 
 function ENT:Think()
     if SERVER and CurTime() - self.SpawnTime >= self.FuseTime then
@@ -49,7 +48,10 @@ function ENT:Think()
         explode:Fire( "kill", "", 30 )
         self:EmitSound("weapons/grenades/explode3.wav", 100, 90, 1)
     else
-        self:EmitSound("weapons/ar2/ar2_altfire.wav", 90, 115, 0.75)
+        self:EmitSound("weapons/ar2/ar2_altfire.wav", 90, 115, 0.8)
+        if self.Booms <= 4 then
+            self:EmitSound("buttons/blip1.wav", 90, 100 + (5 - self.Booms) * 25)
+        end
     end
 
     local targets = {}
