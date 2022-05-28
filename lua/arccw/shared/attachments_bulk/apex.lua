@@ -561,6 +561,12 @@ local function hp(wep, data, mul)
     end
 end
 
+local function disr(wep, data, mul)
+    if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() > 0 and (engine.ActiveGamemode() ~= "terrortown" or data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
+        data.damage = data.damage * mul
+    end
+end
+
 local chargeoffset = {
     [1] = {1.414, 1.414},
     [2] = {1.414, -1.414},
@@ -953,6 +959,40 @@ local hopups = {
             },
         },
     },
+	["disruptor"] = {
+		name = "Disruptor Rounds",
+        icon = "entities/attach_icons/hopup_apex_disruptor.png",
+        desc = "Weapon damage against armored players is increased significantly.",
+        weight = 0.25,
+		variants = {
+            -- Alternator
+            [1] = {
+                Hook_BulletHit = function(wep, data)
+                    hp(wep, data, 1.55)
+                end,
+            },
+            -- RE-45 Auto
+            [2] = {
+                Hook_BulletHit = function(wep, data)
+                    hp(wep, data, 1.7)
+                end
+            },
+		},
+		variants_ttt = {
+			-- Alternator
+            [1] = {
+                Hook_BulletHit = function(wep, data)
+                    disr(wep, data, 1.25)
+                end,
+            },
+            -- RE-45 Auto
+            [2] = {
+                Hook_BulletHit = function(wep, data)
+                    disr(wep, data, 1.4)
+                end
+            },
+		},
+	},
     ["anvil"] = {
         name = "Anvil Receiver",
         icon = "entities/attach_icons/hopup_apex_anvil.png",
