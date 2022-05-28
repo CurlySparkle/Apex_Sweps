@@ -350,3 +350,9 @@ SWEP.TriggerPullWhenEmpty = false
 
 SWEP.TTTWeaponType = {"weapon_zm_mac10", "weapon_ttt_m16"}
 SWEP.TTTWeight = 50
+
+SWEP.O_Hook_Override_MuzzleEffect = function(wep,data)
+    if wep:GetCurrentFiremode().Mode < 2 then
+        return {current = "tfa_apex_energy_muzzle_medium"}
+    end
+end
