@@ -1,9 +1,25 @@
 {
-	"title": "[ArcCW] Apex Legends - Weapons",
-	"type": "weapon",
-	"tags": 
-	[
-		"roleplay",
-		"realism"
-	]
+    "title": "[ArcCW] Apex Legends - Weapons",
+    "type": "weapon",
+    "tags":
+    [
+        "roleplay",
+        "realism"
+    ],
+    "ignore":
+    [
+        "*.cmd",
+        "*.ini",
+        "*.lnk",
+        "*.url",
+        "*.psd",
+        "*.bat",
+        ".git/*",
+        ".gitignore",
+        ".gitattributes",
+        "*.code-workspace",
+        "apex_thumbnail_swep2.jpg",
+        "README.md",
+        "_workfolder/*"
+    ]
 }
