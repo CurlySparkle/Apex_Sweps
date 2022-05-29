@@ -1,0 +1,16 @@
+"UnlitGeneric"
+{
+	"$basetexture" "ammocounter/plate_car/numbers_plate3"
+	"$additive" "1"
+	"$decal" "1"
+	"$blendtintbybasealpha" "0"
+     //"$color2" "0 0 1"
+	Proxies // proxies are listed inside this block
+	{
+		ArcCW_AMMO_CAR
+		{
+			resultVar 1
+			prefixstring "ammocounter/plate_car/numbers_plate"
+		}
+	}
+}

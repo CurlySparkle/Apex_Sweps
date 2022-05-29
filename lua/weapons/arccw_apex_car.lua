@@ -149,7 +149,7 @@ SWEP.SprintTime = 0
 SWEP.CaseBones = {}
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, 0, 0),
+    Pos = Vector(0, -0.8, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.2,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -244,8 +244,8 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {s = "weapons/car/wpn_car_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 8 / 30},
-            {s = "weapons/car/wpn_car_emptyreload_boltfront_fr56_2ch_v1_01.wav", t = 14 / 30}
+            {s = "ArcCW_APEX.CAR.Bolt_Back", t = 8 / 30},
+            {s = "ArcCW_APEX.CAR.Bolt_Forward", t = 14 / 30}
         },
     },
     ["draw"] = {
@@ -320,8 +320,8 @@ SWEP.Animations = {
         LHIKOut = 0.6,
         SoundTable = {
             {s = "weapons/car/wpn_car_reload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
-            {s = "weapons/car/Wpn_Car_Reload_MagEject_New_v1_01.wav", t = 23 / 30},
-            {s = "weapons/car/Wpn_Car_Reload_MagInsert_New_v1_01.wav", t = 39 / 30},
+            {s = "ArcCW_APEX.CAR.Mag_Out", t = 23 / 30},
+            {s = "ArcCW_APEX.CAR.Mag_In", t = 39 / 30},
             {s = "weapons/car/wpn_car_reload_handrest_fr48_2ch_v1_01.wav", t = 48 / 30}
         },
     },
@@ -331,10 +331,10 @@ SWEP.Animations = {
         LHIK = true,
         SoundTable = {
             {s = "weapons/car/wpn_car_emptyreload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
-            {s = "weapons/car/Wpn_Car_Reload_MagEject_New_v1_02.wav", t = 17 / 30},
-            {s = "weapons/car/Wpn_Car_Reload_MagInsert_New_v1_02.wav", t = 34 / 30},
-            {s = "weapons/car/Wpn_Car_Reload_BoltBack_New_v1_01.wav", t = 53 / 30},
-            {s = "weapons/car/Wpn_Car_Reload_BoltFwd_New_v1_01.wav", t = 61 / 30},
+            {s = "ArcCW_APEX.CAR.Mag_Out", t = 17 / 30},
+            {s = "ArcCW_APEX.CAR.Mag_In", t = 34 / 30},
+            {s = "ArcCW_APEX.CAR.Bolt_Back", t = 53 / 30},
+            {s = "ArcCW_APEX.CAR.Bolt_Forward", t = 61 / 30},
             {s = "weapons/car/wpn_car_emptyreload_handrest_fr61_2ch_v1_01.wav", t = 61 / 30}
         },
     },

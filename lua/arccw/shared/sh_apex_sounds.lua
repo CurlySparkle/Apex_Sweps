@@ -1719,3 +1719,51 @@ sound.Add( {
         "^weapons/volt/Wpn_Volt_Reload_Mech_br_firstdraw_BoltAccuate_fr21_2ch_v1_03.wav",
     }
 } )
+
+sound.Add( {
+    name = "ArcCW_APEX.CAR.Mag_Out",
+    channel = CHAN_ITEM + 6,
+    volume = 1,
+    level = 120,
+    sound = {
+        "^weapons/car/Wpn_Car_Reload_MagEject_New_v1_01.wav",
+		"^weapons/car/Wpn_Car_Reload_MagEject_New_v1_02.wav",
+		"^weapons/car/Wpn_Car_Reload_MagEject_New_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.CAR.Mag_In",
+    channel = CHAN_ITEM + 6,
+    volume = 1,
+    level = 120,
+    sound = {
+        "^weapons/car/Wpn_Car_Reload_MagInsert_New_v1_01.wav",
+		"^weapons/car/Wpn_Car_Reload_MagInsert_New_v1_02.wav",
+		"^weapons/car/Wpn_Car_Reload_MagInsert_New_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.CAR.Bolt_Back",
+    channel = CHAN_ITEM + 6,
+    volume = 1,
+    level = 120,
+    sound = {
+        "^weapons/car/Wpn_Car_Reload_BoltBack_New_v1_01.wav",
+		"^weapons/car/Wpn_Car_Reload_BoltBack_New_v1_02.wav",
+		"^weapons/car/Wpn_Car_Reload_BoltBack_New_v1_03.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.CAR.Bolt_Forward",
+    channel = CHAN_ITEM + 6,
+    volume = 1,
+    level = 120,
+    sound = {
+        "^weapons/car/Wpn_Car_Reload_BoltFwd_New_v1_01.wav",
+		"^weapons/car/Wpn_Car_Reload_BoltFwd_New_v1_02.wav",
+		"^weapons/car/Wpn_Car_Reload_BoltFwd_New_v1_03.wav",
+    }
+} )
