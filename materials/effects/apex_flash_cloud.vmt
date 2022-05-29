@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$baseTexture" "particle/muzzleflash/flash_cloud"
+	"$baseTexture" "effects/apex_flash_cloud"
 	
 	"$additive" 1
 	"$vertexcolor" 1
