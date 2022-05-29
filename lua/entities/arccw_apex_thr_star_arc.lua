@@ -82,7 +82,7 @@ function ENT:Detonate()
     local blastdmg = self.BlastDamage[ArcCW.Apex.GetBalanceMode()]
 
     for _, ent in pairs(ents.FindInSphere(pos, 300)) do
-        if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent) then continue end
+        if not ArcCW.Apex.ValidNadeTarget(ent) or not self:CheckLOS(ent) then continue end
         local distSqr = ent:GetPos():DistToSqr(pos)
         local f = 1
         if distSqr > 4900 then -- 70 * 70

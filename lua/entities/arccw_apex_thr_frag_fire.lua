@@ -58,7 +58,7 @@ function ENT:Think()
 
     local hit = false
     for k, v in pairs(ents.FindInSphere(self:GetPos(), 700)) do
-        if not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v, o) then
+        if ArcCW.Apex.ValidNadeTarget(ent) and self:CheckLOS(v, o) then
             local distSqr = v:GetPos():DistToSqr(self:GetPos())
             local dmgd = false
             if distSqr <= (self.Booms == 1 and 90000 or 40000) then

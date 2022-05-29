@@ -40,7 +40,7 @@ function ENT:Detonate()
     local optimized = IsValid(self:GetParent()) and (self:GetParent():IsPlayer() or self:GetParent():IsNPC() or self:GetParent():IsNextBot())
 
     for _, ent in pairs(ents.FindInSphere(pos, 200)) do
-        if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent, pos) then continue end
+        if not ArcCW.Apex.ValidNadeTarget(ent) or not self:CheckLOS(ent, pos) then continue end
         local f = 1
 
         local distSqr = ent:GetPos():DistToSqr(pos)

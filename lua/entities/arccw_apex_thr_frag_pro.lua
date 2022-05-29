@@ -50,7 +50,7 @@ function ENT:Detonate()
         local pos = self:GetPos()
 
         for _, ent in pairs(ents.FindInSphere(pos, 350)) do
-            if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent) then continue end
+            if not ArcCW.Apex.ValidNadeTarget(ent) or not self:CheckLOS(ent) then continue end
             local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
             if distSqr > 16384 then -- 128 * 128

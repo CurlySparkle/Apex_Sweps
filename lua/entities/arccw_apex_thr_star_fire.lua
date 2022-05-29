@@ -46,7 +46,7 @@ function ENT:Think()
     local toclear = table.Copy(self.Damaged)
     local pos = self:GetPos() + Vector(0, 0, 8)
     for k, v in pairs(ents.FindInSphere(pos, 96)) do
-        if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v, pos) then -- As it turns out, this will ignite ALL weapons on a player's inventory
+        if not damaged[v] and ArcCW.Apex.ValidNadeTarget(v) and self:CheckLOS(v, pos) then -- As it turns out, this will ignite ALL weapons on a player's inventory
             damaged[v] = true
             if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
         end
@@ -203,7 +203,7 @@ function ENT:Arm(data)
 
     local hit = false
     for _, ent in pairs(ents.FindInSphere(self:GetPos(), 96)) do
-        if ArcCW.Apex.GrenadeBlacklist[ent:GetClass()] or ent:IsWeapon() or not self:CheckLOS(ent) then continue end
+        if not ArcCW.Apex.ValidNadeTarget(ent) or not self:CheckLOS(ent) then continue end
         dmginfo = DamageInfo()
         dmginfo:SetDamageType(ArcCW.Apex.FireDirectDamage[ent:GetClass()] and DMG_DIRECT or DMG_BURN)
         dmginfo:SetAttacker(self:GetOwner())

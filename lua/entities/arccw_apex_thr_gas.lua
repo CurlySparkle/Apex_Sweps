@@ -24,6 +24,12 @@ ENT.BalFireTime = {
     [2] = 20
 }
 
+ENT.GasRadius = {
+    [0] = 512,
+    [1] = 512,
+    [2] = 350,
+}
+
 ENT.NextDamageTick = 0
 
 ENT.Ticks = 0
@@ -111,104 +117,57 @@ end
 
 function ENT:Think()
     if not self.SpawnTime then self.SpawnTime = CurTime() end
+    if SERVER then return end
+
+    local emitter = ParticleEmitter(self:GetPos())
+    if not IsValid(emitter) then return end
+
+    local r = self.GasRadius[ArcCW.Apex.GetBalanceMode()]
 
     if self:GetArmed() then
+        if not self.Bursted then
+            self.Bursted = true
 
-        if SERVER then
-            --[[]
-            if self.NextDamageTick > CurTime() then return end
-            local damaged = {}
-            local toclear = table.Copy(self.Damaged)
-            local z = self:GetPos().z
-            for k, v in pairs(ents.FindInSphere(self:GetPos(), 512)) do
-                if math.abs(z - v:GetPos().z) <= 192 and not damaged[v] and (v:IsNPC() or v:IsPlayer() or v:IsNextBot()) then
-                    damaged[v] = true
-                    if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
-                end
-            end
-
-            local hit = false
-            for v, i in pairs(damaged) do
-                self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 0.5
-                local o = self.Owner
-                local dmg = DamageInfo()
-                dmg:SetDamageType(DMG_NERVEGAS)
-                dmg:SetDamage(math.floor(4.5 + self.Damaged[v:EntIndex()]))
-                dmg:SetInflictor(IsValid(self) and self or o)
-                dmg:SetAttacker(o)
-                dmg:SetDamageForce(Vector(0, 0, 0))
-                v:TakeDamageInfo(dmg)
-                if not hit and (v:IsNPC() or (v:IsPlayer() and v:Alive()) or v:IsNextBot()) and IsValid(self:GetOwner()) and v ~= self:GetOwner() and v:Health() > 0 then
-                    hit = true
-                    net.Start("arccw_apex_hit")
-                        net.WriteBool(false)
-                    net.Send(self:GetOwner())
-                end
-            end
-            for e, _ in pairs(toclear) do
-                self.Damaged[e] = 0
-            end
-            self.NextDamageTick = CurTime() + 1
-            --debugoverlay.Sphere(self:GetPos(), 512, 1.5, Color(175, 175, 100, 200), false)
-            ]]
-        else
-            local emitter = ParticleEmitter(self:GetPos())
-
-            if not self:IsValid() or self:WaterLevel() > 2 then return end
-            if not IsValid(emitter) then return end
-
-            if not self.Bursted then
-                self.Bursted = true
-                for i = 1, 75 do
-                    local fire = emitter:Add("particle/smokestack", self:GetPos())
-                    fire:SetVelocity(ArcCW.Apex.CircleRandVector(1024) + Vector(0, 0, math.Rand(32, 64)))
-                    fire:SetGravity(Vector(0, 0, 0))
-                    fire:SetDieTime(math.Rand(10, 15))
-                    fire:SetStartAlpha(100)
-                    fire:SetEndAlpha(0)
-                    fire:SetStartSize(100)
-                    fire:SetEndSize(250)
-                    fire:SetRoll(math.Rand(-180, 180))
-                    fire:SetRollDelta(math.Rand(-0.5, 0.5))
-                    fire:SetColor(175, 175, 100)
-                    fire:SetAirResistance(96)
-                    fire:SetPos(self:GetPos())
-                    fire:SetLighting(false)
-                    fire:SetCollide(false)
-                    fire:SetBounce(0.95)
-                end
-            end
-            if self.Ticks % 3 == 0 then
+            for i = 1, 75 do
                 local fire = emitter:Add("particle/smokestack", self:GetPos())
-                fire:SetVelocity(ArcCW.Apex.CircleRandVector(640))
+                fire:SetVelocity(ArcCW.Apex.CircleRandVector(r * 2) + Vector(0, 0, math.Rand(32, 64)))
                 fire:SetGravity(Vector(0, 0, 0))
-                fire:SetDieTime(math.Rand(3, 5))
+                fire:SetDieTime(math.Rand(10, 15))
                 fire:SetStartAlpha(100)
                 fire:SetEndAlpha(0)
                 fire:SetStartSize(100)
-                fire:SetEndSize(300)
+                fire:SetEndSize(250)
                 fire:SetRoll(math.Rand(-180, 180))
-                fire:SetRollDelta(math.Rand(-0.2, 0.2))
+                fire:SetRollDelta(math.Rand(-0.5, 0.5))
                 fire:SetColor(175, 175, 100)
-                fire:SetAirResistance(64)
+                fire:SetAirResistance(96)
                 fire:SetPos(self:GetPos())
                 fire:SetLighting(false)
                 fire:SetCollide(false)
                 fire:SetBounce(0.95)
             end
-
-            emitter:Finish()
-
-            self.Ticks = self.Ticks + 0.5
         end
-
-    elseif CLIENT then
+        if self.Ticks % 3 == 0 then
+            local fire = emitter:Add("particle/smokestack", self:GetPos())
+            fire:SetVelocity(ArcCW.Apex.CircleRandVector(r * 1.25))
+            fire:SetGravity(Vector(0, 0, 0))
+            fire:SetDieTime(math.Rand(3, 5))
+            fire:SetStartAlpha(100)
+            fire:SetEndAlpha(0)
+            fire:SetStartSize(100)
+            fire:SetEndSize(300)
+            fire:SetRoll(math.Rand(-180, 180))
+            fire:SetRollDelta(math.Rand(-0.2, 0.2))
+            fire:SetColor(175, 175, 100)
+            fire:SetAirResistance(64)
+            fire:SetPos(self:GetPos())
+            fire:SetLighting(false)
+            fire:SetCollide(false)
+            fire:SetBounce(0.95)
+        end
+        self.Ticks = self.Ticks + 0.5
+    else
         local vel = self:GetVelocity():Length()
-
-        local emitter = ParticleEmitter(self:GetPos())
-
-        if not self:IsValid() or self:WaterLevel() > 2 then return end
-        if not IsValid(emitter) then return end
 
         self.NextFlareTime = self.NextFlareTime or CurTime()
         if self.NextFlareTime <= CurTime() then
@@ -240,9 +199,9 @@ function ENT:Think()
             fire:SetBounce(0.8)
             fire:SetPos(self:GetPos())
         end
-
-        emitter:Finish()
     end
+
+    emitter:Finish()
 end
 
 function ENT:OnRemove()

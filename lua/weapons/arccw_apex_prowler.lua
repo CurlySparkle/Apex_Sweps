@@ -56,8 +56,8 @@ SWEP.Apex_Balance = {
         DamageMin = 18,
     },
     [2] = {
-        Damage = 9, -- Need a bit more than 2 bursts to kill
-        DamageMin = 9,
+        Damage = 10,
+        DamageMin = 10,
     },
 }
 

@@ -109,7 +109,7 @@ function ENT:Think()
         if not IsValid(ent) then table.remove(self.Thermites, i) continue end
         local o = ent:GetPos() + Vector(0, 0, 16)
         for k, v in pairs(ents.FindInSphere(o, 72)) do
-            if not damaged[v] and not ArcCW.Apex.GrenadeBlacklist[v:GetClass()] and not v:IsWeapon() and self:CheckLOS(v, o) then -- As it turns out, this will ignite ALL weapons on a player's inventory
+            if not damaged[v] and ArcCW.Apex.ValidNadeTarget(v) and self:CheckLOS(v, o) then -- As it turns out, this will ignite ALL weapons on a player's inventory
                 damaged[v] = true
                 if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
             end

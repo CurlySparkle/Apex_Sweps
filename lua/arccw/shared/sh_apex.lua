@@ -114,6 +114,14 @@ function ArcCW.Apex.CircleRandVector(radius)
     return Vector(r * math.cos(theta), r * math.sin(theta), 0)
 end
 
+-- I hate entityflame so much
+function ArcCW.Apex.ValidNadeTarget(ent)
+    return IsValid(ent) and not ArcCW.Apex.GrenadeBlacklist[ent:GetClass()]
+            and not IsValid(ent:GetParent())
+            and not (ent:IsWeapon() and IsValid(ent:GetOwner()))
+            and not (ent:IsPlayer() and (not ent:Alive() or ent:GetObserverMode() ~= OBS_MODE_NONE))
+end
+
 hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     ArcCW:AddBulletProfile("apex_bocek", {
         color = Color(192, 192, 255),
@@ -304,7 +312,7 @@ if SERVER then
             if not IsValid(ent) then table.remove(ArcCW.Apex.NoxSources, id) continue end
             if ent.GetArmed and not ent:GetArmed() then continue end
             local z = ent:GetPos().z
-            for k, v in pairs(ents.FindInSphere(ent:GetPos(), 512)) do
+            for k, v in pairs(ents.FindInSphere(ent:GetPos(), ent.GasRadius and ent.GasRadius[ArcCW.Apex.GetBalanceMode()] or 512)) do
                 if math.abs(z - v:GetPos().z) <= 192 and not damaged[v] and (v:IsNPC() or v:IsPlayer() or v:IsNextBot()) then
                     damaged[v] = ent
                     if toclear[v:EntIndex()] then toclear[v:EntIndex()] = nil end
