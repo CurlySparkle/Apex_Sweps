@@ -81,9 +81,9 @@ SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 18
 SWEP.MaxRecoilBlowback = 1
 
-SWEP.Recoil = 0.35
-SWEP.RecoilSide = 0.15
-SWEP.RecoilRise = 0.15
+SWEP.Recoil = 0.4
+SWEP.RecoilSide = 0.25
+SWEP.RecoilRise = 0.55
 SWEP.RecoilPunch = 2.5
 SWEP.RecoilVMShake = 0.2
 
@@ -131,7 +131,7 @@ SWEP.ProceduralIronFire = false
 SWEP.CaseBones = {}
 
 SWEP.IronSightStruct = {
-    Pos = Vector(0, -3, 0),
+    Pos = Vector(0, -0.5, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.2,
         Midpoint = { -- Where the gun should be at the middle of it's irons
@@ -291,6 +291,7 @@ SWEP.Animations = {
         LHIKOut = 0.4,
         LHIKEaseOut = 0.2,
         MinProgress = 60 / 40,
+		Mult = 0.9,
         SoundTable = {
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_0", t = 0 / 30},
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Foley_28", t = 32 / 30},
@@ -307,6 +308,7 @@ SWEP.Animations = {
         LHIKOut = 0.5,
         LHIKEaseOut = 0.2,
         MinProgress = 97 / 40,
+		Mult = 0.9,
         SoundTable = {
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_0", t = 0 / 30},
             {p = 100, s = "ArcCW_APEX.Alternator.Empty_Reload.Cloth_45", t = 45 / 30},
