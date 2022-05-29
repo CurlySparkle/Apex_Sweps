@@ -163,6 +163,7 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
+    --[[]
     ["charged_skin"] = {
         VMSkin = 1,
         WMSkin = 1,
@@ -175,6 +176,7 @@ SWEP.AttachmentElements = {
         VMSkin = 3,
         WMSkin = 3,
     },
+    ]]
 }
 
 SWEP.TriggerDelay = true
@@ -352,7 +354,13 @@ SWEP.TTTWeaponType = {"weapon_zm_mac10", "weapon_ttt_m16"}
 SWEP.TTTWeight = 50
 
 SWEP.O_Hook_Override_MuzzleEffect = function(wep,data)
-    if wep:GetCurrentFiremode().Mode < 2 then
+    if wep:GetCurrentFiremode().Mode == 1 then
         return {current = "tfa_apex_energy_muzzle_medium"}
     end
+end
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local vm = data.vm
+    if !IsValid(vm) then return end
+    vm:SetSkin((wep.Attachments[5].Installed == "apex_skin_colored" and 2 or 0) + (wep.Attachments[4].Installed == "apex_hopup_turbo" and 1 or 0))
 end
