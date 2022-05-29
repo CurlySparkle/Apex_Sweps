@@ -1,13 +1,13 @@
 game.AddParticles( "particles/apex_fx.pcf" )
-game.AddParticles( "particles/muzzleflashes_new.pcf" )
+--game.AddParticles( "particles/muzzleflashes_new.pcf" )
 
 --NEW MUZZLES
-PrecacheParticleSystem("muzzle_autorifles_l4d")
-PrecacheParticleSystem("muzzle_machinegun_l4d")
-PrecacheParticleSystem("muzzle_pistols_l4d")
-PrecacheParticleSystem("muzzle_shotguns_l4d")
-PrecacheParticleSystem("muzzle_smgs_l4d")
-PrecacheParticleSystem("weapon_muzzle_flash_huntingrifle")
+--PrecacheParticleSystem("muzzle_autorifles_l4d")
+--PrecacheParticleSystem("muzzle_machinegun_l4d")
+--PrecacheParticleSystem("muzzle_pistols_l4d")
+--PrecacheParticleSystem("muzzle_shotguns_l4d")
+--PrecacheParticleSystem("muzzle_smgs_l4d")
+--PrecacheParticleSystem("weapon_muzzle_flash_huntingrifle")
 
 --TRACERS
 PrecacheParticleSystem("tfa_apex_tracer_anvil")
@@ -47,10 +47,8 @@ PrecacheParticleSystem("tfa_apex_energy_tracer_rifle")
 PrecacheParticleSystem("tfa_apex_energy_tracer_shotgun")
 PrecacheParticleSystem("tfa_apex_energy_tracer_smg") 
 PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
-PrecacheParticleSystem("tfa_apex_tracer_havoc")
 PrecacheParticleSystem("tfa_apex_lstar_projectile")
 PrecacheParticleSystem("tfa_apex_chargerifle_beam")
-PrecacheParticleSystem("tfa_apex_chargerifle_beam_cont")
 PrecacheParticleSystem("tfa_apex_chargerifle_maxbeam")
 
 -- MISC

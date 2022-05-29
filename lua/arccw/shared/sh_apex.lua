@@ -134,7 +134,7 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
     })
 
     ArcCW:AddBulletProfile("apex_lstar", {
-        color = Color(255, 106, 106),
+        color = Color(255, 111, 111),
         sprite_head = false,
         sprite_tail = false,
         model = "models/weapons/w_bullet.mdl",
