@@ -18,7 +18,8 @@
         ".gitignore",
         ".gitattributes",
         "*.code-workspace",
-        "apex_thumbnail_swep2.jpg",
+        "Apex_Sweps.jpg",
+        "Apex_Sweps.gif",
         "README.md",
         "_workfolder/*"
     ]
