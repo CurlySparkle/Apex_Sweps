@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "Sentinel"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "A veritably powerful bolt action sniper rifle.\n\nPress the firemode key to charge up the weapon with an Arc Star, increasing its damage."
+SWEP.Trivia_Desc = "A veritably powerful bolt action sniper rifle.\n\nPress the firemode key to charge up the weapon with 50 suit armor, increasing its damage."
 SWEP.Trivia_Manufacturer = "Paradinha Arsenal"
 
 SWEP.Slot = 4
@@ -65,6 +65,7 @@ SWEP.Apex_Balance = {
         Damage = 60, -- roughly equivalent to TTT scout
         DamageMin = 60,
         ChargeDamageMult = 1.6, -- 96 per shot
+        Trivia_Desc = "A veritably powerful bolt action sniper rifle.\n\nPress the firemode key to charge up the weapon with an Arc Star, increasing its damage.",
     },
 }
 
@@ -387,9 +388,23 @@ SWEP.M_Hook_Mult_DamageMin = function(wep, data)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    if CLIENT then return true end
-    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
-    if not ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_arcstar") then return true end
+    if wep:GetPriorityAnim() then return true end
+
+    local ok = false
+    if ArcCW.Apex:GetBalanceMode() == 2 then
+        ok = ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_arcstar")
+    else
+        if wep:GetOwner():Armor() >= 50 then
+            ok = true
+            if SERVER then wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50) end
+        end
+    end
+
+    if CLIENT and not ok then
+            wep.ApexHintEnd = CurTime() + 1.5
+            wep.ApexHintAlpha = 0
+    end
+    if not ok then return true end
 
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
@@ -397,6 +412,15 @@ SWEP.Hook_ChangeFiremode = function(wep)
     wep:SetPriorityAnim(n)
     wep:SetHeat(wep:GetMaxHeat())
     return true
+end
+
+SWEP.Hook_PostDrawCrosshair = function(wep)
+    if (wep.ApexHintEnd or 0) > CurTime() then
+        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 1, FrameTime() * 5)
+    else
+        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 0, FrameTime() * 10)
+    end
+    ArcCW.Apex.DrawCrosshairHint(ArcCW.Apex:GetBalanceMode() == 2 and "apex.hint.req_arcstar" or "apex.hint.req_armor", wep.ApexHintAlpha)
 end
 
 SWEP.O_Hook_Override_Tracer = function(wep, data)

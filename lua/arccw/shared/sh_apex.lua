@@ -97,10 +97,10 @@ function ArcCW.Apex.TryConsumeGrenade(ply, grenade)
     local ammo = wpntbl.Primary.Ammo
 
     if ply:GetAmmoCount(ammo) > 0 then
-        ply:RemoveAmmo(1, ammo)
+        if SERVER then ply:RemoveAmmo(1, ammo) end
         return true
     elseif ply:HasWeapon(grenade) and ply:GetWeapon(grenade):Clip1() > 0 then
-        if not ply:GetWeapon(grenade):HasInfiniteAmmo() then ply:StripWeapon(grenade) end
+        if SERVER and not ply:GetWeapon(grenade):HasInfiniteAmmo() then ply:StripWeapon(grenade) end
         return true
     end
 
@@ -349,6 +349,22 @@ else
     CreateConVar("arccw_apex_hitmarker", 1, FCVAR_ARCHIVE, "Use hit markers on Apex Legends weapons.", 0, 1)
     CreateConVar("arccw_apex_hitmarker_headshot", 1, FCVAR_ARCHIVE, "Hitmarker turns red on a headshot.", 0, 1)
     CreateConVar("arccw_apex_hitmarker_size", 24, FCVAR_ARCHIVE, "Set the hitmarker size (scaled to your resolution).", 16, 64)
+
+    ArcCW.Apex.DrawCrosshairHint = function(text, a)
+        a = a or 0
+        text = ArcCW.TryTranslation(text)
+        if a > 0 then
+            surface.SetFont("ArcCWC2_12")
+            local tw, th = surface.GetTextSize(text)
+            local x, y = ScrW() * 0.5 - tw * 0.5, ScrH() * 0.575 - th * 0.5
+            surface.SetTextPos(x + 2, y + 2)
+            surface.SetTextColor(0, 0, 0, 150 * a)
+            surface.DrawText(text)
+            surface.SetTextPos(x, y)
+            surface.SetTextColor(255, 255, 255, 255 * a)
+            surface.DrawText(text)
+        end
+    end
 
     sound.Add({
         name = "Apex_Hit_Sound",

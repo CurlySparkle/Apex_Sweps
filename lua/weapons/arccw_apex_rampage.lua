@@ -359,18 +359,39 @@ SWEP.Hook_ModifyRPM = function(wep, delay)
 end
 
 SWEP.Hook_ChangeFiremode = function(wep)
-    if CLIENT then return true end
-    if wep:GetReloading() or wep:GetPriorityAnim() then return true end
-    if not ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_thermite") then return true end
+    if wep:GetPriorityAnim() then return true end
+
+    local ok = false
+    if ArcCW.Apex:GetBalanceMode() == 2 then
+        ok = ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_thermite")
+    else
+        if wep:GetOwner():Armor() >= 50 then
+            ok = true
+            if SERVER then wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50) end
+        end
+    end
+
+    if CLIENT and not ok then
+            wep.ApexHintEnd = CurTime() + 1.5
+            wep.ApexHintAlpha = 0
+    end
+    if not ok then return true end
 
     wep:PlayAnimationEZ("charge", 1, true)
     local n = CurTime() + wep:GetAnimKeyTime("charge", true)
     wep:SetNextPrimaryFire(n)
     wep:SetPriorityAnim(n)
-
     wep:SetHeat(wep:GetMaxHeat())
-
     return true
+end
+
+SWEP.Hook_PostDrawCrosshair = function(wep)
+    if (wep.ApexHintEnd or 0) > CurTime() then
+        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 1, FrameTime() * 5)
+    else
+        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 0, FrameTime() * 10)
+    end
+    ArcCW.Apex.DrawCrosshairHint("apex.hint.req_thermite", wep.ApexHintAlpha)
 end
 
 SWEP.O_Hook_Override_Tracer = function(wep, data)

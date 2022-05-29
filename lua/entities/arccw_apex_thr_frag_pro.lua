@@ -54,7 +54,7 @@ function ENT:Detonate()
             local distSqr = ent:GetPos():DistToSqr(pos)
             local f = 1
             if distSqr > 16384 then -- 128 * 128
-                f = Lerp((distSqr - 16384) / (122500 - 16384), 0.75, 0.15)
+                f = Lerp((distSqr - 16384) / (122500 - 16384), 0.75, 0.2)
             end
             local dmginfo = DamageInfo()
             dmginfo:SetDamageType(DMG_BLAST)

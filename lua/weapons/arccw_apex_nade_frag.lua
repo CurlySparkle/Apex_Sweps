@@ -65,7 +65,7 @@ SWEP.AttachmentElements = {
     ["skin_2"] = {
         VMSkin = 1,
         WMSkin = 1,
-        NameChange = "Firebomb",
+        NameChange = "Firecracker",
     },
     ["skin_3"] = {
         VMSkin = 2,

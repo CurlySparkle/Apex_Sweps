@@ -48,3 +48,8 @@ L["apex.sg.bolt.3"] = "An attachment that improves firing rate significantly."
 L["apex.sg.load.1"] = "An attachment that increases reloading speed by a little."
 L["apex.sg.load.2"] = "An attachment that increases reloading speed noticeably."
 L["apex.sg.load.3"] = "An attachment that increases reloading speed significantly."
+
+L["apex.hint.loader"] = "Boosted Loader Ready"
+L["apex.hint.req_thermite"] = "Need Thermite Grenade"
+L["apex.hint.req_arcstar"] = "Need Arc Star"
+L["apex.hint.req_armor"] = "Need 50 Suit Armor"

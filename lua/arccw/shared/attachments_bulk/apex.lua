@@ -537,20 +537,7 @@ local function canboost(wep)
     return false
 end
 
-local function drawboostedtext(a)
-    if a > 0 then
-        local text = "Boosted Loader Ready"
-        surface.SetFont("ArcCWC2_12")
-        local tw, th = surface.GetTextSize(text)
-        local x, y = ScrW() * 0.5 - tw * 0.5, ScrH() * 0.575 - th * 0.5
-        surface.SetTextPos(x + 2, y + 2)
-        surface.SetTextColor(0, 0, 0, 150 * a)
-        surface.DrawText(text)
-        surface.SetTextPos(x, y)
-        surface.SetTextColor(255, 255, 255, 255 * a)
-        surface.DrawText(text)
-    end
-end
+local drawcrosshairhint = ArcCW.Apex.DrawCrosshairHint
 
 local function boostsend(wep)
     if SERVER and canboost(wep) and wep:GetOwner():IsPlayer() then
@@ -963,12 +950,12 @@ local hopups = {
             },
         },
     },
-	["disruptor"] = {
-		name = "Disruptor Rounds",
+    ["disruptor"] = {
+        name = "Disruptor Rounds",
         icon = "entities/attach_icons/hopup_apex_disruptor.png",
         desc = "Weapon damage against armored players is increased significantly.",
         weight = 0.25,
-		variants = {
+        variants = {
             -- Alternator
             [1] = {
                 Hook_BulletHit = function(wep, data)
@@ -981,9 +968,9 @@ local hopups = {
                     disr(wep, data, 1.7)
                 end
             },
-		},
-		variants_ttt = {
-			-- Alternator
+        },
+        variants_ttt = {
+            -- Alternator
             [1] = {
                 Hook_BulletHit = function(wep, data)
                     disr(wep, data, 1.25)
@@ -995,8 +982,8 @@ local hopups = {
                     disr(wep, data, 1.4)
                 end
             },
-		},
-	},
+        },
+    },
     ["anvil"] = {
         name = "Anvil Receiver",
         icon = "entities/attach_icons/hopup_apex_anvil.png",
@@ -1320,7 +1307,7 @@ local hopups = {
                     [HITGROUP_RIGHTLEG] = 0.9,
                 },
 --                Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull", -- This doesn't seem to work, its been tested and so far it still plays the normal fire sound - Twilight
-				Hook_GetShootSound = function(wep, fsound)
+                Hook_GetShootSound = function(wep, fsound)
                     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire" end
                 end
             },
@@ -1337,7 +1324,7 @@ local hopups = {
                     [HITGROUP_RIGHTLEG] = 0.8,
                 },
 --                Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
-				Hook_GetShootSound = function(wep, fsound)
+                Hook_GetShootSound = function(wep, fsound)
                     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire" end
                 end
             },
@@ -1449,12 +1436,12 @@ local hopups = {
                     end
                 end,
                 Hook_PostDrawCrosshair = function(wep)
-                    if not wep:GetReloading() and canboost(wep) then
-                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 1, FrameTime() * 5)
+                    if not wep:GetReloading() and canboost(wep) and wep:GetState() ~= ArcCW.STATE_CUSTOMIZE then
+                        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 1, FrameTime() * 5)
                     else
-                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 0, FrameTime() * 10)
+                        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 0, FrameTime() * 10)
                     end
-                    drawboostedtext(wep.ApexLoaderAlpha)
+                    drawcrosshairhint("apex.hint.loader", wep.ApexHintAlpha)
                 end,
                 Hook_PostReload = boostsend,
             },
@@ -1474,11 +1461,11 @@ local hopups = {
                 end,
                 Hook_PostDrawCrosshair = function(wep)
                     if not wep:GetReloading() and canboost(wep) then
-                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 1, FrameTime() * 5)
+                        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 1, FrameTime() * 5)
                     else
-                        wep.ApexLoaderAlpha = math.Approach(wep.ApexLoaderAlpha or 0, 0, FrameTime() * 10)
+                        wep.ApexHintAlpha = math.Approach(wep.ApexHintAlpha or 0, 0, FrameTime() * 10)
                     end
-                    drawboostedtext(wep.ApexLoaderAlpha)
+                    drawcrosshairhint("apex.hint.loader", wep.ApexHintAlpha)
                 end,
                 Hook_PostReload = boostsend,
             },
