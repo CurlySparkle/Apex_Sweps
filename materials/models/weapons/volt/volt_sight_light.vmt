@@ -1,0 +1,23 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models/weapons/volt/volt_sight_light_d"
+	"$detail"		"models/attachments/noise_post"
+	"$detailblendmode" "1"
+	"$detailblendfactor" 		"0.05"
+	"$detailframe"	"0"
+	"$translucent" 	"1"
+	"$additive"	"1"
+	"$decal"	"0"
+	"$nocull"	"1"
+	$color2 "[0.7 0.7 0.7]"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
+}

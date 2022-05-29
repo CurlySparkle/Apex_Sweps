@@ -192,10 +192,10 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         Slot = "apex_muzzle",
-        Bone = "muzzle_flash",
+        Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
-            vang = Angle(0, 0, -90),
+            vang = Angle(90, 0, -90),
             wpos = Vector(7.52, 1.0, -4.65),
             wang = Angle(-10, 0, 180)
         },
