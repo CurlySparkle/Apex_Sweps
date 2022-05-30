@@ -75,7 +75,7 @@ SWEP.Melee2 = true
 SWEP.Melee2Damage = 50
 SWEP.Melee2DamageBackstab = 180
 SWEP.Melee2Range = 65
-SWEP.Melee2Time = 0.55
+SWEP.Melee2Time = 1
 SWEP.Melee2Gesture = nil
 SWEP.Melee2AttackTime = 0.4*0.75
 
@@ -102,17 +102,20 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    ["idle_sprint"] = {Source = "sprint", Mult = 0.9},
+    ["idle_sprint"] = {
+	Source = "sprint", 
+	MinProgress = 0,
+	},
     ["enter_sprint"] = {
         Source = "sprint_in",
-		MinProgress = 0.01,
+		MinProgress = 0,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big", t = 0 / 30},
         },
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		MinProgress = 0.01,
+		MinProgress = 0,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big", t = 0 / 30},
         },
