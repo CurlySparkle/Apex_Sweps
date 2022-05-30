@@ -393,13 +393,11 @@ SWEP.Hook_ChangeFiremode = function(wep)
     local ok = false
     if ArcCW.Apex:GetBalanceMode() == 2 and not GetConVar("arccw_apex_freecharge"):GetBool() then
         ok = ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_arcstar")
-    elseif ArcCW.Apex:GetBalanceMode() == 1 and wep:GetOwner():Armor() >= 50 and not GetConVar("arccw_apex_freecharge"):GetBool() then
+    elseif wep:GetOwner():Armor() >= 50 and ArcCW.Apex:GetBalanceMode() == 1 and not GetConVar("arccw_apex_freecharge"):GetBool() then
             ok = true
             if SERVER then wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50) end
-        end
 	else
-		if GetConVar("arccw_apex_freecharge"):GetBool() then
-		ok = true
+		if GetConVar("arccw_apex_freecharge"):GetBool() then ok = true end
     end
 
     if CLIENT and not ok then
