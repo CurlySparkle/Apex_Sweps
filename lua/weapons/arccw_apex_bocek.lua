@@ -58,7 +58,7 @@ SWEP.Apex_Balance = {
     [2] = {
         Damage = 20,
         DamageMin = 20,
-        PhysBulletMuzzleVelocity = 7500 * ArcCW.HUToM
+        PhysBulletMuzzleVelocity = 7000 * ArcCW.HUToM
     },
 }
 
@@ -420,8 +420,8 @@ SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 50
 
 SWEP.HeatCapacity = 15
-SWEP.HeatDissipation = 10
-SWEP.HeatDelayTime = 0.75
+SWEP.HeatDissipation = 15
+SWEP.HeatDelayTime = 0.5
 SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
 

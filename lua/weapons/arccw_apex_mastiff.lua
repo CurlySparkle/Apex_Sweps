@@ -105,7 +105,6 @@ SWEP.Delay = 60 / 66 -- 60 / RPM.
 SWEP.RunawayBurst = false
 SWEP.Firemodes = {
     {
-        PrintName = "fcg.slam",
         Mode = 2,
     },
     {

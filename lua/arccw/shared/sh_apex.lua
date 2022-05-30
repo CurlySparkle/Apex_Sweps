@@ -133,6 +133,16 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         tail_length = 0.15,
     })
 
+    -- shatter caps
+    ArcCW:AddBulletProfile("apex_bocek2", {
+        color = Color(192, 192, 255),
+        sprite_head = nil,
+        sprite_tail = Material("effects/apexlaser"),
+        size = 0.6,
+        size_min = 0.12,
+        tail_length = 0.125,
+    })
+
     ArcCW:AddBulletProfile("apex_lstar", {
         color = Color(255, 111, 111),
         sprite_head = false,
