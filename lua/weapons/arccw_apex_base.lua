@@ -24,13 +24,14 @@ SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.LungeLength = 72
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
+SWEP.MeleeSwingSound = nil
+SWEP.MeleeMissSound = nil
+SWEP.MeleeHitSound = "ArcCW_APEX.Melee.Hit.Default"
+SWEP.MeleeHitNPCSound = "ArcCW_APEX.Melee.Hit.Flesh"
 
 SWEP.MeleeDamage = 50
-SWEP.MeleeRange = 48
-SWEP.MeleeDamageType = DMG_CLUB
+SWEP.MeleeRange = 50
+SWEP.MeleeDamageType = DMG_CLUB + DMG_AIRBOAT + DMG_GENERIC
 SWEP.MeleeTime = 1
 SWEP.MeleeGesture = nil
 SWEP.MeleeAttackTime = 0.2

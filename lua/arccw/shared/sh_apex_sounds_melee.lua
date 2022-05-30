@@ -16,7 +16,6 @@ sound.Add( {
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 120,
---    pitch = {95, 105},
     sound = {
         "^weapons/melee/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav",
 		"^weapons/melee/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_2.wav",
@@ -28,11 +27,25 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.Melee.Swing.Punch",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/Pilot_Mvmt_Melee_Punch_1P_2ch_v1_1.wav",
+		"^weapons/melee/Pilot_Mvmt_Melee_Punch_1P_2ch_v1_2.wav",
+		"^weapons/melee/Pilot_Mvmt_Melee_Punch_1P_2ch_v1_3.wav",
+		"^weapons/melee/Pilot_Mvmt_Melee_Punch_1P_2ch_v1_4.wav",
+		"^weapons/melee/Pilot_Mvmt_Melee_Punch_1P_2ch_v1_5.wav",
+		"^weapons/melee/Pilot_Mvmt_Melee_Punch_1P_2ch_v1_6.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Melee.Swing.Elbow",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 120,
---    pitch = {95, 105},
     sound = {
         "^weapons/melee/Pilot_Mvmt_Melee_Elbow_1P_2ch_v1_1.wav",
 		"^weapons/melee/Pilot_Mvmt_Melee_Elbow_1P_2ch_v1_2.wav",
@@ -45,7 +58,6 @@ sound.Add( {
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 120,
---    pitch = {95, 105},
     sound = {
         "^weapons/melee/Pilot_Mvmt_Melee_LeftHook_1P_2ch_v1_1.wav",
 		"^weapons/melee/Pilot_Mvmt_Melee_LeftHook_1P_2ch_v1_2.wav",
@@ -58,7 +70,6 @@ sound.Add( {
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 120,
---    pitch = {95, 105},
     sound = {
         "^weapons/melee/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav",
 		"^weapons/melee/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_2.wav",

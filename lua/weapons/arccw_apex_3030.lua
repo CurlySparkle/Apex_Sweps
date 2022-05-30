@@ -314,6 +314,9 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
+        SoundTable = {
+            {s = "ArcCW_APEX.Melee.Swing.Punch", t = 0 / 30},
+    },
     },
     ["enter_inspect"] = {
         Source = "inspect_in",
