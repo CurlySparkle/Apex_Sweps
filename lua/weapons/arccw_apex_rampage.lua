@@ -361,12 +361,7 @@ end
 SWEP.Hook_ChangeFiremode = function(wep)
     if wep:GetPriorityAnim() then return true end
 
-    local ok = false
-    if not GetConVar("arccw_apex_freecharge"):GetBool() then
-        ok = ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_thermite")
-	else
-		if GetConVar("arccw_apex_freecharge"):GetBool() then ok = true end
-    end
+    local ok = GetConVar("arccw_apex_freecharge"):GetBool() or ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_thermite")
 
     if CLIENT and not ok then
             wep.ApexHintEnd = CurTime() + 1.5
