@@ -120,6 +120,50 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.Rampart.Wrench.Swing_light",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Swipe_1P_1.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Swipe_1P_2.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Swipe_1P_3.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Swipe_1P_4.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Swipe_1P_5.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Swipe_1P_6.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Rampart.Wrench.Smack",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Smack_1P_1.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Smack_1P_2.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Smack_1P_3.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Smack_1P_4.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Smack_1P_5.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Smack_1P_6.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Rampart.Wrench.Crouch",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_MeleeCrouch_1.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_MeleeCrouch_2.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_MeleeCrouch_3.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_MeleeCrouch_4.wav",
+		"^weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_MeleeCrouch_5.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big",
     channel = CHAN_ITEM + 6,
     volume = 0.6,
