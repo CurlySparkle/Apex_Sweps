@@ -27,9 +27,10 @@ SWEP.CookAltFire = false
 
 SWEP.Lunge = true
 SWEP.LungeLength = 72
-SWEP.MeleeSwingSound = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav"
-SWEP.MeleeHitSound = "weapons/Imp_Player_MeleePunch_Default_1ch_v1_1.wav"
-SWEP.MeleeHitNPCSound = "weapons/Pilot_Mvmt_Melee_Hit_Flesh_1P_2ch_v1_1.wav"
+SWEP.MeleeSwingSound = ""
+SWEP.MeleeMissSound = ""
+SWEP.MeleeHitSound = "ArcCW_APEX.Melee.Hit.Default"
+SWEP.MeleeHitNPCSound = "ArcCW_APEX.Melee.Hit.Flesh"
 
 SWEP.MeleeDamage = 50
 SWEP.MeleeRange = 48

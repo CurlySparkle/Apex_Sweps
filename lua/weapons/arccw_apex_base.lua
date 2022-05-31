@@ -24,8 +24,8 @@ SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
 
 SWEP.Lunge = true -- Whether to allow the bash/melee to lunge a short distance
 SWEP.LungeLength = 72
-SWEP.MeleeSwingSound = nil
-SWEP.MeleeMissSound = nil
+SWEP.MeleeSwingSound = ""
+SWEP.MeleeMissSound = ""
 SWEP.MeleeHitSound = "ArcCW_APEX.Melee.Hit.Default"
 SWEP.MeleeHitNPCSound = "ArcCW_APEX.Melee.Hit.Flesh"
 

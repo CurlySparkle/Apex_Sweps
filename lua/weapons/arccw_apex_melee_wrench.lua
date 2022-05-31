@@ -18,6 +18,8 @@ SWEP.Slot = 0
 SWEP.NPCWeaponType = "weapon_crowbar"
 SWEP.NPCWeight = 250
 
+SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
+SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 SWEP.CamAttachment = 3
 
 SWEP.UseHands = true
@@ -26,7 +28,7 @@ SWEP.ViewModel = "models/weapons/melee/c_apex_melee_rampart.mdl"
 SWEP.WorldModel = "models/weapons/melee/c_apex_melee_rampart.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos = Vector(-10.5, 9, -8),
+    pos = Vector(-14, 5, -8),
     ang = Angle(-10, 0, 180 + 5)
 }
 
@@ -39,12 +41,15 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.CustomizePos = Vector(0, -2, 1)
 SWEP.CustomizeAng = Angle(0, 0, 0)
 
+SWEP.CrouchPos = Vector(0, 0, 3)
+SWEP.CrouchAng = Angle(0, -5, 25)
+
 SWEP.ViewModelFOV = 70
 
 --SWEP.ImpactDecal = "FadingScorch" -- No decals for melee sadly
---SWEP.ImpactEffect = "StunstickImpact"
+SWEP.ImpactEffect = "StunstickImpact"
 
-SWEP.MeleeGesture = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
+SWEP.MeleeGesture = ACT_HL2MP_GESTURE_RANGE_ATTACK_MELEE
 
 SWEP.NotForNPCs = true
 
@@ -58,12 +63,13 @@ SWEP.Firemodes = {
 SWEP.PrimaryBash = true
 SWEP.CanBash = true
 SWEP.MeleeDamage = 65
-SWEP.MeleeRange = 60
+SWEP.MeleeRange = 40
 SWEP.MeleeDamageType = DMG_SLASH + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB
 
 SWEP.MeleeHitSound = "ArcCW_APEX.Rampart.Wrench.Hit_Default"
 SWEP.MeleeHitNPCSound = "ArcCW_APEX.Rampart.Wrench.Hit_Flesh"
 SWEP.MeleeMissSound = ""
+SWEP.MeleeSwingSound = ""
 
 SWEP.MeleeTime = 1
 SWEP.MeleeAttackTime = 0.35*0.75
@@ -75,10 +81,10 @@ SWEP.LungeLength = 72
 SWEP.Melee2 = true
 SWEP.Melee2Damage = 50
 SWEP.Melee2DamageBackstab = 180
-SWEP.Melee2Range = 65
+SWEP.Melee2Range = 30
 SWEP.Melee2Time = 1
 SWEP.Melee2Gesture = nil
-SWEP.Melee2AttackTime = 0.4 * 0.75
+SWEP.Melee2AttackTime = 0.25
 
 SWEP.Backstab = true
 SWEP.BackstabMultiplier = 2
@@ -123,6 +129,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = {"draw","draw3"},
+		MinProgress = 0.1,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Draw", t = 0 / 30},
         },
@@ -136,14 +143,17 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {ind = 2, bg = 1, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_A.wav", t = 0 / 30},
-            {ind = 2, bg = 0, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_B.wav", t = 50 / 30},
+            {s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_A.wav", t = 0 / 30},
+			{ind = 2, bg = 1, t = 0 / 30},
+            {s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_B.wav", t = 50 / 30},
+			{ind = 2, bg = 0, t = 50 / 30},
         },
     },
     ["bash"] = {
         Source = {"melee_jump","melee_sliding","melee_smack_down","melee_sprinting","melee_swing_down"},
         SoundTable = {
-            {s = "ArcCW_APEX.Rampart.Wrench.Swing_light", t = 0 / 30},
+            { s = "ArcCW_APEX.Rampart.Wrench.Swing_light", t = 0 / 30},
+			{ e = "weapon_melee_blur", att = 1, mag = 100, t = 5 / 30},
         },
     },
     ["bash2"] = {
@@ -157,14 +167,12 @@ SWEP.Animations = {
         Source = {"melee_crouch","melee_shoot"},
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Crouch", t = 0 / 30},
-            {c = CHAN_WEAPON, s = "weapons/melee/rampart/ProblemSolver_Ratchet_OpenLong_v1_2ch_01.wav", t = 9 / 30},
         },
     },
     ["bash2_backstab"] = {
         Source = {"melee_shoot","melee_crouch"},
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Crouch", t = 0 / 30},
-            {c = CHAN_WEAPON, s = "weapons/melee/rampart/ProblemSolver_Ratchet_OpenLong_v1_2ch_01.wav", t = 9 / 30},
         },
     },
     ["enter_inspect"] = {
@@ -178,7 +186,8 @@ SWEP.Animations = {
         SoundTable = {
             {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_A_v1_2ch_01.wav", t = 0 / 30},
             {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 10 / 30},
-            {ind = 2, bg = 1, p = 85,s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 30 / 30},
+			{ind = 2, bg = 1, p = 85, t = 30 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 30 / 30},
             {p = 115,s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 56 / 30},
             {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_I_v1_2ch_01.wav", t = 30 / 30},
             {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_F_v1_2ch_01.wav", t = 107 / 30},

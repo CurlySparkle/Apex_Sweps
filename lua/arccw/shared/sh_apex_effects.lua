@@ -1,4 +1,5 @@
 game.AddParticles( "particles/apex_fx.pcf" )
+game.AddParticles( "particles/melee_fx.pcf" )
 --game.AddParticles( "particles/muzzleflashes_new.pcf" )
 
 --NEW MUZZLES

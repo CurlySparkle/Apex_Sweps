@@ -130,8 +130,8 @@ SWEP.Animations = {
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
         SoundTable = {
-            {s = "weapons/Pilot_Mvmt_Melee_RightHook_1P_2ch_v1_1.wav", t = 0 / 30}
-        },
+            {s = "ArcCW_APEX.Melee.Swing.Punch", t = 0 / 30},
+    },
     },
     -- ["reload_empty"] = {
         -- Source = "draw",
