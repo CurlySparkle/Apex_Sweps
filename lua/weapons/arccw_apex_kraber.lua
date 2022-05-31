@@ -328,7 +328,7 @@ if engine.ActiveGamemode() == "terrortown" then
         type = "Weapon",
         desc = "Powerful sniper rifle with 4 shots.\n\nComes with scope, stock, and Shatter Caps attachments."
     }
-    SWEP.Attachments[1].Installed = "apex_scope_3_kraber"
+    SWEP.Attachments[1].Installed = "apex_scope_kraber"
     SWEP.Attachments[2].Installed = "apex_stock_sniper_3"
     SWEP.Attachments[3].Installed = "apex_hopup_shatter3"
 end
