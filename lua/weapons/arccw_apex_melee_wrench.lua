@@ -105,6 +105,8 @@ SWEP.AttachmentElements = {
     },
 }
 
+SWEP.NoHideLeftHandInCustomization = true
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",

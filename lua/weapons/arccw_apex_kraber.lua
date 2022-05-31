@@ -177,7 +177,7 @@ SWEP.Attachments = {
             wpos = Vector(8.4, 1.0, -8.70),
             wang = Angle(-9, 0, 180)
         },
-        Installed = "apex_scope_1_kraber",
+        Installed = "apex_scope_kraber",
         CorrectivePos = Vector(3.65, 0, 0.1),
         CorrectiveAng = Angle(0, 0, 2.337)
     },

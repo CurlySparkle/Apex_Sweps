@@ -105,6 +105,8 @@ SWEP.Primary.ClipSize = -1
     -- },
 -- }
 
+SWEP.NoHideLeftHandInCustomization = true
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
