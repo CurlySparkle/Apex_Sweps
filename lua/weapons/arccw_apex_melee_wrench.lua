@@ -27,7 +27,7 @@ SWEP.WorldModel = "models/weapons/melee/c_apex_melee_rampart.mdl"
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
     pos = Vector(-10.5, 9, -8),
-    ang = Angle(-10, 0, 180+5)
+    ang = Angle(-10, 0, 180 + 5)
 }
 
 SWEP.SprintPos = Vector(0, -2, 1)
@@ -63,10 +63,11 @@ SWEP.MeleeDamageType = DMG_SLASH + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB
 
 SWEP.MeleeHitSound = "ArcCW_APEX.Rampart.Wrench.Hit_Default"
 SWEP.MeleeHitNPCSound = "ArcCW_APEX.Rampart.Wrench.Hit_Flesh"
+SWEP.MeleeMissSound = ""
 
 SWEP.MeleeTime = 1
 SWEP.MeleeAttackTime = 0.35*0.75
-SWEP.Delay = 60 / 600 
+SWEP.Delay = 60 / 600
 
 SWEP.Lunge = true
 SWEP.LungeLength = 72
@@ -77,7 +78,7 @@ SWEP.Melee2DamageBackstab = 180
 SWEP.Melee2Range = 65
 SWEP.Melee2Time = 1
 SWEP.Melee2Gesture = nil
-SWEP.Melee2AttackTime = 0.4*0.75
+SWEP.Melee2AttackTime = 0.4 * 0.75
 
 SWEP.Backstab = true
 SWEP.BackstabMultiplier = 2
@@ -103,19 +104,19 @@ SWEP.Animations = {
         Source = "idle",
     },
     ["idle_sprint"] = {
-	Source = "sprint", 
-	MinProgress = 0,
-	},
+    Source = "sprint",
+    MinProgress = 0,
+    },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		MinProgress = 0,
+        MinProgress = 0,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big", t = 0 / 30},
         },
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		MinProgress = 0,
+        MinProgress = 0,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big", t = 0 / 30},
         },
@@ -135,8 +136,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-			{ind = 2, bg = 1, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_A.wav", t = 0 / 30},
-			{ind = 2, bg = 0, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_B.wav", t = 50 / 30},
+            {ind = 2, bg = 1, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_A.wav", t = 0 / 30},
+            {ind = 2, bg = 0, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_B.wav", t = 50 / 30},
         },
     },
     ["bash"] = {
@@ -156,14 +157,14 @@ SWEP.Animations = {
         Source = {"melee_crouch","melee_shoot"},
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Crouch", t = 0 / 30},
-			{c = CHAN_WEAPON, s = "weapons/melee/rampart/ProblemSolver_Ratchet_OpenLong_v1_2ch_01.wav", t = 9 / 30},
+            {c = CHAN_WEAPON, s = "weapons/melee/rampart/ProblemSolver_Ratchet_OpenLong_v1_2ch_01.wav", t = 9 / 30},
         },
     },
     ["bash2_backstab"] = {
         Source = {"melee_shoot","melee_crouch"},
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Crouch", t = 0 / 30},
-			{c = CHAN_WEAPON, s = "weapons/melee/rampart/ProblemSolver_Ratchet_OpenLong_v1_2ch_01.wav", t = 9 / 30},
+            {c = CHAN_WEAPON, s = "weapons/melee/rampart/ProblemSolver_Ratchet_OpenLong_v1_2ch_01.wav", t = 9 / 30},
         },
     },
     ["enter_inspect"] = {
@@ -176,21 +177,21 @@ SWEP.Animations = {
         Source = "inspect",
         SoundTable = {
             {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_A_v1_2ch_01.wav", t = 0 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 10 / 30},
-			{ind = 2, bg = 1, p = 85,s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 30 / 30},
-			{p = 115,s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 56 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_I_v1_2ch_01.wav", t = 30 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_F_v1_2ch_01.wav", t = 107 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_C_v1_2ch_01.wav", t = 110 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_E_v1_2ch_01.wav", t = 134 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_F_v1_2ch_01.wav", t = 163 / 30},
-			{s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Inspect_BatteryReplace_Pt6.wav", t = 165 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_G_v1_2ch_01.wav", t = 188 / 30},
-			{ind = 2, bg = 0, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Inspect_BatteryReplace_Pt8.wav", t = 189 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_H_v1_2ch_01.wav", t = 190 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Ratchet_Close_v1_2ch_01.wav", t = 240 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_J_v1_2ch_01.wav", t = 265 / 30},
-			{s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_K_v1_2ch_01.wav", t = 340 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 10 / 30},
+            {ind = 2, bg = 1, p = 85,s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 30 / 30},
+            {p = 115,s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_B_v1_2ch_01.wav", t = 56 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_I_v1_2ch_01.wav", t = 30 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_F_v1_2ch_01.wav", t = 107 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_C_v1_2ch_01.wav", t = 110 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_E_v1_2ch_01.wav", t = 134 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_F_v1_2ch_01.wav", t = 163 / 30},
+            {s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Inspect_BatteryReplace_Pt6.wav", t = 165 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_G_v1_2ch_01.wav", t = 188 / 30},
+            {ind = 2, bg = 0, s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_Inspect_BatteryReplace_Pt8.wav", t = 189 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_H_v1_2ch_01.wav", t = 190 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Ratchet_Close_v1_2ch_01.wav", t = 240 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_J_v1_2ch_01.wav", t = 265 / 30},
+            {s = "weapons/melee/rampart/ProblemSolver_Insp_BatteryReplace_K_v1_2ch_01.wav", t = 340 / 30},
         },
     },
 }
