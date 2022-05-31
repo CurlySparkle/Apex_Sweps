@@ -200,3 +200,100 @@ sound.Add( {
 		"^weapons/melee/rampart/ProblemSolver_Draw_WrenchFoley_v1_2ch_04.wav",
     }
 } )
+
+-- Lifeline Shock Batons
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.Hit.Default",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Generic_Baton_Impact_1.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_2.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_3.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_4.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.Hit.Flesh",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Generic_Baton_Impact_Flesh_1.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_Flesh_2.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_Flesh_3.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_Flesh_4.wav",
+		"^weapons/melee/lifeline/Generic_Baton_Impact_Flesh_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.Draw",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Draw_1.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Draw_2.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Draw_3.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.Chop",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Chop_1.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Chop_2.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Chop_3.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Chop_4.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Chop_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.DoubleSwipe",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Lifeline_Mvmt_Baton_DoubleSwipe_1.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_DoubleSwipe_2.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_DoubleSwipe_3.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_DoubleSwipe_4.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_DoubleSwipe_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.Swipe",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Swipe_1.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Swipe_2.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Swipe_3.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Swipe_4.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Swipe_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Lifeline.Baton.Stab",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Stab_1.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Stab_2.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Stab_3.wav",
+		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Stab_4.wav",
+    }
+} )

@@ -2,6 +2,10 @@ game.AddParticles( "particles/apex_fx.pcf" )
 game.AddParticles( "particles/melee_fx.pcf" )
 --game.AddParticles( "particles/muzzleflashes_new.pcf" )
 
+-- Melee FX
+PrecacheParticleSystem("weapon_melee_blur")
+PrecacheParticleSystem("weapon_melee_blur_2")
+
 --NEW MUZZLES
 --PrecacheParticleSystem("muzzle_autorifles_l4d")
 --PrecacheParticleSystem("muzzle_machinegun_l4d")

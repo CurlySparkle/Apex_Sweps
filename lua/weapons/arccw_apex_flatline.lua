@@ -74,7 +74,6 @@ SWEP.BodyDamageMults = {
     [HITGROUP_RIGHTLEG] = 0.75,
 }
 
-SWEP.PhysTracerProfile = "apex_bullet"
 SWEP.Tracer = "arccw_apex_tracer_ar" -- override tracer (hitscan) effect
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
