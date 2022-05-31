@@ -147,7 +147,7 @@ SWEP.Animations = {
         Source = {"melee_idle","melee_sprinting"},
         SoundTable = {
             { s = "ArcCW_APEX.Lifeline.Baton.DoubleSwipe", t = 0 / 30},
-			{ e = "weapon_melee_blur", att = 1, mag = 100, t = 5 / 30},
+			{ e = "arccw_apex_melee_blur", att = 1, mag = 100, t = 5 / 30},
         },
     },
     ["bash2"] = {
