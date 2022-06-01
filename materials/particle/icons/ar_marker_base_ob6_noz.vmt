@@ -1,4 +1,4 @@
-"Spritecard"
+"UnlitGeneric"
 {
 	"$basetexture" "particle/icons/marker_base"
 	$RAMPTEXTURE "particle/ramps/smoke_puff_01_ramp.vtf"
