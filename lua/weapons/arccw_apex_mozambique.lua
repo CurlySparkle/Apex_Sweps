@@ -99,7 +99,7 @@ SWEP.Delay = 60 / 132
 SWEP.RunawayBurst = false
 SWEP.Firemodes = {
     {
-        Mode = 1,
+        Mode = 2,
     }
 }
 

@@ -129,7 +129,7 @@ SWEP.ShootSoundSilenced = "ArcCW_APEX.CAR.Fire"
 SWEP.DistantShootSound = ""
 SWEP.FiremodeSound = ""
 
-SWEP.MuzzleEffect = "wpn_muzzleflash_smg"
+SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
 SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 95

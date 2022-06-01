@@ -64,7 +64,7 @@ SWEP.PrimaryBash = true
 SWEP.CanBash = true
 SWEP.MeleeDamage = 65
 SWEP.MeleeRange = 50
-SWEP.MeleeDamageType = DMG_SLASH + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB
+SWEP.MeleeDamageType = DMG_SHOCK + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB
 
 SWEP.MeleeHitSound = "ArcCW_APEX.Lifeline.Baton.Hit.Default"
 SWEP.MeleeHitNPCSound = "ArcCW_APEX.Lifeline.Baton.Hit.Flesh"

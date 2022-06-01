@@ -15,6 +15,8 @@ SWEP.Trivia_Manufacturer = "Rampart"
 
 SWEP.Slot = 0
 
+SWEP.DefaultBodygroups = "000000000000"
+
 SWEP.NPCWeaponType = "weapon_crowbar"
 SWEP.NPCWeight = 250
 
@@ -64,7 +66,7 @@ SWEP.PrimaryBash = true
 SWEP.CanBash = true
 SWEP.MeleeDamage = 65
 SWEP.MeleeRange = 40
-SWEP.MeleeDamageType = DMG_SLASH + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB
+SWEP.MeleeDamageType = DMG_SHOCK + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB + DMG_CRUSH
 
 SWEP.MeleeHitSound = "ArcCW_APEX.Rampart.Wrench.Hit_Default"
 SWEP.MeleeHitNPCSound = "ArcCW_APEX.Rampart.Wrench.Hit_Flesh"
@@ -82,6 +84,7 @@ SWEP.Melee2 = true
 SWEP.Melee2Damage = 50
 SWEP.Melee2DamageBackstab = 180
 SWEP.Melee2Range = 30
+SWEP.Melee2DamageType = DMG_SHOCK + DMG_AIRBOAT + DMG_GENERIC + DMG_CLUB + DMG_CRUSH
 SWEP.Melee2Time = 1
 SWEP.Melee2Gesture = nil
 SWEP.Melee2AttackTime = 0.25
@@ -146,9 +149,17 @@ SWEP.Animations = {
         Source = "draw_first",
         SoundTable = {
             {s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_A.wav", t = 0 / 30},
-			{ind = 2, bg = 1, t = 0 / 30},
+			{
+			t = 0 / 30,
+			ind = 2,
+			bg = 1
+            },
             {s = "weapons/melee/rampart/Rampart_Mvmt_ProblemSolver_FirstDraw_B.wav", t = 50 / 30},
-			{ind = 2, bg = 0, t = 50 / 30},
+			{
+			t = 71 / 30,
+			ind = 2,
+			bg = 0
+            },
         },
     },
     ["bash"] = {

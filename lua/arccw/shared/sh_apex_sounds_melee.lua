@@ -97,9 +97,11 @@ sound.Add( {
     volume = 1.0,
     level = 120,
     sound = {
-        "^weapons/melee/rampart/Imp_Player_Melee_Default_1ch_v1_1.wav",
-		"^weapons/melee/rampart/Imp_Player_Melee_Default_1ch_v1_2.wav",
-		"^weapons/melee/rampart/Imp_Player_Melee_Default_1ch_v1_3.wav",
+        "^weapons/melee/rampart/Generic_ProblemSolver_Impact_Default_1.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Default_2.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Default_3.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Default_4.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Default_5.wav",
     }
 } )
 
@@ -109,10 +111,11 @@ sound.Add( {
     volume = 1.0,
     level = 120,
     sound = {
-        "^weapons/melee/rampart/Imp_Player_Melee_Flesh_1ch_v1_1.wav",
-		"^weapons/melee/rampart/Imp_Player_Melee_Flesh_1ch_v1_2.wav",
-		"^weapons/melee/rampart/Imp_Player_Melee_Flesh_1ch_v1_3.wav",
-		"^weapons/melee/rampart/Imp_Player_Melee_Flesh_1ch_v1_4.wav",
+        "^weapons/melee/rampart/Generic_ProblemSolver_Impact_Flesh_1.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Flesh_2.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Flesh_3.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Flesh_4.wav",
+		"^weapons/melee/rampart/Generic_ProblemSolver_Impact_Flesh_5.wav",
     }
 } )
 
