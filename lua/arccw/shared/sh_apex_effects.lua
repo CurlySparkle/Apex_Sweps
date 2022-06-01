@@ -1,6 +1,13 @@
 game.AddParticles( "particles/apex_fx.pcf" )
 game.AddParticles( "particles/melee_fx.pcf" )
+game.AddParticles( "particles/wpn_muzzleflash_pulse.pcf" )
+game.AddParticles( "particles/wpn_muzzleflash_smg.pcf" )
 --game.AddParticles( "particles/muzzleflashes_new.pcf" )
+
+-- Titanfall 2 FX
+PrecacheParticleSystem("wpn_muzzleflash_pulse")
+PrecacheParticleSystem("wpn_muzzleflash_smg")
+PrecacheParticleSystem("tfa_apex_muzzle_ar_2")
 
 -- Melee FX
 PrecacheParticleSystem("weapon_melee_blur")

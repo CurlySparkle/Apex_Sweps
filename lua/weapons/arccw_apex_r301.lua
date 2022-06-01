@@ -125,7 +125,7 @@ SWEP.Hook_GetShootSound = function(wep, fsound)
     if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Alt" elseif fsound == wep.FirstShootSound then return "ArcCW_APEX.R301.Fire_Start" end
 end
 
-SWEP.MuzzleEffect = "tfa_apex_muzzle_ar"
+SWEP.MuzzleEffect = "wpn_muzzleflash_smg"
 SWEP.MuzzleFlashColor = Color(255, 255, 255)
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 95
