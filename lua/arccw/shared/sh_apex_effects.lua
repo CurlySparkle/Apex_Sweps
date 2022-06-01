@@ -5,6 +5,11 @@ game.AddParticles( "particles/melee_fx.pcf" )
 -- Melee FX
 PrecacheParticleSystem("weapon_melee_blur")
 PrecacheParticleSystem("weapon_melee_blur_2")
+PrecacheParticleSystem("weapon_melee_blur_machete")
+PrecacheParticleSystem("weapon_melee_blur_katana")
+PrecacheParticleSystem("weapon_melee_blur_fireaxe")
+PrecacheParticleSystem("weapon_melee_blur_crowbar")
+PrecacheParticleSystem("weapon_melee_blur_frying_pan")
 
 --NEW MUZZLES
 --PrecacheParticleSystem("muzzle_autorifles_l4d")
