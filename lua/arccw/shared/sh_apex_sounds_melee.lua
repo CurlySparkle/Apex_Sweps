@@ -300,3 +300,74 @@ sound.Add( {
 		"^weapons/melee/lifeline/Lifeline_Mvmt_Baton_Stab_4.wav",
     }
 } )
+
+-- Wraith Kunai
+
+sound.Add( {
+    name = "ArcCW_APEX.Wraith.Kunai.Hit.Default",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/wraith/Generic_KunaiImpact_1p_vs_3p_1.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_1p_vs_3p_2.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_1p_vs_3p_3.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_1p_vs_3p_4.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_1p_vs_3p_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Wraith.Kunai.Hit.Flesh",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/wraith/Generic_KunaiImpact_Flesh_1p_vs_3p_1.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_Flesh_1p_vs_3p_2.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_Flesh_1p_vs_3p_3.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_Flesh_1p_vs_3p_4.wav",
+		"^weapons/melee/wraith/Generic_KunaiImpact_Flesh_1p_vs_3p_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Wraith.Kunai.Stab",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Stab_1.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Stab_2.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Stab_3.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Stab_4.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Wraith.Kunai.Swipe",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Swipe_1.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Swipe_2.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Swipe_3.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Swipe_4.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_Kunai_Swipe_5.wav",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.Wraith.Kunai.UpperCut",
+    channel = CHAN_ITEM + 6,
+    volume = 1.0,
+    level = 120,
+    sound = {
+        "^weapons/melee/wraith/Wraith_Mvmt_Melee_UpperCut_1.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_UpperCut_2.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_UpperCut_3.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_UpperCut_4.wav",
+		"^weapons/melee/wraith/Wraith_Mvmt_Melee_UpperCut_5.wav",
+    }
+} )
