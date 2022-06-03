@@ -1,0 +1,8 @@
+"Unlitgeneric"
+{
+	"$basetexture" "particle\muzzleflash\flash_cloud"
+	$lightwarptexture "particle/ramps/flash_cloud_fire"
+	"$additive" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+}
