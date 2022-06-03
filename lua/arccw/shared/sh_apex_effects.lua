@@ -1,13 +1,6 @@
 game.AddParticles( "particles/apex_fx.pcf" )
 game.AddParticles( "particles/melee_fx.pcf" )
-game.AddParticles( "particles/wpn_muzzleflash_pulse.pcf" )
-game.AddParticles( "particles/wpn_muzzleflash_smg.pcf" )
 --game.AddParticles( "particles/muzzleflashes_new.pcf" )
-
--- Titanfall 2 FX
-PrecacheParticleSystem("wpn_muzzleflash_pulse")
-PrecacheParticleSystem("wpn_muzzleflash_smg")
-PrecacheParticleSystem("tfa_apex_muzzle_ar_2")
 
 -- Melee FX
 PrecacheParticleSystem("weapon_melee_blur")
@@ -72,6 +65,7 @@ PrecacheParticleSystem("tfa_apex_chargerifle_maxbeam")
 PrecacheParticleSystem("tfa_apex_lstar_explode_core")
 PrecacheParticleSystem("tfa_apex_arcstar_explode")
 PrecacheParticleSystem("tfa_apex_frag_explode")
+PrecacheParticleSystem("grenade_final")
 PrecacheParticleSystem("tfa_apex_arcstar_impact")
 PrecacheParticleSystem("tfa_apex_bocek_impact")
 PrecacheParticleSystem("tfa_apex_bocek_trail")

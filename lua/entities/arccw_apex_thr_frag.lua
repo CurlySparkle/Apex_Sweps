@@ -101,7 +101,7 @@ function ENT:Detonate()
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
             local explode = ents.Create( "info_particle_system" )
-            explode:SetKeyValue( "effect_name", "tfa_apex_frag_explode" )
+            explode:SetKeyValue( "effect_name", "grenade_final" )
             explode:SetOwner( self.Owner )
             explode:SetPos( self:GetPos() )
             explode:Spawn()
