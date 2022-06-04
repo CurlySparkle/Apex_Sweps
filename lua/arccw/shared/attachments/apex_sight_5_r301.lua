@@ -17,9 +17,9 @@ att.Model = "models/weapons/attachments/sight_5.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 7, -1.1),
+        Pos = Vector(0, 6, -1.1),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.3,
+        Magnification = 3,
         ScrollFunc = ArcCW.SCROLL_NONE,
         Thermal = true,
         ThermalHighlightColor = Color(255, 255, 0),
@@ -29,7 +29,7 @@ att.AdditionalSights = {
 att.Holosight = true
 att.HolosightReticle = Material("sights/holo.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 10.5
+att.HolosightSize = 9
 att.HolosightBone = "holosight"
 att.Colorable = true
 

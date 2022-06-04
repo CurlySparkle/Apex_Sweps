@@ -199,10 +199,6 @@ SWEP.Attachments = {
         Slot = {"apex_hopup_shatter5", "apex_hopup_selfire8"},
     },
     {
-        PrintName = "Hop-up",
-        Slot = {},
-    },
-    {
         PrintName = "Ammo Counter",
         DefaultAttName = "None",
         Slot = {"apex_special_bocek"},
