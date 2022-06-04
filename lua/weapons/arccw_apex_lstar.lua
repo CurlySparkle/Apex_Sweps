@@ -135,6 +135,9 @@ SWEP.ShellTime = 1
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
+SWEP.ImpactEffect = "arccw_apex_impact_lstar"
+SWEP.ImpactDecal = "FadingScorch"
+
 SWEP.BarrelLength = 12
 
 SWEP.ProceduralRegularFire = false
@@ -270,9 +273,9 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
-        SoundTable = {
+		SoundTable = {
             {s = "ArcCW_APEX.Melee.Swing.Punch", t = 0 / 30},
-    },
+		},
     },
     ["enter_inspect"] = {
         Source = "inspect_in",
