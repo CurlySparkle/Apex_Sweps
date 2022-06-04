@@ -136,7 +136,7 @@ SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
 SWEP.ImpactEffect = "arccw_apex_impact_lstar"
-SWEP.ImpactDecal = "FadingScorch"
+--SWEP.ImpactDecal = "FadingScorch"
 
 SWEP.BarrelLength = 12
 
