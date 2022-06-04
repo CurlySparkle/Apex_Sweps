@@ -333,5 +333,13 @@ SWEP.Hook_SelectFireAnimation = function(wep, data)
     end
 end
 
+SWEP.O_Hook_Override_CaseEffectAttachment = function(wep,data)
+	if wep:GetNthShot() % 2 == 0 then
+		return {current = 4}
+	else
+		return {current = 2}
+	end
+end
+
 SWEP.TTTWeaponType = "weapon_ttt_m16"
 SWEP.TTTWeight = 100
