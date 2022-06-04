@@ -67,6 +67,7 @@ SWEP.Apex_Balance = {
     [1] = {
         Damage = 22,
         DamageMin = 11,
+		Penetration = 10,
     },
     [2] = {
         Damage = 10,
@@ -213,6 +214,20 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
+    },
+    {
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(0.45, 0.5, -0.2), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -90),
+            wpos = Vector(6, 1.5, -4.8),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(0.3, 0.3, 0.3),
+		WMScale = Vector(0.3, 0.3, 0.3),
     },
 }
 

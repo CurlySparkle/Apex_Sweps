@@ -199,7 +199,7 @@ SWEP.Attachments = {
             wang = Angle(-10, 0, 180)
         },
         InstalledEles = {"longbow_sight","weapon_sights"},
-        ExtraSightDist = 1,
+        ExtraSightDist = 2,
         CorrectivePos = Vector(2.025,0,-0.5),
         CorrectiveAng = Angle(-1.967, 0.033, 3.6),
         RandomChance = 5,
@@ -232,6 +232,20 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
+    },
+    {
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(0.6, 0.6, -1.7), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -70),
+            wpos = Vector(4.5, 1.4, -4.5),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(0.3, 0.3, 0.3),
+		WMScale = Vector(0.3, 0.3, 0.3),
     },
 }
 

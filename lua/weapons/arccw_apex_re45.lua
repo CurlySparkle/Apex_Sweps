@@ -211,6 +211,20 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         FreeSlot = true
     },
+    {
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "def_c_bolt", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(0.5, 0, -4), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -90),
+            wpos = Vector(3, 2.1, -3.8),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(0.2, 0.2, 0.2),
+		WMScale = Vector(0.3, 0.3, 0.3),
+    },
 }
 
 SWEP.Animations = {

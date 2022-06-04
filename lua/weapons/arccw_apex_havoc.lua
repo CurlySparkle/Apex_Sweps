@@ -163,20 +163,6 @@ SWEP.AttachmentElements = {
             {ind = 2, bg = 1},
         },
     },
-    --[[]
-    ["charged_skin"] = {
-        VMSkin = 1,
-        WMSkin = 1,
-    },
-    ["skin"] = {
-        VMSkin = 2,
-        WMSkin = 2,
-    },
-    ["skin_charged"] = {
-        VMSkin = 3,
-        WMSkin = 3,
-    },
-    ]]
 }
 
 SWEP.TriggerDelay = true
@@ -216,6 +202,20 @@ SWEP.Attachments = {
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
         FreeSlot = true
+    },
+    {
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(0.6, 0.6, -5), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -80),
+            wpos = Vector(2.5, 1.8, -5.5),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(0.3, 0.3, 0.3),
+		WMScale = Vector(0.3, 0.3, 0.3),
     },
 }
 

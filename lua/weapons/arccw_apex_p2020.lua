@@ -210,6 +210,20 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         FreeSlot = true
     },
+    {
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "ja_ads_attachment", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(0.5, 1, 3.5), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -90),
+            wpos = Vector(8.9, 2, -4.5),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(0.3, 0.3, 0.3),
+		WMScale = Vector(0.3, 0.3, 0.3),
+    },
 }
 
 function SWEP:Hook_TranslateAnimation(anim)
