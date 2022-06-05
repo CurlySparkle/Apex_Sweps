@@ -24,6 +24,7 @@ att.AdditionalSights = {
         Thermal = true,
         ThermalHighlightColor = Color(255, 50, 50),
         ThermalFullColor = true,
+		ThermalNoCC = true,
     },
 }
 
