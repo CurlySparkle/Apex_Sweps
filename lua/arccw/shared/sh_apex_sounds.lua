@@ -305,6 +305,19 @@ sound.Add( {
 util.PrecacheSound("ArcCW_APEX.Mozambique.Fire")
 
 sound.Add( {
+    name = "ArcCW_APEX.Mozambique.Silenced_Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 140,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/mozambique/wpn_shotgunpistol_fire_1p_Silenced_01.wav",
+        "^weapons/mozambique/wpn_shotgunpistol_fire_1p_Silenced_02.wav",
+        "^weapons/mozambique/wpn_shotgunpistol_fire_1p_Silenced_03.wav",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.Havoc.Fire_Start",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,

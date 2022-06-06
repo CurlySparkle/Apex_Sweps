@@ -119,7 +119,7 @@ SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.Mozambique.Fire"
-SWEP.ShootSoundSilenced = ""
+SWEP.ShootSoundSilenced = "ArcCW_APEX.Mozambique.Silenced_Fire"
 SWEP.DistantShootSound = ""
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
 
@@ -215,6 +215,17 @@ SWEP.Attachments = {
         CorrectivePos = Vector(1.19, 0, -0.7),
         CorrectiveAng = Angle(-0.75, -0.44, 3.7),
         ExtraSightDist = 1,
+    },
+    {
+        PrintName = "Muzzle",
+        Slot = "mozambique_barrel",
+        Bone = "def_c_suppressor",
+        Offset = {
+            vpos = Vector(0, 0, 0),
+            vang = Angle(90, 0, -90),
+            wpos = Vector(31, 1.0, -9.0),
+            wang = Angle(-9, 0, 180)
+        },
     },
     {
         PrintName = "Shotgun Bolt",
