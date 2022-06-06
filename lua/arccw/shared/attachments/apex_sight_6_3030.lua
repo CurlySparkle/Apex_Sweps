@@ -48,3 +48,7 @@ att.ModelOffset = Vector(0, 0, 0)
 
 att.EntityCategory = "ArcCW - Apex Legends (Att.)"
 att.EntityIcon = "entities/attach_icons/apex_2-4x.png"
+
+att.AttachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
+att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
+att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"
