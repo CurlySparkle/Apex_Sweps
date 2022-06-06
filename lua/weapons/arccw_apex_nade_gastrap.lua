@@ -43,7 +43,7 @@ SWEP.Singleton = false
 
 SWEP.Primary.ClipSize = 1
 
-SWEP.MuzzleVelocity = 650
+SWEP.MuzzleVelocity = 750
 SWEP.ShootEntity = "arccw_apex_thr_gastrap"
 
 SWEP.PullPinTime = 0
