@@ -149,6 +149,7 @@ SWEP.CaseBones = {}
 SWEP.IronSightStruct = {
     Pos = Vector(0, -2, 0),
     Ang = Angle(0, 0, 0),
+	Magnification = 1.15,
         Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -234,6 +235,20 @@ SWEP.Attachments = {
         },
 		VMScale = Vector(0.3, 0.3, 0.3),
 		WMScale = Vector(0.3, 0.3, 0.3),
+    },
+    {
+        PrintName = "Stats",
+        Slot = {"killcounter2","killcounter"},
+        FreeSlot = true,
+        Bone = "def_front_top", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(0.93, 1.1, 0), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -90),
+            wpos = Vector(5, 2.1, -6.4),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(1, 1, 1),
+		WMScale = Vector(1, 1, 1),
     },
 }
 

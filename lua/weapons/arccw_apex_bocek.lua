@@ -225,6 +225,20 @@ SWEP.Attachments = {
 		VMScale = Vector(0.3, 0.3, 0.3),
 		WMScale = Vector(0.3, 0.3, 0.3),
     },
+	{
+        PrintName = "Stats",
+        Slot = {"killcounter2","killcounter"},
+        FreeSlot = true,
+        Bone = "def_c_mag", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(1.15, 0, 0), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -90),
+            wpos = Vector(11.5, 1.35, -1.5),
+            wang = Angle(-10, 0, 225)
+        },
+		VMScale = Vector(1, 1, 1),
+		WMScale = Vector(1, 1, 1),
+    },
 }
 
 SWEP.Animations = {
@@ -316,6 +330,9 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.9,
+        SoundTable = {
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
+    },
     },
     ["idle_inspect"] = {
         Source = "inspect",

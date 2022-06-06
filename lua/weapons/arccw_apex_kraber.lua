@@ -209,6 +209,20 @@ SWEP.Attachments = {
 		VMScale = Vector(0.3, 0.3, 0.3),
 		WMScale = Vector(0.3, 0.3, 0.3),
     },
+	{
+        PrintName = "Stats",
+        Slot = {"killcounter2","killcounter"},
+        FreeSlot = true,
+        Bone = "def_c_base", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(1.2, -5.5, 13), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -65),
+            wpos = Vector(16, 2, -8.7),
+            wang = Angle(-10, 0, 205)
+        },
+		VMScale = Vector(1, 1, 1),
+		WMScale = Vector(1, 1, 1),
+    },
 }
 
 SWEP.Animations = {

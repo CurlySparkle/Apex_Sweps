@@ -272,6 +272,20 @@ SWEP.Attachments = {
 		VMScale = Vector(0.3, 0.3, 0.3),
 		WMScale = Vector(0.3, 0.3, 0.3),
     },
+    {
+        PrintName = "Stats",
+        Slot = {"killcounter2","killcounter"},
+        FreeSlot = true,
+        Bone = "def_c_parts", -- relevant bone any attachments will be mostly referring to
+        Offset = {
+            vpos = Vector(1.75, 0.25, 2.3), -- offset that the attachment will be relative to the bone
+            vang = Angle(90, 0, -90),
+            wpos = Vector(13, 2.6, -4.5),
+            wang = Angle(-10, 0, 180)
+        },
+		VMScale = Vector(1, 1, 1),
+		WMScale = Vector(1, 1, 1),
+    },
 }
 
 SWEP.Hook_Think = ArcCW.Apex.BlendSights
