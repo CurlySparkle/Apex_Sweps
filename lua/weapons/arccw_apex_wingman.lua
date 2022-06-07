@@ -88,7 +88,7 @@ SWEP.SightedSpeedMult = 0.9
 
 SWEP.Primary.Ammo = "apex_heavy" -- what ammo type the gun uses
 
-SWEP.ShootVol = 160 -- volume of shoot sound
+SWEP.ShootVol = 140 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.Wingman.Fire"

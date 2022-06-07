@@ -116,7 +116,7 @@ SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.FirstShootSound = "ArcCW_APEX.Flatline.Fire_Start"
 SWEP.ShootSound = "ArcCW_APEX.Flatline.Fire"
-SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_1"
+SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_3"
 SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 SWEP.FiremodeSound = {"weapons/fx/firemode_1.wav","weapons/fx/firemode_2.wav"}
