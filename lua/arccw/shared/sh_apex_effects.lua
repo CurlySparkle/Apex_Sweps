@@ -12,12 +12,7 @@ PrecacheParticleSystem("weapon_melee_blur_crowbar")
 PrecacheParticleSystem("weapon_melee_blur_frying_pan")
 
 --NEW MUZZLES
---PrecacheParticleSystem("muzzle_autorifles_l4d")
---PrecacheParticleSystem("muzzle_machinegun_l4d")
---PrecacheParticleSystem("muzzle_pistols_l4d")
---PrecacheParticleSystem("muzzle_shotguns_l4d")
---PrecacheParticleSystem("muzzle_smgs_l4d")
---PrecacheParticleSystem("weapon_muzzle_flash_huntingrifle")
+PrecacheParticleSystem("wpn_muzzleflash_mgl_FULL")
 
 --TRACERS
 PrecacheParticleSystem("tfa_apex_tracer_anvil")

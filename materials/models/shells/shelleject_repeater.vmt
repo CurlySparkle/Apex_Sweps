@@ -1,0 +1,28 @@
+"VertexLitGeneric"
+{
+	"$basetexture"				"models\weapons\3030\repeater3030_base_main_d"
+	"$bumpmap"					"models\weapons\3030\repeater3030_base_main_n"
+	"$phongexponenttexture"		"models\weapons\3030\repeater3030_base_main_e"
+	"$color2"					"[0.5 0.5 0.5]"
+
+	$detail						"detail\metal_detail_01"
+	$detailscale				8
+	$detailblendfactor			1
+	$detailblendmode			0
+
+	"$envmap"					"env_cubemap"
+	"$envmapfresnel"			".25"
+	"$envmaptint"				"[ 1.4 1.2 .5 ]"
+
+	"$phong"					"1"
+	"$phongboost"				"50"
+	"$phongfresnelranges"		"[0.25 0.5 1]"
+	"$phongalbedotint"			"1"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"	
+	"$rimlightboost"			"5"
+	"$rimmask"					"1"
+}
+//Material setup by ShadowRUN 幸運な.
+//You are NOT allowed to edit/modify/redistribute these materials without my explicit permission.

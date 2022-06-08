@@ -150,8 +150,8 @@ SWEP.Hook_AddShootSound = function(wep, data)
 end
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_dmr"
-SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
-SWEP.ShellScale = 1.2
+SWEP.ShellModel = "models/shells/shelleject_repeater3030.mdl"
+SWEP.ShellScale = 1.5
 SWEP.ShellTime = 1
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
@@ -292,7 +292,9 @@ SWEP.Animations = {
         RareSource = "draw_first_secret",
         RareSourceChance = 50,
         SoundTable = {
-            {p = 100, s = "weapons/3030/3030_Reload_Lever.wav", t = 5 / 30},
+            {s = "weapons/3030/weapon_3030_equip.wav", t = 0 / 30},
+			{s = "weapons/3030/weapon_3030_firstdraw_lever_out.wav", t = 5 / 30},
+			{s = "weapons/3030/weapon_3030_firstdraw_lever_in.wav", t = 15 / 30},
         },
     },
     ["draw"] = {
@@ -379,7 +381,7 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 0,
         SoundTable = {
-            -- {s = "weapons/mastiff/wpn_mastiff_reload_start_fr6_2ch_v2_01.wav", t = 0 / 30},
+            {s = "weapons/3030/weapon_3030_reload_begin.wav", t = 0 / 30},
         },
     },
     ["sgreload_insert"] = {
@@ -399,7 +401,7 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 1,
         SoundTable = {
-            {s = "weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_1.wav", t = 0 / 30},
+            {s = "weapons/3030/weapon_3030_reload_complete.wav", t = 0 / 30},
         },
     },
     ["sgreload_start_empty"] = {
@@ -409,6 +411,7 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 0,
         SoundTable = {
+		    {s = "weapons/3030/weapon_3030_reload_begin.wav", t = 0 / 30},
             {s = "ArcCW_APEX.3030Repeater.Reload_Insert", t = 8 / 30},
         },
     },
@@ -418,7 +421,7 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 1,
         SoundTable = {
-            {s = "weapons/alternator/wep_alternator_first_pullout_CLOTH_f00_1.wav", t = 0 / 30},
+            {s = "weapons/3030/weapon_3030_reload_complete.wav", t = 0 / 30},
             {s = "weapons/3030/3030_Reload_Lever.wav", t = 8 / 30}
         },
     },
