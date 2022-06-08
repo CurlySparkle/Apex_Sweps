@@ -294,7 +294,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = "weapons/3030/weapon_3030_equip.wav", t = 0 / 30},
 			{s = "weapons/3030/weapon_3030_firstdraw_lever_out.wav", t = 5 / 30},
-			{s = "weapons/3030/weapon_3030_firstdraw_lever_in.wav", t = 15 / 30},
+			{s = "weapons/3030/weapon_3030_firstdraw_lever_in.wav", t = 13 / 30},
         },
     },
     ["draw"] = {
@@ -324,10 +324,10 @@ SWEP.Animations = {
         MinProgress = 0.1,
     },
     ["fire_sight"] = {
-        Source = "iron_fire",
+        Source = "fire",
     },
     ["cycle_sight"] = {
-        Source = "iron_rechamber",
+        Source = "rechamber",
         MinProgress = 0.35,
         ShellEjectAt = 0.1,
         SoundTable = {
@@ -464,6 +464,10 @@ SWEP.Hook_Think = function(wep)
             wep.ApexLoopSound = nil
         end
     end
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "sights", Lerp(coolilove, 0, 1) ) -- thanks fesiug
 end
 
 SWEP.M_Hook_Mult_Damage = function(wep, data)
