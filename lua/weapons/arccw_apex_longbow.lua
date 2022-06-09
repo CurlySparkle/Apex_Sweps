@@ -92,7 +92,7 @@ SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 10
 
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 5
+SWEP.Primary.ClipSize = 6
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.PhysBulletMuzzleVelocity = 500

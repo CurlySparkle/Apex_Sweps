@@ -76,7 +76,7 @@ SWEP.Apex_Balance = {
 }
 
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 19 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 20 -- DefaultClip is automatically set.
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.5

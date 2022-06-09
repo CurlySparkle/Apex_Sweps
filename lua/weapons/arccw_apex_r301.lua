@@ -83,7 +83,7 @@ SWEP.TracerNum = 1 -- tracer every X
 -- SWEP.TracerWidth = 3
 
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 17
+SWEP.Primary.ClipSize = 18
 SWEP.MaxRecoilBlowback = 1
 
 SWEP.Recoil = 0.3

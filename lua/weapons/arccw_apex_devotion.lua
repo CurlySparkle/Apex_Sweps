@@ -78,7 +78,7 @@ SWEP.BodyDamageMults = {
 }
 
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 35 -- DefaultClip is automatically set.
+SWEP.Primary.ClipSize = 36 -- DefaultClip is automatically set.
 SWEP.Primary.Ammo = "apex_energy"
 
 SWEP.Recoil = 0.2
