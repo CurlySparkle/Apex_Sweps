@@ -27,7 +27,7 @@ local mag_types = {
             [1] = {2, 4, 7, 7}, -- CAR SMG
             [2] = {3, 6, 9, 9}, -- RE-45
             [3] = {2, 7, 10, 10}, -- R-301
-            [4] = {3, 6, 9, 9}, -- Alternator
+            [4] = {2, 5, 8, 8}, -- Alternator
         },
         "entities/ammo_light_reloaded.png",
         "models/weapons/attachments/upgrades/mag_light.mdl",
