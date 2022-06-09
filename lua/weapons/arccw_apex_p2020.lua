@@ -394,7 +394,7 @@ SWEP.Animations = {
         SoundTable = {
             {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_02.wav", t = 9 / 30},
             {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_02.wav", t = 24 / 30},
-            {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 36 / 30}
+            {p = 100, s = "weapons/p2020/weapon_p2011_reload_slidefront.wav", t = 36 / 30}
     },
     },
 }
