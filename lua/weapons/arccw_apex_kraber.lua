@@ -225,6 +225,8 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.Hook_Think = ArcCW.Apex.BlendSights
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -283,12 +285,12 @@ SWEP.Animations = {
         MinProgress = 0.1,
     },
     ["fire_sight"] = {
-        Source = "iron_fire",
+        Source = "fire",
         -- Time = 9 / 10,
         MinProgress = 0.8,
     },
     ["cycle_sight"] = {
-        Source = "iron_rechamber",
+        Source = "rechamber",
         ShellEjectAt = 0.5,
         -- Time = 63 / 40,
         MinProgress = 1.5,

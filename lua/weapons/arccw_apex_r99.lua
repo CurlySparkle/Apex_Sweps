@@ -67,6 +67,7 @@ SWEP.Apex_Balance = {
     [1] = {
         Damage = 22,
         DamageMin = 11,
+		Range = 15,
 		Penetration = 10,
     },
     [2] = {
