@@ -1073,7 +1073,10 @@ local hopups = {
                         },
                         Override_NoRandSpread = true,
                     }
-                }
+                },
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Fire" end
+                end
             },
             -- RE-45 Auto
             [2] = {

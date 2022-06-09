@@ -42,7 +42,7 @@ SWEP.CamAttachment = 3 -- This doesn't seem to work if its here on the base :(
 
 SWEP.NoHideLeftHandInCustomization = true
 
-SWEP.Sway = 0.4
+SWEP.Sway = 0.25
 
 SWEP.LockSightsInPriorityAnim = false
 
