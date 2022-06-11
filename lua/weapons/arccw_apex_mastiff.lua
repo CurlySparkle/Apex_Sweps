@@ -453,6 +453,16 @@ SWEP.Animations = {
     ["exit_sprint"] = {
         Source = "sprint_out",
     },
+    ["enter_sprint_empty"] = {
+        Source = "sprint_in_empty",
+    },
+    ["idle_sprint_empty"] = {
+        Source = "sprint_empty",
+        mult = 0.8,
+    },
+    ["exit_sprint_empty"] = {
+        Source = "sprint_out_empty",
+    },
 }
 
 SWEP.TTTWeaponType = "weapon_zm_shotgun"
