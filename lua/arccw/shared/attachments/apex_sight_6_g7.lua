@@ -18,7 +18,7 @@ att.Model = "models/weapons/attachments/sight_6.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 6.5, -0.4),
+        Pos = Vector(0, 6.5, -0.5),
         Ang = Angle(0, 0, 0),
         Magnification = 2,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
