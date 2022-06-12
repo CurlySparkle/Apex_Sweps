@@ -11,7 +11,7 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "VK-47 Flatline"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Automatic rifle that packs a punch. True to its name, early models were able to completely remove vertical recoil. This was removed for cost saving purposes, turning the Flatline into a mass production weapon."
-SWEP.Trivia_Manufacturer = "Wonyeon"
+SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 2
 

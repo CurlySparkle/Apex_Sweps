@@ -11,7 +11,7 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "Volt SMG"
 SWEP.Trivia_Class = "Submachine Gun"
 SWEP.Trivia_Desc = "Energy-actuated SMG with incredible stopping power."
-SWEP.Trivia_Manufacturer = "Wonyeon"
+SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 2
 
@@ -108,7 +108,7 @@ SWEP.TracerWidth = 2
 SWEP.PhysTracerProfile = "apex_bullet_energy"
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_medium"
--- SWEP.MuzzleFlashColor = Color(25, 125, 255)
+SWEP.MuzzleFlashColor = Color(91, 110, 255)
 
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1.2

@@ -11,7 +11,7 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "Hemlok Burst AR"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Burst-fire rifle capable of killing in one burst if all shots hit the head.\n\nIt is rumored among Militia soldiers that the IMC procures these because their grunts are poorly trained, although the Hemlok is a common sight on either side of the battlefield."
-SWEP.Trivia_Manufacturer = "Wonyeon"
+SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 2
 

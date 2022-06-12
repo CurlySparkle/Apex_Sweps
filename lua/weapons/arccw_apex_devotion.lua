@@ -11,7 +11,7 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "Devotion LMG"
 SWEP.Trivia_Class = "Machine Gun"
 SWEP.Trivia_Desc = "Energy actuated machine gun with an internal motor, ramping up its fire rate as the trigger is held."
-SWEP.Trivia_Manufacturer = "Wonyeon"
+SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 2
 
@@ -123,7 +123,7 @@ SWEP.TracerWidth = 2
 SWEP.PhysTracerProfile = "apex_bullet_energy"
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_big"
-SWEP.MuzzleFlashColor = Color(25, 125, 255)
+SWEP.MuzzleFlashColor = Color(91, 110, 255)
 
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1.2

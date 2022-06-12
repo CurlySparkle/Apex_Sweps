@@ -514,6 +514,12 @@ SWEP.O_Hook_Override_Tracer = function(wep, data)
     end
 end
 
+SWEP.O_Hook_Override_MuzzleFlashColor = function(wep, data)
+    if wep:GetCurrentFiremode().Mode < 0 and wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
+        return {current = Color(200, 107, 41)}
+    end
+end
+
 SWEP.O_Hook_Override_MuzzleEffect = function(wep,data)
     if wep:GetCurrentFiremode().Mode < 0 and wep:GetBurstCount() < (math.abs(wep:GetCurrentFiremode().Mode) - 1) then
         return {current = "tfa_apex_chargerifle_muzzle_charge"}

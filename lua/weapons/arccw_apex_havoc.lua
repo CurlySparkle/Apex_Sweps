@@ -11,7 +11,7 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "HAVOC"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Charged energy weapon using a coilgun mechanism, requiring winding up before it can fire. Recoil is intense, but so is its firepower."
-SWEP.Trivia_Manufacturer = "Wonyeon"
+SWEP.Trivia_Manufacturer = "Siwhan Industries & Wonyeon Interstellar"
 
 SWEP.Slot = 2
 
@@ -118,7 +118,7 @@ SWEP.TracerWidth = 2
 SWEP.PhysTracerProfile = 6
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_havoc"
-SWEP.MuzzleFlashColor = Color(25, 125, 255)
+SWEP.MuzzleFlashColor = Color(91, 110, 255)
 
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellScale = 1.2

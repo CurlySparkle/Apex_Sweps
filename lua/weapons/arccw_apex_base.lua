@@ -40,6 +40,8 @@ SWEP.MeleeAttackTime = 0.2
 -- SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 SWEP.CamAttachment = 3 -- This doesn't seem to work if its here on the base :(
 
+SWEP.MuzzleFlashColor = Color(245, 153, 86)
+
 SWEP.NoHideLeftHandInCustomization = true
 
 SWEP.Sway = 0.25

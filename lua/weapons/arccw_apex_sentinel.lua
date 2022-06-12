@@ -426,7 +426,7 @@ SWEP.Hook_ChangeFiremode = function(wep)
     local ok = false
     if ArcCW.Apex:GetBalanceMode() == 2 and not GetConVar("arccw_apex_freecharge"):GetBool() then
         ok = ArcCW.Apex.TryConsumeGrenade(wep:GetOwner(), "arccw_apex_nade_arcstar")
-    elseif wep:GetOwner():Armor() >= 50 and ArcCW.Apex:GetBalanceMode() == 1 and not GetConVar("arccw_apex_freecharge"):GetBool() then
+    elseif wep:GetOwner():Armor() >= 50 and ArcCW.Apex:GetBalanceMode() <= 1 and not GetConVar("arccw_apex_freecharge"):GetBool() then
             ok = true
             if SERVER then wep:GetOwner():SetArmor(wep:GetOwner():Armor() - 50) end
 	else
@@ -469,6 +469,12 @@ SWEP.O_Hook_Override_PhysTracerProfile = function(wep, data)
         return {current = "apex_bullet_energy"}
     else
         return {current = "apex_bullet"}
+    end
+end
+
+SWEP.O_Hook_Override_MuzzleFlashColor = function(wep, data)
+    if wep:GetHeat() > 0 then
+        return {current = Color(91, 110, 255)}
     end
 end
 

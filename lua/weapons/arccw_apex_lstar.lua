@@ -125,7 +125,7 @@ SWEP.DistantShootSound = ""
 SWEP.FiremodeSound = ""
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_lstar"
-SWEP.MuzzleFlashColor = Color(255, 0, 0)
+SWEP.MuzzleFlashColor = Color(255, 111, 111)
 SWEP.ShellModel = "models/shells/shelleject_large_rifle.mdl"
 SWEP.ShellPitch = 95
 SWEP.ShellScale = 1
