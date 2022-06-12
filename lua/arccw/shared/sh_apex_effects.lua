@@ -53,6 +53,7 @@ PrecacheParticleSystem("tfa_apex_energy_tracer_shotgun")
 PrecacheParticleSystem("tfa_apex_energy_tracer_smg") 
 PrecacheParticleSystem("tfa_apex_havoc_beam_charged")
 PrecacheParticleSystem("tfa_apex_lstar_projectile")
+PrecacheParticleSystem("tfa_apex_lstar_projectile_og")
 PrecacheParticleSystem("tfa_apex_chargerifle_beam")
 PrecacheParticleSystem("tfa_apex_chargerifle_maxbeam")
 
