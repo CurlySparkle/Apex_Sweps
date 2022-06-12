@@ -117,7 +117,7 @@ SWEP.ShootSoundSilenced = ""
 SWEP.DistantShootSound = ""
 
 SWEP.Tracer = "arccw_apex_tracer_energy_hmg" -- override tracer (hitscan) effect
-SWEP.TracerCol = Color(25, 125, 255)
+SWEP.TracerCol = Color(39, 90, 255)
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 SWEP.PhysTracerProfile = "apex_bullet_energy"

@@ -474,7 +474,7 @@ end
 
 SWEP.O_Hook_Override_MuzzleFlashColor = function(wep, data)
     if wep:GetHeat() > 0 then
-        return {current = Color(91, 110, 255)}
+        return {current = Color(39, 90, 255)}
     end
 end
 

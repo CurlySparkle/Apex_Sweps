@@ -170,7 +170,7 @@ SWEP.Hook_AddShootSound = function(wep, data)
 end
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_shotgun"
-SWEP.MuzzleFlashColor = Color(91, 110, 255)
+SWEP.MuzzleFlashColor = Color(39, 90, 255)
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
