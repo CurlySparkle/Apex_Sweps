@@ -149,6 +149,9 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         sprite_tail = false,
         model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
+		size = 0.015,
+		size_min = 0.001,
+		tail_length = 0.050,
         particle = "tfa_apex_lstar_projectile"
     })
 
