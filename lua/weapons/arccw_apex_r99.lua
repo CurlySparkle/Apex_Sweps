@@ -121,7 +121,7 @@ SWEP.TracerCol = Color(255, 85, 25)
 SWEP.TracerWidth = 2
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_smg"
-SWEP.MuzzleFlashColor = Color(255, 255, 55)
+--SWEP.MuzzleFlashColor = Color(255, 255, 55)
 SWEP.ShellModel = "models/shells/shelleject_pistol.mdl"
 SWEP.ShellPitch = 100
 SWEP.ShellScale = 1.55

@@ -126,7 +126,7 @@ SWEP.Hook_GetShootSound = function(wep, fsound)
 end
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_ar"
-SWEP.MuzzleFlashColor = Color(255, 255, 255)
+--SWEP.MuzzleFlashColor = Color(255, 255, 255)
 SWEP.ShellModel = "models/shells/shelleject_assault_rifle.mdl"
 SWEP.ShellPitch = 95
 SWEP.ShellScale = 1
