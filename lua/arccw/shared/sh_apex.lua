@@ -152,7 +152,7 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
 		size = 0.6,
 		size_min = 0.3,
 		tail_length = 0.050,
-        particle = "tfa_apex_lstar_projectile"
+        particle = "tfa_apex_lstar_projectile_lite"
     })
 
     ArcCW:AddBulletProfile("apex_bullet_smg", { -- My version of trying this out - Twilight
