@@ -1045,14 +1045,9 @@ local hopups = {
         weight = 0.25,
         variants = {
             -- 30-30 Repeater
-            [1] = {
+			[1] = {
                 Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern, but cannot charge up damage.",
                 Override_Firemodes = {
-                    {
-                        Mode = 1,
-                        ApexCharge = true,
-                        PrintName = "fcg.lever"
-                    },
                     {
                         PrintName = "fcg.apex.shatter",
                         ApexCharge = true,
@@ -1072,12 +1067,31 @@ local hopups = {
                             [7] = Angle(-2.8, 0.0, 0),
                         },
                         Override_NoRandSpread = true,
+						Hook_GetShootSound = function(wep, fsound)
+							if wep:GetCurrentFiremode().Mode == 1 and wep:GetNWState() != ArcCW.STATE_SIGHTS and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Fire" end
+						end,
+						Hook_ShotgunSpreadOffset = function(wep, data)
+							if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then 
+								data.ang = Angle(0,0,0) 
+								return data
+							else
+								local d = 1
+								local ref = {
+									[1] = Angle(0, 1.2, 0),
+									[2] = Angle(0, -1.2, 0),
+									[3] = Angle(-0.3, 0, 0),
+									[4] = Angle(-1.2, 0, 0),
+									[5] = Angle(-1.6, 0.5, 0),
+									[6] = Angle(-1.6, -0.5, 0),
+									[7] = Angle(-2.8, 0.0, 0),
+								}
+								local p = ref[data.num]
+								data.ang = Angle(p.p * -d, p.y * d, 0)
+								return data
+							end
+						end,
                     }
-                },
-                Hook_GetShootSound = function(wep, fsound)
-                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Fire" end
-                end
-            },
+                }
             -- RE-45 Auto
             [2] = {
                 Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
