@@ -37,8 +37,8 @@ SWEP.Range = 50
 
 SWEP.Apex_Balance = {
     [1] = {
-        Damage = 17,
-        DamageMin = 10,
+        Damage = 18,
+        DamageMin = 12,
     },
     [2] = {
         Damage = 12, -- Roughly equivalent to TTT deagle but fires faster. This thing can actually shred so keep it low
@@ -224,7 +224,7 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(0, 0, 0),
             vang = Angle(90, 0, -90),
-            wpos = Vector(31, 1.0, -9.0),
+            wpos = Vector(15, 1.5, -4.8),
             wang = Angle(-9, 0, 180)
         },
     },

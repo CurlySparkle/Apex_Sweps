@@ -5,20 +5,20 @@
 	"$phongexponenttexture"		"models\weapons\r301\r301_e"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
-	"$normalmapalphaenvmapmask" "1"
+	"$normalmapalphaenvmapmask" 	       "1"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"
 
 	"$phong"					"1"
-	"$phongboost"				"5"
+	"$phongboost"				"35"
 	"$phongfresnelranges"		"[0.25 0.5 1]"
-	"$phongexponent"    "24"
 
 	"$rimlight"					"1"
 	"$rimlightexponent"			"80"	
 	"$rimlightboost"			".2"
 	"$rimmask"					"1"
+	"$nocull"					"1"
 
 	"Proxies"
 	{

@@ -1,25 +1,26 @@
-"VertexLitGeneric"
+"VertexlitGeneric"
 {
-"$basetexture" "models\weapons\mozambique\mozambique_camomask_shared01_d"
-"$bumpmap" "models\weapons\mozambique\mozambique_static_n"
-"$PhongExponentTexture" "models\weapons\mozambique\mozambique_static_e"
-"$color2"	               "[1 1 1]"
-"$normalmapalphaenvmapmask" 1
-"$blendTintByBaseAlpha"		"1"
-"$envmap" "env_cubemap"
-"$envmapfresnel" 			"1"
-"$envmapFresnelMinMaxExp"		"[0 .4 1]"
-"$envmaptint" "[.02 .02 .02]"
-"$phong" 		"1"
-"$phongalbedotint" 			"1"
-"$phongalbedoboost" "35"
-"$phongboost" "30"
-"$phongfresnelranges" "[1.5 4.7 8.7]"
-"$halflambert" "1"
-"$ambientocclusion" "1"
-"$nocull" "1"
+	"$basetexture"				"models\weapons\mozambique\mozambique_camomask_shared01_d"
+	"$bumpmap"					"models\weapons\mozambique\mozambique_static_n"
+	"$phongexponenttexture"		"models\weapons\mozambique\mozambique_static_e"
+	"$color2"					"[0.8 0.8 0.8]"
+	"$blendTintByBaseAlpha"		"1"
+	"$normalmapalphaenvmapmask" 	       "1"
 
-"Proxies"
+	"$envmap"					"env_cubemap"
+	"$envmaptint"				"[ .13 .13 .13 ]"
+
+	"$phong"					"1"
+	"$phongboost"				"25"
+	"$phongfresnelranges"		"[0.25 0.5 1]"
+
+	"$rimlight"					"1"
+	"$rimlightexponent"			"80"	
+	"$rimlightboost"			".2"
+	"$rimmask"					"1"
+	"$nocull"					"1"
+
+     "Proxies"
 	{
 		"WeaponColorSkin"
 		{
