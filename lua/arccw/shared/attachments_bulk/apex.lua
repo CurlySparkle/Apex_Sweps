@@ -550,12 +550,20 @@ local function hp(wep, data, mul)
     if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
         data.damage = data.damage * mul
     end
+	
+	if IsValid(data.tr.Entity) and (data.tr.Entity:IsNPC() or data.tr.Entity:IsNextBot()) and data.tr.Entity:Health() <= 100 then
+        data.damage = data.damage * mul
+    end	
 end
 
 local function disr(wep, data, mul)
     if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() > 0 and (engine.ActiveGamemode() ~= "terrortown" or data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
         data.damage = data.damage * mul
     end
+	
+	if IsValid(data.tr.Entity) and (data.tr.Entity:IsNPC() or data.tr.Entity:IsNextBot()) and data.tr.Entity:Health() > 100 then
+        data.damage = data.damage * mul
+    end	
 end
 
 local chargeoffset = {
