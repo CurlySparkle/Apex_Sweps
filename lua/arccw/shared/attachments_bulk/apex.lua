@@ -1234,10 +1234,6 @@ local hopups = {
                 Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern.\nArrow velocity is decreased, and the arrow cannot be recovered after splitting.",
                 Override_Firemodes = {
                     {
-                        Mode = 1,
-                        PrintName = "fcg.apex.bow"
-                    },
-                    {
                         PrintName = "fcg.apex.shatter",
                         Mode = 1,
                         Override_Num = 7,
@@ -1256,6 +1252,26 @@ local hopups = {
                         },
                         Override_PhysTracerProfile = "apex_bocek2",
                         Override_NoRandSpread = true,
+						Hook_ShotgunSpreadOffset = function(wep, data)
+							if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then 
+								data.ang = Angle(0,0,0) 
+								return data
+							else
+								local d = 1
+								local ref = {
+									[1] = Angle(0, 1.2, 0),
+									[2] = Angle(0, -1.2, 0),
+									[3] = Angle(-0.3, 0, 0),
+									[4] = Angle(-1.2, 0, 0),
+									[5] = Angle(-1.6, 0.5, 0),
+									[6] = Angle(-1.6, -0.5, 0),
+									[7] = Angle(-2.8, 0.0, 0),
+								}
+								local p = ref[data.num]
+								data.ang = Angle(p.p * -d, p.y * d, 0)
+								return data
+							end
+						end,
                     }
                 }
             },

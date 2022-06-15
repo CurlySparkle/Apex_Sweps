@@ -557,3 +557,19 @@ SWEP.Hook_BulletHit = function(wep, data)
         end
     end
 end
+
+SWEP.O_Hook_Override_Num = function(wep,data)
+    if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+		return {current = 1}
+    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
+		return {current = 7}
+    end
+end
+
+SWEP.O_Hook_Override_NoRandSpread = function(wep,data)
+	if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+		return {current  = false}
+    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
+		return {current = true}
+	end
+end
