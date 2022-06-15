@@ -274,6 +274,8 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.Hook_Think = ArcCW.Apex.BlendSights
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -330,7 +332,14 @@ SWEP.Animations = {
         Source = "iron_in_empty",
     },
     ["fire_sight"] = {
-        Source = "iron_fire",
+        Source = "fire",
+        ShellEjectAt = 0.1,
+        SoundTable = {
+            {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
+        },
+    },
+    ["fire_sight_empty"] = {
+        Source = "fire",
         ShellEjectAt = 0.1,
         SoundTable = {
             {s = "ArcCW_APEX.Mastiff_Mech", t = 22 / 30},
