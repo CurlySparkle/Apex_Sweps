@@ -1092,6 +1092,7 @@ local hopups = {
 						end,
                     }
                 }
+			},
             -- RE-45 Auto
             [2] = {
                 Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
