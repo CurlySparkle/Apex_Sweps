@@ -272,6 +272,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         Mult = 1,
+        MinProgress = 0.5,
         SoundTable = {
             {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Draw_2ch_v2_01.wav", t = 0 / 30},
         },
