@@ -212,13 +212,13 @@ end
 function ENT:Detonate()
     if not self:IsValid() or self.Armed then return end
 
-    self:EmitSound("weapons/grenades/nox/GasGrenade_WarningSizzle_1ch_v1_01.wav", 90)
+    self:EmitSound("weapons/grenades/nox/GasGrenade_WarningSizzle_1ch_v1_01.ogg", 90)
     self.Armed = true
 
     timer.Simple(1, function()
         if not IsValid(self) then return end
         self:SetArmed(true)
-        self:EmitSound("weapons/grenades/nox/GasGrenade_Explo_Close_2ch_v1_0" .. math.random(1,3) .. ".wav", 100, 100, 1, CHAN_AUTO)
+        self:EmitSound("weapons/grenades/nox/GasGrenade_Explo_Close_2ch_v1_0" .. math.random(1,3) .. ".ogg", 100, 100, 1, CHAN_AUTO)
         self.FireSound = CreateSound(self, "ArcCW_APEX.Nox.Gas_Loop_close")
         self.FireSound:PlayEx(1, 95)
     end)

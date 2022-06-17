@@ -320,28 +320,28 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {s = "weapons/car/Wpn_Car_Inspect_Settle_fr471_v1_01.wav", t = 0 / 30}
+            {s = "weapons/car/Wpn_Car_Inspect_Settle_fr471_v1_01.ogg", t = 0 / 30}
         },
     },
     ["idle_inspect"] = {
         Source = "inspect",
         LHIK = true,
         SoundTable = {
-            {s = "weapons/car/Wpn_Car_Inspect_Raise_fr004_v1_01.wav", t = 4 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_GrabPull_fr078_v1_01.wav", t = 78 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_MoveLeft_fr128_v1_01.wav", t = 128 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_LookAtStock_fr168_v1_01.wav", t = 168 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_LookAtRightSide_fr204_v1_01.wav", t = 204 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_LookAtBarrel_fr251_v1_01.wav", t = 251 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_FlipGunFoley_fr306_v1_01.wav", t = 306 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_PullOutMag_fr320_v1_01.wav", t = 320 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_InspectMag_fr361_v1_01.wav", t = 361 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_CatchMag_fr386_v1_01.wav", t = 386 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_InsertMag_fr405_v1_01.wav", t = 405 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_ArmRaiseCloth_fr429_v1_01.wav", t = 429 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_ChargingHandleBack_fr439_v1_01.wav", t = 439 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_ChargingHandlRelease_fr456_v1_01.wav", t = 456 / 30},
-            {s = "weapons/car/Wpn_Car_Inspect_ChargingHandleSlap_fr464_v1_01.wav", t = 464 / 30}
+            {s = "weapons/car/Wpn_Car_Inspect_Raise_fr004_v1_01.ogg", t = 4 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_GrabPull_fr078_v1_01.ogg", t = 78 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_MoveLeft_fr128_v1_01.ogg", t = 128 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_LookAtStock_fr168_v1_01.ogg", t = 168 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_LookAtRightSide_fr204_v1_01.ogg", t = 204 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_LookAtBarrel_fr251_v1_01.ogg", t = 251 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_FlipGunFoley_fr306_v1_01.ogg", t = 306 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_PullOutMag_fr320_v1_01.ogg", t = 320 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_InspectMag_fr361_v1_01.ogg", t = 361 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_CatchMag_fr386_v1_01.ogg", t = 386 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_InsertMag_fr405_v1_01.ogg", t = 405 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_ArmRaiseCloth_fr429_v1_01.ogg", t = 429 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_ChargingHandleBack_fr439_v1_01.ogg", t = 439 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_ChargingHandlRelease_fr456_v1_01.ogg", t = 456 / 30},
+            {s = "weapons/car/Wpn_Car_Inspect_ChargingHandleSlap_fr464_v1_01.ogg", t = 464 / 30}
         },
     },
     ["reload"] = {
@@ -350,10 +350,10 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {s = "weapons/car/wpn_car_reload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
+            {s = "weapons/car/wpn_car_reload_maggrab_fr2_2ch_v1_01.ogg", t = 2 / 30},
             {s = "ArcCW_APEX.CAR.Mag_Out", t = 23 / 30},
             {s = "ArcCW_APEX.CAR.Mag_In", t = 39 / 30},
-            {s = "weapons/car/wpn_car_reload_handrest_fr48_2ch_v1_01.wav", t = 48 / 30}
+            {s = "weapons/car/wpn_car_reload_handrest_fr48_2ch_v1_01.ogg", t = 48 / 30}
         },
     },
     ["reload_empty"] = {
@@ -361,12 +361,12 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         LHIK = true,
         SoundTable = {
-            {s = "weapons/car/wpn_car_emptyreload_maggrab_fr2_2ch_v1_01.wav", t = 2 / 30},
+            {s = "weapons/car/wpn_car_emptyreload_maggrab_fr2_2ch_v1_01.ogg", t = 2 / 30},
             {s = "ArcCW_APEX.CAR.Mag_Out", t = 17 / 30},
             {s = "ArcCW_APEX.CAR.Mag_In", t = 34 / 30},
             {s = "ArcCW_APEX.CAR.Bolt_Back", t = 53 / 30},
             {s = "ArcCW_APEX.CAR.Bolt_Forward", t = 61 / 30},
-            {s = "weapons/car/wpn_car_emptyreload_handrest_fr61_2ch_v1_01.wav", t = 61 / 30}
+            {s = "weapons/car/wpn_car_emptyreload_handrest_fr61_2ch_v1_01.ogg", t = 61 / 30}
         },
     },
     ["1_to_2"] = {
@@ -375,12 +375,12 @@ SWEP.Animations = {
         LHIKIn = 0.6,
         LHIKOut = 0.6,
         SoundTable = {
-            {s = "weapons/car/Wpn_Car_AmmoSwap00_PopOutMag__fr07_v1_01.wav", t = 7 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap00_PullOutMag__fr025_v1_01.wav", t = 25 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap00_InsertMag__fr040_v1_01.wav", t = 40 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap00_SlapMag__fr069_v1_01.wav", t = 69 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap00_Charge__fr086_v1_01.wav", t = 86 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap00_Settle__fr099_v1_01.wav", t = 99 / 30}
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_PopOutMag__fr07_v1_01.ogg", t = 7 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_PullOutMag__fr025_v1_01.ogg", t = 25 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_InsertMag__fr040_v1_01.ogg", t = 40 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_SlapMag__fr069_v1_01.ogg", t = 69 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_Charge__fr086_v1_01.ogg", t = 86 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap00_Settle__fr099_v1_01.ogg", t = 99 / 30}
         },
     },
     ["2_to_1"] = {
@@ -389,12 +389,12 @@ SWEP.Animations = {
         LHIKIn = 0.6,
         LHIKOut = 0.6,
         SoundTable = {
-            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagEject__fr009_v1_01.wav", t = 9 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagPullOut__fr026_v1_01.wav", t = 26 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap01_NewMagGrab__fr037_v1_01.wav", t = 37 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertBump__fr059_v1_01.wav", t = 59 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr069_v1_01.wav", t = 69 / 30},
-            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr088_v1_01.wav", t = 88 / 30}
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagEject__fr009_v1_01.ogg", t = 9 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagPullOut__fr026_v1_01.ogg", t = 26 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_NewMagGrab__fr037_v1_01.ogg", t = 37 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertBump__fr059_v1_01.ogg", t = 59 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr069_v1_01.ogg", t = 69 / 30},
+            {s = "weapons/car/Wpn_Car_AmmoSwap01_MagInsertComplete__fr088_v1_01.ogg", t = 88 / 30}
         },
     },
 }

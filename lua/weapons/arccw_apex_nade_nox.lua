@@ -75,44 +75,44 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         SoundTable = {
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.wav", t = 0 / 30},
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.ogg", t = 0 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.ogg", t = 17 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.ogg", t = 25 / 30},
         },
     },
     ["draw"] = {
         Source = "draw",
         SoundTable = {
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.wav", t = 0 / 30},
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.ogg", t = 0 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.ogg", t = 17 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.ogg", t = 25 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
         Mult = 0.5,
         SoundTable = {
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_ThrowOverhead_Windup_2ch_v1_01.wav", t = 1 / 30}
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_ThrowOverhead_Windup_2ch_v1_01.ogg", t = 1 / 30}
         },
     },
     -- ["pre_throw"] = {
         -- Source = "pullpin",
         -- SoundTable = {
-            -- {s = "weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.wav", t = 0 / 30},
+            -- {s = "weapons/grenades/wpn_fraggrenade_1p_throw_2ch_v1_02.ogg", t = 0 / 30},
         -- },
         -- MinProgress = 0.5,
     -- },
     ["fire"] = {
         Source = "toss_overhead",
         SoundTable = {
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30},
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.ogg", t = 0 / 30},
         },
     },
     ["throw"] = {
         Source = {"toss_overhead"},
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.ogg", t = 0 / 30}
         },
     },
     ["throw_alt"] = {
@@ -120,7 +120,7 @@ SWEP.Animations = {
         Mult = 1.6,
         TPAnim = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE,
         SoundTable = {
-            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.wav", t = 0 / 30}
+            {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Throw_2ch_v1_01.ogg", t = 0 / 30}
         },
     },
     ["bash"] = {
@@ -136,9 +136,9 @@ SWEP.Animations = {
     -- ["reload_empty"] = {
         -- Source = "draw",
         -- SoundTable = {
-            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.wav", t = 0 / 30},
-            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.wav", t = 17 / 30},
-            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.wav", t = 25 / 30},
+            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt1_2ch_v1_01.ogg", t = 0 / 30},
+            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt2_2ch_v1_01.ogg", t = 17 / 30},
+            -- {s = "weapons/grenades/nox/Caustic_Mvmt_GasGrenade_Draw_Pt3_2ch_v1_01.ogg", t = 25 / 30},
         -- },
     -- },
     ["enter_inspect"] = {

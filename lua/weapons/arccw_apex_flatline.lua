@@ -263,7 +263,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/flatline/wpn_vinson_first_pullout_fr08_2ch_v1_01.wav", t = 8 / 35}
+            {p = 100, s = "weapons/flatline/wpn_vinson_first_pullout_fr08_2ch_v1_01.ogg", t = 8 / 35}
         },
     },
     ["draw"] = {
@@ -331,17 +331,17 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.wav", t = 11 / 30},
-            {p = 100, s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.wav", t = 43 / 30}
+            {p = 100, s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.ogg", t = 11 / 30},
+            {p = 100, s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.ogg", t = 43 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.wav", t = 11 / 30},
-            {s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.wav", t = 43 / 30},
-            {s = "weapons/flatline/wpn_vinson_reload_empty_charge_fr60_2ch_v1_01.wav", t = 60 / 30}
+            {s = "weapons/flatline/wpn_vinson_reload_magout_fr11_2ch_v1_01.ogg", t = 11 / 30},
+            {s = "weapons/flatline/wpn_vinson_reload_magin_fr43_2ch_v1_01.ogg", t = 43 / 30},
+            {s = "weapons/flatline/wpn_vinson_reload_empty_charge_fr60_2ch_v1_01.ogg", t = 60 / 30}
         },
     },
 }

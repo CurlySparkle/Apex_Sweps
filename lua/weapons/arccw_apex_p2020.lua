@@ -276,8 +276,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/p2020/smartpistol_reload_slideback_st_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 22 / 30}
+            {p = 100, s = "weapons/p2020/smartpistol_reload_slideback_st_01.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.ogg", t = 22 / 30}
     },
     },
     ["draw"] = {
@@ -384,17 +384,17 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
-            {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_01.wav", t = 9 / 30},
-            {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_01.wav", t = 24 / 30}
+            {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_01.ogg", t = 9 / 30},
+            {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_01.ogg", t = 24 / 30}
     },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
-            {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_02.wav", t = 9 / 30},
-            {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_02.wav", t = 24 / 30},
-            {p = 100, s = "weapons/p2020/weapon_p2011_reload_slidefront.wav", t = 36 / 30}
+            {p = 100, s = "weapons/p2020/smartpistol_reload_magout_st_02.ogg", t = 9 / 30},
+            {p = 100, s = "weapons/p2020/smartpistol_reload_magin_st_02.ogg", t = 24 / 30},
+            {p = 100, s = "weapons/p2020/weapon_p2011_reload_slidefront.ogg", t = 36 / 30}
     },
     },
 }

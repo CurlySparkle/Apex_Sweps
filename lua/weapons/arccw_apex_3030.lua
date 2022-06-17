@@ -292,9 +292,9 @@ SWEP.Animations = {
         RareSource = "draw_first_secret",
         RareSourceChance = 50,
         SoundTable = {
-            {s = "weapons/3030/weapon_3030_equip.wav", t = 0 / 30},
-			{s = "weapons/3030/weapon_3030_firstdraw_lever_out.wav", t = 5 / 30},
-			{s = "weapons/3030/weapon_3030_firstdraw_lever_in.wav", t = 13 / 30},
+            {s = "weapons/3030/weapon_3030_equip.ogg", t = 0 / 30},
+			{s = "weapons/3030/weapon_3030_firstdraw_lever_out.ogg", t = 5 / 30},
+			{s = "weapons/3030/weapon_3030_firstdraw_lever_in.ogg", t = 13 / 30},
         },
     },
     ["draw"] = {
@@ -316,7 +316,7 @@ SWEP.Animations = {
         MinProgress = 0.35,
         ShellEjectAt = 0.1,
         SoundTable = {
-            {p = 100, s = "weapons/3030/3030_Reload_Lever.wav", t = 0 / 30},
+            {p = 100, s = "weapons/3030/3030_Reload_Lever.ogg", t = 0 / 30},
         },
     },
     ["enter_sight"] = {
@@ -331,7 +331,7 @@ SWEP.Animations = {
         MinProgress = 0.35,
         ShellEjectAt = 0.1,
         SoundTable = {
-            {p = 100, s = "weapons/3030/3030_Reload_Lever.wav", t = 0 / 30},
+            {p = 100, s = "weapons/3030/3030_Reload_Lever.ogg", t = 0 / 30},
         },
     },
     ["exit_sight"] = {
@@ -381,7 +381,7 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 0,
         SoundTable = {
-            {s = "weapons/3030/weapon_3030_reload_begin.wav", t = 0 / 30},
+            {s = "weapons/3030/weapon_3030_reload_begin.ogg", t = 0 / 30},
         },
     },
     ["sgreload_insert"] = {
@@ -401,7 +401,7 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 1,
         SoundTable = {
-            {s = "weapons/3030/weapon_3030_reload_complete.wav", t = 0 / 30},
+            {s = "weapons/3030/weapon_3030_reload_complete.ogg", t = 0 / 30},
         },
     },
     ["sgreload_start_empty"] = {
@@ -411,7 +411,7 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 0,
         SoundTable = {
-		    {s = "weapons/3030/weapon_3030_reload_begin.wav", t = 0 / 30},
+		    {s = "weapons/3030/weapon_3030_reload_begin.ogg", t = 0 / 30},
             {s = "ArcCW_APEX.3030Repeater.Reload_Insert", t = 8 / 30},
         },
     },
@@ -421,8 +421,8 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 1,
         SoundTable = {
-            {s = "weapons/3030/weapon_3030_reload_complete.wav", t = 0 / 30},
-            {s = "weapons/3030/3030_Reload_Lever.wav", t = 8 / 30}
+            {s = "weapons/3030/weapon_3030_reload_complete.ogg", t = 0 / 30},
+            {s = "weapons/3030/3030_Reload_Lever.ogg", t = 8 / 30}
         },
     },
     ["reload"] = {

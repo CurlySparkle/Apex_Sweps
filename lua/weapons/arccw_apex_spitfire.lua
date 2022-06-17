@@ -254,7 +254,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/spitfire/wpn_lmg_firstdraw_2ch_v1_01.wav", t = 1 / 35}
+            {p = 100, s = "weapons/spitfire/wpn_lmg_firstdraw_2ch_v1_01.ogg", t = 1 / 35}
         },
     },
     ["draw"] = {
@@ -313,24 +313,24 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_drumremove_fr5_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_drumgrab_fr30_2ch_v1_02.wav", t = 30 / 30},
-            {p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.wav", t = 48 / 30},
-            {p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.wav", t = 60 / 30},
-            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_handrest_fr76_2ch_v1_02.wav", t = 75 / 30}
+            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_drumremove_fr5_2ch_v1_01.ogg", t = 5 / 30},
+            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_drumgrab_fr30_2ch_v1_02.ogg", t = 30 / 30},
+            {p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.ogg", t = 48 / 30},
+            {p = 100, s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.ogg", t = 60 / 30},
+            {p = 100, s = "weapons/spitfire/wpn_lmg_reload_handrest_fr76_2ch_v1_02.ogg", t = 75 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumremove_fr0_2ch_v1_01.wav", t = 5 / 30},
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumgrab_fr22_2ch_v1_02.wav", t = 30 / 30},
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.wav", t = 48 / 30},
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.wav", t = 60 / 30},
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltBack_fr85_2ch_v2_01.wav", t = 77 / 30},
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltFront_fr94_2ch_v2_01.wav", t = 84 / 30},
-            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_handrest_fr102_2ch_v1_02.wav", t = 91 / 30}
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumremove_fr0_2ch_v1_01.ogg", t = 5 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_drumgrab_fr22_2ch_v1_02.ogg", t = 30 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumInsert_fr55_2ch_v2_03.ogg", t = 48 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_DrumPat_fr69_2ch_v2_02.ogg", t = 60 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltBack_fr85_2ch_v2_01.ogg", t = 77 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_BoltFront_fr94_2ch_v2_01.ogg", t = 84 / 30},
+            {s = "weapons/spitfire/Wpn_LMG_EmptyReload_handrest_fr102_2ch_v1_02.ogg", t = 91 / 30}
     },
 },
 }

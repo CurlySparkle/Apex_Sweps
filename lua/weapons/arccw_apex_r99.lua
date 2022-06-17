@@ -257,7 +257,7 @@ SWEP.Animations = {
         Source = "draw_first",
         Mult = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/r99/deploy_1.wav", t = 1 / 30},
+            {p = 100, s = "weapons/r99/deploy_1.ogg", t = 1 / 30},
         },
     },
     ["draw"] = {
@@ -322,9 +322,9 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 60 / 40,
         SoundTable = {
-            {p = 100, s = "weapons/r99/clip_out_1.wav", t = 7 / 30},
-            {p = 100, s = "weapons/r99/clip_in_1.wav", t = 49 / 30},
-            {p = 100, s = "weapons/r99/handgrab_1.wav", t = 58 / 30}
+            {p = 100, s = "weapons/r99/clip_out_1.ogg", t = 7 / 30},
+            {p = 100, s = "weapons/r99/clip_in_1.ogg", t = 49 / 30},
+            {p = 100, s = "weapons/r99/handgrab_1.ogg", t = 58 / 30}
         },
     },
     ["reload_empty"] = {
@@ -336,11 +336,11 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 97 / 40,
         SoundTable = {
-            {p = 100, s = "weapons/r99/clip_out_1.wav", t = 7 / 30},
-            {p = 100, s = "weapons/r99/clip_in_1.wav", t = 49 / 30},
-            {p = 100, s = "weapons/r99/slideforward_1.wav", t = 67 / 30},
-            {p = 100, s = "weapons/r99/slideback_1.wav", t = 69 / 30},
-            {p = 100, s = "weapons/r99/handgrab_1.wav", t = 74 / 30},
+            {p = 100, s = "weapons/r99/clip_out_2.ogg", t = 7 / 30},
+            {p = 100, s = "weapons/r99/clip_in_1.ogg", t = 49 / 30},
+            {p = 100, s = "weapons/r99/slideforward_1.ogg", t = 67 / 30},
+            {p = 100, s = "weapons/r99/slideback_1.ogg", t = 69 / 30},
+            {p = 100, s = "weapons/r99/handgrab_1.ogg", t = 74 / 30},
         },
     },
 }

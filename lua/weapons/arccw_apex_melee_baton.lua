@@ -133,14 +133,14 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         SoundTable = {
-            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Holster.wav", t = 0 / 30},
+            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Holster.ogg", t = 0 / 30},
         },
     },
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_FirstDraw_Twirl.wav", t = 0 / 30},
-            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_FirstDraw_Extend.wav", t = 30 / 30},
+            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_FirstDraw_Twirl.ogg", t = 0 / 30},
+            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_FirstDraw_Extend.ogg", t = 30 / 30},
         },
     },
     ["bash"] = {
@@ -177,11 +177,11 @@ SWEP.Animations = {
     ["idle_inspect"] = {
         Source = "inspect",
         SoundTable = {
-            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT1.wav", t = 0 / 30},
-			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT2.wav", t = 115 / 30},
-			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT3.wav", t = 380 / 30},
-			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT4.wav", t = 430 / 30},
-			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT5.wav", t = 500 / 30},
+            {s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT1.ogg", t = 0 / 30},
+			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT2.ogg", t = 115 / 30},
+			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT3.ogg", t = 380 / 30},
+			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT4.ogg", t = 430 / 30},
+			{s = "weapons/melee/lifeline/Lifeline_Mvmt_Baton_Inspect_PT5.ogg", t = 500 / 30},
         },
     },
 }

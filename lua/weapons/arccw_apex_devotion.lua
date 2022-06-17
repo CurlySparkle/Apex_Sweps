@@ -107,7 +107,7 @@ SWEP.JumpDispersion = 300
 
 SWEP.SightedSpeedMult = 0.4
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 140 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.FirstShootSound = "ArcCW_APEX.Devotion.Fire_Start"
@@ -265,12 +265,12 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotFoley_fr00_2ch_v1_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt01_fr06_2ch_v1_01.wav", t = 6 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_Energy_fr11_2ch_v1_01.wav", t = 11 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotEquip_fr13_2ch_v1_01.wav", t = 13 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt02_fr15_2ch_v1_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_WpnMvmnt_fr20_2ch_v1_01.wav", t = 20 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotFoley_fr00_2ch_v1_01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt01_fr06_2ch_v1_01.ogg", t = 6 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_Energy_fr11_2ch_v1_01.ogg", t = 11 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_PilotEquip_fr13_2ch_v1_01.ogg", t = 13 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_AccuateBolt_pt02_fr15_2ch_v1_01.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_FirstDraw_WpnMvmnt_fr20_2ch_v1_01.ogg", t = 20 / 30},
         },
     },
     ["draw"] = {
@@ -330,29 +330,29 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr05_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr65_2ch_v1_01.wav", t = 65 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr74_2ch_v1_01.wav", t = 74 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr05_2ch_v1_01.ogg", t = 5 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr65_2ch_v1_01.ogg", t = 65 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_WpnMvmnt_fr74_2ch_v1_01.ogg", t = 74 / 30},
 
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01A.wav", t = 8 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01B.wav", t = 8 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagIn_fr43_2ch_v1_01.wav", t = 43 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagHit_fr63_2ch_v1_01.wav", t = 63 / 30}
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01A.ogg", t = 8 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_EmptyMagOut_fr08_2ch_v2_01B.ogg", t = 8 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagIn_fr43_2ch_v1_01.ogg", t = 43 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_Reload_MagHit_fr63_2ch_v1_01.ogg", t = 63 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr03_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr66_2ch_v1_01.wav", t = 65 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr96_2ch_v1_01.wav", t = 74 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr03_2ch_v1_01.ogg", t = 5 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr66_2ch_v1_01.ogg", t = 65 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_WpnMvmnt_fr96_2ch_v1_01.ogg", t = 74 / 30},
 
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_EmptyMagOut_fr05_2ch_v1_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagIn_fr41_2ch_v1_01.wav", t = 41 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagHit_fr61_2ch_v1_01.wav", t = 61 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_AccuateBoltResonate_fr80_2ch_v1_01.wav", t = 80 / 30},
-            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_Energy_fr86_2ch_v1_01.wav", t = 86 / 30}
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_EmptyMagOut_fr05_2ch_v1_01.ogg", t = 5 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagIn_fr41_2ch_v1_01.ogg", t = 41 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_MagHit_fr61_2ch_v1_01.ogg", t = 61 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_AccuateBoltResonate_fr80_2ch_v1_01.ogg", t = 80 / 30},
+            {p = 100, s = "weapons/devotion/Wpn_Devotion_ReloadEmpty_Energy_fr86_2ch_v1_01.ogg", t = 86 / 30}
         },
     },
 }
@@ -361,9 +361,9 @@ SWEP.Hook_AddShootSound = function(wep, data)
     if wep:GetBurstCount() == 1 then
         if wep.DevotionWindupSound then wep.DevotionWindupSound:Stop() end
         if wep.Attachments[5].Installed == "apex_hopup_turbo2" then
-            wep.DevotionWindupSound = CreateSound(wep, "weapons/devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.wav")
+            wep.DevotionWindupSound = CreateSound(wep, "weapons/devotion/Wpn_Devotion_1P_FullAuto_Turbo_Startup_2ch_v1_01.ogg")
         else
-            wep.DevotionWindupSound = CreateSound(wep, "weapons/devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_0" .. math.random(1, 3) .. ".wav")
+            wep.DevotionWindupSound = CreateSound(wep, "weapons/devotion/Wpn_Devotion_1P_FullAuto_Startup_2ch_v1_0" .. math.random(1, 3) .. ".ogg")
         end
 
         wep.DevotionWindupSound:Play()
@@ -376,7 +376,7 @@ SWEP.Hook_Think = function(wep)
         wep.DevotionWindupSound:Stop()
         wep.DevotionWindupSound = nil
         if wep.DevotionLastBurst > 10 then
-            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_WindDown_2ch_v1_01.wav")
+            wep:MyEmitSound("weapons/devotion/Wpn_Devotion_1P_FullAuto_WindDown_2ch_v1_01.ogg")
         end
     end
 end

@@ -103,7 +103,7 @@ SWEP.SightedSpeedMult = 0.4
 
 SWEP.Primary.Ammo = "apex_heavy"
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 140 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.FirstShootSound = "ArcCW_APEX.Rampage.Fire_Start"
@@ -266,9 +266,9 @@ SWEP.Animations = {
         RareSource = "draw_first_rampant",
         RareSourceChance = 25,
         SoundTable = {
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.wav", t = 25 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.ogg", t = 25 / 30},
         },
     },
     ["draw"] = {
@@ -323,16 +323,16 @@ SWEP.Animations = {
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_Mid_V1_2ch_02.wav", t = 240 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_AR_End_V1_2ch_01.wav", t = 525 / 30},
 
-            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_button_press_2ch_v1.wav", t = 290 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_open_2ch_v1a.wav", t = 295 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_handle_close_2ch_v1a.wav", t = 509 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_body_close_2ch_v1a.wav", t = 515 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_button_press_2ch_v1.ogg", t = 290 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_open_2ch_v1a.ogg", t = 295 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_handle_close_2ch_v1a.ogg", t = 509 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_lookat_body_close_2ch_v1a.ogg", t = 515 / 30},
     },
     },
     ["charge"] = {
         Source = "energize",
         SoundTable = {
-            {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.wav", t = 0 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_thermite_charge_3p_v1.ogg", t = 0 / 30},
             {p = 100, s = "ArcCW_APEX.Rampage.Energize", t = 105 / 30},
         },
     },
@@ -342,11 +342,11 @@ SWEP.Animations = {
         RareSourceChance = 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magout_2ch_v1_01b.wav", t = 15 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.wav", t = 25 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.wav", t = 45 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.wav", t = 55 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magout_2ch_v1_01b.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.ogg", t = 25 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.ogg", t = 45 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.ogg", t = 55 / 30},
         },
     },
     ["reload_empty"] = {
@@ -355,13 +355,13 @@ SWEP.Animations = {
         RareSourceChance = 35,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magout_2ch_v1_01b.wav", t = 15 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.wav", t = 25 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.wav", t = 45 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.wav", t = 55 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.wav", t = 65 / 30},
-            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.wav", t = 75 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_intro_2ch_v1_01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magout_2ch_v1_01b.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_maggrab_2ch_v1.ogg", t = 25 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magin_2ch_v1_01.ogg", t = 45 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_magpush_2ch_v1_01.ogg", t = 55 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltback_2ch_v1_01.ogg", t = 65 / 30},
+            {p = 100, s = "weapons/rampage/wpn_rampage_reload_boltfront_2ch_v1_01.ogg", t = 75 / 30},
         },
     },
 }

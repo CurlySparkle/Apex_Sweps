@@ -274,9 +274,9 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
-            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
-            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt2_V1_2ch_01.wav", t = 20 / 30},
-            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt3_V1_2ch_01.wav", t = 35 / 30},
+            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt1_V1_2ch_01.ogg", t = 0 / 30},
+            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt2_V1_2ch_01.ogg", t = 20 / 30},
+            {s = "weapons/bocek/Weapons_Bow_Drawfirst_WpnFoley_Pt3_V1_2ch_01.ogg", t = 35 / 30},
         },
     },
     ["draw"] = {
@@ -331,7 +331,7 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.9,
         SoundTable = {
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.ogg", t = 0 / 30},
     },
     },
     ["idle_inspect"] = {
@@ -340,16 +340,16 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01.wav", t = 35 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt1_V1_2ch_01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_GearFoley_Pt2_V1_2ch_01.ogg", t = 35 / 30},
 
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01.wav", t = 10 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01.wav", t = 142 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt4_V1_2ch_01.wav", t = 183 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt5_V1_2ch_01.wav", t = 230 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt6_V1_2ch_01.wav", t = 300 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt7_V1_2ch_01.wav", t = 385 / 30},
-            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt8_V1_2ch_01.wav", t = 425 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt2_V1_2ch_01.ogg", t = 10 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt3_V1_2ch_01.ogg", t = 142 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt4_V1_2ch_01.ogg", t = 183 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt5_V1_2ch_01.ogg", t = 230 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt6_V1_2ch_01.ogg", t = 300 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt7_V1_2ch_01.ogg", t = 385 / 30},
+            {p = 100, s = "weapons/bocek/Weapons_Bow_inspect_WpnFoley_Pt8_V1_2ch_01.ogg", t = 425 / 30},
     },
     },
     ["enter_inspect_empty"] = {
@@ -374,7 +374,7 @@ SWEP.Animations = {
         MinProgress = 0.04,
         SoundTable = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.wav", t = 17 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_01.ogg", t = 17 / 30},
         },
     },
     ["trigger_sight"] = {
@@ -382,7 +382,7 @@ SWEP.Animations = {
         MinProgress = 0.04,
         SoundTable = {
             {s = "ArcCW_APEX.Bocek.Charge", t = 0 / 30},
-            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.wav", t = 17 / 30},
+            {s = "weapons/bocek/Apex_Weapon_Bow_Draw_ChargeComplete_v5_02.ogg", t = 17 / 30},
         },
     },
     ["enter_sight_trigger"] = {

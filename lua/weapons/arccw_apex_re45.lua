@@ -310,10 +310,10 @@ SWEP.Animations = {
         LHIKOut = 0.6,
         LHIKEaseOut = 0.4,
         SoundTable = {
-            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunFoley_2ch_V1__01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunSlide_Open_2ch_V1_01.wav", t = 169 / 30},
-            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunSlide_Close_2ch_V1_01.wav", t = 212 / 30},
-            {p = 100, s = "weapons/re45/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.wav", t = 229 / 30},
+            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunFoley_2ch_V1__01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunSlide_Open_2ch_V1_01.ogg", t = 169 / 30},
+            {p = 100, s = "weapons/re45/WPN_RE45Auto_Inspect_GunSlide_Close_2ch_V1_01.ogg", t = 212 / 30},
+            {p = 100, s = "weapons/re45/Weapon_Inspect_Foley_Pistol_End_V1_2ch_01.ogg", t = 229 / 30},
 
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Start_V1_2ch_01.wav", t = 1 / 30},
             {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Pistol_Mid_V1_2ch_01.wav", t = 96 / 30},
@@ -330,10 +330,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 60 / 40,
         SoundTable = {
-            {p = 100, s = "weapons/re45/wpn_re45_reload_magpull_fr4_2ch_v1_01.wav", t = 4 / 30},
-            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagInsert_fr28_2ch_v2_01.wav", t = 28 / 30},
-            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.wav", t = 37 / 30},
-            {p = 100, s = "weapons/re45/wpn_re45_reload_handrest_fr40_2ch_v1_01.wav", t = 40 / 30}
+            {p = 100, s = "weapons/re45/wpn_re45_reload_magpull_fr4_2ch_v1_01.ogg", t = 4 / 30},
+            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagInsert_fr28_2ch_v2_01.ogg", t = 28 / 30},
+            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.ogg", t = 37 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_reload_handrest_fr40_2ch_v1_01.ogg", t = 40 / 30}
         },
     },
     ["reload_empty"] = {
@@ -345,12 +345,12 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 97 / 40,
         SoundTable = {
-            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_magpull_fr4_2ch_v1_01.wav", t = 4 / 30},
-            {p = 100, s = "weapons/re45/Wpn_RE45_EmptyReload_MagInsert_fr27_2ch_v2_01.wav", t = 27 / 30},
-            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.wav", t = 37 / 30},
-            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltback_fr47_2ch_v1_01.wav", t = 47 / 30},
-            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltfront_fr50_2ch_v1_02.wav", t = 50 / 30},
-            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_handrest_fr55_2ch_v1_01.wav", t = 55 / 30}
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_magpull_fr4_2ch_v1_01.ogg", t = 4 / 30},
+            {p = 100, s = "weapons/re45/Wpn_RE45_EmptyReload_MagInsert_fr27_2ch_v2_01.ogg", t = 27 / 30},
+            {p = 100, s = "weapons/re45/Wpn_RE45_Reload_MagPat_fr35_2ch_v2_02.ogg", t = 37 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltback_fr47_2ch_v1_01.ogg", t = 47 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_boltfront_fr50_2ch_v1_02.ogg", t = 50 / 30},
+            {p = 100, s = "weapons/re45/wpn_re45_emptyreload_handrest_fr55_2ch_v1_01.ogg", t = 55 / 30}
         },
     },
     ["trigger"] = {

@@ -118,9 +118,9 @@ SWEP.Primary.Ammo = "apex_sniper"
 
 SWEP.ShootVol = 180 -- volume of shoot sound
 
-SWEP.ShootSound = { "weapons/sentinel/fire_1.wav", "weapons/sentinel/fire_2.wav", "weapons/sentinel/fire_3.wav" }
+SWEP.ShootSound = { "weapons/sentinel/fire_1.ogg", "weapons/sentinel/fire_2.ogg", "weapons/sentinel/fire_3.ogg" }
 SWEP.ShootDrySound = "ArcCW_APEX.Rifle_Dry_A_4"
-SWEP.ShootSoundSilenced = { "weapons/sentinel/fire_charged_1.wav", "weapons/sentinel/fire_charged_2.wav", "weapons/sentinel/fire_charged_3.wav" }
+SWEP.ShootSoundSilenced = { "weapons/sentinel/fire_charged_1.ogg", "weapons/sentinel/fire_charged_2.ogg", "weapons/sentinel/fire_charged_3.ogg" }
 SWEP.DistantShootSound = ""
 
 SWEP.MuzzleEffect = "tfa_apex_muzzle_dmr"
@@ -266,7 +266,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_FirstDraw_2ch_v1_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_FirstDraw_2ch_v1_01.ogg", t = 1 / 30},
         },
     },
     ["draw"] = {
@@ -274,14 +274,14 @@ SWEP.Animations = {
         Mult = 1,
         MinProgress = 0.5,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Draw_2ch_v2_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Draw_2ch_v2_01.ogg", t = 0 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
         Mult = 1,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Holster_2ch_v1_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Holster_2ch_v1_01.ogg", t = 0 / 30},
         },
     },
     ["idle_iron"] = {
@@ -298,7 +298,7 @@ SWEP.Animations = {
         Time = 63 / 40,
         MinProgress = 0.875,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_01.wav", t = 5 / 40},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_01.ogg", t = 5 / 40},
         },
     },
     ["enter_sight"] = {
@@ -316,7 +316,7 @@ SWEP.Animations = {
         Time = 63 / 40,
         MinProgress = 0.875,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_02.wav", t = 5 / 40},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Bolt_2ch_v1_02.ogg", t = 5 / 40},
         },
     },
     ["exit_sight"] = {
@@ -352,12 +352,12 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunUp_Fr022_2ch_v1_01.wav", t = 8 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagOut_Fr041_2ch_v1_01.wav", t = 25 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagGrab_Fr061_2ch_v1_01.wav", t = 46 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.wav", t = 67 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 69 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 89 / 30}
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunUp_Fr022_2ch_v1_01.ogg", t = 8 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagOut_Fr041_2ch_v1_01.ogg", t = 25 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagGrab_Fr061_2ch_v1_01.ogg", t = 46 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.ogg", t = 67 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.ogg", t = 69 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.ogg", t = 89 / 30}
         },
     },
     ["reload_empty"] = {
@@ -365,30 +365,30 @@ SWEP.Animations = {
         ShellEjectAt = 0.2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BoltBack_2ch_v2_01.wav", t = 5 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunUp_Fr022_2ch_v1_01.wav", t = 22 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagOut_Fr041_2ch_v1_01.wav", t = 38 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagGrab_Fr061_2ch_v1_01.wav", t = 61 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.wav", t = 67 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.wav", t = 86 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.wav", t = 100 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_ReChamber_Fr109_2ch_v2_01.wav", t = 109 / 30}
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BoltBack_2ch_v2_01.ogg", t = 5 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunUp_Fr022_2ch_v1_01.ogg", t = 22 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagOut_Fr041_2ch_v1_01.ogg", t = 38 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagGrab_Fr061_2ch_v1_01.ogg", t = 61 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagSlot_Fr067_2ch_v1_01.ogg", t = 67 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_MagInsert_Fr086_2ch_v1_01.ogg", t = 86 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_GunDown_Fr100_2ch_v1_01.ogg", t = 100 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_Reload_ReChamber_Fr109_2ch_v2_01.ogg", t = 109 / 30}
         },
     },
     ["charge"] = {
         Source = "charge",
         -- Time = 5,
         SoundTable = {
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunUp_fr006_2ch_v1_01.wav", t = 6 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryEject_fr023_2ch_v1_01.wav", t = 24 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryGrab_fr033_2ch_v1_01.wav", t = 33 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryPlace_fr049_2ch_v1_01.wav", t = 49 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatterySlamIn_fr062_2ch_v1_01.wav", t = 62 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_ChargeUp_fr070_2ch_v2_01.wav", t = 70 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_SpinningBarrel_fr070_2ch_v1_01.wav", t = 70 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_PowerSurge_fr155_2ch_v1_01.wav", t = 155 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_Snap_fr155_2ch_v1_01.wav", t = 155 / 30},
-            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunDown_fr182_2ch_v1_01.wav", t = 182 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunUp_fr006_2ch_v1_01.ogg", t = 6 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryEject_fr023_2ch_v1_01.ogg", t = 24 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryGrab_fr033_2ch_v1_01.ogg", t = 33 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatteryPlace_fr049_2ch_v1_01.ogg", t = 49 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_BatterySlamIn_fr062_2ch_v1_01.ogg", t = 62 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_ChargeUp_fr070_2ch_v2_01.ogg", t = 70 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_SpinningBarrel_fr070_2ch_v1_01.ogg", t = 70 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_PowerSurge_fr155_2ch_v1_01.ogg", t = 155 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_CableYank_Snap_fr155_2ch_v1_01.ogg", t = 155 / 30},
+            {p = 100, s = "weapons/sentinel/Wpn_Sentinel_Foley_BatteryCharge_GunDown_fr182_2ch_v1_01.ogg", t = 182 / 30},
         },
     },
 }
@@ -405,7 +405,7 @@ SWEP.HeatDelayTime = 0
 
 SWEP.Hook_GetShootSound = function(wep, fsound)
     if wep:GetHeat() > 0 then
-        return "weapons/sentinel/fire_charged_" .. math.random(1, 3) .. ".wav"
+        return "weapons/sentinel/fire_charged_" .. math.random(1, 3) .. ".ogg"
     end
 end
 

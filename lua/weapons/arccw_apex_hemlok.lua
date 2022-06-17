@@ -272,9 +272,9 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.wav", t = 25 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.wav", t = 28 / 30}
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.ogg", t = 25 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.ogg", t = 28 / 30}
         },
     },
     ["draw"] = {
@@ -358,11 +358,11 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 60 / 40,
         SoundTable = {
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_movearm_fr0_2ch_v1_01.wav", t = 0 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_removemag_fr15_2ch_v1_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_insertmag_fr36_2ch_v1_01.wav", t = 36 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_popmag_fr50_2ch_v1_01.wav", t = 50 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_handgrab_fr57_2ch_v1_01.wav", t = 57 / 30}
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_movearm_fr0_2ch_v1_01.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_removemag_fr15_2ch_v1_01.ogg", t = 15 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_insertmag_fr36_2ch_v1_01.ogg", t = 36 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_popmag_fr50_2ch_v1_01.ogg", t = 50 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_handgrab_fr57_2ch_v1_01.ogg", t = 57 / 30}
         },
     },
     ["reload_empty"] = {
@@ -374,12 +374,12 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         MinProgress = 97 / 40,
         SoundTable = {
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_removemag_fr10_2ch_v1_01.wav", t = 10 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_insertmag_fr39_2ch_v1_01.wav", t = 39 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_popmag_fr54_2ch_v1_01.wav", t = 54 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.wav", t = 68 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.wav", t = 76 / 30},
-            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.wav", t = 85 / 30}
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_removemag_fr10_2ch_v1_01.ogg", t = 10 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_insertmag_fr39_2ch_v1_01.ogg", t = 39 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_popmag_fr54_2ch_v1_01.ogg", t = 54 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeback_fr68_2ch_v1_01.ogg", t = 68 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_chargeforward_fr76_2ch_v1_01.ogg", t = 76 / 30},
+            {p = 100, s = "weapons/hemlok/wpn_hemlok_reload_empty_handgrab_fr85_2ch_v1_01.ogg", t = 85 / 30}
         },
     },
 }

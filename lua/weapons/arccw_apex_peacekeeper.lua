@@ -148,7 +148,7 @@ SWEP.SightedSpeedMult = 0.75
 
 SWEP.Primary.Ammo = "apex_shotgun"
 
-SWEP.ShootVol = 160 -- volume of shoot sound
+SWEP.ShootVol = 140 -- volume of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.Peacekeeper.Fire"
 SWEP.ShootDrySound = "ArcCW_APEX.Shotgun_Dry_A"
@@ -307,9 +307,9 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.wav", t = 7 / 30},
-            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 1 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.ogg", t = 7 / 30},
+            -- {p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.ogg", t = 16 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.ogg", t = 1 / 30},
         },
     },
     ["draw"] = {
@@ -332,8 +332,8 @@ SWEP.Animations = {
         Source = "rechamber",
         MinProgress = 0.875,
         SoundTable = {
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.wav", t = 7 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.wav", t = 16 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_01.ogg", t = 7 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_01.ogg", t = 16 / 30},
         },
     },
     ["enter_sight"] = {
@@ -349,8 +349,8 @@ SWEP.Animations = {
         Source = "rechamber",
         MinProgress = 0.875,
         SoundTable = {
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_02.wav", t = 3 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_02.wav", t = 15 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverOut_2ch_v1_02.ogg", t = 3 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_LeverIn_2ch_v2_02.ogg", t = 15 / 30},
         },
     },
     ["exit_sight"] = {
@@ -397,25 +397,25 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt1_2ch_v1.wav", t = 5 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.wav", t = 10 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 55 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 64 / 30}
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt1_2ch_v1.ogg", t = 5 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.ogg", t = 10 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.ogg", t = 25 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.ogg", t = 39 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.ogg", t = 55 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.ogg", t = 64 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt1_2ch_v1.wav", t = 5 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.wav", t = 10 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.wav", t = 25 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.wav", t = 39 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.wav", t = 58 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.wav", t = 72 / 30},
-            {v = 25, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.wav", t = 87 / 30}
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt1_2ch_v1.ogg", t = 5 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_EnergyCrackle_2ch_v1.ogg", t = 10 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt2_2ch_v1.ogg", t = 25 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt3_2ch_v1.ogg", t = 39 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt4_2ch_v1.ogg", t = 58 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt5_2ch_v1.ogg", t = 72 / 30},
+            {v = 0.5, p = 100, s = "weapons/peacekeeper/Wpn_Peacekeeper_Reload_1p_Pt6_2ch_v1.ogg", t = 87 / 30}
     },
 },
 }

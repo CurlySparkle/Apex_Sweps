@@ -190,12 +190,12 @@ function ENT:Detonate(hitentity)
         util.Effect("Sparks", eff)
     end
 
-    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.wav")
+    self.FireSound = CreateSound(self, "weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_2ch_v2_04.ogg")
     self.FireSound:PlayEx(1, 95)
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Dist_2ch_v1_0" .. math.random(1, 6) .. ".wav", 140, 100, 0.5)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Dist_2ch_v1_0" .. math.random(1, 6) .. ".ogg", 140, 100, 0.5)
 
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".wav", 100)
-    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Dist_2ch_v1_0" .. math.random(1, 3) .. ".wav", 140, 100, 0.5)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Close_2ch_v1_0" .. math.random(1, 3) .. ".ogg", 100)
+    self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_Explo_Dist_2ch_v1_0" .. math.random(1, 3) .. ".ogg", 140, 100, 0.5)
 
     local max_len = 250
 
@@ -259,7 +259,7 @@ function ENT:Detonate(hitentity)
     timer.Simple(self.FireTime - 1, function()
         if not IsValid(self) then return end
         self.FireSound:Stop()
-        self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_End_2ch_v2_0" .. math.random(4, 8) .. ".wav", 95)
+        self:EmitSound("weapons/grenades/thermite/Wpn_ThermiteGrenade_ExploBurn_Close_End_2ch_v2_0" .. math.random(4, 8) .. ".ogg", 95)
         for k, v in ipairs(self.Thermites) do SafeRemoveEntity(v) end
     end)
 

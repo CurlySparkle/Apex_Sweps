@@ -115,7 +115,7 @@ SWEP.SightedSpeedMult = 0.9
 
 SWEP.Primary.Ammo = "apex_shotgun" -- what ammo type the gun uses
 
-SWEP.ShootVol = 120 -- volume of shoot sound
+SWEP.ShootVol = 140 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound = "ArcCW_APEX.Mozambique.Fire"
@@ -280,7 +280,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_FirstDraw_2ch_V1_01.wav", t = 1 / 30},
+            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_FirstDraw_2ch_V1_01.ogg", t = 1 / 30},
         },
     },
     ["draw"] = {
@@ -321,6 +321,9 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "inspect_out",
+        SoundTable = {
+            {p = 100, s = "weapons/foley/Weapon_Inspect_Foley_Shotgun_End_V1_2ch_01.wav", t = 0 / 30},
+        },
     },
     ["idle_inspect"] = {
         Source = "inspect",
@@ -340,17 +343,17 @@ SWEP.Animations = {
         LHIKOut = 0.4,
         Mult = 0.9,
         SoundTable = {
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr00_2ch_v1_01.wav", t = 1 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr22_2ch_v1_01.wav", t = 22 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr35_2ch_v1_01.wav", t = 35 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr57_2ch_v1_01.wav", t = 57 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr13_2ch_v1_01.wav", t = 13 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr30_2ch_v1_01.wav", t = 30 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr50_2ch_v1_01.wav", t = 30 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr00_2ch_v1_01.wav", t = 0 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr22_2ch_v1_01.wav", t = 22 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr44_2ch_v1_01.wav", t = 44 / 30},
-            {v = 55, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr59_2ch_v1_01.wav", t = 59 / 30}
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr00_2ch_v1_01.ogg", t = 1 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr22_2ch_v1_01.ogg", t = 22 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr35_2ch_v1_01.ogg", t = 35 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Cloth_fr57_2ch_v1_01.ogg", t = 57 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr13_2ch_v1_01.ogg", t = 13 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr30_2ch_v1_01.ogg", t = 30 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Tech_fr50_2ch_v1_01.ogg", t = 30 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr00_2ch_v1_01.ogg", t = 0 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr22_2ch_v1_01.ogg", t = 22 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr44_2ch_v1_01.ogg", t = 44 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Reload_Mech_fr59_2ch_v1_01.ogg", t = 59 / 30}
              },
     },
     ["reload_empty"] = {
@@ -362,10 +365,10 @@ SWEP.Animations = {
         LHIKOut = 0.4,
         Mult = 0.9,
         SoundTable = {
-            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part01_2ch_V1_01.wav", t = 1 / 30},
-            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part02_2ch_V1_01.wav", t = 22 / 30},
-            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part03_2ch_V2_01.wav", t = 44 / 30},
-            {p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part04_2ch_V1_01.wav", t = 65 / 30}
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part01_2ch_V1_01.ogg", t = 1 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part02_2ch_V1_01.ogg", t = 22 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part03_2ch_V2_01.ogg", t = 44 / 30},
+            {v = 0.3, p = 100, s = "weapons/mozambique/Wpn_Mozambique_Emptyreload_Part04_2ch_V1_01.ogg", t = 65 / 30}
         },
     },
     ["enter_sprint"] = {

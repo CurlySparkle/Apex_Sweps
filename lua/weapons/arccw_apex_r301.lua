@@ -348,10 +348,10 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.9,
         SoundTable = {
-            {p = 150, s = "weapons/r301/wpn_r101_reload_magpull_fr0_2ch_v1_02.wav", t = 0 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_reload_maggrab_fr18_2ch_v1_02.wav", t = 18 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_reload_maginsert_fr35_2ch_v1_02.wav", t = 31 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_reload_handrest_fr44_2ch_v1_02.wav", t = 44 / 30}
+            {p = 150, s = "weapons/r301/wpn_r101_reload_magpull_fr0_2ch_v1_02.ogg", t = 0 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_reload_maggrab_fr18_2ch_v1_02.ogg", t = 18 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_reload_maginsert_fr35_2ch_v1_02.ogg", t = 31 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_reload_handrest_fr44_2ch_v1_02.ogg", t = 44 / 30}
         },
     },
     ["reload_empty"] = {
@@ -360,12 +360,12 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_magpull_fr9_2ch_v1_02.wav", t = 9 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maggrab_fr21_2ch_v1_02.wav", t = 21 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maginsert_fr38_2ch_v1_02.wav", t = 38 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltback_fr51_2ch_v1_02.wav", t = 51 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltforward_fr55_2ch_v1_02.wav", t = 55 / 30},
-            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_handrest_fr64_2ch_v1_02.wav", t = 64 / 30}
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_magpull_fr9_2ch_v1_02.ogg", t = 9 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maggrab_fr21_2ch_v1_02.ogg", t = 21 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_maginsert_fr38_2ch_v1_02.ogg", t = 38 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltback_fr51_2ch_v1_02.ogg", t = 51 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_boltforward_fr55_2ch_v1_02.ogg", t = 55 / 30},
+            {p = 100, s = "weapons/r301/wpn_r101_emptyreload_handrest_fr64_2ch_v1_02.ogg", t = 64 / 30}
     },
 },
 }
@@ -374,7 +374,7 @@ sound.Add({
     name = "R301.Draw",
     channel = 32,
     volume = 1.0,
-    sound = "weapons/r301/rifle_deploy_1.wav"
+    sound = "weapons/r301/rifle_deploy_1.ogg"
 })
 
 SWEP.TTTWeaponType = "weapon_ttt_m16"

@@ -272,7 +272,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt4_2ch_v1_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_ReloadOverheatR5_Pt4_2ch_v1_01.ogg", t = 0 / 30},
     },
     },
     ["draw"] = {
@@ -315,7 +315,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.ogg", t = 0 / 30},
     },
     },
     ["idle_inspect"] = {
@@ -323,13 +323,13 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.6,
         SoundTable = {
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt1_2ch_v1_01.wav", t = 1 / 30},
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt2_2ch_v1_01.wav", t = 25 / 30},
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt3_2ch_v1_01.wav", t = 55 / 30},
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt4_2ch_v1_01.wav", t = 80 / 30},
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt5_2ch_v1_01.wav", t = 115 / 30},
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.wav", t = 135 / 30},
-            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt7_2ch_v1_01.wav", t = 155 / 30}
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt1_2ch_v1_01.ogg", t = 1 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt2_2ch_v1_01.ogg", t = 25 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt3_2ch_v1_01.ogg", t = 55 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt4_2ch_v1_01.ogg", t = 80 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt5_2ch_v1_01.ogg", t = 115 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt6_2ch_v1_01.ogg", t = 135 / 30},
+            {p = 100, s = "weapons/lstar/Wpn_LSTAR_Inspect_Pt7_2ch_v1_01.ogg", t = 155 / 30}
     },
     },
     ["fix"] = {
@@ -338,14 +338,14 @@ SWEP.Animations = {
         LHIK = true,
         LHIKOut = 0.9,
         SoundTable = {
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_lr_2ch_v1_01.wav", t = 0 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_c_1ch_v1_01.wav", t = 5 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt1_2ch_v1_01.wav", t = 10 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt2_2ch_v1_01.wav", t = 25 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt3_2ch_v1_01.wav", t = 55 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt4_2ch_v1_01.wav", t = 65 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt5_2ch_v1_01.wav", t = 75 / 30},
-            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt6_2ch_v1_01.wav", t = 85 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_lr_2ch_v1_01.ogg", t = 0 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutpop_c_1ch_v1_01.ogg", t = 5 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt1_2ch_v1_01.ogg", t = 10 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt2_2ch_v1_01.ogg", t = 25 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt3_2ch_v1_01.ogg", t = 55 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt4_2ch_v1_01.ogg", t = 65 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt5_2ch_v1_01.ogg", t = 75 / 30},
+            {p = 150, s = "weapons/lstar/wpn_lstar_lensburnoutreload_pt6_2ch_v1_01.ogg", t = 85 / 30},
         },
     },
     ["reload"] = {
