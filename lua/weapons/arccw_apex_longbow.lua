@@ -277,8 +277,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.wav", t = 17 / 35},
-            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.wav", t = 22 / 35}
+            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.ogg", t = 17 / 35},
+            {p = 100, s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.ogg", t = 22 / 35}
         },
     },
     ["draw"] = {
@@ -340,21 +340,21 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {p = 100, s = "weapons/longbow/wpn_dmr_reload_magpull_fr14_2ch_v1_01.wav", t = 14 / 30},
-            {p = 100, s = "weapons/longbow/wpn_dmr_reload_maggrab_fr26_2ch_v1_01.wav", t = 26 / 30},
-            {p = 100, s = "weapons/longbow/wpn_dmr_reload_maginsert_fr40_2ch_v1_01.wav", t = 40 / 30},
-            {p = 100, s = "weapons/longbow/wpn_dmr_reload_handrest_fr53_2ch_v1_01.wav", t = 53 / 30}
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_magpull_fr14_2ch_v1_01.ogg", t = 14 / 30},
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_maggrab_fr26_2ch_v1_01.ogg", t = 26 / 30},
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_maginsert_fr40_2ch_v1_01.ogg", t = 40 / 30},
+            {p = 100, s = "weapons/longbow/wpn_dmr_reload_handrest_fr53_2ch_v1_01.ogg", t = 53 / 30}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-            {s = "weapons/longbow/wpn_dmr_emptyreload_magpull_fr8_2ch_v1_01.wav", t = 8 / 30},
-            {s = "weapons/longbow/wpn_dmr_emptyreload_maggrab_fr14_2ch_v1_02.wav", t = 14 / 30},
-            {s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.wav", t = 39 / 30},
-            {s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.wav", t = 73 / 30},
-            {s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.wav", t = 80 / 30}
+            {s = "weapons/longbow/wpn_dmr_emptyreload_magpull_fr8_2ch_v1_01.ogg", t = 8 / 30},
+            {s = "weapons/longbow/wpn_dmr_emptyreload_maggrab_fr14_2ch_v1_02.ogg", t = 14 / 30},
+            {s = "weapons/longbow/wpn_dmr_emptyreload_maginsert_fr39_2ch_v1_02.ogg", t = 39 / 30},
+            {s = "weapons/longbow/wpn_dmr_emptyreload_boltback_fr73_2ch_v1_01.ogg", t = 73 / 30},
+            {s = "weapons/longbow/wpn_dmr_emptyreload_boltforward_fr80_2ch_v1_01.ogg", t = 80 / 30}
     },
 },
 }

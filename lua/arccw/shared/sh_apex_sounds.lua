@@ -415,9 +415,9 @@ sound.Add( {
     level = 140,
     pitch = {95, 105},
     sound = {
-        "^weapons/wingman/fire_1.wav",
-        "^weapons/wingman/fire_2.wav",
-        "^weapons/wingman/fire_3.wav",
+        "^weapons/wingman/fire_1.ogg",
+        "^weapons/wingman/fire_2.ogg",
+        "^weapons/wingman/fire_3.ogg",
     }
 } )
 
@@ -428,9 +428,9 @@ sound.Add( {
     level = 140,
     pitch = {95, 105},
     sound = {
-        "^weapons/wingman/fire_skull_1.wav",
-        "^weapons/wingman/fire_skull_2.wav",
-        "^weapons/wingman/fire_skull_3.wav",
+        "^weapons/wingman/fire_skull_1.ogg",
+        "^weapons/wingman/fire_skull_2.ogg",
+        "^weapons/wingman/fire_skull_3.ogg",
     }
 } )
 
@@ -495,12 +495,11 @@ sound.Add( {
     level = 140,
     pitch = {95, 105},
     sound = {
-        "^weapons/Longbow/fire_1.wav",
-        "^weapons/Longbow/fire_2.wav",
-        "^weapons/Longbow/fire_3.wav",
+        "^weapons/Longbow/fire_1.ogg",
+        "^weapons/Longbow/fire_2.ogg",
+        "^weapons/Longbow/fire_3.ogg",
     }
 } )
-util.PrecacheSound("ArcCW_APEX.Longbow.Fire")
 
 sound.Add( {
     name = "ArcCW_APEX.Longbow.Fire_Skull",
@@ -509,12 +508,11 @@ sound.Add( {
     level = 140,
     pitch = {95, 105},
     sound = {
-        "^weapons/Longbow/fire_skull_1.wav",
-        "^weapons/Longbow/fire_skull_2.wav",
-        "^weapons/Longbow/fire_skull_3.wav",
+        "^weapons/Longbow/fire_skull_1.ogg",
+        "^weapons/Longbow/fire_skull_2.ogg",
+        "^weapons/Longbow/fire_skull_3.ogg",
     }
 } )
-util.PrecacheSound("ArcCW_APEX.Longbow.Fire_Skull")
 
 sound.Add( {
     name = "ArcCW_APEX.Peacekeeper.CloudyTail",

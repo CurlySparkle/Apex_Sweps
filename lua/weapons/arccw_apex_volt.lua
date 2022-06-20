@@ -256,6 +256,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         Mult = 1,
+		MinProgress = 0.45,
     },
     ["holster"] = {
         Source = "holster",

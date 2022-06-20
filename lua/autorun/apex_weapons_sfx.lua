@@ -80,7 +80,7 @@ local soundData = {
     volume      = 0.1,
     soundlevel  = 100,
     pitch       = {95, 105},
-    sound       = genOrderedTbl("weapons/wingman/Mech_Wingman_ADS_In_v1_2ch_%i.wav", 6)
+    sound       = genOrderedTbl("weapons/wingman/Mech_Wingman_ADS_In_v1_2ch_%i.ogg", 6)
 }
 sound.Add(soundData)
 

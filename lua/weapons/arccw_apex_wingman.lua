@@ -238,7 +238,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_FirstPullout_V1_2ch.wav", t = 0 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_FirstPullout_V1_2ch.ogg", t = 0 / 30},
     },
     },
     ["draw"] = {
@@ -284,17 +284,17 @@ SWEP.Animations = {
     ["exit_inspect"] = {
         Source = "inspect_out",
         SoundTable = {
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.wav", t = 0 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.ogg", t = 0 / 30},
     },
     },
     ["idle_inspect"] = {
         Source = "inspect",
         SoundTable = {
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part1_Fr01_V1_2ch_01.wav", t = 1 / 30},
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part2_Fr27_V1_2ch_01.wav", t = 27 / 30},
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part3_Fr79_V1_2ch_01.wav", t = 79 / 30},
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part4_Fr132_V1_2ch_01.wav", t = 132 / 30},
-            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.wav", t = 160 / 30}
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part1_Fr01_V1_2ch_01.ogg", t = 1 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part2_Fr27_V1_2ch_01.ogg", t = 27 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part3_Fr79_V1_2ch_01.ogg", t = 79 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_Part4_Fr132_V1_2ch_01.ogg", t = 132 / 30},
+            {p = 100, s = "weapons/wingman/Weapon_Wingman_Inspect_End_Fr160_V1_2ch_01.ogg", t = 160 / 30}
     },
     },
     ["reload"] = {
@@ -307,11 +307,11 @@ SWEP.Animations = {
         MinProgress = 60 / 40,
         Mult = 0.7,
         SoundTable = {
-            {p = 100, s = "weapons/wingman/wpn_wingman_reload_open_fr7_2ch_v1_01.wav", t = 7 / 40},
-            {p = 100, s = "weapons/wingman/wpn_wingman_reload_eject_fr21_2ch_v1_01.wav", t = 21 / 40},
-            {p = 100, s = "weapons/wingman/wpn_wingman_reload_insertmag_fr47_2ch_v1_01.wav", t = 47 / 40},
-            {p = 100, s = "weapons/wingman/wpn_wingman_reload_close_fr60_2ch_v1_01.wav", t = 60 / 40},
-            {p = 100, s = "weapons/wingman/wpn_wingman_reload_handgrab_fr66_2ch_v1_01.wav", t = 66 / 40}
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_open_fr7_2ch_v1_01.ogg", t = 7 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_eject_fr21_2ch_v1_01.ogg", t = 21 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_insertmag_fr47_2ch_v1_01.ogg", t = 47 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_close_fr60_2ch_v1_01.ogg", t = 60 / 40},
+            {p = 100, s = "weapons/wingman/wpn_wingman_reload_handgrab_fr66_2ch_v1_01.ogg", t = 66 / 40}
     },
     },
 }
