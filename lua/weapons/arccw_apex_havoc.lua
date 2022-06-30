@@ -115,7 +115,7 @@ SWEP.Tracer = "arccw_apex_tracer_energy_rifle" -- override tracer (hitscan) effe
 SWEP.TracerCol = Color(25, 125, 255)
 SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
-SWEP.PhysTracerProfile = 6
+SWEP.PhysTracerProfile = "apex_bullet_energy"
 
 SWEP.MuzzleEffect = "tfa_apex_energy_muzzle_havoc"
 SWEP.MuzzleFlashColor = Color(39, 90, 255)
