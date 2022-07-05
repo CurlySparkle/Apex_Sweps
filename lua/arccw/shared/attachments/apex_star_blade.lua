@@ -10,6 +10,8 @@ att.Desc_Cons = {
 att.Slot = {"apex_star"}
 att.ActivateElements = {"skin_2"}
 
+att.EntityCategory = "ArcCW - Apex Legends (Gren.)"
+
 att.Override_ShootEntity = "arccw_apex_thr_star_blade"
 att.Mult_ThrowTime = 0.75
 att.Mult_PullPinTime = 0.6

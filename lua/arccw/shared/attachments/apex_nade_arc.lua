@@ -10,6 +10,8 @@ att.Desc_Cons = {
 att.Slot = {"apex_nade"}
 att.ActivateElements = {"skin_3"}
 
+att.EntityCategory = "ArcCW - Apex Legends (Gren.)"
+
 att.Override_ShootEntity = "arccw_apex_thr_frag_arc"
 att.Override_CookPrimFire = true
 att.Override_CookAltFire = true

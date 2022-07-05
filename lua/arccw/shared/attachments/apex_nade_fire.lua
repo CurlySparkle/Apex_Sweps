@@ -11,5 +11,7 @@ att.Desc_Cons = {
 att.Slot = {"apex_nade"}
 att.ActivateElements = {"skin_2"}
 
+att.EntityCategory = "ArcCW - Apex Legends (Gren.)"
+
 att.Override_ShootEntity = "arccw_apex_thr_frag_fire"
 att.Override_FuseTime = 1.5

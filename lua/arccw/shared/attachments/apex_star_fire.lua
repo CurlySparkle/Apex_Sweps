@@ -10,4 +10,6 @@ att.Desc_Cons = {
 att.Slot = {"apex_star"}
 att.ActivateElements = {"skin_1"}
 
+att.EntityCategory = "ArcCW - Apex Legends (Gren.)"
+
 att.Override_ShootEntity = "arccw_apex_thr_star_fire"

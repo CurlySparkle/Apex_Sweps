@@ -49,6 +49,9 @@ att.HolosightPiece = "models/weapons/attachments/sight_4_hsp.mdl"
 att.Colorable = false
 -- att.HolosightColor = Color(255, 0, 0)
 
+att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+att.EntityIcon = "entities/attach_icons/apex_1-2x.png"
+
 att.ModelScale = Vector(1, 1, 1)
 att.ModelOffset = Vector(0, 0, 0)
 
