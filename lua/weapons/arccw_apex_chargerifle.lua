@@ -54,6 +54,7 @@ SWEP.Penetration = 10
 SWEP.PhysBulletMuzzleVelocity = 30000 * ArcCW.HUToM
 SWEP.AlwaysPhysBullet = false
 SWEP.NeverPhysBullet = true
+SWEP.DamageType = DMG_AIRBOAT
 
 SWEP.Apex_Balance = {
     [1] = {
@@ -89,11 +90,11 @@ SWEP.MaxRecoilBlowback = 1
 
 -- SWEP.PhysBulletMuzzleVelocity = 500
 
-SWEP.Recoil = 1.25
+SWEP.Recoil = 1
 SWEP.RecoilSide = 0.5
 SWEP.RecoilRise = 0.5
 SWEP.RecoilPunch = 2.5
-SWEP.VisualRecoilMult = 3
+SWEP.VisualRecoilMult = 5
 SWEP.RecoilVMShake = 1
 
 SWEP.Delay = 60 / 60

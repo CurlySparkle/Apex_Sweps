@@ -550,20 +550,20 @@ local function hp(wep, data, mul)
     if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() <= 0 and (engine.ActiveGamemode() ~= "terrortown" or not data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
         data.damage = data.damage * mul
     end
-	
-	if IsValid(data.tr.Entity) and (data.tr.Entity:IsNPC() or data.tr.Entity:IsNextBot()) and data.tr.Entity:Health() <= 100 then
+
+    if IsValid(data.tr.Entity) and (data.tr.Entity:IsNPC() or data.tr.Entity:IsNextBot()) and data.tr.Entity:Health() <= 100 then
         data.damage = data.damage * mul
-    end	
+    end
 end
 
 local function disr(wep, data, mul)
     if IsValid(data.tr.Entity) and data.tr.Entity:IsPlayer() and data.tr.Entity:Armor() > 0 and (engine.ActiveGamemode() ~= "terrortown" or data.tr.Entity:HasEquipmentItem(EQUIP_ARMOR)) then
         data.damage = data.damage * mul
     end
-	
-	if IsValid(data.tr.Entity) and (data.tr.Entity:IsNPC() or data.tr.Entity:IsNextBot()) and data.tr.Entity:Health() > 100 then
+
+    if IsValid(data.tr.Entity) and (data.tr.Entity:IsNPC() or data.tr.Entity:IsNextBot()) and data.tr.Entity:Health() > 100 then
         data.damage = data.damage * mul
-    end	
+    end
 end
 
 local chargeoffset = {
@@ -1053,7 +1053,7 @@ local hopups = {
         weight = 0.25,
         variants = {
             -- 30-30 Repeater
-			[1] = {
+            [1] = {
                 Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern, but cannot charge up damage.",
                 Override_Firemodes = {
                     {
@@ -1075,32 +1075,32 @@ local hopups = {
                             [7] = Angle(-2.8, 0.0, 0),
                         },
                         Override_NoRandSpread = true,
-						Hook_GetShootSound = function(wep, fsound)
-							if wep:GetCurrentFiremode().Mode == 1 and wep:GetNWState() != ArcCW.STATE_SIGHTS and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Fire" end
-						end,
-						Hook_ShotgunSpreadOffset = function(wep, data)
-							if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then 
-								data.ang = Angle(0,0,0) 
-								return data
-							else
-								local d = 1
-								local ref = {
-									[1] = Angle(0, 1.2, 0),
-									[2] = Angle(0, -1.2, 0),
-									[3] = Angle(-0.3, 0, 0),
-									[4] = Angle(-1.2, 0, 0),
-									[5] = Angle(-1.6, 0.5, 0),
-									[6] = Angle(-1.6, -0.5, 0),
-									[7] = Angle(-2.8, 0.0, 0),
-								}
-								local p = ref[data.num]
-								data.ang = Angle(p.p * -d, p.y * d, 0)
-								return data
-							end
-						end,
+                        Hook_GetShootSound = function(wep, fsound)
+                            if wep:GetCurrentFiremode().Mode == 1 and wep:GetNWState() != ArcCW.STATE_SIGHTS and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Fire" end
+                        end,
+                        Hook_ShotgunSpreadOffset = function(wep, data)
+                            if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+                                data.ang = Angle(0,0,0)
+                                return data
+                            else
+                                local d = 1
+                                local ref = {
+                                    [1] = Angle(0, 1.2, 0),
+                                    [2] = Angle(0, -1.2, 0),
+                                    [3] = Angle(-0.3, 0, 0),
+                                    [4] = Angle(-1.2, 0, 0),
+                                    [5] = Angle(-1.6, 0.5, 0),
+                                    [6] = Angle(-1.6, -0.5, 0),
+                                    [7] = Angle(-2.8, 0.0, 0),
+                                }
+                                local p = ref[data.num]
+                                data.ang = Angle(p.p * -d, p.y * d, 0)
+                                return data
+                            end
+                        end,
                     }
                 }
-			},
+            },
             -- RE-45 Auto
             [2] = {
                 Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
@@ -1191,21 +1191,22 @@ local hopups = {
                         Mode = -9,
                         RunawayBurst = true,
                         PostBurstDelay = 1,
-                        Override_HullSize = 1,
+                        Override_HullSize = 2,
                         Mult_ChargeDamage = 8,
                         Override_ChargeDelay = 0.08,
                         Mult_Damage = 0.5,
                         Mult_DamageMin = 0.5,
                         Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, 1, 0),
-                            [2] = Angle(0, -1, 0),
-                            [3] = Angle(1, 0, 0),
-                            [4] = Angle(-1, 0, 0),
+                            [1] = Angle(0, 2, 0),
+                            [2] = Angle(0, -2, 0),
+                            [3] = Angle(0, 1, 0),
+                            [4] = Angle(0, -1, 0),
                             [5] = Angle(0, 0, 0),
                         },
                         Hook_ShotgunSpreadOffset = function(wep, data)
+                            local offset = wep:GetBuff_Override("Override_ShotgunSpreadPattern")
                             local s = Lerp(wep:GetBurstCount() / 8, 1.5, 0)
-                            data.ang = Angle(chargeoffset[data.num][1] * s, chargeoffset[data.num][2] * s, 0)
+                            data.ang = Angle(offset[data.num][1] * s, offset[data.num][2] * s, 0)
                             return data
                         end,
                         O_Hook_Override_Num = function(wep, data)
@@ -1252,26 +1253,26 @@ local hopups = {
                         },
                         Override_PhysTracerProfile = "apex_bocek2",
                         Override_NoRandSpread = true,
-						Hook_ShotgunSpreadOffset = function(wep, data)
-							if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then 
-								data.ang = Angle(0,0,0) 
-								return data
-							else
-								local d = 1
-								local ref = {
-									[1] = Angle(0, 1.2, 0),
-									[2] = Angle(0, -1.2, 0),
-									[3] = Angle(-0.3, 0, 0),
-									[4] = Angle(-1.2, 0, 0),
-									[5] = Angle(-1.6, 0.5, 0),
-									[6] = Angle(-1.6, -0.5, 0),
-									[7] = Angle(-2.8, 0.0, 0),
-								}
-								local p = ref[data.num]
-								data.ang = Angle(p.p * -d, p.y * d, 0)
-								return data
-							end
-						end,
+                        Hook_ShotgunSpreadOffset = function(wep, data)
+                            if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+                                data.ang = Angle(0,0,0)
+                                return data
+                            else
+                                local d = 1
+                                local ref = {
+                                    [1] = Angle(0, 1.2, 0),
+                                    [2] = Angle(0, -1.2, 0),
+                                    [3] = Angle(-0.3, 0, 0),
+                                    [4] = Angle(-1.2, 0, 0),
+                                    [5] = Angle(-1.6, 0.5, 0),
+                                    [6] = Angle(-1.6, -0.5, 0),
+                                    [7] = Angle(-2.8, 0.0, 0),
+                                }
+                                local p = ref[data.num]
+                                data.ang = Angle(p.p * -d, p.y * d, 0)
+                                return data
+                            end
+                        end,
                     }
                 }
             },
