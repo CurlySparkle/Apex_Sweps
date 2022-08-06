@@ -71,6 +71,15 @@ SWEP.Apex_Balance = {
     [2] = {
         Damage = 7, -- marginally less damage than TTT shotgun (tighter spread)
         DamageMin = 7,
+        BodyDamageMults = {
+            [HITGROUP_HEAD] = 1.5, -- able to headshot kill
+            [HITGROUP_CHEST] = 1,
+            [HITGROUP_STOMACH] = 1,
+            [HITGROUP_LEFTARM] = 1,
+            [HITGROUP_RIGHTARM] = 1,
+            [HITGROUP_LEFTLEG] = 0.8,
+            [HITGROUP_RIGHTLEG] = 0.8,
+        }
     },
 }
 
