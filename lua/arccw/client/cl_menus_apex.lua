@@ -17,6 +17,7 @@ local ApexPanel_SV = {
     --{ type = "b", text = "#arccw.cvar.apex_ttt_exclusive", var = "arccw_apex_ttt_exclusive", sv = true },
     --{ type = "c", text = "#arccw.cvar.apex_ttt_exclusive.desc" },
 
+    { type = "b", text = "#arccw.cvar.apex_ttt_gas_halo", var = "arccw_apex_ttt_gas_halo", sv = true },
 }
 local ApexPanel_CL = {
     { type = "h", text = "#arccw.clientcfg" },

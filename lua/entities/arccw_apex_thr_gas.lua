@@ -38,7 +38,7 @@ sound.Add( {
     name = "ArcCW_APEX.Nox.Gas_Loop_close",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
-    level = 100,
+    level = 75,
     pitch = {95, 105},
     sound = {
         "^weapons/grenades/nox/GasGrenade_GasCloud_Loop_Close_Short_2ch_v1_01.wav",
@@ -71,8 +71,9 @@ function ENT:Initialize()
 
         self.SpawnTime = CurTime()
         self.FireTime = self.BalFireTime[ArcCW.Apex.GetBalanceMode()]
-        table.insert(ArcCW.Apex.NoxSources, self)
     end
+
+    table.insert(ArcCW.Apex.NoxSources, self)
 end
 
 function ENT:PhysicsCollide(data, physobj)

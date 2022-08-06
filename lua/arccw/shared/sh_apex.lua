@@ -4,6 +4,7 @@ CreateConVar("arccw_apex_freecharge", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Make
 
 CreateConVar("arccw_apex_ttt_ammo", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Replace ArcCW TTT ammo replacements with Apex ammo types.", 0, 1)
 --CreateConVar("arccw_apex_ttt_exclusive", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Only allow Apex weapons to spawn in TTT (and not other ArcCW weapons).", 0, 1)
+CreateConVar("arccw_apex_ttt_gas_halo", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "When TTT balance mode is on, being in Nox gas gives all other players threat vision of you.", 0, 1)
 
 ArcCW.Apex = {}
 
@@ -65,6 +66,12 @@ ArcCW.Apex.AmmoConvert = {
     apex_shotgun = "buckshot",
     apex_sniper = "SniperPenetratedRound",
     apex_arrow = "XBowBolt",
+}
+
+ArcCW.Apex.NoxBalance = {
+    [0] = {5, 0.5},
+    [1] = {5, 1},
+    [2] = {2, 0.5},
 }
 
 ArcCW.Apex.BalanceMode = nil
@@ -149,9 +156,9 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         sprite_tail = false,
         model = "models/weapons/w_bullet.mdl",
         model_nodraw = true,
-		size = 0.6,
-		size_min = 0.3,
-		tail_length = 0.050,
+        size = 0.6,
+        size_min = 0.3,
+        tail_length = 0.050,
         particle = "tfa_apex_lstar_projectile_lite"
     })
 
@@ -255,6 +262,7 @@ hook.Add("SetupMove", "ArcCW_Apex_ArcSlow", function(ply, mv, ucmd)
     end
 end)
 
+ArcCW.Apex.NoxSources = {}
 
 if SERVER then
     util.AddNetworkString("arccw_apex_autoreload")
@@ -313,7 +321,6 @@ if SERVER then
         end
     end)
 
-    ArcCW.Apex.NoxSources = {}
     ArcCW.Apex.NoxDamaged = {}
     local nextnox = 0
     hook.Add("Think", "ArcCW_Apex_Nox", function()
@@ -333,13 +340,15 @@ if SERVER then
             end
         end
 
+        local start, add = unpack(ArcCW.Apex.NoxBalance[ArcCW.Apex.GetBalanceMode()])
+
         local hit = {}
-        for v, ent in pairs(damaged) do
-            ArcCW.Apex.NoxDamaged[v:EntIndex()] = (ArcCW.Apex.NoxDamaged[v:EntIndex()] or 0) + 0.5
+        for v, ent  in pairs(damaged) do
+            ArcCW.Apex.NoxDamaged[v:EntIndex()] = (ArcCW.Apex.NoxDamaged[v:EntIndex()] or 0) + add
             local o = ent:GetOwner()
             local dmg = DamageInfo()
             dmg:SetDamageType(DMG_NERVEGAS)
-            dmg:SetDamage(math.floor(4.5 + ArcCW.Apex.NoxDamaged[v:EntIndex()]))
+            dmg:SetDamage(math.floor(start - add + ArcCW.Apex.NoxDamaged[v:EntIndex()]))
             dmg:SetInflictor(IsValid(ent) and ent or o)
             dmg:SetAttacker(o)
             dmg:SetDamageForce(Vector(0, 0, 0))
@@ -529,5 +538,33 @@ else
         if (LocalPlayer().ArcSlowEnd or 0) > CurTime() and ele ~= "CHudWeaponSelection" then
             return false
         end
+    end)
+
+    local playerlast = {}
+    hook.Add("PreDrawHalos", "ArcCW_Apex_NoxGlow", function()
+        if ArcCW.Apex.GetBalanceMode() ~= 2 or not GetConVar("arccw_apex_ttt_gas_halo"):GetBool() or table.Count(ArcCW.Apex.NoxSources) == 0 then return end
+        local players = {}
+        for k, v in pairs(player.GetAll()) do
+            for i, ent in pairs(ArcCW.Apex.NoxSources) do
+                if not IsValid(ent) then
+                    table.remove(ArcCW.Apex.NoxSources, i)
+                elseif ent:GetArmed() and ent:GetPos():Distance(v:GetPos()) <= (ent.GasRadius and ent.GasRadius[ArcCW.Apex.GetBalanceMode()] or 512) then
+                    table.insert(players, v)
+                    playerlast[v] = CurTime()
+                    continue
+                end
+            end
+        end
+        halo.Add(players, Color(255, 125, 0, 200), 1, 1, 2, false, true)
+
+        for k, v in pairs(playerlast) do
+            if v == CurTime() then continue end
+            if IsValid(k) and v + 1 > CurTime() then
+                halo.Add({k}, Color(255, 125, 0, 200 * (v + 1 - CurTime())), 1, 1, 2, false, true)
+            else
+                playerlast[k] = nil
+            end
+        end
+
     end)
 end
