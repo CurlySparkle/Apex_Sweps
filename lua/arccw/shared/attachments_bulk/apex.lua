@@ -234,6 +234,90 @@ for i = 1, 3 do
 end
 
 -------------------------------------------------
+-- Laser
+-------------------------------------------------
+
+local laser = {
+    [1] = {
+        [1] = {Mult_HipDispersion = 0.8}
+    },
+    [2] = {
+        [1] = {Mult_HipDispersion = 0.6}
+    },
+    [3] = {
+        [1] = {Mult_HipDispersion = 0.4}
+    },
+}
+
+for i = 1, 3 do
+    local att = {}
+
+    att.PrintName = "Laser Sight - Level " .. i
+    local icon = "entities/attach_icons/apex_laser_" .. i .. ".png"
+    att.Icon = Material(icon, "mips smooth")
+    att.Description = "apex.barrel.laser." .. i
+    att.Desc_Cons = {"con.beam"}
+    att.AutoStats = true
+    att.Slot = "apex_muzzle_smgs"
+    att.SortOrder = 2
+    att.Model = "models/weapons/attachments/laser_normal.mdl"
+    att.RandomWeight = rand_weight[i]
+    att.ToggleStats = {
+        {
+            PrintName = "Laser",
+            AutoStatName = "On",
+            Laser = true,
+            LaserColor = Color(255, 0, 0),
+        },
+        {
+            PrintName = "Off",
+            Laser = false,
+        }
+    }
+    att.ToggleStats = table.Merge(att.ToggleStats, laser[i])
+    att.EntityIcon = icon
+    att.EntityCategory = "ArcCW - Apex Legends (Att.)"
+
+    att.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"
+
+    ArcCW.LoadAttachmentType(att, "apex_muzz_laser_" .. i)
+
+    local att2 = {}
+
+    att2.PrintName = "Laser Sight - Level " .. i
+    att2.Icon = Material(icon, "mips smooth")
+    att2.Description = "apex.barrel.laser." .. i
+    att2.Desc_Cons = {"con.beam"}
+    att2.AutoStats = true
+    att2.Slot = "apex_muzzle_pistols"
+    att2.SortOrder = 2
+    att2.Model = "models/weapons/attachments/laser_mini.mdl"
+    att2.RandomWeight = rand_weight[i]
+    att2.ToggleStats = {
+        {
+            PrintName = "Laser",
+            AutoStatName = "On",
+            Laser = true,
+            LaserColor = Color(255, 0, 0),
+        },
+        {
+            PrintName = "Off",
+            Laser = false,
+        }
+    }
+    table.Merge(att2.ToggleStats, laser[i])
+    att2.InvAtt = "apex_muzz_laser_" .. i
+
+    att2.AttachSound = "items/player_pickup_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att2.DetachSound = "items/player_drop_loot_attachment_2ch_v1_" .. i .. ".wav"
+    att2.ToggleSound = "items/UI_Menu_Survival_Accept_2ch_v14_01.wav"
+
+    ArcCW.LoadAttachmentType(att2, "apex_muzz_laser_" .. i .. "_pistol")
+end
+
+-------------------------------------------------
 -- Stocks
 -------------------------------------------------
 
