@@ -188,7 +188,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Muzzle",
-        Slot = {"apex_muzzle"},
+        Slot = {"apex_muzzle", "apex_muzzle_pistols"},
         Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
@@ -251,8 +251,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw_first",
         SoundTable = {
-            {p = 100, s = "weapons/p2020/smartpistol_reload_slideback_st_01.wav", t = 15 / 30},
-            {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.wav", t = 22 / 30}
+            {p = 100, s = "weapons/p2020/smartpistol_reload_slideback_st_01.ogg", t = 10 / 30},
+            {p = 100, s = "weapons/p2020/smartpistol_reload_slideforward_st_01.ogg", t = 18 / 30}
         },
     },
     ["draw"] = {

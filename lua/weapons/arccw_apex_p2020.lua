@@ -197,6 +197,17 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(-1.045, -0.682, 1.999)
     },
     {
+        PrintName = "Muzzle",
+        Slot = {"apex_muzzle_pistols"},
+        Bone = "def_c_suppressor",
+        Offset = {
+            vpos = Vector(0, 0, 0),
+            vang = Angle(90, 0, -90),
+            wpos = Vector(20, 1.0, -5.8),
+            wang = Angle(-10, 0, 180)
+        },
+    },
+    {
         PrintName = "Magazine",
         Slot = {"apex_mag_light1"}
     },

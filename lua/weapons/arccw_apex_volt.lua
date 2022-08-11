@@ -179,7 +179,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Muzzle",
-        Slot = "apex_muzzle",
+        Slot = {"apex_muzzle", "apex_muzzle_smgs"},
         Bone = "def_c_suppressor",
         Offset = {
             vpos = Vector(0, 0, 0),
