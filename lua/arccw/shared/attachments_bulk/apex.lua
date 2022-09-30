@@ -1150,127 +1150,163 @@ local hopups = {
         variants = {
             -- 30-30 Repeater
             [1] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern, but cannot charge up damage.",
-                Override_Firemodes = {
-                    {
-                        PrintName = "fcg.apex.shatter",
-                        ApexCharge = true,
-                        Mode = 1,
-                        Override_Num = 7,
-                        Override_Damage = 49,
-                        Override_DamageMin = 49,
-                        Override_AccuracyMOA = 0,
-                        Mult_HipDispersion = 0.5,
-                        Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, 1.2, 0),
-                            [2] = Angle(0, -1.2, 0),
-                            [3] = Angle(-0.3, 0, 0),
-                            [4] = Angle(-1.2, 0, 0),
-                            [5] = Angle(-1.6, 0.5, 0),
-                            [6] = Angle(-1.6, -0.5, 0),
-                            [7] = Angle(-2.8, 0.0, 0),
-                        },
-                        Override_NoRandSpread = true,
-                        Hook_GetShootSound = function(wep, fsound)
-                            if wep:GetCurrentFiremode().Mode == 1 and wep:GetNWState() != ArcCW.STATE_SIGHTS and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" elseif fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Fire" end
-                        end,
-                        Hook_ShotgunSpreadOffset = function(wep, data)
-                            if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
-                                data.ang = Angle(0,0,0)
-                                return data
-                            else
-                                local d = 1
-                                local ref = {
-                                    [1] = Angle(0, 1.2, 0),
-                                    [2] = Angle(0, -1.2, 0),
-                                    [3] = Angle(-0.3, 0, 0),
-                                    [4] = Angle(-1.2, 0, 0),
-                                    [5] = Angle(-1.6, 0.5, 0),
-                                    [6] = Angle(-1.6, -0.5, 0),
-                                    [7] = Angle(-2.8, 0.0, 0),
-                                }
-                                local p = ref[data.num]
-                                data.ang = Angle(p.p * -d, p.y * d, 0)
-                                return data
-                            end
-                        end,
-                    }
-                }
+                Description = "Weapon shoots multiple pellets while not aiming down sights.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern.",
+                Override_AccuracyMOA = 0,
+                Mult_HipDispersion = 0.5,
+                Override_ShotgunSpreadPattern = {
+                    [1] = Angle(-1.5, 1.2, 0),
+                    [2] = Angle(-1.5, -1.2, 0),
+                    [3] = Angle(-1.2, 0, 0),
+                    [4] = Angle(-0.3, 0, 0),
+                    [5] = Angle(0.1, 0.5, 0),
+                    [6] = Angle(0.1, -0.5, 0),
+                    [7] = Angle(1.3, 0.0, 0),
+                },
+                Hook_GetShootSound = function(wep, fsound)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS and fsound == wep.ShootSound then return "ArcCW_APEX.3030Repeater.Shatter_Fire" end
+                end,
+                Hook_ShotgunSpreadOffset = function(wep, data)
+                    if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+                        data.ang = Angle(0,0,0)
+                        return data
+                    else
+                        local d = 1
+                        local p = wep:GetBuff_Override("Override_ShotgunSpreadPattern")[data.num]
+                        data.ang = Angle(p.p * d, p.y * d, 0)
+                        return data
+                    end
+                end,
+                O_Hook_Override_Num = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = 7}
+                    end
+                end,
+                O_Hook_Override_NoRandSpread = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = true}
+                    end
+                end,
+                M_Hook_Mult_Damage = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 1.1667
+                    end
+                end,
+                M_Hook_Mult_DamageMin = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 1.1667
+                    end
+                end,
             },
             -- RE-45 Auto
             [2] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
-                Override_Firemodes = {
-                    {
-                        Mode = 2,
-                    },
-                    {
-                        PrintName = "fcg.apex.shatter",
-                        Mode = 2,
-                        Override_Num = 4,
-                        Override_Damage = 32,
-                        Override_DamageMin = 32,
-                        Override_AccuracyMOA = 0,
-                        Override_AmmoPerShot = 2,
-                        Mult_RPM = 0.75,
-                        Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, 1.2, 0),
-                            [2] = Angle(0, -1.2, 0),
-                            [3] = Angle(-0.9, 0, 0),
-                            [4] = Angle(0.9, 0, 0),
-                        },
-                        Override_NoRandSpread = true,
-                    }
-                }
+                Description = "Weapon shoots multiple pellets while not aiming down sights.\n\nThe RE-45 fires 4 pellets in a diamond pattern.\nFire rate is reduced, and each shot costs 2 rounds.",
+                Override_ShotgunSpreadPattern = {
+                    [1] = Angle(0, 1.2, 0),
+                    [2] = Angle(0, -1.2, 0),
+                    [3] = Angle(-0.9, 0, 0),
+                    [4] = Angle(0.9, 0, 0),
+                },
+                O_Hook_Override_NoRandSpread = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = true}
+                    end
+                end,
+                O_Hook_Override_AmmoPerShot = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = 2}
+                    end
+                end,
+                O_Hook_Override_Num = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = 4}
+                    end
+                end,
+                M_Hook_Mult_Damage = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * (ArcCW.Apex.GetBalanceMode() == 2 and 2.4 or 3)
+                    end
+                end,
+                M_Hook_Mult_DamageMin = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * (ArcCW.Apex.GetBalanceMode() == 2 and 2.4 or 3)
+                    end
+                end,
+                M_Hook_Mult_RPM = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 0.641
+                    end
+                end,
+                Hook_ShotgunSpreadOffset = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        local offset = wep:GetBuff_Override("Override_ShotgunSpreadPattern")
+                        local s = Lerp(wep:GetBurstCount() / 8, 1.5, 0)
+                        data.ang = Angle(offset[data.num][1] * s, offset[data.num][2] * s, 0)
+                        return data
+                    end
+                end,
             },
             -- Kraber 50cal Sniper
             [3] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Kraber fires 25 pellets in a ring and cross pattern.\nAim dispersion from moving or hipfiring is significantly reduced.",
-                Override_Firemodes = {
-                    {
-                        Mode = 1,
-                        PrintName = "fcg.bolt"
-                    },
-                    {
-                        PrintName = "fcg.apex.shatter",
-                        Mode = 1,
-                        Override_Num = 25,
-                        Override_Damage = 175,
-                        Override_DamageMin = 175,
-                        Override_AccuracyMOA = 0,
-                        Mult_HipDispersion = 0.25,
-                        Mult_MoveDispersion = 0.25,
-                        Mult_JumpDispersion = 0.25,
-                        Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, 0.65, 0),
-                            [2] = Angle(0, 1.25, 0),
-                            [3] = Angle(0.65, 0, 0),
-                            [4] = Angle(1.25, 0, 0),
-                            [5] = Angle(-0.65, 0, 0),
-                            [6] = Angle(-1.25, 0, 0),
-                            [7] = Angle(0, -0.65, 0),
-                            [8] = Angle(0, -1.25, 0),
-                            [9] = Angle(0, 0, 0),
-                            [10] = Angle(0.0, 2.0, 0),
-                            [11] = Angle(0.765, 1.848, 0),
-                            [12] = Angle(1.414, 1.414, 0),
-                            [13] = Angle(1.848, 0.765, 0),
-                            [14] = Angle(2.0, 0.0, 0),
-                            [15] = Angle(1.848, -0.765, 0),
-                            [16] = Angle(1.414, -1.414, 0),
-                            [17] = Angle(0.765, -1.848, 0),
-                            [18] = Angle(0.0, -2.0, 0),
-                            [19] = Angle(-0.765, -1.848, 0),
-                            [20] = Angle(-1.414, -1.414, 0),
-                            [21] = Angle(-1.848, -0.765, 0),
-                            [22] = Angle(-2.0, -0.0, 0),
-                            [23] = Angle(-1.848, 0.765, 0),
-                            [24] = Angle(-1.414, 1.414, 0),
-                            [25] = Angle(-0.765, 1.848, 0),
-                        },
-                        Override_NoRandSpread = true,
-                    }
-                }
+                Description = "Weapon shoots multiple pellets while not aiming down sights.\n\nThe Kraber fires 25 pellets in a ring and cross pattern.",
+                Mult_HipDispersion = 0.1,
+                Override_ShotgunSpreadPattern = {
+                    [1] = Angle(0, 0.65, 0),
+                    [2] = Angle(0, 1.25, 0),
+                    [3] = Angle(0.65, 0, 0),
+                    [4] = Angle(1.25, 0, 0),
+                    [5] = Angle(-0.65, 0, 0),
+                    [6] = Angle(-1.25, 0, 0),
+                    [7] = Angle(0, -0.65, 0),
+                    [8] = Angle(0, -1.25, 0),
+                    [9] = Angle(0, 0, 0),
+                    [10] = Angle(0.0, 2.0, 0),
+                    [11] = Angle(0.765, 1.848, 0),
+                    [12] = Angle(1.414, 1.414, 0),
+                    [13] = Angle(1.848, 0.765, 0),
+                    [14] = Angle(2.0, 0.0, 0),
+                    [15] = Angle(1.848, -0.765, 0),
+                    [16] = Angle(1.414, -1.414, 0),
+                    [17] = Angle(0.765, -1.848, 0),
+                    [18] = Angle(0.0, -2.0, 0),
+                    [19] = Angle(-0.765, -1.848, 0),
+                    [20] = Angle(-1.414, -1.414, 0),
+                    [21] = Angle(-1.848, -0.765, 0),
+                    [22] = Angle(-2.0, -0.0, 0),
+                    [23] = Angle(-1.848, 0.765, 0),
+                    [24] = Angle(-1.414, 1.414, 0),
+                    [25] = Angle(-0.765, 1.848, 0),
+                },
+                Hook_ShotgunSpreadOffset = function(wep, data)
+                    if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+                        data.ang = Angle(0,0,0)
+                        return data
+                    else
+                        local d = 1
+                        local p = wep:GetBuff_Override("Override_ShotgunSpreadPattern")[data.num]
+                        data.ang = Angle(p.p * d, p.y * d, 0)
+                        return data
+                    end
+                end,
+                O_Hook_Override_Num = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = 25}
+                    end
+                end,
+                O_Hook_Override_NoRandSpread = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = true}
+                    end
+                end,
+                M_Hook_Mult_Damage = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 1.3793
+                    end
+                end,
+                M_Hook_Mult_DamageMin = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 1.3793
+                    end
+                end,
             },
             -- Charge Rifle
             [4] = {
@@ -1288,7 +1324,7 @@ local hopups = {
                         RunawayBurst = true,
                         PostBurstDelay = 1,
                         Override_HullSize = 2,
-                        Mult_ChargeDamage = 8,
+                        Mult_ChargeDamage = 12,
                         Override_ChargeDelay = 0.08,
                         Mult_Damage = 0.5,
                         Mult_DamageMin = 0.5,
@@ -1329,114 +1365,51 @@ local hopups = {
             -- Bocek
             [5] = {
                 Description = "Weapon shoots multiple pellets while not aiming down sights.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern.\nArrow velocity is decreased, and the arrow cannot be recovered after splitting.",
-                Override_Firemodes = {
-                    {
-                        PrintName = "fcg.apex.shatter",
-                        Mode = 1,
-                        Mult_Damage = 1.75,
-                        Mult_DamageMin = 1.75,
-                        Mult_HipDispersion = 0.5,
-                        Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, -1.2, 0),
-                            [2] = Angle(0, 1.2, 0),
-                            [3] = Angle(0.3, 0, 0),
-                            [4] = Angle(1.2, 0, 0),
-                            [5] = Angle(1.6, 0.5, 0),
-                            [6] = Angle(1.6, -0.5, 0),
-                            [7] = Angle(2.8, 0.0, 0),
-                        },
-                        Override_PhysTracerProfile = "apex_bocek2",
-                        Override_NoRandSpread = true,
-                        Hook_ShotgunSpreadOffset = function(wep, data)
-                            if wep:GetNWState() == ArcCW.STATE_SIGHTS then
-                                data.ang = Angle(0,0,0)
-                                return data
-                            else
-                                local d = 1
-                                local ref = {
-                                    [1] = Angle(0, 1.2, 0),
-                                    [2] = Angle(0, -1.2, 0),
-                                    [3] = Angle(-0.3, 0, 0),
-                                    [4] = Angle(-1.2, 0, 0),
-                                    [5] = Angle(-1.6, 0.5, 0),
-                                    [6] = Angle(-1.6, -0.5, 0),
-                                    [7] = Angle(-2.8, 0.0, 0),
-                                }
-                                local p = ref[data.num]
-                                data.ang = Angle(p.p * -d, p.y * d, 0)
-                                return data
-                            end
-                        end,
-                        O_Hook_Override_Num = function(wep,data)
-                            if wep:GetNWState() != ArcCW.STATE_SIGHTS then
-                                return {current = 7}
-                            end
-                        end,
-                        O_Hook_Override_NoRandSpread = function(wep,data)
-                            if wep:GetNWState() != ArcCW.STATE_SIGHTS then
-                                return {current = true}
-                            end
-                        end,
-                    }
-                }
+                Mult_HipDispersion = 0.5,
+                Override_ShotgunSpreadPattern = {
+                    [1] = Angle(-1.5, 1.2, 0),
+                    [2] = Angle(-1.5, -1.2, 0),
+                    [3] = Angle(-1.2, 0, 0),
+                    [4] = Angle(-0.3, 0, 0),
+                    [5] = Angle(0.1, 0.5, 0),
+                    [6] = Angle(0.1, -0.5, 0),
+                    [7] = Angle(1.3, 0.0, 0),
+                },
+                Override_PhysTracerProfile = "apex_bocek2",
+                Override_NoRandSpread = true,
+                Hook_ShotgunSpreadOffset = function(wep, data)
+                    if wep:GetNWState() == ArcCW.STATE_SIGHTS then
+                        data.ang = Angle(0,0,0)
+                        return data
+                    else
+                        local d = 1
+                        local p = wep:GetBuff_Override("Override_ShotgunSpreadPattern")[data.num]
+                        data.ang = Angle(p.p * d, p.y * d, 0)
+                        return data
+                    end
+                end,
+                O_Hook_Override_Num = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = 7}
+                    end
+                end,
+                O_Hook_Override_NoRandSpread = function(wep,data)
+                    if wep:GetNWState() ~= ArcCW.STATE_SIGHTS then
+                        return {current = true}
+                    end
+                end,
+                M_Hook_Mult_Damage = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 1.75
+                    end
+                end,
+                M_Hook_Mult_DamageMin = function(wep, data)
+                    if wep:GetState() ~= ArcCW.STATE_SIGHTS then
+                        data.mult = data.mult * 1.75
+                    end
+                end,
             },
         },
-        variants_ttt = {
-            [1] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe 30-30 Repeater fires 7 pellets in a triangular pattern, but cannot charge up damage.",
-                Override_Firemodes = {
-                    {
-                        Mode = 1,
-                        ApexCharge = true,
-                        PrintName = "fcg.lever"
-                    },
-                    {
-                        PrintName = "fcg.apex.shatter",
-                        Mode = 1,
-                        Override_Num = 7,
-                        Override_Damage = 35,
-                        Override_DamageMin = 35,
-                        Override_AccuracyMOA = 35,
-                        Mult_HipDispersion = 0.5,
-                        Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, 1.2, 0),
-                            [2] = Angle(0, -1.2, 0),
-                            [3] = Angle(-0.3, 0, 0),
-                            [4] = Angle(-1.2, 0, 0),
-                            [5] = Angle(-1.6, 0.5, 0),
-                            [6] = Angle(-1.6, -0.5, 0),
-                            [7] = Angle(-2.8, 0.0, 0),
-                        },
-                        Override_NoRandSpread = true,
-                    }
-                }
-            },
-            [2] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe RE-45 fires in a diamond pattern, consuming 2 rounds per shot at a lower rate of fire.",
-                Override_Firemodes = {
-                    {
-                        Mode = 2,
-                    },
-                    {
-                        PrintName = "fcg.apex.shatter",
-                        Mode = 2,
-                        Override_Num = 4,
-                        Override_Damage = 24,
-                        Override_DamageMin = 24,
-                        Override_AccuracyMOA = 40,
-                        Override_AmmoPerShot = 2,
-                        Mult_RPM = 0.75,
-                        Override_ShotgunSpreadPattern = {
-                            [1] = Angle(0, 1.2, 0),
-                            [2] = Angle(0, -1.2, 0),
-                            [3] = Angle(-0.9, 0, 0),
-                            [4] = Angle(0.9, 0, 0),
-                        },
-                        Override_NoRandSpread = true,
-                    }
-                }
-            },
-        }
     },
     ["skull"] = {
         name = "Skullpiercer Rifling",

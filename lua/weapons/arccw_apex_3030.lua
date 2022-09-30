@@ -255,8 +255,8 @@ SWEP.Attachments = {
             wpos = Vector(7, 1.2, -4),
             wang = Angle(-10, 0, 180)
         },
-		VMScale = Vector(0.3, 0.3, 0.3),
-		WMScale = Vector(0.3, 0.3, 0.3),
+        VMScale = Vector(0.3, 0.3, 0.3),
+        WMScale = Vector(0.3, 0.3, 0.3),
     },
     {
         PrintName = "Stats",
@@ -269,8 +269,8 @@ SWEP.Attachments = {
             wpos = Vector(18.5, 1.5, -6.7),
             wang = Angle(-10, 0, 215)
         },
-		VMScale = Vector(1, 1, 1),
-		WMScale = Vector(1, 1, 1),
+        VMScale = Vector(1, 1, 1),
+        WMScale = Vector(1, 1, 1),
     },
 }
 
@@ -293,8 +293,8 @@ SWEP.Animations = {
         RareSourceChance = 50,
         SoundTable = {
             {s = "weapons/3030/weapon_3030_equip.ogg", t = 0 / 30},
-			{s = "weapons/3030/weapon_3030_firstdraw_lever_out.ogg", t = 5 / 30},
-			{s = "weapons/3030/weapon_3030_firstdraw_lever_in.ogg", t = 13 / 30},
+            {s = "weapons/3030/weapon_3030_firstdraw_lever_out.ogg", t = 5 / 30},
+            {s = "weapons/3030/weapon_3030_firstdraw_lever_in.ogg", t = 13 / 30},
         },
     },
     ["draw"] = {
@@ -411,7 +411,7 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 0,
         SoundTable = {
-		    {s = "weapons/3030/weapon_3030_reload_begin.ogg", t = 0 / 30},
+            {s = "weapons/3030/weapon_3030_reload_begin.ogg", t = 0 / 30},
             {s = "ArcCW_APEX.3030Repeater.Reload_Insert", t = 8 / 30},
         },
     },
@@ -475,22 +475,6 @@ SWEP.M_Hook_Mult_Damage = function(wep, data)
 end
 SWEP.M_Hook_Mult_DamageMin = function(wep, data)
     data.mult = data.mult * Lerp(wep:GetNWFloat("ApexCharge", 0), 1, 1.36)
-end
-
-SWEP.O_Hook_Override_Num = function(wep,data)
-    if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		return {current = 1}
-    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
-		return {current = 7}
-    end
-end
-
-SWEP.O_Hook_Override_NoRandSpread = function(wep,data)
-	if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		return {current  = false}
-    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
-		return {current = true}
-	end
 end
 
 SWEP.Hook_GetShootSound = function(wep, sound)
