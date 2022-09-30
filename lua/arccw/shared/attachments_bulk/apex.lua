@@ -937,7 +937,7 @@ local hopups = {
             },
             -- Bocek
             [8] = {
-                Description = "Weapons gains an alternative firemode.\n\nThe Bocek receives an automatic firemode that lets loose arrows rapidly.\nFire rate decreases as more arrows are fired.",
+                Description = "Weapons gains an alternative firemode.\n\nThe Bocek receives an automatic firemode that lets loose arrows rapidly.\nFire rate decreases as more arrows are fired.\n\nNot quite able to blot out the sun, but gets close.",
                 Override_Firemodes = {
                     {
                         Mode = 1,
@@ -947,16 +947,15 @@ local hopups = {
                         Mode = 2,
                         Override_TriggerDelay = false,
                         Override_TriggerCharge = false,
-                        Override_AccuracyMOA = 20,
+                        Override_AccuracyMOA = 15,
                         Mult_Recoil = 0.25,
-                        Mult_HipDispersion = 0.75,
                         Override_Jamming = true,
                         Override_HeatLockout = false,
                         Hook_ModifyRPM = function(wep, delay)
-                            return delay / Lerp(wep:GetHeat() / wep:GetMaxHeat(), 3.5, 1)
+                            return delay / Lerp((wep:GetHeat() / wep:GetMaxHeat()) ^ 2, 3.5, 1)
                         end,
                     }
-                }
+                },
             },
         },
         variants_ttt = {
@@ -1316,15 +1315,13 @@ local hopups = {
             },
             -- Bocek
             [5] = {
-                Description = "Weapon gains an additional firemode that shoots multiple pellets.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern.\nArrow velocity is decreased, and the arrow cannot be recovered after splitting.",
+                Description = "Weapon shoots multiple pellets while not aiming down sights.\n\nThe Bocek Compound Bow fires 7 pellets in an inverse triangular pattern.\nArrow velocity is decreased, and the arrow cannot be recovered after splitting.",
                 Override_Firemodes = {
                     {
                         PrintName = "fcg.apex.shatter",
                         Mode = 1,
-                        Override_Num = 7,
                         Mult_Damage = 1.75,
                         Mult_DamageMin = 1.75,
-                        Override_AccuracyMOA = 0,
                         Mult_HipDispersion = 0.5,
                         Override_ShotgunSpreadPattern = {
                             [1] = Angle(0, -1.2, 0),
@@ -1338,7 +1335,7 @@ local hopups = {
                         Override_PhysTracerProfile = "apex_bocek2",
                         Override_NoRandSpread = true,
                         Hook_ShotgunSpreadOffset = function(wep, data)
-                            if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
+                            if wep:GetNWState() == ArcCW.STATE_SIGHTS then
                                 data.ang = Angle(0,0,0)
                                 return data
                             else
@@ -1355,6 +1352,16 @@ local hopups = {
                                 local p = ref[data.num]
                                 data.ang = Angle(p.p * -d, p.y * d, 0)
                                 return data
+                            end
+                        end,
+                        O_Hook_Override_Num = function(wep,data)
+                            if wep:GetNWState() != ArcCW.STATE_SIGHTS then
+                                return {current = 7}
+                            end
+                        end,
+                        O_Hook_Override_NoRandSpread = function(wep,data)
+                            if wep:GetNWState() != ArcCW.STATE_SIGHTS then
+                                return {current = true}
                             end
                         end,
                     }
@@ -1474,7 +1481,7 @@ local hopups = {
         variants_ttt = {
             -- Wingman
             [1] = {
-                Description = "Weapon will create a small explosion on a headshot.",
+                Description = "Weapon creates a small explosion on a headshot.",
                 Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull",
                 Hook_BulletHit = function(wep, data)
                     if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
@@ -1486,7 +1493,7 @@ local hopups = {
             },
             -- Longbow DMR
             [2] = {
-                Description = "Weapon will create an explosion on a headshot.",
+                Description = "Weapon creates an explosion on a headshot.",
                 Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
                 Hook_BulletHit = function(wep, data)
                     if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
@@ -1498,7 +1505,7 @@ local hopups = {
             },
             -- Sentinel
             [3] = {
-                Description = "Weapon will create a massive explosion on a headshot.",
+                Description = "Weapon creates a massive explosion on a headshot.",
                 Hook_BulletHit = function(wep, data)
                     if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
                     local effectdata = EffectData()
@@ -1618,6 +1625,7 @@ local hopups = {
         weight = 0.25,
         variants = {
             [1] = {
+                Desc_Neutrals = {"apex.kinetic"},
                 Hook_Think = function(wep)
                     local owner = wep:GetOwner()
                     local charge = wep:GetNWFloat("ApexCharge", 0)
@@ -1635,6 +1643,7 @@ local hopups = {
                 end,
             },
             [2] = {
+                Desc_Neutrals = {"apex.kinetic"},
                 Hook_Think = function(wep)
                     local owner = wep:GetOwner()
                     local charge = wep:GetNWFloat("ApexCharge", 0)

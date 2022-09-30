@@ -222,10 +222,10 @@ SWEP.Attachments = {
             wpos = Vector(16, -1.8, -9.5),
             wang = Angle(-10, 0, 225)
         },
-		VMScale = Vector(0.3, 0.3, 0.3),
-		WMScale = Vector(0.3, 0.3, 0.3),
+        VMScale = Vector(0.3, 0.3, 0.3),
+        WMScale = Vector(0.3, 0.3, 0.3),
     },
-	{
+    {
         PrintName = "Stats",
         Slot = {"killcounter2","killcounter"},
         FreeSlot = true,
@@ -236,8 +236,8 @@ SWEP.Attachments = {
             wpos = Vector(11.5, 1.35, -1.5),
             wang = Angle(-10, 0, 225)
         },
-		VMScale = Vector(1, 1, 1),
-		WMScale = Vector(1, 1, 1),
+        VMScale = Vector(1, 1, 1),
+        WMScale = Vector(1, 1, 1),
     },
 }
 
@@ -448,8 +448,8 @@ SWEP.CanFireUnderwater = true
 SWEP.TTTWeaponType = "weapon_zm_rifle"
 SWEP.TTTWeight = 50
 
-SWEP.HeatCapacity = 15
-SWEP.HeatDissipation = 15
+SWEP.HeatCapacity = 20
+SWEP.HeatDissipation = 20
 SWEP.HeatDelayTime = 0.5
 SWEP.TriggerDelay = true
 SWEP.TriggerCharge = true
@@ -556,20 +556,4 @@ SWEP.Hook_BulletHit = function(wep, data)
             end
         end
     end
-end
-
-SWEP.O_Hook_Override_Num = function(wep,data)
-    if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		return {current = 1}
-    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
-		return {current = 7}
-    end
-end
-
-SWEP.O_Hook_Override_NoRandSpread = function(wep,data)
-	if wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() == ArcCW.STATE_SIGHTS then
-		return {current  = false}
-    elseif wep:GetCurrentFiremode().PrintName == "fcg.apex.shatter" and wep:GetNWState() != ArcCW.STATE_SIGHTS then
-		return {current = true}
-	end
 end

@@ -53,6 +53,8 @@ L["apex.barrel.laser.1"] = "An attachment that reduces hipfire spread by a littl
 L["apex.barrel.laser.2"] = "An attachment that reduces hipfire spread noticeably."
 L["apex.barrel.laser.3"] = "An attachment that reduces hipfire spread significantly."
 
+L["apex.kinetic"] = "Sliding requires other addons (Any fast ground movement while crouching counts)"
+
 L["apex.hint.loader"] = "Boosted Loader Ready"
 L["apex.hint.req_thermite"] = "Need Thermite Grenade"
 L["apex.hint.req_arcstar"] = "Need Arc Star"
