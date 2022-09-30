@@ -92,6 +92,10 @@ SWEP.JumpDispersion = 300
 
 SWEP.SightedSpeedMult = 0.75
 
+SWEP.HeatCapacity = 4
+SWEP.HeatDissipation = 12
+SWEP.HeatDelayTime = 0.15
+
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
@@ -197,6 +201,10 @@ SWEP.Attachments = {
         Slot = {"apex_mag_energy1"}
     },
     {
+        PrintName = "Hop-up",
+        Slot = {"apex_hopup_turbo4"}
+    },
+    {
         PrintName = "Skin",
         Slot = {"skin_apex"},
         DefaultAttName = "Default",
@@ -213,8 +221,8 @@ SWEP.Attachments = {
             wpos = Vector(2, 1.6, -4.6),
             wang = Angle(-10, 0, 180)
         },
-		VMScale = Vector(0.3, 0.3, 0.3),
-		WMScale = Vector(0.3, 0.3, 0.3),
+        VMScale = Vector(0.3, 0.3, 0.3),
+        WMScale = Vector(0.3, 0.3, 0.3),
     },
     {
         PrintName = "Stats",
@@ -227,8 +235,8 @@ SWEP.Attachments = {
             wpos = Vector(17, 2.2, -4.5),
             wang = Angle(-10, 0, 180)
         },
-		VMScale = Vector(1, 1, 1),
-		WMScale = Vector(1, 1, 1),
+        VMScale = Vector(1, 1, 1),
+        WMScale = Vector(1, 1, 1),
     },
 }
 
@@ -256,7 +264,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         Mult = 1,
-		MinProgress = 0.45,
+        MinProgress = 0.45,
     },
     ["holster"] = {
         Source = "holster",

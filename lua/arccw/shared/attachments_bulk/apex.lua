@@ -732,13 +732,13 @@ local hopups = {
         variants = {
             -- HAVOC
             [1] = {
-                Description = "Improves performance of wind-up weapons.\n\nThe HAVOC can shoot immediately without charging up.",
+                Description = "Improves performance of Energy weapons.\n\nThe HAVOC can shoot immediately without charging up.",
                 Override_TriggerDelay = false,
                 ActivateElements = {"charged_skin"},
             },
             -- Devotion
             [2] = {
-                Description = "Improves performance of wind-up weapons.\n\nThe Devotion reaches its maximum firerate much faster.",
+                Description = "Improves performance of Energy weapons.\n\nThe Devotion reaches its maximum firerate much faster.",
                 Hook_ModifyRPM = function(wep, delay)
                     return delay / Lerp(wep:GetBurstCount() / 10, 1, 3)
                 end,
@@ -746,7 +746,7 @@ local hopups = {
             },
             -- Charge Rifle
             [3] = {
-                Description = "Improves performance of wind-up weapons.\n\nThe Charge Rifle fires its charge quicker, but does less damage.\nFurthermore, it will use 1 Energy Ammo per shot instead of 2 Sniper Ammo.",
+                Description = "Improves performance of Energy weapons.\n\nThe Charge Rifle fires its charge quicker, but does less damage.\nFurthermore, it will use 1 Energy Ammo per shot instead of 2 Sniper Ammo.",
                 Mult_Damage = 30 / 45,
                 Mult_DamageMin = 20 / 30,
                 Override_Firemodes = {
@@ -780,6 +780,19 @@ local hopups = {
                     end
                 end,
                 Hook_SelectFireAnimation_Priority = 100
+            },
+            -- Volt
+            [4] = {
+                Description = "Improves performance of Energy weapons.\n\nThe Volt SMG gains a fast and inaccurate initial burst fire.\nOverall fire rate is slightly reduced.",
+                Mult_RPM = 0.8,
+                Override_Jamming = true,
+                Override_HeatLockout = false,
+                Hook_ModifyRPM = function(wep, delay)
+                    return delay / Lerp(wep:GetHeat() / wep:GetMaxHeat(), 2, 1)
+                end,
+                A_Hook_Add_AccuracyMOA = function(wep, data)
+                    data.add = data.add + Lerp((wep:GetHeat() / wep:GetMaxHeat()) ^ 2, 13, 0)
+                end,
             },
         }
     },
