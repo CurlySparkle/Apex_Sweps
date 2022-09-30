@@ -18,7 +18,12 @@ if CLIENT then
                             KnowYourPlace = string.sub(string.reverse(OurWeapon:Ammo1()), Place, Place)
                         end
 
+                        if (OurWeapon:GetClass() == "arccw_apex_eva" and OurWeapon:GetMaxClip1() == 16) or (OurWeapon:GetClass() == "arccw_apex_mozambique" and OurWeapon:GetMaxClip1() == 12) then
+                            KnowYourPlace = string.sub(string.reverse(math.ceil(OurWeapon:Clip1() / 2)), Place, Place)
+                        end
+
                         local digits = string.format( tonumber(KnowYourPlace) or 0 )
+
 
                         texture = self.Prefix .. digits
                     end
@@ -121,36 +126,36 @@ if CLIENT then
                 end
         end
     } )
-	matproxy.Add({
-		name = "ArcCW_AMMO_CAR",
-		init = function(self, mat, values)
-			self.ResultTo = values.resultvar
-			self.Prefix = values.prefixstring
-		end,
-		bind = function(self, mat, ent)
-			local texture 
+    matproxy.Add({
+        name = "ArcCW_AMMO_CAR",
+        init = function(self, mat, values)
+            self.ResultTo = values.resultvar
+            self.Prefix = values.prefixstring
+        end,
+        bind = function(self, mat, ent)
+            local texture
             if LocalPlayer():GetActiveWeapon() then
                 local OurWeapon = LocalPlayer():GetActiveWeapon()
                 if OurWeapon.ArcCW then
-					local fullmag = OurWeapon:GetMaxClip1()
-					local curmag = OurWeapon:Clip1()
-					
-					if (curmag / fullmag) >= 0.60 then
-						texture = self.Prefix .. 3
-					elseif (curmag / fullmag) < 0.60 and (curmag / fullmag) > 0.30 then
-						texture = self.Prefix .. 2
-					elseif (curmag / fullmag) <= 0.30 and (curmag / fullmag) > 0.0 then
-						texture = self.Prefix .. 1
-					else
-						texture = self.Prefix .. 0
-					end
-					
-					if texture then
-						mat:SetTexture( "$basetexture", texture )
-					end
-				end
-			end
-		end
-	})
+                    local fullmag = OurWeapon:GetMaxClip1()
+                    local curmag = OurWeapon:Clip1()
+
+                    if (curmag / fullmag) >= 0.60 then
+                        texture = self.Prefix .. 3
+                    elseif (curmag / fullmag) < 0.60 and (curmag / fullmag) > 0.30 then
+                        texture = self.Prefix .. 2
+                    elseif (curmag / fullmag) <= 0.30 and (curmag / fullmag) > 0.0 then
+                        texture = self.Prefix .. 1
+                    else
+                        texture = self.Prefix .. 0
+                    end
+
+                    if texture then
+                        mat:SetTexture( "$basetexture", texture )
+                    end
+                end
+            end
+        end
+    })
 end
 

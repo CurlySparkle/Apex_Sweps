@@ -1428,26 +1428,8 @@ local hopups = {
                     [HITGROUP_LEFTLEG] = 0.9,
                     [HITGROUP_RIGHTLEG] = 0.9,
                 },
---                Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull", -- This doesn't seem to work, its been tested and so far it still plays the normal fire sound - Twilight
                 Hook_GetShootSound = function(wep, fsound)
-                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Wingman.Fire" end
-                end
-            },
-            -- Longbow DMR
-            [2] = {
-                Description = "Weapon does increased damage on a headshot.",
-                Override_BodyDamageMults = {
-                    [HITGROUP_HEAD] = 2.5,
-                    [HITGROUP_CHEST] = 1,
-                    [HITGROUP_STOMACH] = 1,
-                    [HITGROUP_LEFTARM] = 1,
-                    [HITGROUP_RIGHTARM] = 1,
-                    [HITGROUP_LEFTLEG] = 0.8,
-                    [HITGROUP_RIGHTLEG] = 0.8,
-                },
---                Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
-                Hook_GetShootSound = function(wep, fsound)
-                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire_Skull" elseif fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire" end
+                    if wep:GetCurrentFiremode().Mode == 1 and fsound == wep.ShootSound then return "ArcCW_APEX.Longbow.Fire_Skull" end
                 end
             },
             -- Sentinel
@@ -1596,13 +1578,19 @@ local hopups = {
     ["dshell"] = {
         name = "Dual Shell",
         icon = "entities/attach_icons/hopup_apex_dualshell.png",
-        desc = "Weapon loads two rounds per insertion when reloading.",
         weight = 0.25,
         variants = {
             [1] = {
+                Description = "Weapon loads two rounds per insertion when reloading.",
                 Override_InsertAmount = 2,
+            },
+            [2] = {
+                Description = "Weapon gains double magazine capacity, but reduced damage.",
+                Mult_ClipSize = 2,
+                Mult_Damage = 0.714,
+                Mult_DamageMin = 0.714
             }
-        }
+        },
     },
     ["kinetic"] = {
         name = "Kinetic Feeder",

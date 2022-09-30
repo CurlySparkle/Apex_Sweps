@@ -234,7 +234,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_qdraw", "apex_hopup_hp3", "apex_hopup_dtap3"}
+        Slot = {"apex_hopup_qdraw", "apex_hopup_hp3", "apex_hopup_dtap3", "apex_hopup_dshell2"}
     },
     {
         PrintName = "Skin",
@@ -253,8 +253,8 @@ SWEP.Attachments = {
             wpos = Vector(5, 2.5, -4),
             wang = Angle(-10, 0, 180)
         },
-		VMScale = Vector(0.3, 0.3, 0.3),
-		WMScale = Vector(0.3, 0.3, 0.3),
+        VMScale = Vector(0.3, 0.3, 0.3),
+        WMScale = Vector(0.3, 0.3, 0.3),
     },
     {
         PrintName = "Stats",
@@ -267,8 +267,8 @@ SWEP.Attachments = {
             wpos = Vector(6, 2.7, -4),
             wang = Angle(-10, 0, 205)
         },
-		VMScale = Vector(1, 1, 1),
-		WMScale = Vector(1, 1, 1),
+        VMScale = Vector(1, 1, 1),
+        WMScale = Vector(1, 1, 1),
     },
 }
 

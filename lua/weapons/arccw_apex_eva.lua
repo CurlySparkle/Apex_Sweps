@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "EVA-8 Auto"
 SWEP.Trivia_Class = "Shotgun"
-SWEP.Trivia_Desc = "Pump-action/automatic shotgun developed for the IMC, although variants used in the Apex Games like this one are automatic only.\n\nFires 9 pellets in the shape of an '8'."
+SWEP.Trivia_Desc = "Pump-action/automatic shotgun developed for the IMC. In a cruel twist of irony, most early models of this weapon fired 9 pellets instead of its namesake.\n\nFires 8 pellets in the shape of an '8'."
 SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 3
@@ -32,8 +32,8 @@ SWEP.ViewModelFOV = 70
 
 SWEP.DefaultBodygroups = "00000"
 
-SWEP.Damage = 6
-SWEP.DamageMin = 6
+SWEP.Damage = 7
+SWEP.DamageMin = 7
 SWEP.RangeMin = 0
 SWEP.Range = 50
 
@@ -54,8 +54,8 @@ SWEP.Apex_Balance = {
         DamageMin = 13,
     },
     [2] = {
-        Damage = 5,
-        DamageMin = 5,
+        Damage = 6,
+        DamageMin = 6,
     },
 }
 
@@ -63,23 +63,23 @@ SWEP.Penetration = 2
 SWEP.DamageType = DMG_BUCKSHOT
 SWEP.PhysBulletMuzzleVelocity = 16000 * ArcCW.HUToM
 
-SWEP.Num = 9
+SWEP.Num = 8
 -- Shaped like an '8'
 SWEP.ShotgunSpreadPattern = {
-    [1] = Angle(0, 0, 0),
-    [2] = Angle(0, 1, 0),
-    [3] = Angle(0, -1, 0),
-    [4] = Angle(2.1, 0, 0),
-    [5] = Angle(-2.1, 0, 0),
-    [6] = Angle(1.4, 1.2, 0),
-    [7] = Angle(-1.4, 1.2, 0),
-    [8] = Angle(1.4, -1.2, 0),
-    [9] = Angle(-1.4, -1.2, 0),
+    -- [1] = Angle(0, 0, 0),
+    [1] = Angle(0, 0.6, 0),
+    [2] = Angle(0, -0.6, 0),
+    [3] = Angle(2.1, 0, 0),
+    [4] = Angle(-2.1, 0, 0),
+    [5] = Angle(1.4, 1.2, 0),
+    [6] = Angle(-1.4, 1.2, 0),
+    [7] = Angle(1.4, -1.2, 0),
+    [8] = Angle(-1.4, -1.2, 0),
 }
 SWEP.NoRandSpread = true
 
 SWEP.Tracer = "arccw_apex_tracer_shotgun"
-SWEP.TracerNum = 8 -- tracer every X
+SWEP.TracerNum = 1 -- tracer every X
 SWEP.TracerWidth = 2
 
 SWEP.ChamberSize = 0
@@ -95,7 +95,7 @@ SWEP.RecoilVMShake = 2
 SWEP.ShotgunReload = false
 SWEP.ManualAction = false
 
-SWEP.Delay = 60 / 120
+SWEP.Delay = 60 / 138
 SWEP.RunawayBurst = false
 SWEP.Firemodes = {
     {
@@ -224,7 +224,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Hop-up",
-        Slot = {"apex_hopup_dtap2"},
+        Slot = {"apex_hopup_dtap2", "apex_hopup_dshell2"},
     },
     {
         PrintName = "Skin",
@@ -243,10 +243,10 @@ SWEP.Attachments = {
             wpos = Vector(4, 2.2, -4.5),
             wang = Angle(-10, 0, 180)
         },
-		VMScale = Vector(0.3, 0.3, 0.3),
-		WMScale = Vector(0.3, 0.3, 0.3),
+        VMScale = Vector(0.3, 0.3, 0.3),
+        WMScale = Vector(0.3, 0.3, 0.3),
     },
-	{
+    {
         PrintName = "Stats",
         Slot = {"killcounter2","killcounter"},
         FreeSlot = true,
@@ -257,8 +257,8 @@ SWEP.Attachments = {
             wpos = Vector(22, 2.5, -6.7),
             wang = Angle(-10, 0, 180)
         },
-		VMScale = Vector(1, 1, 1),
-		WMScale = Vector(1, 1, 1),
+        VMScale = Vector(1, 1, 1),
+        WMScale = Vector(1, 1, 1),
     },
 }
 
