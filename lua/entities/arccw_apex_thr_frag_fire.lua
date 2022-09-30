@@ -58,7 +58,7 @@ function ENT:Think()
 
     local hit = false
     for k, v in pairs(ents.FindInSphere(self:GetPos(), 700)) do
-        if ArcCW.Apex.ValidNadeTarget(ent) and self:CheckLOS(v, o) then
+        if ArcCW.Apex.ValidNadeTarget(v) and self:CheckLOS(v, o) then
             local distSqr = v:GetPos():DistToSqr(self:GetPos())
             local dmgd = false
             if distSqr <= (self.Booms == 1 and 90000 or 40000) then
@@ -76,8 +76,8 @@ function ENT:Think()
                 end
 
                 local dmg = DamageInfo()
-                dmg:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN + (self.Booms == 1 and DMG_BLAST or 0))
-                dmg:SetDamage(f * (self.Booms == 1 and 60 or 25))
+                dmg:SetDamageType((ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN) + (self.Booms == 1 and DMG_BLAST or 0))
+                dmg:SetDamage(f * (self.Booms == 1 and 75 or 25))
                 dmg:SetInflictor(self)
                 dmg:SetAttacker(self:GetOwner())
                 dmg:SetDamagePosition(self:GetPos())
@@ -92,16 +92,18 @@ function ENT:Think()
                         net.WriteBool(false)
                     net.Send(self:GetOwner())
                 end
-                table.insert(targets, v)
+                if v ~= self:GetOwner() then
+                    table.insert(targets, v)
+                end
             end
         end
     end
 
     if #targets > 0 and math.random() <= 0.5 then
         local tgt = targets[math.random(1, #targets)]
-        self:GetPhysicsObject():SetVelocityInstantaneous((tgt:WorldSpaceCenter() - self:GetPos()) * math.Rand(0.8, 1.25) + VectorRand() * 250)
+        self:GetPhysicsObject():SetVelocityInstantaneous((tgt:WorldSpaceCenter() - self:GetPos()) * math.Rand(0.8, 1.2) + Vector(0, 0, math.Rand(32, 128)))
     else
-        self:GetPhysicsObject():SetVelocityInstantaneous(ArcCW.Apex.CircleRandVector(256) * 3 + Vector(0, 0, math.Rand(0, 128)))
+        self:GetPhysicsObject():SetVelocityInstantaneous(ArcCW.Apex.CircleRandVector(512) + Vector(0, 0, math.Rand(32, 128)))
     end
 
     self.Booms = self.Booms - 1
@@ -114,7 +116,7 @@ function ENT:Detonate(hitentity)
 
     self.Armed = true
     self.ArcCW_Killable = false
-    self.Booms = math.random(6, 10)
+    self.Booms = math.random(8, 12)
 
     --self:SetMoveType(MOVETYPE_NONE)
     --self:SetNoDraw(true)
@@ -126,6 +128,8 @@ function ENT:Detonate(hitentity)
         self:Remove()
         return
     end
+
+    self:Ignite(90)
 end
 
 -- Old feature: Ring of flames
