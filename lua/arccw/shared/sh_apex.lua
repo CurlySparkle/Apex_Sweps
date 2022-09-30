@@ -281,7 +281,7 @@ if SERVER then
     local function hitsound(ply, hg, dmg)
         local attacker = dmg:GetAttacker()
         local inflictor = (attacker == dmg:GetInflictor() and attacker:IsPlayer()) and attacker:GetActiveWeapon() or dmg:GetInflictor()
-        if not IsValid(attacker) or not attacker:IsPlayer() or not weapons.IsBasedOn(inflictor:GetClass(), "arccw_apex_base") or (attacker.ApexLastHit or 0) == CurTime() then return end
+        if not IsValid(attacker) or not IsValid(inflictor) or not attacker:IsPlayer() or not weapons.IsBasedOn(inflictor:GetClass(), "arccw_apex_base") or (attacker.ApexLastHit or 0) == CurTime() then return end
         attacker.ApexLastHit = CurTime()
 
         net.Start("arccw_apex_hit")
