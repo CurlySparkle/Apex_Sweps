@@ -40,7 +40,7 @@ function ENT:Think()
     if self.Booms == 1 then
         local explode = ents.Create( "info_particle_system" )
         explode:SetKeyValue( "effect_name", "tfa_apex_frag_explode" )
-        explode:SetOwner( self.Owner )
+        explode:SetOwner( self:GetOwner() )
         explode:SetPos( self:GetPos() )
         explode:Spawn()
         explode:Activate()

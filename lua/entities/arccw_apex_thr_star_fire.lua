@@ -55,7 +55,7 @@ function ENT:Think()
     local hit = false
     for v, i in pairs(damaged) do
         self.Damaged[v:EntIndex()] = (self.Damaged[v:EntIndex()] or 0) + 1
-        local o = self.Owner
+        local o = self:GetOwner()
         local dmg = DamageInfo()
         dmg:SetDamageType(ArcCW.Apex.FireDirectDamage[v:GetClass()] and DMG_DIRECT or DMG_BURN)
         dmg:SetDamage(math.min(20, 4 + self.Damaged[v:EntIndex()] * 3))

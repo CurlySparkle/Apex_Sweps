@@ -10,7 +10,7 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "EVA-8 Auto"
 SWEP.Trivia_Class = "Shotgun"
-SWEP.Trivia_Desc = "Pump-action/automatic shotgun developed for the IMC. In a cruel twist of irony, most early models of this weapon fired 9 pellets instead of its namesake.\n\nFires 8 pellets in the shape of an '8'."
+SWEP.Trivia_Desc = "Pump-action/automatic shotgun developed for the IMC. Its large drum and sustained fire capabilities makes it well suited for CQC combat.\n\nFires 8 pellets in the shape of an '8'. In a cruel twist of irony, most early models of this weapon fired 9 pellets instead of its namesake."
 SWEP.Trivia_Manufacturer = "Wonyeon Interstellar"
 
 SWEP.Slot = 3

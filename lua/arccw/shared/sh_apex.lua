@@ -209,6 +209,129 @@ hook.Add("ArcCW_InitBulletProfiles", "Apex", function()
         tail_length = 0.8,
         --particle = "tfa_apex_bullet_sent_trail"
     })
+
+    ArcCW:AddBulletProfile("apex_bullet_moz_tf2", {
+        color = Color(255, 175, 50),
+        sprite_head = false,
+        sprite_tail = false,
+
+        DrawBullet = function(bulinfo, bullet)
+
+            local a = bullet.PosStart and Lerp((bullet.PosStart - bullet.Pos):LengthSqr() / 40000, 0, 1) or 0
+            if a == 0 then return end
+
+            local emitter = ParticleEmitter(bullet.Pos)
+            if not IsValid(emitter) then return end
+
+            local vec = bullet.Vel * engine.TickInterval()
+            local count = math.ceil(vec:Length() / 12)
+
+            for i = 1, count do
+                local p = bullet.Pos - vec * (i / count)
+                local fire = emitter:Add("effects/fire_cloud" .. math.random(1, 2), p )
+                fire:SetVelocity(VectorRand() * 15)
+                fire:SetGravity(Vector(0, 0, 0))
+                fire:SetDieTime(math.Rand(0.175, 0.2))
+                fire:SetStartAlpha(a * 9)
+                fire:SetEndAlpha(0)
+                fire:SetStartSize(math.Rand(6, 10))
+                fire:SetEndSize(math.Rand(8, 12))
+                fire:SetRoll(math.Rand(-180, 180))
+                fire:SetRollDelta(math.Rand(-0.4, 0.4))
+                fire:SetColor(255, 255, 255)
+                fire:SetAirResistance(15)
+                fire:SetPos(p)
+                fire:SetLighting(false)
+                fire:SetCollide(true)
+                fire:SetBounce(0.25)
+            end
+
+            local count2 = math.ceil(math.sqrt(count) / 3 * a)
+            for j = 1, count2 do
+                local p = bullet.Pos - vec * (j / count2)
+
+                local spark = emitter:Add("effects/spark", p)
+                spark:SetVelocity(VectorRand() * 100 + vec * 0.5)
+                spark:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), -75))
+                spark:SetDieTime(math.Rand(0.15, 0.2))
+                spark:SetStartAlpha(5)
+                spark:SetEndAlpha(0)
+                spark:SetStartSize(math.Rand(3, 6))
+                spark:SetEndSize(0)
+                spark:SetRoll(math.Rand(-180, 180))
+                spark:SetRollDelta(math.Rand(-0.2, 0.2))
+                spark:SetColor(255, 175, 50)
+                spark:SetAirResistance(50)
+                spark:SetPos(p)
+                spark:SetLighting(false)
+                spark:SetCollide(true)
+                spark:SetBounce(0.8)
+            end
+
+            emitter:Finish()
+            bullet.RenderTick = (bullet.RenderTick or 0) + 1
+        end,
+        PhysBulletHit = function(bulinfo, bullet, tr)
+            if not CLIENT then return end
+
+            local emitter = ParticleEmitter(bullet.Pos)
+            if not IsValid(emitter) then return end
+
+            local vec = bullet.Vel * engine.TickInterval()
+
+            local fire = emitter:Add("effects/fire_cloud" .. math.random(1, 2), tr.HitPos + tr.HitNormal)
+            fire:SetVelocity(VectorRand() * 10 + vec * 0.5)
+            fire:SetGravity(Vector(0, 0, 15))
+            fire:SetDieTime(math.Rand(0.4, 0.8))
+            fire:SetStartAlpha(90)
+            fire:SetEndAlpha(0)
+            fire:SetStartSize(12)
+            fire:SetEndSize(36)
+            fire:SetRoll(math.Rand(-180, 180))
+            fire:SetRollDelta(math.Rand(-0.2, 0.2))
+            fire:SetColor(255, 255, 255)
+            fire:SetAirResistance(15)
+            fire:SetLighting(false)
+            fire:SetCollide(true)
+            fire:SetBounce(0.25)
+
+            for i = 1, math.random(2, 4) do
+                local ember = emitter:Add("effects/fire_embers" .. math.random(1, 3), tr.HitPos + VectorRand() * 4)
+                ember:SetVelocity(VectorRand() * 50 - tr.Normal * math.Rand(25, 100))
+                ember:SetGravity(Vector(0, 0, 100))
+                ember:SetDieTime(math.Rand(0.25, 0.5))
+                ember:SetStartAlpha(200)
+                ember:SetEndAlpha(0)
+                ember:SetStartSize(16)
+                ember:SetEndSize(48)
+                ember:SetRoll(math.Rand(-180, 180))
+                ember:SetRollDelta(math.Rand(-0.2, 0.2))
+                ember:SetColor(255, 255, 255)
+                ember:SetAirResistance(15)
+                ember:SetLighting(false)
+                ember:SetCollide(true)
+                ember:SetBounce(0.5)
+            end
+
+            local smoke = emitter:Add("particle/smokestack", tr.HitPos + tr.HitNormal)
+            smoke:SetVelocity(VectorRand() * 25)
+            smoke:SetGravity(Vector(math.Rand(-5, 5), math.Rand(-5, 5), 75))
+            smoke:SetDieTime(math.Rand(0.75, 1.5))
+            smoke:SetStartAlpha(125)
+            smoke:SetEndAlpha(0)
+            smoke:SetStartSize(16)
+            smoke:SetEndSize(40)
+            smoke:SetRoll(math.Rand(-180, 180))
+            smoke:SetRollDelta(math.Rand(-0.2, 0.2))
+            smoke:SetColor(125, 125, 125)
+            smoke:SetAirResistance(50)
+            smoke:SetLighting(false)
+            smoke:SetCollide(true)
+            smoke:SetBounce(0.8)
+
+            emitter:Finish()
+        end
+    })
 end)
 
 hook.Add("InitPostEntity", "ArcCW_Apex", function()

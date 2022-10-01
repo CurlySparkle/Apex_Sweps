@@ -1636,6 +1636,40 @@ local hopups = {
             },
         }
     },
+    ["titanfall"] = {
+        name = "Pilot's Choice",
+        icon = "entities/attach_icons/hopup_apex_titanfall.png",
+        weight = 0.1,
+        variants = {
+            [1] = {
+                Description = "Modifies the weapon to have attributes similar to its appearance in Titanfall.\n\nThe Flatline's recoil becomes entirely horizontal.",
+                Override_RecoilDirection = Angle(0, 0, 0),
+                Mult_Recoil = 2,
+                Mult_VisualRecoilMult = 0.05,
+            },
+            [2] = {
+                Description = "Modifies the weapon to have attributes similar to its appearance in Titanfall.\n\nThe Mozambique fires physical bullets with a flatter pattern, lower fire rate and lower muzzle velocity. Bullets have slightly increased damage and ignite non-players.",
+                Override_ShotgunSpreadPattern = {
+                    [1] = Angle(-0.6, 0, 0),
+                    [2] = Angle(0.4, 1, 0),
+                    [3] = Angle(0.4, -1, 0),
+                },
+                Override_PhysTracerProfile = "apex_bullet_moz_tf2",
+                Override_AlwaysPhysBullet = true,
+                Override_HullSize = 4,
+                Mult_MuzzleVelocity = 0.75,
+                Mult_Damage = 1.1111,
+                Mult_DamageMin = 1.1111,
+                Mult_RPM = 110 / 132,
+                Hook_BulletHit = function(wep, data)
+                    local ent = data.tr.Entity
+                    if IsValid(ent) and not ent:IsPlayer() then
+                        ent:Ignite(4)
+                    end
+                end,
+            },
+        },
+    }
 }
 
 for k, v in SortedPairs(hopups) do
@@ -1648,6 +1682,7 @@ for k, v in SortedPairs(hopups) do
         if v.desc then att.Description = v.desc end
         att.AutoStats = true
         att.Slot = "apex_hopup_" .. k .. (i > 1 and i or "")
+        att.SortOrder = v.weight
 
         if i > 1 then
             att.InvAtt = "apex_hopup_" .. k
