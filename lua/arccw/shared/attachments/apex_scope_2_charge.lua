@@ -46,7 +46,7 @@ att.Mult_SpeedMult = 0.9
 att.Mult_Sway = 0.1
 
 att.EntityCategory = "ArcCW - Apex Legends (Att.)"
-att.EntityIcon = "entities/attach_icons/apex_4x-8x.png"
+att.EntityIcon = "entities/attach_icons/apex_4-8x.png"
 
 att.AttachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
 att.DetachSound = "items/player_drop_loot_attachment_2ch_v1_5.wav"
