@@ -1239,7 +1239,8 @@ local hopups = {
                 Hook_ShotgunSpreadOffset = function(wep, data)
                     if wep:GetState() ~= ArcCW.STATE_SIGHTS then
                         local offset = wep:GetBuff_Override("Override_ShotgunSpreadPattern")
-                        local s = Lerp(wep:GetBurstCount() / 8, 1.5, 0)
+                        --local s = Lerp(wep:GetBurstCount() / 8, 1.5, 0)
+                        local s = 1
                         data.ang = Angle(offset[data.num][1] * s, offset[data.num][2] * s, 0)
                         return data
                     end
