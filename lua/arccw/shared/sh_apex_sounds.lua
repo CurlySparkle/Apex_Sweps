@@ -251,6 +251,45 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Skull_Fire",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 140,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/fire_skull_1.ogg",
+        "^weapons/3030/fire_skull_2.ogg",
+        "^weapons/3030/fire_skull_3.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Skull_Fire_Semi_Charged",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 140,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/fire_skull_semicharged_1.ogg",
+        "^weapons/3030/fire_skull_semicharged_2.ogg",
+        "^weapons/3030/fire_skull_semicharged_3.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "ArcCW_APEX.3030Repeater.Skull_Fire_Charged",
+    channel = CHAN_WEAPON + 6,
+    volume = 1.0,
+    level = 140,
+    pitch = {95, 105},
+    sound = {
+        "^weapons/3030/fire_skull_charged_1.ogg",
+        "^weapons/3030/fire_skull_charged_2.ogg",
+        "^weapons/3030/fire_skull_charged_3.ogg",
+    }
+} )
+
+sound.Add( {
     name = "ArcCW_APEX.3030Repeater.Reload_Insert",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
