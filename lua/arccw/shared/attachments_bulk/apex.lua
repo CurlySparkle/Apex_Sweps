@@ -1420,6 +1420,21 @@ local hopups = {
             -- Wingman
             [1] = {
                 Description = "Weapon does increased damage on a headshot.",
+				Override_ShootSound = "ArcCW_APEX.Wingman.Fire_Skull",
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 2.5,
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.9,
+                    [HITGROUP_RIGHTLEG] = 0.9,
+                },
+            },
+			-- Longbow
+            [2] = {
+                Description = "Weapon does increased damage on a headshot.",
+				Override_ShootSound = "ArcCW_APEX.Longbow.Fire_Skull",
                 Override_BodyDamageMults = {
                     [HITGROUP_HEAD] = 2.5,
                     [HITGROUP_CHEST] = 1,
@@ -1446,6 +1461,28 @@ local hopups = {
                     [HITGROUP_RIGHTLEG] = 0.9,
                 }
             },
+			-- 30-30
+			[4] = {
+				Description = "Weapon does increased damage on a headshot.",
+				Override_ShootSound = "ArcCW_APEX.3030Repeater.Fire_Skull",
+                Override_BodyDamageMults = {
+                    [HITGROUP_HEAD] = 3.5,
+                    [HITGROUP_CHEST] = 1,
+                    [HITGROUP_STOMACH] = 1,
+                    [HITGROUP_LEFTARM] = 1,
+                    [HITGROUP_RIGHTARM] = 1,
+                    [HITGROUP_LEFTLEG] = 0.9,
+                    [HITGROUP_RIGHTLEG] = 0.9,
+                },
+				Hook_GetShootSound = function(wep, fsound)
+				    local c = wep:GetNWFloat("ApexCharge", 0)
+					if c >= 1 then
+						return "ArcCW_APEX.3030Repeater.Fire_Skull_Charged"
+					elseif c > 0 then
+						return "ArcCW_APEX.3030Repeater.Fire_Skull_Semi_Charged"
+					end
+                end
+			},
         },
         variants_ttt = {
             -- Wingman
@@ -1483,6 +1520,26 @@ local hopups = {
                     util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 256, wep:GetDamage(data.range))
                 end
             },
+			-- 30-30
+			[4] = {
+			    Description = "Weapon creates a massive explosion on a headshot.",
+				Override_ShootSound = "ArcCW_APEX.3030Repeater.Fire_Skull",
+				Hook_GetShootSound = function(wep, fsound)
+				    local c = wep:GetNWFloat("ApexCharge", 0)
+					if c >= 1 then
+						return "ArcCW_APEX.3030Repeater.Fire_Skull_Charged"
+					elseif c > 0 then
+						return "ArcCW_APEX.3030Repeater.Fire_Skull_Semi_Charged"
+					end
+                end,
+                Hook_BulletHit = function(wep, data)
+                    if CLIENT or data.tr.HitGroup ~= HITGROUP_HEAD then return end
+                    local effectdata = EffectData()
+                    effectdata:SetOrigin(data.tr.HitPos)
+                    util.Effect("Explosion", effectdata)
+                    util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 256, wep:GetDamage(data.range))
+                end
+			},
         }
     },
     ["choke"] = {

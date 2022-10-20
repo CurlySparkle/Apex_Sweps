@@ -251,7 +251,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "ArcCW_APEX.3030Repeater.Skull_Fire",
+    name = "ArcCW_APEX.3030Repeater.Fire_Skull",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 140,
@@ -264,7 +264,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "ArcCW_APEX.3030Repeater.Skull_Fire_Semi_Charged",
+    name = "ArcCW_APEX.3030Repeater.Fire_Skull_Semi_Charged",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 140,
@@ -277,7 +277,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "ArcCW_APEX.3030Repeater.Skull_Fire_Charged",
+    name = "ArcCW_APEX.3030Repeater.Fire_Skull_Charged",
     channel = CHAN_WEAPON + 6,
     volume = 1.0,
     level = 140,
