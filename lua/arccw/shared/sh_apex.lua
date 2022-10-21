@@ -641,15 +641,15 @@ else
         if (LocalPlayer().ArcSlowEnd or 0) > CurTime() then
             local delta = math.Clamp((LocalPlayer().ArcSlowEnd - CurTime()) / 2, 0, 1) ^ 0.75
 
-            DrawMaterialOverlay("effects/water_warp01", delta * 0.5)
+            DrawMaterialOverlay("effects/emp_overlay", delta * 0.5)
             DrawMotionBlur(0.5 * delta, 0.75, 0.01)
             DrawColorModify({
                 [ "$pp_colour_addr" ] = 0,
                 [ "$pp_colour_addg" ] = 0,
                 [ "$pp_colour_addb" ] = 0,
-                [ "$pp_colour_brightness" ] = 0.35 * delta,
-                [ "$pp_colour_contrast" ] = 1 - delta * 0.5,
-                [ "$pp_colour_colour" ] = 1 - delta,
+                [ "$pp_colour_brightness" ] = 0.15 * delta,
+                [ "$pp_colour_contrast" ] = 1 - delta * 0.05,
+                [ "$pp_colour_colour" ] = 1 - delta * 0.05,
                 [ "$pp_colour_mulr" ] = 0,
                 [ "$pp_colour_mulg" ] = 0,
                 [ "$pp_colour_mulb" ] = 0,

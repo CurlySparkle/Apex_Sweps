@@ -1,0 +1,27 @@
+"Refract"
+{
+	<dx90
+	{
+		 	"$fallbackmaterial" "effects/invuln_overlay_blue_dx80"
+	}
+
+	"$refractamount" "0.3"
+	"$forcerefract" "1"
+	"$model" "1"
+//	"$refracttint" "{235 235 255}"
+	"$normalmap2" "effects/emp_warp"
+	"$normalmap" "effects/emp_mask"
+	"$bumpframe" "0"
+	"$bluramount" "1"
+	"Proxies"
+	{
+		
+		"TextureScroll"
+		{
+			"texturescrollvar" "$bumptransform2"
+			"texturescrollrate" 5
+			"texturescrollangle" 45.00
+		}
+	}
+
+}
