@@ -7,4 +7,12 @@
 "$selfillum"             "1"
 "$selfillumtint"         "0.15 0.15 0.15"
 "$selfillummask"  	  "models\weapons\wingman\wingman_sight_d"
+
+	Proxies
+	{
+		ACWReticleColor
+		{
+			resultVar $color2
+		}
+	}
 }

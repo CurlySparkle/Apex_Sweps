@@ -7,6 +7,10 @@
 	//"$nocull" "1"
 	"Proxies"
 	{
+		ACWReticleColor
+		{
+			resultVar $color2
+		}
 		"TextureScroll"
 		{
 			"texturescrollvar" "$texture2transform"

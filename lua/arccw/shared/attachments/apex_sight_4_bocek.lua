@@ -24,12 +24,12 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo2.png", "mips")
+att.HolosightReticle = Material("sights/holo2.png", "mips vertexcolor")
 att.HolosightNoFlare = true
 att.HolosightSize = 2
 att.HolosightBone = "holosight"
-att.Colorable = false
-att.HolosightColor = Color(255, 35, 0)
+att.Colorable = true
+-- att.HolosightColor = Color(255, 35, 0)
 
 att.Mult_SightTime = 1.05
 

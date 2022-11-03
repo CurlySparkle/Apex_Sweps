@@ -10,6 +10,10 @@
 
 	Proxies
 	{
+		ACWReticleColor
+		{
+			resultVar $color2
+		}
 		TextureScroll
 		{
 			textureScrollVar	$detailtexturetransform

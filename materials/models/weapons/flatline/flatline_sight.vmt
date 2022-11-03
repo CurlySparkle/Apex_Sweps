@@ -17,5 +17,9 @@
 			textureScrollRate	50
 			textureScrollAngle 	180
 		}
+		ACWReticleColor
+		{
+			resultVar $color2
+		}
 	}
 }

@@ -24,7 +24,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("sights/holo3.png", "mips smooth")
+att.HolosightReticle = Material("sights/holo3.png", "mips smooth vertexcolor")
 att.HolosightNoFlare = true
 att.HolosightSize = 3
 att.HolosightBone = "holosight"
