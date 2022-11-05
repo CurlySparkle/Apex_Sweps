@@ -204,6 +204,10 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Slot = {"apex_mag_heavy5"}
     },
+	{
+        PrintName = "Hopup",
+        Slot = {"apex_hopup_titanfall4"}
+    },
     {
         PrintName = "Skin",
         Slot = {"skin_apex"},

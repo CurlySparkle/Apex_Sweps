@@ -1726,6 +1726,23 @@ local hopups = {
                     end
                 end,
             },
+			[3] = {
+                Description = "Modifies the weapon to have attributes similar to its appearance in Titanfall.\n\nThe Wingman receives a damage buff and boost, changes its ammo to Sniper and always has physical bullets. Mimicing its more powerful 'Elite' counterpart.",
+				Override_Ammo = "apex_sniper",
+				Override_AlwaysPhysBullet = true,
+				Override_Damage = 91,
+				Override_DamageMin = 81,
+				Mult_MuzzleVelocity = 1.15,
+				Override_ClipSize = 8,
+            },
+			[4] = {
+				Description = "Modifies the weapon to have attributes similar to its appearance in Titanfall.\n\nThe Spitfire gets a ammo and damage boost, but has lower firerate and muzzle velocity.",
+				Override_Damage = 50,
+				Override_DamageMin = 40,
+				Mult_MuzzleVelocity = 0.80,
+				Override_ClipSize = 80,
+				Mult_RPM = 480 / 540
+			},
         },
     }
 }
