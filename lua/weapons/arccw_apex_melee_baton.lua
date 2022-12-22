@@ -117,11 +117,9 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-        MinProgress = 0,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-        MinProgress = 0,
     },
     ["draw"] = {
         Source = {"draw"},

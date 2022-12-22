@@ -124,14 +124,12 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-        MinProgress = 0,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big", t = 0 / 30},
         },
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-        MinProgress = 0,
         SoundTable = {
             {s = "ArcCW_APEX.Rampart.Wrench.Swing_Foley_Big", t = 0 / 30},
         },
